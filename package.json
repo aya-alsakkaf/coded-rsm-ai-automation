@@ -1,0 +1,9 @@
+{
+  "name": "coded-rsm-ai-automation",
+  "private": true,
+  "type": "module",
+  "description": "AI Innovation and Automation workshop site, CODED Professionals. Static site in public/, staff lock in middleware.js.",
+  "dependencies": {
+    "@vercel/functions": "3.10.1"
+  }
+}

@@ -1,0 +1,701 @@
+{
+ "name": "CODED × RSM Albazie AI Innovation and Automation: MAP Test POST (Day 2)",
+ "slug": "coded-rsm-albazie-ai-innovation-and-automation-map-test-post-day-2",
+ "description": "MAP Skills Test for the CODED Professionals client program \"AI Innovation and Automation\" for RSM Albazie, cohort RSM-AI-Nov/Nov-26, 2 days at CODED (Morning Alsharekh), 08:30-16:30: Day 1, Sun 15 Nov 2026: Designing AI Agents for Real Work · Day 2, Mon 16 Nov 2026: Turning Agents into Operational Workflows. POST sitting: end of Day 2, 15:55 (10 minutes), before the final satisfaction survey. The PRE sitting at the start of Day 1 (08:45) has the identical questions. Part 1: 6 confidence self-ratings (never scored). Part 2: 10 knowledge questions (Day 1: 5, Day 2: 5), written by CODED from the workshop content (there was no handoff kit). About 10 minutes. Not graded. Answer key: 1 b · 2 c · 3 a · 4 d · 5 b · 6 a · 7 c · 8 b · 9 d · 10 a.",
+ "audience": "teacher_student",
+ "isAnonymous": false,
+ "brandingTitle": {
+  "en": "AI Innovation and Automation · MAP Test: POST (Day 2)",
+  "ar": "الابتكار والأتمتة بالذكاء الاصطناعي · اختبار MAP: البعدي (اليوم 2)"
+ },
+ "brandingSubtitle": {
+  "en": "CODED × RSM Albazie",
+  "ar": "CODED × آر إس إم البزيع"
+ },
+ "clientName": "RSM Albazie",
+ "cohortName": "RSM-AI-Nov/Nov-26",
+ "sections": [
+  {
+   "id": "s_1",
+   "order": 0,
+   "title": {
+    "en": "Before you start",
+    "ar": "قبل أن تبدأ"
+   },
+   "description": {
+    "en": "Please read this, then give us your name, work email and department so that we can match your two sittings.",
+    "ar": "يرجى قراءة ما يلي، ثم كتابة اسمك وبريدك الإلكتروني للعمل والإدارة التي تعمل بها، حتى نتمكن من مطابقة محاولتيك."
+   }
+  },
+  {
+   "id": "s_2",
+   "order": 1,
+   "title": {
+    "en": "Part 1: Confidence",
+    "ar": "الجزء 1: الثقة"
+   },
+   "description": {
+    "en": "Rate each statement 1 to 5. 1 = No idea / never done it. 3 = Could attempt with help. 5 = Could do it confidently on my own. There are no right answers here.",
+    "ar": "قيّم كل عبارة من 1 إلى 5. ‏1 = لا أعرف / لم أفعله من قبل. ‏3 = أستطيع المحاولة بمساعدة. ‏5 = أستطيع فعله بثقة وحدي. لا توجد إجابات صحيحة أو خاطئة هنا."
+   }
+  },
+  {
+   "id": "s_3",
+   "order": 2,
+   "title": {
+    "en": "Part 2: Day 1, Designing AI Agents for Real Work",
+    "ar": "الجزء 2: اليوم 1، تصميم وكلاء الذكاء الاصطناعي للعمل الفعلي"
+   },
+   "description": {
+    "en": "Five questions. Choose the one best answer.",
+    "ar": "خمسة أسئلة. اختر أفضل إجابة واحدة."
+   }
+  },
+  {
+   "id": "s_4",
+   "order": 3,
+   "title": {
+    "en": "Part 2: Day 2, Turning Agents into Operational Workflows",
+    "ar": "الجزء 2: اليوم 2، تحويل الوكلاء إلى سير عمل تشغيلي"
+   },
+   "description": {
+    "en": "Five questions. Choose the one best answer.",
+    "ar": "خمسة أسئلة. اختر أفضل إجابة واحدة."
+   }
+  }
+ ],
+ "questions": [
+  {
+   "id": "q_intro",
+   "type": "statement",
+   "required": false,
+   "order": 1,
+   "sectionId": "s_1",
+   "label": {
+    "en": "This short test has 10 knowledge questions and takes about 10 minutes. Work alone, and do not use an AI tool or search. If you are not sure, choose the answer you think is most likely; there is no penalty for a wrong answer. You take this same test at the start of Day 1 and at the end of Day 2. It is not graded: it shows us how much the program moved you.",
+    "ar": "يتكون هذا الاختبار القصير من 10 أسئلة معرفية ويستغرق نحو 10 دقائق. أجب وحدك، ولا تستخدم أي أداة ذكاء اصطناعي أو بحث. إذا لم تكن متأكداً، فاختر الإجابة التي تراها الأرجح؛ فلا توجد عقوبة على الإجابة الخاطئة. ستؤدي الاختبار نفسه في بداية اليوم الأول وفي نهاية اليوم الثاني. هذا الاختبار غير مُقيَّم بدرجات: فهو يبيّن لنا مدى تقدمك خلال البرنامج."
+   }
+  },
+  {
+   "id": "q_name",
+   "type": "text",
+   "required": true,
+   "order": 2,
+   "sectionId": "s_1",
+   "label": {
+    "en": "Your full name",
+    "ar": "اسمك الكامل"
+   }
+  },
+  {
+   "id": "q_email",
+   "type": "email",
+   "required": true,
+   "order": 3,
+   "sectionId": "s_1",
+   "label": {
+    "en": "Your work email. We use it only to match your two sittings.",
+    "ar": "بريدك الإلكتروني للعمل. نستخدمه فقط لمطابقة محاولتيك."
+   }
+  },
+  {
+   "id": "q_dept",
+   "type": "text",
+   "required": true,
+   "order": 4,
+   "sectionId": "s_1",
+   "label": {
+    "en": "Your department",
+    "ar": "الإدارة التي تعمل بها"
+   }
+  },
+  {
+   "id": "q_r1",
+   "type": "scale",
+   "required": true,
+   "order": 5,
+   "sectionId": "s_2",
+   "label": {
+    "en": "I can find the tasks in my work that are worth automating.",
+    "ar": "أستطيع تحديد المهام في عملي التي تستحق الأتمتة."
+   },
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   }
+  },
+  {
+   "id": "q_r2",
+   "type": "scale",
+   "required": true,
+   "order": 6,
+   "sectionId": "s_2",
+   "label": {
+    "en": "I can design an AI agent with a clear input, instruction and output.",
+    "ar": "أستطيع تصميم وكيل ذكاء اصطناعي بمدخلات وتعليمات ومخرجات واضحة."
+   },
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   }
+  },
+  {
+   "id": "q_r3",
+   "type": "scale",
+   "required": true,
+   "order": 7,
+   "sectionId": "s_2",
+   "label": {
+    "en": "I can build a working agent in Claude.",
+    "ar": "أستطيع بناء وكيل يعمل في Claude."
+   },
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   }
+  },
+  {
+   "id": "q_r4",
+   "type": "scale",
+   "required": true,
+   "order": 8,
+   "sectionId": "s_2",
+   "label": {
+    "en": "I can test an agent and improve its instruction.",
+    "ar": "أستطيع اختبار الوكيل وتحسين تعليماته."
+   },
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   }
+  },
+  {
+   "id": "q_r5",
+   "type": "scale",
+   "required": true,
+   "order": 9,
+   "sectionId": "s_2",
+   "label": {
+    "en": "I can build a workflow in n8n that connects input, AI and output.",
+    "ar": "أستطيع بناء سير عمل في n8n يربط المدخلات والذكاء الاصطناعي والمخرجات."
+   },
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   }
+  },
+  {
+   "id": "q_r6",
+   "type": "scale",
+   "required": true,
+   "order": 10,
+   "sectionId": "s_2",
+   "label": {
+    "en": "I can present an automation and choose the next task to automate.",
+    "ar": "أستطيع عرض حل أتمتة واختيار المهمة التالية للأتمتة."
+   },
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   }
+  },
+  {
+   "id": "q_1",
+   "type": "select",
+   "required": true,
+   "order": 11,
+   "sectionId": "s_3",
+   "label": {
+    "en": "1. Which task is the best first candidate for an AI agent?",
+    "ar": "1. أيّ مهمة هي أفضل مرشح أول لوكيل ذكاء اصطناعي؟"
+   },
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Deciding whether to accept a high-risk client",
+      "ar": "تقرير قبول عميل عالي المخاطر أو رفضه"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Checking the expiry date of every document in a KYC pack",
+      "ar": "التحقق من تاريخ انتهاء كل مستند في ملف اعرف عميلك (KYC)"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Agreeing an adjustment with a client's CFO",
+      "ar": "الاتفاق على قيد تسوية مع المدير المالي للعميل"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Choosing the audit team for a new engagement",
+      "ar": "اختيار فريق التدقيق لمهمة جديدة"
+     }
+    }
+   ]
+  },
+  {
+   "id": "q_2",
+   "type": "select",
+   "required": true,
+   "order": 12,
+   "sectionId": "s_3",
+   "label": {
+    "en": "2. In the Agent Design Framework, what are the three parts of an agent?",
+    "ar": "2. في إطار تصميم الوكلاء، ما الأجزاء الثلاثة للوكيل؟"
+   },
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Prompt, model and answer",
+      "ar": "الأمر النصي والنموذج والإجابة"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Data, chart and report",
+      "ar": "البيانات والرسم البياني والتقرير"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Input, instruction and output",
+      "ar": "المدخلات والتعليمات والمخرجات"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Trigger, action and alert",
+      "ar": "المُشغِّل والإجراء والتنبيه"
+     }
+    }
+   ]
+  },
+  {
+   "id": "q_3",
+   "type": "select",
+   "required": true,
+   "order": 13,
+   "sectionId": "s_3",
+   "label": {
+    "en": "3. An agent cannot find a document it needs in the file. What should a well-written instruction make it do?",
+    "ar": "3. لم يجد الوكيل مستنداً يحتاجه في الملف. ماذا يجب أن تجعله التعليمات الجيدة يفعل؟"
+   },
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Write \"Not found\" and flag the item for review",
+      "ar": "أن يكتب \"Not found\" (غير موجود) ويضع علامة على البند للمراجعة"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Make the most likely guess",
+      "ar": "أن يضع أرجح تخمين"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Skip the item without saying anything",
+      "ar": "أن يتجاوز البند دون أن يذكر شيئاً"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Stop and give no output at all",
+      "ar": "أن يتوقف ولا يعطي أي مخرجات"
+     }
+    }
+   ]
+  },
+  {
+   "id": "q_4",
+   "type": "select",
+   "required": true,
+   "order": 14,
+   "sectionId": "s_3",
+   "label": {
+    "en": "4. Why can an AI model give a wrong date when you do not attach the file?",
+    "ar": "4. لماذا قد يعطي نموذج الذكاء الاصطناعي تاريخاً خاطئاً عندما لا ترفق الملف؟"
+   },
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Dates are not allowed in prompts",
+      "ar": "لأن التواريخ غير مسموح بها في الأوامر النصية"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "It reads an old copy of the file",
+      "ar": "لأنه يقرأ نسخة قديمة من الملف"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "It always rounds numbers and dates",
+      "ar": "لأنه يقرّب الأرقام والتواريخ دائماً"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "It writes by predicting likely words, so it can guess",
+      "ar": "لأنه يكتب بتوقع الكلمات المحتملة، لذلك قد يخمّن"
+     }
+    }
+   ]
+  },
+  {
+   "id": "q_5",
+   "type": "select",
+   "required": true,
+   "order": 15,
+   "sectionId": "s_3",
+   "label": {
+    "en": "5. Your agent gives a wrong answer in a test. What is the best next step?",
+    "ar": "5. أعطى وكيلك إجابة خاطئة في أحد الاختبارات. ما أفضل خطوة تالية؟"
+   },
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Correct the answer by hand and continue",
+      "ar": "تصحيح الإجابة يدوياً والمتابعة"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Change the instruction, then run all the test cases again",
+      "ar": "تعديل التعليمات، ثم تشغيل جميع حالات الاختبار من جديد"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Delete the test case that failed",
+      "ar": "حذف حالة الاختبار التي فشلت"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Ask the same question again until the answer changes",
+      "ar": "طرح السؤال نفسه مرة أخرى حتى تتغير الإجابة"
+     }
+    }
+   ]
+  },
+  {
+   "id": "q_6",
+   "type": "select",
+   "required": true,
+   "order": 16,
+   "sectionId": "s_4",
+   "label": {
+    "en": "6. In an automated workflow, what does the trigger do?",
+    "ar": "6. في سير العمل المؤتمت، ما وظيفة المُشغِّل (Trigger)؟"
+   },
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "It starts the workflow when something happens, for example when a form is sent",
+      "ar": "يبدأ سير العمل عند حدوث أمر ما، مثل إرسال نموذج"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "It checks that the AI's answer is correct",
+      "ar": "يتحقق من صحة إجابة الذكاء الاصطناعي"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "It stores the result in a table",
+      "ar": "يحفظ النتيجة في جدول"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "It sends the final report to the client",
+      "ar": "يرسل التقرير النهائي إلى العميل"
+     }
+    }
+   ]
+  },
+  {
+   "id": "q_7",
+   "type": "select",
+   "required": true,
+   "order": 17,
+   "sectionId": "s_4",
+   "label": {
+    "en": "7. Why do you ask Claude for named fields (structured output) inside a workflow?",
+    "ar": "7. لماذا تطلب من Claude حقولاً مسمّاة (مخرجات منظمة) داخل سير العمل؟"
+   },
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "It makes the answer longer and more detailed",
+      "ar": "لأنها تجعل الإجابة أطول وأكثر تفصيلاً"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "It hides the answer from the reviewer",
+      "ar": "لأنها تخفي الإجابة عن المراجع"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "The next step, for example an IF, can read one field and choose a route",
+      "ar": "لأن الخطوة التالية، مثل IF، تستطيع قراءة حقل واحد واختيار المسار"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "It is needed to sign in to n8n",
+      "ar": "لأنها مطلوبة لتسجيل الدخول إلى n8n"
+     }
+    }
+   ]
+  },
+  {
+   "id": "q_8",
+   "type": "select",
+   "required": true,
+   "order": 18,
+   "sectionId": "s_4",
+   "label": {
+    "en": "8. In the KYC workflow, which step turns the uploaded PDF into text that Claude can read?",
+    "ar": "8. في سير عمل KYC، ما الخطوة التي تحوّل ملف PDF المرفوع إلى نص يستطيع Claude قراءته؟"
+   },
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "The data table",
+      "ar": "جدول البيانات (Data table)"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Extract from File",
+      "ar": "خطوة Extract from File"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "The IF node",
+      "ar": "عقدة IF"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "The Form Ending page",
+      "ar": "صفحة Form Ending"
+     }
+    }
+   ]
+  },
+  {
+   "id": "q_9",
+   "type": "select",
+   "required": true,
+   "order": 19,
+   "sectionId": "s_4",
+   "label": {
+    "en": "9. In a KYC workflow, where should the human check sit?",
+    "ar": "9. في سير عمل KYC، أين يجب أن تكون المراجعة البشرية؟"
+   },
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Before the trigger, so nothing runs without approval",
+      "ar": "قبل المُشغِّل، حتى لا يعمل أي شيء دون موافقة"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Nowhere, because the agent passed its tests",
+      "ar": "لا حاجة إليها، لأن الوكيل اجتاز اختباراته"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Only once a year, at the year-end review",
+      "ar": "مرة واحدة في السنة فقط، عند مراجعة نهاية السنة"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "After the AI decides, before anything is sent to the client or marked accepted",
+      "ar": "بعد أن يقرر الذكاء الاصطناعي، وقبل إرسال أي شيء إلى العميل أو اعتماد القبول"
+     }
+    }
+   ]
+  },
+  {
+   "id": "q_10",
+   "type": "select",
+   "required": true,
+   "order": 20,
+   "sectionId": "s_4",
+   "label": {
+    "en": "10. Before an agent workflow is used on real client work, what must it have?",
+    "ar": "10. قبل استخدام سير عمل الوكيل في عمل فعلي لعميل، ماذا يجب أن يتوفر له؟"
+   },
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "A named owner, a test set and a review rule",
+      "ar": "مسؤول محدد بالاسم، ومجموعة اختبارات، وقاعدة للمراجعة"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "A company logo and a color theme",
+      "ar": "شعار الشركة ونظام ألوان"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "At least ten steps",
+      "ar": "عشر خطوات على الأقل"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "A weekly schedule trigger",
+      "ar": "مُشغِّل مجدول أسبوعياً"
+     }
+    }
+   ]
+  }
+ ]
+}

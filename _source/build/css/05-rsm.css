@@ -1,0 +1,30 @@
+/* ============ RSM Albazie additions ============ */
+.lk .client-name{font-family:var(--f);font-weight:800;font-size:.62em;letter-spacing:-.01em;color:#fff;white-space:nowrap;line-height:1}
+.lk .client-name span{color:#fff}
+.lk .client-name{color:#009CDE}
+.d-logos .lk .client-name,.d-logos .lk .client-name span{color:#fff}
+.hero .sub b{color:var(--ink)}
+.res-list .res{border-radius:12px;margin-top:6px;border:1px solid var(--line)}
+.res-ic svg{width:16px;height:16px}
+.res-ic.file{color:var(--rose-lt)}
+.fac-banner b{font-weight:700}
+.staff-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px}
+@media (max-width:760px){.staff-grid{grid-template-columns:1fr}}
+.staff-grid .panel{margin-top:0}
+.kbd{font-family:var(--mono);font-size:12px;padding:2px 7px;border-radius:6px;border:1px solid var(--line-2);color:var(--ink)}
+.exp-tbl td:nth-child(2){font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+.exp-tbl td{color:var(--ink)}
+.exp-last{margin-top:10px;font-weight:700;color:var(--rose-lt)}
+.sh-extra{margin-top:10px}
+.notfound{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px}
+.notfound h1{font-size:clamp(40px,7vw,80px);font-weight:800;letter-spacing:-.03em}
+.notfound p{margin-top:12px;color:var(--ink-dim);max-width:44ch}
+.ex-code{font-family:var(--mono);font-size:13px;color:var(--rose-lt);overflow-wrap:anywhere}
+.prompt-ref{margin-top:10px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--ink-faint)}
+.prompt-ref a{color:var(--rose-lt);text-decoration:underline;text-underline-offset:.16em}
+.agent-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+@media (max-width:700px){.agent-grid{grid-template-columns:1fr}}
+.agent-grid .act h3{font-size:16px}
+.agent-grid .act p{margin-top:6px;font-size:13.5px;line-height:1.5;color:var(--ink-dim)}
+.map-slot--live:not(:has(.map-qr)){grid-template-columns:1fr auto}
+.subnav a{flex:0 1 auto;max-width:100%;overflow-wrap:anywhere}

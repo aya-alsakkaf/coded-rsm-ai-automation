@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Day 2 prompts · AI Innovation and Automation · CODED</title>
+<meta name="description" content="Every Day 2 prompt with a COPY button.">
+<link rel="icon" href="coded-rsm-ai-automation-favicon.png">
+<link rel="stylesheet" href="coded-rsm-ai-automation-site.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body><main><div class="wrap"><div class="topbar"><a class="back" href="coded-rsm-ai-automation.html"><span class="ar">←</span> Back to the program</a><nav class="daynav"><a href="coded-rsm-ai-automation-day-1.html">Day 1</a><a href="coded-rsm-ai-automation-day-2.html">Day 2</a><a href="coded-rsm-ai-automation-prompt-sheet-day-1.html">Prompts</a><a href="coded-rsm-ai-automation-cheat-sheet.html">Cheat sheet</a></nav></div></div>
+<div class="wrap"><div class="hero-wrap"><div class="d-hero h-d2"><div class="d-hero-top"><span class="cat-pill"><span class="dot"></span>Day 2 · Prompt sheet</span><div class="d-logos"><span class="lk"><img class="coded-logo" src="coded-rsm-ai-automation-coded-logo.png" alt="CODED" width="320" height="120"><span class="x">×</span><span class="client-name">RSM <span>Albazie</span></span></span></div></div>
+<h1>Day 2 prompts</h1><p class="lede">Every prompt and template from Turning Agents into Operational Workflows, in teaching order, with a COPY button.</p></div></div>
+<div class="sheet"><div class="sh-howto"><b>How to use this sheet</b><ol><li>Open <b>n8n</b>. Each card says which node the text goes into.</li><li>Press <b>COPY</b> and paste into that field. Lines with <b>{{ }}</b> are expressions: drag the field from the input panel when you can.</li><li>Paste your Day 1 instruction where the card says so. n8n has no project knowledge, so the rules go in the prompt.</li></ol><p><b>Hint:</b> the trainer shares the workshop key for Claude on paper. Never paste it in a chat or a shared document.</p></div>
+<nav class="subnav"><div class="in"><a href="#p2-1">2.1 · Form → Claude → answer page</a><a href="#p2-2">2.2 · KYC workflow: Claude decides (part 2)</a><a href="#p2-3">2.3 · KYC workflow: route and record (part 3)</a><a href="#p2-4">2.4 · Team TB: trial balance workflow</a><a href="#p2-5">2.5 · Team Vouching: invoice workflow</a><a href="#p2-6">2.6 · Team ML: management letter workflow</a><a href="#p2-7">2.7 · The demo card</a><a href="#p2-8">2.8 · What to automate next</a></div></nav>
+<div class="sh-dayhead"><h2>Day 2 · Turning Agents into Operational Workflows</h2><span class="sh-time">Mon 16 Nov 2026 · 08:30-16:30</span></div>
+<section class="sh-card" id="p2-1"><div class="sh-top"><span class="sh-blk">2.1 · Your first n8n workflow</span><span class="sh-time">09:40</span><span class="sh-tag">n8n</span></div>
+<h3>Form → Claude → answer page</h3><ol><li>Your turn 2.1. Trigger: On form submission, one field named Your question.</li><li>Basic LLM Chain: set the prompt to the line below. Form Ending: show the second line.</li></ol>
+<div class="sh-plab">Basic LLM Chain · prompt</div><div class="sh-promptwrap"><pre>{{ $json[&#x27;Your question&#x27;] }}</pre><button class="sh-copy" type="button">COPY</button></div><div class="sh-extra"><div class="sh-plab">Form Ending · message</div><div class="sh-promptwrap"><pre>{{ $json.text }}</pre><button class="sh-copy" type="button">COPY</button></div></div>
+<div class="sh-meta"><div><span class="sh-lab">What to look for</span>Drag the field from the left panel instead of typing it. The name must match exactly.</div><div><span class="sh-lab">Files</span><div class="sh-files"><span class="sh-none">No file needed</span></div></div></div></section><section class="sh-card" id="p2-2"><div class="sh-top"><span class="sh-blk">2.2 · Workflow build</span><span class="sh-time">10:55</span><span class="sh-tag">n8n</span></div>
+<h3>KYC workflow: Claude decides (part 2)</h3><ol><li>Your turn 2.3. Add a Basic LLM Chain after Extract from File.</li><li>Paste your Day 1 instruction at the top. Turn on Require Specific Output Format and add a Structured Output Parser.</li></ol>
+<div class="sh-plab">Basic LLM Chain · prompt</div><div class="sh-promptwrap"><pre>[Paste your Day 1 KYC instruction here, from ROLE to IF UNSURE.]
+
+POLICY RULES (from the Client Acceptance Policy, Sections 2 and 4)
+Required documents for a W.L.L.: 1. Commercial license, valid. 2. Articles of association. 3. Shareholder register. 4. ID copy for every person who is a shareholder, an ultimate beneficial owner or an authorized signatory. 5. Authorized signatory list. 6. For every company shareholder: its registration certificate and its own shareholder list.
+Expiry rule: flag a document that has expired or expires within 60 days.
+High-risk indicators: (a) ownership through a company registered outside Kuwait; (b) a politically exposed person; (c) a cash-intensive business; (d) a sector in Appendix A; (e) documents that do not match each other, for example different names or numbers.
+
+Today&#x27;s date: {{ $now.toFormat(&#x27;dd LLL yyyy&#x27;) }}
+Client name from the form: {{ $(&#x27;On form submission&#x27;).item.json[&#x27;Client name&#x27;] }}
+
+The KYC pack, as text:
+{{ $json.text }}
+
+Fill every field in the output format. status is &quot;Needs review&quot; if anything is Missing, Expired or flagged. Otherwise status is &quot;Ready&quot;.</pre><button class="sh-copy" type="button">COPY</button></div><div class="sh-extra"><div class="sh-plab">Structured Output Parser · JSON example</div><div class="sh-promptwrap"><pre>{
+  &quot;client&quot;: &quot;Example Client W.L.L.&quot;,
+  &quot;status&quot;: &quot;Needs review&quot;,
+  &quot;items_to_resolve&quot;: 2,
+  &quot;issues&quot;: [&quot;Example: Articles of association missing (no page)&quot;, &quot;Example: Signatory ID copy expires within 60 days (page 4)&quot;],
+  &quot;risk_flags&quot;: [&quot;Example: Section 4(a), company shareholder registered outside Kuwait (page 3)&quot;],
+  &quot;summary&quot;: &quot;Not ready: 2 items to resolve&quot;
+}</pre><button class="sh-copy" type="button">COPY</button></div></div>
+<div class="sh-meta"><div><span class="sh-lab">What to look for</span>In n8n there is no project knowledge. The policy rules must be in the prompt.</div><div><span class="sh-lab">Files</span><div class="sh-files"><a href="khiran-kyc-pack.pdf" download>khiran-kyc-pack.pdf</a><a href="salwa-kyc-pack.pdf" download>salwa-kyc-pack.pdf</a></div></div></div></section><section class="sh-card" id="p2-3"><div class="sh-top"><span class="sh-blk">2.3 · Workflow build</span><span class="sh-time">11:25</span><span class="sh-tag">n8n</span></div>
+<h3>KYC workflow: route and record (part 3)</h3><ol><li>Your turn 2.4. IF after the chain. True: insert a row in KYC review queue. False: insert a row in KYC ready.</li><li>Then a Form Ending page with the summary.</li></ol>
+<div class="sh-plab">IF · condition</div><div class="sh-promptwrap"><pre>{{ $json.output.status }}   is equal to   Needs review</pre><button class="sh-copy" type="button">COPY</button></div><div class="sh-extra"><div class="sh-plab">Data table · insert row (both tables)</div><div class="sh-promptwrap"><pre>client           {{ $json.output.client }}
+status           {{ $json.output.status }}
+items_to_resolve {{ $json.output.items_to_resolve }}
+issues           {{ $json.output.issues.join(&#x27;; &#x27;) }}
+risk_flags       {{ $json.output.risk_flags.join(&#x27;; &#x27;) }}
+checked_at       {{ $now.toISO() }}</pre><button class="sh-copy" type="button">COPY</button></div></div><div class="sh-extra"><div class="sh-plab">Form Ending · message</div><div class="sh-promptwrap"><pre>{{ $(&#x27;Basic LLM Chain&#x27;).item.json.output.summary }}</pre><button class="sh-copy" type="button">COPY</button></div></div>
+<div class="sh-meta"><div><span class="sh-lab">What to look for</span>Run both packs. Open both data tables. One row each, in the right table.</div><div><span class="sh-lab">Files</span><div class="sh-files"><a href="khiran-kyc-pack.pdf" download>khiran-kyc-pack.pdf</a><a href="salwa-kyc-pack.pdf" download>salwa-kyc-pack.pdf</a><a href="jabriya-kyc-pack.pdf" download>jabriya-kyc-pack.pdf</a></div></div></div></section><section class="sh-card" id="p2-4"><div class="sh-top"><span class="sh-blk">2.4 · Customization</span><span class="sh-time">13:05</span><span class="sh-tag sh-team">Team</span><span class="sh-tag">n8n</span></div>
+<h3>Team TB: trial balance workflow</h3><ol><li>Your turn 2.5, team TB. Form: one file field. Extract from File: Extract From XLSX. Then Aggregate: All Item Data, into the field data.</li><li>Basic LLM Chain with the prompt below and this JSON example. Route on status.</li></ol>
+<div class="sh-plab">Basic LLM Chain · prompt</div><div class="sh-promptwrap"><pre>[Paste your Day 1 TB instruction here, from ROLE to IF UNSURE.]
+
+REVIEW THRESHOLD (from the materiality memo): flag an account only if the movement is more than 10% AND more than KWD 45,000.
+
+The trial balance rows, as data:
+{{ JSON.stringify($json.data) }}
+
+Fill every field in the output format. status is &quot;Needs review&quot; if any account is flagged.</pre><button class="sh-copy" type="button">COPY</button></div><div class="sh-extra"><div class="sh-plab">Structured Output Parser · JSON example</div><div class="sh-promptwrap"><pre>{
+  &quot;client&quot;: &quot;Example Client Co.&quot;,
+  &quot;status&quot;: &quot;Needs review&quot;,
+  &quot;balanced&quot;: true,
+  &quot;flagged&quot;: [{&quot;account&quot;: &quot;Example account&quot;, &quot;movement_kwd&quot;: 50000.000, &quot;movement_pct&quot;: 25.0, &quot;question&quot;: &quot;Example question for the client&quot;}],
+  &quot;summary&quot;: &quot;1 account flagged&quot;
+}</pre><button class="sh-copy" type="button">COPY</button></div></div>
+<div class="sh-meta"><div><span class="sh-lab">What to look for</span>Without Aggregate, Claude runs once per row. One run for the whole trial balance is what you want.</div><div><span class="sh-lab">Files</span><div class="sh-files"><a href="abdali-trial-balance-fy2025.xlsx" download>abdali-trial-balance-fy2025.xlsx</a></div></div></div></section><section class="sh-card" id="p2-5"><div class="sh-top"><span class="sh-blk">2.5 · Customization</span><span class="sh-time">13:05</span><span class="sh-tag sh-team">Team</span><span class="sh-tag">n8n</span></div>
+<h3>Team Vouching: invoice workflow</h3><ol><li>Your turn 2.5, team Vouching. Form: a text area named Sales listing lines and a file field for the invoice PDF.</li><li>Extract from File: Extract From PDF. Basic LLM Chain with the prompt below. Route on status.</li></ol>
+<div class="sh-plab">Basic LLM Chain · prompt</div><div class="sh-promptwrap"><pre>[Paste your Day 1 vouching instruction here, from ROLE to IF UNSURE.]
+
+The sales listing lines, pasted from Excel:
+{{ $(&#x27;On form submission&#x27;).item.json[&#x27;Sales listing lines&#x27;] }}
+
+The invoices, as text:
+{{ $json.text }}
+
+Fill every field in the output format. status is &quot;Needs review&quot; if any result is Mismatch or Check.</pre><button class="sh-copy" type="button">COPY</button></div><div class="sh-extra"><div class="sh-plab">Structured Output Parser · JSON example</div><div class="sh-promptwrap"><pre>{
+  &quot;status&quot;: &quot;Needs review&quot;,
+  &quot;matched&quot;: 5,
+  &quot;results&quot;: [{&quot;invoice&quot;: &quot;EX-0001&quot;, &quot;result&quot;: &quot;Mismatch&quot;, &quot;difference&quot;: &quot;Example: amount 1,200.000 on listing, 1,020.000 on invoice&quot;, &quot;page&quot;: 1}],
+  &quot;summary&quot;: &quot;5 of 6 invoices match&quot;
+}</pre><button class="sh-copy" type="button">COPY</button></div></div>
+<div class="sh-meta"><div><span class="sh-lab">What to look for</span>Copy the six listing rows from Excel, with the header row, into the text area.</div><div><span class="sh-lab">Files</span><div class="sh-files"><a href="abdali-sales-listing-sample.xlsx" download>abdali-sales-listing-sample.xlsx</a><a href="abdali-invoices-sample.pdf" download>abdali-invoices-sample.pdf</a></div></div></div></section><section class="sh-card" id="p2-6"><div class="sh-top"><span class="sh-blk">2.6 · Customization</span><span class="sh-time">13:05</span><span class="sh-tag sh-team">Team</span><span class="sh-tag">n8n</span></div>
+<h3>Team ML: management letter workflow</h3><ol><li>Your turn 2.5, team ML. Form: a text area named Field notes. No file step: n8n cannot read .docx files, so paste the text.</li><li>Basic LLM Chain with the prompt below. Every run goes to a Drafts table for a reviewer.</li></ol>
+<div class="sh-plab">Basic LLM Chain · prompt</div><div class="sh-promptwrap"><pre>[Paste your Day 1 management letter instruction here, from ROLE to IF UNSURE.]
+
+FORMAT RULES (from the management letter template): Risk rating High = could lead to a material error or a loss; Medium = weakens a key control; Low = good practice. Management response is always &quot;[To be completed by management]&quot;.
+
+The field notes:
+{{ $json[&#x27;Field notes&#x27;] }}
+
+Fill every field in the output format. status is &quot;Draft for review&quot; for every run.</pre><button class="sh-copy" type="button">COPY</button></div><div class="sh-extra"><div class="sh-plab">Structured Output Parser · JSON example</div><div class="sh-promptwrap"><pre>{
+  &quot;status&quot;: &quot;Draft for review&quot;,
+  &quot;points&quot;: [{&quot;title&quot;: &quot;Example title&quot;, &quot;observation&quot;: &quot;Example observation&quot;, &quot;risk_rating&quot;: &quot;Medium&quot;, &quot;risk&quot;: &quot;Example risk&quot;, &quot;recommendation&quot;: &quot;Example recommendation&quot;, &quot;management_response&quot;: &quot;[To be completed by management]&quot;}],
+  &quot;left_out&quot;: [&quot;Example: a scheduling note, not a control finding&quot;],
+  &quot;summary&quot;: &quot;1 point drafted&quot;
+}</pre><button class="sh-copy" type="button">COPY</button></div></div>
+<div class="sh-meta"><div><span class="sh-lab">What to look for</span>No IF needed: every draft goes to a person. That is your human check.</div><div><span class="sh-lab">Files</span><div class="sh-files"><a href="abdali-field-notes.docx" download>abdali-field-notes.docx</a></div></div></div></section><section class="sh-card" id="p2-7"><div class="sh-top"><span class="sh-blk">2.7 · Demo Day prep</span><span class="sh-time">14:25</span><span class="sh-tag">Notes</span></div>
+<h3>The demo card</h3><ol><li>Your turn 2.6. Fill it as a team.</li><li>Rehearse once with a 3-minute timer.</li></ol>
+<div class="sh-plab">Template</div><div class="sh-promptwrap"><pre>DEMO CARD (3 minutes)
+1. The task (30 seconds): Who does it today? How often?
+2. Before and after (30 seconds): Minutes per case today: ___. With the workflow: ___.
+3. Live run (90 seconds): Which practice file? What should the audience look at?
+4. Next (30 seconds): The human check: who checks what, and when?
+   The next task we would automate: ___</pre><button class="sh-copy" type="button">COPY</button></div>
+<div class="sh-meta"><div><span class="sh-lab">What to look for</span>Show the workflow running, not the slides about it.</div><div><span class="sh-lab">Files</span><div class="sh-files"><span class="sh-none">No file needed</span></div></div></div></section><section class="sh-card" id="p2-8"><div class="sh-top"><span class="sh-blk">2.8 · Next steps</span><span class="sh-time">15:40</span><span class="sh-tag">Claude</span></div>
+<h3>What to automate next</h3><ol><li>Use your task list from Day 1, your turn 1.1.</li><li>Use no client names.</li></ol>
+<div class="sh-plab">Prompt</div><div class="sh-promptwrap"><pre>Here is my list of candidate tasks from Day 1, with the four answers for each.
+Score each task from 1 to 5 for value (time saved, risk reduced) and from 1 to 5 for ease (clear input, written rules, easy check).
+Return a table sorted by value × ease. Then suggest the one task to pilot next, with one sentence on why.
+
+[paste your list here]</pre><button class="sh-copy" type="button">COPY</button></div>
+<div class="sh-meta"><div><span class="sh-lab">What to look for</span>A short list with one clear first pick, an owner and a review rule.</div><div><span class="sh-lab">Files</span><div class="sh-files"><span class="sh-none">No file needed</span></div></div></div></section>
+<div class="sheet-foot"><a class="ghost-btn" href="coded-rsm-ai-automation-day-2.html">Back to Day 2 <span class="arr">→</span></a></div></div></div></main><footer class="foot-mini"><div class="wrap"><div class="foot-row"><div class="f-lockup"><span class="lk"><img class="coded-logo" src="coded-rsm-ai-automation-coded-logo.png" alt="CODED" width="320" height="120"><span class="x">×</span><span class="client-name">RSM <span>Albazie</span></span></span></div><span class="copy">© 2026 CODED · Kuwait. All sample files are fictional, made for training.</span></div></div></footer><script>document.querySelectorAll('.sh-copy').forEach(function(b){b.addEventListener('click',function(){var pre=b.parentElement.querySelector('pre');var t=pre.innerText;
+function ok(){b.textContent='COPIED';b.classList.add('done');setTimeout(function(){b.textContent='COPY';b.classList.remove('done')},1600)}
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(ok,function(){fb()})}else fb();
+function fb(){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');ok()}catch(e){}document.body.removeChild(a)}})});</script></body></html>

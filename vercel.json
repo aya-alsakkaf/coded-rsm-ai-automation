@@ -1,0 +1,99 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/coded-rsm-ai-automation",
+      "permanent": false
+    },
+    {
+      "source": "/pre",
+      "destination": "/coded-rsm-ai-automation",
+      "permanent": false
+    },
+    {
+      "source": "/post",
+      "destination": "/coded-rsm-ai-automation",
+      "permanent": false
+    },
+    {
+      "source": "/survey",
+      "destination": "/coded-rsm-ai-automation",
+      "permanent": false
+    },
+    {
+      "source": "/slides1",
+      "destination": "/coded-rsm-ai-automation-day-1-deck",
+      "permanent": false
+    },
+    {
+      "source": "/prompts1",
+      "destination": "/coded-rsm-ai-automation-prompt-sheet-day-1",
+      "permanent": false
+    },
+    {
+      "source": "/day1",
+      "destination": "/coded-rsm-ai-automation-day-1",
+      "permanent": false
+    },
+    {
+      "source": "/slides2",
+      "destination": "/coded-rsm-ai-automation-day-2-deck",
+      "permanent": false
+    },
+    {
+      "source": "/prompts2",
+      "destination": "/coded-rsm-ai-automation-prompt-sheet-day-2",
+      "permanent": false
+    },
+    {
+      "source": "/day2",
+      "destination": "/coded-rsm-ai-automation-day-2",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/staff",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        }
+      ]
+    },
+    {
+      "source": "/staff/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        }
+      ]
+    }
+  ]
+}

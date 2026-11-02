@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en" data-client="rsm">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>Day 1 · Designing AI Agents for Real Work · AI Innovation and Automation · CODED · Staff</title><link rel="icon" href="../coded-rsm-ai-automation-favicon.png">
+<style>/* CODED deck engine · RSM Albazie workshop. Playbook grammar: navy ground that slowly turns, one accent,
+   fixed wordmark top-left, section-grouped progress at the bottom. Manrope + Space Mono. Tokens only below the root. */
+@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url(../coded-rsm-ai-automation-font-manrope.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url(../coded-rsm-ai-automation-font-space-mono-400.woff2) format('woff2')}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url(../coded-rsm-ai-automation-font-space-mono-700.woff2) format('woff2')}
+html[data-client="rsm"]{
+  --base:#00112F;--deep:#0B1A33;--navy:#14243F;--card:#0E1F3D;
+  --ink:#F3F6FB;--ink-dim:#AFBACB;--ink-faint:#8693A8;
+  --cd-accent:#6F9CE8;--cd-accent-bright:#8FB3F0;--cd-accent-soft:#9FC0F5;--cd-accent-deep:#2F74D6;
+  --cd-accent-ink:#FFFFFF;--cd-accent-dark:#004AA3;--cd-accent-page:#E3ECFB;
+  --client:#009CDE;
+  --ok:#5AD0A0;--ok-bg:rgba(55,160,106,.14);--bad:#FF8A8A;--bad-line:#F84B4B;--bad-bg:rgba(248,75,75,.12);
+  --amber:#E2C27F;--amber-bg:rgba(200,154,69,.14);
+  --line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.16);
+  --glass:radial-gradient(120% 70% at 0% 0%,rgba(255,255,255,.12),transparent 55%),linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.03) 48%,rgba(255,255,255,.055));
+  --glass-edge:rgba(255,255,255,.16);
+  --glass-hi:inset 0 1px 0 rgba(255,255,255,.28);
+  --cd-font-sans:'Manrope',system-ui,-apple-system,"Segoe UI",sans-serif;--cd-font-mono:'Space Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--base);color:var(--ink);font-family:var(--cd-font-sans);-webkit-font-smoothing:antialiased;overflow:hidden}
+body::before{content:"";position:fixed;inset:-10%;z-index:0;pointer-events:none;
+  background:radial-gradient(900px 620px at 88% 4%,rgba(47,116,214,.30),transparent 62%),
+             radial-gradient(1100px 820px at -6% 40%,rgba(0,74,163,.48),transparent 62%),
+             radial-gradient(900px 640px at 30% 108%,rgba(0,74,163,.40),transparent 62%),
+             radial-gradient(40vmax 40vmax at 84% 60%,rgba(111,156,232,.12),transparent 70%);
+  animation:dkturn 46s ease-in-out infinite alternate}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.45;
+  background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+  background-size:56px 56px;-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 25%,transparent 80%);mask-image:radial-gradient(120% 90% at 50% 0%,#000 25%,transparent 80%)}
+@keyframes dkturn{from{transform:translate3d(0,0,0) rotate(0deg) scale(1)}to{transform:translate3d(-3%,2%,0) rotate(4deg) scale(1.06)}}
+@media (prefers-reduced-motion:reduce){body::before{animation:none}}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--cd-accent);outline-offset:3px;border-radius:6px}
+.mono{font-family:var(--cd-font-mono)}
+
+/* ── chrome ─────────────────────────────── */
+.dk-top{position:fixed;top:0;left:0;right:0;z-index:30;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 clamp(14px,3vw,36px);
+  background:linear-gradient(180deg,rgba(0,10,31,.62),rgba(0,10,31,0))}
+.dk-brand{display:flex;align-items:center;gap:16px;min-width:0}
+.dk-brand img{height:26px;width:auto;display:block}
+.dk-crumb{font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dk-crumb b{color:var(--ink-dim);font-weight:400}
+.dk-daypill{flex:none;font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cd-accent-soft);padding:6px 12px;border:1px solid rgba(111,156,232,.45);border-radius:999px;background:rgba(47,116,214,.12)}
+.dk-daypill:hover{background:rgba(47,116,214,.24)}
+.dk-tools{display:flex;gap:8px;flex:none}
+.dk-ic{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-2);background:rgba(255,255,255,.04);color:var(--ink-dim);font-size:15px;line-height:1}
+.dk-ic:hover{color:var(--ink);border-color:var(--cd-accent)}
+.dk-ic svg{width:16px;height:16px}
+.dk-bot{position:fixed;left:0;right:0;bottom:0;z-index:30;height:56px;display:flex;align-items:center;gap:18px;padding:0 clamp(14px,3vw,36px);
+  background:linear-gradient(0deg,rgba(0,10,31,.66),rgba(0,10,31,0))}
+.dk-count{flex:none;font-family:var(--cd-font-mono);font-size:12px;color:var(--ink-faint);min-width:64px}
+.dk-count b{color:var(--ink);font-weight:700}
+.dk-prog{flex:1;display:flex;gap:6px;min-width:0}
+.dk-sec{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px;text-align:left;padding:4px 0}
+.dk-rail{display:block;height:3px;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden}
+.dk-fill{display:block;height:100%;width:0;background:var(--cd-accent);transition:width .35s ease}
+.dk-lbl{font-family:var(--cd-font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dk-sec.now .dk-lbl{color:var(--ink)}
+.dk-nav{flex:none;display:flex;gap:6px}
+.dk-nav button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line-2);color:var(--ink-dim);background:rgba(255,255,255,.04)}
+.dk-nav button:hover{color:var(--ink);border-color:var(--cd-accent)}
+
+/* ── slides ─────────────────────────────── */
+.dk-deck{position:fixed;inset:0;z-index:1}
+.dk-slide{position:absolute;left:0;right:0;top:64px;bottom:56px;display:flex;align-items:center;justify-content:center;padding:0 clamp(18px,5vw,84px);
+  opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.7,.2,1),visibility .45s}
+.dk-slide.on{opacity:1;visibility:visible;transform:none}
+.dk-wrap{width:100%;max-width:1280px;max-height:100%;overflow:auto;padding:10px 4px 14px;scrollbar-width:thin}
+.dk-slide.on .dk-fit>*{animation:dkrise .6s cubic-bezier(.2,.7,.2,1) both}
+.dk-slide.on .dk-fit>*:nth-child(2){animation-delay:.06s}.dk-slide.on .dk-fit>*:nth-child(3){animation-delay:.12s}
+.dk-slide.on .dk-fit>*:nth-child(4){animation-delay:.18s}.dk-slide.on .dk-fit>*:nth-child(5){animation-delay:.24s}.dk-slide.on .dk-fit>*:nth-child(n+6){animation-delay:.3s}
+@keyframes dkrise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.dk-slide,.dk-slide.on .dk-fit>*{animation:none;transition:none}}
+
+.dk-kicker{display:flex;align-items:center;gap:12px;font-family:var(--cd-font-mono);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--cd-accent-soft);margin-bottom:16px}
+.dk-kicker::before{content:"";width:28px;height:1px;background:var(--cd-accent)}
+.dk-h{font-size:clamp(30px,4.2vw,58px);font-weight:800;letter-spacing:-.03em;line-height:1.04;max-width:22ch}
+.dk-h em{font-style:normal;color:var(--cd-accent);display:block}
+.dk-h.one em{display:inline}
+.dk-lede{margin-top:18px;max-width:62ch;font-size:clamp(15px,1.45vw,20px);line-height:1.55;color:var(--ink-dim)}
+.dk-foot{margin-top:22px;padding:12px 16px;border-left:2px solid var(--cd-accent);background:rgba(47,116,214,.09);border-radius:0 12px 12px 0;font-size:clamp(14px,1.2vw,17px);line-height:1.5;color:var(--ink);max-width:90ch}
+.dk-glass{background:var(--glass);border:1px solid var(--glass-edge);box-shadow:var(--glass-hi),0 30px 80px -40px rgba(0,0,0,.95);border-radius:18px;-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%)}
+
+/* cover */
+.rsm-cover{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+.rsm-cover .meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--cd-font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:26px}
+.rsm-cover h1{font-size:clamp(36px,5.2vw,74px);font-weight:800;letter-spacing:-.035em;line-height:1.02}
+.rsm-cover .sub{margin-top:14px;font-size:clamp(18px,2vw,28px);font-weight:700;color:var(--cd-accent)}
+.rsm-cover .lede{margin-top:16px;max-width:46ch;font-size:clamp(15px,1.4vw,19px);line-height:1.55;color:var(--ink-dim)}
+.rsm-cover .wait{margin-top:28px;display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.04);font-size:13px;color:var(--ink-dim)}
+.rsm-cover .wait i{width:7px;height:7px;border-radius:50%;background:var(--cd-accent);box-shadow:0 0 12px var(--cd-accent);animation:dkpulse 2.4s ease-in-out infinite}
+@keyframes dkpulse{0%,100%{opacity:1}50%{opacity:.4}}
+.rsm-cover .hint{margin-top:22px;font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.rsm-lock{justify-self:center;display:flex;flex-direction:column;align-items:center;gap:14px;padding:34px 40px;border-radius:22px}
+.rsm-lock img{height:var(--lh,clamp(48px,5vw,84px));width:auto}
+.rsm-lock .x{font-size:20px;color:var(--ink-faint);font-weight:300}
+.rsm-client{font-family:var(--cd-font-sans);font-weight:800;letter-spacing:-.01em;font-size:clamp(22px,2.4vw,34px);color:#fff}
+.rsm-client span{color:var(--client)}
+
+/* outcomes / lists */
+.rsm-list{list-style:none;margin-top:26px;display:grid;gap:12px;max-width:980px}
+.rsm-list li{display:flex;gap:14px;align-items:flex-start;padding:14px 18px;font-size:clamp(15px,1.35vw,19px);line-height:1.45}
+.rsm-list .n{flex:none;font-family:var(--cd-font-mono);font-size:13px;font-weight:700;color:var(--cd-accent-soft);padding-top:3px;min-width:24px}
+
+/* roadmap */
+.rsm-road{display:grid;grid-template-columns:1fr 1.05fr;gap:30px;align-items:start;margin-top:8px}
+.rsm-story{display:grid;gap:12px;margin-top:22px}
+.rsm-story div{padding:14px 18px}
+.rsm-story b{display:block;font-size:17px;margin-bottom:4px}
+.rsm-story span{font-size:15px;line-height:1.5;color:var(--ink-dim)}
+.rsm-ros{list-style:none;padding:14px 18px}
+.rsm-ros li{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.rsm-ros li:last-child{border-bottom:0}
+.rsm-ros .t{font-family:var(--cd-font-mono);font-size:12px;color:var(--ink-faint);padding-top:2px}
+.rsm-ros li.brk{color:var(--ink-faint)}
+
+/* section */
+.rsm-section .dk-h{font-size:clamp(34px,5vw,70px);max-width:20ch}
+.rsm-section .num{font-family:var(--cd-font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cd-accent-soft)}
+
+/* cards */
+.rsm-cards{display:grid;gap:16px;margin-top:26px}
+.rsm-cards.c2{grid-template-columns:repeat(2,minmax(0,1fr))}.rsm-cards.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.rsm-cards.c4{grid-template-columns:repeat(4,minmax(0,1fr))}.rsm-cards.c5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.rsm-card{padding:20px 20px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.rsm-card .k{font-family:var(--cd-font-mono);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cd-accent-soft)}
+.rsm-card h3{font-size:clamp(17px,1.55vw,22px);font-weight:800;letter-spacing:-.01em;line-height:1.2}
+.rsm-card p{font-size:clamp(13.5px,1.15vw,16px);line-height:1.5;color:var(--ink-dim)}
+.rsm-cards.big .rsm-card{padding:26px 24px}
+.rsm-cards.big .rsm-card .k{font-size:15px;color:var(--cd-accent)}
+.rsm-cards.big .rsm-card h3{font-size:clamp(20px,2vw,28px)}
+
+/* compare */
+.rsm-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.rsm-compare>div{padding:18px 22px}
+.rsm-compare h3{font-family:var(--cd-font-mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--cd-accent-soft);margin-bottom:10px}
+.rsm-compare ul{list-style:none;display:grid;gap:8px}
+.rsm-compare li{display:flex;gap:10px;font-size:clamp(14.5px,1.25vw,18px);line-height:1.4}
+.rsm-compare li::before{content:"";flex:none;width:7px;height:7px;margin-top:.5em;border-radius:50%;background:var(--cd-accent)}
+
+/* opener */
+.rsm-ws{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.rsm-chat{padding:16px 16px 14px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.rsm-chat .hd{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.rsm-chat .hd b{font-size:14px}
+.rsm-tag{font-family:var(--cd-font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid}
+.rsm-tag.weak{color:var(--bad);border-color:rgba(248,75,75,.5)}.rsm-tag.strong{color:var(--ok);border-color:rgba(55,160,106,.55)}
+.rsm-msg{align-self:flex-end;max-width:88%;padding:10px 14px;border-radius:14px 14px 4px 14px;background:rgba(47,116,214,.22);border:1px solid rgba(111,156,232,.35);font-size:13.5px;line-height:1.45}
+.rsm-msg .file{display:inline-block;margin-top:6px;font-family:var(--cd-font-mono);font-size:11px;color:var(--cd-accent-soft)}
+.rsm-msg.code{font-family:var(--cd-font-mono);font-size:11.5px;letter-spacing:.06em}
+.rsm-reply{font-size:13.5px;line-height:1.55;color:var(--ink-dim);display:grid;gap:8px}
+.rsm-wait{font-family:var(--cd-font-mono);font-size:11.5px;color:var(--ink-faint)}
+[data-at]{transition:opacity .35s ease,transform .35s ease}
+.dk-slide [data-at]:not(.on){opacity:0;transform:translateY(6px);pointer-events:none}
+.dk-slide [data-at].ghost:not(.on){opacity:.18;transform:none}
+.rsm-res{width:100%;border-collapse:collapse;font-size:12.5px}
+.rsm-res th{text-align:left;font-family:var(--cd-font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);padding:5px 6px;border-bottom:1px solid var(--line-2)}
+.rsm-res td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.rsm-st{font-family:var(--cd-font-mono);font-size:11px;font-weight:700}
+.rsm-st.Expired,.rsm-st.Missing,.rsm-st.Mismatch{color:var(--bad)}.rsm-st.Present,.rsm-st.Match{color:var(--ok)}
+.rsm-flags{list-style:none;display:grid;gap:4px;font-size:12.5px;color:var(--ink)}
+.rsm-flags li::before{content:"Flag · ";font-family:var(--cd-font-mono);font-size:10.5px;color:var(--bad)}
+.rsm-last{font-weight:800;font-size:14px;color:var(--bad)}
+.rsm-step-btn{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-family:var(--cd-font-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;padding:8px 14px;border-radius:999px;border:1px solid rgba(111,156,232,.5);color:var(--cd-accent-soft);background:rgba(47,116,214,.12)}
+.rsm-step-btn:hover{background:rgba(47,116,214,.24)}
+.rsm-step-btn[disabled]{opacity:.35;cursor:default}
+
+/* llm */
+.rsm-llm{margin-top:18px;display:grid;gap:10px;max-width:980px}
+.rsm-sent{padding:14px 20px;font-size:clamp(18px,1.9vw,26px);font-weight:600;line-height:1.35}
+.rsm-sent .cursor{display:inline-block;width:.55em;height:1em;vertical-align:-.12em;margin-left:6px;background:var(--cd-accent);animation:dkpulse 1.1s steps(2) infinite}
+.rsm-cands{display:grid;gap:6px}
+.rsm-cand{display:grid;grid-template-columns:minmax(0,1fr) 220px 56px;gap:14px;align-items:center;padding:7px 16px;border-radius:12px;border:1px solid var(--line-2);background:rgba(255,255,255,.03)}
+.rsm-cand b{font-size:clamp(14.5px,1.3vw,18px);font-weight:600}
+.rsm-bar{height:8px;border-radius:8px;background:rgba(255,255,255,.08);overflow:hidden}
+.rsm-bar i{display:block;height:100%;width:var(--p);background:linear-gradient(90deg,var(--cd-accent-deep),var(--cd-accent))}
+.rsm-cand .p{font-family:var(--cd-font-mono);font-size:13px;color:var(--ink-dim);text-align:right}
+.rsm-fileans{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:10px 18px;border-radius:14px;border:1px solid rgba(55,160,106,.55);background:var(--ok-bg)}
+.rsm-fileans .src{font-family:var(--cd-font-mono);font-size:12px;color:var(--ink-dim)}
+.rsm-fileans b{font-size:clamp(16px,1.6vw,22px);color:var(--ok)}
+.rsm-rule{padding:12px 16px;border-radius:12px;border:1px dashed rgba(111,156,232,.55);font-family:var(--cd-font-mono);font-size:13px;color:var(--cd-accent-soft)}
+
+/* player */
+.rsm-player{display:grid;grid-template-columns:200px minmax(0,1fr);gap:18px;margin-top:20px}
+.rsm-steps{list-style:none;display:grid;gap:6px;align-content:start}
+.rsm-steps li{font-family:var(--cd-font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;border-radius:10px;border:1px solid var(--line);color:var(--ink-faint);transition:all .3s}
+.rsm-steps li.on{color:var(--ink-dim);border-color:var(--line-2)}
+.rsm-steps li.now{color:#fff;border-color:var(--cd-accent);background:rgba(47,116,214,.2)}
+.rsm-steps li[data-at]:not(.on){opacity:1;transform:none}
+.rsm-pane{padding:16px 18px;display:grid;gap:10px;align-content:start;min-height:320px}
+.rsm-ins{font-family:var(--cd-font-mono);font-size:12px;line-height:1.55;white-space:pre-wrap;color:var(--ink)}
+.rsm-ins .part{display:block;padding:6px 10px;border-radius:8px;border-left:2px solid transparent}
+.rsm-ins .part.now{border-left-color:var(--cd-accent);background:rgba(47,116,214,.12)}
+.rsm-pane .send{font-family:var(--cd-font-mono);font-size:11.5px;color:var(--ok)}
+.rsm-decision{padding:12px 14px;border-radius:12px;border:1px solid rgba(111,156,232,.5);background:rgba(47,116,214,.12);font-size:14.5px;font-weight:600}
+.rsm-player .res-only{display:none}
+.rsm-player.showres .res-only{display:grid}.rsm-player.showres .ins-only{display:none}
+
+/* weak vs strong rows */
+.rsm-parts{margin-top:22px;display:grid;gap:8px}
+.rsm-parts .row{display:grid;grid-template-columns:130px 1fr 1.6fr;gap:12px;align-items:stretch}
+.rsm-parts .lab{font-family:var(--cd-font-mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cd-accent-soft);padding:12px 4px}
+.rsm-parts .w,.rsm-parts .s{padding:10px 14px;border-radius:12px;font-size:clamp(13.5px,1.15vw,16px);line-height:1.45}
+.rsm-parts .w{border:1px solid rgba(248,75,75,.4);background:var(--bad-bg);color:var(--ink-dim)}
+.rsm-parts .s{border:1px solid rgba(55,160,106,.45);background:var(--ok-bg)}
+.rsm-parts .hdr .w,.rsm-parts .hdr .s{background:none;border:0;padding:0 14px;font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+
+/* sort */
+.rsm-sort{margin-top:18px;display:grid;gap:14px}
+.rsm-pool{display:flex;flex-wrap:wrap;gap:8px;min-height:44px}
+.rsm-chip{padding:9px 14px;border-radius:12px;border:1px solid var(--line-2);background:rgba(255,255,255,.05);font-size:clamp(13px,1.1vw,15.5px);line-height:1.35;text-align:left;transition:all .2s}
+.rsm-chip:hover{border-color:var(--cd-accent)}
+.rsm-chip.sel{border-color:var(--cd-accent);background:rgba(47,116,214,.25);box-shadow:0 0 0 3px rgba(111,156,232,.2)}
+.rsm-chip.right{border-color:rgba(55,160,106,.7);background:var(--ok-bg)}
+.rsm-chip.wrong{border-color:rgba(248,75,75,.7);background:var(--bad-bg)}
+.rsm-chip.right::after{content:" · right";font-family:var(--cd-font-mono);font-size:11px;color:var(--ok)}
+.rsm-chip.wrong::after{content:" · moved";font-family:var(--cd-font-mono);font-size:11px;color:var(--bad)}
+.rsm-bins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.rsm-bin{min-height:170px;padding:12px;border-radius:16px;border:1px dashed var(--line-2);display:flex;flex-direction:column;gap:8px;text-align:left;align-items:stretch}
+.rsm-bin>b{font-family:var(--cd-font-mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+.rsm-bin.g{border-color:rgba(55,160,106,.55)}.rsm-bin.g>b{color:var(--ok)}
+.rsm-bin.a{border-color:rgba(200,154,69,.6)}.rsm-bin.a>b{color:var(--amber)}
+.rsm-bin.r{border-color:rgba(248,75,75,.55)}.rsm-bin.r>b{color:var(--bad)}
+.rsm-bin .in{display:flex;flex-direction:column;gap:6px}
+.rsm-bin:hover{background:rgba(255,255,255,.03)}
+
+/* check */
+.rsm-check{margin-top:12px;max-width:1040px}
+.rsm-check .q{font-size:clamp(22px,2.6vw,36px);font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.rsm-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
+.rsm-opt{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;border:1px solid var(--line-2);background:rgba(255,255,255,.04);font-size:clamp(14.5px,1.3vw,18px);line-height:1.4;text-align:left}
+.rsm-opt .l{flex:none;font-family:var(--cd-font-mono);font-weight:700;color:var(--cd-accent-soft)}
+.rsm-opt:hover{border-color:var(--cd-accent)}
+.rsm-opt.right{border-color:rgba(55,160,106,.75);background:var(--ok-bg)}
+.rsm-opt.wrong{border-color:rgba(248,75,75,.75);background:var(--bad-bg)}
+.rsm-why{margin-top:16px}
+
+/* exercise */
+.rsm-ex{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:26px;align-items:start}
+.rsm-band{display:inline-flex;gap:10px;align-items:center;font-family:var(--cd-font-mono);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;padding:7px 14px;border-radius:999px;background:linear-gradient(135deg,var(--cd-accent-deep),var(--cd-accent-dark));margin-bottom:16px}
+.rsm-ex h2{font-size:clamp(26px,3.3vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.06}
+.rsm-where{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 4px}
+.rsm-where span{font-family:var(--cd-font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--ink-faint)}
+.rsm-where span.lit{color:#fff;border-color:var(--cd-accent);background:rgba(47,116,214,.25)}
+.rsm-ex ol{margin-top:14px;padding-left:0;list-style:none;display:grid;gap:10px;counter-reset:s}
+.rsm-ex ol li{counter-increment:s;display:flex;gap:12px;font-size:clamp(14.5px,1.3vw,18px);line-height:1.45}
+.rsm-ex ol li::before{content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--cd-font-mono);font-size:12px;font-weight:700;background:rgba(47,116,214,.22);color:var(--cd-accent-soft)}
+.rsm-side{display:grid;gap:12px}
+.rsm-look{padding:16px 18px}
+.rsm-look b{display:block;font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cd-accent-soft);margin-bottom:6px}
+.rsm-look p{font-size:15px;line-height:1.5}
+.rsm-files{display:flex;flex-wrap:wrap;gap:6px}
+.rsm-files a,.rsm-files span{font-family:var(--cd-font-mono);font-size:11.5px;color:var(--cd-accent-soft);padding:5px 10px;border-radius:10px;border:1px solid rgba(111,156,232,.4);overflow-wrap:anywhere}
+.rsm-tool{font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+
+/* timer */
+.rsm-timer{display:inline-flex;align-items:center;gap:12px;padding:12px 18px;border-radius:16px;border:1px solid rgba(111,156,232,.5);background:rgba(47,116,214,.14);font-family:var(--cd-font-mono)}
+.rsm-timer .t{font-size:clamp(28px,3vw,44px);font-weight:700;letter-spacing:-.02em;color:#fff;font-variant-numeric:tabular-nums}
+.rsm-timer .s{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cd-accent-soft)}
+.rsm-timer.run{border-color:var(--cd-accent);box-shadow:0 0 0 4px rgba(111,156,232,.15)}
+.rsm-timer.warn .t{color:var(--amber)}
+.rsm-timer.done{border-color:var(--bad-line);animation:dkpulse 1s ease-in-out infinite}
+.rsm-timer.done .t{color:var(--bad)}
+.rsm-tctl{display:flex;gap:6px;margin-top:8px}
+.rsm-tctl button{font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink-dim)}
+.rsm-tctl button:hover{color:#fff;border-color:var(--cd-accent)}
+
+/* demo, steps, showcase */
+.rsm-demo{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px;align-items:start;margin-top:20px}
+.rsm-demo ol{list-style:none;display:grid;gap:10px;counter-reset:s}
+.rsm-demo li{counter-increment:s;display:flex;gap:14px;padding:12px 16px;font-size:clamp(14.5px,1.3vw,18px);line-height:1.45}
+.rsm-demo li::before{content:counter(s);flex:none;font-family:var(--cd-font-mono);font-weight:700;color:var(--cd-accent-soft)}
+.rsm-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:26px}
+.rsm-strip div{position:relative;padding:18px 16px;min-height:118px;display:flex;flex-direction:column;gap:8px}
+.rsm-strip .n{font-family:var(--cd-font-mono);font-size:12px;color:var(--cd-accent-soft)}
+.rsm-strip b{font-size:clamp(15px,1.4vw,19px);line-height:1.3}
+
+/* flow */
+.rsm-flow{display:grid;gap:10px;margin-top:26px}
+.rsm-flow.n5{grid-template-columns:repeat(5,minmax(0,1fr))}.rsm-flow.n6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.rsm-node{position:relative;padding:16px 14px;border-radius:16px;border:1px solid var(--line-2);background:rgba(255,255,255,.04);display:flex;flex-direction:column;gap:6px;min-width:0;transition:all .35s}
+.rsm-node .k{font-family:var(--cd-font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+.rsm-node b{font-size:clamp(14.5px,1.35vw,19px);line-height:1.25}
+.rsm-node p{font-size:clamp(12.5px,1.05vw,15px);line-height:1.45;color:var(--ink-dim)}
+.rsm-node::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--ink-faint);z-index:2}
+.rsm-node:last-child::after{display:none}
+.rsm-node.on{border-color:var(--cd-accent);background:rgba(47,116,214,.18);box-shadow:0 0 0 3px rgba(111,156,232,.14)}
+.rsm-node.on .k{color:var(--cd-accent-soft)}
+.rsm-flow .rsm-node[data-at]:not(.on){opacity:.4;transform:none}
+
+/* code, fields, table */
+.rsm-code{margin-top:22px;display:grid;gap:10px;max-width:1080px}
+.rsm-code div{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;align-items:center;padding:14px 18px}
+.rsm-code code,.rsm-json{font-family:var(--cd-font-mono);font-size:clamp(12.5px,1.15vw,15.5px);color:var(--cd-accent-soft);overflow-wrap:anywhere}
+.rsm-code span{font-size:clamp(14px,1.2vw,17px);color:var(--ink-dim)}
+.rsm-fields{display:grid;grid-template-columns:1fr 1.2fr;gap:16px;margin-top:22px}
+.rsm-fields>div{padding:16px 18px}
+.rsm-fields h3{font-family:var(--cd-font-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.rsm-fields .bad h3{color:var(--bad)}.rsm-fields .good h3{color:var(--ok)}
+.rsm-fields p{font-size:15.5px;line-height:1.55;color:var(--ink-dim)}
+.rsm-json{white-space:pre-wrap;font-size:12.5px;line-height:1.5;color:var(--ink)}
+.rsm-tbl{width:100%;border-collapse:collapse;margin-top:22px;font-size:clamp(14px,1.25vw,17px)}
+.rsm-tbl th{text-align:left;font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);padding:10px 12px;border-bottom:1px solid var(--line-2)}
+.rsm-tbl td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+.rsm-tbl td:first-child{font-weight:700}
+.rsm-tbl td.mono{font-family:var(--cd-font-mono);color:var(--cd-accent-soft)}
+
+/* agents */
+.rsm-agents{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:24px}
+.rsm-agent{padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.rsm-agent .k{font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cd-accent-soft)}
+.rsm-agent h3{font-size:clamp(17px,1.6vw,22px);font-weight:800;line-height:1.2}
+.rsm-agent p{font-size:14px;line-height:1.5;color:var(--ink-dim)}
+.rsm-agent .f{margin-top:auto;font-family:var(--cd-font-mono);font-size:11px;color:var(--ink-faint);overflow-wrap:anywhere}
+
+/* map + qr */
+.rsm-map{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:34px;align-items:center}
+.rsm-qrs{display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.rsm-qr{padding:18px 18px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}
+.rsm-qr .cap{font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+.rsm-qr .code{background:#fff;padding:12px;border-radius:14px;line-height:0}
+.rsm-qr .code svg{width:clamp(150px,15vw,230px);height:auto;display:block}
+.rsm-qr b{font-family:var(--cd-font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cd-accent-soft)}
+.rsm-qr .pending{width:clamp(150px,15vw,230px);aspect-ratio:1;display:grid;place-items:center;padding:16px;border-radius:14px;border:1px dashed var(--line-2);font-family:var(--cd-font-mono);font-size:12px;color:var(--ink-faint);line-height:1.4}
+.rsm-then{margin-top:12px;font-size:15px;color:var(--ink-dim)}
+
+/* end */
+.rsm-end .dk-h{font-size:clamp(34px,4.8vw,66px)}
+.rsm-end ul{list-style:none;margin-top:24px;display:grid;gap:8px}
+.rsm-end li{font-size:clamp(16px,1.6vw,22px);line-height:1.4;color:var(--ink-dim)}
+.rsm-end li::before{content:"· ";color:var(--cd-accent)}
+.rsm-end .next{margin-top:24px;font-family:var(--cd-font-mono);font-size:13px;letter-spacing:.06em;color:var(--cd-accent-soft)}
+
+/* checklist */
+.rsm-checklist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;max-width:1080px}
+.rsm-checklist li{display:flex;gap:12px;align-items:flex-start;padding:16px 18px;font-size:clamp(15px,1.35vw,19px);line-height:1.4}
+.rsm-checklist svg{flex:none;width:22px;height:22px;color:var(--ok);margin-top:2px}
+
+/* overlays: notes, menu, break */
+#dk-notes{position:fixed;left:clamp(14px,3vw,36px);right:clamp(14px,3vw,36px);bottom:64px;z-index:40;max-height:34vh;overflow:auto;padding:14px 18px;border-radius:14px;
+  background:rgba(0,10,31,.92);border:1px solid rgba(111,156,232,.45);font-size:15px;line-height:1.55;display:none}
+#dk-notes.on{display:block}
+#dk-notes .k{display:block;font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cd-accent-soft);margin-bottom:6px}
+#dk-menu{position:fixed;inset:0;z-index:50;background:rgba(0,10,31,.94);display:none;overflow:auto;padding:80px clamp(16px,4vw,60px) 40px}
+#dk-menu.on{display:block}
+#dk-menu .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;max-width:1280px;margin:0 auto}
+#dk-menu h5{font-family:var(--cd-font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cd-accent-soft);margin-bottom:8px}
+#dk-menu button{display:flex;gap:10px;width:100%;text-align:left;padding:7px 10px;border-radius:9px;font-size:14px;color:var(--ink-dim)}
+#dk-menu button:hover,#dk-menu button.now{background:rgba(47,116,214,.2);color:#fff}
+#dk-menu button span{font-family:var(--cd-font-mono);font-size:12px;color:var(--ink-faint);flex:none}
+#dk-break{position:fixed;inset:0;z-index:60;display:none;place-items:center;background:radial-gradient(800px 600px at 50% 40%,rgba(47,116,214,.35),transparent 70%),rgba(0,10,31,.96);text-align:center;padding:20px}
+#dk-break.on{display:grid}
+#dk-break .cup{font-size:54px}
+#dk-break h2{font-size:clamp(30px,4vw,56px);font-weight:800;letter-spacing:-.03em;margin-top:8px}
+#dk-break .clock{font-family:var(--cd-font-mono);font-size:clamp(64px,10vw,140px);font-weight:700;letter-spacing:-.03em;color:#fff;margin-top:10px;font-variant-numeric:tabular-nums}
+#dk-break .back{font-family:var(--cd-font-mono);font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--cd-accent-soft);margin-top:6px}
+#dk-break .ctl{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+#dk-break .ctl button{font-family:var(--cd-font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:9px 14px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink-dim)}
+#dk-break .ctl button:hover{color:#fff;border-color:var(--cd-accent)}
+#dk-break.done .clock{color:var(--amber)}
+html.dk-ring body::before{filter:brightness(1.4)}
+
+/* ── narrow screens: one column, slides scroll ─────────────────────────────── */
+@media (max-width:980px){
+  .rsm-cards.c4,.rsm-cards.c5,.rsm-agents{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rsm-flow.n5,.rsm-flow.n6{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .rsm-node::after{display:none}
+  .rsm-strip{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  html,body{overflow:hidden}
+  .dk-top{height:56px}.dk-crumb{display:none}.dk-tools .dk-ic.opt{display:none}
+  .dk-slide{top:56px;bottom:60px;align-items:flex-start;padding:0 16px}
+  .dk-wrap{max-height:100%;padding:8px 0 24px}
+  .dk-lbl{display:none}.dk-nav button{width:40px;height:40px}
+  .rsm-cover,.rsm-road,.rsm-ws,.rsm-player,.rsm-ex,.rsm-demo,.rsm-map,.rsm-compare,.rsm-fields,.rsm-opts,.rsm-checklist,.rsm-code div{grid-template-columns:1fr}
+  .rsm-cards.c2,.rsm-cards.c3,.rsm-cards.c4,.rsm-cards.c5,.rsm-agents,.rsm-bins,.rsm-strip{grid-template-columns:1fr}
+  .rsm-flow.n5,.rsm-flow.n6{grid-template-columns:1fr}
+  .rsm-parts .row{grid-template-columns:1fr}.rsm-parts .hdr{display:none}
+  .rsm-cand{grid-template-columns:1fr 70px 46px}
+  .rsm-steps{grid-template-columns:repeat(4,minmax(0,1fr))}.rsm-steps li{font-size:10px;padding:6px;text-align:center}
+  .rsm-lock{padding:20px}
+  .rsm-ros li{grid-template-columns:78px 1fr}
+  .rsm-res{font-size:11.5px}
+}
+
+.k-llm .dk-foot{margin-top:12px}.k-llm .rsm-step-btn{margin-top:10px}
+.map-slot--live:not(:has(.map-qr)){grid-template-columns:1fr auto}
+.k-opener .dk-h{font-size:clamp(26px,3.2vw,46px);max-width:none}
+.k-opener .rsm-ws{margin-top:14px}
+.rsm-map:has(.rsm-qr+.rsm-qr){grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+.rsm-qrs:has(.rsm-qr+.rsm-qr){flex-wrap:nowrap;gap:12px}
+.rsm-qrs:has(.rsm-qr+.rsm-qr) .code svg,.rsm-qrs:has(.rsm-qr+.rsm-qr) .pending{width:clamp(120px,12vw,200px)}
+@media (max-width:760px){.rsm-qrs:has(.rsm-qr+.rsm-qr){flex-wrap:wrap}}
+</style></head>
+<body>
+<header class="dk-top"><div class="dk-brand"><img src="../coded-rsm-ai-automation-coded-logo.png" alt="CODED" width="320" height="120">
+<span class="dk-crumb">CODED Professionals · <b>RSM Albazie</b> · AI Innovation and Automation · Day 1 of 2</span>
+<a class="dk-daypill" href="../coded-rsm-ai-automation-day-1.html">← Day 1 page</a></div>
+<div class="dk-tools"><button class="dk-ic opt" id="dk-menu-btn" type="button" title="Slide menu (M)" aria-label="Slide menu"><svg class="" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+<button class="dk-ic" id="dk-bell" type="button" title="Ring the bell (B)" aria-label="Ring the bell"><svg class="" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg></button>
+<button class="dk-ic" id="dk-break-btn" type="button" title="Break clock" aria-label="Break clock">☕</button>
+<button class="dk-ic opt" id="dk-fs" type="button" title="Full screen (F)" aria-label="Full screen"><svg class="" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button></div></header>
+<main class="dk-deck"><section class="dk-slide k-cover" id="s1" data-sec="0" data-ch="Title" data-dur="60" data-notes="On screen as people arrive. Check that every laptop is signed in to Claude and that the practice files open. Start on time: the opener needs no setup from the room." aria-label="Slide 1"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-cover"><div><div class="meta"><span>CODED Professionals</span><span>RSM Albazie</span><span>Day 1 of 2</span><span>Sun 15 Nov 2026</span><span>08:30-16:30</span></div><h1>AI Innovation and Automation</h1><div class="sub">Day 1 · Designing AI Agents for Real Work</div><p class="lede">Find the task that eats your week. Design an agent for it. Build it in Claude.</p><div class="wait"><i></i>We'll begin shortly</div><div class="hint">Hands-on with Claude and n8n · press → to begin</div></div><div class="rsm-lock dk-glass"><img src="../coded-rsm-ai-automation-coded-logo.png" alt="CODED"><span class="x">×</span><span class="rsm-client"><span>RSM</span> Albazie</span></div></div></div></div></section><section class="dk-slide k-opener" id="s2" data-sec="0" data-ch="Opener · two instructions" data-dur="600" data-steps="2" data-notes="Press → to send the weak instruction, then → again for the designed one. Ask the room: which reply can you act on? Which one checked the license date? Do not explain the five parts yet; that is block 2. Fallback: prompts 1.1 and 1.2 run live in Claude with the same file." aria-label="Slide 2"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Opener · same file</div><h2 class="dk-h one">Same tool. Same file. <em>Two instructions.</em></h2><div class="rsm-ws">
+<div class="rsm-chat dk-glass"><div class="hd"><b>Claude</b><span class="rsm-tag weak">Weak instruction</span></div>
+<div class="rsm-msg">Check this KYC pack.<br><span class="file"><svg class="" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg> khiran-kyc-pack.pdf</span></div>
+<div class="rsm-reply" data-at="1"><p>Thanks for sharing the KYC pack for Khiran Logistics. Overall, the pack looks fairly complete.</p><p>It includes the commercial license, the articles of association, a shareholder register and a list of authorized signatories.</p><p>It is a good idea to make sure all documents are up to date and that the shareholders are verified.</p></div></div>
+<div class="rsm-chat dk-glass"><div class="hd"><b>Claude</b><span class="rsm-tag strong">Designed instruction</span></div>
+<div class="rsm-msg code">ROLE · STEPS · RULES · IF UNSURE · OUTPUT<br><span class="file"><svg class="" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg> khiran-kyc-pack.pdf</span></div>
+<div class="rsm-reply" data-at="2"><table class="rsm-res"><thead><tr><th>Required document</th><th>Status</th><th>Evidence</th><th>Note</th></tr></thead><tbody><tr><td>Commercial license</td><td><span class="rsm-st Expired">Expired</span></td><td>p. 1</td><td>Expired 30 Sep 2026</td></tr><tr><td>Articles of association</td><td><span class="rsm-st Present">Present</span></td><td>p. 2</td><td>Name differs from the license</td></tr><tr><td>Shareholder register</td><td><span class="rsm-st Present">Present</span></td><td>p. 3</td><td></td></tr><tr><td>ID copies (persons)</td><td><span class="rsm-st Missing">Missing</span></td><td>p. 5</td><td>No copy for one shareholder</td></tr><tr><td>Authorized signatory list</td><td><span class="rsm-st Present">Present</span></td><td>p. 4</td><td>One ID copy expires 20 Dec 2026</td></tr><tr><td>Company shareholder documents</td><td><span class="rsm-st Missing">Missing</span></td><td>p. 3</td><td>Khiran Holding Ltd: none in the pack</td></tr></tbody></table><ul class="rsm-flags"><li>4(a) Company shareholder registered outside Kuwait (p. 3)</li><li>4(e) Company name differs between the license (p. 1) and the articles (p. 2)</li></ul><div class="rsm-last">Not ready: 3 items to resolve</div></div></div></div>
+<div data-at="2"><p class="dk-foot">The weak reply says the pack looks fairly complete. The license expired six weeks ago.</p></div><button class="rsm-step-btn" type="button">Send →</button></div></div></section><section class="dk-slide k-outcomes" id="s3" data-sec="0" data-ch="Outcomes" data-dur="120" data-notes="Read the five lines fast. Point at the last one: we test before we trust." aria-label="Slide 3"><div class="dk-wrap"><div class="dk-fit"><h2 class="dk-h one">By the end of Day 1, you will be able to…</h2><ol class="rsm-list"><li class="dk-glass"><span class="n">01</span><span>Explain why an AI model can give a wrong date or number, and how a file and a clear instruction prevent it.</span></li><li class="dk-glass"><span class="n">02</span><span>Use four questions to find the tasks in audit and onboarding that are worth automating.</span></li><li class="dk-glass"><span class="n">03</span><span>Design an agent with a clear input, instruction and output.</span></li><li class="dk-glass"><span class="n">04</span><span>Build a working agent in a Claude Project and run it on a real case file.</span></li><li class="dk-glass"><span class="n">05</span><span>Test the agent with three cases and fix the instruction, not the answer.</span></li></ol></div></div></section><section class="dk-slide k-roadmap" id="s4" data-sec="0" data-ch="Roadmap" data-dur="180" data-notes="Make clear that the firm and both clients are fictional, and that no real client data enters any tool today. Show where the files are: the program site, Sample files." aria-label="Slide 4"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-road"><div><h2 class="dk-h">One firm. Two clients. <em>One agent each.</em></h2><div class="rsm-story"><div class="dk-glass"><b>Mirqab &amp; Co.</b><span>A fictional audit firm in Kuwait. Its policy, memo and templates are your knowledge files.</span></div><div class="dk-glass"><b>Khiran Logistics</b><span>A new client in onboarding. Is the KYC pack complete?</span></div><div class="dk-glass"><b>Abdali Foods</b><span>An audit client, year end 31 December 2025. Trial balance, invoices, field notes.</span></div></div><p class="dk-foot">Every file is made up. Practice safely here, then repeat it on your own work under the firm&#x27;s rules.</p></div><ul class="rsm-ros dk-glass"><li><span class="t">08:30</span><span>Opener: same file, two instructions</span></li><li><span class="t">08:45</span><span>MAP test (before)</span></li><li><span class="t">08:55</span><span>Reframing work</span></li><li class="brk"><span class="t">10:15</span><span>Break</span></li><li><span class="t">10:30</span><span>Agent Design Framework</span></li><li><span class="t">11:40</span><span>Use case selection</span></li><li class="brk"><span class="t">12:00</span><span>Lunch and Dhuhr prayer</span></li><li><span class="t">13:00</span><span>Build in Claude</span></li><li class="brk"><span class="t">14:15</span><span>Break</span></li><li><span class="t">14:30</span><span>Test and improve</span></li><li><span class="t">15:30</span><span>Safe use in an audit firm</span></li><li><span class="t">15:55</span><span>Show and close</span></li></ul></div></div></div></section><section class="dk-slide k-map" id="s5" data-sec="0" data-ch="MAP test · before" data-dur="600" data-notes="Start the timer. Walk the room and help with the QR code. Say again: no AI, no search, a guess is fine. Fallback: the short link /pre on the program site." aria-label="Slide 5"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-map"><div><div class="dk-kicker">MAP test · before</div><h2 class="dk-h">Scan the QR code. <em>10 minutes.</em></h2><p class="dk-lede">Same questions at the end of Day 2. Not graded. It measures what this program changes. Phone only, no AI.</p><div style="margin-top:22px"><div><button class="rsm-timer" type="button" data-minutes="10" aria-label="10 minute timer"><span class="t">10:00</span><span class="s">Start · pause</span></button><div class="rsm-tctl"><button type="button" data-tadd="60">+1 min</button><button type="button" data-tadd="-60">−1 min</button><button type="button" data-treset>Reset</button></div></div></div></div><div class="rsm-qrs"><div class="rsm-qr dk-glass"><span class="cap">Scan with your phone</span><div class="pending">The QR code appears here when the survey is published.</div><b>Pre-MAP test</b></div></div></div></div></div></section><section class="dk-slide k-section" id="s6" data-sec="1" data-ch="Block 1 · Reframing work" data-dur="120" data-notes="Ask: how much of your last week was judgment, and how much was moving information from one place to another? Take two answers." aria-label="Slide 6"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-section"><div class="dk-kicker">Block 1 · Reframing work</div><h2 class="dk-h">Most of the work is not the judgment. <em>It is the moving.</em></h2><p class="dk-lede">Reading, matching, copying, chasing. An agent can do the first pass.</p></div></div></div></section><section class="dk-slide k-llm" id="s7" data-sec="1" data-ch="How an LLM writes" data-dur="720" data-steps="3" data-notes="Press → three times: the guesses, then the file, then the rule. A large language model (LLM) predicts the next likely words. Every guess sounds sure. This is why we always give the file and a rule for what to do when the answer is not there." aria-label="Slide 7"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">How an AI model writes</div><h2 class="dk-h">It writes by guessing <em>the next word.</em></h2><div class="rsm-llm"><div class="rsm-sent dk-glass">Khiran Logistics&#x27; commercial license expires on<span class="cursor"></span></div>
+<div class="rsm-cands"><div class="rsm-cand" data-at="1"><b>31 December 2026</b><span class="rsm-bar"><i style="--p:100%"></i></span><span class="p">34%</span></div><div class="rsm-cand" data-at="1"><b>30 June 2027</b><span class="rsm-bar"><i style="--p:65%"></i></span><span class="p">22%</span></div><div class="rsm-cand" data-at="1"><b>15 March 2027</b><span class="rsm-bar"><i style="--p:50%"></i></span><span class="p">17%</span></div><div class="rsm-cand" data-at="1"><b>the date shown on the license</b><span class="rsm-bar"><i style="--p:26%"></i></span><span class="p">9%</span></div></div>
+<div class="rsm-fileans" data-at="2"><span class="src"><svg class="" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></svg> With the file · khiran-kyc-pack.pdf, page 1</span><b>30 September 2026</b></div>
+<div class="rsm-rule" data-at="3">With a rule · IF UNSURE: write "Not found". Never guess a date.</div></div>
+<div data-at="3"><p class="dk-foot">Without the file, it picks a likely date. With the file, it can read the date. With a rule, it says Not found instead of guessing.</p></div><button class="rsm-step-btn" type="button">Next step →</button></div></div></section><section class="dk-slide k-cards" id="s8" data-sec="1" data-ch="Chat, agent, workflow" data-dur="720" data-notes="Most people use step 1 only. Ask who has saved a prompt they reuse: that is the start of step 2." aria-label="Slide 8"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Three steps up</div><h2 class="dk-h">Chat, agent, workflow: <em>three steps up.</em></h2><div class="rsm-cards c3"><div class="rsm-card dk-glass"><span class="k">01 · Chat</span><h3>You ask. It answers.</h3><p>You paste the file and the request every time. Good for one question.</p></div><div class="rsm-card dk-glass"><span class="k">02 · Agent</span><h3>It knows the job.</h3><p>A fixed instruction, the rules it follows and a fixed output. You give it the case file.</p></div><div class="rsm-card dk-glass"><span class="k">03 · Workflow</span><h3>The work starts it.</h3><p>A form, an email or a new file starts the agent. The result lands where people work.</p></div></div><p class="dk-foot">Today: chat to agent. Tomorrow: agent to workflow.</p></div></div></section><section class="dk-slide k-compare" id="s9" data-sec="1" data-ch="Where the hours go" data-dur="780" data-notes="Ask each table to add one task that is not on the slide. Write two of them on the board for the sort that follows." aria-label="Slide 9"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Audit and onboarding</div><h2 class="dk-h">Where the hours go <em>in audit and onboarding.</em></h2><div class="rsm-compare"><div class="dk-glass"><h3>Audit</h3><ul><li>Vouching invoices to the sales listing</li><li>Reviewing trial balance movements</li><li>Matching bank confirmation replies</li><li>Chasing PBC (prepared by client) items</li><li>Writing up findings for the management letter</li></ul></div><div class="dk-glass"><h3>Onboarding</h3><ul><li>Collecting KYC documents</li><li>Checking expiry dates</li><li>Finding the beneficial owners</li><li>Comparing names across documents</li><li>Filling the client acceptance form</li></ul></div></div><p class="dk-foot">Most of this is reading, matching and copying. That is the part an agent can do first.</p></div></div></section><section class="dk-slide k-cards" id="s10" data-sec="1" data-ch="Four questions" data-dur="600" data-notes="Run one task from the board through the four questions out loud before the sort." aria-label="Slide 10"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">The task filter</div><h2 class="dk-h">Four questions find <em>a good candidate.</em></h2><div class="rsm-cards c4"><div class="rsm-card dk-glass"><span class="k">1</span><h3>Does it repeat?</h3><p>Weekly or more. A task you do once a year is not worth building for.</p></div><div class="rsm-card dk-glass"><span class="k">2</span><h3>Are the rules written down?</h3><p>A policy, a memo, a checklist. If the rules live in one head, start there.</p></div><div class="rsm-card dk-glass"><span class="k">3</span><h3>Is the input digital?</h3><p>A file, a table, an email. Paper first needs scanning.</p></div><div class="rsm-card dk-glass"><span class="k">4</span><h3>Can a reviewer check it in 2 minutes?</h3><p>A table or a list, not an essay.</p></div></div><p class="dk-foot">Four yes answers: automate. Two or three: assist. One or none: keep it human.</p></div></div></section><section class="dk-slide k-sort" id="s11" data-sec="1" data-ch="Card sort · tasks" data-dur="900" data-steps="1" data-notes="Let tables argue for one minute per card. Assist means AI drafts and a person finishes. Keep human means the judgment is the work: acceptance decisions and client negotiations." aria-label="Slide 11"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Your turn · card sort</div><h2 class="dk-h">Sort eight tasks. <em>Automate, assist or keep human.</em></h2><div class="rsm-sort"><div class="rsm-pool"><button class="rsm-chip" type="button" data-bin="0">Check expiry dates on every KYC document</button><button class="rsm-chip" type="button" data-bin="0">Vouch 25 sales invoices to the sales listing</button><button class="rsm-chip" type="button" data-bin="0">Match bank confirmation replies to the bank list</button><button class="rsm-chip" type="button" data-bin="1">Draft questions on large trial balance movements</button><button class="rsm-chip" type="button" data-bin="1">Write a management letter point from field notes</button><button class="rsm-chip" type="button" data-bin="1">Summarize a new client&#x27;s activities for the acceptance form</button><button class="rsm-chip" type="button" data-bin="2">Decide whether to accept a high-risk client</button><button class="rsm-chip" type="button" data-bin="2">Agree a disputed adjustment with the client&#x27;s CFO</button></div><div class="rsm-bins"><div class="rsm-bin g" role="button" tabindex="0"><b>Automate</b><div class="in"></div></div><div class="rsm-bin a" role="button" tabindex="0"><b>Assist</b><div class="in"></div></div><div class="rsm-bin r" role="button" tabindex="0"><b>Keep human</b><div class="in"></div></div></div></div><p class="dk-foot">Click a card, then click a column. Press → to show the answer.</p><button class="rsm-step-btn" type="button">Show the answer →</button></div></div></section><section class="dk-slide k-exercise" id="s12" data-sec="1" data-ch="Your turn 1.1" data-dur="600" data-notes="Ten minutes. People can use paper or prompt 1.3. Remind them: no client names in any tool. Collect two candidate tasks per table on the board; they come back in block 3." aria-label="Slide 12"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-ex"><div><div class="rsm-band">Your turn · 1.1 · 10 min</div><h2>Your task list, filtered</h2><div class="rsm-where"><span class="lit">Reframe</span><span class="">Design</span><span class="">Select</span><span class="">Build</span><span class="">Test</span></div><ol><li>Write 5 tasks from your last two weeks.</li><li>Score each task with the four questions.</li><li>Circle your top 3. Share one with your table.</li></ol></div>
+<div class="rsm-side"><div><button class="rsm-timer" type="button" data-minutes="10" aria-label="10 minute timer"><span class="t">10:00</span><span class="s">Start · pause</span></button><div class="rsm-tctl"><button type="button" data-tadd="60">+1 min</button><button type="button" data-tadd="-60">−1 min</button><button type="button" data-treset>Reset</button></div></div><div class="rsm-look dk-glass"><b>What to look for</b><p>Three candidate tasks, each with four yes or no answers.</p></div><p class="rsm-tool">Prompt 1.3 · on your Day 1 prompt sheet</p>
+<p class="rsm-tool">PAPER OR CLAUDE</p></div></div></div></div></section><section class="dk-slide k-section" id="s13" data-sec="2" data-ch="Block 2 · Agent Design Framework" data-dur="120" data-notes="Callback: the weak and designed instructions from the opener. The designed one was a job description." aria-label="Slide 13"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-section"><div class="dk-kicker">Block 2 · Agent Design Framework</div><h2 class="dk-h">An agent is a job description, <em>not a chat.</em></h2><p class="dk-lede">Input, instruction, output. Get these three right and the tool matters much less.</p></div></div></div></section><section class="dk-slide k-cards" id="s14" data-sec="2" data-ch="Input · Instruction · Output" data-dur="600" data-notes="Ask: in the weak instruction from the opener, which of the three was missing? Answer: all three were vague." aria-label="Slide 14"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">The framework</div><h2 class="dk-h">Input · Instruction · <em>Output.</em></h2><div class="rsm-cards c3 big"><div class="rsm-card dk-glass"><span class="k">Input</span><h3>What it reads each time.</h3><p>Name the file, the fields and the format. Example: the KYC pack as one PDF.</p></div><div class="rsm-card dk-glass"><span class="k">Instruction</span><h3>How it does the job.</h3><p>Role, steps, rules, what to do when unsure, and the policy it follows.</p></div><div class="rsm-card dk-glass"><span class="k">Output</span><h3>What a reviewer gets.</h3><p>A fixed format a person can check in two minutes. Example: a table with named columns.</p></div></div><p class="dk-foot">The agent does the first pass. You sign the file.</p></div></div></section><section class="dk-slide k-player" id="s15" data-sec="2" data-ch="Instruction player" data-dur="900" data-steps="8" data-notes="Press → for each part. At each part ask: what would go wrong without this line? At Result, check one row live in the PDF (page 1, the license date). Decision: the agent never accepts a client." aria-label="Slide 15"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Playback · the KYC instruction</div><h2 class="dk-h">Watch the instruction build, <em>one part at a time.</em></h2><div class="rsm-player" data-res="7"><ol class="rsm-steps"><li data-at="1">Role</li><li data-at="2">Steps</li><li data-at="3">Rules</li><li data-at="4">If unsure</li><li data-at="5">Output</li><li data-at="6">Send</li><li data-at="7">Result</li><li data-at="8">Decision</li></ol>
+<div class="rsm-pane dk-glass"><div class="ins-only rsm-ins"><span class="part" data-at="1">ROLE
+You are a client onboarding assistant at Mirqab &amp; Co., an audit firm in Kuwait. You check a new client&#x27;s KYC document pack against the firm&#x27;s Client Acceptance Policy (in the project knowledge).</span><span class="part" data-at="2">STEPS
+1. List every document in the pack. For each one, record its type, who it belongs to, and its expiry date if it has one.
+2. Compare the list with the required documents in Section 2 of the policy. Mark each one Present, Missing or Expired.
+3. Check every expiry date against today&#x27;s date. Flag any document that has expired or expires within 60 days.
+4. Find the ultimate beneficial owners: people who own 25% or more, directly or through a company.
+5. Check the high-risk indicators in Section 4 of the policy. Quote the line in the pack that triggers each one.</span><span class="part" data-at="3">RULES
+- Use only the documents in this chat and the policy. No outside knowledge.
+- Give the file name and page for every fact.
+- Do not decide whether to accept the client. A partner makes that decision.</span><span class="part" data-at="4">IF UNSURE
+If a document or a fact is not in the pack, write &quot;Not found&quot;. Never guess a date, a name or a percentage.</span><span class="part" data-at="5">OUTPUT
+1. A table: Required document | Status (Present, Missing, Expired) | Evidence (file and page) | Note
+2. Risk flags: one line each, with the policy section and the quote.
+3. One last line: &quot;Ready for partner review&quot; or &quot;Not ready: [number] items to resolve&quot;.</span><span class="send" data-at="6">→ Sent, with khiran-kyc-pack.pdf attached and the policy in the project knowledge.</span></div>
+<div class="res-only"><table class="rsm-res"><thead><tr><th>Required document</th><th>Status</th><th>Evidence</th><th>Note</th></tr></thead><tbody><tr><td>Commercial license</td><td><span class="rsm-st Expired">Expired</span></td><td>p. 1</td><td>Expired 30 Sep 2026</td></tr><tr><td>Articles of association</td><td><span class="rsm-st Present">Present</span></td><td>p. 2</td><td>Name differs from the license</td></tr><tr><td>Shareholder register</td><td><span class="rsm-st Present">Present</span></td><td>p. 3</td><td></td></tr><tr><td>ID copies (persons)</td><td><span class="rsm-st Missing">Missing</span></td><td>p. 5</td><td>No copy for one shareholder</td></tr><tr><td>Authorized signatory list</td><td><span class="rsm-st Present">Present</span></td><td>p. 4</td><td>One ID copy expires 20 Dec 2026</td></tr><tr><td>Company shareholder documents</td><td><span class="rsm-st Missing">Missing</span></td><td>p. 3</td><td>Khiran Holding Ltd: none in the pack</td></tr></tbody></table><ul class="rsm-flags"><li>4(a) Company shareholder registered outside Kuwait (p. 3)</li><li>4(e) Company name differs between the license (p. 1) and the articles (p. 2)</li></ul><div class="rsm-last">Not ready: 3 items to resolve</div></div><div class="rsm-decision" data-at="8">Not ready. The onboarding team writes to the client for 3 items. A partner decides on acceptance later.</div></div></div><button class="rsm-step-btn" type="button">Next step →</button></div></div></section><section class="dk-slide k-parts" id="s16" data-sec="2" data-ch="Five parts" data-dur="600" data-notes="The weak column is what most people type. Each strong line removes one way the agent can guess." aria-label="Slide 16"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Weak vs strong</div><h2 class="dk-h">Five parts of a <em>strong instruction.</em></h2><div class="rsm-parts"><div class="row hdr"><span></span><span class="w">Weak</span><span class="s">Strong</span></div><div class="row"><span class="lab">Role</span><span class="w">You are a helpful assistant.</span><span class="s">You are a client onboarding assistant at Mirqab &amp; Co. You check KYC packs against the acceptance policy.</span></div><div class="row"><span class="lab">Steps</span><span class="w">Review the documents.</span><span class="s">1. List every document. 2. Compare with Section 2. 3. Check every expiry date.</span></div><div class="row"><span class="lab">Rules</span><span class="w">Be accurate.</span><span class="s">Use only this pack and the policy. Give the file and page for every fact.</span></div><div class="row"><span class="lab">If unsure</span><span class="w">(nothing)</span><span class="s">If it is not in the pack, write Not found. Never guess a date.</span></div><div class="row"><span class="lab">Output</span><span class="w">Give me a summary.</span><span class="s">A table: Required document | Status | Evidence | Note. Then one last line.</span></div></div></div></div></section><section class="dk-slide k-check" id="s17" data-sec="2" data-ch="Quick check" data-dur="300" data-steps="1" data-notes="Hands up for each option first, then click. Link it to the IF UNSURE part of the player." aria-label="Slide 17"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-check"><div class="dk-kicker">Quick check</div><p class="q">The agent cannot find a shareholder&#x27;s ID copy in the pack. What should a good instruction make it do?</p><div class="rsm-opts"><button class="rsm-opt" type="button" data-ok="0"><span class="l">A</span><span>Assume the copy is fine and move on</span></button><button class="rsm-opt" type="button" data-ok="1"><span class="l">B</span><span>Write Not found and flag the item for review</span></button><button class="rsm-opt" type="button" data-ok="0"><span class="l">C</span><span>Look for the ID number on the internet</span></button><button class="rsm-opt" type="button" data-ok="0"><span class="l">D</span><span>Leave the shareholder out of the table</span></button></div><p class="dk-foot rsm-why" data-at="1">A guess looks exactly like a fact. Not found is something a reviewer can act on.</p><button class="rsm-step-btn" type="button">Show the answer →</button></div></div></div></section><section class="dk-slide k-cards" id="s18" data-sec="2" data-ch="Three test cases" data-dur="480" data-notes="Give an audit example of a trap: a movement that is large in percent but small in KWD." aria-label="Slide 18"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Test before you trust</div><h2 class="dk-h">Three test cases, <em>written before you run them.</em></h2><div class="rsm-cards c3"><div class="rsm-card dk-glass"><span class="k">Normal</span><h3>Everything is there.</h3><p>Does the agent say so, without inventing problems?</p></div><div class="rsm-card dk-glass"><span class="k">Missing data</span><h3>One item is not there.</h3><p>Does it write Not found, or does it fill the gap?</p></div><div class="rsm-card dk-glass"><span class="k">Trap</span><h3>It looks fine but breaks a rule.</h3><p>A date inside the 60-day window, two names that almost match. Does it catch it?</p></div></div><p class="dk-foot">Write the expected answer first. Otherwise you will believe the output.</p></div></div></section><section class="dk-slide k-exercise" id="s19" data-sec="2" data-ch="Your turn 1.2" data-dur="1200" data-notes="Twenty minutes: 14 to fill, 6 to swap. The test in the swap: could a new joiner run the card without asking a question? Common gap: the output is &#x27;a summary&#x27;. Push for named columns." aria-label="Slide 19"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-ex"><div><div class="rsm-band">Your turn · 1.2 · 20 min</div><h2>Fill one Agent Card</h2><div class="rsm-where"><span class="">Reframe</span><span class="lit">Design</span><span class="">Select</span><span class="">Build</span><span class="">Test</span></div><ol><li>Pick one candidate task from the morning.</li><li>Fill the Agent Card: job, input, instruction, output, three tests.</li><li>Swap with a partner. Could a new joiner run your card?</li></ol></div>
+<div class="rsm-side"><div><button class="rsm-timer" type="button" data-minutes="20" aria-label="20 minute timer"><span class="t">20:00</span><span class="s">Start · pause</span></button><div class="rsm-tctl"><button type="button" data-tadd="60">+1 min</button><button type="button" data-tadd="-60">−1 min</button><button type="button" data-treset>Reset</button></div></div><div class="rsm-look dk-glass"><b>What to look for</b><p>A card where every part is specific: a named file, numbered steps, fixed output columns.</p></div><p class="rsm-tool">Prompt 1.4 · on your Day 1 prompt sheet</p>
+<p class="rsm-tool">AGENT CARD</p></div></div></div></div></section><section class="dk-slide k-section" id="s20" data-sec="2" data-ch="Block 3 · Use case selection" data-dur="60" data-notes="Keep this block short. The team choice matters more than the debate." aria-label="Slide 20"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-section"><div class="dk-kicker">Block 3 · Use case selection</div><h2 class="dk-h">Pick one task. <em>Build it well.</em></h2><p class="dk-lede">Four agents, one for each kind of work in the outline: extraction, analysis, workflow and reporting.</p></div></div></div></section><section class="dk-slide k-agents" id="s21" data-sec="2" data-ch="Four agents" data-dur="600" data-notes="Read each card: input, then output. Ask which one is closest to each table&#x27;s work." aria-label="Slide 21"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Four agent cards</div><h2 class="dk-h">Four agents, <em>four kinds of work.</em></h2><div class="rsm-agents"><div class="rsm-agent dk-glass"><span class="k">Extraction · Onboarding</span><h3>KYC intake checker</h3><p>A required-document table, risk flags, and one line: ready or not ready.</p><span class="f">jabriya-kyc-pack.pdf + mirqab-client-acceptance-policy.docx</span></div><div class="rsm-agent dk-glass"><span class="k">Analysis · Audit</span><h3>TB movement reviewer</h3><p>Accounts over the review threshold, the movement, and one question for the client each.</p><span class="f">abdali-trial-balance-fy2025.xlsx + mirqab-materiality-memo-abdali.docx</span></div><div class="rsm-agent dk-glass"><span class="k">Workflow · Audit</span><h3>Invoice vouching assistant</h3><p>A match table: invoice, date, customer, amount, match or mismatch, and why.</p><span class="f">abdali-invoices-sample.pdf + abdali-sales-listing-sample.xlsx</span></div><div class="rsm-agent dk-glass"><span class="k">Reporting · Audit</span><h3>Management letter writer</h3><p>Findings in the firm&#x27;s format: observation, risk, recommendation, management response left blank.</p><span class="f">abdali-field-notes.docx + mirqab-management-letter-template.docx</span></div></div><p class="dk-foot">Your own task? Design it on the Agent Card, build it with the practice files, and use your real files only under the firm&#x27;s rules.</p></div></div></section><section class="dk-slide k-exercise" id="s22" data-sec="2" data-ch="Teams" data-dur="540" data-notes="Balance the teams: no team larger than five. Mix audit and onboarding people where you can." aria-label="Slide 22"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-ex"><div><div class="rsm-band">Teams · 9 min</div><h2>Choose your agent and form your team.</h2><div class="rsm-where"><span class="">Reframe</span><span class="">Design</span><span class="lit">Select</span><span class="">Build</span><span class="">Test</span></div><ol><li>Ask three questions: is it close to your work? Can you test it with today&#x27;s files? Can your team automate it tomorrow?</li><li>Form teams of four or five around one agent.</li><li>Write your team name and agent on the board.</li></ol></div>
+<div class="rsm-side"><div><button class="rsm-timer" type="button" data-minutes="9" aria-label="9 minute timer"><span class="t">09:00</span><span class="s">Start · pause</span></button><div class="rsm-tctl"><button type="button" data-tadd="60">+1 min</button><button type="button" data-tadd="-60">−1 min</button><button type="button" data-treset>Reset</button></div></div><div class="rsm-look dk-glass"><b>What to look for</b><p>Five teams, each with one agent. Two teams can share an agent.</p></div>
+<p class="rsm-tool">Your team</p></div></div></div></div></section><section class="dk-slide k-section" id="s23" data-sec="3" data-ch="Block 4 · Build in Claude" data-dur="120" data-notes="Welcome back from lunch. Callback: each team has an agent and a card. Now we build it." aria-label="Slide 23"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-section"><div class="dk-kicker">Block 4 · Build in Claude</div><h2 class="dk-h">A Claude Project is <em>an agent you can reuse.</em></h2><p class="dk-lede">The instruction and the rules stay in the project. Each new chat is one case.</p></div></div></div></section><section class="dk-slide k-cards" id="s24" data-sec="3" data-ch="Four parts of a project" data-dur="600" data-notes="Show where Projects, project instructions and project knowledge are in Claude before the demo." aria-label="Slide 24"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Claude Project</div><h2 class="dk-h">Four parts of a Claude Project, <em>mapped to your card.</em></h2><div class="rsm-cards c4"><div class="rsm-card dk-glass"><span class="k">Instructions</span><h3>The instruction.</h3><p>Paste your five parts. Claude reads them before every chat in the project.</p></div><div class="rsm-card dk-glass"><span class="k">Knowledge</span><h3>The rules.</h3><p>Add the policy, memo or template the agent must follow.</p></div><div class="rsm-card dk-glass"><span class="k">Chat</span><h3>One case.</h3><p>Start a new chat for each case and attach the input file.</p></div><div class="rsm-card dk-glass"><span class="k">Output</span><h3>The format.</h3><p>The table or list from your card. Copy it into your working paper.</p></div></div><p class="dk-foot">Same agent, every case, every time. Share the project with your team once it passes its tests, if your account allows it.</p></div></div></section><section class="dk-slide k-demo" id="s25" data-sec="3" data-ch="Live demo" data-dur="1200" data-notes="Build it live at normal speed; do not prepare it before. At step 5, ask someone to read the date from the PDF. Fallback: the expected output is on the staff backups page." aria-label="Slide 25"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Live demo</div><h2 class="dk-h">Live: build the <em>KYC intake checker.</em></h2><div class="rsm-demo"><ol><li class="dk-glass">Projects → Create project. Name it KYC intake checker.</li><li class="dk-glass">Set project instructions: paste the KYC instruction.</li><li class="dk-glass">Add to project knowledge: mirqab-client-acceptance-policy.docx.</li><li class="dk-glass">New chat in the project. Attach khiran-kyc-pack.pdf. Send: Check this pack.</li><li class="dk-glass">Open page 1 of the PDF and check the license date yourself.</li></ol><div class="rsm-side"><div class="rsm-look dk-glass"><b>Files</b><div class="rsm-files"><a href="../khiran-kyc-pack.pdf" download>khiran-kyc-pack.pdf</a><a href="../mirqab-client-acceptance-policy.docx" download>mirqab-client-acceptance-policy.docx</a></div></div><p class="rsm-tool">Instruction: prompt 1.5 on the Day 1 prompt sheet</p></div></div></div></div></section><section class="dk-slide k-exercise" id="s26" data-sec="3" data-ch="Your turn 1.3" data-dur="2400" data-notes="Forty minutes. Prompts 1.5 to 1.8 are the four starter instructions. KYC team: their case is jabriya-kyc-pack.pdf, not the Khiran pack from the demo. Walk the room: check that the knowledge file is in the project, not just in one chat." aria-label="Slide 26"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-ex"><div><div class="rsm-band">Your turn · 1.3 · 40 min</div><h2>Build sprint 1: your agent, version 1</h2><div class="rsm-where"><span class="">Reframe</span><span class="">Design</span><span class="">Select</span><span class="lit">Build</span><span class="">Test</span></div><ol><li>Create a Claude Project with your agent&#x27;s name.</li><li>Paste the starter instruction from your prompt sheet into the project instructions.</li><li>Add the knowledge file. Start a new chat and attach the case file.</li><li>Check three values in the output against the source file.</li></ol></div>
+<div class="rsm-side"><div><button class="rsm-timer" type="button" data-minutes="40" aria-label="40 minute timer"><span class="t">40:00</span><span class="s">Start · pause</span></button><div class="rsm-tctl"><button type="button" data-tadd="60">+1 min</button><button type="button" data-tadd="-60">−1 min</button><button type="button" data-treset>Reset</button></div></div><div class="rsm-look dk-glass"><b>What to look for</b><p>An output in the exact format your card asks for, with file and page for every fact.</p></div><div class="rsm-files"><a href="../jabriya-kyc-pack.pdf" download>jabriya-kyc-pack.pdf</a><a href="../salwa-kyc-pack.pdf" download>salwa-kyc-pack.pdf</a><a href="../mirqab-client-acceptance-policy.docx" download>mirqab-client-acceptance-policy.docx</a><a href="../abdali-trial-balance-fy2025.xlsx" download>abdali-trial-balance-fy2025.xlsx</a><a href="../mirqab-materiality-memo-abdali.docx" download>mirqab-materiality-memo-abdali.docx</a><a href="../abdali-sales-listing-sample.xlsx" download>abdali-sales-listing-sample.xlsx</a><a href="../abdali-invoices-sample.pdf" download>abdali-invoices-sample.pdf</a><a href="../abdali-field-notes.docx" download>abdali-field-notes.docx</a><a href="../mirqab-management-letter-template.docx" download>mirqab-management-letter-template.docx</a></div><p class="rsm-tool">Prompt 1.5 · on your Day 1 prompt sheet</p>
+<p class="rsm-tool">CLAUDE</p></div></div></div></div></section><section class="dk-slide k-section" id="s27" data-sec="4" data-ch="Block 5 · Test and improve" data-dur="120" data-notes="Ask one team what their agent got wrong in version 1." aria-label="Slide 27"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-section"><div class="dk-kicker">Block 5 · Test and improve</div><h2 class="dk-h">When the answer is wrong, <em>fix the instruction, not the answer.</em></h2><p class="dk-lede">If you fix the answer by hand, the agent makes the same mistake on the next case.</p></div></div></div></section><section class="dk-slide k-checklist" id="s28" data-sec="4" data-ch="Read like a reviewer" data-dur="480" data-notes="These four checks are the reviewer&#x27;s job. They take two minutes when the output is a table." aria-label="Slide 28"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Read the output like a reviewer</div><h2 class="dk-h">Four checks on <em>every output.</em></h2><ul class="rsm-checklist"><li class="dk-glass"><svg class="" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Every number and date traces to a file and a page.</span></li><li class="dk-glass"><svg class="" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Every Not found is really not in the file.</span></li><li class="dk-glass"><svg class="" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Nothing is added that the file does not say.</span></li><li class="dk-glass"><svg class="" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg><span>The format matches your card, in the same order.</span></li></ul><p class="dk-foot">If one check fails, change one line of the instruction and run all three tests again.</p></div></div></section><section class="dk-slide k-exercise" id="s29" data-sec="4" data-ch="Your turn 1.4" data-dur="2400" data-notes="Forty minutes. Each team runs its three tests (see the answer key for what each agent should catch). Prompt 1.9 helps find weak lines. Teams keep a short test log: case, expected, actual, fixed." aria-label="Slide 29"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-ex"><div><div class="rsm-band">Your turn · 1.4 · 40 min</div><h2>Build sprint 2: three tests, one fix</h2><div class="rsm-where"><span class="">Reframe</span><span class="">Design</span><span class="">Select</span><span class="">Build</span><span class="lit">Test</span></div><ol><li>Run your three test cases. Write the expected answer first.</li><li>Note what failed.</li><li>Change one line of the instruction. Run all three tests again.</li></ol></div>
+<div class="rsm-side"><div><button class="rsm-timer" type="button" data-minutes="40" aria-label="40 minute timer"><span class="t">40:00</span><span class="s">Start · pause</span></button><div class="rsm-tctl"><button type="button" data-tadd="60">+1 min</button><button type="button" data-tadd="-60">−1 min</button><button type="button" data-treset>Reset</button></div></div><div class="rsm-look dk-glass"><b>What to look for</b><p>Version 2 of your instruction and a short test log: case, expected, actual, fixed.</p></div><p class="rsm-tool">Prompt 1.9 · on your Day 1 prompt sheet</p>
+<p class="rsm-tool">CLAUDE</p></div></div></div></div></section><section class="dk-slide k-sort" id="s30" data-sec="4" data-ch="Card sort · safe use" data-dur="900" data-steps="1" data-notes="Amber means: only in the approved account, with the minimum data, and a person checks the output. If someone asks what the firm allows, the answer is the firm&#x27;s policy; we do not decide it here." aria-label="Slide 30"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Safe use · card sort</div><h2 class="dk-h">Green, amber or red? <em>Sort before you paste.</em></h2><div class="rsm-sort"><div class="rsm-pool"><button class="rsm-chip" type="button" data-bin="0">The fictional practice files from this workshop</button><button class="rsm-chip" type="button" data-bin="0">A public annual report from a company&#x27;s website</button><button class="rsm-chip" type="button" data-bin="0">The firm&#x27;s blank templates, with no client data</button><button class="rsm-chip" type="button" data-bin="1">A client&#x27;s trial balance, in the firm-approved Claude account</button><button class="rsm-chip" type="button" data-bin="1">Draft management letter wording, with no names</button><button class="rsm-chip" type="button" data-bin="2">Client ID copies and passport scans</button><button class="rsm-chip" type="button" data-bin="2">A client file uploaded to a personal AI account</button><button class="rsm-chip" type="button" data-bin="2">Client bank account numbers and passwords</button></div><div class="rsm-bins"><div class="rsm-bin g" role="button" tabindex="0"><b>Green</b><div class="in"></div></div><div class="rsm-bin a" role="button" tabindex="0"><b>Amber</b><div class="in"></div></div><div class="rsm-bin r" role="button" tabindex="0"><b>Red</b><div class="in"></div></div></div></div><p class="dk-foot">The firm&#x27;s IT and risk policy decides. This sort is a starting point, not the policy.</p><button class="rsm-step-btn" type="button">Show the answer →</button></div></div></section><section class="dk-slide k-cards" id="s31" data-sec="4" data-ch="Evidence you still test" data-dur="600" data-notes="Link to the Safe-use card on the site. This is the line to repeat on Demo Day." aria-label="Slide 31"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Professional skepticism</div><h2 class="dk-h">AI output is a first pass, <em>not audit evidence.</em></h2><div class="rsm-cards c3"><div class="rsm-card dk-glass"><span class="k">1</span><h3>Trace it.</h3><p>Check three values against the source, every time.</p></div><div class="rsm-card dk-glass"><span class="k">2</span><h3>Keep the trail.</h3><p>Keep the instruction version and the test log, so a reviewer can see how the output was made.</p></div><div class="rsm-card dk-glass"><span class="k">3</span><h3>Decide yourself.</h3><p>A person makes every acceptance decision and every audit judgment.</p></div></div><p class="dk-foot">The agent saves you the reading. It does not sign the file.</p></div></div></section><section class="dk-slide k-showcase" id="s32" data-sec="5" data-ch="Show three agents" data-dur="1500" data-notes="Ask for three volunteer teams, about seven minutes each. Thank each team for one specific thing." aria-label="Slide 32"><div class="dk-wrap"><div class="dk-fit"><div class="dk-kicker">Show and tell</div><h2 class="dk-h">Three agents <em>on the big screen.</em></h2><div class="rsm-demo"><ol><li class="dk-glass">Show your Agent Card.</li><li class="dk-glass">Show version 1 and version 2: which line did you change?</li><li class="dk-glass">Run one test it now passes.</li></ol><div class="rsm-side"><div class="rsm-look dk-glass"><b>Ask the room</b><p>Audience: what would make you trust this agent on a real file?</p></div></div></div></div></div></section><section class="dk-slide k-end" id="s33" data-sec="5" data-ch="Close" data-dur="600" data-notes="Ask each person to write one line: the task they would automate first at work. It comes back on Day 2." aria-label="Slide 33"><div class="dk-wrap"><div class="dk-fit"><div class="rsm-end"><h2 class="dk-h">Your agent waits for you. <em>Tomorrow it doesn&#x27;t.</em></h2><ul><li>Today: input, instruction, output.</li><li>You built an agent and tested it three times.</li><li>Tomorrow: a trigger starts it, n8n runs it, and you show it on Demo Day.</li></ul><p class="next">Keep your Agent Card and your Claude Project. You need both tomorrow.</p></div></div></div></section></main>
+<footer class="dk-bot"><div class="dk-count" id="dk-count"></div><nav class="dk-prog" id="dk-prog" aria-label="Sections"></nav>
+<div class="dk-nav"><button id="dk-prev" type="button" aria-label="Previous">←</button><button id="dk-next" type="button" aria-label="Next">→</button></div></footer>
+<div id="dk-notes" aria-live="polite"><span class="k">Speaker notes · N to hide</span><p></p></div>
+<div id="dk-menu" role="dialog" aria-label="All slides"><div class="grid"></div></div>
+<div id="dk-break" data-default="15" role="dialog" aria-label="Break"><div><div class="cup">☕</div><h2>Break</h2><div class="clock">15:00</div><div class="back"></div>
+<div class="ctl"><button type="button" data-bmin="10">10 min</button><button type="button" data-bmin="15">15 min</button><button type="button" data-bmin="60">Lunch · 60 min</button><button type="button" data-bclose>Back to the slides</button></div></div></div>
+<script>window.DECK={"sections": ["Opening", "Reframe", "Design and select", "Build", "Test and safety", "Close"], "staff": true};</script>
+<script>/* CODED deck engine · RSM Albazie workshop.
+   Navigation, section progress, menu (M), speaker notes (N, staff decks only), fullscreen (F), bell (B),
+   the ☕ break clock, exercise timers, and on-slide steppers: → first plays the steps of a slide that has
+   data-steps (opener, word guess, instruction player, flow, card sort, quick check), then moves on. */
+(function () {
+  'use strict';
+  var $ = function (q, c) { return (c || document).querySelector(q); };
+  var $$ = function (q, c) { return [].slice.call((c || document).querySelectorAll(q)); };
+  var pad = function (n) { return String(n).padStart(2, '0'); };
+  var cfg = window.DECK || { sections: ['Deck'], staff: false };
+  var slides = $$('.dk-slide');
+  var cur = 0;
+
+  /* ── sound: bell and alarm (Web Audio, no files) ── */
+  var ctx = null;
+  function ac() { if (ctx) return ctx; var C = window.AudioContext || window.webkitAudioContext; if (!C) return null; try { ctx = new C(); } catch (e) { return null; } return ctx; }
+  function tone(c, dest, f, t, d, g) {
+    var o = c.createOscillator(); o.type = 'sine'; o.frequency.setValueAtTime(f, t);
+    var gn = c.createGain(); gn.gain.setValueAtTime(0, t); gn.gain.linearRampToValueAtTime(g, t + 0.05); gn.gain.exponentialRampToValueAtTime(0.001, t + d);
+    o.connect(gn); gn.connect(dest); o.start(t); o.stop(t + d + 0.1);
+  }
+  function chime() {
+    var c = ac(); if (!c) return; if (c.state === 'suspended') c.resume();
+    var now = c.currentTime, m = c.createGain(); m.gain.value = 0.5; m.connect(c.destination);
+    [[587.33, 0, 1.4, .8], [739.99, .45, 1.4, .8], [880, .9, 1.4, .75], [1174.66, 1.35, 1.6, .6]].forEach(function (n) { tone(c, m, n[0], now + n[1], n[2], n[3]); });
+    document.documentElement.classList.add('dk-ring'); setTimeout(function () { document.documentElement.classList.remove('dk-ring'); }, 2600);
+  }
+  function alarm() {
+    var c = ac(); if (!c) return; if (c.state === 'suspended') c.resume();
+    var now = c.currentTime, m = c.createGain(); m.gain.value = 0.5; m.connect(c.destination);
+    for (var i = 0; i < 3; i++) { tone(c, m, 988, now + i * 1.1, .45, .8); tone(c, m, 740, now + i * 1.1 + .5, .5, .8); }
+  }
+
+  /* ── timers ── */
+  function fmt(s) { s = Math.max(0, Math.round(s)); return pad(Math.floor(s / 60)) + ':' + pad(s % 60); }
+  function makeTimer(el) {
+    var total = (+el.dataset.minutes || 5) * 60, left = total, end = null, id = null, out = $('.t', el) || el;
+    function render() { out.textContent = fmt(left); el.classList.toggle('warn', id && left <= 120 && left > 0); }
+    function tick() { left = Math.max(0, (end - Date.now()) / 1000); render(); if (left <= 0) done(); }
+    function done() { clearInterval(id); id = null; el.classList.remove('run', 'warn'); el.classList.add('done'); alarm(); }
+    function start() { if (id || left <= 0) return; end = Date.now() + left * 1000; id = setInterval(tick, 250); el.classList.add('run'); render(); }
+    function stop() { if (id) { clearInterval(id); id = null; } el.classList.remove('run'); render(); }
+    function reset() { stop(); el.classList.remove('done', 'warn'); left = total; render(); }
+    function add(s) { left = Math.max(0, left + s); if (id) end = Date.now() + left * 1000; el.classList.remove('done'); render(); }
+    el.addEventListener('click', function () { if (el.classList.contains('done')) { reset(); return; } id ? stop() : start(); });
+    var box = el.parentElement;
+    $$('[data-tadd]', box).forEach(function (b) { b.addEventListener('click', function () { add(+b.dataset.tadd); }); });
+    $$('[data-treset]', box).forEach(function (b) { b.addEventListener('click', reset); });
+    render();
+    return { start: start, stop: stop, reset: reset };
+  }
+  $$('.rsm-timer[data-minutes]').forEach(makeTimer);
+
+  /* ── the ☕ break clock ── */
+  var brk = $('#dk-break'), bid = null, bend = 0;
+  function breakRun(min) {
+    clearInterval(bid); bend = Date.now() + min * 60000; brk.classList.remove('done');
+    var back = new Date(bend); $('.back', brk).textContent = 'Back at ' + pad(back.getHours()) + ':' + pad(back.getMinutes());
+    function t() { var l = (bend - Date.now()) / 1000; $('.clock', brk).textContent = fmt(l); if (l <= 0) { clearInterval(bid); brk.classList.add('done'); chime(); } }
+    t(); bid = setInterval(t, 250);
+  }
+  function breakOpen() { brk.classList.add('on'); breakRun(+brk.dataset.default || 15); }
+  function breakClose() { brk.classList.remove('on'); clearInterval(bid); }
+  if (brk) {
+    $$('[data-bmin]', brk).forEach(function (b) { b.addEventListener('click', function () { breakRun(+b.dataset.bmin); }); });
+    $('[data-bclose]', brk).addEventListener('click', breakClose);
+  }
+
+  /* ── steppers ── */
+  function stepsOf(s) { return +(s.dataset.steps || 0); }
+  function stepOf(s) { return +(s.dataset.step || 0); }
+  function setStep(s, k) {
+    k = Math.max(0, Math.min(stepsOf(s), k)); s.dataset.step = k; setTimeout(function () { if (s === slides[cur]) fit(s); }, 380);
+    $$('[data-at]', s).forEach(function (e) { var a = +e.dataset.at; e.classList.toggle('on', k >= a); e.classList.toggle('now', k === a); });
+    var pl = $('.rsm-player', s); if (pl) pl.classList.toggle('showres', k >= +pl.dataset.res);
+    if (s.classList.contains('k-sort')) { k >= 1 ? revealSort(s) : unrevealSort(s); }
+    if (s.classList.contains('k-check') && k >= 1) revealCheck(s, null);
+    $$('.rsm-step-btn', s).forEach(function (b) { b.disabled = k >= stepsOf(s); });
+  }
+  $$('.rsm-step-btn').forEach(function (b) { b.addEventListener('click', function () { var s = b.closest('.dk-slide'); setStep(s, stepOf(s) + 1); }); });
+
+  /* card sort: click a card, then a column */
+  $$('.k-sort').forEach(function (s) {
+    var sel = null;
+    $$('.rsm-chip', s).forEach(function (c) {
+      c.addEventListener('click', function (e) { e.stopPropagation(); if (s.dataset.revealed) return; if (sel) sel.classList.remove('sel'); sel = (sel === c) ? null : c; if (sel) sel.classList.add('sel'); });
+    });
+    $$('.rsm-bin', s).forEach(function (b, i) {
+      b.addEventListener('click', function () { if (!sel || s.dataset.revealed) return; $('.in', b).appendChild(sel); sel.dataset.placed = i; sel.classList.remove('sel'); sel = null; });
+    });
+  });
+  function revealSort(s) {
+    if (s.dataset.revealed) return; s.dataset.revealed = 1;
+    var bins = $$('.rsm-bin', s);
+    $$('.rsm-chip', s).forEach(function (c) {
+      var want = +c.dataset.bin;
+      if (c.dataset.placed !== undefined) c.classList.add(+c.dataset.placed === want ? 'right' : 'wrong');
+      $('.in', bins[want]).appendChild(c);
+    });
+  }
+  function unrevealSort(s) {
+    if (!s.dataset.revealed) return; delete s.dataset.revealed;
+    var pool = $('.rsm-pool', s);
+    $$('.rsm-chip', s).forEach(function (c) { c.classList.remove('right', 'wrong', 'sel'); delete c.dataset.placed; pool.appendChild(c); });
+  }
+  /* quick check */
+  function revealCheck(s, picked) {
+    $$('.rsm-opt', s).forEach(function (o) {
+      if (o.dataset.ok === '1') o.classList.add('right');
+      if (picked === o && o.dataset.ok !== '1') o.classList.add('wrong');
+    });
+    var w = $('.rsm-why', s); if (w) w.classList.add('on');
+    s.dataset.step = stepsOf(s);
+  }
+  $$('.k-check').forEach(function (s) {
+    $$('.rsm-opt', s).forEach(function (o) { o.addEventListener('click', function () { revealCheck(s, o); }); });
+  });
+
+  /* ── navigation ── */
+  var countEl = $('#dk-count'), prog = $('#dk-prog'), notesEl = $('#dk-notes'), menu = $('#dk-menu');
+  var SEC = cfg.sections;
+  var secOf = function (s) { return +(s.dataset.sec || 0); };
+  if (prog) {
+    prog.innerHTML = SEC.map(function (n, i) { return '<button class="dk-sec" type="button" data-s="' + i + '" title="' + n + '"><span class="dk-rail"><span class="dk-fill"></span></span><span class="dk-lbl">' + n + '</span></button>'; }).join('');
+    $$('.dk-sec', prog).forEach(function (b) { b.addEventListener('click', function () { var f = slides.findIndex(function (s) { return secOf(s) === +b.dataset.s; }); if (f > -1) go(f); }); });
+  }
+  if (menu) {
+    $('.grid', menu).innerHTML = SEC.map(function (n, i) {
+      return '<section><h5>' + n + '</h5>' + slides.map(function (s, j) { return secOf(s) === i ? '<button type="button" data-g="' + j + '"><span>' + pad(j + 1) + '</span>' + (s.dataset.ch || '') + '</button>' : ''; }).join('') + '</section>';
+    }).join('');
+    $$('button[data-g]', menu).forEach(function (b) { b.addEventListener('click', function () { go(+b.dataset.g); menu.classList.remove('on'); }); });
+    menu.addEventListener('click', function (e) { if (e.target === menu) menu.classList.remove('on'); });
+  }
+  function mins(sec) { sec = +sec || 0; return sec >= 60 ? Math.round(sec / 60) + ' min' : sec + ' s'; }
+  function renderNotes() {
+    if (!notesEl) return; var s = slides[cur];
+    $('p', notesEl).textContent = (s.dataset.dur ? '[' + mins(s.dataset.dur) + '] ' : '') + (s.dataset.notes || 'No note for this slide.');
+  }
+  function go(i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (s, j) { s.classList.toggle('on', j === i); s.setAttribute('aria-hidden', j === i ? 'false' : 'true'); });
+    cur = i; var s = slides[i], sec = secOf(s);
+    if (countEl) countEl.innerHTML = '<b>' + pad(i + 1) + '</b> / ' + slides.length;
+    if (prog) SEC.forEach(function (_, k) {
+      var list = slides.filter(function (x) { return secOf(x) === k; }), idx = list.indexOf(s);
+      var pct = k < sec ? 100 : k > sec ? 0 : (list.length ? (idx + 1) / list.length * 100 : 0);
+      var el = $$('.dk-sec', prog)[k]; el.classList.toggle('now', k === sec); $('.dk-fill', el).style.width = pct + '%';
+    });
+    if (menu) $$('button[data-g]', menu).forEach(function (b) { b.classList.toggle('now', +b.dataset.g === i); });
+    var w = $('.dk-wrap', s); if (w) w.scrollTop = 0;
+    fit(s);
+    renderNotes();
+    try { history.replaceState(null, '', '#' + (i + 1)); } catch (e) { }
+  }
+  /* fit: a dense slide on a short screen scales down a little (never below 85%) instead of scrolling */
+  function fit(s) {
+    var f = $('.dk-fit', s), wr = $('.dk-wrap', s); if (!f || !wr) return;
+    f.style.zoom = ''; if (innerWidth <= 760) return;
+    var r = wr.clientHeight / wr.scrollHeight;
+    if (r < 1) f.style.zoom = Math.max(0.85, r - 0.01).toFixed(3);
+  }
+  addEventListener('resize', function () { fit(slides[cur]); });
+  function next() { var s = slides[cur]; if (stepOf(s) < stepsOf(s)) { setStep(s, stepOf(s) + 1); return; } go(cur + 1); }
+  function prev() { var s = slides[cur]; if (stepOf(s) > 0) { setStep(s, stepOf(s) - 1); return; } go(cur - 1); }
+  slides.forEach(function (s) { if (stepsOf(s)) setStep(s, 0); });
+
+  addEventListener('keydown', function (e) {
+    var tag = (e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'Escape') { if (menu) menu.classList.remove('on'); if (brk && brk.classList.contains('on')) breakClose(); return; }
+    if (k === 'm' || k === 'M') { if (menu) menu.classList.toggle('on'); return; }
+    if (menu && menu.classList.contains('on')) return;
+    if (k === 'n' || k === 'N') { if (notesEl && cfg.staff) { notesEl.classList.toggle('on'); renderNotes(); } return; }
+    if (k === 'b' || k === 'B') { chime(); return; }
+    if (k === 'f' || k === 'F') { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(function () { }); return; }
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); next(); }
+    else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); prev(); }
+    else if (k === 'Home') { e.preventDefault(); go(0); }
+    else if (k === 'End') { e.preventDefault(); go(slides.length - 1); }
+  });
+  var nb = $('#dk-next'), pb = $('#dk-prev');
+  if (nb) nb.addEventListener('click', next); if (pb) pb.addEventListener('click', prev);
+  var bb = $('#dk-bell'); if (bb) bb.addEventListener('click', chime);
+  var kb = $('#dk-break-btn'); if (kb) kb.addEventListener('click', breakOpen);
+  var fb = $('#dk-fs'); if (fb) fb.addEventListener('click', function () { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(function () { }); });
+  var mb = $('#dk-menu-btn'); if (mb) mb.addEventListener('click', function () { menu.classList.toggle('on'); });
+  var xs = null;
+  addEventListener('touchstart', function (e) { xs = e.touches[0].clientX; }, { passive: true });
+  addEventListener('touchend', function (e) { if (xs === null) return; var dx = e.changedTouches[0].clientX - xs; if (Math.abs(dx) > 60) { dx < 0 ? next() : prev(); } xs = null; });
+
+  var start = parseInt((location.hash || '').slice(1), 10);
+  go(isNaN(start) ? 0 : start - 1);
+  window.CodedDeck = { go: go, next: next, prev: prev, get current() { return cur; }, slides: slides, setStep: setStep };
+})();
+</script>
+</body></html>
