@@ -68,7 +68,7 @@
 {
 "say": "These are the things you will do yourself today, on fictional files.",
 "do": "Read the outcomes. Ask which one matters most for their team.",
-"expect": "Most people pick the schedule or the skill.",
+"expect": "Most people pick the Project or the skill.",
 "silent": "pick one and say why it matters for audit work.",
 "fallback": null,
 "more": [],
@@ -76,7 +76,7 @@
 "t": "open",
 "k": "outcomes",
 "h": "Outcomes",
-"flat": "Do: Read the outcomes. Ask which one matters most for their team. · Expect: Most people pick the schedule or the skill. · If the room is silent: pick one and say why it matters for audit work. · Say: “These are the things you will do yourself today, on fictional files.”"
+"flat": "Do: Read the outcomes. Ask which one matters most for their team. · Expect: Most people pick the Project or the skill. · If the room is silent: pick one and say why it matters for audit work. · Say: “These are the things you will do yourself today, on fictional files.”"
 },
 {
 "say": "Mirqab is fictional, so you can make mistakes safely. Every file is made up.",
@@ -306,7 +306,7 @@
 {
 "say": "Nothing changed except the chat. That is the problem we solve today.",
 "do": "First show three contrasting tables from the room. Then this slide.",
-"expect": "People see that the request, not the files, changed.",
+"expect": "People see that only the chat changed: same prompt, same files.",
 "silent": "ask: which chat would you trust?",
 "fallback": null,
 "more": [],
@@ -314,7 +314,7 @@
 "t": "b2",
 "k": "table",
 "h": "The answer depended on the chat.",
-"flat": "Do: First show three contrasting tables from the room. Then this slide. · Expect: People see that the request, not the files, changed. · If the room is silent: ask: which chat would you trust? · Say: “Nothing changed except the chat. That is the problem we solve today.”"
+"flat": "Do: First show three contrasting tables from the room. Then this slide. · Expect: People see that only the chat changed: same prompt, same files. · If the room is silent: ask: which chat would you trust? · Say: “Nothing changed except the chat. That is the problem we solve today.”"
 },
 {
 "say": null,

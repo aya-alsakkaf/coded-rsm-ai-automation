@@ -360,7 +360,7 @@ LABS = {
         {"title": "Batch 2 (Task 2.3)", "do": ["Workflow teams: add the request list to the skill and the tracker line to the prompt. Analysis teams: add the monthly line.", "Copy your track's batch-2 file from Packs into the Inbox.", "Run the task on demand. Check the output and the run log."],
          "hint": "Each track's batch-2 file holds one change the run must show.", "check": {"kind": "note", "label": "What your run showed for batch 2"},
          "answer": [("ul", ["Extraction: lease 8, Mahboula, KWD 1,450.000 a month; rent rises by 5% from the second year.", f"Analysis: {D.MGMT_FLAG}, up from KWD 3,900 to KWD 9,800, over both limits.",
-                            "Workflow: items 5, 7 and 14 now received; items 12 and 15 have new promised dates.", "Reporting: Jabriya closed; Khiran still over budget (24%)."])]},
+                            "Workflow: items 5, 7 and 14 now received; item 15 promised by 30 November; item 12 'one more week' with no date: flag it (accept 23 November if the team works out the date).", "Reporting: Jabriya closed; Khiran still over budget (24%)."])]},
         {"title": "The empty folder", "do": ["Empty the Inbox. Run the task on demand.", "Read the run log."],
          "hint": "One honest line, then stop.", "check": {"kind": "flag", "label": "Type the exact words the run log should show", "answer": "No new files"},
          "answer": [("p", "The run log says No new files, and nothing is written to Outputs.")]},

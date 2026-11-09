@@ -23,7 +23,7 @@ COVER_NOTES = {
  2: N(do="Welcome back. Check that every laptop is signed in and the sandbox Drive opens.", more=["Teams sit together from the start today.", "The callback quiz comes after today's map."],
       say="Yesterday every one of you built an agent. Today one agent per team learns to run without you.", silent="ask one person what their skill is called."),
 }
-OUTCOMES_NOTES = {d: N(do="Read the outcomes. Ask which one matters most for their team.", expect="Most people pick the schedule or the skill.",
+OUTCOMES_NOTES = {d: N(do="Read the outcomes. Ask which one matters most for their team.", expect={1: "Most people pick the Project or the skill.", 2: "Most people pick the schedule or the review step."}[d],
                        say="These are the things you will do yourself today, on fictional files.", silent="pick one and say why it matters for audit work.") for d in (1, 2)}
 ROAD = {1: {"title": "One firm, one client. <span class=\"hl\">Seven lessons.</span>", "n": N(do="Point to the breaks: the cup button starts the break clock.", say="Mirqab is fictional, so you can make mistakes safely. Every file is made up.")},
         2: {"title": "One agent per team. <span class=\"hl\">One workflow by 14:45.</span>", "n": N(do="Point to Demo Day at 14:45.", say="By the afternoon break your workflow runs on a schedule. Then you show it.")}}
@@ -113,7 +113,7 @@ def day1():
         ["", "Chat A", "Chat B"],
         [["Columns", "Invoice, amount, status", "Supplier, invoice, ledger, difference, comment"], ["Rows flagged", "None: every row Matched", "Two rows flagged"], ["Total checked", f"KWD {D.num(sum(r[4] for r in D.INVOICES))}", "5 invoices"]],
         "Same prompt, same files, two different tables.",
-        n=N(do="First show three contrasting tables from the room. Then this slide.", expect="People see that the request, not the files, changed.", silent="ask: which chat would you trust?",
+        n=N(do="First show three contrasting tables from the room. Then this slide.", expect="People see that only the chat changed: same prompt, same files.", silent="ask: which chat would you trust?",
             say="Nothing changed except the chat. That is the problem we solve today.")))
     s.append(term("b2t1", "b2", "Lesson 2 · the idea", "A prompt is not <span class=\"hl\">a process.</span>", "Repeatable",
         "A good prompt lives in one chat and is lost next time. A <b>repeatable</b> method keeps the same input, rules and output shape, so every run can be reviewed the same way.",
@@ -404,7 +404,7 @@ def day2():
         n=N(do="Open the run log from the pre-flight locked-file test (Log folder of the test folder) and read its Could not read line. Then show the fallback line on the Day 2 prompt sheet.", expect="Someone asks why not just skip the file. Answer: a skip nobody sees is a gap in the audit file.",
             silent="ask: who checks the locked file by hand on your team?", fallback="If the pre-flight log is missing, show the Task 2.5 backup table.",
             more=["The test is part of Task 2.5. The skill owner adds the fallback line before the test run."])))
-    s.append(check("c5chk2", "c5", "The 08:00 run log says <b>Could not read: lease-scan.pdf</b>. The other files are in Outputs. <b>What happens next?</b>",
+    s.append(check("c5chk2", "c5", "The 08:00 run log says <b>Could not read: lease-scan.pdf</b>. The other files moved to Processed, and the output is in Outputs. <b>What happens next?</b>",
         [("Run it again until Claude reads the file", 0, "A rerun gives the same result. A person acts."), ("The named reviewer checks that file by hand", 1, "Right. The log told you which file needs a person."), ("Nothing: the other files were processed", 0, "The locked file is still a gap in the work.")]))
     s.append(task("c5task", "c5", "t26", n=N(do="Start the timer. Walk the room. Ask each team what they found so far.")))
     # Lesson 6 · Demo Day

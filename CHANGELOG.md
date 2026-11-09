@@ -19,6 +19,8 @@
 - Independent audit (round 6, 8.9) fixes: the Drive approval setting the owner must allow for unattended moves (support.claude.com 10166901),
   Task 1.10 says the invoice file has two gaps, task notes say person or team, footer hints removed from two messy files, the Workflow
   tracker line runs only on new files, impact minutes come from the Clock tab, MAP q5 Arabic option shortened, hub lead sentence split.
+- Audit round 7 (9.3) fixes: Task 1.10 Workflow track attaches the request list; remote-run wording; new c5chk numbers; lab and key fixes.
+- Audit round 8: 9.8 / 10, PASS (no Blocking or Concerning). Four quick nits fixed after it.
 - 23 sample files (one new; no published file name changed).
 
 ## 2026-11-09 · Shipped for review

@@ -236,3 +236,27 @@ Nit · day pages "Breaks at … and … and …" · engine string · logged in P
 Nit · MAP q_intro · "13 questions", not "13 knowledge questions" · kept: 4 of the 13 are work scenarios (earlier decision)
 Nit · MAP q_1 c and q_12 c · weak distractors · kept: the reviewer judged the wrong options believable; the tests are live
 Nit · b1map note, b3tracks, b4t2 · source list, dummy-pack prompt, a check for "test three" · kept for now (pre-existing, no reviewer finding)
+
+## Round 8 · 10 Nov 2026 · 9.8 / 10 (9.75) · PASS
+
+| Dimension | Weight | Score |
+|---|---|---|
+| Files, links and config | 10 | 10 |
+| Pages | 10 | 10 |
+| Decks | 15 | 10 |
+| Interactivity | 10 | 10 |
+| Content coherence | 20 | 9.0 |
+| Tasks and demos | 10 | 9.75 |
+| MAP tests | 10 | 10 |
+| Final survey | 5 | 10 |
+| Language and data safety | 10 | 9.75 |
+
+Levels 1 to 4: validator PROBLEMS: 0; qa.cjs pages and decks: 0 problems. A third fresh agent re-derived all 13 MAP answers; all match.
+No Blocking, no Concerning, no dimension under 9.0.
+
+Nit · b2two note · expect line said the request changed · "only the chat changed: same prompt, same files" (fixed)
+Nit · c5chk2 · "The other files are in Outputs" · "moved to Processed, and the output is in Outputs" (fixed)
+Nit · outcomes1 note · Day 1 expect named the schedule · Day 1 and Day 2 have their own expect lines (fixed)
+Nit · Task 2.3 keys · item 12 has no date ("one more week") · flag it; accept 23 November (fixed)
+Nit · struggle windows · first hint lands inside the struggle time · kept: the light hint at 10 to 11 minutes is the house pattern; lesson plan unchanged
+Nit · day pages break list · engine string · logged in PLUGIN-FEEDBACK.md item 7; the kit cannot change it

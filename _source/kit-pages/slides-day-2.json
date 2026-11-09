@@ -1420,7 +1420,7 @@
 "title": "Quick check",
 "topic": "c5",
 "kit": [
-"The 08:00 run log says Could not read: lease-scan.pdf. The other files are in Outputs. What happens next?",
+"The 08:00 run log says Could not read: lease-scan.pdf. The other files moved to Processed, and the output is in Outputs. What happens next?",
 "Run it again until Claude reads the file",
 "The named reviewer checks that file by hand",
 "Nothing: the other files were processed"

@@ -18,7 +18,7 @@
 {
 "say": "These are the things you will do yourself today, on fictional files.",
 "do": "Read the outcomes. Ask which one matters most for their team.",
-"expect": "Most people pick the schedule or the skill.",
+"expect": "Most people pick the schedule or the review step.",
 "silent": "pick one and say why it matters for audit work.",
 "fallback": null,
 "more": [],
@@ -26,7 +26,7 @@
 "t": "open",
 "k": "outcomes",
 "h": "Outcomes",
-"flat": "Do: Read the outcomes. Ask which one matters most for their team. · Expect: Most people pick the schedule or the skill. · If the room is silent: pick one and say why it matters for audit work. · Say: “These are the things you will do yourself today, on fictional files.”"
+"flat": "Do: Read the outcomes. Ask which one matters most for their team. · Expect: Most people pick the schedule or the review step. · If the room is silent: pick one and say why it matters for audit work. · Say: “These are the things you will do yourself today, on fictional files.”"
 },
 {
 "say": "By the afternoon break your workflow runs on a schedule. Then you show it.",
