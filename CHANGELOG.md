@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-09 · Shipped for review
+
+- The three portal surveys (PRE, POST, final) checked against the kit and published; Ahmad Maher, Moudhi and Yousif invited to all three.
+- Staff password set in Vercel by Aya; the site redeployed.
+- Staff home fix: its links resolved at the site root and gave the 404 page. Kit REDIRECTS now send the root names of staff-only pages to
+  `/staff/...` (the password still applies). The two "slides with speaker notes" links on the staff home still open the public decks: an
+  engine bug, logged in `_source/PLUGIN-FEEDBACK.md`.
+
 ## 2026-11-08 · Rebuild on the coded-workshop-builder engine
 
 - New plan from the instructor plan of 8 Nov: Day 1 builds each person's agent in Claude (Project, Drive connector, fixed-shape output, skill);

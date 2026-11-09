@@ -163,6 +163,71 @@
    "source": "/lab2",
    "destination": "/coded-rsm-ai-automation-lab-day-2",
    "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-lesson-plan",
+   "destination": "/staff/coded-rsm-ai-automation-lesson-plan",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-facilitator-kit",
+   "destination": "/staff/coded-rsm-ai-automation-facilitator-kit",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-staff.css",
+   "destination": "/staff/coded-rsm-ai-automation-staff.css",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-notes-day-1",
+   "destination": "/staff/coded-rsm-ai-automation-notes-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-runbook-day-1",
+   "destination": "/staff/coded-rsm-ai-automation-runbook-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-backup-day-1",
+   "destination": "/staff/coded-rsm-ai-automation-backup-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-answer-key-day-1",
+   "destination": "/staff/coded-rsm-ai-automation-answer-key-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-lab-key-day-1",
+   "destination": "/staff/coded-rsm-ai-automation-lab-key-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-notes-day-2",
+   "destination": "/staff/coded-rsm-ai-automation-notes-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-runbook-day-2",
+   "destination": "/staff/coded-rsm-ai-automation-runbook-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-backup-day-2",
+   "destination": "/staff/coded-rsm-ai-automation-backup-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-answer-key-day-2",
+   "destination": "/staff/coded-rsm-ai-automation-answer-key-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/coded-rsm-ai-automation-lab-key-day-2",
+   "destination": "/staff/coded-rsm-ai-automation-lab-key-day-2",
+   "permanent": false
   }
  ],
  "headers": [

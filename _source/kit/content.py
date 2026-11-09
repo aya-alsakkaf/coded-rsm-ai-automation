@@ -401,6 +401,10 @@ SEGMENTS = {
 
 REDIRECTS = [("/prompts1", "/coded-rsm-ai-automation-prompt-sheet-day-1"), ("/prompts2", "/coded-rsm-ai-automation-prompt-sheet-day-2"),
              ("/lab1", "/coded-rsm-ai-automation-lab-day-1"), ("/lab2", "/coded-rsm-ai-automation-lab-day-2")]
+# The staff home is served at /staff (trailingSlash false), so its relative links to staff-only pages resolve at the site root.
+# Send those root addresses to /staff/... (the staff password still applies there). See PLUGIN-FEEDBACK.md.
+REDIRECTS += [(f"/coded-rsm-ai-automation-{p}", f"/staff/coded-rsm-ai-automation-{p}") for p in
+              ["lesson-plan", "facilitator-kit", "staff.css"] + [f"{k}-day-{d}" for d in (1, 2) for k in ("notes", "runbook", "backup", "answer-key", "lab-key")]]
 
 # ------------------------------------------------------------------ portal survey words (bilingual)
 PROG_AR = "الابتكار والأتمتة بالذكاء الاصطناعي"
