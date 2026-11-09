@@ -1,6 +1,6 @@
-node_modules/
 __pycache__/
 *.pyc
-.vercel/
 .DS_Store
-.env*
+node_modules/
+.vercel
+_source/qa-shots/

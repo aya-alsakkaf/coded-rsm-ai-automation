@@ -1,0 +1,6 @@
+# Words from other builds. validate_site.py fails when one shows on a page of this build.
+# A line "code: a, b" lists the names of the build whose code is "code"; a build never checks its own line.
+# Keep this file when you copy the kit, and add the names of any workshop you copied from.
+old-builds: Gulf Bank, GBK, Qurain, Najma, GIG, Georama, Cairo, IBM Plex, KJO, Al-Khafji, Finance Iter, Ghareeb, data stewards
+test-ai-claude: Dasma, Dasma Trading, AI at Work with Claude, Mangaf Medical Clinic, Rawdha, coded-test-ai-claude
+test-kibs-tirm: KIBS, Institute of Banking Studies, Failaka, Failaka Bank, Technology and Information Risk Management, RMC Module 6, coded-test-kibs-tirm

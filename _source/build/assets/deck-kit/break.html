@@ -1,0 +1,14 @@
+<div class="wk-break-pick" id="breakPick" hidden><div class="wk-bp-card" role="dialog" aria-label="Start a break">
+  <div class="wk-bp-h"><svg class="cd-ic"><use href="#i-cup"/></svg>Start a break</div>
+  <p class="wk-bp-sub">Pick a length: the timer counts down and shows everyone the return time.</p>
+  <div class="wk-bp-chips"><button type="button" data-min="5">5 min</button><button type="button" data-min="10">10 min</button><button type="button" data-min="15">15 min</button><button type="button" data-min="20">20 min</button><button type="button" data-min="30">30 min</button></div>
+  <div class="wk-bp-custom"><input id="bpCustom" type="number" min="1" max="180" placeholder="custom minutes" aria-label="Custom minutes"><button type="button" id="bpGo">Start</button></div>
+  <button type="button" class="wk-bp-cancel" id="bpCancel">Cancel</button>
+</div></div>
+<div class="wk-break-ov" id="breakOv" hidden><div class="wk-brk">
+  <div class="wk-brk-eye" id="boEye">Break</div>
+  <div class="wk-brk-title">Break</div>
+  <div class="cd-timer cd-timer--big wk-brk-clock" id="boClock"><span class="cd-dot"></span><span class="cd-t">15:00</span></div>
+  <div class="wk-brk-back" id="boBack">Back at <b>-</b></div>
+  <div class="wk-brk-cta"><button type="button" id="boAdd">+5 min</button><button type="button" class="end" id="boEnd">End break</button></div>
+</div></div>

@@ -1,0 +1,851 @@
+{
+ "name": "CODED × RSM Albazie AI Innovation and Automation: MAP Test POST (Day 2)",
+ "description": "MAP Skills Test for the CODED Professionals client program \"AI Innovation and Automation\" for RSM Albazie, cohort RSM-AI-Nov/Nov-26, 2 days at CODED, Alsharekh classroom (Frontend Campus), 08:30-16:00: Day 1, Sun 15 Nov 2026: Designing AI Agents for Real Work · Day 2, Mon 16 Nov 2026: Turning Agents into Operational Workflows. POST sitting: Day 2, Mon 16 Nov 2026, 15:40 (10 minutes), before the final satisfaction survey. The PRE sitting (Day 1, Sun 15 Nov, 08:35) has the identical questions. Part 1: 6 confidence self-ratings (never scored). Part 2: 9 knowledge questions (Day 1: 5, Day 2: 4). Part 3: 4 work scenarios. About 10 minutes. Not graded. Answer key: 1 a · 2 c · 3 d · 4 c · 5 a · 6 b · 7 b · 8 d · 9 c · 10 a · 11 d · 12 b · 13 b.",
+ "audience": "teacher_student",
+ "isAnonymous": false,
+ "folderId": "e07488c7-5525-403f-a2c6-f6db15ae710a",
+ "sections": [
+  {
+   "id": "s_1",
+   "title": {
+    "en": "Before you start",
+    "ar": "قبل أن تبدأ"
+   },
+   "description": {
+    "en": "Please read this, then give us your name, work email and department so that we can match your two sittings.",
+    "ar": "يُرجى قراءة ما يلي، ثم تزويدنا باسمك وبريدك الإلكتروني للعمل والإدارة التي تعمل بها لكي نطابق بين محاولتيك."
+   },
+   "order": 0
+  },
+  {
+   "id": "s_2",
+   "title": {
+    "en": "Part 1: Confidence",
+    "ar": "الجزء 1: الثقة"
+   },
+   "description": {
+    "en": "Rate each statement 1 to 5. 1 = No idea / never done it. 3 = Could attempt with help. 5 = Could do it confidently on my own. There are no right answers here.",
+    "ar": "قيّم كل عبارة من 1 إلى 5. 1 = لا أعرف / لم أفعله من قبل. 3 = أستطيع المحاولة بمساعدة. 5 = أستطيع فعله بثقة وحدي. لا توجد إجابات صحيحة هنا."
+   },
+   "order": 1
+  },
+  {
+   "id": "s_3",
+   "title": {
+    "en": "Part 2: Day 1, Designing AI Agents for Real Work",
+    "ar": "الجزء 2: اليوم 1، تصميم وكلاء الذكاء الاصطناعي للعمل الفعلي"
+   },
+   "description": {
+    "en": "Five questions. Choose the one best answer. Mirqab & Co. and Abdali Foods are fictional companies.",
+    "ar": "خمسة أسئلة. اختر أفضل إجابة واحدة. Mirqab & Co. وAbdali Foods شركتان وهميتان."
+   },
+   "order": 2
+  },
+  {
+   "id": "s_4",
+   "title": {
+    "en": "Part 2: Day 2, Turning Agents into Operational Workflows",
+    "ar": "الجزء 2: اليوم 2، تحويل الوكلاء إلى سير عمل تشغيلي"
+   },
+   "description": {
+    "en": "Four questions. Choose the one best answer.",
+    "ar": "أربعة أسئلة. اختر أفضل إجابة واحدة."
+   },
+   "order": 3
+  },
+  {
+   "id": "s_5",
+   "title": {
+    "en": "Part 3: Work scenarios",
+    "ar": "الجزء 3: مواقف من العمل"
+   },
+   "description": {
+    "en": "Four questions about real work moments. Choose the one best answer.",
+    "ar": "أربعة أسئلة عن مواقف حقيقية في العمل. اختر أفضل إجابة واحدة."
+   },
+   "order": 4
+  }
+ ],
+ "questions": [
+  {
+   "id": "q_intro",
+   "type": "statement",
+   "label": {
+    "en": "This short test has 13 questions and takes about 10 minutes. Work alone, and do not use an AI tool or search. If you are not sure, choose the answer you think is most likely; there is no penalty for a wrong answer. You take this same test at the start of Day 1 and at the end of Day 2. It is not graded: it shows us how much you learned in the program.",
+    "ar": "يتضمن هذا الاختبار القصير 13 سؤالاً ويستغرق نحو 10 دقائق. اعمل بمفردك، ولا تستخدم أي أداة ذكاء اصطناعي أو محرك بحث. إذا لم تكن متأكداً، فاختر الإجابة التي تراها الأرجح؛ لا توجد عقوبة على الإجابة الخاطئة. ستؤدي هذا الاختبار نفسه في بداية اليوم 1 وفي نهاية اليوم 2. هذا الاختبار غير مُقيَّم بدرجات: فهو يبيّن لنا مقدار ما تعلّمته في البرنامج."
+   },
+   "required": false,
+   "sectionId": "s_1",
+   "order": 1
+  },
+  {
+   "id": "q_name",
+   "type": "text",
+   "label": {
+    "en": "Your full name",
+    "ar": "اسمك الكامل"
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "order": 2
+  },
+  {
+   "id": "q_email",
+   "type": "email",
+   "label": {
+    "en": "Your work email. We use it only to match your two sittings.",
+    "ar": "بريدك الإلكتروني للعمل. نستخدمه فقط لمطابقة محاولتيك."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "order": 3
+  },
+  {
+   "id": "q_dept",
+   "type": "text",
+   "label": {
+    "en": "Your department",
+    "ar": "الإدارة التي تعمل بها"
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "order": 4
+  },
+  {
+   "id": "q_r1",
+   "type": "scale",
+   "label": {
+    "en": "I can explain what generative AI does well and where it can be wrong, and check its output against the source.",
+    "ar": "أستطيع أن أوضح ما يُجيده الذكاء الاصطناعي التوليدي وأين قد يخطئ، وأن أتحقق من مخرجاته مقابل المصدر."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 5
+  },
+  {
+   "id": "q_r2",
+   "type": "scale",
+   "label": {
+    "en": "I can find the tasks in my work that suit an agent, and describe one as an Agent Card: input, instruction and output.",
+    "ar": "أستطيع تحديد المهام في عملي التي تناسب وكيلاً ذكياً، ووصف إحداها في بطاقة وكيل: المدخلات والتعليمات والمخرجات."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 6
+  },
+  {
+   "id": "q_r3",
+   "type": "scale",
+   "label": {
+    "en": "I can build a Claude Project with instructions and knowledge that gives the same, checkable result on every run.",
+    "ar": "أستطيع بناء مشروع (Project) في Claude بتعليمات ومعرفة تعطي النتيجة نفسها القابلة للتحقق في كل تشغيل."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 7
+  },
+  {
+   "id": "q_r4",
+   "type": "scale",
+   "label": {
+    "en": "I can connect an agent to a Drive folder and have it return its output in a fixed format.",
+    "ar": "أستطيع ربط وكيل بمجلد في Drive وجعله يُخرج نتيجته بتنسيق ثابت."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 8
+  },
+  {
+   "id": "q_r5",
+   "type": "scale",
+   "label": {
+    "en": "I can package my method as a skill and run it on a schedule, with a human review step.",
+    "ar": "أستطيع تحويل طريقة عملي إلى مهارة (Skill) وتشغيلها وفق جدول زمني، مع خطوة مراجعة بشرية."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 9
+  },
+  {
+   "id": "q_r6",
+   "type": "scale",
+   "label": {
+    "en": "I can match each Claude feature to its equivalent in ChatGPT, Microsoft 365 Copilot and Gemini.",
+    "ar": "أستطيع ربط كل ميزة في Claude بما يقابلها في ChatGPT وMicrosoft 365 Copilot وGemini."
+   },
+   "required": true,
+   "sectionId": "s_2",
+   "scaleConfig": {
+    "min": 1,
+    "max": 5,
+    "minLabel": {
+     "en": "1: No idea / never done it",
+     "ar": "1: لا أعرف / لم أفعله من قبل"
+    },
+    "maxLabel": {
+     "en": "5: Confidently on my own",
+     "ar": "5: بثقة وحدي"
+    }
+   },
+   "order": 10
+  },
+  {
+   "id": "q_1",
+   "type": "select",
+   "label": {
+    "en": "1. Claude summarizes the engagement letter and gives the report date as 31 March 2026. The letter says 31 March 2027. What do you do next?",
+    "ar": "1. يلخّص Claude خطاب التكليف ويذكر أن موعد التقرير هو 31 مارس 2026، بينما ينص الخطاب على 31 مارس 2027. ما خطوتك التالية؟"
+   },
+   "required": true,
+   "sectionId": "s_3",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Fix it from the letter and check every other date",
+      "ar": "تصحيح التاريخ من الخطاب ومراجعة كل التواريخ الأخرى"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Ask Claude to try again until the year looks right",
+      "ar": "الطلب من Claude المحاولة مجدداً حتى تبدو السنة صحيحة"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Keep it: the day and month are right, the year is minor",
+      "ar": "إبقاؤه كما هو: اليوم والشهر صحيحان والسنة تفصيل بسيط"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Stop using Claude to summarize engagement letters",
+      "ar": "التوقف عن استخدام Claude لتلخيص خطابات التكليف"
+     }
+    }
+   ],
+   "order": 11
+  },
+  {
+   "id": "q_2",
+   "type": "select",
+   "label": {
+    "en": "2. Every month, three coordinators turn the same client emails into a request tracker, each in their own chat. Their trackers never look the same. What fixes this best?",
+    "ar": "2. يحوّل ثلاثة منسقين كل شهر رسائل العميل نفسها إلى متتبع طلبات، كلٌّ في محادثته الخاصة، ولا تتشابه متتبعاتهم أبداً. ما أفضل حل لذلك؟"
+   },
+   "required": true,
+   "sectionId": "s_3",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Each coordinator writes a longer, more detailed prompt",
+      "ar": "أن يكتب كلٌّ منهم أمراً أطول وأكثر تفصيلاً"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Ask Claude to be careful and check its work twice",
+      "ar": "أن يُطلب من Claude الحرص ومراجعة عمله مرتين"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Save the rules and an example output in a Project",
+      "ar": "حفظ القواعد ومثال على المخرجات في مشروع (Project)"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Use a different AI tool that gives more stable answers",
+      "ar": "استخدام أداة ذكاء اصطناعي أخرى تعطي إجابات أكثر ثباتاً"
+     }
+    }
+   ],
+   "order": 12
+  },
+  {
+   "id": "q_3",
+   "type": "select",
+   "label": {
+    "en": "3. Which task is the best first agent for an audit team?",
+    "ar": "3. ما أفضل مهمة لتكون أول وكيل لفريق تدقيق؟"
+   },
+   "required": true,
+   "sectionId": "s_3",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Filling in the client-acceptance checklist once a year",
+      "ar": "تعبئة قائمة التحقق لقبول العملاء مرة واحدة في السنة"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Choosing each week which findings to raise with the client",
+      "ar": "اختيار النتائج التي تُعرض على العميل كل أسبوع"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Joining the weekly progress call with the client's finance team",
+      "ar": "حضور الاجتماع الأسبوعي لمتابعة التقدم مع الفريق المالي للعميل"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Matching each week's bank statement to the cash book",
+      "ar": "مطابقة كشف الحساب البنكي الأسبوعي مع دفتر النقدية"
+     }
+    }
+   ],
+   "order": 13
+  },
+  {
+   "id": "q_4",
+   "type": "select",
+   "label": {
+    "en": "4. Your invoice agent lives in a Claude Project. Your supervisor adds a rule: \"Flag any difference over KWD 100.\" Where does the rule go?",
+    "ar": "4. يعمل وكيل الفواتير لديك داخل مشروع (Project) في Claude. يضيف مشرفك قاعدة: \"أشِر إلى أي فرق يزيد على 100 دينار كويتي\". أين توضع هذه القاعدة؟"
+   },
+   "required": true,
+   "sectionId": "s_3",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "In the files you attach to each month's run",
+      "ar": "في الملفات التي ترفقها مع تشغيل كل شهر"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "In the chat, typed again at the start of each run",
+      "ar": "في المحادثة، تُكتب من جديد في بداية كل تشغيل"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "In the Rules part of the agent's instructions",
+      "ar": "في جزء القواعد (Rules) من تعليمات الوكيل"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "In the output file name, so the reviewer sees it",
+      "ar": "في اسم ملف المخرجات، ليراها المراجع"
+     }
+    }
+   ],
+   "order": 14
+  },
+  {
+   "id": "q_5",
+   "type": "select",
+   "label": {
+    "en": "5. Your firm later moves to Microsoft 365 Copilot. What carries over from today?",
+    "ar": "5. انتقلت شركتك لاحقاً إلى Microsoft 365 Copilot. ما الذي ينتقل معك من اليوم؟"
+   },
+   "required": true,
+   "sectionId": "s_3",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "The Agent Card: input, instruction and output",
+      "ar": "بطاقة الوكيل: المدخلات والتعليمات والمخرجات"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Nothing, because every AI tool works differently",
+      "ar": "لا شيء، لأن كل أداة ذكاء اصطناعي تعمل بطريقة مختلفة"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Only the exact prompts, copied word for word",
+      "ar": "الأوامر نفسها فقط، منسوخة حرفياً"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Only the sample files and the output template",
+      "ar": "الملفات التدريبية وقالب المخرجات فقط"
+     }
+    }
+   ],
+   "order": 15
+  },
+  {
+   "id": "q_6",
+   "type": "select",
+   "label": {
+    "en": "6. Your agent works only when you open Claude and attach files. What lets it run each morning without you?",
+    "ar": "6. لا يعمل وكيلك إلا عندما تفتح Claude وترفق الملفات. ما الذي يجعله يعمل كل صباح دون تدخلك؟"
+   },
+   "required": true,
+   "sectionId": "s_4",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "A longer prompt that tells Claude to remember the task",
+      "ar": "أمر أطول يطلب من Claude تذكّر المهمة"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "A skill, a connected input folder and a scheduled task",
+      "ar": "مهارة (Skill) ومجلد مدخلات متصل ومهمة مجدولة"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "A rule in the Project that says run every morning",
+      "ar": "قاعدة في المشروع (Project) تقول: شغّل الوكيل كل صباح"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Sharing the Project with a colleague who presses Send",
+      "ar": "مشاركة المشروع مع زميل يضغط زر الإرسال"
+     }
+    }
+   ],
+   "order": 16
+  },
+  {
+   "id": "q_7",
+   "type": "select",
+   "label": {
+    "en": "7. On Thursday, the reviewer opens the Log folder. There is a run-log file for every day this week except Monday. What should the reviewer conclude?",
+    "ar": "7. يفتح المراجع مجلد السجل (Log) يوم الخميس. يوجد ملف سجل تشغيل لكل يوم من هذا الأسبوع ما عدا يوم الاثنين. ما الذي يجب أن يستنتجه المراجع؟"
+   },
+   "required": true,
+   "sectionId": "s_4",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Monday had no new files, so the run had nothing to log",
+      "ar": "لم تصل ملفات جديدة يوم الاثنين، فلم يكن لدى التشغيل ما يسجّله"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "The Monday run failed or did not start: check it",
+      "ar": "تشغيل يوم الاثنين فشل أو لم يبدأ: يجب التحقق منه"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Claude probably merged Monday's log into Tuesday's file",
+      "ar": "ربما دمج Claude سجل الاثنين في ملف يوم الثلاثاء"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Nothing: one missing log file in a week is normal",
+      "ar": "لا شيء: غياب ملف سجل واحد في الأسبوع أمر طبيعي"
+     }
+    }
+   ],
+   "order": 17
+  },
+  {
+   "id": "q_8",
+   "type": "select",
+   "label": {
+    "en": "8. Your workflow writes the weekly status summary for your manager every Thursday at 08:00. Where does the human review step belong?",
+    "ar": "8. يكتب سير العمل لديك ملخص الحالة الأسبوعي لمديرك كل يوم خميس الساعة 08:00. أين تقع خطوة المراجعة البشرية؟"
+   },
+   "required": true,
+   "sectionId": "s_4",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Before the trigger, so nothing starts without approval",
+      "ar": "قبل المُشغِّل، حتى لا يبدأ شيء دون موافقة"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Only at year end, when the audit file is signed",
+      "ar": "في نهاية السنة فقط، عند اعتماد ملف التدقيق"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Nowhere, once the agent has passed three tests",
+      "ar": "لا حاجة إليها بعد أن يجتاز الوكيل ثلاثة اختبارات"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "After the output, before anyone sends or relies on it",
+      "ar": "بعد المخرجات، وقبل أن يرسلها أحد أو يعتمد عليها"
+     }
+    }
+   ],
+   "order": 18
+  },
+  {
+   "id": "q_9",
+   "type": "select",
+   "label": {
+    "en": "9. Task A takes 50 minutes by hand and 8 with the agent, 15 times a month. Task B takes 20 minutes by hand and 5 with the agent, 40 times a month. Which saves more time each month?",
+    "ar": "9. تستغرق المهمة (أ) 50 دقيقة يدوياً و8 دقائق مع الوكيل، 15 مرة في الشهر. وتستغرق المهمة (ب) 20 دقيقة يدوياً و5 دقائق مع الوكيل، 40 مرة في الشهر. أيهما توفر وقتاً أكثر كل شهر؟"
+   },
+   "required": true,
+   "sectionId": "s_4",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Task B, about 10 hours a month",
+      "ar": "المهمة (ب)، نحو 10 ساعات في الشهر"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Both save exactly the same time",
+      "ar": "توفر المهمتان الوقت نفسه تماماً"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Task A, about 10.5 hours a month",
+      "ar": "المهمة (أ)، نحو 10.5 ساعة في الشهر"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Task B, because it runs more often",
+      "ar": "المهمة (ب)، لأنها تتكرر أكثر من الأخرى"
+     }
+    }
+   ],
+   "order": 19
+  },
+  {
+   "id": "q_10",
+   "type": "select",
+   "label": {
+    "en": "10. A colleague wants to share his invoice skill with the whole team. Its instructions name a real client and quote two of its invoice amounts. What should he do first?",
+    "ar": "10. يريد زميل مشاركة مهارة الفواتير الخاصة به مع الفريق كله. تذكر تعليماتها اسم عميل حقيقي وتقتبس مبلغين من فواتيره. ماذا يجب أن يفعل أولاً؟"
+   },
+   "required": true,
+   "sectionId": "s_5",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Remove the client details and test it on dummy data",
+      "ar": "حذف بيانات العميل واختبار المهارة على بيانات تدريبية"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Share it, since only colleagues can open the skill",
+      "ar": "مشاركتها، لأن الزملاء وحدهم يستطيعون فتح المهارة"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Share it, and ask the team not to copy the amounts",
+      "ar": "مشاركتها، مع الطلب من الفريق عدم نسخ المبالغ"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Rename the skill so the client's name is not visible",
+      "ar": "تغيير اسم المهارة كي لا يظهر اسم العميل الحقيقي"
+     }
+    }
+   ],
+   "order": 20
+  },
+  {
+   "id": "q_11",
+   "type": "select",
+   "label": {
+    "en": "11. Your invoice agent passed three tests. Next month, an invoice dated in December arrives in the November pack, and the agent marks it Matched. What is the best next step?",
+    "ar": "11. اجتاز وكيل الفواتير ثلاثة اختبارات. في الشهر التالي وصلت فاتورة بتاريخ ديسمبر ضمن حزمة نوفمبر، فوضع الوكيل عليها حالة Matched. ما أفضل خطوة تالية؟"
+   },
+   "required": true,
+   "sectionId": "s_5",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Accept it, because the amount matches the ledger",
+      "ar": "قبولها، لأن المبلغ يطابق دفتر الأستاذ"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Take December invoices out of the folder by hand",
+      "ar": "إخراج فواتير ديسمبر من المجلد يدوياً"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Ask Claude in the same chat if the date is fine",
+      "ar": "سؤال Claude في المحادثة نفسها إن كان التاريخ مقبولاً"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Add a rule to flag out-of-period dates; retest",
+      "ar": "إضافة قاعدة للتواريخ خارج الفترة وإعادة الاختبار"
+     }
+    }
+   ],
+   "order": 21
+  },
+  {
+   "id": "q_12",
+   "type": "select",
+   "label": {
+    "en": "12. Each week, your team's scheduled task flags a few new invoices as \"Amount differs\". A month later, nobody has acted on any of the flags. What fixes this?",
+    "ar": "12. كل أسبوع، تُشير المهمة المجدولة لفريقك إلى بعض الفواتير الجديدة بعبارة \"Amount differs\". وبعد شهر، لم يتخذ أحد أي إجراء بشأن هذه الإشارات. ما الحل؟"
+   },
+   "required": true,
+   "sectionId": "s_5",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "Lower the KWD limit so the task flags more invoices",
+      "ar": "خفض الحد بالدينار حتى تُشير المهمة إلى فواتير أكثر"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "Name a reviewer who reads each run and signs off",
+      "ar": "تسمية مراجع يقرأ كل تشغيل ويعتمده"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "Delete the flag rule, since nobody acts on it",
+      "ar": "حذف قاعدة الإشارة، لأن أحداً لا يتصرف بناءً عليها"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "Email the output file to the whole team each morning",
+      "ar": "إرسال ملف المخرجات بالبريد إلى الفريق كله كل صباح"
+     }
+    }
+   ],
+   "order": 22
+  },
+  {
+   "id": "q_13",
+   "type": "select",
+   "label": {
+    "en": "13. A supervisor asks which of your team's four agents to automate first. Which is the best choice?",
+    "ar": "13. يسألك مشرف أيّ وكلاء فريقك الأربعة يُؤتمت أولاً. ما الخيار الأفضل؟"
+   },
+   "required": true,
+   "sectionId": "s_5",
+   "options": [
+    {
+     "id": "opt_a",
+     "value": "a",
+     "label": {
+      "en": "The one with the most steps and the longest instruction",
+      "ar": "الوكيل الذي فيه أكثر الخطوات وأطول التعليمات"
+     }
+    },
+    {
+     "id": "opt_b",
+     "value": "b",
+     "label": {
+      "en": "The one that runs often and has clear, checkable rules",
+      "ar": "الذي يعمل كثيراً وقواعده واضحة وقابلة للتحقق"
+     }
+    },
+    {
+     "id": "opt_c",
+     "value": "c",
+     "label": {
+      "en": "The newest one, because it uses the latest features",
+      "ar": "الأحدث بينها، لأنه يستخدم أحدث ميزات الأداة"
+     }
+    },
+    {
+     "id": "opt_d",
+     "value": "d",
+     "label": {
+      "en": "The one built by the most senior member of the team",
+      "ar": "الوكيل الذي بناه أقدم عضو في الفريق"
+     }
+    }
+   ],
+   "order": 23
+  }
+ ],
+ "_update": {
+  "brandingTitle": {
+   "en": "AI Innovation and Automation · MAP Test: POST (Day 2)",
+   "ar": "الابتكار والأتمتة بالذكاء الاصطناعي · اختبار MAP: البعدي (اليوم 2)"
+  },
+  "brandingSubtitle": {
+   "en": "CODED × RSM Albazie",
+   "ar": "CODED × آر إس إم البزيع"
+  },
+  "clientName": "RSM Albazie",
+  "cohortName": "RSM-AI-Nov/Nov-26",
+  "slug": "coded-rsm-albazie-ai-innovation-and-automation-map-test-post-day-2"
+ }
+}

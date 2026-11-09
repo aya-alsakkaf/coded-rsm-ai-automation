@@ -1,99 +1,217 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "outputDirectory": "public",
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
+ "$schema": "https://openapi.vercel.sh/vercel.json",
+ "outputDirectory": "public",
+ "cleanUrls": true,
+ "trailingSlash": false,
+ "redirects": [
+  {
+   "source": "/",
+   "destination": "/coded-rsm-ai-automation",
+   "permanent": false
+  },
+  {
+   "source": "/pre",
+   "destination": "https://platform.joincoded.com/sv/coded-rsm-albazie-ai-innovation-and-automation-map-test-pre-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/post",
+   "destination": "https://platform.joincoded.com/sv/coded-rsm-albazie-ai-innovation-and-automation-map-test-post-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/survey",
+   "destination": "https://platform.joincoded.com/sv/coded-rsm-albazie-ai-innovation-and-automation-final-satisfaction-survey",
+   "permanent": false
+  },
+  {
+   "source": "/day1",
+   "destination": "/coded-rsm-ai-automation-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/slides1",
+   "destination": "/coded-rsm-ai-automation-day-1-deck",
+   "permanent": false
+  },
+  {
+   "source": "/deck-day-1",
+   "destination": "/coded-rsm-ai-automation-day-1-deck",
+   "permanent": false
+  },
+  {
+   "source": "/prompt-sheet-day-1",
+   "destination": "/coded-rsm-ai-automation-prompt-sheet-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/presenter-notes-day-1",
+   "destination": "/staff/coded-rsm-ai-automation-notes-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/demo-runbook-day-1",
+   "destination": "/staff/coded-rsm-ai-automation-runbook-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/backup-outputs-day-1",
+   "destination": "/staff/coded-rsm-ai-automation-backup-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/answer-key-day-1",
+   "destination": "/staff/coded-rsm-ai-automation-answer-key-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/lab-day-1",
+   "destination": "/coded-rsm-ai-automation-lab-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/day2",
+   "destination": "/coded-rsm-ai-automation-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/slides2",
+   "destination": "/coded-rsm-ai-automation-day-2-deck",
+   "permanent": false
+  },
+  {
+   "source": "/deck-day-2",
+   "destination": "/coded-rsm-ai-automation-day-2-deck",
+   "permanent": false
+  },
+  {
+   "source": "/prompt-sheet-day-2",
+   "destination": "/coded-rsm-ai-automation-prompt-sheet-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/presenter-notes-day-2",
+   "destination": "/staff/coded-rsm-ai-automation-notes-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/demo-runbook-day-2",
+   "destination": "/staff/coded-rsm-ai-automation-runbook-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/backup-outputs-day-2",
+   "destination": "/staff/coded-rsm-ai-automation-backup-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/answer-key-day-2",
+   "destination": "/staff/coded-rsm-ai-automation-answer-key-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/lab-day-2",
+   "destination": "/coded-rsm-ai-automation-lab-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/cheat-sheet",
+   "destination": "/coded-rsm-ai-automation-cheat-sheet",
+   "permanent": false
+  },
+  {
+   "source": "/safe-use-card",
+   "destination": "/coded-rsm-ai-automation-safe-use-card",
+   "permanent": false
+  },
+  {
+   "source": "/take-home-guide",
+   "destination": "/coded-rsm-ai-automation-take-home-guide",
+   "permanent": false
+  },
+  {
+   "source": "/facilitator-kit",
+   "destination": "/staff/coded-rsm-ai-automation-facilitator-kit",
+   "permanent": false
+  },
+  {
+   "source": "/lesson-plan",
+   "destination": "/staff/coded-rsm-ai-automation-lesson-plan",
+   "permanent": false
+  },
+  {
+   "source": "/workshop-index",
+   "destination": "/staff",
+   "permanent": false
+  },
+  {
+   "source": "/prompts1",
+   "destination": "/coded-rsm-ai-automation-prompt-sheet-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/prompts2",
+   "destination": "/coded-rsm-ai-automation-prompt-sheet-day-2",
+   "permanent": false
+  },
+  {
+   "source": "/lab1",
+   "destination": "/coded-rsm-ai-automation-lab-day-1",
+   "permanent": false
+  },
+  {
+   "source": "/lab2",
+   "destination": "/coded-rsm-ai-automation-lab-day-2",
+   "permanent": false
+  }
+ ],
+ "headers": [
+  {
+   "source": "/(.*)",
+   "headers": [
     {
-      "source": "/",
-      "destination": "/coded-rsm-ai-automation",
-      "permanent": false
+     "key": "X-Content-Type-Options",
+     "value": "nosniff"
     },
     {
-      "source": "/pre",
-      "destination": "/coded-rsm-ai-automation",
-      "permanent": false
+     "key": "Referrer-Policy",
+     "value": "strict-origin-when-cross-origin"
     },
     {
-      "source": "/post",
-      "destination": "/coded-rsm-ai-automation",
-      "permanent": false
+     "key": "X-Frame-Options",
+     "value": "SAMEORIGIN"
     },
     {
-      "source": "/survey",
-      "destination": "/coded-rsm-ai-automation",
-      "permanent": false
-    },
-    {
-      "source": "/slides1",
-      "destination": "/coded-rsm-ai-automation-day-1-deck",
-      "permanent": false
-    },
-    {
-      "source": "/prompts1",
-      "destination": "/coded-rsm-ai-automation-prompt-sheet-day-1",
-      "permanent": false
-    },
-    {
-      "source": "/day1",
-      "destination": "/coded-rsm-ai-automation-day-1",
-      "permanent": false
-    },
-    {
-      "source": "/slides2",
-      "destination": "/coded-rsm-ai-automation-day-2-deck",
-      "permanent": false
-    },
-    {
-      "source": "/prompts2",
-      "destination": "/coded-rsm-ai-automation-prompt-sheet-day-2",
-      "permanent": false
-    },
-    {
-      "source": "/day2",
-      "destination": "/coded-rsm-ai-automation-day-2",
-      "permanent": false
+     "key": "X-Robots-Tag",
+     "value": "noindex, nofollow"
     }
-  ],
-  "headers": [
+   ]
+  },
+  {
+   "source": "/staff/(.*)",
+   "headers": [
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
-        },
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
+     "key": "X-Robots-Tag",
+     "value": "noindex, nofollow"
     },
     {
-      "source": "/staff",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "private, no-store"
-        }
-      ]
-    },
-    {
-      "source": "/staff/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "private, no-store"
-        }
-      ]
+     "key": "Cache-Control",
+     "value": "private, no-store"
     }
-  ]
+   ]
+  },
+  {
+   "source": "/staff",
+   "headers": [
+    {
+     "key": "X-Robots-Tag",
+     "value": "noindex, nofollow"
+    },
+    {
+     "key": "Cache-Control",
+     "value": "private, no-store"
+    }
+   ]
+  }
+ ]
 }

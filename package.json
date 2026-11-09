@@ -2,8 +2,8 @@
   "name": "coded-rsm-ai-automation",
   "private": true,
   "type": "module",
-  "description": "AI Innovation and Automation workshop site, CODED Professionals. Static site in public/, staff lock in middleware.js.",
+  "description": "CODED \u00d7 RSM \u00b7 AI Innovation and Automation workshop site (static, in public/) with a staff password on /staff.",
   "dependencies": {
-    "@vercel/functions": "3.10.1"
+    "@vercel/functions": "^3.10.4"
   }
 }

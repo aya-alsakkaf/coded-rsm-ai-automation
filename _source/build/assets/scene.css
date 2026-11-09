@@ -1,0 +1,44 @@
+/* ===== scene(): an analogy drawn as a small scene (people, places, objects, light motion). Ported from the drawn
+   analogy scenes of an earlier CODED deck: stick people, buildings and objects in inline SVG, moved by CSS keyframes.
+   Colors come from the deck tokens, so the client mix applies. */
+.wk-ana{display:flex;align-items:center;gap:clamp(20px,3vw,48px);width:100%;max-width:1240px}
+.wk-ana-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:clamp(10px,1.6vh,18px)}
+.wk-ana-text .cd-lede{max-width:620px}
+.wk-ana-viz{flex:none;width:min(48%,600px)}
+.wk-scene{width:100%;height:auto;display:block;overflow:visible}
+.wk-scene .sc-line{fill:none;stroke:var(--cd-accent);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.wk-scene .sc-hot{fill:none;stroke:var(--cd-accent-soft);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.wk-scene .sc-dim{fill:none;stroke:rgba(255,255,255,.42);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.wk-scene .sc-bad{fill:none;stroke:#FF8A8A;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.wk-scene .sc-ok{fill:none;stroke:#7FE0A8;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.wk-scene .sc-fill{fill:color-mix(in srgb,var(--cd-accent) 16%,transparent)}
+.wk-scene .sc-fill-hot{fill:color-mix(in srgb,var(--cd-accent-soft) 22%,transparent)}
+.wk-scene .sc-win{fill:var(--cd-accent-soft)}
+.wk-scene .sc-ground{stroke:rgba(255,255,255,.16);stroke-width:2;fill:none}
+.wk-scene .sc-path{fill:none;stroke:rgba(255,255,255,.22);stroke-width:2;stroke-dasharray:6 6}
+.wk-scene .viz-lbl{font-family:var(--cd-font-mono);font-size:14.5px;fill:#C9D3E3;letter-spacing:.03em}
+.wk-scene .viz-lbl.hot{fill:var(--cd-accent-soft);font-weight:700}
+.wk-scene .viz-lbl.bad{fill:#FF8A8A;font-weight:700}
+.wk-scene .viz-lbl.ok{fill:#7FE0A8;font-weight:700}
+.wk-scene .sc-pill{fill:rgba(11,26,51,.92);stroke:var(--cd-accent-soft);stroke-width:1.4}
+.wk-scene .sc-pill.bad{stroke:#FF8A8A}.wk-scene .sc-pill.ok{stroke:#7FE0A8}
+.wk-scene .sc-stamp{fill:none;stroke:#FF8A8A;stroke-width:3}
+.wk-scene .sc-stamp-t{font-family:var(--cd-font-mono);font-weight:700;font-size:18px;letter-spacing:.18em;fill:#FF8A8A}
+@keyframes dtBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.dtbob{animation:dtBob var(--dur,2.4s) ease-in-out infinite;animation-delay:var(--delay,0s)}
+@keyframes dtNod{0%,100%{transform:rotate(0)}30%{transform:rotate(6deg)}60%{transform:rotate(-4deg)}}
+.dtnod{transform-box:fill-box;transform-origin:center bottom;animation:dtNod 2.6s ease-in-out infinite;animation-delay:var(--delay,0s)}
+@keyframes dtPop{0%,10%{opacity:0;transform:scale(.4)}22%,90%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.4)}}
+.dtpop{transform-box:fill-box;transform-origin:center;animation:dtPop var(--dur,8s) ease-out infinite;animation-delay:var(--delay,0s);animation-fill-mode:both}
+@keyframes dtLight{0%,8%{opacity:.25}20%,100%{opacity:1}}
+.dtlight{animation:dtLight var(--dur,6s) ease-in-out infinite;animation-delay:var(--delay,0s);animation-fill-mode:both}
+@keyframes dtDash{to{stroke-dashoffset:-24}}
+.dtdash{animation:dtDash 1.1s linear infinite}
+@keyframes dtRing{0%{transform:scale(.4);opacity:.8}100%{transform:scale(1.9);opacity:0}}
+.dtring{transform-box:fill-box;transform-origin:center;animation:dtRing 2.8s ease-out infinite;animation-delay:var(--delay,0s)}
+@keyframes dtStamp{0%,55%{opacity:0;transform:scale(1.4)}66%{opacity:1;transform:scale(1)}92%{opacity:1}100%{opacity:0}}
+.dtstamp{transform-box:fill-box;transform-origin:center;animation:dtStamp var(--dur,6s) ease-in-out infinite;animation-delay:var(--delay,0s);animation-fill-mode:both}
+@keyframes dtGlow{0%,100%{opacity:.4}50%{opacity:1}}
+.dtglow{animation:dtGlow var(--dur,2.4s) ease-in-out infinite;animation-delay:var(--delay,0s)}
+@media (prefers-reduced-motion:reduce){.wk-scene *{animation:none!important}.wk-scene animateMotion{display:none}}
+@media (max-width:900px){.wk-ana{flex-direction:column;align-items:flex-start}.wk-ana-viz{width:100%;max-width:420px;align-self:center}}

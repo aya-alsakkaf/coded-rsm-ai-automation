@@ -1,0 +1,502 @@
+{
+ "name": "CODED × RSM Albazie AI Innovation and Automation: Final Satisfaction Survey",
+ "description": "End-of-program satisfaction survey for CODED × RSM Albazie \"AI Innovation and Automation\", 2 days (Sunday 15 and Monday 16 November 2026). Taken at the end of Day 2 after the POST MAP test, about 5 minutes. The same 6-point agreement scale as other CODED programs (1 = Strongly disagree ... 6 = Strongly agree). Bilingual EN/AR.",
+ "audience": "teacher_student",
+ "isAnonymous": false,
+ "folderId": "e07488c7-5525-403f-a2c6-f6db15ae710a",
+ "sections": [
+  {
+   "id": "s_1",
+   "title": {
+    "en": "Your feedback",
+    "ar": "رأيك"
+   },
+   "order": 0
+  },
+  {
+   "id": "s_learn",
+   "title": {
+    "en": "What you can do now",
+    "ar": "ما أصبحت قادراً عليه"
+   },
+   "order": 1
+  },
+  {
+   "id": "s_team",
+   "title": {
+    "en": "Education Team",
+    "ar": "فريق التدريب"
+   },
+   "order": 2
+  },
+  {
+   "id": "s_comments",
+   "title": {
+    "en": "Comments",
+    "ar": "ملاحظات"
+   },
+   "order": 3
+  }
+ ],
+ "questions": [
+  {
+   "id": "intro",
+   "type": "statement",
+   "required": false,
+   "sectionId": "s_1",
+   "label": {
+    "en": "For each statement, tap a number from 1 to 6. 1 = Strongly disagree · 2 = Disagree · 3 = Somewhat disagree · 4 = Somewhat agree · 5 = Agree · 6 = Strongly agree.",
+    "ar": "لكل عبارة، اختر رقماً من 1 إلى 6. 1 = لا أوافق بشدة · 2 = لا أوافق · 3 = لا أوافق إلى حدٍّ ما · 4 = أوافق إلى حدٍّ ما · 5 = أوافق · 6 = أوافق بشدة."
+   },
+   "order": 0
+  },
+  {
+   "id": "q_dept",
+   "type": "text",
+   "label": {
+    "en": "Your department",
+    "ar": "الإدارة التي تعمل بها"
+   },
+   "required": false,
+   "sectionId": "s_1",
+   "order": 1
+  },
+  {
+   "id": "q_2",
+   "type": "scale",
+   "label": {
+    "en": "The program met my expectations as a learning experience.",
+    "ar": "لبّى البرنامج توقعاتي كتجربة تعليمية."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 2
+  },
+  {
+   "id": "q_1",
+   "type": "scale",
+   "label": {
+    "en": "I am satisfied with the program overall.",
+    "ar": "أنا راضٍ عن البرنامج بشكل عام."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 3
+  },
+  {
+   "id": "q_3",
+   "type": "scale",
+   "label": {
+    "en": "The content was high quality and relevant to my work at RSM Albazie.",
+    "ar": "كان المحتوى عالي الجودة وذا صلة بعملي في آر إس إم البزيع."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 4
+  },
+  {
+   "id": "q_9",
+   "type": "scale",
+   "label": {
+    "en": "The hands-on parts, such as the Agent Card, building my own agent in Claude, the scheduled workflow and Demo Day, helped me apply what I learned.",
+    "ar": "ساعدتني الأجزاء التطبيقية، مثل بطاقة الوكيل وبناء وكيلي الخاص في Claude وسير العمل المجدول ويوم العرض، على تطبيق ما تعلّمته."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 5
+  },
+  {
+   "id": "q_materials",
+   "type": "scale",
+   "label": {
+    "en": "The program website, the cheat sheet, the safe-use card and the take-home guide were clear and useful.",
+    "ar": "كانت مواد البرنامج (الموقع وورقة المراجعة السريعة وبطاقة الاستخدام الآمن ودليل ما بعد البرنامج) واضحةً ومفيدة."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 6
+  },
+  {
+   "id": "q_pace",
+   "type": "scale",
+   "label": {
+    "en": "The length and pace of the two days were right for me.",
+    "ar": "كانت مدة اليومين ووتيرتها مناسبة لي."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 7
+  },
+  {
+   "id": "q_logistics",
+   "type": "scale",
+   "label": {
+    "en": "The venue, the daily timing and access to Claude and the sandbox Drive worked well for me.",
+    "ar": "كان المكان والتوقيت اليومي وإمكانية الوصول إلى Claude ومجلد Drive التدريبي مناسباً لي."
+   },
+   "required": true,
+   "sectionId": "s_1",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 8
+  },
+  {
+   "id": "q_can1",
+   "type": "scale",
+   "label": {
+    "en": "I can explain what generative AI does well and where it can be wrong, and check its output against the source.",
+    "ar": "أستطيع أن أوضح ما يُجيده الذكاء الاصطناعي التوليدي وأين قد يخطئ، وأن أتحقق من مخرجاته مقابل المصدر."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 9
+  },
+  {
+   "id": "q_can2",
+   "type": "scale",
+   "label": {
+    "en": "I can find the tasks in my work that suit an agent, and describe one as an Agent Card: input, instruction and output.",
+    "ar": "أستطيع تحديد المهام في عملي التي تناسب وكيلاً ذكياً، ووصف إحداها في بطاقة وكيل: المدخلات والتعليمات والمخرجات."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 10
+  },
+  {
+   "id": "q_can3",
+   "type": "scale",
+   "label": {
+    "en": "I can build a Claude Project with instructions and knowledge that gives the same, checkable result on every run.",
+    "ar": "أستطيع بناء مشروع (Project) في Claude بتعليمات ومعرفة تعطي النتيجة نفسها القابلة للتحقق في كل تشغيل."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 11
+  },
+  {
+   "id": "q_can4",
+   "type": "scale",
+   "label": {
+    "en": "I can connect an agent to a Drive folder and have it return its output in a fixed format.",
+    "ar": "أستطيع ربط وكيل بمجلد في Drive وجعله يُخرج نتيجته بتنسيق ثابت."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 12
+  },
+  {
+   "id": "q_can5",
+   "type": "scale",
+   "label": {
+    "en": "I can package my method as a skill and run it on a schedule, with a human review step.",
+    "ar": "أستطيع تحويل طريقة عملي إلى مهارة (Skill) وتشغيلها وفق جدول زمني، مع خطوة مراجعة بشرية."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 13
+  },
+  {
+   "id": "q_can6",
+   "type": "scale",
+   "label": {
+    "en": "I can match each Claude feature to its equivalent in ChatGPT, Microsoft 365 Copilot and Gemini.",
+    "ar": "أستطيع ربط كل ميزة في Claude بما يقابلها في ChatGPT وMicrosoft 365 Copilot وGemini."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 14
+  },
+  {
+   "id": "q_10",
+   "type": "scale",
+   "label": {
+    "en": "I will use what I learned, and the tools from the program, in my work.",
+    "ar": "سأطبّق ما تعلّمته والأدوات التي حصلت عليها في البرنامج في عملي."
+   },
+   "required": true,
+   "sectionId": "s_learn",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 15
+  },
+  {
+   "id": "q_6",
+   "type": "scale",
+   "label": {
+    "en": "The instructor delivered the program effectively, and the teaching style was clear and easy to follow.",
+    "ar": "قدّم المدرّب البرنامج بفعالية، وكان أسلوب التدريس واضحاً وسهل المتابعة."
+   },
+   "required": true,
+   "sectionId": "s_team",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 16
+  },
+  {
+   "id": "q_7",
+   "type": "scale",
+   "label": {
+    "en": "The instructor and facilitators were knowledgeable, professional, and available to help me.",
+    "ar": "كان المدرّب والميسّرون متمكنين ومحترفين ومتاحين لمساعدتي."
+   },
+   "required": true,
+   "sectionId": "s_team",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 17
+  },
+  {
+   "id": "q_11",
+   "type": "scale",
+   "label": {
+    "en": "I would recommend this program to a colleague.",
+    "ar": "أنصح زملائي بهذا البرنامج."
+   },
+   "required": true,
+   "sectionId": "s_team",
+   "scaleConfig": {
+    "min": 1,
+    "max": 6,
+    "minLabel": {
+     "en": "Strongly disagree",
+     "ar": "لا أوافق بشدة"
+    },
+    "maxLabel": {
+     "en": "Strongly agree",
+     "ar": "أوافق بشدة"
+    }
+   },
+   "order": 18
+  },
+  {
+   "id": "q_12",
+   "type": "textarea",
+   "label": {
+    "en": "Which part of the two days was most useful to you, and why?",
+    "ar": "ما الجزء الأكثر فائدة لك خلال اليومين، ولماذا؟"
+   },
+   "required": false,
+   "sectionId": "s_comments",
+   "order": 19
+  },
+  {
+   "id": "q_13",
+   "type": "textarea",
+   "label": {
+    "en": "What would you change or add to make the program better?",
+    "ar": "ما الذي تقترح تغييره أو إضافته لتحسين البرنامج؟"
+   },
+   "required": false,
+   "sectionId": "s_comments",
+   "order": 20
+  },
+  {
+   "id": "q_8",
+   "type": "textarea",
+   "label": {
+    "en": "General comments and suggestions",
+    "ar": "ملاحظات واقتراحات عامة"
+   },
+   "required": false,
+   "sectionId": "s_comments",
+   "order": 21
+  }
+ ],
+ "_update": {
+  "brandingTitle": {
+   "en": "AI Innovation and Automation · Final Satisfaction Survey",
+   "ar": "الابتكار والأتمتة بالذكاء الاصطناعي · استبيان الرضا الختامي"
+  },
+  "brandingSubtitle": {
+   "en": "CODED × RSM Albazie",
+   "ar": "CODED × آر إس إم البزيع"
+  },
+  "clientName": "RSM Albazie",
+  "cohortName": "RSM-AI-Nov/Nov-26",
+  "slug": "coded-rsm-albazie-ai-innovation-and-automation-final-satisfaction-survey"
+ }
+}
