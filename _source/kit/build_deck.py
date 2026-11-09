@@ -98,16 +98,16 @@ def day1():
     s.append(listslide("b1tour", "b1", "Lesson 1 · the Claude tour", "Where today's tools <span class=\"hl\">live in Claude.</span>",
         ["<b>Chat:</b> the message box, with + to attach a file.", "<b>Projects:</b> instructions and knowledge for every chat inside.",
          "<b>Connectors:</b> Customize, then Connectors. Google Drive today.", "<b>Skills:</b> Customize, then Skills. A method Claude loads when it fits.",
-         "<b>Artifacts:</b> tables and files Claude makes, to open and download.", "<b>Scheduled:</b> in Cowork. Tomorrow's tool."],
+         "<b>Artifacts:</b> tables and files Claude makes, to open and download.", "<b>Scheduled tasks:</b> click Scheduled in the left sidebar. Tomorrow's tool."],
         "One box of the Agent Card at a time.",
         n=N(do="Show each place on the presenting laptop while you talk.", expect="People find Projects and Customize in under a minute.", silent="ask someone to find Customize on their screen.")))
-    s.append(task("b1task", "b1", "t11"))
+    s.append(task("b1task", "b1", "t11", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 2 · Why chat isn't enough, and finding the work
     s.append(story("b2story", "b2", "Lesson 2 · Why chat isn't enough", "Sunday 1 November, 09:30",
         f"Faisal, a supervisor, gets two reconciliation tables for the same {D.CO_SHORT} invoices. <b>Different columns, different totals.</b> One flags a problem; the other says everything matches.",
         "Same files. <span class=\"hl\">Two answers.</span>", "Feel why one-off chat is not repeatable.",
         n=N(do="Ask: which table would you sign off?", expect="Neither, until they match.", silent="say: neither. Then start the task."), time="09:30-10:20"))
-    s.append(task("b2task", "b2", "t12"))
+    s.append(task("b2task", "b2", "t12", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     s.append(tslide("b2two", "b2", "Debrief · one prompt, two chats", "The answer depended <span class=\"hl\">on the chat.</span>",
         ["", "Chat A", "Chat B"],
         [["Columns", "Invoice, amount, status", "Supplier, invoice, ledger, difference, comment"], ["Rows flagged", "None: every row Matched", "Two rows flagged"], ["Total checked", f"KWD {D.num(sum(r[4] for r in D.INVOICES))}", "5 invoices"]],
@@ -127,7 +127,7 @@ def day1():
     s.append(player("b2demo", "b2", "d13"))
     s.append(check("b2chk2", "b2", "Which of Dana's tasks is <b>not</b> a first agent?",
         [("Matching supplier invoices to the ledger", 0, "Three Yes: a strong candidate."), ("Discussing findings with the client's CFO", 1, "Right. It needs judgment and trust."), ("Chasing missing documents from clients", 0, "Three Yes: a candidate.")]))
-    s.append(task("b2task2", "b2", "t13"))
+    s.append(task("b2task2", "b2", "t13", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     s.append(timer_slide("b2board", "b2", "Board review · 10:17", "What repeats <span class=\"hl\">across departments?</span>",
         "The shared board on screen: one task from each person, grouped by department.", 3,
         n=N(do="Read the clusters aloud. Name the tasks that appear in more than one department.", expect="Reconciliations, chasing documents, status reports.",
@@ -168,7 +168,7 @@ def day1():
     s.append(check("b3chk2", "b3", "Where does <b>this month's invoice pack</b> go?",
         [("Into the Project knowledge", 0, "Knowledge is for what stays the same."), ("Into each run: attached, or read from the folder", 1, "Right. Input changes every run."), ("Into the Project instructions", 0, "Instructions are the rules, not the documents.")]))
     s.append(player("b3pp", "b3", "d14"))
-    s.append(task("b3task", "b3", "t14"))
+    s.append(task("b3task", "b3", "t14", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     s.append(term("b3t5", "b3", "Lesson 3 · choosing", "Pick the task <span class=\"hl\">with the highest score.</span>", "Scoring a use case",
         "Score each candidate from 1 to 5 on four points. The points are <b>how often</b>, <b>minutes each time</b>, <b>how clear the rules are</b>, and <b>can it run on a schedule</b>.",
         "The most interesting task…", "…is not always the best <b>first</b> agent.", "Day 2 needs an agent that can run without you.",
@@ -177,7 +177,7 @@ def day1():
     s.append(tslide("b3tracks", "b3", "Lesson 3 · the four tracks", "Pick a track <span class=\"hl\">for your agent.</span>", ["Track", "Starting example", "Pack"],
         [[t, ex, pk] for t, ex, _f, pk in CD.TRACKS], "Your own task fits a track. If not, ask Claude for a dummy pack with 2 planted errors (10 minutes).", cls="tight",
         n=N(do="Read the four tracks. Match them to the board clusters.", expect="Assurance picks extraction or analysis; Support picks workflow or reporting.", silent="say which track the coordinators' tasks fit.")))
-    s.append(task("b3task2", "b3", "t15"))
+    s.append(task("b3task2", "b3", "t15", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 4 · Build: Instruction
     s.append(story("b4story", "b4", "Lesson 4 · Build: Instruction", "Sunday 1 November, 12:30",
         "Faisal reviews Dana's first agent. The table looks right, <b>but one supplier had no PO number, and the agent filled in a likely one.</b>",
@@ -199,7 +199,7 @@ def day1():
         [["Instruction"] + C.TRANSFER[0][1:]],
         "The five parts work in every assistant. Paste them where the tool keeps its instructions.", cls="tight",
         n=N(do="Point to the Copilot or ChatGPT cell RSM is most likely to use.", expect="People see the same five parts in a different box.", silent="read the ChatGPT cell.")))
-    s.append(task("b4task", "b4", "t16"))
+    s.append(task("b4task", "b4", "t16", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 5 · Build: Input and Output
     s.append(story("b5story", "b5", "Lesson 5 · Build: Input and Output", "Sunday 1 November, 13:30",
         "Every Sunday, Noura, a project coordinator, downloads the same files from the shared drive and <b>drags them into a chat, one by one.</b>",
@@ -213,7 +213,7 @@ def day1():
     s.append(check("b5chk1", "b5", "Your agent will run tomorrow at 08:00. <b>Why can it not use files you drag in?</b>",
         [("Dragging files is too slow", 0, "Speed is not the reason."), ("Nobody is there to drag them at 08:00", 1, "Right. The input must live where the agent can read it."), ("Drive files are safer", 0, "Safety comes from what you connect, not from Drive.")]))
     s.append(player("b5pp1", "b5", "d17"))
-    s.append(task("b5task1", "b5", "t17"))
+    s.append(task("b5task1", "b5", "t17", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     s.append(term("b5t2", "b5", "Lesson 5 · output", "Same shape. <span class=\"hl\">Every run.</span>", "Artifact and fixed shape",
         "An <b>artifact</b> is an output you can open, edit and download, such as a table or a file. A <b>fixed shape</b> means the same columns, order and total line on every run.",
         "The firm's working-paper template…", "…makes <b>this week comparable with last week</b>.", "Name the columns, in order, in the instructions.",
@@ -225,7 +225,7 @@ def day1():
         [["Input"] + C.TRANSFER[1][1:], ["Output"] + C.TRANSFER[2][1:]],
         "The boxes stay the same. Only the button names change.", cls="tight",
         n=N(do="Read the Copilot column if RSM uses Microsoft 365.", expect="People recognize SharePoint and OneDrive.", silent="read the ChatGPT column.")))
-    s.append(task("b5task2", "b5", "t18"))
+    s.append(task("b5task2", "b5", "t18", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 6 · Build: Package
     s.append(story("b6story", "b6", "Lesson 6 · Build: Package", "Sunday 1 November, 14:45",
         "Dana's agent works in her Project. Faisal asks: <b>“Can the other two associates use it? And can it run tomorrow without you?”</b>",
@@ -245,8 +245,8 @@ def day1():
     s.append(check("b6chk2", "b6", "A colleague in another firm uses ChatGPT. <b>Where would your invoice skill live there?</b>",
         [("In a ChatGPT skill or custom GPT, same card inside", 1, "Right. The name changes; the card stays."), ("Nowhere: only Claude can package a method", 0, "Every assistant has a packaged method."),
          ("In one long chat that she keeps open", 0, "Chats do not travel.")]))
-    s.append(task("b6task", "b6", "t19"))
-    s.append(task("b6task2", "b6", "t110"))
+    s.append(task("b6task", "b6", "t19", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
+    s.append(task("b6task2", "b6", "t110", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 7 · Show and tell, and the Day 2 hook
     s.append(timer_slide("b7show", "b7", "Show and tell · 15:40", "Four teams. <span class=\"hl\">Ninety seconds each person.</span>",
         "Show your card, then run your skill live on one file from your pack. Your team watches and asks one question.", 12,
@@ -290,7 +290,7 @@ def day2():
     s.append(check("c1chk4", "c1", "What starts a scheduled workflow?",
         [("The trigger: a time or an event", 1, "Right. Today the trigger is a time."), ("The reviewer", 0, "The reviewer comes after the output."), ("The skill", 0, "The skill is the steps.")]))
     s.append(player("c1pp", "c1", "d21", n=N(more=["First, two minutes: read the vote from the board's Teams and votes tab and name one agent per team. Each team works on that agent's owner's laptop today."])))
-    s.append(task("c1task", "c1", "t21"))
+    s.append(task("c1task", "c1", "t21", n=N(do="Start the timer. Walk the room. Ask each team what they found so far.")))
     # Lesson 2 · Make it run on its own
     s.append(story("c2story", "c2", "Lesson 2 · Make it run on its own", "Monday 2 November, 09:30",
         "Dana's invoice agent needs a person to open Claude and type one line. <b>Tomorrow at 08:00 Dana is at a client.</b>",
@@ -298,14 +298,14 @@ def day2():
         n=N(do="Ask: what time would your team's workflow run?", expect="Early morning or Sunday.", silent="say: daily at 08:00 for invoices."), time="09:30-10:20"))
     s.append(term("c2t1", "c2", "Lesson 2 · the idea", "A calendar reminder <span class=\"hl\">that also does the work.</span>", "Scheduled task",
         "A <b>scheduled task</b> is a saved prompt that Claude runs on a frequency: hourly, daily, weekdays, weekly or manual. Its prompt calls your <b>skill</b> and reads through your <b>connectors</b>.",
-        "A reminder that only reminds you…", "…versus one that <b>does the work and leaves the file</b>.", "Cowork: Scheduled, then New task.",
-        n=N(do="Open Cowork and the Scheduled page on the presenting laptop.", expect="People see the Scheduled item in the sidebar.", silent="ask: which part of the card does this fill?")))
+        "A reminder that only reminds you…", "…versus one that <b>does the work and leaves the file</b>.", "Click Scheduled in the left sidebar, then New task.",
+        n=N(do="Click Scheduled in the left sidebar on the presenting laptop.", expect="People see the Scheduled item in the sidebar.", silent="ask: which part of the card does this fill?")))
     s.append(term("c2t2", "c2", "Lesson 2 · what it can do", "It runs in the cloud. <span class=\"hl\">Each run starts fresh.</span>", "How a scheduled run works",
         "The task runs even when your laptop is closed. Each run is <b>its own session</b>. Do not rely on it to recall the last run: the prompt, the skill and the folders must say everything.",
         "A new joiner on each run…", "…who only knows <b>the prompt, the skill and the folders</b>.", "Anything the run needs must be written down.",
         n=N(do="Ask: what can a run count on from yesterday?", expect="Only what the run log and the folders show.", silent="say: only what is written down. That is why we keep a run log.")))
     s.append(listslide("c2steps", "c2", "Lesson 2 · step by step", "Six steps <span class=\"hl\">to a schedule.</span>",
-        ["<b>Open:</b> Cowork, then Scheduled.", "<b>New task:</b> then Set up manually.", "<b>Name and prompt:</b> the prompt calls your skill and names the folders.",
+        ["<b>Open:</b> click Scheduled in the left sidebar.", "<b>New task:</b> upper right, then Set up manually.", "<b>Name and prompt:</b> the prompt calls your skill and names the folders.",
          "<b>Approval mode:</b> choose the mode that lets the run save and move files without waiting for you.", "<b>Frequency:</b> daily at 08:00. Kuwait works Sunday to Thursday, so Friday and Saturday runs log No new files.", "<b>Test:</b> run it once on demand and check the output."],
         "If the test run works, the schedule will work.",
         n=N(do="Build the invoice schedule live while you talk.", expect="The task appears on the Scheduled page.", silent="ask which step they would skip. None.",
@@ -314,7 +314,7 @@ def day2():
     s.append(check("c2chk", "c2", "Your scheduled task runs at 08:00. <b>What should it rely on from yesterday's run?</b>",
         [("Its memory of yesterday's session", 0, "Each run is its own session."), ("Only what the run log and the folders show", 1, "Right. Write down what each run needs."), ("The last file it read", 0, "Do not rely on it to recall files.")]))
     s.append(player("c2pp", "c2", "d22"))
-    s.append(task("c2task", "c2", "t22"))
+    s.append(task("c2task", "c2", "t22", n=N(do="Start the timer. Walk the room. Ask each team what they found so far.")))
     s.append(tslide("c2map", "c2", "Lesson 2 · transfer", "Scheduling <span class=\"hl\">in other tools.</span>", ["", "Claude", "ChatGPT", "Microsoft 365 Copilot", "Gemini"],
         [["When", "Scheduled task", "Scheduled task", "Scheduled prompt", "Scheduled action"], ["Event triggers", "n8n or Power Automate", "n8n or Power Automate", "Power Automate", "n8n or Apps Script"]],
         "Time triggers live in the assistant. Event triggers need an automation tool.", cls="tight",
@@ -338,7 +338,7 @@ def day2():
     s.append(check("c3chk", "c3", "The Inbox is empty at 08:00. <b>What should the run do?</b>",
         [("Process last week's files again", 0, "That doubles the work and the risk."), ("Write No new files in the run log and stop", 1, "Right. One honest line."), ("Create a sample to process", 0, "That is a made-up input.")]))
     s.append(player("c3pp", "c3", "d23"))
-    s.append(task("c3task", "c3", "t23"))
+    s.append(task("c3task", "c3", "t23", n=N(do="Start the timer. Walk the room. Ask each team what they found so far.")))
     s.append(rule("c3when", "c3", "Lesson 3 · when n8n", "A time trigger is enough for your week. <span class=\"hl\">Events need more.</span>",
         "Some triggers are events: an email arrives, a form is sent, a file lands. When the trigger is an event or the systems belong to the company, the next step is an automation tool such as n8n.",
         n=N(do="Ask: which of your tasks starts when an email arrives?", expect="Client documents, requests.", silent="say: the request inbox at Mirqab.")))
@@ -370,22 +370,22 @@ def day2():
     s.append(check("c4chk", "c4", "A workflow drafts a follow-up to a client with a wrong deadline. <b>Which change prevents a repeat?</b>",
         [("Run it once a week", 0, "Less often does not mean correct."), ("Drafts only, a reviewer, and a date check", 1, "Right. A person signs off."), ("Use a newer AI model", 0, "Any model can predict a wrong date.")]))
     s.append(player("c4pp", "c4", "d25"))
-    s.append(task("c4task", "c4", "t25"))
+    s.append(task("c4task", "c4", "t25", n=N(do="Start the timer. Walk the room. Ask each team what they found so far.")))
     # Lesson 5 · Test and prepare the demo
     s.append(story("c5story", "c5", "Lesson 5 · Test and prepare the demo", "Thursday 5 November, 13:30",
         "At 14:45 Dana shows the invoice workflow to the partners. <b>They will ask two things: does it run, and what does it save?</b>",
         "Show the run, <span class=\"hl\">then the number.</span>", "Measure the impact and prepare a five-minute demo.",
-        n=N(do="Read the rubric before the story ends.", expect="Questions about how the score works.", silent="say the three criteria."), time="13:30-14:25"))
+        n=N(do="Read the rubric before the story ends.", expect="Questions about how the score works.", silent="say the five criteria."), time="13:30-14:25"))
     s.append(stats("c5stats", "c5", "Lesson 5 · impact", "Minutes saved <span class=\"hl\">every month.</span>",
         [(f"{D.IMPACT_EX['by_hand']} min", "By hand", "One run of the task, done by a person."), (f"{D.IMPACT_EX['agent']} min", "With the agent", "Including the review."),
          (f"{D.IMPACT_MIN} min", "Saved a month", f"({D.IMPACT_EX['by_hand']} − {D.IMPACT_EX['agent']}) × {D.IMPACT_EX['runs']} runs: about 12 hours.")],
         "(Minutes by hand − minutes with the agent) × runs a month.", src="Example figures. Use your own timings from the board's Clock tab.",
         n=N(do="Work one team's numbers with the room.", expect="A few hours a month per task.", silent="work the invoice example: (45 − 6) × 22.")))
-    s.append(tslide("c5rubric", "c5", "Lesson 5 · the judges' rubric", "Thirty points. <span class=\"hl\">Three questions.</span>", ["Criterion", "Points", "Full marks"],
-        [["Problem relevance", "10", "A real, repeated task with a measured cost"], ["Solution quality", "10", "Scheduled, rules, flags not guesses, a named reviewer"],
-         ["Deployment potential", "10", "Could run at RSM next month with approved tools and data"]],
-        "Score each automation out of 30.",
-        n=N(do="Read each criterion. Ask what earns full marks on deployment.", expect="Approved tools, dummy data replaced by approved data.", silent="say: it could run at RSM next month.")))
+    s.append(tslide("c5rubric", "c5", "Lesson 5 · the judges' rubric", "Fifty points. <span class=\"hl\">Five criteria.</span>", ["Criterion", "Points", "Full marks"],
+        [[c, str(pt), t] for c, pt, t in CD.RUBRIC_FULL],
+        f"Five criteria, 10 points each. Total: {sum(pt for _c, pt, _t in CD.RUBRIC_FULL)}.", cls="tight",
+        n=N(do="Read each criterion. Ask how the panel will check source accuracy.", expect="Someone says: pick figures from the output and find them in the file.",
+            silent="say: the panel picks three figures from your output, and you show each one in its source file.")))
     s.append(listslide("c5script", "c5", "Lesson 5 · the demo", "Five beats. <span class=\"hl\">Five minutes.</span>",
         ["<b>Problem:</b> what it costs today.", "<b>Card:</b> the workflow card.", "<b>Live run:</b> a run on demand, on screen.", "<b>Impact:</b> minutes saved a month.", "<b>Next:</b> the next task you would automate."],
         "Rehearse the live run. It is the part that fails.",
@@ -393,10 +393,22 @@ def day2():
     s.append(player("c5pp", "c5", "d26"))
     s.append(check("c5chk", "c5", "A task takes 40 minutes by hand and 5 with the agent, 20 times a month. <b>About how much time does it save?</b>",
         [("About 7 hours", 0, "700 is minutes, not hours: divide by 60."), ("About 12 hours", 1, "Right. 35 × 20 = 700 minutes."), ("About 13 hours", 0, "That counts the full 40 minutes: 40 × 20 = 800.")]))
-    s.append(task("c5task", "c5", "t26"))
+    s.append(listslide("c5fail", "c5", "Lesson 5 · when a step fails", "When a step fails, <span class=\"hl\">the run says so.</span>",
+        [f"<b>Test it:</b> copy {CD.F_LOCKED}, a file no run can read, into the Inbox. Run on demand.",
+         "<b>Good run:</b> the run log says Could not read and names the file. The file stays in the Inbox. Nothing is guessed.",
+         "<b>Bad run:</b> a silent log, or an output row with made-up values.",
+         "<b>Fallback:</b> one line in the prompt says what to do, and the named reviewer checks that file by hand.",
+         "<b>No Drive:</b> if the connector is off, no run log is written. A missing log means: check the run."],
+        "Test the failure before Demo Day, not during it.",
+        n=N(do="Open the run log from the pre-flight locked-file test (Log folder of the test folder) and read its Could not read line. Then show the fallback line on the Day 2 prompt sheet.", expect="Someone asks why not just skip the file. Answer: a skip nobody sees is a gap in the audit file.",
+            silent="ask: who checks the locked file by hand on your team?", fallback="If the pre-flight log is missing, show the Task 2.5 backup table.",
+            more=["The test is part of Task 2.5. The skill owner adds the fallback line before the test run."])))
+    s.append(check("c5chk2", "c5", "The 08:00 run log says <b>Could not read: lease-scan.pdf</b>. The other files are in Outputs. <b>What happens next?</b>",
+        [("Run it again until Claude reads the file", 0, "A rerun gives the same result. A person acts."), ("The named reviewer checks that file by hand", 1, "Right. The log told you which file needs a person."), ("Nothing: the other files were processed", 0, "The locked file is still a gap in the work.")]))
+    s.append(task("c5task", "c5", "t26", n=N(do="Start the timer. Walk the room. Ask each team what they found so far.")))
     # Lesson 6 · Demo Day
     s.append(timer_slide("c6demo", "c6", "Demo Day · 14:45", "Four teams. <span class=\"hl\">Eight minutes each.</span>",
-        "Five minutes of demo, three minutes of questions. The panel scores each automation out of 30.", 8,
+        "Five minutes of demo, three minutes of questions. The panel scores each automation out of 50.", 8,
         n=N(do="Restart the timer for each team. Score on the board's Teams and votes tab.", expect="Four live runs, four impact numbers.", silent="ask the first panel question yourself.",
             fallback="If a live run fails, the team shows its latest output file and run log.", say="Team one, the floor is yours.", time="14:45-15:30")))
     s.append(tslide("c6order", "c6", "Demo Day · running order", "Who presents <span class=\"hl\">when.</span>", ["Team", "Time", "Workflow"],
@@ -404,9 +416,8 @@ def day2():
         "Scoring and panel comments from 15:17.",
         n=N(do="Fill the workflow names from the board before 14:45.", expect="Teams ready at their laptops.", silent="call Team 1.")))
     s.append(tslide("c6score", "c6", "Demo Day · scoring", "The panel's <span class=\"hl\">score sheet.</span>", ["Criterion", "10", "5", "0"],
-        [["Problem relevance", "Real task, measured cost", "Real task, no number", "Made-up task"], ["Solution quality", "Scheduled, rules, reviewer, run log", "Works by hand only", "Does not run"],
-         ["Deployment potential", "Ready with approved tools", "Needs work", "Not usable at RSM"]],
-        "The trainer scores. RSM leadership joins if they attend.",
+        [list(r) for r in CD.RUBRIC_SCORE],
+        f"Total out of {sum(pt for _c, pt, _t in CD.RUBRIC_FULL)}. The trainer scores. RSM leadership joins if they attend.", cls="tight",
         n=N(do="Keep this slide up while the panel scores.", expect="Scores on the board within 8 minutes.", silent="read each team's strongest point aloud.")))
     # Close
     s.append(mapslide("c7map", "c7", "after"))

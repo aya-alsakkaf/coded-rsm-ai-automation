@@ -163,7 +163,7 @@
 },
 {
 "say": "Fill all five boxes. A blank box is a risk.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each team what they found so far.",
 "expect": "One card per team with a time, a folder, a skill, a named output and a named reviewer.",
 "silent": null,
 "fallback": "A team whose agent is not ready takes the invoice workflow: one member turns the Task 1.4 Project into a skill first.",
@@ -175,7 +175,7 @@
 "t": "c1",
 "k": "task",
 "h": "Your turn 2.1: Your team's workflow card (20 min, in your team)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: One card per team with a time, a folder, a skill, a named output and a named reviewer. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: A team whose agent is not ready takes the invoice workflow: one member turns the Task 1.4 Project into a skill first. · Say: “Fill all five boxes. A blank box is a risk.”"
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each team what they found so far. · Expect: One card per team with a time, a folder, a skill, a named output and a named reviewer. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: A team whose agent is not ready takes the invoice workflow: one member turns the Task 1.4 Project into a skill first. · Say: “Fill all five boxes. A blank box is a risk.”"
 },
 {
 "say": null,
@@ -192,7 +192,7 @@
 },
 {
 "say": null,
-"do": "Open Cowork and the Scheduled page on the presenting laptop.",
+"do": "Click Scheduled in the left sidebar on the presenting laptop.",
 "expect": "People see the Scheduled item in the sidebar.",
 "silent": "ask: which part of the card does this fill?",
 "fallback": null,
@@ -201,7 +201,7 @@
 "t": "c2",
 "k": "term",
 "h": "A calendar reminder that also does the work.",
-"flat": "Do: Open Cowork and the Scheduled page on the presenting laptop. · Expect: People see the Scheduled item in the sidebar. · If the room is silent: ask: which part of the card does this fill?"
+"flat": "Do: Click Scheduled in the left sidebar on the presenting laptop. · Expect: People see the Scheduled item in the sidebar. · If the room is silent: ask: which part of the card does this fill?"
 },
 {
 "say": null,
@@ -261,7 +261,7 @@
 },
 {
 "say": "Struggle first. A hint at 10 minutes, then the three most common fixes at 18.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each team what they found so far.",
 "expect": "A scheduled task per team; one run that writes a named file to Outputs, moves the input files to Processed and saves a run-log file in Log.",
 "silent": null,
 "fallback": "If the form has no time field for Daily, use Create with Claude and say the time. If Cowork is not available on an account, run the same prompt in a chat and schedule it on the trainer's account.",
@@ -273,7 +273,7 @@
 "t": "c2",
 "k": "task",
 "h": "Your turn 2.2: Schedule your workflow (30 min, in your team)",
-"flat": "30 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A scheduled task per team; one run that writes a named file to Outputs, moves the input files to Processed and saves a run-log file in Log. · Give the hint at about 10 min. · Fast finishers have an extra task on the slide. · Fallback: If the form has no time field for Daily, use Create with Claude and say the time. If Cowork is not available on an account, run the same prompt in a chat and schedule it on the trainer's account. · Say: “Struggle first. A hint at 10 minutes, then the three most common fixes at 18.”"
+"flat": "30 min work, then share. · Do: Start the timer. Walk the room. Ask each team what they found so far. · Expect: A scheduled task per team; one run that writes a named file to Outputs, moves the input files to Processed and saves a run-log file in Log. · Give the hint at about 10 min. · Fast finishers have an extra task on the slide. · Fallback: If the form has no time field for Daily, use Create with Claude and say the time. If Cowork is not available on an account, run the same prompt in a chat and schedule it on the trainer's account. · Say: “Struggle first. A hint at 10 minutes, then the three most common fixes at 18.”"
 },
 {
 "say": null,
@@ -370,7 +370,7 @@
 },
 {
 "say": "Two runs: new files, then none.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each team what they found so far.",
 "expect": "Two run-log files per team: one for the run on batch 2 (invoice teams flag GTI-0091) and one that says No new files.",
 "silent": null,
 "fallback": "If the run hangs, check the folder name, then run it on demand again.",
@@ -382,7 +382,7 @@
 "t": "c3",
 "k": "task",
 "h": "Your turn 2.3: Batch 2 and the empty folder (25 min, in your team)",
-"flat": "25 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Two run-log files per team: one for the run on batch 2 (invoice teams flag GTI-0091) and one that says No new files. · Give the hint at about 8 min. · Fast finishers have an extra task on the slide. · Fallback: If the run hangs, check the folder name, then run it on demand again. · Say: “Two runs: new files, then none.”"
+"flat": "25 min work, then share. · Do: Start the timer. Walk the room. Ask each team what they found so far. · Expect: Two run-log files per team: one for the run on batch 2 (invoice teams flag GTI-0091) and one that says No new files. · Give the hint at about 8 min. · Fast finishers have an extra task on the slide. · Fallback: If the run hangs, check the folder name, then run it on demand again. · Say: “Two runs: new files, then none.”"
 },
 {
 "say": null,
@@ -521,7 +521,7 @@
 },
 {
 "say": "Your department's rules, word for word.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each team what they found so far.",
 "expect": "The skill has two department rules, the DRAFT mark and a Reviewed by line; the messy sample is flagged and routed.",
 "silent": null,
 "fallback": "A team short of time takes the All departments rules.",
@@ -532,21 +532,21 @@
 "time": "30 min work, then share",
 "t": "c4",
 "k": "task",
-"h": "Your turn 2.5: Your department's rules (30 min, in your team)",
-"flat": "30 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: The skill has two department rules, the DRAFT mark and a Reviewed by line; the messy sample is flagged and routed. · Give the hint at about 10 min. · Fast finishers have an extra task on the slide. · Fallback: A team short of time takes the All departments rules. · Say: “Your department's rules, word for word.”"
+"h": "Your turn 2.4: Your department's rules (30 min, in your team)",
+"flat": "30 min work, then share. · Do: Start the timer. Walk the room. Ask each team what they found so far. · Expect: The skill has two department rules, the DRAFT mark and a Reviewed by line; the messy sample is flagged and routed. · Give the hint at about 10 min. · Fast finishers have an extra task on the slide. · Fallback: A team short of time takes the All departments rules. · Say: “Your department's rules, word for word.”"
 },
 {
 "say": null,
 "do": "Read the rubric before the story ends.",
 "expect": "Questions about how the score works.",
-"silent": "say the three criteria.",
+"silent": "say the five criteria.",
 "fallback": null,
 "more": [],
 "time": "13:30-14:25",
 "t": "c5",
 "k": "story",
 "h": "Lesson 5 · Test and prepare the demo",
-"flat": "13:30-14:25. · Do: Read the rubric before the story ends. · Expect: Questions about how the score works. · If the room is silent: say the three criteria."
+"flat": "13:30-14:25. · Do: Read the rubric before the story ends. · Expect: Questions about how the score works. · If the room is silent: say the five criteria."
 },
 {
 "say": null,
@@ -563,16 +563,16 @@
 },
 {
 "say": null,
-"do": "Read each criterion. Ask what earns full marks on deployment.",
-"expect": "Approved tools, dummy data replaced by approved data.",
-"silent": "say: it could run at RSM next month.",
+"do": "Read each criterion. Ask how the panel will check source accuracy.",
+"expect": "Someone says: pick figures from the output and find them in the file.",
+"silent": "say: the panel picks three figures from your output, and you show each one in its source file.",
 "fallback": null,
 "more": [],
 "time": null,
 "t": "c5",
 "k": "table",
-"h": "Thirty points. Three questions.",
-"flat": "Do: Read each criterion. Ask what earns full marks on deployment. · Expect: Approved tools, dummy data replaced by approved data. · If the room is silent: say: it could run at RSM next month."
+"h": "Fifty points. Five criteria.",
+"flat": "Do: Read each criterion. Ask how the panel will check source accuracy. · Expect: Someone says: pick figures from the output and find them in the file. · If the room is silent: say: the panel picks three figures from your output, and you show each one in its source file."
 },
 {
 "say": null,
@@ -616,11 +616,39 @@
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
 },
 {
-"say": "Three clean runs, one number, five minutes.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
-"expect": "Three clean runs in the run log, one impact number, and a timed 5-minute plan per team.",
+"say": null,
+"do": "Open the run log from the pre-flight locked-file test (Log folder of the test folder) and read its Could not read line. Then show the fallback line on the Day 2 prompt sheet.",
+"expect": "Someone asks why not just skip the file. Answer: a skip nobody sees is a gap in the audit file.",
+"silent": "ask: who checks the locked file by hand on your team?",
+"fallback": "If the pre-flight log is missing, show the Task 2.5 backup table.",
+"more": [
+"The test is part of Task 2.5. The skill owner adds the fallback line before the test run."
+],
+"time": null,
+"t": "c5",
+"k": "list",
+"h": "When a step fails, the run says so.",
+"flat": "Do: Open the run log from the pre-flight locked-file test (Log folder of the test folder) and read its Could not read line. Then show the fallback line on the Day 2 prompt sheet. · Expect: Someone asks why not just skip the file. Answer: a skip nobody sees is a gap in the audit file. · The test is part of Task 2.5. The skill owner adds the fallback line before the test run. · If the room is silent: ask: who checks the locked file by hand on your team? · Fallback: If the pre-flight log is missing, show the Task 2.5 backup table."
+},
+{
+"say": null,
+"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"expect": "Option B.",
+"silent": "ask one table to choose together, then tap their choice.",
+"fallback": null,
+"more": [],
+"time": "1 min",
+"t": "c5",
+"k": "check",
+"h": "Quick check",
+"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+},
+{
+"say": "Three clean runs, one failed run, one number, five minutes.",
+"do": "Start the timer. Walk the room. Ask each team what they found so far.",
+"expect": "Three clean runs and one failed-run test in the run log (Could not read: mirqab-locked-test-file.pdf, nothing guessed, the file left in the Inbox), one impact number and a timed 5-minute plan per team.",
 "silent": null,
-"fallback": "If a live run fails in rehearsal, show the latest output file and the run log instead.",
+"fallback": "If mirqab-locked-test-file.pdf does not fail, pause the Google Drive connector on the trainer account, run the invoice task on demand, show that no run log is written, then reconnect. If a live run fails in rehearsal, show the latest output file and the run log instead.",
 "more": [
 "Give the hint at about 13 min.",
 "Fast finishers have an extra task on the slide."
@@ -628,8 +656,8 @@
 "time": "40 min work, then share",
 "t": "c5",
 "k": "task",
-"h": "Your turn 2.6: Three clean runs and the script (40 min, in your team)",
-"flat": "40 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Three clean runs in the run log, one impact number, and a timed 5-minute plan per team. · Give the hint at about 13 min. · Fast finishers have an extra task on the slide. · Fallback: If a live run fails in rehearsal, show the latest output file and the run log instead. · Say: “Three clean runs, one number, five minutes.”"
+"h": "Your turn 2.5: Clean runs, a failed run and the script (40 min, in your team)",
+"flat": "40 min work, then share. · Do: Start the timer. Walk the room. Ask each team what they found so far. · Expect: Three clean runs and one failed-run test in the run log (Could not read: mirqab-locked-test-file.pdf, nothing guessed, the file left in the Inbox), one impact number and a timed 5-minute plan per team. · Give the hint at about 13 min. · Fast finishers have an extra task on the slide. · Fallback: If mirqab-locked-test-file.pdf does not fail, pause the Google Drive connector on the trainer account, run the invoice task on demand, show that no run log is written, then reconnect. If a live run fails in rehearsal, show the latest output file and the run log instead. · Say: “Three clean runs, one failed run, one number, five minutes.”"
 },
 {
 "say": "Team one, the floor is yours.",

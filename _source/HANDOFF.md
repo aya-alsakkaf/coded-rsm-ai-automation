@@ -1,5 +1,7 @@
 # Handoff · CODED × RSM Albazie · AI Innovation and Automation
 
+> **Review round 1 (10 Nov 2026, Ahmad Maher) changes this handoff:** the Demo Day rubric is five criteria of 10 points, 50 in total (task relevance, working functionality, source accuracy, human controls, test evidence); Task 2.6 (now Task 2.5) adds a failed-run test with a fallback line; demos and tasks are renumbered without gaps (old Task 2.5 and 2.6 are 2.4 and 2.5; old Demos 1.3 to 1.9 and 1.11 are 1.2 to 1.9). Where this file says otherwise, CHANGELOG.md and the kit win.
+
 Written 8 Nov 2026 from `_source/OUTLINE.md` (the instructor plan of 8 Nov and the outline sent to RSM). One approval covers everything below,
 including creating and updating the three portal survey drafts.
 

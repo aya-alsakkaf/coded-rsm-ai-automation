@@ -259,7 +259,7 @@
 },
 {
 "say": "Three questions, one file. Then you check one answer yourself.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each person what they found so far.",
 "expect": "A 5-line summary; the dates (letter 7 September 2026, financial year end 31 December 2026, sign by 30 September 2026, interim work 16 November to 3 December 2026, year-end work 1 to 25 February 2027, report by 31 March 2027); and the missing section: responsibilities of management.",
 "silent": null,
 "fallback": "If upload fails, open the letter and paste the Timetable section into the chat.",
@@ -271,7 +271,7 @@
 "t": "b1",
 "k": "task",
 "h": "Your turn 1.1: First Claude chat (7 min, on your own)",
-"flat": "7 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A 5-line summary; the dates (letter 7 September 2026, financial year end 31 December 2026, sign by 30 September 2026, interim work 16 November to 3 December 2026, year-end work 1 to 25 February 2027, report by 31 March 2027); and the missing section: responsibilities of management. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: If upload fails, open the letter and paste the Timetable section into the chat. · Say: “Three questions, one file. Then you check one answer yourself.”"
+"flat": "7 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A 5-line summary; the dates (letter 7 September 2026, financial year end 31 December 2026, sign by 30 September 2026, interim work 16 November to 3 December 2026, year-end work 1 to 25 February 2027, report by 31 March 2027); and the missing section: responsibilities of management. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: If upload fails, open the letter and paste the Timetable section into the chat. · Say: “Three questions, one file. Then you check one answer yourself.”"
 },
 {
 "say": null,
@@ -288,7 +288,7 @@
 },
 {
 "say": "Same files, same tool, 18 people. Count how many different tables we get.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each person what they found so far.",
 "expect": "Tables that differ: different columns and different totals. Many miss one of the two problems: SCC-0718 (ledger 1,284.500, invoice 1,248.500) or FSC-3390 (not in the October ledger).",
 "silent": null,
 "fallback": "If Claude is slow, pairs share one laptop. Show the backup table in the debrief.",
@@ -300,7 +300,7 @@
 "t": "b2",
 "k": "task",
 "h": "Your turn 1.2: Same task, 18 answers (18 min, on your own, then in pairs)",
-"flat": "18 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Tables that differ: different columns and different totals. Many miss one of the two problems: SCC-0718 (ledger 1,284.500, invoice 1,248.500) or FSC-3390 (not in the October ledger). · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: If Claude is slow, pairs share one laptop. Show the backup table in the debrief. · Say: “Same files, same tool, 18 people. Count how many different tables we get.”"
+"flat": "18 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: Tables that differ: different columns and different totals. Many miss one of the two problems: SCC-0718 (ledger 1,284.500, invoice 1,248.500) or FSC-3390 (not in the October ledger). · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: If Claude is slow, pairs share one laptop. Show the backup table in the debrief. · Say: “Same files, same tool, 18 people. Count how many different tables we get.”"
 },
 {
 "say": "Nothing changed except the chat. That is the problem we solve today.",
@@ -366,7 +366,7 @@
 "time": "3 to 4 min",
 "t": "b2",
 "k": "player",
-"h": "Prompt playback, Demo 1.3: Dana tags her task list",
+"h": "Prompt playback, Demo 1.2: Dana tags her task list",
 "flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: A table with three Yes for invoice matching, lead schedules and chasing documents. The CFO discussion gets three No. The KYC check has clear rules but is not weekly: a later agent. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: Show the backup table. · Say: “Three tags. A task that gets three Yes is a candidate agent.”"
 },
 {
@@ -384,7 +384,7 @@
 },
 {
 "say": "Preparers: what do you rebuild on every engagement? Reviewers: what do you check every time? Coordinators: what do you chase every week, from requests to new-client KYC files?",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each person what they found so far.",
 "expect": "10 tasks, tagged; a top 3; one task on the shared board under the right department.",
 "silent": null,
 "fallback": "Anyone stuck starts from Dana's list on the slide and changes it to their own work.",
@@ -396,7 +396,7 @@
 "t": "b2",
 "k": "task",
 "h": "Your turn 1.3: Your task inventory (12 min, on your own)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: 10 tasks, tagged; a top 3; one task on the shared board under the right department. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone stuck starts from Dana's list on the slide and changes it to their own work. · Say: “Preparers: what do you rebuild on every engagement? Reviewers: what do you check every time? Coordinators: what do you chase every week, from requests to new-client KYC files?”"
+"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: 10 tasks, tagged; a top 3; one task on the shared board under the right department. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone stuck starts from Dana's list on the slide and changes it to their own work. · Say: “Preparers: what do you rebuild on every engagement? Reviewers: what do you check every time? Coordinators: what do you chase every week, from requests to new-client KYC files?”"
 },
 {
 "say": null,
@@ -543,12 +543,12 @@
 "time": "3 to 4 min",
 "t": "b3",
 "k": "player",
-"h": "Prompt playback, Demo 1.4: From card to agent",
+"h": "Prompt playback, Demo 1.3: From card to agent",
 "flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: A Project named Mirqab invoice match with the five-part instructions and the template in its knowledge. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: Show the backup table and build the Project after the slide. · Say: “The card says what. The Project keeps it, for every chat inside it.”"
 },
 {
 "say": "Same files as Task 1.2. This time we all use the same card.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each person what they found so far.",
 "expect": "The same table for everyone: BPK-4471, WDS-20931 and SGT-11205 Matched; SCC-0718 Amount differs (36.000); FSC-3390 Not in ledger.",
 "silent": null,
 "fallback": "Anyone behind copies the instructions from the prompt sheet and runs it with the trainer's next run.",
@@ -560,7 +560,7 @@
 "t": "b3",
 "k": "task",
 "h": "Your turn 1.4: Build the invoice agent with me (20 min, on your own, with the trainer)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: The same table for everyone: BPK-4471, WDS-20931 and SGT-11205 Matched; SCC-0718 Amount differs (36.000); FSC-3390 Not in ledger. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone behind copies the instructions from the prompt sheet and runs it with the trainer's next run. · Say: “Same files as Task 1.2. This time we all use the same card.”"
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: The same table for everyone: BPK-4471, WDS-20931 and SGT-11205 Matched; SCC-0718 Amount differs (36.000); FSC-3390 Not in ledger. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone behind copies the instructions from the prompt sheet and runs it with the trainer's next run. · Say: “Same files as Task 1.2. This time we all use the same card.”"
 },
 {
 "say": null,
@@ -587,7 +587,7 @@
 "time": "3 to 4 min",
 "t": "b3",
 "k": "player",
-"h": "Prompt playback, Demo 1.5: Dana scores her three candidates",
+"h": "Prompt playback, Demo 1.4: Dana scores her three candidates",
 "flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: Invoice matching scores highest (19 of 20), then chasing documents (16), then lead schedules (15). · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: Show the backup table. · Say: “Four questions. The total decides the first agent, not the most interesting task.”"
 },
 {
@@ -605,7 +605,7 @@
 },
 {
 "say": "Your card, your task. Build it on the track pack: no real files today.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each person what they found so far.",
 "expect": "An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks.",
 "silent": null,
 "fallback": "Anyone without a task of their own takes the track pack's starting example.",
@@ -617,7 +617,7 @@
 "t": "b3",
 "k": "task",
 "h": "Your turn 1.5: Write your Agent Card v1 (20 min, on your own)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone without a task of their own takes the track pack's starting example. · Say: “Your card, your task. Build it on the track pack: no real files today.”"
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone without a task of their own takes the track pack's starting example. · Say: “Your card, your task. Build it on the track pack: no real files today.”"
 },
 {
 "say": null,
@@ -683,7 +683,7 @@
 "time": "3 to 4 min",
 "t": "b4",
 "k": "player",
-"h": "Prompt playback, Demo 1.6: From card to five-part instructions",
+"h": "Prompt playback, Demo 1.5: From card to five-part instructions",
 "flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: The full match table, with the two flags explained in the Note column. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: Show the backup table. · Say: “Five parts. The fifth one, when unsure, is the one people forget.”"
 },
 {
@@ -701,7 +701,7 @@
 },
 {
 "say": "Struggle first. A hint at 11 minutes, then the most common fixes at 20.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each person what they found so far.",
 "expect": "A Project per person whose result is right on the three items checked by hand.",
 "silent": null,
 "fallback": "Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts.",
@@ -713,7 +713,7 @@
 "t": "b4",
 "k": "task",
 "h": "Your turn 1.6: Build v1 of your agent (35 min, on your own)",
-"flat": "35 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A Project per person whose result is right on the three items checked by hand. · Give the hint at about 11 min. · Fast finishers have an extra task on the slide. · Fallback: Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts. · Say: “Struggle first. A hint at 11 minutes, then the most common fixes at 20.”"
+"flat": "35 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A Project per person whose result is right on the three items checked by hand. · Give the hint at about 11 min. · Fast finishers have an extra task on the slide. · Fallback: Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts. · Say: “Struggle first. A hint at 11 minutes, then the most common fixes at 20.”"
 },
 {
 "say": null,
@@ -766,12 +766,12 @@
 "time": "3 to 4 min",
 "t": "b5",
 "k": "player",
-"h": "Prompt playback, Demo 1.7: Read from the folder",
+"h": "Prompt playback, Demo 1.6: Read from the folder",
 "flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: The same match table, plus the two file names it read from the Inbox. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: If the connector is slow, upload the two files and continue. · Say: “No more dragging files. The agent reads where the files already are.”"
 },
 {
 "say": "Your Input box now points at a folder.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each person what they found so far.",
 "expect": "One run that reads from the track folder and lists the files it used.",
 "silent": null,
 "fallback": "If Google sign-in fails, upload the files and continue. The trainer fixes the connector at the break.",
@@ -783,7 +783,7 @@
 "t": "b5",
 "k": "task",
 "h": "Your turn 1.7: Run from the folder (15 min, on your own)",
-"flat": "15 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: One run that reads from the track folder and lists the files it used. · Give the hint at about 5 min. · Fast finishers have an extra task on the slide. · Fallback: If Google sign-in fails, upload the files and continue. The trainer fixes the connector at the break. · Say: “Your Input box now points at a folder.”"
+"flat": "15 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: One run that reads from the track folder and lists the files it used. · Give the hint at about 5 min. · Fast finishers have an extra task on the slide. · Fallback: If Google sign-in fails, upload the files and continue. The trainer fixes the connector at the break. · Say: “Your Input box now points at a folder.”"
 },
 {
 "say": null,
@@ -823,7 +823,7 @@
 "time": "3 to 4 min",
 "t": "b5",
 "k": "player",
-"h": "Prompt playback, Demo 1.8: Same shape every run",
+"h": "Prompt playback, Demo 1.7: Same shape every run",
 "flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: Two runs with the same 9 columns, flagged rows first, and the same total line: 5 checked, 3 matched, 2 flagged. If BPK-4471 is marked Not found, accept 5 checked, 2 matched, 3 flagged. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: Show the backup total line. · Say: “If the shape changes every run, nobody can compare this week with last week.”"
 },
 {
@@ -841,7 +841,7 @@
 },
 {
 "say": "Two runs, one shape.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each person what they found so far.",
 "expect": "Two artifacts with the same columns, order and total line.",
 "silent": null,
 "fallback": "If artifacts do not open, ask for a markdown table and continue.",
@@ -853,7 +853,7 @@
 "t": "b5",
 "k": "task",
 "h": "Your turn 1.8: Fixed-shape output (20 min, on your own)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: Two artifacts with the same columns, order and total line. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: If artifacts do not open, ask for a markdown table and continue. · Say: “Two runs, one shape.”"
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: Two artifacts with the same columns, order and total line. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: If artifacts do not open, ask for a markdown table and continue. · Say: “Two runs, one shape.”"
 },
 {
 "say": null,
@@ -906,7 +906,7 @@
 "time": "3 to 4 min",
 "t": "b6",
 "k": "player",
-"h": "Prompt playback, Demo 1.9: From Project to skill",
+"h": "Prompt playback, Demo 1.8: From Project to skill",
 "flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: A skill named mirqab-invoice-match-live, saved under Customize, then Skills. In a fresh chat, the same table appears. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: If the skill does not save, show the backup table and continue with the Project. · Say: “The Project is my desk. The skill is the firm's manual: it works anywhere, for anyone I share it with.”"
 },
 {
@@ -937,7 +937,7 @@
 },
 {
 "say": "Your method, packaged. Tomorrow a scheduled task calls it.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each person what they found so far.",
 "expect": "A saved skill; a fresh chat that uses it and returns the same shape as the Project; one transfer line on the card.",
 "silent": null,
 "fallback": "If skills are off on an account, continue with the Project. The trainer turns them on at the break.",
@@ -949,11 +949,11 @@
 "t": "b6",
 "k": "task",
 "h": "Your turn 1.9: Make your skill (20 min, on your own)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A saved skill; a fresh chat that uses it and returns the same shape as the Project; one transfer line on the card. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: If skills are off on an account, continue with the Project. The trainer turns them on at the break. · Say: “Your method, packaged. Tomorrow a scheduled task calls it.”"
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A saved skill; a fresh chat that uses it and returns the same shape as the Project; one transfer line on the card. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: If skills are off on an account, continue with the Project. The trainer turns them on at the break. · Say: “Your method, packaged. Tomorrow a scheduled task calls it.”"
 },
 {
 "say": "A good agent flags what it cannot see. A bad one fills the gap.",
-"do": "Start the timer. Walk the room. Ask each pair what they found so far.",
+"do": "Start the timer. Walk the room. Ask each person what they found so far.",
 "expect": "A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Mark both items Outstanding with the client's promised date, and add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated.",
 "silent": null,
 "fallback": "If the agent guesses, add the When unsure rule again and rerun.",
@@ -965,7 +965,7 @@
 "t": "b6",
 "k": "task",
 "h": "Your turn 1.10: The messy sample and the clock (14 min, on your own)",
-"flat": "14 min work, then share. · Do: Start the timer. Walk the room. Ask each pair what they found so far. · Expect: A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Mark both items Outstanding with the client's promised date, and add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If the agent guesses, add the When unsure rule again and rerun. · Say: “A good agent flags what it cannot see. A bad one fills the gap.”"
+"flat": "14 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Mark both items Outstanding with the client's promised date, and add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If the agent guesses, add the When unsure rule again and rerun. · Say: “A good agent flags what it cannot see. A bad one fills the gap.”"
 },
 {
 "say": "Card, then run. Ninety seconds.",
@@ -992,7 +992,7 @@
 "time": "3 to 4 min",
 "t": "b7",
 "k": "player",
-"h": "Prompt playback, Demo 1.11: The agent that ran itself",
+"h": "Prompt playback, Demo 1.9: The agent that ran itself",
 "flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: At 15:55, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. · Say: “Nobody pressed Send. This is tomorrow.”"
 },
 {

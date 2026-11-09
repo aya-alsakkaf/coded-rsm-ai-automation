@@ -33,7 +33,7 @@
 "kit": [
 "Map a workflow: trigger, steps, output and review.",
 "Set up a Claude scheduled task that runs your team's skill.",
-"Handle new files and an empty folder, and keep a run log.",
+"Handle new files, an empty folder and a failed run, and keep a run log.",
 "Add department rules and a human review step.",
 "Show a working automation and its impact at Demo Day."
 ],
@@ -63,10 +63,10 @@
 "Batch 2 and the empty folder · Task 2.3 · the n8n demo",
 "12:30-13:20",
 "Lesson 4 · Fit it to your department",
-"Rules, the review step, the run log · Task 2.5",
+"Rules, the review step, the run log · Task 2.4",
 "13:30-14:25",
 "Lesson 5 · Test and prepare the demo",
-"Impact and the judges' rubric · Task 2.6",
+"Impact, the judges' rubric and the failed-run test · Task 2.5",
 "14:45-15:30",
 "Lesson 6 · Demo Day",
 "Four teams, eight minutes each, scored",
@@ -400,7 +400,7 @@
 "A scheduled task is a saved prompt that Claude runs on a frequency: hourly, daily, weekdays, weekly or manual. Its prompt calls your skill and reads through your connectors.",
 "A reminder that only reminds you…",
 "…versus one that does the work and leaves the file.",
-"Cowork: Scheduled, then New task."
+"Click Scheduled in the left sidebar, then New task."
 ],
 "chrome": [
 "The idea"
@@ -435,8 +435,8 @@
 "Lesson 2 · step by step",
 "Six steps to a schedule.",
 "If the test run works, the schedule will work.",
-"Open: Cowork, then Scheduled.",
-"New task: then Set up manually.",
+"Open: click Scheduled in the left sidebar.",
+"New task: upper right, then Set up manually.",
 "Name and prompt: the prompt calls your skill and names the folders.",
 "Approval mode: choose the mode that lets the run save and move files without waiting for you.",
 "Frequency: daily at 08:00. Kuwait works Sunday to Thursday, so Friday and Saturday runs log No new files.",
@@ -485,9 +485,9 @@
 "Step",
 "Where",
 "Scheduled",
-"Left sidebar in Cowork",
+"Left sidebar",
 "New task",
-"Top of the page",
+"Upper right",
 "Set up manually",
 "Name, prompt, approval, frequency",
 "On demand",
@@ -548,8 +548,8 @@
 "Claude · scheduled tasks",
 "Most failures are a folder name that does not match the Drive exactly.",
 "Add your team name to the output file name. Copy the pack from Packs into the Inbox again, run once more and check the new name.",
-"Work on the laptop of the person who made your team's skill. That person also makes the Task 2.5 edits.",
-"Copy your pack from the Packs folder into [your team folder] / Inbox. Then, in Cowork: Scheduled, then New task, then Set up manually.",
+"Work on the laptop of the person who made your team's skill. That person also makes the Task 2.4 edits.",
+"Copy your pack from the Packs folder into [your team folder] / Inbox. Then click Scheduled in the left sidebar, then New task, then Set up manually.",
 "Name it. Paste the prompt below and fill the brackets from your card.",
 "Approval mode: choose the mode that lets the run save and move files without waiting for you.",
 "Frequency: daily at 08:00. Save.",
@@ -794,7 +794,7 @@
 "Task 2.3",
 "in your team",
 "Claude · scheduled tasks",
-"Look at the run log after each run.",
+"The run log after each run.",
 "Copy the batch-2 file into the Inbox again. Make the first line of the output a count of files read. Run on demand and check it against the run log.",
 "abdali-supplier-invoices-nov-wk1.pdf",
 "abdali-purchase-ledger-nov-wk1.xlsx",
@@ -809,7 +809,7 @@
 "The empty-folder line (check it is in your prompt)",
 "If the Inbox has no new files, write No new files in the run log and stop. Do not process old files.",
 "Workflow teams: the tracker line",
-"Before you read the Inbox, open the newest tracker in [your team folder] / Outputs and update it. If there is none, start from the request list in the skill.",
+"If the Inbox has new files, first open the newest tracker in [your team folder] / Outputs and update it. If there is none, start from the request list in the skill.",
 "Analysis teams: the monthly line",
 "For monthly management accounts, compare the two months with the same two limits.",
 "Claude slow or a file not loading? Continue from the backup on the screen.",
@@ -1155,10 +1155,10 @@
 "n": 39,
 "id": "c4task",
 "kind": "task",
-"title": "Your turn 2.5",
+"title": "Your turn 2.4",
 "topic": "c4",
 "kit": [
-"Task 2.5",
+"Task 2.4",
 "in your team",
 "Claude · skills",
 "Copy the rules exactly. A paraphrase is a new rule.",
@@ -1246,24 +1246,30 @@
 "n": 42,
 "id": "c5rubric",
 "kind": "table",
-"title": "Thirty points. Three questions.",
+"title": "Fifty points. Five criteria.",
 "topic": "c5",
 "kit": [
 "Lesson 5 · the judges' rubric",
-"Thirty points. Three questions.",
-"Score each automation out of 30.",
+"Fifty points. Five criteria.",
+"Five criteria, 10 points each. Total: 50.",
 "Criterion",
 "Points",
 "Full marks",
-"Problem relevance",
+"Task relevance",
 "10",
 "A real, repeated task with a measured cost",
-"Solution quality",
+"Working functionality",
 "10",
-"Scheduled, rules, flags not guesses, a named reviewer",
-"Deployment potential",
+"Saved on the Scheduled page, runs on demand, same shape every run",
+"Source accuracy",
 "10",
-"Could run at RSM next month with approved tools and data"
+"Three figures the panel picks all match the source files",
+"Human controls",
+"10",
+"Drafts only, your rules, a named reviewer signs off",
+"Test evidence",
+"10",
+"Run log: three clean runs, the empty folder and a failed run"
 ],
 "chrome": []
 },
@@ -1391,26 +1397,67 @@
 },
 {
 "n": 46,
-"id": "c5task",
-"kind": "task",
-"title": "Your turn 2.6",
+"id": "c5fail",
+"kind": "list",
+"title": "When a step fails, the run says so.",
 "topic": "c5",
 "kit": [
-"Task 2.6",
+"Lesson 5 · when a step fails",
+"When a step fails, the run says so.",
+"Test the failure before Demo Day, not during it.",
+"Test it: copy mirqab-locked-test-file.pdf, a file no run can read, into the Inbox. Run on demand.",
+"Good run: the run log says Could not read and names the file. The file stays in the Inbox. Nothing is guessed.",
+"Bad run: a silent log, or an output row with made-up values.",
+"Fallback: one line in the prompt says what to do, and the named reviewer checks that file by hand.",
+"No Drive: if the connector is off, no run log is written. A missing log means: check the run."
+],
+"chrome": []
+},
+{
+"n": 47,
+"id": "c5chk2",
+"kind": "check",
+"title": "Quick check",
+"topic": "c5",
+"kit": [
+"The 08:00 run log says Could not read: lease-scan.pdf. The other files are in Outputs. What happens next?",
+"Run it again until Claude reads the file",
+"The named reviewer checks that file by hand",
+"Nothing: the other files were processed"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 48,
+"id": "c5task",
+"kind": "task",
+"title": "Your turn 2.5",
+"topic": "c5",
+"kit": [
+"Task 2.5",
 "in your team",
 "Claude · scheduled tasks",
-"Every number on your demo must come from the run log.",
+"Every number on your demo comes from your run log or the Clock tab.",
 "List the next two tasks your team would automate.",
-"Copy your track pack into the Inbox and run on demand, three times. Workflow teams: before each run, move the trackers in Outputs to Processed (15 min).",
-"Work out the impact: minutes by hand minus minutes with the agent, times runs a month (5 min).",
-"Write the 5-minute demo plan: problem, card, live run, impact, next (10 min).",
-"Rehearse once, with a timer. Before Demo Day, copy a pack into the Inbox for the live run (10 min).",
+"mirqab-locked-test-file.pdf",
+"Copy your track pack into the Inbox and run on demand, three times. Workflow teams: move the trackers in Outputs to Processed before each run (12 min).",
+"Failed-run test: the skill owner adds the fallback line to the prompt. Copy mirqab-locked-test-file.pdf from Packs into the Inbox, run on demand and read the run log. Then delete it from the Inbox (8 min).",
+"Work out the impact: minutes by hand minus minutes with the agent, times runs a month (4 min).",
+"Write the 5-minute demo plan with the Demo 2.6 prompt. Say who acts when a run fails (8 min).",
+"Rehearse once, with a timer. Before Demo Day, copy a pack into the Inbox for the live run (8 min).",
+"The fallback line (add it to your prompt)",
+"If a file cannot be read, do not guess. Write Could not read: [file name] in the run log, leave the file in the Inbox and go on. A person checks it by hand.",
 "Impact",
-"From our run log, count the runs and the items flagged. Then calculate: (minutes by hand minus minutes with the agent) times runs a month.",
-"Demo plan",
-"Draft a 5-minute demo plan for our workflow: the problem, the card, a live run, the impact, the next task. Use only facts from our run log and card.",
+"From our run log, count the runs and the items flagged. Then calculate: ([minutes by hand] minus [minutes with the agent]) times [runs a month]. Take the minutes from our Clock tab.",
 "Claude slow or a file not loading? Continue from the backup on the screen.",
-"Your turn: three clean runs and the script.",
+"Your turn: clean runs, a failed run and the script.",
 "Lesson 5 · Test and prepare the demo"
 ],
 "chrome": [
@@ -1440,7 +1487,7 @@
 ]
 },
 {
-"n": 47,
+"n": 49,
 "id": "c6demo",
 "kind": "timer",
 "title": "Four teams. Eight minutes each.",
@@ -1448,7 +1495,7 @@
 "kit": [
 "Demo Day · 14:45",
 "Four teams. Eight minutes each.",
-"Five minutes of demo, three minutes of questions. The panel scores each automation out of 30."
+"Five minutes of demo, three minutes of questions. The panel scores each automation out of 50."
 ],
 "chrome": [
 "+1 min",
@@ -1459,7 +1506,7 @@
 ]
 },
 {
-"n": 48,
+"n": 50,
 "id": "c6order",
 "kind": "table",
 "title": "Who presents when.",
@@ -1487,7 +1534,7 @@
 "chrome": []
 },
 {
-"n": 49,
+"n": 51,
 "id": "c6score",
 "kind": "table",
 "title": "The panel's score sheet.",
@@ -1495,28 +1542,36 @@
 "kit": [
 "Demo Day · scoring",
 "The panel's score sheet.",
-"The trainer scores. RSM leadership joins if they attend.",
+"Total out of 50. The trainer scores. RSM leadership joins if they attend.",
 "Criterion",
 "10",
 "5",
 "0",
-"Problem relevance",
+"Task relevance",
 "Real task, measured cost",
 "Real task, no number",
 "Made-up task",
-"Solution quality",
-"Scheduled, rules, reviewer, run log",
-"Works by hand only",
+"Working functionality",
+"Scheduled, runs on demand, same shape",
+"Runs in a chat only",
 "Does not run",
-"Deployment potential",
-"Ready with approved tools",
-"Needs work",
-"Not usable at RSM"
+"Source accuracy",
+"3 of 3 figures match",
+"2 of 3 match",
+"1 or none match",
+"Human controls",
+"Drafts, rules, named reviewer",
+"Reviewer, no rules",
+"No review step",
+"Test evidence",
+"Clean, empty and failed runs logged",
+"Clean runs only",
+"No run log"
 ],
 "chrome": []
 },
 {
-"n": 50,
+"n": 52,
 "id": "c7map",
 "kind": "map",
 "title": "MAP test · after",
@@ -1543,7 +1598,7 @@
 ]
 },
 {
-"n": 51,
+"n": 53,
 "id": "c7next",
 "kind": "timer",
 "title": "Your next task. Your tool.",
@@ -1562,7 +1617,7 @@
 ]
 },
 {
-"n": 52,
+"n": 54,
 "id": "w2",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -1587,7 +1642,7 @@
 ]
 },
 {
-"n": 53,
+"n": 55,
 "id": "close2",
 "kind": "close",
 "title": "Close",

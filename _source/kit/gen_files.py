@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""The 22 fictional sample files of the RSM workshop (Mirqab & Co. and its fictional client Abdali Foods).
+"""The 23 fictional sample files of the RSM workshop (Mirqab & Co. and its fictional client Abdali Foods).
     python3 gen_files.py OUTDIR        (the kit keeps them in ../files; the site copies them unchanged)
 Names never change once built: participants download them."""
 import sys, os, datetime as dt
@@ -58,8 +58,8 @@ def xlsx(name, sheets):
     wb.save(os.path.join(OUT, name))
 
 class Pdf:
-    def __init__(self, name):
-        self.c = canvas.Canvas(os.path.join(OUT, name), pagesize=A4, invariant=1)
+    def __init__(self, name, encrypt=None):
+        self.c = canvas.Canvas(os.path.join(OUT, name), pagesize=A4, invariant=1, encrypt=encrypt)
         self.c.setAuthor("CODED"); self.c.setTitle(name)
         self.w, self.h = A4
     def page(self, lines, footer=True):
@@ -165,12 +165,12 @@ p.page(invoice_page("", "Gulf Trade Imports FZE", "2026-10-29", "PO-2236", 2300.
 p = Pdf(CD.F_M_LEASE)
 p.page(lease_page(7, "Outlet, Abu Halifa", "Mangaf Real Estate Co.", "2026-06-01", "", 1320.000, 2640.000, "")); p.save()
 xlsx(CD.F_M_TB, [("Trial balance", ["Account", "Group", "FY2024 (KWD)", "FY2025 (KWD)"],
-                  [[a, g, (None if a == "Repairs and maintenance" else p_), c] for a, g, p_, c in D.TB], [32, 12, 16, 16], "One figure is missing. " + D.FICTION)])
+                  [[a, g, (None if a == "Repairs and maintenance" else p_), c] for a, g, p_, c in D.TB], [32, 12, 16, 16], D.FICTION)])
 doc(CD.F_M_EMAIL, f"Client email: {D.CO_SHORT}, 13 November 2026", [
     ("h", "Email · 2026-11-13 · Two items"), ("p", f"From: Hessa, Finance Manager, {D.CO_SHORT} · To: Mirqab audit team"),
     ("p", "Board minutes and legal letters: we will send both next week."), ("p", "Attachments: none")])
 xlsx(CD.F_M_STATUS, [("Week 46", SH, [list(r) if r[0] != D.STATUS46[2][0] else [r[0], r[1], None, 64, r[4], r[5], r[6]] for r in D.STATUS46],
-                      [34, 32, 14, 13, 11, 30, 30], "One budget is blank. " + D.FICTION)])
+                      [34, 32, 14, 13, 11, 30, 30], D.FICTION)])
 
 # ------------------------------------------------------------------ 15 · the catch-up file: a starter instruction for each track
 blocks = [("p", "For anyone who missed Day 1, or wants a clean start. Paste one track into the project instructions, then change it to your task.")]
@@ -199,6 +199,13 @@ doc(CD.F_EMAILS2, f"Client emails: {D.CO_SHORT}, 15 to 16 November 2026", email_
     for x in (("h", f"Email {i} · {date} · {subj}"), ("p", f"From: {frm}, {D.CO_SHORT} · To: Mirqab audit team"), ("p", body),
               ("p", "Attachments: " + ({11: "sales-listing-oct-2026.xlsx", 12: "lease-fahaheel.pdf, lease-abu-halifa.pdf, lease-mahboula.pdf", 13: "mgmt-accounts-oct-2026.xlsx"}.get(i, "none"))))])
 xlsx(CD.F_STATUS2, [("Week 47", SH, [list(r) for r in D.STATUS47], [34, 32, 14, 13, 11, 30, 30], "Week 47 to date: 15 to 16 November 2026. " + D.FICTION)])
+
+# ------------------------------------------------------------------ 23 · the failed-run test (Day 2, Task 2.5): a locked PDF that no run can read
+from reportlab.lib import pdfencrypt
+_lock = pdfencrypt.StandardEncryption("mirqab-locked-2026", canPrint=0, canModify=0, canCopy=0, canAnnotate=0, strength=128)
+p = Pdf(CD.F_LOCKED, encrypt=_lock)
+p.page([("title", "Locked test file"), ("p", "This file is locked on purpose. A scheduled run cannot read it."),
+        ("p", "Use it once in Task 2.5: the run log must say Could not read, and nothing may be guessed.")]); p.save()
 
 missing = [f for f in CD.ALL_FILES if not os.path.exists(os.path.join(OUT, f))]
 assert not missing, missing

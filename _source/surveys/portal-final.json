@@ -249,8 +249,8 @@
    "id": "q_5",
    "type": "scale",
    "label": {
-    "en": "I can find the tasks in my work that suit an agent, and describe one as an Agent Card: input, instruction and output.",
-    "ar": "أستطيع تحديد المهام في عملي التي تناسب وكيلاً ذكياً، ووصف إحداها في بطاقة وكيل: المدخلات والتعليمات والمخرجات."
+    "en": "I can find the tasks in my work that suit an agent, and describe one as an Agent Card: input, instruction, output and when.",
+    "ar": "أستطيع تحديد المهام في عملي التي تناسب وكيلاً ذكياً، ووصف إحداها في بطاقة وكيل: المدخلات والتعليمات والمخرجات ومتى يعمل."
    },
    "required": true,
    "sectionId": "s_learn",

@@ -56,9 +56,9 @@ Teaching minutes: 330.
 | 10:20-10:30 | Break | 10 | Break |
 | 10:30-11:30 | Lesson 3 · New inputs, outputs and n8n | 60 | Batch 2 and the empty folder · Task 2.3 · the n8n demo |
 | 11:30-12:30 | Lunch and Dhuhr prayer | 60 | Break |
-| 12:30-13:20 | Lesson 4 · Fit it to your department | 50 | Rules, the review step, the run log · Task 2.5 |
+| 12:30-13:20 | Lesson 4 · Fit it to your department | 50 | Rules, the review step, the run log · Task 2.4 |
 | 13:20-13:30 | Break | 10 | Break |
-| 13:30-14:25 | Lesson 5 · Test and prepare the demo | 55 | Impact and the judges' rubric · Task 2.6 |
+| 13:30-14:25 | Lesson 5 · Test and prepare the demo | 55 | Impact, the judges' rubric and the failed-run test · Task 2.5 |
 | 14:25-14:45 | Asr prayer and break | 20 | Break |
 | 14:45-15:30 | Lesson 6 · Demo Day | 45 | Four teams, eight minutes each, scored |
 | 15:30-15:40 | Break | 10 | Break |
@@ -73,11 +73,11 @@ Teaching minutes: 330.
 | 2.1 | Your team's workflow card | 20 | in your team | your own work | Your team's workflow card on the shared board. |
 | 2.2 | Schedule your workflow | 30 | in your team | your own work | A scheduled task, run once, with its output checked against Day 1. |
 | 2.3 | Batch 2 and the empty folder | 25 | in your team | abdali-supplier-invoices-nov-wk1.pdf, abdali-purchase-ledger-nov-wk1.xlsx, abdali-lease-agreement-new.pdf, abdali-management-accounts-oct-2026.xlsx, abdali-client-emails-wk47.docx, mirqab-engagement-status-wk47.xlsx | One run on batch 2 and one empty-folder run, each with its own run-log file. |
-| 2.5 | Your department's rules | 30 | in your team | mirqab-review-rules.docx | Two rules and a review step in your skill, tested on the messy sample. |
-| 2.6 | Three clean runs and the script | 40 | in your team | your own work | Three clean runs, the impact number and a rehearsed 5-minute demo. |
+| 2.4 | Your department's rules | 30 | in your team | mirqab-review-rules.docx | Two rules and a review step in your skill, tested on the messy sample. |
+| 2.5 | Clean runs, a failed run and the script | 40 | in your team | mirqab-locked-test-file.pdf | A Log folder with three clean runs and the failed-run test, and a rehearsed 5-minute demo with its impact number. |
 
 ## Scored work
 
-Demo Day (Day 2, 14:45): each team's automation, 30 points (problem relevance 10, solution quality 10, deployment potential 10).
+Demo Day (Day 2, 14:45): each team's automation, 50 points (task relevance 10, working functionality 10, source accuracy 10, human controls 10, test evidence 10).
 
 MAP: 13 questions, the same on Day 1 (08:35) and Day 2 (15:40), not graded. The key is in the portal description and the Day 2 staff answer key.

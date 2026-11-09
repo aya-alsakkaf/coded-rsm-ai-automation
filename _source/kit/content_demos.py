@@ -27,8 +27,9 @@ F_LEASE2 = "abdali-lease-agreement-new.pdf"
 F_MGMT = "abdali-management-accounts-oct-2026.xlsx"
 F_EMAILS2 = "abdali-client-emails-wk47.docx"
 F_STATUS2 = "mirqab-engagement-status-wk47.xlsx"
+F_LOCKED = "mirqab-locked-test-file.pdf"
 ALL_FILES = [F_LETTER, F_INV, F_LEDGER, F_TEMPLATE, F_LEASES, F_TB, F_PBC, F_EMAILS, F_STATUS, F_M_INV, F_M_LEASE, F_M_TB, F_M_EMAIL, F_M_STATUS,
-             F_STARTER, F_RULES, F_INV2, F_LEDGER2, F_LEASE2, F_MGMT, F_EMAILS2, F_STATUS2]
+             F_STARTER, F_RULES, F_INV2, F_LEDGER2, F_LEASE2, F_MGMT, F_EMAILS2, F_STATUS2, F_LOCKED]
 TRACK_FILES = {"Extraction": [F_LEASES], "Analysis": [F_TB], "Workflow": [F_PBC, F_EMAILS], "Reporting": [F_STATUS]}
 MESSY_FILES = [F_M_INV, F_M_LEASE, F_M_TB, F_M_EMAIL, F_M_STATUS]
 BATCH2_FILES = [F_INV2, F_LEDGER2, F_LEASE2, F_MGMT, F_EMAILS2, F_STATUS2]
@@ -103,6 +104,15 @@ INVOICE_SCHED = (f"Use the mirqab-invoice-match skill. Read the new files in Goo
                  "Move each file you read to 01 Invoices / Processed. "
                  "Save a run-log file in 01 Invoices / Log, named runlog-YYYY-MM-DD-HHMM.txt, with one line: date, files read, items flagged, file saved. "
                  "If there are no new files: write No new files in the run log and stop.")
+
+FALLBACK_LINE = ("If a file cannot be read, do not guess. Write Could not read: [file name] in the run log, leave the file in the Inbox "
+                 "and go on. A person checks it by hand.")
+RUBRIC_FULL = [("Task relevance", 10, "A real, repeated task with a measured cost"), ("Working functionality", 10, "Saved on the Scheduled page, runs on demand, same shape every run"),
+               ("Source accuracy", 10, "Three figures the panel picks all match the source files"), ("Human controls", 10, "Drafts only, your rules, a named reviewer signs off"),
+               ("Test evidence", 10, "Run log: three clean runs, the empty folder and a failed run")]
+RUBRIC_SCORE = [("Task relevance", "Real task, measured cost", "Real task, no number", "Made-up task"), ("Working functionality", "Scheduled, runs on demand, same shape", "Runs in a chat only", "Does not run"),
+                ("Source accuracy", "3 of 3 figures match", "2 of 3 match", "1 or none match"), ("Human controls", "Drafts, rules, named reviewer", "Reviewer, no rules", "No review step"),
+                ("Test evidence", "Clean, empty and failed runs logged", "Clean runs only", "No run log")]
 
 MATCH_TABLE = [D.TEMPLATE_HEAD[:1] + ["Invoice (KWD)", "Ledger (KWD)", "Difference", "Status"]] + \
               [[r[0], num(r[3]), num(r[4]) if r[4] is not None else "Not found", num(r[5]) if r[5] is not None else "", r[6]] for r in D.MATCH]
@@ -183,7 +193,7 @@ demo("t12", day=1, skill="1.2", sec=3, title="Same task, 18 answers", tool="Clau
  hint="Check every row against both files: number, date and amount.",
  stretch=["Run the same request again in a new chat. Compare the two tables."])
 
-demo("d13", day=1, skill="1.3", sec=3, title="Dana tags her task list", tool="Claude", files=[], kind="player",
+demo("d13", day=1, skill="1.2", sec=3, title="Dana tags her task list", tool="Claude", files=[], kind="player",
  setup=["[T] Paste Dana's seven tasks into a new chat with the prompt below."],
  prompts=[("Tag my tasks", "Role: You help an audit associate plan her work. Task: Tag each task in my list with three tags: repeats weekly, clear rules, document in and document out. "
            "Format: A table with Yes or No for each tag, then my top 3 (tasks with three Yes). My tasks: 1. Match supplier invoices to the ledger. 2. Prepare lead schedules from the trial balance. "
@@ -219,7 +229,7 @@ demo("t13", day=1, skill="1.3", sec=3, title="Your task inventory", tool="The Da
  hint="If a task needs a meeting or a judgment call, it is not your first agent.",
  stretch=["Write the minutes per week for each of your top 3."])
 
-demo("d14", day=1, skill="1.4", sec=4, title="From card to agent", tool="Claude Projects", files=[F_TEMPLATE], kind="player",
+demo("d14", day=1, skill="1.3", sec=4, title="From card to agent", tool="Claude Projects", files=[F_TEMPLATE], kind="player",
  setup=["[T] Show the invoice Agent Card. Build the Project live: + New Project, name it Mirqab invoice match.", "[T] Set project instructions: paste the five parts. Add mirqab-invoice-match-template.xlsx to the knowledge."],
  prompts=[("Project instructions", joined(INVOICE_AGENT))],
  expected="A Project named Mirqab invoice match with the five-part instructions and the template in its knowledge.",
@@ -250,7 +260,7 @@ demo("t14", day=1, skill="1.4", sec=4, title="Build the invoice agent with me", 
  hint="Check the Status column: at least two rows should not say Matched.",
  stretch=["Run the same request in a second chat inside the Project. Compare the two tables."])
 
-demo("d15", day=1, skill="1.5", sec=4, title="Dana scores her three candidates", tool="Claude", files=[], kind="player",
+demo("d15", day=1, skill="1.4", sec=4, title="Dana scores her three candidates", tool="Claude", files=[], kind="player",
  setup=["[T] Paste the prompt below into a new chat."],
  prompts=[("Score my candidates", "Score these three tasks from 1 to 5 on four points. The points are: how often it happens, minutes each time, how clear the rules are, and whether it could run on a schedule. "
            "Add a total. Tasks: match supplier invoices to the ledger; prepare lead schedules from the trial balance; chase missing documents from clients.")],
@@ -280,7 +290,7 @@ demo("t15", day=1, skill="1.5", sec=4, title="Write your Agent Card v1", tool="T
  hint="Read your Instruction box as if you were new. Would you know what to do?",
  stretch=["Write a second card for your runner-up task."])
 
-demo("d16", day=1, skill="1.6", sec=5, title="From card to five-part instructions", tool="Claude Projects", files=[F_INV, F_LEDGER, F_TEMPLATE], kind="player",
+demo("d16", day=1, skill="1.5", sec=5, title="From card to five-part instructions", tool="Claude Projects", files=[F_INV, F_LEDGER, F_TEMPLATE], kind="player",
  setup=["[T] Open the Mirqab invoice match Project. Show the instructions as five parts.", "[T] Run it. Compare three rows with the answers you checked by hand: BPK-4471, SCC-0718 and FSC-3390."],
  prompts=[("Five-part instructions", joined(INVOICE_AGENT))],
  expected="The full match table, with the two flags explained in the Note column.",
@@ -313,7 +323,7 @@ demo("t16", day=1, skill="1.6", sec=5, title="Build v1 of your agent", tool="Cla
  hint="Hints in order: reread your Instruction box; use the five-part template; open the worked Project for your track.",
  stretch=["Add a second example output to the knowledge. Run again and check the same three items."])
 
-demo("d17", day=1, skill="1.7", sec=6, title="Read from the folder", tool="Claude · Google Drive connector", files=[F_INV, F_LEDGER], kind="player",
+demo("d17", day=1, skill="1.6", sec=6, title="Read from the folder", tool="Claude · Google Drive connector", files=[F_INV, F_LEDGER], kind="player",
  setup=["[T] Customize, then Connectors: show Google Drive, connected before Day 1 with the trainer's CODED training Google account.", f"[T] In the invoice Project, ask it to process the newest pack in {D.SANDBOX} / 01 Invoices / Inbox."],
  prompts=[("Run from the folder", f"Open the Google Drive folder {D.SANDBOX} / 01 Invoices / Inbox. Run the invoice match on the files there. List the files you read.")],
  expected="The same match table, plus the two file names it read from the Inbox.",
@@ -341,7 +351,7 @@ demo("t17", day=1, skill="1.7", sec=6, title="Run from the folder", tool="Claude
  hint="The folder path must match the Drive exactly.",
  stretch=["Ask the agent which files it did not read, and why."])
 
-demo("d18", day=1, skill="1.8", sec=6, title="Same shape every run", tool="Claude · artifacts", files=[F_INV, F_LEDGER, F_TEMPLATE], kind="player",
+demo("d18", day=1, skill="1.7", sec=6, title="Same shape every run", tool="Claude · artifacts", files=[F_INV, F_LEDGER, F_TEMPLATE], kind="player",
  setup=["[T] Add the output rule below to the invoice Project.", "Run twice. Put the two artifacts side by side."],
  prompts=[("Output rule", "Return the result as an artifact: a table with exactly the template's columns, in that order. Put flagged rows first. End with one total line: invoices checked, matched, flagged.")],
  expected="Two runs with the same 9 columns, flagged rows first, and the same total line: 5 checked, 3 matched, 2 flagged. If BPK-4471 is marked Not found, accept 5 checked, 2 matched, 3 flagged.",
@@ -369,7 +379,7 @@ demo("t18", day=1, skill="1.8", sec=6, title="Fixed-shape output", tool="Claude 
  hint="Name the columns in the order you want them. Claude follows the order you write.",
  stretch=["Run it on the messy file for your track. Check that the shape still holds."])
 
-demo("d19", day=1, skill="1.9", sec=7, title="From Project to skill", tool="Claude · skills", files=[F_TEMPLATE], kind="player",
+demo("d19", day=1, skill="1.8", sec=7, title="From Project to skill", tool="Claude · skills", files=[F_TEMPLATE], kind="player",
  setup=["[T] File creation works on this account (the owner turned on code execution for the team).",
         "[T] mirqab-invoice-match was built and tested before Day 1; the 15:55 task uses it. Save this live copy as mirqab-invoice-match-live.",
         "[T] In the invoice Project, ask Claude to turn the instructions into a skill. Save it. Run it in a fresh chat outside the Project."],
@@ -404,7 +414,7 @@ demo("t19", day=1, skill="1.9", sec=7, title="Make your skill", tool="Claude · 
  stretch=["Share the skill with a member of your team."])
 
 demo("t110", day=1, skill="1.10", sec=7, title="The messy sample and the clock", tool="Claude · your skill", files=MESSY_FILES, kind="task", hands_on=True, minutes=14, solo="on your own",
- setup=["Download the messy file for your track. Run your skill on it.", "Check: did the agent flag the problem, or guess?",
+ setup=["Download the messy file for your track. Run your skill on it.", "Check: did the agent flag the problem, or guess? Each file hides a gap the agent must flag (the invoice file has two). No file has two values that conflict.",
         "Time the task: minutes by hand, minutes with the agent. Log both on the shared board."],
  prompts=[("Messy run", "Run on the attached file. List anything you could not read or are not sure about. Do not guess.")],
  expected="A flagged result for each track: " + "; ".join(f"{k}: {v[2]}" for k, v in D.MESSY.items()),
@@ -414,11 +424,11 @@ demo("t110", day=1, skill="1.10", sec=7, title="The messy sample and the clock",
  answer=[("h", "What each messy file hides"), tbl(["Track file", "The problem", "The right behavior"], [(v[0], v[1], v[2]) for v in D.MESSY.values()])],
  deliverable="One flagged messy run and two numbers: minutes by hand and with the agent.",
  fallback="If the agent guesses, add the When unsure rule again and rerun.",
- hint="Look for a missing field or a different unit.",
+ hint="A missing field or a different unit.",
  stretch=["Add the fix as a rule to your skill and rerun."])
 
-demo("d111", day=1, skill="1.11", sec=8, title="The agent that ran itself", tool="Claude · scheduled task", files=[], kind="player",
- setup=["[T] Before Day 1: build mirqab-invoice-match on this account and test it in a fresh chat. This task uses it.", f"[T] At 08:00, in Cowork: Scheduled, then New task. Name it Mirqab invoice match demo. Paste the prompt below. Frequency: daily at {D.SCHED_TIME}.",
+demo("d111", day=1, skill="1.9", sec=8, title="The agent that ran itself", tool="Claude · scheduled task", files=[], kind="player",
+ setup=["[T] Before Day 1: build mirqab-invoice-match on this account and test it in a fresh chat. This task uses it.", f"[T] At 08:00, click Scheduled in the left sidebar, then New task. Name it Mirqab invoice match demo. Paste the prompt below. Frequency: daily at {D.SCHED_TIME}.",
         "[T] Approval mode: the mode that lets the run save and move Drive files without waiting.", "[T] Before 15:55, check that 01 Invoices / Inbox holds one copy of the October invoices and ledger.", "Show the Scheduled page, then open Outputs as the file arrives."],
  prompts=[("Scheduled task prompt", INVOICE_SCHED)],
  expected=f"At {D.SCHED_TIME}, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log.",
@@ -463,7 +473,7 @@ demo("t21", day=2, skill="2.1", sec=9, title="Your team's workflow card", tool="
  stretch=["Write the one-line format of your run log."])
 
 demo("d22", day=2, skill="2.2", sec=10, title="Schedule the invoice workflow", tool="Claude · scheduled tasks", files=[], kind="player",
- setup=["[T] In Cowork: Scheduled, then New task, then Set up manually. If the form has no time field for Daily, use Create with Claude and say the time.", "[T] Check that 01 Invoices / Inbox holds the October invoices and ledger (the pre-flight copied them back).", "[T] Name, prompt, approval mode, frequency daily at 08:00. Save. Run it once on demand."],
+ setup=["[T] Click Scheduled in the left sidebar, then New task, then Set up manually. If the form has no time field for Daily, use Create with Claude and say the time.", "[T] Check that 01 Invoices / Inbox holds the October invoices and ledger (the pre-flight copied them back).", "[T] Name, prompt, approval mode, frequency daily at 08:00. Save. Run it once on demand."],
  prompts=[("Scheduled task prompt", INVOICE_SCHED)],
  expected="A scheduled task on the Scheduled page, daily at 08:00. A test run writes a file to Outputs and moves the two files to Processed.",
  say="Name, prompt, frequency. The prompt calls the skill you made yesterday.",
@@ -472,12 +482,12 @@ demo("d22", day=2, skill="2.2", sec=10, title="Schedule the invoice workflow", t
  fallback="If Cowork is not on, show the backup fields and run the prompt by hand in a chat.",
  hint="Run it once on demand, then open Outputs.",
  player={"parts": [["Name", "Mirqab invoice match, daily."], ["Prompt", "Use the mirqab-invoice-match skill on the new files in 01 Invoices / Inbox. Save to Outputs. Move files to Processed. Save a run-log file in Log."], ["Frequency", "Daily at 08:00."]],
-         "table": [["Step", "Where"], ["Scheduled", "Left sidebar in Cowork"], ["New task", "Top of the page"], ["Set up manually", "Name, prompt, approval, frequency"], ["On demand", "Test it once"]], "best": 1,
+         "table": [["Step", "Where"], ["Scheduled", "Left sidebar"], ["New task", "Upper right"], ["Set up manually", "Name, prompt, approval, frequency"], ["On demand", "Test it once"]], "best": 1,
          "reco": ["<b>Runs in the cloud:</b> the laptop can be closed.", "<b>Uses</b> your connectors and skills.", "<b>Each run</b> is its own session."],
          "control": "Run it once now and check the output before you trust the schedule."})
 
 demo("t22", day=2, skill="2.2", sec=10, title="Schedule your workflow", tool="Claude · scheduled tasks", files=[], kind="task", hands_on=True, minutes=30, solo="in your team",
- setup=["Work on the laptop of the person who made your team's skill. That person also makes the Task 2.5 edits.", "Copy your pack from the Packs folder into [your team folder] / Inbox. Then, in Cowork: Scheduled, then New task, then Set up manually.", "Name it. Paste the prompt below and fill the brackets from your card.",
+ setup=["Work on the laptop of the person who made your team's skill. That person also makes the Task 2.4 edits.", "Copy your pack from the Packs folder into [your team folder] / Inbox. Then click Scheduled in the left sidebar, then New task, then Set up manually.", "Name it. Paste the prompt below and fill the brackets from your card.",
         "Approval mode: choose the mode that lets the run save and move files without waiting for you.", "Frequency: daily at 08:00. Save.", "Run it once on demand. Compare the output with your Day 1 result."],
  prompts=[("Scheduled task prompt", SCHED_PROMPT)],
  expected="A scheduled task per team; one run that writes a named file to Outputs, moves the input files to Processed and saves a run-log file in Log.",
@@ -510,7 +520,7 @@ demo("t23", day=2, skill="2.3", sec=11, title="Batch 2 and the empty folder", to
         "Workflow teams: keep the request list in the skill and add the tracker line below to the prompt. Analysis teams: add the monthly line below.",
         "Copy the batch-2 file for your track from Packs into your team's Inbox. Run the task on demand. Check the output and the run log.", "Run again with the Inbox empty. Check the run log."],
  prompts=[("The empty-folder line (check it is in your prompt)", "If the Inbox has no new files, write No new files in the run log and stop. Do not process old files."),
-          ("Workflow teams: the tracker line", "Before you read the Inbox, open the newest tracker in [your team folder] / Outputs and update it. If there is none, start from the request list in the skill."),
+          ("Workflow teams: the tracker line", "If the Inbox has new files, first open the newest tracker in [your team folder] / Outputs and update it. If there is none, start from the request list in the skill."),
           ("Analysis teams: the monthly line", "For monthly management accounts, compare the two months with the same two limits.")],
  expected=f"Two run-log files per team: one for the run on batch 2 (invoice teams flag {D.B2_FLAG}) and one that says No new files.",
  say="Two runs: new files, then none.",
@@ -526,7 +536,7 @@ demo("t23", day=2, skill="2.3", sec=11, title="Batch 2 and the empty folder", to
          ("note", "Empty folder: the run log must say No new files, and no file is written to Outputs.")],
  deliverable="One run on batch 2 and one empty-folder run, each with its own run-log file.",
  fallback="If the run hangs, check the folder name, then run it on demand again.",
- hint="Look at the run log after each run.",
+ hint="The run log after each run.",
  stretch=["Copy the batch-2 file into the Inbox again. Make the first line of the output a count of files read. Run on demand and check it against the run log."])
 
 demo("d24", day=2, skill="2.4", sec=11, title="The n8n flow", tool="n8n with Claude", files=[], kind="player",
@@ -560,7 +570,7 @@ demo("d25", day=2, skill="2.5", sec=12, title="Flag for supervisor review", tool
          "reco": ["<b>Supervisor section:</b> empty. No KWD difference is over KWD 100.", "<b>Department rules</b> live in the skill, word for word.", "<b>Reviewed by</b> closes every file."],
          "control": "The agent routes. The supervisor decides."})
 
-demo("t25", day=2, skill="2.5", sec=12, title="Your department's rules", tool="Claude · skills", files=[F_RULES], kind="task", hands_on=True, minutes=30, solo="in your team",
+demo("t25", day=2, skill="2.4", sec=12, title="Your department's rules", tool="Claude · skills", files=[F_RULES], kind="task", hands_on=True, minutes=30, solo="in your team",
  setup=["Open mirqab-review-rules.docx. Pick two rules for your department.", "The skill owner adds them to the skill word for word, with a review step and a DRAFT mark.",
         "Copy the Day 1 messy file for your track from Packs into your team's Inbox. Run the task on demand.", "Check the output and the new run-log file in Log."],
  prompts=[("Add the rules", "Add these rules to our skill, word for word: [two rules from mirqab-review-rules.docx]. Mark every output DRAFT and end it with: Reviewed by: ____.")],
@@ -589,22 +599,27 @@ demo("d26", day=2, skill="2.6", sec=13, title="A two-minute demo", tool="Claude"
          "reco": ["<b>A live run</b> is stronger than slides.", "<b>One number:</b> minutes saved a month.", "<b>Next:</b> one task, not ten."],
          "control": "Every number in the demo comes from your run log."})
 
-demo("t26", day=2, skill="2.6", sec=13, title="Three clean runs and the script", tool="Claude · scheduled tasks", files=[], kind="task", hands_on=True, minutes=40, solo="in your team",
- setup=["Copy your track pack into the Inbox and run on demand, three times. Workflow teams: before each run, move the trackers in Outputs to Processed (15 min).", "Work out the impact: minutes by hand minus minutes with the agent, times runs a month (5 min).",
-        "Write the 5-minute demo plan: problem, card, live run, impact, next (10 min).", "Rehearse once, with a timer. Before Demo Day, copy a pack into the Inbox for the live run (10 min)."],
- prompts=[("Impact", "From our run log, count the runs and the items flagged. Then calculate: (minutes by hand minus minutes with the agent) times runs a month."),
-          ("Demo plan", "Draft a 5-minute demo plan for our workflow: the problem, the card, a live run, the impact, the next task. Use only facts from our run log and card.")],
- expected="Three clean runs in the run log, one impact number, and a timed 5-minute plan per team.",
- say="Three clean runs, one number, five minutes.",
- point="Rehearse the live run. It is the part that fails.",
- backup=[("h", "The rubric"), tbl(["Criterion", "Points", "What earns full marks"], [("Problem relevance", 10, "A real, repeated task with a clear cost"), ("Solution quality", 10, "Runs on a schedule, flags not guesses, a named reviewer"),
-                                                                                     ("Deployment potential", 10, "Could run at RSM next month with approved tools and data")])],
- answer=[("h", "Score sheet guide"), tbl(["Criterion", "10", "5", "0"], [("Problem relevance", "Real task, measured cost", "Real task, no number", "Made-up task"),
-                                                                         ("Solution quality", "Scheduled, rules, reviewer, run log", "Works by hand only", "Does not run"),
-                                                                         ("Deployment potential", "Ready with approved tools", "Needs work", "Not usable at RSM")])],
- deliverable="Three clean runs, the impact number and a rehearsed 5-minute demo.",
- fallback="If a live run fails in rehearsal, show the latest output file and the run log instead.",
- hint="Every number on your demo must come from the run log.",
+demo("t26", day=2, skill="2.5", sec=13, title="Clean runs, a failed run and the script", tool="Claude · scheduled tasks", files=[F_LOCKED], kind="task", hands_on=True, minutes=40, solo="in your team",
+ setup=["Copy your track pack into the Inbox and run on demand, three times. Workflow teams: move the trackers in Outputs to Processed before each run (12 min).",
+        f"Failed-run test: the skill owner adds the fallback line to the prompt. Copy {F_LOCKED} from Packs into the Inbox, run on demand and read the run log. Then delete it from the Inbox (8 min).",
+        "Work out the impact: minutes by hand minus minutes with the agent, times runs a month (4 min).",
+        "Write the 5-minute demo plan with the Demo 2.6 prompt. Say who acts when a run fails (8 min).", "Rehearse once, with a timer. Before Demo Day, copy a pack into the Inbox for the live run (8 min)."],
+ prompts=[("The fallback line (add it to your prompt)", FALLBACK_LINE),
+          ("Impact", "From our run log, count the runs and the items flagged. Then calculate: ([minutes by hand] minus [minutes with the agent]) times [runs a month]. Take the minutes from our Clock tab.")],
+ expected=f"Three clean runs and one failed-run test in the run log (Could not read: {F_LOCKED}, nothing guessed, the file left in the Inbox), one impact number and a timed 5-minute plan per team.",
+ say="Three clean runs, one failed run, one number, five minutes.",
+ point="Test the failure before Demo Day. A workflow you can trust says when it fails.",
+ backup=[("h", "The failed-run test"), tbl(["Check", "A good run", "A bad run"], [("Run log", f"Could not read: {F_LOCKED}", "Silent, or says the run was fine"),
+                                                                           ("Output", "No row for the locked file", "A row with made-up values"), ("The file", "Still in the Inbox", "Moved to Processed as if it was read")]),
+         ("h", "The rubric (50 points)"), tbl(["Criterion", "Points", "What earns full marks"], RUBRIC_FULL)],
+ answer=[("h", "The failed-run test"), ("ul", [f"The run log names {F_LOCKED} as Could not read. Nothing is guessed, and the file stays in the Inbox.",
+                                              "If the log is silent or a row has values, the fallback line is missing from the prompt: add it and run on demand again.",
+                                              "The fallback for a real file: the named reviewer checks it by hand, and the team asks for a readable copy."]),
+         ("h", "Score sheet guide (50 points)"), tbl(["Criterion", "10", "5", "0"], RUBRIC_SCORE),
+         ("note", "If the locked file opened and the trainer showed the Drive fallback instead, a team with three clean runs and the No new files run keeps full marks for Test evidence.")],
+ deliverable="A Log folder with three clean runs and the failed-run test, and a rehearsed 5-minute demo with its impact number.",
+ fallback=f"If {F_LOCKED} does not fail, pause the Google Drive connector on the trainer account, run the invoice task on demand, show that no run log is written, then reconnect. If a live run fails in rehearsal, show the latest output file and the run log instead.",
+ hint="Every number on your demo comes from your run log or the Clock tab.",
  stretch=["List the next two tasks your team would automate."])
 
 # ===================================================================== the opener (Day 1)

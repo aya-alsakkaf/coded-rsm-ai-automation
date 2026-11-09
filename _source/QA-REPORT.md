@@ -164,3 +164,44 @@ Findings (all fixed in the kit after the round, rebuilt and validated, but not r
 - Concerning · Task 2.3 Workflow teams had no exact line · a COPY line for the tracker; the key shows the full tracker (10 · 1 · 4, 67%).
 - Concerning · Task 1.6 linked the starter file (the finished five parts) at minute 0 · removed from the task; it stays as hint 3 and catch-up.
 - Nits · knowledge vs rules wording (b3t4, cheat sheet, Demo 1.4); c4story now shows two rules in conflict; Agent Card check b3chk0 (Day 1: 73 slides); Task 1.2 18 minutes after its story; messy status 64 hours; batch-2 lease email covers all three 2026 leases; Task 2.6 Workflow runs start clean; Demo 1.1 also checks a letter date; Tasks 1.8 and 1.9 list the packs; b2two no longer names the planted rows; MAP q_6 option c and q_10 Arabic option a; two plainer sentences (hub, Day 2).
+
+## Round 6 · 10 Nov 2026 · after review round 1 (Ahmad Maher, 9.3 / 10) · 8.9 / 10 · FAIL (two dimensions under 9.0)
+
+Review round 1 fixes applied first: failed-run test in Task 2.5 (was 2.6) with `mirqab-locked-test-file.pdf` and a fallback slide (c5fail);
+Demo Day rubric of five criteria, 50 points; "Click Scheduled in the left sidebar"; the Agent Card's four boxes in MAP q5a, q_r2 and final q_5;
+Task 1.10 wording; demo and task numbering without gaps.
+
+| Dimension | Weight | Score |
+|---|---|---|
+| Files, links and config | 10 | 10 |
+| Pages | 10 | 10 |
+| Decks | 15 | 10 |
+| Interactivity | 10 | 10 |
+| Content coherence | 20 | 6.5 |
+| Tasks and demos | 10 | 7.25 |
+| MAP tests | 10 | 9.75 |
+| Final survey | 5 | 10 |
+| Language and data safety | 10 | 9.0 |
+
+Levels 1 to 4: validator PROBLEMS: 0 after one fix (c5task ran 86 px into the progress bar: the Demo plan prompt moved to Demo 2.6, steps shortened);
+qa.cjs pages and decks: 0 problems. MAP: the fresh agent re-derived all 13 answers from the slides before reading the key; all 13 match.
+
+Blocking · none
+Concerning · c5rubric, c6score, facilitator kit · "Working functionality" full marks needed a scheduled run, but the first 08:00 run is after Demo Day · 10 = saved on the Scheduled page, runs on demand, same shape (fixed)
+Concerning · facilitator kit owner settings, pre-flight · Drive move, share and trash ask for approval before each action by default (support.claude.com 10166901); runs could not move files to Processed · owner lets members run them without asking; pre-flight checks no approval waits (fixed)
+Concerning · c5fail · new concept with no demo and no check · notes show the pre-flight locked-file run log; new check c5chk2 (Day 2: 55 slides) (fixed)
+Concerning · Task 1.10 · "one problem" but the invoice messy file has two · "a gap the agent must flag (the invoice file has two)" (fixed)
+Nit · b1tour, c2t1, c2steps · "In Cowork" not named · kept: the reviewer's wording, matches article 13854387 (decision)
+Nit · c5rubric, c6score, facilitator row · rubric typed by hand · built from CD.RUBRIC_FULL and RUBRIC_SCORE (fixed)
+Nit · Task 2.5 key · how to score Test evidence if the trainer fallback was used · note added (fixed)
+Nit · Task 2.5 hint and Impact prompt · minutes come from the Clock tab, not the run log · "run log or the Clock tab", bracketed Impact prompt (fixed)
+Nit · two messy files · footers told the agent what to flag · footers removed (fixed)
+Nit · Task 2.3 Workflow tracker line · ran before the empty-folder check · "If the Inbox has new files, first…" (fixed)
+Nit · Day 2 lab step 6 · Workflow trackers line missing · added (fixed)
+Nit · every task note · "Ask each pair" · kit notes say person (Day 1) or team (Day 2) (fixed)
+Nit · Task 2.5 deliverable · four items · one deliverable (fixed)
+Nit · MAP q5 option a (Arabic) · longest option · shortened to "ومتى" (fixed)
+Nit · c5rubric · "Five questions" · "Five criteria" (fixed)
+Nit · b1tour, c2steps · capital after the colon · lower case (fixed)
+Nit · hub program lead · 31 words · split (fixed)
+Nit · Task 1.10 and 2.3 hints · "Look for: Look for…" · hints reworded (fixed)
