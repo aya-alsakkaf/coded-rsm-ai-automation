@@ -73,7 +73,8 @@ def day1():
         "When AI writes something that <b>sounds right but is not true</b>: a wrong amount, date, name or source, written with full confidence.",
         "A confident first draft…", "…that <b>nobody has ticked yet</b>. Professional skepticism applies.", "Tick every figure against the source document.",
         n=N(do="Ask: where in audit work would a wrong figure hurt most?", expect="Reconciliations, confirmations, the report.", silent="say: in a working paper your supervisor signs.")))
-    s.append(player("b1demo", "b1", "d11", n=N(expect="Four rows right, one wrong: WDS-20931 shows the figure of another Wafra line.")))
+    s.append(player("b1demo", "b1", "d11", n=N(expect="Four rows right, one wrong: WDS-20931 shows the figure of another Wafra line.",
+        more=["If your live run is right on every row, say: right this time, and you only know because you ticked it against page 2. Then play this slide."])))
     s.append(term("b1t3", "b1", "Lesson 1 · the data rule", "Dummy data today. <span class=\"hl\">RSM's policy always.</span>", "The data rule",
         "No client data goes into an AI tool that RSM has not approved. Today every file is fictional. Back at work, <b>RSM's AI policy decides</b> what may go in.",
         "Engagement confidentiality for email…", "…applies to <b>AI tools in the same way</b>.", "When you are not sure, treat it as client data and ask first.",
@@ -300,8 +301,8 @@ def day2():
         "A <b>scheduled task</b> is a saved prompt that Claude runs on a frequency: hourly, daily, weekdays, weekly or manual. Its prompt calls your <b>skill</b> and reads through your <b>connectors</b>.",
         "A reminder that only reminds you…", "…versus one that <b>does the work and leaves the file</b>.", "Click Scheduled in the left sidebar, then New task.",
         n=N(do="Click Scheduled in the left sidebar on the presenting laptop.", expect="People see the Scheduled item in the sidebar.", silent="ask: which part of the card does this fill?")))
-    s.append(term("c2t2", "c2", "Lesson 2 · what it can do", "It runs in the cloud. <span class=\"hl\">Each run starts fresh.</span>", "How a scheduled run works",
-        "The task runs even when your laptop is closed. Each run is <b>its own session</b>. Do not rely on it to recall the last run: the prompt, the skill and the folders must say everything.",
+    s.append(term("c2t2", "c2", "Lesson 2 · what it can do", "It runs remotely. <span class=\"hl\">Each run starts fresh.</span>", "How a scheduled run works",
+        "A task that uses Drive runs even when your laptop is closed. A task that needs files on your laptop runs only there. Each run is <b>its own session</b>. Do not rely on it to recall the last run: the prompt, the skill and the folders must say everything.",
         "A new joiner on each run…", "…who only knows <b>the prompt, the skill and the folders</b>.", "Anything the run needs must be written down.",
         n=N(do="Ask: what can a run count on from yesterday?", expect="Only what the run log and the folders show.", silent="say: only what is written down. That is why we keep a run log.")))
     s.append(listslide("c2steps", "c2", "Lesson 2 · step by step", "Six steps <span class=\"hl\">to a schedule.</span>",
@@ -391,8 +392,8 @@ def day2():
         "Rehearse the live run. It is the part that fails.",
         n=N(do="Ask each team who presents which beat.", expect="Teams split the beats.", silent="suggest one presenter per beat.")))
     s.append(player("c5pp", "c5", "d26"))
-    s.append(check("c5chk", "c5", "A task takes 40 minutes by hand and 5 with the agent, 20 times a month. <b>About how much time does it save?</b>",
-        [("About 7 hours", 0, "700 is minutes, not hours: divide by 60."), ("About 12 hours", 1, "Right. 35 × 20 = 700 minutes."), ("About 13 hours", 0, "That counts the full 40 minutes: 40 × 20 = 800.")]))
+    s.append(check("c5chk", "c5", "A task takes 30 minutes by hand and 6 with the agent, 25 times a month. <b>About how much time does it save?</b>",
+        [("About 2.5 hours", 0, "That counts only the agent's minutes: 6 × 25 = 150."), ("About 10 hours", 1, "Right. (30 − 6) × 25 = 600 minutes."), ("About 12.5 hours", 0, "That counts the full 30 minutes: 30 × 25 = 750.")]))
     s.append(listslide("c5fail", "c5", "Lesson 5 · when a step fails", "When a step fails, <span class=\"hl\">the run says so.</span>",
         [f"<b>Test it:</b> copy {CD.F_LOCKED}, a file no run can read, into the Inbox. Run on demand.",
          "<b>Good run:</b> the run log says Could not read and names the file. The file stays in the Inbox. Nothing is guessed.",

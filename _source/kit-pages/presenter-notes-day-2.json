@@ -213,7 +213,7 @@
 "time": null,
 "t": "c2",
 "k": "term",
-"h": "It runs in the cloud. Each run starts fresh.",
+"h": "It runs remotely. Each run starts fresh.",
 "flat": "Do: Ask: what can a run count on from yesterday? · Expect: Only what the run log and the folders show. · If the room is silent: say: only what is written down. That is why we keep a run log."
 },
 {

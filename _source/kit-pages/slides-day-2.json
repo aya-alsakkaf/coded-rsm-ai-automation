@@ -410,13 +410,13 @@
 "n": 16,
 "id": "c2t2",
 "kind": "term",
-"title": "It runs in the cloud. Each run starts fresh.",
+"title": "It runs remotely. Each run starts fresh.",
 "topic": "c2",
 "kit": [
 "Lesson 2 · what it can do",
-"It runs in the cloud. Each run starts fresh.",
+"It runs remotely. Each run starts fresh.",
 "How a scheduled run works",
-"The task runs even when your laptop is closed. Each run is its own session. Do not rely on it to recall the last run: the prompt, the skill and the folders must say everything.",
+"A task that uses Drive runs even when your laptop is closed. A task that needs files on your laptop runs only there. Each run is its own session. Do not rely on it to recall the last run: the prompt, the skill and the folders must say everything.",
 "A new joiner on each run…",
 "…who only knows the prompt, the skill and the folders.",
 "Anything the run needs must be written down."
@@ -492,7 +492,7 @@
 "Name, prompt, approval, frequency",
 "On demand",
 "Test it once",
-"Runs in the cloud: the laptop can be closed.",
+"Runs remotely: with Drive, the laptop can be closed.",
 "Uses your connectors and skills.",
 "Each run is its own session."
 ],
@@ -803,7 +803,7 @@
 "abdali-client-emails-wk47.docx",
 "mirqab-engagement-status-wk47.xlsx",
 "Check that the empty-folder line is in your scheduled task's prompt.",
-"Workflow teams: keep the request list in the skill and add the tracker line below to the prompt. Analysis teams: add the monthly line below.",
+"Workflow teams: the skill owner adds mirqab-pbc-request-list-abdali.xlsx to the skill as a reference file, and you add the tracker line below to the prompt. Analysis teams: add the monthly line below.",
 "Copy the batch-2 file for your track from Packs into your team's Inbox. Run the task on demand. Check the output and the run log.",
 "Run again with the Inbox empty. Check the run log.",
 "The empty-folder line (check it is in your prompt)",
@@ -1381,10 +1381,10 @@
 "title": "Quick check",
 "topic": "c5",
 "kit": [
-"A task takes 40 minutes by hand and 5 with the agent, 20 times a month. About how much time does it save?",
-"About 7 hours",
-"About 12 hours",
-"About 13 hours"
+"A task takes 30 minutes by hand and 6 with the agent, 25 times a month. About how much time does it save?",
+"About 2.5 hours",
+"About 10 hours",
+"About 12.5 hours"
 ],
 "chrome": [
 "Quick check",
@@ -1565,7 +1565,7 @@
 "No review step",
 "Test evidence",
 "Clean, empty and failed runs logged",
-"Clean runs only",
+"Some of these runs logged",
 "No run log"
 ],
 "chrome": []

@@ -13,3 +13,5 @@
    at the site root and give the 404 page. Worse, the "Day N slides with speaker notes" link resolves to the public deck, which has no notes.
    Fix in the engine: add `<base href="/staff/">` to the staff index (or write `/staff/...` links). The RSM kit works around the 404s
    with REDIRECTS from the root names to `/staff/...`; the two staff-deck links on the index still open the public decks.
+7. **Break list on the day pages.** `pages.py` joins the break times with " and " ("Breaks at 09:20 and 10:20 and 11:30 …"). Use commas with "and"
+   before the last one. Found by the review-round-1 audit (10 Nov 2026); the kit cannot change engine strings.

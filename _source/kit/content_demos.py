@@ -112,7 +112,7 @@ RUBRIC_FULL = [("Task relevance", 10, "A real, repeated task with a measured cos
                ("Test evidence", 10, "Run log: three clean runs, the empty folder and a failed run")]
 RUBRIC_SCORE = [("Task relevance", "Real task, measured cost", "Real task, no number", "Made-up task"), ("Working functionality", "Scheduled, runs on demand, same shape", "Runs in a chat only", "Does not run"),
                 ("Source accuracy", "3 of 3 figures match", "2 of 3 match", "1 or none match"), ("Human controls", "Drafts, rules, named reviewer", "Reviewer, no rules", "No review step"),
-                ("Test evidence", "Clean, empty and failed runs logged", "Clean runs only", "No run log")]
+                ("Test evidence", "Clean, empty and failed runs logged", "Some of these runs logged", "No run log")]
 
 MATCH_TABLE = [D.TEMPLATE_HEAD[:1] + ["Invoice (KWD)", "Ledger (KWD)", "Difference", "Status"]] + \
               [[r[0], num(r[3]), num(r[4]) if r[4] is not None else "Not found", num(r[5]) if r[5] is not None else "", r[6]] for r in D.MATCH]
@@ -414,7 +414,7 @@ demo("t19", day=1, skill="1.9", sec=7, title="Make your skill", tool="Claude · 
  stretch=["Share the skill with a member of your team."])
 
 demo("t110", day=1, skill="1.10", sec=7, title="The messy sample and the clock", tool="Claude · your skill", files=MESSY_FILES, kind="task", hands_on=True, minutes=14, solo="on your own",
- setup=["Download the messy file for your track. Run your skill on it.", "Check: did the agent flag the problem, or guess? Each file hides a gap the agent must flag (the invoice file has two). No file has two values that conflict.",
+ setup=["Download the messy file for your track. Run your skill on it. Workflow track: attach mirqab-pbc-request-list-abdali.xlsx with the messy email.", "Check: did the agent flag the problem, or guess? Each file hides a gap the agent must flag (the invoice file has two). No file has two values that conflict.",
         "Time the task: minutes by hand, minutes with the agent. Log both on the shared board."],
  prompts=[("Messy run", "Run on the attached file. List anything you could not read or are not sure about. Do not guess.")],
  expected="A flagged result for each track: " + "; ".join(f"{k}: {v[2]}" for k, v in D.MESSY.items()),
@@ -483,7 +483,7 @@ demo("d22", day=2, skill="2.2", sec=10, title="Schedule the invoice workflow", t
  hint="Run it once on demand, then open Outputs.",
  player={"parts": [["Name", "Mirqab invoice match, daily."], ["Prompt", "Use the mirqab-invoice-match skill on the new files in 01 Invoices / Inbox. Save to Outputs. Move files to Processed. Save a run-log file in Log."], ["Frequency", "Daily at 08:00."]],
          "table": [["Step", "Where"], ["Scheduled", "Left sidebar"], ["New task", "Upper right"], ["Set up manually", "Name, prompt, approval, frequency"], ["On demand", "Test it once"]], "best": 1,
-         "reco": ["<b>Runs in the cloud:</b> the laptop can be closed.", "<b>Uses</b> your connectors and skills.", "<b>Each run</b> is its own session."],
+         "reco": ["<b>Runs remotely:</b> with Drive, the laptop can be closed.", "<b>Uses</b> your connectors and skills.", "<b>Each run</b> is its own session."],
          "control": "Run it once now and check the output before you trust the schedule."})
 
 demo("t22", day=2, skill="2.2", sec=10, title="Schedule your workflow", tool="Claude · scheduled tasks", files=[], kind="task", hands_on=True, minutes=30, solo="in your team",
@@ -517,7 +517,7 @@ demo("d23", day=2, skill="2.3", sec=11, title="New files, then no files", tool="
 
 demo("t23", day=2, skill="2.3", sec=11, title="Batch 2 and the empty folder", tool="Claude · scheduled tasks", files=BATCH2_FILES, kind="task", hands_on=True, minutes=25, solo="in your team",
  setup=["Check that the empty-folder line is in your scheduled task's prompt.",
-        "Workflow teams: keep the request list in the skill and add the tracker line below to the prompt. Analysis teams: add the monthly line below.",
+        "Workflow teams: the skill owner adds mirqab-pbc-request-list-abdali.xlsx to the skill as a reference file, and you add the tracker line below to the prompt. Analysis teams: add the monthly line below.",
         "Copy the batch-2 file for your track from Packs into your team's Inbox. Run the task on demand. Check the output and the run log.", "Run again with the Inbox empty. Check the run log."],
  prompts=[("The empty-folder line (check it is in your prompt)", "If the Inbox has no new files, write No new files in the run log and stop. Do not process old files."),
           ("Workflow teams: the tracker line", "If the Inbox has new files, first open the newest tracker in [your team folder] / Outputs and update it. If there is none, start from the request list in the skill."),

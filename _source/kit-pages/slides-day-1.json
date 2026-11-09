@@ -2338,7 +2338,7 @@
 "abdali-trial-balance-messy.xlsx",
 "abdali-client-email-messy.docx",
 "mirqab-engagement-status-messy.xlsx",
-"Download the messy file for your track. Run your skill on it.",
+"Download the messy file for your track. Run your skill on it. Workflow track: attach mirqab-pbc-request-list-abdali.xlsx with the messy email.",
 "Check: did the agent flag the problem, or guess? Each file hides a gap the agent must flag (the invoice file has two). No file has two values that conflict.",
 "Time the task: minutes by hand, minutes with the agent. Log both on the shared board.",
 "Messy run",

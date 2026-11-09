@@ -70,7 +70,7 @@ LETTER = {"sign_by": "30 September 2026", "interim": "16 November to 3 December 
           "report": "31 March 2027", "fee": 18500.000, "fy_end": "31 December 2026"}
 LETTER_SECTIONS = ["Objective and scope of the audit", "Our responsibilities", "The financial reporting framework", "Form and content of our report",
                    "Timetable", "Fees and billing", "Access to people and records", "Agreement of terms"]
-LETTER_MISSING = "Responsibilities of management (for the financial statements, internal control and giving the auditor access)"
+LETTER_MISSING = "Responsibilities of management (for the financial statements and internal control; the access section covers records only)"
 
 # ------------------------------------------------------------------ track packs
 # Extraction: six leases. (no, premises, lessor, start, end, monthly rent, deposit, special clause or "")
@@ -162,7 +162,7 @@ MESSY = {
     "tb": ("A trial balance with one prior-year figure missing", "Repairs and maintenance: FY2025 KWD 35,900, FY2024 blank",
            "Flag: the movement cannot be calculated. Do not treat the blank as zero."),
     "email": ("An email that answers two requests in one line", "Board minutes and legal letters: we will send both next week.",
-              "Mark both items Outstanding with the client's promised date, and add one follow-up for each."),
+              "Items 8 and 11 stay Outstanding. The client says next week but gives no date: flag it. Add one follow-up for each."),
     "status": ("A status sheet with a blank budget", "Jabriya Medical Supplies: hours used 64, budget blank",
                "Flag: the budget is blank, so over or under budget cannot be calculated."),
 }

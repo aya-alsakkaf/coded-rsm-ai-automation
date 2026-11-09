@@ -169,13 +169,14 @@
 "silent": null,
 "fallback": "Show the backup table: the wrong row is WDS-20931.",
 "more": [
-"This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words."
+"This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words.",
+"If your live run is right on every row, say: right this time, and you only know because you ticked it against page 2. Then play this slide."
 ],
 "time": "3 to 4 min",
 "t": "b1",
 "k": "player",
 "h": "Prompt playback, Demo 1.1: Where it goes wrong",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: Four rows right, one wrong: WDS-20931 shows the figure of another Wafra line. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: Show the backup table: the wrong row is WDS-20931. · Say: “It reads well and it is wrong in one place. Only the source tells you which place.”"
+"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: Four rows right, one wrong: WDS-20931 shows the figure of another Wafra line. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · If your live run is right on every row, say: right this time, and you only know because you ticked it against page 2. Then play this slide. · Fallback: Show the backup table: the wrong row is WDS-20931. · Say: “It reads well and it is wrong in one place. Only the source tells you which place.”"
 },
 {
 "say": null,
@@ -954,7 +955,7 @@
 {
 "say": "A good agent flags what it cannot see. A bad one fills the gap.",
 "do": "Start the timer. Walk the room. Ask each person what they found so far.",
-"expect": "A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Mark both items Outstanding with the client's promised date, and add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated.",
+"expect": "A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Items 8 and 11 stay Outstanding. The client says next week but gives no date: flag it. Add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated.",
 "silent": null,
 "fallback": "If the agent guesses, add the When unsure rule again and rerun.",
 "more": [
@@ -965,7 +966,7 @@
 "t": "b6",
 "k": "task",
 "h": "Your turn 1.10: The messy sample and the clock (14 min, on your own)",
-"flat": "14 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Mark both items Outstanding with the client's promised date, and add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If the agent guesses, add the When unsure rule again and rerun. · Say: “A good agent flags what it cannot see. A bad one fills the gap.”"
+"flat": "14 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Items 8 and 11 stay Outstanding. The client says next week but gives no date: flag it. Add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If the agent guesses, add the When unsure rule again and rerun. · Say: “A good agent flags what it cannot see. A bad one fills the gap.”"
 },
 {
 "say": "Card, then run. Ninety seconds.",

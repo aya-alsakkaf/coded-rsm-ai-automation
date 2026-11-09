@@ -205,3 +205,34 @@ Nit · c5rubric · "Five questions" · "Five criteria" (fixed)
 Nit · b1tour, c2steps · capital after the colon · lower case (fixed)
 Nit · hub program lead · 31 words · split (fixed)
 Nit · Task 1.10 and 2.3 hints · "Look for: Look for…" · hints reworded (fixed)
+
+## Round 7 · 10 Nov 2026 · 9.3 / 10 (9.275) · FAIL (two dimensions under 9.0)
+
+| Dimension | Weight | Score |
+|---|---|---|
+| Files, links and config | 10 | 10 |
+| Pages | 10 | 10 |
+| Decks | 15 | 10 |
+| Interactivity | 10 | 10 |
+| Content coherence | 20 | 8.0 |
+| Tasks and demos | 10 | 7.75 |
+| MAP tests | 10 | 9.25 |
+| Final survey | 5 | 10 |
+| Language and data safety | 10 | 9.75 |
+
+Levels 1 to 4: validator PROBLEMS: 0 (Day 2: 55 slides); qa.cjs pages and decks: 0 problems. A new fresh agent re-derived all 13 MAP answers; all match.
+
+Blocking · none
+Concerning · c2t2, c2pp, cheat sheet · "runs in the cloud, laptop closed" stated for every case · re-checked article 13854387 today: tasks run remotely; tasks that need local files run only on the computer. Wording now says so (fixed)
+Concerning · Task 1.10 Workflow track · the messy email had no request list to work from · attach mirqab-pbc-request-list-abdali.xlsx; key: items 8 and 11 Outstanding, "next week" has no date: flag it (fixed)
+Nit · c5chk · repeated the c5stats example · new numbers: (30 − 6) × 25 = 600 minutes (fixed)
+Nit · Day 2 lab step "Batch 2" · invoice-only check, no track lines · track lines and a per-track key (fixed)
+Nit · Task 2.3 · request list "in the skill" never added · the skill owner adds it as a reference file (fixed)
+Nit · score sheet · no middle case for Test evidence; trainer-account fallback · "Some of these runs logged"; fallback counts the same (fixed)
+Nit · Task 1.1 key · access section · key says the access section covers records only (fixed)
+Nit · Demo 1.1 note · no line for a correct live run · line added (fixed)
+Nit · MAP q5 option a (Arabic) · bare "ومتى" · "ومتى يعمل", as in q_r2 and final q_5 (fixed)
+Nit · day pages "Breaks at … and … and …" · engine string · logged in PLUGIN-FEEDBACK.md item 7
+Nit · MAP q_intro · "13 questions", not "13 knowledge questions" · kept: 4 of the 13 are work scenarios (earlier decision)
+Nit · MAP q_1 c and q_12 c · weak distractors · kept: the reviewer judged the wrong options believable; the tests are live
+Nit · b1map note, b3tracks, b4t2 · source list, dummy-pack prompt, a check for "test three" · kept for now (pre-existing, no reviewer finding)
