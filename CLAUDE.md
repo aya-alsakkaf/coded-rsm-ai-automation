@@ -1,6 +1,6 @@
 # CLAUDE.md · coded-rsm-ai-automation
 
-CODED × RSM Albazie · AI Innovation and Automation · Sun 15 and Mon 16 Nov 2026, 08:30-16:00, CODED Alsharekh.
+CODED × RSM Albazie · AI Innovation and Automation · Sun 15 and Mon 16 Nov 2026, 08:30-16:30, CODED Alsharekh.
 Read this before you change anything in this repo.
 
 ## Rules
@@ -41,3 +41,4 @@ Read this before you change anything in this repo.
 | 2026-11-09 | Staff home links fixed with kit REDIRECTS (root names to `/staff/...`), not an engine edit. The staff home's two deck links still open the public decks; trainers use `/staff/coded-rsm-ai-automation-day-N-deck`. | Never edit the engine; bug logged in PLUGIN-FEEDBACK.md. |
 | 2026-11-10 | Review round 1 (Ahmad Maher, 9.3 / 10) fixes: failed-run test in Task 2.5 with a locked sample file and a fallback slide and a check (Day 2: 55 slides); Demo Day rubric of five criteria, 50 points (task relevance, working functionality, source accuracy, human controls, test evidence); "Click Scheduled in the left sidebar"; the Agent Card's four boxes in MAP q5a, q_r2 and final q_5; Task 1.10 names the problem type; demos and tasks renumbered without gaps (old Task 2.5/2.6 are now 2.4/2.5; old Demos 1.3 to 1.9 and 1.11 are now 1.2 to 1.9). The portal welcome screen ("This short test takes about 10 minutes", "Start the test") cannot be set by a tool: set by hand. | Review round 1. |
 | 2026-11-10 | Round 2 shipped after Aya's OK on the screenshots: audit round 8 9.8 / 10 (PASS); the three live surveys updated (q_r2, MAP q5a, final q_5); main deployed; reply posted in the review thread. Staff password change and the PRE/POST welcome screens are Aya's by hand; she adds agenticbc-creator on GitHub. | Review round 1. |
+| 2026-11-11 | Hours are 08:30-16:30 on both days (Aya). Day 1: the extra 30 minutes go to Task 1.6 (65 min: struggle 30, unlock 15, fix 20), per the 8 Nov decision. Day 2: they go to Task 2.5 (70 min: runs 20, failed-run test 12, impact 6, plan 12, rehearse twice 20). Everything after moves 30 minutes later: Asr 14:55-15:15, Demo Day 15:15, Post-MAP 16:10, final survey 16:20, the Demo 1.9 scheduled run 16:25. | Aya's request. |

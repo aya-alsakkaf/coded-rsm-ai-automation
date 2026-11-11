@@ -27,9 +27,9 @@ def mapfix(p, kind):
             q["label"]["ar"] += " هذا الاختبار غير مُقيَّم بدرجات: فهو يبيّن لنا مقدار ما تعلّمته في البرنامج."
         if q["id"].startswith("q_") and q["id"][2:].isdigit() and int(q["id"][2:]) >= first_scen:
             q["sectionId"] = "s_5"
-    sit = ("PRE sitting: Day 1, Sun 15 Nov 2026, 08:35 (10 minutes). The POST sitting at the end of Day 2 (Mon 16 Nov, 15:40) has the identical questions."
+    sit = ("PRE sitting: Day 1, Sun 15 Nov 2026, 08:35 (10 minutes). The POST sitting at the end of Day 2 (Mon 16 Nov, 16:10) has the identical questions."
            if kind == "pre" else
-           "POST sitting: Day 2, Mon 16 Nov 2026, 15:40 (10 minutes), before the final satisfaction survey. The PRE sitting (Day 1, Sun 15 Nov, 08:35) has the identical questions.")
+           "POST sitting: Day 2, Mon 16 Nov 2026, 16:10 (10 minutes), before the final satisfaction survey. The PRE sitting (Day 1, Sun 15 Nov, 08:35) has the identical questions.")
     p["description"] = (f"MAP Skills Test for the CODED Professionals client program \"{C.TITLE}\" for RSM Albazie, cohort RSM-AI-Nov/Nov-26, 2 days at {C.VENUE}, {C.HOURS}: "
                         + " · ".join(f"Day {d}, {['', 'Sun 15 Nov 2026', 'Mon 16 Nov 2026'][d]}: {C.DAYS[d]['title']}" for d in (1, 2)) + f". {sit} "
                         f"Part 1: {len(C.CONFIDENCE)} confidence self-ratings (never scored). Part 2: 9 knowledge questions (Day 1: 5, Day 2: 4). Part 3: 4 work scenarios. "

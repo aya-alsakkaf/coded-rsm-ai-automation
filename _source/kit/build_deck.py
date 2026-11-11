@@ -17,7 +17,7 @@ FLOW = {
  2: (["L1", "L2", "L3", "L4", "L5", "Demo"], {"c1": 0, "c2": 1, "c3": 2, "c4": 3, "c5": 4, "c6": 5}),
 }
 COVER_NOTES = {
- 1: N(do="Welcome the room. Introduce yourself and CODED in one minute.", more=["Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:25. Prayer room and toilets.",
+ 1: N(do="Welcome the room. Introduce yourself and CODED in one minute.", more=["Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:55. Prayer room and toilets.",
       "Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room."],
       say="Over two days you will build an agent for a task you repeat every week, and make it run on its own.", silent="ask who has used any AI tool at work this week."),
  2: N(do="Welcome back. Check that every laptop is signed in and the sandbox Drive opens.", more=["Teams sit together from the start today.", "The callback quiz comes after today's map."],
@@ -26,7 +26,7 @@ COVER_NOTES = {
 OUTCOMES_NOTES = {d: N(do="Read the outcomes. Ask which one matters most for their team.", expect={1: "Most people pick the Project or the skill.", 2: "Most people pick the schedule or the review step."}[d],
                        say="These are the things you will do yourself today, on fictional files.", silent="pick one and say why it matters for audit work.") for d in (1, 2)}
 ROAD = {1: {"title": "One firm, one client. <span class=\"hl\">Seven lessons.</span>", "n": N(do="Point to the breaks: the cup button starts the break clock.", say="Mirqab is fictional, so you can make mistakes safely. Every file is made up.")},
-        2: {"title": "One agent per team. <span class=\"hl\">One workflow by 14:45.</span>", "n": N(do="Point to Demo Day at 14:45.", say="By the afternoon break your workflow runs on a schedule. Then you show it.")}}
+        2: {"title": "One agent per team. <span class=\"hl\">One workflow by 15:15.</span>", "n": N(do="Point to Demo Day at 15:15.", say="By the afternoon break your workflow runs on a schedule. Then you show it.")}}
 CLOSE = {
  1: {"big": "Card → Project → <span class=\"hl\">skill.</span>", "next": "Tomorrow: your team's agent runs on a schedule, with a review step, and you show it at Demo Day.",
      "n": N(do="Recap the day in one line.", more=["Remind teams that the vote closes at 08:40 tomorrow."], say="Thank you. See you at 08:30.")},
@@ -183,7 +183,7 @@ def day1():
     s.append(story("b4story", "b4", "Lesson 4 · Build: Instruction", "Sunday 1 November, 12:30",
         "Faisal reviews Dana's first agent. The table looks right, <b>but one supplier had no PO number, and the agent filled in a likely one.</b>",
         "The fifth part is the one <span class=\"hl\">people forget.</span>", "Write instructions in five parts and test them.",
-        n=N(do="Approve the remaining cards in the first five minutes while the room reads.", expect="All cards approved by 12:35.", silent="ask: what should the agent have written?"), time="12:30-13:20"))
+        n=N(do="Approve the remaining cards in the first five minutes while the room reads.", expect="All cards approved by 12:35.", silent="ask: what should the agent have written?"), time="12:30-13:50"))
     s.append(tslide("b4parts", "b4", "Lesson 4 · the five parts", "Five parts. <span class=\"hl\">Every instruction.</span>", ["Part", "It tells Claude", "Invoice agent"],
         [["<b>Role</b>", "Who it is", "An audit associate at Mirqab"], ["<b>Steps</b>", "What to do, in order", "Read, find, compare"], ["<b>Rules</b>", "What must always be true", "KWD, three decimals, never round"],
          ["<b>Output format</b>", "The exact shape", "The template's columns"], ["<b>When unsure</b>", "What to do with a gap", "Write Not found. Never guess."]],
@@ -202,10 +202,10 @@ def day1():
         n=N(do="Point to the Copilot or ChatGPT cell RSM is most likely to use.", expect="People see the same five parts in a different box.", silent="read the ChatGPT cell.")))
     s.append(task("b4task", "b4", "t16", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 5 · Build: Input and Output
-    s.append(story("b5story", "b5", "Lesson 5 · Build: Input and Output", "Sunday 1 November, 13:30",
+    s.append(story("b5story", "b5", "Lesson 5 · Build: Input and Output", "Sunday 1 November, 14:00",
         "Every Sunday, Noura, a project coordinator, downloads the same files from the shared drive and <b>drags them into a chat, one by one.</b>",
         "The files are already somewhere. <span class=\"hl\">Let the agent read them there.</span>", "Read from a Drive folder and return a fixed-shape output.",
-        n=N(do="Ask: how many files do you drag into a tool each week?", expect="Many, every week.", silent="say: tomorrow a schedule cannot drag files."), time="13:30-14:25"))
+        n=N(do="Ask: how many files do you drag into a tool each week?", expect="Many, every week.", silent="say: tomorrow a schedule cannot drag files."), time="14:00-14:55"))
     s.append(term("b5t1", "b5", "Lesson 5 · input", "A key to one cabinet, <span class=\"hl\">not the whole archive.</span>", "Connector",
         f"A <b>connector</b> lets Claude read from an app such as Google Drive. It reaches every file the signed-in account can open, so today you use a CODED account that opens only the <b>{D.SANDBOX}</b>.",
         "One key, one cabinet…", "…one connector, <b>an account that opens only what the task needs</b>.", "Customize, then Connectors, then Google Drive.",
@@ -228,10 +228,10 @@ def day1():
         n=N(do="Read the Copilot column if RSM uses Microsoft 365.", expect="People recognize SharePoint and OneDrive.", silent="read the ChatGPT column.")))
     s.append(task("b5task2", "b5", "t18", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 6 · Build: Package
-    s.append(story("b6story", "b6", "Lesson 6 · Build: Package", "Sunday 1 November, 14:45",
+    s.append(story("b6story", "b6", "Lesson 6 · Build: Package", "Sunday 1 November, 15:15",
         "Dana's agent works in her Project. Faisal asks: <b>“Can the other two associates use it? And can it run tomorrow without you?”</b>",
         "A method only you can run <span class=\"hl\">is not a method yet.</span>", "Package the method as a skill and test it on a messy sample.",
-        n=N(do="Ask: how does the firm share a method today?", expect="A manual, a template, a checklist.", silent="say: the methodology manual."), time="14:45-15:30"))
+        n=N(do="Ask: how does the firm share a method today?", expect="A manual, a template, a checklist.", silent="say: the methodology manual."), time="15:15-16:00"))
     s.append(term("b6t1", "b6", "Lesson 6 · the idea", "From your desk <span class=\"hl\">to the firm's manual.</span>", "Skill",
         "A <b>skill</b> is a saved method that Claude loads when a task matches it. It works in any chat, in Cowork and in scheduled tasks, and you can share it.",
         "A Project is one person's desk…", "…a skill is <b>the methodology manual</b>, usable anywhere.", "Customize, then Skills. Code execution must be on.",
@@ -249,7 +249,7 @@ def day1():
     s.append(task("b6task", "b6", "t19", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     s.append(task("b6task2", "b6", "t110", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 7 · Show and tell, and the Day 2 hook
-    s.append(timer_slide("b7show", "b7", "Show and tell · 15:40", "Four teams. <span class=\"hl\">Ninety seconds each person.</span>",
+    s.append(timer_slide("b7show", "b7", "Show and tell · 16:10", "Four teams. <span class=\"hl\">Ninety seconds each person.</span>",
         "Show your card, then run your skill live on one file from your pack. Your team watches and asks one question.", 12,
         n=N(do="Teams demo at their own tables at the same time. Walk between them.", expect="Most agents run; some flag the messy sample.", silent="start the first team yourself.",
             fallback="If a live run hangs, show the last good result.", say="Card, then run. Ninety seconds.")))
@@ -264,9 +264,9 @@ def day1():
 def day2():
     s = opening(2)
     # Lesson 1 · From agent to system
-    s.append(rule("c1rule", "c1", "Callback · Day 1", "Yesterday it ran at 15:55. <span class=\"hl\">Today it runs every morning.</span>",
+    s.append(rule("c1rule", "c1", "Callback · Day 1", "Yesterday it ran at 16:25. <span class=\"hl\">Today it runs every morning.</span>",
         "Each of you has a card, a Project and a skill. Three quick questions, then one agent per team gets its When box.",
-        n=N(do="Ask who saw the 15:55 file arrive.", expect="Most hands.", silent="open the Outputs folder and show the file.", time="08:30-09:20")))
+        n=N(do="Ask who saw the 16:25 file arrive.", expect="Most hands.", silent="open the Outputs folder and show the file.", time="08:30-09:20")))
     s.append(check("c1chk1", "c1", "Where does this month's invoice pack go in an agent?",
         [("Into the Project knowledge", 0, "Knowledge is what stays the same."), ("Into each run, from the folder", 1, "Right. Input changes every run."), ("Into the instructions", 0, "Instructions hold the rules.")]))
     s.append(check("c1chk2", "c1", "An invoice has no PO number. <b>What should the agent write?</b>",
@@ -374,9 +374,9 @@ def day2():
     s.append(task("c4task", "c4", "t25", n=N(do="Start the timer. Walk the room. Ask each team what they found so far.")))
     # Lesson 5 · Test and prepare the demo
     s.append(story("c5story", "c5", "Lesson 5 · Test and prepare the demo", "Thursday 5 November, 13:30",
-        "At 14:45 Dana shows the invoice workflow to the partners. <b>They will ask two things: does it run, and what does it save?</b>",
+        "At 15:15 Dana shows the invoice workflow to the partners. <b>They will ask two things: does it run, and what does it save?</b>",
         "Show the run, <span class=\"hl\">then the number.</span>", "Measure the impact and prepare a five-minute demo.",
-        n=N(do="Read the rubric before the story ends.", expect="Questions about how the score works.", silent="say the five criteria."), time="13:30-14:25"))
+        n=N(do="Read the rubric before the story ends.", expect="Questions about how the score works.", silent="say the five criteria."), time="13:30-14:55"))
     s.append(stats("c5stats", "c5", "Lesson 5 · impact", "Minutes saved <span class=\"hl\">every month.</span>",
         [(f"{D.IMPACT_EX['by_hand']} min", "By hand", "One run of the task, done by a person."), (f"{D.IMPACT_EX['agent']} min", "With the agent", "Including the review."),
          (f"{D.IMPACT_MIN} min", "Saved a month", f"({D.IMPACT_EX['by_hand']} − {D.IMPACT_EX['agent']}) × {D.IMPACT_EX['runs']} runs: about 12 hours.")],
@@ -408,21 +408,21 @@ def day2():
         [("Run it again until Claude reads the file", 0, "A rerun gives the same result. A person acts."), ("The named reviewer checks that file by hand", 1, "Right. The log told you which file needs a person."), ("Nothing: the other files were processed", 0, "The locked file is still a gap in the work.")]))
     s.append(task("c5task", "c5", "t26", n=N(do="Start the timer. Walk the room. Ask each team what they found so far.")))
     # Lesson 6 · Demo Day
-    s.append(timer_slide("c6demo", "c6", "Demo Day · 14:45", "Four teams. <span class=\"hl\">Eight minutes each.</span>",
+    s.append(timer_slide("c6demo", "c6", "Demo Day · 15:15", "Four teams. <span class=\"hl\">Eight minutes each.</span>",
         "Five minutes of demo, three minutes of questions. The panel scores each automation out of 50.", 8,
         n=N(do="Restart the timer for each team. Score on the board's Teams and votes tab.", expect="Four live runs, four impact numbers.", silent="ask the first panel question yourself.",
-            fallback="If a live run fails, the team shows its latest output file and run log.", say="Team one, the floor is yours.", time="14:45-15:30")))
+            fallback="If a live run fails, the team shows its latest output file and run log.", say="Team one, the floor is yours.", time="15:15-16:00")))
     s.append(tslide("c6order", "c6", "Demo Day · running order", "Who presents <span class=\"hl\">when.</span>", ["Team", "Time", "Workflow"],
-        [["Team 1", "14:45", "From the board"], ["Team 2", "14:53", "From the board"], ["Team 3", "15:01", "From the board"], ["Team 4", "15:09", "From the board"]],
-        "Scoring and panel comments from 15:17.",
-        n=N(do="Fill the workflow names from the board before 14:45.", expect="Teams ready at their laptops.", silent="call Team 1.")))
+        [["Team 1", "15:15", "From the board"], ["Team 2", "15:23", "From the board"], ["Team 3", "15:31", "From the board"], ["Team 4", "15:39", "From the board"]],
+        "Scoring and panel comments from 15:47.",
+        n=N(do="Fill the workflow names from the board before 15:15.", expect="Teams ready at their laptops.", silent="call Team 1.")))
     s.append(tslide("c6score", "c6", "Demo Day · scoring", "The panel's <span class=\"hl\">score sheet.</span>", ["Criterion", "10", "5", "0"],
         [list(r) for r in CD.RUBRIC_SCORE],
         f"Total out of {sum(pt for _c, pt, _t in CD.RUBRIC_FULL)}. The trainer scores. RSM leadership joins if they attend.", cls="tight",
         n=N(do="Keep this slide up while the panel scores.", expect="Scores on the board within 8 minutes.", silent="read each team's strongest point aloud.")))
     # Close
     s.append(mapslide("c7map", "c7", "after"))
-    s.append(timer_slide("c7next", "c7", "Next steps · 15:55", "Your next task. <span class=\"hl\">Your tool.</span>",
+    s.append(timer_slide("c7next", "c7", "Next steps · 16:25", "Your next task. <span class=\"hl\">Your tool.</span>",
         "Post on the board the next task you will automate back at work, and the tool you will use for it.", 5,
         n=N(do="Read three posts aloud.", expect="Tasks from the inventory; Copilot or Claude as the tool.", silent="post your own first.", say="One task, one card, this week.")))
     s.append(wrap("w2", "close", "Card, schedule, review. <span class=\"hl\">Then show it.</span>",

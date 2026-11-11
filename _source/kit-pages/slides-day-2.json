@@ -8,7 +8,7 @@
 "kit": [
 "CODED × RSM",
 "Monday 16 Nov",
-"08:30-16:00",
+"08:30-16:30",
 "AI Innovation and Automation",
 "Turning Agents into Operational Workflows",
 "Give your team's agent a When: a schedule, new inputs, department rules, a run log and a named reviewer. Then show it at Demo Day.",
@@ -50,7 +50,7 @@
 "title": "Today's map",
 "topic": "open",
 "kit": [
-"One agent per team. One workflow by 14:45.",
+"One agent per team. One workflow by 15:15.",
 "Everything uses Mirqab & Co., a fictional Kuwaiti audit firm, and its fictional client Abdali Foods. Breaks about every hour, lunch with Dhuhr, and an Asr break.",
 "08:30-09:20",
 "Lesson 1 · From agent to system",
@@ -64,19 +64,19 @@
 "12:30-13:20",
 "Lesson 4 · Fit it to your department",
 "Rules, the review step, the run log · Task 2.4",
-"13:30-14:25",
+"13:30-14:55",
 "Lesson 5 · Test and prepare the demo",
 "Impact, the judges' rubric and the failed-run test · Task 2.5",
-"14:45-15:30",
+"15:15-16:00",
 "Lesson 6 · Demo Day",
 "Four teams, eight minutes each, scored",
-"15:40-15:50",
+"16:10-16:20",
 "Post-MAP test",
 "10 minutes. Scan the first QR code",
-"15:50-15:55",
+"16:20-16:25",
 "Final survey",
 "Scan the second QR code",
-"15:55-16:00",
+"16:25-16:30",
 "Next steps and close",
 "Post your next task on the board"
 ],
@@ -88,11 +88,11 @@
 "n": 4,
 "id": "c1rule",
 "kind": "rule",
-"title": "Yesterday it ran at 15:55. Today it runs every morning.",
+"title": "Yesterday it ran at 16:25. Today it runs every morning.",
 "topic": "c1",
 "kit": [
 "Callback · Day 1",
-"Yesterday it ran at 15:55. Today it runs every morning.",
+"Yesterday it ran at 16:25. Today it runs every morning.",
 "Each of you has a card, a Project and a skill. Three quick questions, then one agent per team gets its When box."
 ],
 "chrome": []
@@ -1209,7 +1209,7 @@
 "kit": [
 "Lesson 5 · Test and prepare the demo",
 "Thursday 5 November, 13:30",
-"At 14:45 Dana shows the invoice workflow to the partners. They will ask two things: does it run, and what does it save?",
+"At 15:15 Dana shows the invoice workflow to the partners. They will ask two things: does it run, and what does it save?",
 "Show the run, then the number.",
 "Measure the impact and prepare a five-minute demo.",
 "05"
@@ -1447,11 +1447,11 @@
 "Every number on your demo comes from your run log or the Clock tab.",
 "List the next two tasks your team would automate.",
 "mirqab-locked-test-file.pdf",
-"Copy your track pack into the Inbox and run on demand, three times. Workflow teams: move the trackers in Outputs to Processed before each run (12 min).",
-"Failed-run test: the skill owner adds the fallback line to the prompt. Copy mirqab-locked-test-file.pdf from Packs into the Inbox, run on demand and read the run log. Then delete it from the Inbox (8 min).",
-"Work out the impact: minutes by hand minus minutes with the agent, times runs a month (4 min).",
-"Write the 5-minute demo plan with the Demo 2.6 prompt. Say who acts when a run fails (8 min).",
-"Rehearse once, with a timer. Before Demo Day, copy a pack into the Inbox for the live run (8 min).",
+"Copy your track pack into the Inbox and run on demand, three times. Workflow teams: move the trackers in Outputs to Processed before each run (20 min).",
+"Failed-run test: the skill owner adds the fallback line to the prompt. Copy mirqab-locked-test-file.pdf from Packs into the Inbox, run on demand and read the run log. Then delete it from the Inbox (12 min).",
+"Work out the impact: minutes by hand minus minutes with the agent, times runs a month (6 min).",
+"Write the 5-minute demo plan with the Demo 2.6 prompt. Say who acts when a run fails (12 min).",
+"Rehearse twice, with a timer. Before Demo Day, copy a pack into the Inbox for the live run (20 min).",
 "The fallback line (add it to your prompt)",
 "If a file cannot be read, do not guess. Write Could not read: [file name] in the run log, leave the file in the Inbox and go on. A person checks it by hand.",
 "Impact",
@@ -1493,7 +1493,7 @@
 "title": "Four teams. Eight minutes each.",
 "topic": "c6",
 "kit": [
-"Demo Day · 14:45",
+"Demo Day · 15:15",
 "Four teams. Eight minutes each.",
 "Five minutes of demo, three minutes of questions. The panel scores each automation out of 50."
 ],
@@ -1514,21 +1514,21 @@
 "kit": [
 "Demo Day · running order",
 "Who presents when.",
-"Scoring and panel comments from 15:17.",
+"Scoring and panel comments from 15:47.",
 "Team",
 "Time",
 "Workflow",
 "Team 1",
-"14:45",
+"15:15",
 "From the board",
 "Team 2",
-"14:53",
+"15:23",
 "From the board",
 "Team 3",
-"15:01",
+"15:31",
 "From the board",
 "Team 4",
-"15:09",
+"15:39",
 "From the board"
 ],
 "chrome": []
@@ -1579,8 +1579,8 @@
 "kit": [
 "Post-MAP test",
 "Final satisfaction survey",
-"Day 2 · Mon 16 Nov · 15:40",
-"Day 2 · Mon 16 Nov · 15:50",
+"Day 2 · Mon 16 Nov · 16:10",
+"Day 2 · Mon 16 Nov · 16:20",
 "13 questions, the same as on Day 1. Not graded. Phone only: no notes, no search, no AI. Then scan the second code for the final survey.",
 "after"
 ],
@@ -1604,7 +1604,7 @@
 "title": "Your next task. Your tool.",
 "topic": "c7",
 "kit": [
-"Next steps · 15:55",
+"Next steps · 16:25",
 "Your next task. Your tool.",
 "Post on the board the next task you will automate back at work, and the tool you will use for it."
 ],

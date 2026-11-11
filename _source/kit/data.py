@@ -215,6 +215,6 @@ IMPACT_MIN = impact(**IMPACT_EX)                              # 700 minutes, abo
 INVOICE_IMPACT = {"by_hand": 45, "agent": 6, "runs": 22}      # the trainer's invoice workflow: 858 minutes, about 14 hours
 
 # ------------------------------------------------------------------ the trainer's scheduled demo (Day 1 Lesson 7)
-SCHED_TIME = "15:55"
+SCHED_TIME = "16:25"
 SANDBOX = "Mirqab sandbox"
 FOLDERS = ["01 Invoices", "02 Leases", "03 Trial balance", "04 Requests", "05 Status"]

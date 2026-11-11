@@ -30,7 +30,7 @@
 },
 {
 "say": "By the afternoon break your workflow runs on a schedule. Then you show it.",
-"do": "Point to Demo Day at 14:45.",
+"do": "Point to Demo Day at 15:15.",
 "expect": null,
 "silent": "ask which block they expect to be hardest.",
 "fallback": null,
@@ -39,11 +39,11 @@
 "t": "open",
 "k": "road",
 "h": "Road: the shape of Day 2",
-"flat": "Do: Point to Demo Day at 14:45. · If the room is silent: ask which block they expect to be hardest. · Say: “By the afternoon break your workflow runs on a schedule. Then you show it.”"
+"flat": "Do: Point to Demo Day at 15:15. · If the room is silent: ask which block they expect to be hardest. · Say: “By the afternoon break your workflow runs on a schedule. Then you show it.”"
 },
 {
 "say": null,
-"do": "Ask who saw the 15:55 file arrive.",
+"do": "Ask who saw the 16:25 file arrive.",
 "expect": "Most hands.",
 "silent": "open the Outputs folder and show the file.",
 "fallback": null,
@@ -51,8 +51,8 @@
 "time": "08:30-09:20",
 "t": "c1",
 "k": "rule",
-"h": "Yesterday it ran at 15:55. Today it runs every morning.",
-"flat": "08:30-09:20. · Do: Ask who saw the 15:55 file arrive. · Expect: Most hands. · If the room is silent: open the Outputs folder and show the file."
+"h": "Yesterday it ran at 16:25. Today it runs every morning.",
+"flat": "08:30-09:20. · Do: Ask who saw the 16:25 file arrive. · Expect: Most hands. · If the room is silent: open the Outputs folder and show the file."
 },
 {
 "say": null,
@@ -542,11 +542,11 @@
 "silent": "say the five criteria.",
 "fallback": null,
 "more": [],
-"time": "13:30-14:25",
+"time": "13:30-14:55",
 "t": "c5",
 "k": "story",
 "h": "Lesson 5 · Test and prepare the demo",
-"flat": "13:30-14:25. · Do: Read the rubric before the story ends. · Expect: Questions about how the score works. · If the room is silent: say the five criteria."
+"flat": "13:30-14:55. · Do: Read the rubric before the story ends. · Expect: Questions about how the score works. · If the room is silent: say the five criteria."
 },
 {
 "say": null,
@@ -650,14 +650,14 @@
 "silent": null,
 "fallback": "If mirqab-locked-test-file.pdf does not fail, pause the Google Drive connector on the trainer account, run the invoice task on demand, show that no run log is written, then reconnect. If a live run fails in rehearsal, show the latest output file and the run log instead.",
 "more": [
-"Give the hint at about 13 min.",
+"Give the hint at about 23 min.",
 "Fast finishers have an extra task on the slide."
 ],
-"time": "40 min work, then share",
+"time": "70 min work, then share",
 "t": "c5",
 "k": "task",
-"h": "Your turn 2.5: Clean runs, a failed run and the script (40 min, in your team)",
-"flat": "40 min work, then share. · Do: Start the timer. Walk the room. Ask each team what they found so far. · Expect: Three clean runs and one failed-run test in the run log (Could not read: mirqab-locked-test-file.pdf, nothing guessed, the file left in the Inbox), one impact number and a timed 5-minute plan per team. · Give the hint at about 13 min. · Fast finishers have an extra task on the slide. · Fallback: If mirqab-locked-test-file.pdf does not fail, pause the Google Drive connector on the trainer account, run the invoice task on demand, show that no run log is written, then reconnect. If a live run fails in rehearsal, show the latest output file and the run log instead. · Say: “Three clean runs, one failed run, one number, five minutes.”"
+"h": "Your turn 2.5: Clean runs, a failed run and the script (70 min, in your team)",
+"flat": "70 min work, then share. · Do: Start the timer. Walk the room. Ask each team what they found so far. · Expect: Three clean runs and one failed-run test in the run log (Could not read: mirqab-locked-test-file.pdf, nothing guessed, the file left in the Inbox), one impact number and a timed 5-minute plan per team. · Give the hint at about 23 min. · Fast finishers have an extra task on the slide. · Fallback: If mirqab-locked-test-file.pdf does not fail, pause the Google Drive connector on the trainer account, run the invoice task on demand, show that no run log is written, then reconnect. If a live run fails in rehearsal, show the latest output file and the run log instead. · Say: “Three clean runs, one failed run, one number, five minutes.”"
 },
 {
 "say": "Team one, the floor is yours.",
@@ -666,15 +666,15 @@
 "silent": "ask the first panel question yourself.",
 "fallback": "If a live run fails, the team shows its latest output file and run log.",
 "more": [],
-"time": "14:45-15:30",
+"time": "15:15-16:00",
 "t": "c6",
 "k": "timer",
 "h": "Four teams. Eight minutes each.",
-"flat": "14:45-15:30. · Do: Restart the timer for each team. Score on the board's Teams and votes tab. · Expect: Four live runs, four impact numbers. · If the room is silent: ask the first panel question yourself. · Fallback: If a live run fails, the team shows its latest output file and run log. · Say: “Team one, the floor is yours.”"
+"flat": "15:15-16:00. · Do: Restart the timer for each team. Score on the board's Teams and votes tab. · Expect: Four live runs, four impact numbers. · If the room is silent: ask the first panel question yourself. · Fallback: If a live run fails, the team shows its latest output file and run log. · Say: “Team one, the floor is yours.”"
 },
 {
 "say": null,
-"do": "Fill the workflow names from the board before 14:45.",
+"do": "Fill the workflow names from the board before 15:15.",
 "expect": "Teams ready at their laptops.",
 "silent": "call Team 1.",
 "fallback": null,
@@ -683,7 +683,7 @@
 "t": "c6",
 "k": "table",
 "h": "Who presents when.",
-"flat": "Do: Fill the workflow names from the board before 14:45. · Expect: Teams ready at their laptops. · If the room is silent: call Team 1."
+"flat": "Do: Fill the workflow names from the board before 15:15. · Expect: Teams ready at their laptops. · If the room is silent: call Team 1."
 },
 {
 "say": null,

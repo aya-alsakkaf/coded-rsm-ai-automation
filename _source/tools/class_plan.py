@@ -19,7 +19,7 @@ for d, D in C.DAYS.items():
         if v["day"] == d and v.get("hands_on"):
             out.append(f"| {v['skill']} | {v['title']} | {v['minutes']} | {v['solo']} | {', '.join(v['files']) or 'your own work'} | {v['deliverable']} |")
     out.append("")
-out += ["## Scored work", "", "Demo Day (Day 2, 14:45): each team's automation, 50 points (task relevance 10, working functionality 10, source accuracy 10, human controls 10, test evidence 10).", "",
-        f"MAP: {len(C.MAP)} questions, the same on Day 1 (08:35) and Day 2 (15:40), not graded. The key is in the portal description and the Day 2 staff answer key.", ""]
+out += ["## Scored work", "", "Demo Day (Day 2, 15:15): each team's automation, 50 points (task relevance 10, working functionality 10, source accuracy 10, human controls 10, test evidence 10).", "",
+        f"MAP: {len(C.MAP)} questions, the same on Day 1 (08:35) and Day 2 (16:10), not graded. The key is in the portal description and the Day 2 staff answer key.", ""]
 open(os.path.join(HERE, "..", "..", "CLASS-PLAN.md"), "w", encoding="utf-8").write("\n".join(out))
 print("CLASS-PLAN.md written")

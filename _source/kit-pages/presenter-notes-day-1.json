@@ -6,14 +6,14 @@
 "silent": "ask who has used any AI tool at work this week.",
 "fallback": null,
 "more": [
-"Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:25. Prayer room and toilets.",
+"Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:55. Prayer room and toilets.",
 "Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room."
 ],
 "time": "08:30 · cover",
 "t": "open",
 "k": "cover",
 "h": "Cover: welcome",
-"flat": "08:30 · cover. · Do: Welcome the room. Introduce yourself and CODED in one minute. · Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:25. Prayer room and toilets. · Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room. · If the room is silent: ask who has used any AI tool at work this week. · Say: “Over two days you will build an agent for a task you repeat every week, and make it run on its own.”"
+"flat": "08:30 · cover. · Do: Welcome the room. Introduce yourself and CODED in one minute. · Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:55. Prayer room and toilets. · Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room. · If the room is silent: ask who has used any AI tool at work this week. · Say: “Over two days you will build an agent for a task you repeat every week, and make it run on its own.”"
 },
 {
 "say": "Answer honestly. If you are not sure, pick your best guess. This measures the workshop, not you.",
@@ -627,11 +627,11 @@
 "silent": "ask: what should the agent have written?",
 "fallback": null,
 "more": [],
-"time": "12:30-13:20",
+"time": "12:30-13:50",
 "t": "b4",
 "k": "story",
 "h": "Lesson 4 · Build: Instruction",
-"flat": "12:30-13:20. · Do: Approve the remaining cards in the first five minutes while the room reads. · Expect: All cards approved by 12:35. · If the room is silent: ask: what should the agent have written?"
+"flat": "12:30-13:50. · Do: Approve the remaining cards in the first five minutes while the room reads. · Expect: All cards approved by 12:35. · If the room is silent: ask: what should the agent have written?"
 },
 {
 "say": null,
@@ -701,20 +701,20 @@
 "flat": "Do: Point to the Copilot or ChatGPT cell RSM is most likely to use. · Expect: People see the same five parts in a different box. · If the room is silent: read the ChatGPT cell."
 },
 {
-"say": "Struggle first. A hint at 11 minutes, then the most common fixes at 20.",
+"say": "Struggle first. A hint at 15 minutes, then the most common fixes at 30.",
 "do": "Start the timer. Walk the room. Ask each person what they found so far.",
 "expect": "A Project per person whose result is right on the three items checked by hand.",
 "silent": null,
 "fallback": "Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts.",
 "more": [
-"Give the hint at about 11 min.",
+"Give the hint at about 21 min.",
 "Fast finishers have an extra task on the slide."
 ],
-"time": "35 min work, then share",
+"time": "65 min work, then share",
 "t": "b4",
 "k": "task",
-"h": "Your turn 1.6: Build v1 of your agent (35 min, on your own)",
-"flat": "35 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A Project per person whose result is right on the three items checked by hand. · Give the hint at about 11 min. · Fast finishers have an extra task on the slide. · Fallback: Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts. · Say: “Struggle first. A hint at 11 minutes, then the most common fixes at 20.”"
+"h": "Your turn 1.6: Build v1 of your agent (65 min, on your own)",
+"flat": "65 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A Project per person whose result is right on the three items checked by hand. · Give the hint at about 21 min. · Fast finishers have an extra task on the slide. · Fallback: Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts. · Say: “Struggle first. A hint at 15 minutes, then the most common fixes at 30.”"
 },
 {
 "say": null,
@@ -723,11 +723,11 @@
 "silent": "say: tomorrow a schedule cannot drag files.",
 "fallback": null,
 "more": [],
-"time": "13:30-14:25",
+"time": "14:00-14:55",
 "t": "b5",
 "k": "story",
 "h": "Lesson 5 · Build: Input and Output",
-"flat": "13:30-14:25. · Do: Ask: how many files do you drag into a tool each week? · Expect: Many, every week. · If the room is silent: say: tomorrow a schedule cannot drag files."
+"flat": "14:00-14:55. · Do: Ask: how many files do you drag into a tool each week? · Expect: Many, every week. · If the room is silent: say: tomorrow a schedule cannot drag files."
 },
 {
 "say": null,
@@ -863,11 +863,11 @@
 "silent": "say: the methodology manual.",
 "fallback": null,
 "more": [],
-"time": "14:45-15:30",
+"time": "15:15-16:00",
 "t": "b6",
 "k": "story",
 "h": "Lesson 6 · Build: Package",
-"flat": "14:45-15:30. · Do: Ask: how does the firm share a method today? · Expect: A manual, a template, a checklist. · If the room is silent: say: the methodology manual."
+"flat": "15:15-16:00. · Do: Ask: how does the firm share a method today? · Expect: A manual, a template, a checklist. · If the room is silent: say: the methodology manual."
 },
 {
 "say": null,
@@ -984,7 +984,7 @@
 {
 "say": "Nobody pressed Send. This is tomorrow.",
 "do": "Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud.",
-"expect": "At 15:55, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log.",
+"expect": "At 16:25, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log.",
 "silent": null,
 "fallback": "If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file.",
 "more": [
@@ -994,7 +994,7 @@
 "t": "b7",
 "k": "player",
 "h": "Prompt playback, Demo 1.9: The agent that ran itself",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: At 15:55, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. · Say: “Nobody pressed Send. This is tomorrow.”"
+"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: At 16:25, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. · Say: “Nobody pressed Send. This is tomorrow.”"
 },
 {
 "say": null,

@@ -3,7 +3,7 @@
 Two-day workshop site for RSM Albazie & Co., run by CODED Professionals.
 
 - **Cohort:** RSM-AI-Nov/Nov-26
-- **Dates:** Sunday 15 and Monday 16 November 2026, 08:30 to 16:00
+- **Dates:** Sunday 15 and Monday 16 November 2026, 08:30 to 16:30
 - **Venue:** CODED, Alsharekh classroom (Frontend Campus)
 - **Tools:** Claude (chat, Projects, the Google Drive connector, artifacts, skills, scheduled tasks); n8n as a trainer demo
 - **Story:** Mirqab & Co. (a fictional audit firm) and its fictional client Abdali Foods. Every file is made up.
@@ -43,7 +43,7 @@ Never put the password in Slack, the repo or a chat.
 | Item | Slug | When |
 |---|---|---|
 | Pre-MAP test | `coded-rsm-albazie-ai-innovation-and-automation-map-test-pre-day-1` | Day 1, 08:35 |
-| Post-MAP test | `coded-rsm-albazie-ai-innovation-and-automation-map-test-post-day-2` | Day 2, 15:40 |
-| Final satisfaction survey | `coded-rsm-albazie-ai-innovation-and-automation-final-satisfaction-survey` | Day 2, 15:50 |
+| Post-MAP test | `coded-rsm-albazie-ai-innovation-and-automation-map-test-post-day-2` | Day 2, 16:10 |
+| Final satisfaction survey | `coded-rsm-albazie-ai-innovation-and-automation-final-satisfaction-survey` | Day 2, 16:20 |
 
 Links: `https://platform.joincoded.com/sv/<slug>`. The MAP answer key is in the portal description and the staff pages only.

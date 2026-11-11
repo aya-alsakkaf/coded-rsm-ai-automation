@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-11 · Hours 08:30-16:30
+
+- Both days now run 08:30-16:30 (was 16:00). Day 1: Task 1.6 is 65 minutes (struggle 30, unlock 15, fix 20; hint at 15, common fixes at 30).
+  Day 2: Task 2.5 is 70 minutes (three clean runs 20, failed-run test 12, impact 6, demo plan 12, rehearse twice 20).
+- Everything after those tasks moves 30 minutes later on both days: Asr 14:55-15:15, Day 1 Lesson 6 15:15, Lesson 7 16:10;
+  Demo Day 15:15 (teams at 15:15, 15:23, 15:31, 15:39, scoring from 15:47), Post-MAP 16:10, final survey 16:20, close 16:25.
+- The Day 1 trainer scheduled task (Demo 1.9) runs at 16:25; the pre-flight, demo backups and Day 2 callback say 16:25.
+- Lesson plan, run of show, facilitator kit, decks and notes, day pages, class plan, README and survey payloads rebuilt from the kit.
+
 ## 2026-11-10 · Review round 1 fixes (Ahmad Maher, 9.3 / 10)
 
 - Task 2.6 is now **Task 2.5** (numbering) and adds a failed-run test: the skill owner adds a fallback line to the scheduled prompt, the team runs on
