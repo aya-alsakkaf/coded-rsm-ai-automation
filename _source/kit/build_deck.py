@@ -20,6 +20,28 @@ def askslide(sid, topic, tag, q, ph, take, n=None):
              f'   <div class="wai-out" aria-live="polite"></div>\n   <div class="wai-foot"><button class="wai-clear" type="button">Clear</button></div>\n  </div>\n  ' + key(take))
     return _slide(section("cd-slide--stage wai-slide", inner, strip(q), sid=sid), sid, "ask", q, topic, q, [tag, q, take], ["Add", "Clear"], _merge({}, n))
 
+def livedemo(sid, topic, did, n=None, time="4 min"):
+    """A demo the trainer runs live in Claude. The slide is a holding card: what you will see, what to watch for, the files.
+    The prompt is on the prompt sheet; the expected result and a fallback are in the notes and on the staff backup page."""
+    _t(topic)
+    d = CD.DEMOS[did]
+    words = d["title"].split()
+    title = (" ".join(words[:-2]) + f' <span class="hl">{" ".join(words[-2:])}.</span>').strip()
+    tag = f"Demo {d['skill']} · {d['tool']}"
+    files = files_html(d["files"]) if d["files"] else '<p class="lv-none">Nothing to attach.</p>'
+    inner = (f'  <div class="lv">\n   <div class="lv-top">{eyebrow(e(tag), rule=True)}<span class="lv-badge"><i></i>Live in Claude</span></div>\n'
+             f'   <h2 class="cd-h1 lv-h">{hl(title)}</h2>\n'
+             f'   <div class="lv-row"><div class="lv-card"><span class="lv-k">Watch for</span><p>{e(d["hint"])}</p></div>'
+             f'<div class="lv-card"><span class="lv-k">Files</span>{files}<p class="lv-src">Prompt: the prompt sheet, Demo {d["skill"]}</p></div></div>\n  </div>\n  ' + key(d["point"]))
+    steps = [x.replace("[T] ", "") for x in d.get("setup", [])]
+    base = {"time": time, "do": "Switch to Claude and run it live. " + " ".join(steps), "expect": d["expected"], "say": d["say"],
+            "fallback": (d.get("fallback") or "") + " The expected result is on the staff backup page, Demo " + d["skill"] + ".",
+            "more": ["Copy the prompt from the prompt sheet, Demo " + d["skill"] + ". The live answer may use other words; point at what the Watch for line asks."]}
+    kit = [tag, title, d["hint"], d["point"], "Demo " + d["skill"]] + list(d["files"])
+    chrome = ["Live in Claude", "Watch for", "Files", "Nothing to attach.", "Prompt: the prompt sheet,", "Prompt", "the prompt sheet"]
+    return _slide(section("cd-slide--stage lv-slide", inner, f"Demo {d['skill']} · live in Claude", sid=sid, dur=240), sid, "live",
+                  f"Demo {d['skill']} · live in Claude", topic, f"Demo {d['skill']} live in Claude: {d['title']}", kit, chrome, _merge(base, n))
+
 def relabel(sl, old, new, old_h, new_h):
     """The same slide with another menu label (the engine names the weak and strong demo after the opener)."""
     out = Slide(str(sl).replace(old, new))
@@ -28,6 +50,22 @@ def relabel(sl, old, new, old_h, new_h):
     return out
 
 EXTRA_CSS = """
+.lv-slide .cd-wrap{justify-content:center}
+.lv{display:flex;flex-direction:column;gap:clamp(16px,2.4vh,28px);width:100%}
+.lv-top{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.lv-top .cd-eyebrow{margin:0}
+.lv-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:999px;font:700 15px/1 var(--cd-font-mono);letter-spacing:.12em;text-transform:uppercase;
+  color:#fff;background:rgba(214,48,49,.18);border:1px solid rgba(255,120,120,.55)}
+.lv-badge i{width:11px;height:11px;border-radius:50%;background:#FF5A5A;box-shadow:0 0 0 0 rgba(255,90,90,.7);animation:lvp 1.6s infinite}
+@keyframes lvp{0%{box-shadow:0 0 0 0 rgba(255,90,90,.7)}70%{box-shadow:0 0 0 12px rgba(255,90,90,0)}100%{box-shadow:0 0 0 0 rgba(255,90,90,0)}}
+.lv-h{margin:0;font-size:clamp(44px,5.2vw,80px);line-height:1.04}
+.lv-row{display:grid;grid-template-columns:1.1fr 1fr;gap:20px}
+.lv-card{border-radius:18px;padding:22px 26px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;gap:12px}
+.lv-k{font:700 13px/1 var(--cd-font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cd-accent)}
+.lv-card p{margin:0;font-size:clamp(20px,1.7vw,26px);line-height:1.35}
+.lv-card .wk-files{display:flex;flex-wrap:wrap;gap:8px}
+.lv-card p.lv-none,.lv-card p.lv-src{font-size:16px;color:var(--cd-text-quiet,#B4C0D3)}
+@media (prefers-reduced-motion: reduce){.lv-badge i{animation:none}}
 .wai-slide .cd-wrap{justify-content:center}
 .wai{display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(14px,2.2vh,24px);width:100%;max-width:1080px;margin:0 auto}
 .wai .cd-eyebrow{justify-content:center}
@@ -194,12 +232,11 @@ def day1():
         "This program uses Claude. The method works in all three.",
         n=N(do="Ask which family each person used this week.", expect="Mostly family 1, some family 2.", silent="say which one you use most and why.",
             more=["Keep it short. The full map of Claude features in other tools comes at the end of the day, after they have used each one."])))
-    s.append(listslide("b1tour", "b1", "Lesson 1 · the Claude tour", "Where today's tools <span class=\"hl\">live in Claude.</span>",
-        ["<b>Chat:</b> the message box, with + to attach a file.", "<b>Projects:</b> instructions and knowledge for every chat inside.",
-         "<b>Connectors:</b> Customize, then Connectors. Google Drive today.", "<b>Skills:</b> Customize, then Skills. A method Claude loads when it fits.",
-         "<b>Artifacts:</b> tables and files Claude makes, to open and download.", "<b>Scheduled tasks:</b> click Scheduled in the left sidebar. Tomorrow's tool."],
-        "One box of the Agent Card at a time.",
-        n=N(do="Show each place on the presenting laptop while you talk.", expect="People find Projects and Customize in under a minute.", silent="ask someone to find Customize on their screen.")))
+    s.append(listslide("b1tour", "b1", "Lesson 1 · Claude basics", "Three things <span class=\"hl\">for your first chat.</span>",
+        ["<b>New chat:</b> start a fresh chat for each new job.", "<b>The + button:</b> attach the file Claude should read.", "<b>The message box:</b> type your request, then press Enter."],
+        "Projects, connectors, skills and scheduled tasks come later, one lesson at a time.",
+        n=N(do="Show each one on the presenting laptop while you talk.", expect="Everyone finds the + button in under a minute.", silent="ask someone to attach a file on their screen.",
+            more=["Keep the rest of Claude closed for now. Each feature gets its own lesson: Projects in Lesson 3, connectors in Lesson 5, skills in Lesson 6, scheduled tasks on Day 2."])))
     s.append(task("b1task", "b1", "t11", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 2 · Why chat isn't enough: a good prompt, what an agent is, and finding the work
     s.append(story("b2story", "b2", "Lesson 2 · Why chat isn't enough", "Sunday 1 November, 09:30",
@@ -218,12 +255,10 @@ def day1():
         "A one-line brief to a new joiner…", "…versus a <b>full brief</b>: who, what, the rules and the shape.", "Most of the 18 tables differed because the 18 requests differed.",
         n=N(do="Ask: what did your Task 1.2 request leave out?", expect="The columns, what counts as a difference, what to do when a row is missing.",
             silent="read one short request from the room and ask what it does not say.")))
-    s.append(relabel(showcase("b2ws", "b2", CD.SHOWCASE, n=N(do="Press → through the steps.",
-            more=["Step 1: the same invoice in both windows.", "Steps 2 and 3: the weak request and its answer. Read the red flags aloud.",
-                  "Steps 4 to 8: Role, Steps, Rules, Format, When unsure, one per press. Ask what each part adds.", "Then the strong answer: point at the exact amount and the Not found.",
-                  "Then the scorecard and the lesson.", "Optional: run both live in two windows (prompt sheet, Demo 1.1)."],
-            silent="ask before the parts: could the weak answer go into a working paper?", say="Same tool, same invoice. I only changed the request.", time="5 min")),
-        "Opener · weak and strong prompt", "Demo 1.1 · weak and strong prompt", "Opener: weak and strong prompt", "Demo 1.1: weak and strong prompt"))
+    s.append(livedemo("b2ws", "b2", "d10", n=N(time="5 min", do="Switch to Claude. Open two chats side by side and attach abdali-supplier-invoices-oct-2026.pdf to both. Send the weak request in one and the five-part request in the other, about invoice BPK-4471 (page 1).",
+            more=["Before you send the strong request, read its five parts aloud: Role, Steps, Rules, Format, When unsure. Ask what each part adds.",
+                  "Point at the strong answer: the exact amount, the invoice number and PO number Not found.", "Both prompts are on the prompt sheet, Demo 1.1."],
+            silent="ask before the strong request: could the weak answer go into a working paper?")))
     s.append(listslide("b2five", "b2", "Lesson 2 · how to write it", "Five parts of <span class=\"hl\">a good prompt.</span>",
         ["<b>Role:</b> who Claude is, and the job in one line.", "<b>Steps:</b> what to do, in order.", "<b>Rules:</b> the source to use, units, dates and limits.",
          "<b>Format:</b> the exact shape, with the columns in order.", "<b>When unsure:</b> what to write when something is missing. Never guess."],
@@ -234,6 +269,10 @@ def day1():
     s.append(check("b2pchk", "b2", "Which request gives an answer <b>you can put in a working paper?</b>",
         [("“Summarize this invoice for me.”", 0, "No rules and no format: Claude fills the gaps."), ("Role, steps, rules, format and When unsure, with the invoice attached", 1, "Right. Five parts and the source."),
          ("“Be very accurate with this invoice, please.”", 0, "Accurate is a wish, not a rule.")]))
+    s.append(timer_slide("b2try", "b2", "Try it · 4 minutes", "Rewrite your request <span class=\"hl\">with the five parts.</span>",
+        "Take your Task 1.2 request. Add Role, Steps, Rules, Format and When unsure. Run it again in a new chat with the same two files. Is your table closer to your neighbor's now?", 4,
+        n=N(do="Start the timer. Walk the room and read three rewritten requests.", expect="Tables look more alike: the same columns, and both problems found more often.",
+            silent="ask one person to read their When unsure line aloud.", more=["The five parts are on the slide before the check, and on the prompt sheet under Demo 1.1."])))
     s.append(term("b2t1", "b2", "Lesson 2 · the idea", "A prompt is not <span class=\"hl\">a process.</span>", "Repeatable",
         "Even a good prompt lives in one chat, and you type it again next time. A <b>repeatable</b> method keeps the same input, rules and output shape, so every run can be reviewed the same way.",
         "“Cook something nice”…", "…versus a <b>recipe card</b> anyone can follow.", "Audit work needs the same answer every time.",
@@ -249,19 +288,27 @@ def day1():
         "A task that <b>repeats weekly</b>, has <b>clear rules</b>, and turns a <b>document in into a document out</b>. Judgment calls and client meetings stay with people.",
         "Three tags on a task…", "…three Yes means a <b>candidate agent</b>.", "Choose the task before you choose the tool.",
         n=N(do="Give one example of each tag from audit work.", expect="Invoice matching, lead schedules, confirmations.", silent="ask: which of your tasks repeats every week?")))
-    s.append(player("b2demo", "b2", "d13"))
+    s.append(livedemo("b2demo", "b2", "d13"))
     s.append(check("b2chk2", "b2", "Which of Dana's tasks is <b>not</b> a first agent?",
         [("Matching supplier invoices to the ledger", 0, "Three Yes: a strong candidate."), ("Discussing findings with the client's CFO", 1, "Right. It needs judgment and trust."), ("Chasing missing documents from clients", 0, "Three Yes: a candidate.")]))
     s.append(task("b2task2", "b2", "t13", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    s.append(timer_slide("b2board", "b2", "Board review · 10:18", "What repeats <span class=\"hl\">across departments?</span>",
-        "The shared board on screen: one task from each person, grouped by department.", 2,
+    s.append(timer_slide("b2board", "b2", "Board review · 10:17", "What repeats <span class=\"hl\">across departments?</span>",
+        "The shared board on screen: one task from each person, grouped by department.", 3,
         n=N(do="Read the clusters aloud. Name the tasks that appear in more than one department.", expect="Reconciliations, chasing documents, status reports.",
             silent="read the Support column first: it shows what the coordinators chase.", more=["Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3.", "Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance."])))
-    # Lesson 3 · Design the agent, then pick your case
-    s.append(story("b3story", "b3", "Lesson 3 · Design the agent", "Sunday 1 November, 10:30",
+    # Lesson 3 · Pick your task, design the agent, then build one together
+    s.append(story("b3story", "b3", "Lesson 3 · Pick and design", "Sunday 1 November, 10:30",
         "Faisal: <b>“Every associate follows the same audit program and produces the same working paper. Why does every AI table look different?”</b>",
-        "Write it down <span class=\"hl\">once.</span>", "Describe a task as an Agent Card, then build it in a Project.",
+        "Write it down <span class=\"hl\">once.</span>", "Pick your task, describe it as an Agent Card, then build one together in a Project.",
         n=N(do="Ask: what does an audit program give a new associate?", expect="Steps, rules, the template.", silent="say: it removes the guessing."), time="10:30-11:30"))
+    s.append(term("b3t5", "b3", "Lesson 3 · choosing", "Pick the task <span class=\"hl\">with the highest score.</span>", "Scoring a use case",
+        "Score each candidate from 1 to 5 on four points. The points are <b>how often</b>, <b>minutes each time</b>, <b>how clear the rules are</b>, and <b>can it run on a schedule</b>.",
+        "The most interesting task…", "…is not always the best <b>first</b> agent.", "Day 2 needs an agent that can run without you.",
+        n=N(do="Start from the board you just reviewed. Score one task with the room.", expect="Invoice matching or chasing documents scores high.", silent="score Dana's invoice task yourself.")))
+    s.append(livedemo("b3demo", "b3", "d15"))
+    s.append(tslide("b3tracks", "b3", "Lesson 3 · the four tracks", "Pick a track <span class=\"hl\">for your agent.</span>", ["Track", "Starting example", "Pack"],
+        [[t, ex, pk] for t, ex, _f, pk in CD.TRACKS], "Your own task fits a track. If not, ask Claude for a dummy pack with 2 planted errors (10 minutes).", cls="tight",
+        n=N(do="Read the four tracks. Match them to the board clusters.", expect="Assurance picks extraction or analysis; Support picks workflow or reporting.", silent="say which track the coordinators' tasks fit.")))
     s.append(scene("b3scene", "b3", "Lesson 3 · the picture", "The audit program <span class=\"hl\">every associate follows.</span>",
         "It says what to read, what to do and what the working paper looks like. An Agent Card does the same for an agent, in four boxes.",
         "Input · Instruction · Output · When.",
@@ -282,6 +329,7 @@ def day1():
         n=N(do="Rewrite one vague line from the room into a literal one.", expect="People add the fields and the rule.", silent="rewrite “review the leases” as an example.")))
     s.append(check("b3chk", "b3", "Which Instruction line will give the <b>same result every run?</b>",
         [("“Check the invoices carefully.”", 0, "Careful is not a rule."), ("“Match number, date and amount; flag any difference.”", 1, "Right. Fields and a rule."), ("“Do a good reconciliation.”", 0, "Good is not a rule.")]))
+    s.append(task("b3task2", "b3", "t15", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     s.append(term("b3t3", "b3", "Lesson 3 · the home", "A Project is <span class=\"hl\">the agent's home.</span>", "Claude Project",
         "A <b>Project</b> keeps instructions and knowledge files. Claude uses them in <b>every chat inside it</b>, so nobody explains the task again.",
         "A client file with the procedures already in it…", "…every new chat starts with <b>the card and the template</b>.", "Projects: + New Project, then Set project instructions.",
@@ -292,17 +340,8 @@ def day1():
         n=N(do="Ask: where does next month's ledger go?", expect="With the run, not in knowledge.", silent="say it, then ask why.")))
     s.append(check("b3chk2", "b3", "Where does <b>this month's invoice pack</b> go?",
         [("Into the Project knowledge", 0, "Knowledge is for what stays the same."), ("Into each run: attached, or read from the folder", 1, "Right. Input changes every run."), ("Into the Project instructions", 0, "Instructions are the rules, not the documents.")]))
-    s.append(player("b3pp", "b3", "d14"))
+    s.append(livedemo("b3pp", "b3", "d14", time="5 min"))
     s.append(task("b3task", "b3", "t14", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    s.append(term("b3t5", "b3", "Lesson 3 · choosing", "Pick the task <span class=\"hl\">with the highest score.</span>", "Scoring a use case",
-        "Score each candidate from 1 to 5 on four points. The points are <b>how often</b>, <b>minutes each time</b>, <b>how clear the rules are</b>, and <b>can it run on a schedule</b>.",
-        "The most interesting task…", "…is not always the best <b>first</b> agent.", "Day 2 needs an agent that can run without you.",
-        n=N(do="Score one task from the board with the room.", expect="Invoice matching or chasing documents scores high.", silent="score Dana's invoice task yourself.")))
-    s.append(player("b3demo", "b3", "d15"))
-    s.append(tslide("b3tracks", "b3", "Lesson 3 · the four tracks", "Pick a track <span class=\"hl\">for your agent.</span>", ["Track", "Starting example", "Pack"],
-        [[t, ex, pk] for t, ex, _f, pk in CD.TRACKS], "Your own task fits a track. If not, ask Claude for a dummy pack with 2 planted errors (10 minutes).", cls="tight",
-        n=N(do="Read the four tracks. Match them to the board clusters.", expect="Assurance picks extraction or analysis; Support picks workflow or reporting.", silent="say which track the coordinators' tasks fit.")))
-    s.append(task("b3task2", "b3", "t15", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 4 · Build: Instruction
     s.append(story("b4story", "b4", "Lesson 4 · Build: Instruction", "Sunday 1 November, 12:30",
         "Faisal reviews Dana's first agent. The table looks right, <b>but one supplier had no PO number, and the agent filled in a likely one.</b>",
@@ -319,7 +358,7 @@ def day1():
         n=N(do="Show the template with its example row.", expect="People see the example row in the knowledge file.", silent="ask: how many tests before you trust a new joiner?")))
     s.append(check("b4chk", "b4", "Your agent fills in a likely PO number when the invoice has none. <b>What do you fix?</b>",
         [("The answer, by hand, each time", 0, "Then it happens again next run."), ("The When unsure part: write Not found, never guess", 1, "Right. Fix the instructions."), ("Nothing: the PO looked right", 0, "Looked right is not right.")]))
-    s.append(player("b4pp", "b4", "d16"))
+    s.append(livedemo("b4pp", "b4", "d16"))
     s.append(tslide("b4map", "b4", "Lesson 4 · transfer", "Instructions <span class=\"hl\">in other tools.</span>", ["", "Claude", "ChatGPT", "Microsoft 365 Copilot", "Gemini"],
         [["Instruction"] + C.TRANSFER[0][1:]],
         "The five parts work in every assistant. Paste them where the tool keeps its instructions.", cls="tight",
@@ -337,7 +376,7 @@ def day1():
             fallback="If sign-in fails, upload the files and continue.")))
     s.append(check("b5chk1", "b5", "Your agent will run tomorrow at 08:00. <b>Why can it not use files you drag in?</b>",
         [("Dragging files is too slow", 0, "Speed is not the reason."), ("Nobody is there to drag them at 08:00", 1, "Right. The input must live where the agent can read it."), ("Drive files are safer", 0, "Safety comes from what you connect, not from Drive.")]))
-    s.append(player("b5pp1", "b5", "d17"))
+    s.append(livedemo("b5pp1", "b5", "d17"))
     s.append(task("b5task1", "b5", "t17", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     s.append(term("b5t2", "b5", "Lesson 5 · output", "Same shape. <span class=\"hl\">Every run.</span>", "Artifact and fixed shape",
         "An <b>artifact</b> is an output you can open, edit and download, such as a table or a file. A <b>fixed shape</b> means the same columns, order and total line on every run.",
@@ -345,7 +384,7 @@ def day1():
         n=N(do="Show two runs of the invoice agent side by side.", expect="Same columns, same total line.", silent="ask: what does a reviewer look at first?")))
     s.append(check("b5chk2", "b5", "Why does a scheduled agent need a <b>fixed output shape?</b>",
         [("So each run can be compared with the last", 1, "Right. Reviewers compare, they do not reread."), ("So the file is smaller", 0, "Size is not the point."), ("So Claude runs faster", 0, "Speed is not the point.")]))
-    s.append(player("b5pp2", "b5", "d18"))
+    s.append(livedemo("b5pp2", "b5", "d18"))
     s.append(tslide("b5map", "b5", "Lesson 5 · transfer", "Input and output <span class=\"hl\">in other tools.</span>", ["", "Claude", "ChatGPT", "Microsoft 365 Copilot", "Gemini"],
         [["Input"] + C.TRANSFER[1][1:], ["Output"] + C.TRANSFER[2][1:]],
         "The boxes stay the same. Only the button names change.", cls="tight",
@@ -362,7 +401,7 @@ def day1():
         n=N(do="Show the Skills page on the presenting laptop.", expect="People see built-in skills and an empty space for their own.", silent="ask: who else in your team does your task?")))
     s.append(check("b6chk", "b6", "Your method must work in any chat, in Cowork and on a schedule. <b>What do you package it as?</b>",
         [("A Project", 0, "A Project keeps it in one place. A skill travels."), ("A skill", 1, "Right. The skill travels to chats, Cowork and schedules."), ("A saved chat", 0, "Chats do not travel.")]))
-    s.append(player("b6pp", "b6", "d19"))
+    s.append(livedemo("b6pp", "b6", "d19"))
     s.append(tslide("b6map", "b6", "Lesson 6 · transfer", "A packaged method <span class=\"hl\">in other tools.</span>", ["", "Claude", "ChatGPT", "Microsoft 365 Copilot", "Gemini"],
         [["Package"] + C.TRANSFER[3][1:]],
         "Elsewhere it is a ChatGPT skill or custom GPT, a Copilot agent or a Gem. The card inside stays the same.", cls="tight",
@@ -377,7 +416,7 @@ def day1():
         "Show your card, then run your skill live on one file from your pack. Your team watches and asks one question.", 12,
         n=N(do="Teams demo at their own tables at the same time. Walk between them.", expect="Most agents run; some flag the messy sample.", silent="start the first team yourself.",
             fallback="If a live run hangs, show the last good result.", say="Card, then run. Ninety seconds.")))
-    s.append(player("b7demo", "b7", "d111"))
+    s.append(livedemo("b7demo", "b7", "d111"))
     s.append(tslide("b7map", "b7", "Lesson 7 · the transfer map", "Same building blocks, <span class=\"hl\">different names.</span>", C.TRANSFER_HEAD, C.TRANSFER,
         "Learn the method once. The card works in any tool.", cls="tight",
         n=N(time="2 min", do="Read one row across. You used the first four rows today; tomorrow fills the When row. Ask: which tool does RSM use today?",
@@ -560,7 +599,7 @@ def day2():
         "This week: one card for one task, on dummy data, in an approved tool."))
     return s
 
-TOPICS = {1: {"open": "Opening", "b1": "Lesson 1 · AI foundations", "b2": "Lesson 2 · Why chat isn't enough", "b3": "Lesson 3 · Design the agent",
+TOPICS = {1: {"open": "Opening", "b1": "Lesson 1 · AI foundations", "b2": "Lesson 2 · Why chat isn't enough", "b3": "Lesson 3 · Pick and design",
               "b4": "Lesson 4 · Build: Instruction", "b5": "Lesson 5 · Build: Input and Output", "b6": "Lesson 6 · Build: Package", "b7": "Lesson 7 · Show and tell", "close": "Close"},
           2: {"open": "Opening", "c1": "Lesson 1 · From agent to system", "c2": "Lesson 2 · Make it run on its own", "c3": "Lesson 3 · New inputs, outputs and n8n",
               "c4": "Lesson 4 · Fit it to your department", "c5": "Lesson 5 · Test and prepare the demo", "c6": "Lesson 6 · Demo Day", "c7": "Post-MAP, survey and next steps", "close": "Close"}}

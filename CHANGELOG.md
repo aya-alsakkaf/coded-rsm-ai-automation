@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-11-15 · Day 1: live demos and a step-by-step order (Aya)
+
+- Every Day 1 demo (1.1 to 1.9) runs live in Claude. Each playback slide is now a "Live in Claude" holding slide: the demo title, what to watch for,
+  the files and where the prompt is (the prompt sheet). The notes keep the steps, the expected result and the fallback (the staff backup page).
+  Day 2 demos are unchanged for now.
+- Lesson 1: the Claude tour shows only what Task 1.1 needs (new chat, the + button, the message box). Projects, connectors, skills and scheduled
+  tasks each come in their own lesson.
+- Lesson 2: a 4-minute Try it after the five parts: rewrite your Task 1.2 request with the five parts and run it again. Task 1.2 is 13 minutes,
+  Task 1.3 is 9, the board review is 3 again.
+- Lesson 3 order: score and pick (Demo 1.3, Dana scores), the four tracks, the Agent Card, literal instructions, **Task 1.4 Agent Card v1**,
+  Projects and knowledge, Demo 1.4 (from card to agent), **Task 1.5 build the invoice agent together**. Renumbered: old Demo 1.3/1.4 and
+  Task 1.4/1.5 swap numbers. The lab and the prompt sheet follow the new order. Lesson 3 is now "Pick and design".
+- Day 1 is 79 slides.
+
 ## 2026-11-14 · Day 1 edits (Aya)
 
 - Opening: the Dana story and the weak-and-strong opener are gone. Day 1 now runs cover, **Welcome to CODED** (who we are, your trainer, who is

@@ -18,7 +18,7 @@ Generated from `_source/kit/` by `_source/tools/class_plan.py`. Do not edit by h
 | 09:20-09:30 | Break | 10 | Break |
 | 09:30-10:20 | Lesson 2 · Why chat isn't enough, and finding the work | 50 | Same task, 18 answers · a good prompt · what an agent is · Tasks 1.2 and 1.3 |
 | 10:20-10:30 | Break | 10 | Break |
-| 10:30-11:30 | Lesson 3 · Design the agent, then pick your case | 60 | The Agent Card and Projects · Tasks 1.4 and 1.5 |
+| 10:30-11:30 | Lesson 3 · Pick your task and design the agent | 60 | Score and pick, the Agent Card, then a Project · Tasks 1.4 and 1.5 |
 | 11:30-12:30 | Lunch and Dhuhr prayer | 60 | Break |
 | 12:30-13:50 | Lesson 4 · Build: Instruction | 80 | The five-part instruction · Task 1.6 |
 | 13:50-14:00 | Break | 10 | Break |
@@ -33,10 +33,10 @@ Teaching minutes: 360.
 | Task | Title | Minutes | Who | Files | Deliverable |
 |---|---|---|---|---|---|
 | 1.1 | First Claude chat | 7 | on your own | abdali-engagement-letter-2026.docx | Three answers from Claude, one of them ticked against the letter. |
-| 1.2 | Same task, 18 answers | 15 | on your own, then in pairs | abdali-supplier-invoices-oct-2026.pdf, abdali-purchase-ledger-oct-2026.xlsx | Your own reconciliation table, compared with a neighbor's. |
-| 1.3 | Your task inventory | 10 | on your own | your own work | 10 tasks tagged, your top 3, and the strongest one on the shared board. |
-| 1.4 | Build the invoice agent with me | 20 | on your own, with the trainer | abdali-supplier-invoices-oct-2026.pdf, abdali-purchase-ledger-oct-2026.xlsx, mirqab-invoice-match-template.xlsx | A Project named Mirqab invoice match and a table that flags both problems. |
-| 1.5 | Write your Agent Card v1 | 20 | on your own | your own work | An approved Agent Card v1 on the shared board. |
+| 1.2 | Same task, 18 answers | 13 | on your own, then in pairs | abdali-supplier-invoices-oct-2026.pdf, abdali-purchase-ledger-oct-2026.xlsx | Your own reconciliation table, compared with a neighbor's. |
+| 1.3 | Your task inventory | 9 | on your own | your own work | 10 tasks tagged, your top 3, and the strongest one on the shared board. |
+| 1.4 | Write your Agent Card v1 | 17 | on your own | your own work | An approved Agent Card v1 on the shared board. |
+| 1.5 | Build the invoice agent with me | 19 | on your own, with the trainer | abdali-supplier-invoices-oct-2026.pdf, abdali-purchase-ledger-oct-2026.xlsx, mirqab-invoice-match-template.xlsx | A Project named Mirqab invoice match and a table that flags both problems. |
 | 1.6 | Build v1 of your agent | 65 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | Your own Project, right on the three items you checked by hand. |
 | 1.7 | Run from the folder | 15 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | One run from your track folder, with the list of files read. |
 | 1.8 | Fixed-shape output | 20 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | One artifact or Excel file, in the same shape on two runs. |

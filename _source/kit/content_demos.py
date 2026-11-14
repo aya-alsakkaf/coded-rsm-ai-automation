@@ -35,7 +35,7 @@ MESSY_FILES = [F_M_INV, F_M_LEASE, F_M_TB, F_M_EMAIL, F_M_STATUS]
 BATCH2_FILES = [F_INV2, F_LEDGER2, F_LEASE2, F_MGMT, F_EMAILS2, F_STATUS2]
 
 # prompt sheet sections: sec -> (day, name)
-BLOCK = {1: (1, "Opener"), 2: (1, "Lesson 1 · AI foundations"), 3: (1, "Lesson 2 · Why chat isn't enough"), 4: (1, "Lesson 3 · Design the agent"),
+BLOCK = {1: (1, "Opener"), 2: (1, "Lesson 1 · AI foundations"), 3: (1, "Lesson 2 · Why chat isn't enough"), 4: (1, "Lesson 3 · Pick and design"),
          5: (1, "Lesson 4 · Build: Instruction"), 6: (1, "Lesson 5 · Build: Input and Output"), 7: (1, "Lesson 6 · Build: Package"), 8: (1, "Lesson 7 · Show and tell"),
          9: (2, "Lesson 1 · From agent to system"), 10: (2, "Lesson 2 · Make it run on its own"), 11: (2, "Lesson 3 · New inputs, outputs and n8n"),
          12: (2, "Lesson 4 · Fit it to your department"), 13: (2, "Lesson 5 · Test and prepare the demo")}
@@ -150,7 +150,7 @@ demo("t11", day=1, skill="1.1", sec=2, title="First Claude chat", tool="Claude",
  stretch=["Ask Claude which paragraph each date came from, then check two of them."],
  stretch_prompts=[("Where each date came from", "For each date you listed, give the section heading it came from.")])
 
-demo("t12", day=1, skill="1.2", sec=3, title="Same task, 18 answers", tool="Claude chat", files=[F_INV, F_LEDGER], kind="task", hands_on=True, minutes=15, solo="on your own, then in pairs",
+demo("t12", day=1, skill="1.2", sec=3, title="Same task, 18 answers", tool="Claude chat", files=[F_INV, F_LEDGER], kind="task", hands_on=True, minutes=13, solo="on your own, then in pairs",
  setup=["Start a new chat. Attach the invoice pack and the October purchase ledger.", "Write your own request: a table that checks each invoice against the ledger. You have 7 minutes.",
         "Compare your table with your neighbor's: columns, totals, and what each of you flagged.", "Be ready to show your table on the screen."],
  prompts=[],
@@ -175,7 +175,7 @@ demo("d10", day=1, skill="1.1", sec=3, title="One invoice, two requests", tool="
  point="The request decides the result. You still check it.",
  backup=[("h", "Weak request: typical result"), ("p", "“This is an invoice from Bayan Packaging for cartons and shrink film, dated in October, for about 2,100 dinars. It looks like a standard packaging purchase.”"),
          ("h", "Five-part request: typical result"), tbl(["Supplier", "Invoice no.", "Date", "PO no.", "Amount (KWD)"], [(D.OPENER_INV[1], D.OPENER_INV[0], "2026-10-12", "Not found", num(D.OPENER_INV[4]))])],
- fallback="Play the Demo 1.1 slide step by step.",
+ fallback="If Claude is slow or the file will not load, read the expected results aloud and keep going.",
  hint="Which answer could go into a working paper today?")
 
 demo("d13", day=1, skill="1.2", sec=3, title="Dana tags her task list", tool="Claude", files=[], kind="player",
@@ -199,7 +199,7 @@ demo("d13", day=1, skill="1.2", sec=3, title="Dana tags her task list", tool="Cl
          "reco": ["<b>Top 3:</b> invoice matching, lead schedules, chasing documents.", "<b>Not an agent:</b> the CFO meeting. Judgment and trust stay with people.", "<b>Next:</b> do the same with your own week."],
          "control": "You decide the top 3. Claude only sorts your list."})
 
-demo("t13", day=1, skill="1.3", sec=3, title="Your task inventory", tool="The Day 1 lab page", files=[], kind="task", hands_on=True, minutes=10, solo="on your own",
+demo("t13", day=1, skill="1.3", sec=3, title="Your task inventory", tool="The Day 1 lab page", files=[], kind="task", hands_on=True, minutes=9, solo="on your own",
  setup=["Open the Day 1 lab page. List 10 tasks from your last week.", "Tag each one: repeats weekly, clear rules, document in and document out.",
         "Use the prompt card for your role (on the lab page). Pick the 3 tasks with three tags.", "Post your strongest task on the shared board, under your department."],
  prompts=[("Optional: ask Claude to tag your list", "Tag each task in my list with three tags: repeats weekly, clear rules, document in and document out. A table with Yes or No for each tag, then my top 3. My tasks: [paste your list, with no client or firm names].")],
@@ -214,7 +214,37 @@ demo("t13", day=1, skill="1.3", sec=3, title="Your task inventory", tool="The Da
  hint="If a task needs a meeting or a judgment call, it is not your first agent.",
  stretch=["Write the minutes per week for each of your top 3."])
 
-demo("d14", day=1, skill="1.3", sec=4, title="From card to agent", tool="Claude Projects", files=[F_TEMPLATE], kind="player",
+demo("d15", day=1, skill="1.3", sec=4, title="Dana scores her three candidates", tool="Claude", files=[], kind="player",
+ setup=["[T] Paste the prompt below into a new chat."],
+ prompts=[("Score my candidates", "Score these three tasks from 1 to 5 on four points. The points are: how often it happens, minutes each time, how clear the rules are, and whether it could run on a schedule. "
+           "Add a total. Tasks: match supplier invoices to the ledger; prepare lead schedules from the trial balance; chase missing documents from clients.")],
+ expected="Invoice matching scores highest (19 of 20), then chasing documents (16), then lead schedules (15).",
+ say="Four questions. The total decides the first agent, not the most interesting task.",
+ point="Often, long, clear rules, schedulable: pick the highest total.",
+ backup=[("h", "Dana's scores"), tbl(["Task", "Often", "Time", "Clear rules", "Schedule", "Total"], [("Invoice matching", 5, 4, 5, 5, 19), ("Chase documents", 5, 3, 3, 5, 16), ("Lead schedules", 3, 4, 4, 4, 15)])],
+ fallback="Show the backup table.",
+ hint="Which task has the highest total?",
+ player={"parts": [["Task", "Score each task from 1 to 5: how often, minutes each time, how clear the rules are, can it run on a schedule."], ["Format", "A table with a total for each task."]],
+         "table": [["Task", "Often", "Time", "Rules", "Schedule", "Total"], ["Invoice matching", "5", "4", "5", "5", "19"], ["Chase documents", "5", "3", "3", "5", "16"], ["Lead schedules", "3", "4", "4", "4", "15"]], "best": 5,
+         "reco": ["<b>Dana picks invoice matching:</b> 19 of 20.", "<b>Schedulable</b> matters: Day 2 runs it without her.", "<b>Your turn:</b> score your own three."],
+         "control": "The score guides you. You and your supervisor decide."})
+
+demo("t15", day=1, skill="1.4", sec=4, title="Write your Agent Card v1", tool="The Day 1 lab page", files=[], kind="task", hands_on=True, minutes=17, solo="on your own",
+ setup=["Score your 3 candidates on the four points (4 min).", "Pick one and place it in a track: Extraction, Analysis, Workflow or Reporting (2 min).",
+        "Write your Agent Card on the Day 1 lab page: Input, Instruction, Output. Leave When empty (7 min).", "Paste the card on the shared board for approval (4 min)."],
+ prompts=[("Optional: ask Claude to challenge your card", "Here is my Agent Card, with no client or firm names: [paste it]. Ask me three questions that would make the Instruction box clearer. Do not write the card for me.")],
+ expected="An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks.",
+ say="Your card, your task. Build it on the track pack: no real files today.",
+ point="A good card is one a new joiner could follow.",
+ backup=[("h", "Dana's card"), tbl(["Box", "Dana's card"], CARD_INVOICE)],
+ answer=[("h", "Approve a card when"), ("ul", ["Input names a file type and where it comes from.", "Instruction has at least two rules and says what to do when unsure.",
+                                               "Output names the columns or headings.", "The task fits a track pack, or the person has a dummy pack."])],
+ deliverable="An approved Agent Card v1 on the shared board.",
+ fallback="Anyone without a task of their own takes the track pack's starting example.",
+ hint="Read your Instruction box as if you were new. Would you know what to do?",
+ stretch=["Write a second card for your runner-up task."])
+
+demo("d14", day=1, skill="1.4", sec=4, title="From card to agent", tool="Claude Projects", files=[F_TEMPLATE], kind="player",
  setup=["[T] Show the invoice Agent Card. Build the Project live: + New Project, name it Mirqab invoice match.", "[T] Set project instructions: paste the five parts. Add mirqab-invoice-match-template.xlsx to the knowledge."],
  prompts=[("Project instructions", joined(INVOICE_AGENT))],
  expected="A Project named Mirqab invoice match with the five-part instructions and the template in its knowledge.",
@@ -230,7 +260,7 @@ demo("d14", day=1, skill="1.3", sec=4, title="From card to agent", tool="Claude 
          "reco": ["<b>Input, Instruction, Output:</b> each box has a home in the Project.", "<b>When</b> stays empty until Day 2.", "<b>Knowledge, not input:</b> the invoices come with each run."],
          "control": "The Project keeps the method. You still check every flag."})
 
-demo("t14", day=1, skill="1.4", sec=4, title="Build the invoice agent with me", tool="Claude Projects", files=[F_INV, F_LEDGER, F_TEMPLATE], kind="task", hands_on=True, minutes=20, solo="on your own, with the trainer",
+demo("t14", day=1, skill="1.5", sec=4, title="Build the invoice agent with me", tool="Claude Projects", files=[F_INV, F_LEDGER, F_TEMPLATE], kind="task", hands_on=True, minutes=19, solo="on your own, with the trainer",
  setup=["In claude.ai, open Projects and click + New Project. Name it Mirqab invoice match.", "Click Set project instructions. Paste the instructions below. Save.",
         "Add mirqab-invoice-match-template.xlsx to the project knowledge with +.", "Start a chat in the Project. Attach the October invoices and ledger. Type the run line."],
  prompts=[("Project instructions", joined(INVOICE_AGENT)), ("Run line (in a chat inside the Project)", "Match the attached October invoices to the attached October purchase ledger.")],
@@ -244,36 +274,6 @@ demo("t14", day=1, skill="1.4", sec=4, title="Build the invoice agent with me", 
  fallback="Anyone behind copies the instructions from the prompt sheet and runs it with the trainer's next run.",
  hint="Check the Status column: at least two rows should not say Matched.",
  stretch=["Run the same request in a second chat inside the Project. Compare the two tables."])
-
-demo("d15", day=1, skill="1.4", sec=4, title="Dana scores her three candidates", tool="Claude", files=[], kind="player",
- setup=["[T] Paste the prompt below into a new chat."],
- prompts=[("Score my candidates", "Score these three tasks from 1 to 5 on four points. The points are: how often it happens, minutes each time, how clear the rules are, and whether it could run on a schedule. "
-           "Add a total. Tasks: match supplier invoices to the ledger; prepare lead schedules from the trial balance; chase missing documents from clients.")],
- expected="Invoice matching scores highest (19 of 20), then chasing documents (16), then lead schedules (15).",
- say="Four questions. The total decides the first agent, not the most interesting task.",
- point="Often, long, clear rules, schedulable: pick the highest total.",
- backup=[("h", "Dana's scores"), tbl(["Task", "Often", "Time", "Clear rules", "Schedule", "Total"], [("Invoice matching", 5, 4, 5, 5, 19), ("Chase documents", 5, 3, 3, 5, 16), ("Lead schedules", 3, 4, 4, 4, 15)])],
- fallback="Show the backup table.",
- hint="Which task has the highest total?",
- player={"parts": [["Task", "Score each task from 1 to 5: how often, minutes each time, how clear the rules are, can it run on a schedule."], ["Format", "A table with a total for each task."]],
-         "table": [["Task", "Often", "Time", "Rules", "Schedule", "Total"], ["Invoice matching", "5", "4", "5", "5", "19"], ["Chase documents", "5", "3", "3", "5", "16"], ["Lead schedules", "3", "4", "4", "4", "15"]], "best": 5,
-         "reco": ["<b>Dana picks invoice matching:</b> 19 of 20.", "<b>Schedulable</b> matters: Day 2 runs it without her.", "<b>Your turn:</b> score your own three."],
-         "control": "The score guides you. You and your supervisor decide."})
-
-demo("t15", day=1, skill="1.5", sec=4, title="Write your Agent Card v1", tool="The Day 1 lab page", files=[], kind="task", hands_on=True, minutes=20, solo="on your own",
- setup=["Score your 3 candidates on the four points (5 min).", "Pick one and place it in a track: Extraction, Analysis, Workflow or Reporting (2 min).",
-        "Write your Agent Card on the Day 1 lab page: Input, Instruction, Output. Leave When empty (8 min).", "Paste the card on the shared board for approval (5 min)."],
- prompts=[("Optional: ask Claude to challenge your card", "Here is my Agent Card, with no client or firm names: [paste it]. Ask me three questions that would make the Instruction box clearer. Do not write the card for me.")],
- expected="An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks.",
- say="Your card, your task. Build it on the track pack: no real files today.",
- point="A good card is one a new joiner could follow.",
- backup=[("h", "Dana's card"), tbl(["Box", "Dana's card"], CARD_INVOICE)],
- answer=[("h", "Approve a card when"), ("ul", ["Input names a file type and where it comes from.", "Instruction has at least two rules and says what to do when unsure.",
-                                               "Output names the columns or headings.", "The task fits a track pack, or the person has a dummy pack."])],
- deliverable="An approved Agent Card v1 on the shared board.",
- fallback="Anyone without a task of their own takes the track pack's starting example.",
- hint="Read your Instruction box as if you were new. Would you know what to do?",
- stretch=["Write a second card for your runner-up task."])
 
 demo("d16", day=1, skill="1.5", sec=5, title="From card to five-part instructions", tool="Claude Projects", files=[F_INV, F_LEDGER, F_TEMPLATE], kind="player",
  setup=["[T] Open the Mirqab invoice match Project. Show the instructions as five parts.", "[T] Run it. Compare three rows with the answers you checked by hand: BPK-4471, SCC-0718 and FSC-3390."],
@@ -453,7 +453,7 @@ demo("t21", day=2, skill="2.1", sec=9, title="Your team's workflow card", tool="
  backup=[("h", "Example card"), tbl(["Box", "Invoice workflow"], [("When", "Daily at 08:00"), ("Input", "01 Invoices / Inbox"), ("Skill", "mirqab-invoice-match"), ("Output", "A named file and a run-log file"), ("Who reviews", "Faisal")])],
  answer=[("h", "A complete card has"), ("ul", ["A time or a day for When.", "One folder for Input.", "The skill name from Day 1.", "A file name pattern and a run-log file.", "A named reviewer."])],
  deliverable="Your team's workflow card on the shared board.",
- fallback="A team whose agent is not ready takes the invoice workflow: one member turns the Task 1.4 Project into a skill first.",
+ fallback="A team whose agent is not ready takes the invoice workflow: one member turns the Task 1.5 Project into a skill first.",
  hint="Who reviews is one person's name.",
  stretch=["Write the one-line format of your run log."])
 

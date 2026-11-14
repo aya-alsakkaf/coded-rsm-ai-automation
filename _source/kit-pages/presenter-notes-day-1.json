@@ -235,16 +235,18 @@
 },
 {
 "say": null,
-"do": "Show each place on the presenting laptop while you talk.",
-"expect": "People find Projects and Customize in under a minute.",
-"silent": "ask someone to find Customize on their screen.",
+"do": "Show each one on the presenting laptop while you talk.",
+"expect": "Everyone finds the + button in under a minute.",
+"silent": "ask someone to attach a file on their screen.",
 "fallback": null,
-"more": [],
+"more": [
+"Keep the rest of Claude closed for now. Each feature gets its own lesson: Projects in Lesson 3, connectors in Lesson 5, skills in Lesson 6, scheduled tasks on Day 2."
+],
 "time": null,
 "t": "b1",
 "k": "list",
-"h": "Where today's tools live in Claude.",
-"flat": "Do: Show each place on the presenting laptop while you talk. · Expect: People find Projects and Customize in under a minute. · If the room is silent: ask someone to find Customize on their screen."
+"h": "Three things for your first chat.",
+"flat": "Do: Show each one on the presenting laptop while you talk. · Expect: Everyone finds the + button in under a minute. · Keep the rest of Claude closed for now. Each feature gets its own lesson: Projects in Lesson 3, connectors in Lesson 5, skills in Lesson 6, scheduled tasks on Day 2. · If the room is silent: ask someone to attach a file on their screen."
 },
 {
 "say": "Three questions, one file. Then you check one answer yourself.",
@@ -282,14 +284,14 @@
 "silent": null,
 "fallback": "If Claude is slow, pairs share one laptop. Show the backup table in the debrief.",
 "more": [
-"Give the hint at about 5 min.",
+"Give the hint at about 4 min.",
 "Fast finishers have an extra task on the slide."
 ],
-"time": "15 min work, then share",
+"time": "13 min work, then share",
 "t": "b2",
 "k": "task",
-"h": "Your turn 1.2: Same task, 18 answers (15 min, on your own, then in pairs)",
-"flat": "15 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: Tables that differ: different columns and different totals. Many miss one of the two problems: SCC-0718 (ledger 1,284.500, invoice 1,248.500) or FSC-3390 (not in the October ledger). · Give the hint at about 5 min. · Fast finishers have an extra task on the slide. · Fallback: If Claude is slow, pairs share one laptop. Show the backup table in the debrief. · Say: “Same files, same tool, 18 people. Count how many different tables we get.”"
+"h": "Your turn 1.2: Same task, 18 answers (13 min, on your own, then in pairs)",
+"flat": "13 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: Tables that differ: different columns and different totals. Many miss one of the two problems: SCC-0718 (ledger 1,284.500, invoice 1,248.500) or FSC-3390 (not in the October ledger). · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If Claude is slow, pairs share one laptop. Show the backup table in the debrief. · Say: “Same files, same tool, 18 people. Count how many different tables we get.”"
 },
 {
 "say": "Two things changed the tables: the request and the chat. We fix the request first.",
@@ -318,24 +320,22 @@
 "flat": "Do: Ask: what did your Task 1.2 request leave out? · Expect: The columns, what counts as a difference, what to do when a row is missing. · If the room is silent: read one short request from the room and ask what it does not say."
 },
 {
-"say": "Same tool, same invoice. I only changed the request.",
-"do": "Press → through the steps.",
-"expect": null,
-"silent": "ask before the parts: could the weak answer go into a working paper?",
-"fallback": null,
+"say": "Same tool. Same invoice. The only thing that changed is the request.",
+"do": "Switch to Claude. Open two chats side by side and attach abdali-supplier-invoices-oct-2026.pdf to both. Send the weak request in one and the five-part request in the other, about invoice BPK-4471 (page 1).",
+"expect": "Weak: a readable paragraph about packaging that gives a rounded amount and no invoice number. Strong: one row: Bayan Packaging Co. W.L.L., BPK-4471, 12 October 2026, PO number Not found, KWD 2,145.750.",
+"silent": "ask before the strong request: could the weak answer go into a working paper?",
+"fallback": "If Claude is slow or the file will not load, read the expected results aloud and keep going. The expected result is on the staff backup page, Demo 1.1.",
 "more": [
-"Step 1: the same invoice in both windows.",
-"Steps 2 and 3: the weak request and its answer. Read the red flags aloud.",
-"Steps 4 to 8: Role, Steps, Rules, Format, When unsure, one per press. Ask what each part adds.",
-"Then the strong answer: point at the exact amount and the Not found.",
-"Then the scorecard and the lesson.",
-"Optional: run both live in two windows (prompt sheet, Demo 1.1)."
+"Copy the prompt from the prompt sheet, Demo 1.1. The live answer may use other words; point at what the Watch for line asks.",
+"Before you send the strong request, read its five parts aloud: Role, Steps, Rules, Format, When unsure. Ask what each part adds.",
+"Point at the strong answer: the exact amount, the invoice number and PO number Not found.",
+"Both prompts are on the prompt sheet, Demo 1.1."
 ],
 "time": "5 min",
 "t": "b2",
-"k": "showcase",
-"h": "Demo 1.1: weak and strong prompt",
-"flat": "5 min. · Do: Press → through the steps. · Step 1: the same invoice in both windows. · Steps 2 and 3: the weak request and its answer. Read the red flags aloud. · Steps 4 to 8: Role, Steps, Rules, Format, When unsure, one per press. Ask what each part adds. · Then the strong answer: point at the exact amount and the Not found. · Then the scorecard and the lesson. · Optional: run both live in two windows (prompt sheet, Demo 1.1). · If the room is silent: ask before the parts: could the weak answer go into a working paper? · Say: “Same tool, same invoice. I only changed the request.”"
+"k": "live",
+"h": "Demo 1.1 live in Claude: One invoice, two requests",
+"flat": "5 min. · Do: Switch to Claude. Open two chats side by side and attach abdali-supplier-invoices-oct-2026.pdf to both. Send the weak request in one and the five-part request in the other, about invoice BPK-4471 (page 1). · Expect: Weak: a readable paragraph about packaging that gives a rounded amount and no invoice number. Strong: one row: Bayan Packaging Co. W.L.L., BPK-4471, 12 October 2026, PO number Not found, KWD 2,145.750. · Copy the prompt from the prompt sheet, Demo 1.1. The live answer may use other words; point at what the Watch for line asks. · Before you send the strong request, read its five parts aloud: Role, Steps, Rules, Format, When unsure. Ask what each part adds. · Point at the strong answer: the exact amount, the invoice number and PO number Not found. · Both prompts are on the prompt sheet, Demo 1.1. · If the room is silent: ask before the strong request: could the weak answer go into a working paper? · Fallback: If Claude is slow or the file will not load, read the expected results aloud and keep going. The expected result is on the staff backup page, Demo 1.1. · Say: “Same tool. Same invoice. The only thing that changed is the request.”"
 },
 {
 "say": null,
@@ -364,6 +364,21 @@
 "k": "check",
 "h": "Quick check",
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+},
+{
+"say": null,
+"do": "Start the timer. Walk the room and read three rewritten requests.",
+"expect": "Tables look more alike: the same columns, and both problems found more often.",
+"silent": "ask one person to read their When unsure line aloud.",
+"fallback": null,
+"more": [
+"The five parts are on the slide before the check, and on the prompt sheet under Demo 1.1."
+],
+"time": "4 min",
+"t": "b2",
+"k": "timer",
+"h": "Rewrite your request with the five parts.",
+"flat": "4 min. · Do: Start the timer. Walk the room and read three rewritten requests. · Expect: Tables look more alike: the same columns, and both problems found more often. · The five parts are on the slide before the check, and on the prompt sheet under Demo 1.1. · If the room is silent: ask one person to read their When unsure line aloud."
 },
 {
 "say": null,
@@ -419,18 +434,18 @@
 },
 {
 "say": "Three tags. A task that gets three Yes is a candidate agent.",
-"do": "Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud.",
+"do": "Switch to Claude and run it live. Paste Dana's seven tasks into a new chat with the prompt below.",
 "expect": "A table with three Yes for invoice matching, lead schedules and chasing documents. The CFO discussion gets three No. The KYC check has clear rules but is not weekly: a later agent.",
 "silent": null,
-"fallback": "Show the backup table.",
+"fallback": "Show the backup table. The expected result is on the staff backup page, Demo 1.2.",
 "more": [
-"This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words."
+"Copy the prompt from the prompt sheet, Demo 1.2. The live answer may use other words; point at what the Watch for line asks."
 ],
-"time": "3 to 4 min",
+"time": "4 min",
 "t": "b2",
-"k": "player",
-"h": "Prompt playback, Demo 1.2: Dana tags her task list",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: A table with three Yes for invoice matching, lead schedules and chasing documents. The CFO discussion gets three No. The KYC check has clear rules but is not weekly: a later agent. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: Show the backup table. · Say: “Three tags. A task that gets three Yes is a candidate agent.”"
+"k": "live",
+"h": "Demo 1.2 live in Claude: Dana tags her task list",
+"flat": "4 min. · Do: Switch to Claude and run it live. Paste Dana's seven tasks into a new chat with the prompt below. · Expect: A table with three Yes for invoice matching, lead schedules and chasing documents. The CFO discussion gets three No. The KYC check has clear rules but is not weekly: a later agent. · Copy the prompt from the prompt sheet, Demo 1.2. The live answer may use other words; point at what the Watch for line asks. · Fallback: Show the backup table. The expected result is on the staff backup page, Demo 1.2. · Say: “Three tags. A task that gets three Yes is a candidate agent.”"
 },
 {
 "say": null,
@@ -455,11 +470,11 @@
 "Give the hint at about 3 min.",
 "Fast finishers have an extra task on the slide."
 ],
-"time": "10 min work, then share",
+"time": "9 min work, then share",
 "t": "b2",
 "k": "task",
-"h": "Your turn 1.3: Your task inventory (10 min, on your own)",
-"flat": "10 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: 10 tasks, tagged; a top 3; one task on the shared board under the right department. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone stuck starts from Dana's list on the slide and changes it to their own work. · Say: “Preparers: what do you rebuild on every engagement? Reviewers: what do you check every time? Coordinators: what do you chase every week, from requests to new-client KYC files?”"
+"h": "Your turn 1.3: Your task inventory (9 min, on your own)",
+"flat": "9 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: 10 tasks, tagged; a top 3; one task on the shared board under the right department. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone stuck starts from Dana's list on the slide and changes it to their own work. · Say: “Preparers: what do you rebuild on every engagement? Reviewers: what do you check every time? Coordinators: what do you chase every week, from requests to new-client KYC files?”"
 },
 {
 "say": null,
@@ -471,11 +486,11 @@
 "Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3.",
 "Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance."
 ],
-"time": "2 min",
+"time": "3 min",
 "t": "b2",
 "k": "timer",
 "h": "What repeats across departments?",
-"flat": "2 min. · Do: Read the clusters aloud. Name the tasks that appear in more than one department. · Expect: Reconciliations, chasing documents, status reports. · Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3. · Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance. · If the room is silent: read the Support column first: it shows what the coordinators chase."
+"flat": "3 min. · Do: Read the clusters aloud. Name the tasks that appear in more than one department. · Expect: Reconciliations, chasing documents, status reports. · Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3. · Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance. · If the room is silent: read the Support column first: it shows what the coordinators chase."
 },
 {
 "say": null,
@@ -487,8 +502,49 @@
 "time": "10:30-11:30",
 "t": "b3",
 "k": "story",
-"h": "Lesson 3 · Design the agent",
+"h": "Lesson 3 · Pick and design",
 "flat": "10:30-11:30. · Do: Ask: what does an audit program give a new associate? · Expect: Steps, rules, the template. · If the room is silent: say: it removes the guessing."
+},
+{
+"say": null,
+"do": "Start from the board you just reviewed. Score one task with the room.",
+"expect": "Invoice matching or chasing documents scores high.",
+"silent": "score Dana's invoice task yourself.",
+"fallback": null,
+"more": [],
+"time": null,
+"t": "b3",
+"k": "term",
+"h": "Pick the task with the highest score.",
+"flat": "Do: Start from the board you just reviewed. Score one task with the room. · Expect: Invoice matching or chasing documents scores high. · If the room is silent: score Dana's invoice task yourself."
+},
+{
+"say": "Four questions. The total decides the first agent, not the most interesting task.",
+"do": "Switch to Claude and run it live. Paste the prompt below into a new chat.",
+"expect": "Invoice matching scores highest (19 of 20), then chasing documents (16), then lead schedules (15).",
+"silent": null,
+"fallback": "Show the backup table. The expected result is on the staff backup page, Demo 1.3.",
+"more": [
+"Copy the prompt from the prompt sheet, Demo 1.3. The live answer may use other words; point at what the Watch for line asks."
+],
+"time": "4 min",
+"t": "b3",
+"k": "live",
+"h": "Demo 1.3 live in Claude: Dana scores her three candidates",
+"flat": "4 min. · Do: Switch to Claude and run it live. Paste the prompt below into a new chat. · Expect: Invoice matching scores highest (19 of 20), then chasing documents (16), then lead schedules (15). · Copy the prompt from the prompt sheet, Demo 1.3. The live answer may use other words; point at what the Watch for line asks. · Fallback: Show the backup table. The expected result is on the staff backup page, Demo 1.3. · Say: “Four questions. The total decides the first agent, not the most interesting task.”"
+},
+{
+"say": null,
+"do": "Read the four tracks. Match them to the board clusters.",
+"expect": "Assurance picks extraction or analysis; Support picks workflow or reporting.",
+"silent": "say which track the coordinators' tasks fit.",
+"fallback": null,
+"more": [],
+"time": null,
+"t": "b3",
+"k": "table",
+"h": "Pick a track for your agent.",
+"flat": "Do: Read the four tracks. Match them to the board clusters. · Expect: Assurance picks extraction or analysis; Support picks workflow or reporting. · If the room is silent: say which track the coordinators' tasks fit."
 },
 {
 "say": "A card a new joiner could follow is a card Claude can follow.",
@@ -556,6 +612,22 @@
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
 },
 {
+"say": "Your card, your task. Build it on the track pack: no real files today.",
+"do": "Start the timer. Walk the room. Ask each person what they found so far.",
+"expect": "An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks.",
+"silent": null,
+"fallback": "Anyone without a task of their own takes the track pack's starting example.",
+"more": [
+"Give the hint at about 5 min.",
+"Fast finishers have an extra task on the slide."
+],
+"time": "17 min work, then share",
+"t": "b3",
+"k": "task",
+"h": "Your turn 1.4: Write your Agent Card v1 (17 min, on your own)",
+"flat": "17 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks. · Give the hint at about 5 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone without a task of their own takes the track pack's starting example. · Say: “Your card, your task. Build it on the track pack: no real files today.”"
+},
+{
 "say": null,
 "do": "Open Projects on the presenting laptop.",
 "expect": "Everyone finds + New Project.",
@@ -596,18 +668,18 @@
 },
 {
 "say": "The card says what. The Project keeps it, for every chat inside it.",
-"do": "Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud.",
+"do": "Switch to Claude and run it live. Show the invoice Agent Card. Build the Project live: + New Project, name it Mirqab invoice match. Set project instructions: paste the five parts. Add mirqab-invoice-match-template.xlsx to the knowledge.",
 "expect": "A Project named Mirqab invoice match with the five-part instructions and the template in its knowledge.",
 "silent": null,
-"fallback": "Show the backup table and build the Project after the slide.",
+"fallback": "Show the backup table and build the Project after the slide. The expected result is on the staff backup page, Demo 1.4.",
 "more": [
-"This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words."
+"Copy the prompt from the prompt sheet, Demo 1.4. The live answer may use other words; point at what the Watch for line asks."
 ],
-"time": "3 to 4 min",
+"time": "5 min",
 "t": "b3",
-"k": "player",
-"h": "Prompt playback, Demo 1.3: From card to agent",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: A Project named Mirqab invoice match with the five-part instructions and the template in its knowledge. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: Show the backup table and build the Project after the slide. · Say: “The card says what. The Project keeps it, for every chat inside it.”"
+"k": "live",
+"h": "Demo 1.4 live in Claude: From card to agent",
+"flat": "5 min. · Do: Switch to Claude and run it live. Show the invoice Agent Card. Build the Project live: + New Project, name it Mirqab invoice match. Set project instructions: paste the five parts. Add mirqab-invoice-match-template.xlsx to the knowledge. · Expect: A Project named Mirqab invoice match with the five-part instructions and the template in its knowledge. · Copy the prompt from the prompt sheet, Demo 1.4. The live answer may use other words; point at what the Watch for line asks. · Fallback: Show the backup table and build the Project after the slide. The expected result is on the staff backup page, Demo 1.4. · Say: “The card says what. The Project keeps it, for every chat inside it.”"
 },
 {
 "say": "Same files as Task 1.2. This time we all use the same card.",
@@ -619,68 +691,11 @@
 "Give the hint at about 6 min.",
 "Fast finishers have an extra task on the slide."
 ],
-"time": "20 min work, then share",
+"time": "19 min work, then share",
 "t": "b3",
 "k": "task",
-"h": "Your turn 1.4: Build the invoice agent with me (20 min, on your own, with the trainer)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: The same table for everyone: BPK-4471, WDS-20931 and SGT-11205 Matched; SCC-0718 Amount differs (36.000); FSC-3390 Not in ledger. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone behind copies the instructions from the prompt sheet and runs it with the trainer's next run. · Say: “Same files as Task 1.2. This time we all use the same card.”"
-},
-{
-"say": null,
-"do": "Score one task from the board with the room.",
-"expect": "Invoice matching or chasing documents scores high.",
-"silent": "score Dana's invoice task yourself.",
-"fallback": null,
-"more": [],
-"time": null,
-"t": "b3",
-"k": "term",
-"h": "Pick the task with the highest score.",
-"flat": "Do: Score one task from the board with the room. · Expect: Invoice matching or chasing documents scores high. · If the room is silent: score Dana's invoice task yourself."
-},
-{
-"say": "Four questions. The total decides the first agent, not the most interesting task.",
-"do": "Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud.",
-"expect": "Invoice matching scores highest (19 of 20), then chasing documents (16), then lead schedules (15).",
-"silent": null,
-"fallback": "Show the backup table.",
-"more": [
-"This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words."
-],
-"time": "3 to 4 min",
-"t": "b3",
-"k": "player",
-"h": "Prompt playback, Demo 1.4: Dana scores her three candidates",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: Invoice matching scores highest (19 of 20), then chasing documents (16), then lead schedules (15). · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: Show the backup table. · Say: “Four questions. The total decides the first agent, not the most interesting task.”"
-},
-{
-"say": null,
-"do": "Read the four tracks. Match them to the board clusters.",
-"expect": "Assurance picks extraction or analysis; Support picks workflow or reporting.",
-"silent": "say which track the coordinators' tasks fit.",
-"fallback": null,
-"more": [],
-"time": null,
-"t": "b3",
-"k": "table",
-"h": "Pick a track for your agent.",
-"flat": "Do: Read the four tracks. Match them to the board clusters. · Expect: Assurance picks extraction or analysis; Support picks workflow or reporting. · If the room is silent: say which track the coordinators' tasks fit."
-},
-{
-"say": "Your card, your task. Build it on the track pack: no real files today.",
-"do": "Start the timer. Walk the room. Ask each person what they found so far.",
-"expect": "An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks.",
-"silent": null,
-"fallback": "Anyone without a task of their own takes the track pack's starting example.",
-"more": [
-"Give the hint at about 6 min.",
-"Fast finishers have an extra task on the slide."
-],
-"time": "20 min work, then share",
-"t": "b3",
-"k": "task",
-"h": "Your turn 1.5: Write your Agent Card v1 (20 min, on your own)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone without a task of their own takes the track pack's starting example. · Say: “Your card, your task. Build it on the track pack: no real files today.”"
+"h": "Your turn 1.5: Build the invoice agent with me (19 min, on your own, with the trainer)",
+"flat": "19 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: The same table for everyone: BPK-4471, WDS-20931 and SGT-11205 Matched; SCC-0718 Amount differs (36.000); FSC-3390 Not in ledger. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone behind copies the instructions from the prompt sheet and runs it with the trainer's next run. · Say: “Same files as Task 1.2. This time we all use the same card.”"
 },
 {
 "say": null,
@@ -736,18 +751,18 @@
 },
 {
 "say": "Five parts. The fifth one, when unsure, is the one people forget.",
-"do": "Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud.",
+"do": "Switch to Claude and run it live. Open the Mirqab invoice match Project. Show the instructions as five parts. Run it. Compare three rows with the answers you checked by hand: BPK-4471, SCC-0718 and FSC-3390.",
 "expect": "The full match table, with the two flags explained in the Note column.",
 "silent": null,
-"fallback": "Show the backup table.",
+"fallback": "Show the backup table. The expected result is on the staff backup page, Demo 1.5.",
 "more": [
-"This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words."
+"Copy the prompt from the prompt sheet, Demo 1.5. The live answer may use other words; point at what the Watch for line asks."
 ],
-"time": "3 to 4 min",
+"time": "4 min",
 "t": "b4",
-"k": "player",
-"h": "Prompt playback, Demo 1.5: From card to five-part instructions",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: The full match table, with the two flags explained in the Note column. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: Show the backup table. · Say: “Five parts. The fifth one, when unsure, is the one people forget.”"
+"k": "live",
+"h": "Demo 1.5 live in Claude: From card to five-part instructions",
+"flat": "4 min. · Do: Switch to Claude and run it live. Open the Mirqab invoice match Project. Show the instructions as five parts. Run it. Compare three rows with the answers you checked by hand: BPK-4471, SCC-0718 and FSC-3390. · Expect: The full match table, with the two flags explained in the Note column. · Copy the prompt from the prompt sheet, Demo 1.5. The live answer may use other words; point at what the Watch for line asks. · Fallback: Show the backup table. The expected result is on the staff backup page, Demo 1.5. · Say: “Five parts. The fifth one, when unsure, is the one people forget.”"
 },
 {
 "say": null,
@@ -819,18 +834,18 @@
 },
 {
 "say": "No more dragging files. The agent reads where the files already are.",
-"do": "Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud.",
+"do": "Switch to Claude and run it live. Customize, then Connectors: show Google Drive, connected before Day 1 with the trainer's CODED training Google account. In the invoice Project, ask it to process the newest pack in Mirqab sandbox / 01 Invoices / Inbox.",
 "expect": "The same match table, plus the two file names it read from the Inbox.",
 "silent": null,
-"fallback": "If the connector is slow, upload the two files and continue.",
+"fallback": "If the connector is slow, upload the two files and continue. The expected result is on the staff backup page, Demo 1.6.",
 "more": [
-"This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words."
+"Copy the prompt from the prompt sheet, Demo 1.6. The live answer may use other words; point at what the Watch for line asks."
 ],
-"time": "3 to 4 min",
+"time": "4 min",
 "t": "b5",
-"k": "player",
-"h": "Prompt playback, Demo 1.6: Read from the folder",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: The same match table, plus the two file names it read from the Inbox. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: If the connector is slow, upload the two files and continue. · Say: “No more dragging files. The agent reads where the files already are.”"
+"k": "live",
+"h": "Demo 1.6 live in Claude: Read from the folder",
+"flat": "4 min. · Do: Switch to Claude and run it live. Customize, then Connectors: show Google Drive, connected before Day 1 with the trainer's CODED training Google account. In the invoice Project, ask it to process the newest pack in Mirqab sandbox / 01 Invoices / Inbox. · Expect: The same match table, plus the two file names it read from the Inbox. · Copy the prompt from the prompt sheet, Demo 1.6. The live answer may use other words; point at what the Watch for line asks. · Fallback: If the connector is slow, upload the two files and continue. The expected result is on the staff backup page, Demo 1.6. · Say: “No more dragging files. The agent reads where the files already are.”"
 },
 {
 "say": "Your Input box now points at a folder.",
@@ -876,18 +891,18 @@
 },
 {
 "say": "If the shape changes every run, nobody can compare this week with last week.",
-"do": "Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud.",
+"do": "Switch to Claude and run it live. Add the output rule below to the invoice Project. Run twice. Put the two artifacts side by side.",
 "expect": "Two runs with the same 9 columns, flagged rows first, and the same total line: 5 checked, 3 matched, 2 flagged. If BPK-4471 is marked Not found, accept 5 checked, 2 matched, 3 flagged.",
 "silent": null,
-"fallback": "Show the backup total line.",
+"fallback": "Show the backup total line. The expected result is on the staff backup page, Demo 1.7.",
 "more": [
-"This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words."
+"Copy the prompt from the prompt sheet, Demo 1.7. The live answer may use other words; point at what the Watch for line asks."
 ],
-"time": "3 to 4 min",
+"time": "4 min",
 "t": "b5",
-"k": "player",
-"h": "Prompt playback, Demo 1.7: Same shape every run",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: Two runs with the same 9 columns, flagged rows first, and the same total line: 5 checked, 3 matched, 2 flagged. If BPK-4471 is marked Not found, accept 5 checked, 2 matched, 3 flagged. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: Show the backup total line. · Say: “If the shape changes every run, nobody can compare this week with last week.”"
+"k": "live",
+"h": "Demo 1.7 live in Claude: Same shape every run",
+"flat": "4 min. · Do: Switch to Claude and run it live. Add the output rule below to the invoice Project. Run twice. Put the two artifacts side by side. · Expect: Two runs with the same 9 columns, flagged rows first, and the same total line: 5 checked, 3 matched, 2 flagged. If BPK-4471 is marked Not found, accept 5 checked, 2 matched, 3 flagged. · Copy the prompt from the prompt sheet, Demo 1.7. The live answer may use other words; point at what the Watch for line asks. · Fallback: Show the backup total line. The expected result is on the staff backup page, Demo 1.7. · Say: “If the shape changes every run, nobody can compare this week with last week.”"
 },
 {
 "say": null,
@@ -959,18 +974,18 @@
 },
 {
 "say": "The Project is my desk. The skill is the firm's manual: it works anywhere, for anyone I share it with.",
-"do": "Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud.",
+"do": "Switch to Claude and run it live. File creation works on this account (the owner turned on code execution for the team). mirqab-invoice-match was built and tested before Day 1; the 16:25 task uses it. Save this live copy as mirqab-invoice-match-live. In the invoice Project, ask Claude to turn the instructions into a skill. Save it. Run it in a fresh chat outside the Project.",
 "expect": "A skill named mirqab-invoice-match-live, saved under Customize, then Skills. In a fresh chat, the same table appears.",
 "silent": null,
-"fallback": "If the skill does not save, show the backup table and continue with the Project.",
+"fallback": "If the skill does not save, show the backup table and continue with the Project. The expected result is on the staff backup page, Demo 1.8.",
 "more": [
-"This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words."
+"Copy the prompt from the prompt sheet, Demo 1.8. The live answer may use other words; point at what the Watch for line asks."
 ],
-"time": "3 to 4 min",
+"time": "4 min",
 "t": "b6",
-"k": "player",
-"h": "Prompt playback, Demo 1.8: From Project to skill",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: A skill named mirqab-invoice-match-live, saved under Customize, then Skills. In a fresh chat, the same table appears. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: If the skill does not save, show the backup table and continue with the Project. · Say: “The Project is my desk. The skill is the firm's manual: it works anywhere, for anyone I share it with.”"
+"k": "live",
+"h": "Demo 1.8 live in Claude: From Project to skill",
+"flat": "4 min. · Do: Switch to Claude and run it live. File creation works on this account (the owner turned on code execution for the team). mirqab-invoice-match was built and tested before Day 1; the 16:25 task uses it. Save this live copy as mirqab-invoice-match-live. In the invoice Project, ask Claude to turn the instructions into a skill. Save it. Run it in a fresh chat outside the Project. · Expect: A skill named mirqab-invoice-match-live, saved under Customize, then Skills. In a fresh chat, the same table appears. · Copy the prompt from the prompt sheet, Demo 1.8. The live answer may use other words; point at what the Watch for line asks. · Fallback: If the skill does not save, show the backup table and continue with the Project. The expected result is on the staff backup page, Demo 1.8. · Say: “The Project is my desk. The skill is the firm's manual: it works anywhere, for anyone I share it with.”"
 },
 {
 "say": null,
@@ -1045,18 +1060,18 @@
 },
 {
 "say": "Nobody pressed Send. This is tomorrow.",
-"do": "Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud.",
+"do": "Switch to Claude and run it live. Before Day 1: build mirqab-invoice-match on this account and test it in a fresh chat. This task uses it. At 08:00, click Scheduled in the left sidebar, then New task. Name it Mirqab invoice match demo. Paste the prompt below. Frequency: daily at 16:25. Approval mode: the mode that lets the run save and move Drive files without waiting. Before 16:25, check that 01 Invoices / Inbox holds one copy of the October invoices and ledger. Show the Scheduled page, then open Outputs as the file arrives.",
 "expect": "At 16:25, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log.",
 "silent": null,
-"fallback": "If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file.",
+"fallback": "If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. The expected result is on the staff backup page, Demo 1.9.",
 "more": [
-"This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words."
+"Copy the prompt from the prompt sheet, Demo 1.9. The live answer may use other words; point at what the Watch for line asks."
 ],
-"time": "3 to 4 min",
+"time": "4 min",
 "t": "b7",
-"k": "player",
-"h": "Prompt playback, Demo 1.9: The agent that ran itself",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: At 16:25, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. · Say: “Nobody pressed Send. This is tomorrow.”"
+"k": "live",
+"h": "Demo 1.9 live in Claude: The agent that ran itself",
+"flat": "4 min. · Do: Switch to Claude and run it live. Before Day 1: build mirqab-invoice-match on this account and test it in a fresh chat. This task uses it. At 08:00, click Scheduled in the left sidebar, then New task. Name it Mirqab invoice match demo. Paste the prompt below. Frequency: daily at 16:25. Approval mode: the mode that lets the run save and move Drive files without waiting. Before 16:25, check that 01 Invoices / Inbox holds one copy of the October invoices and ledger. Show the Scheduled page, then open Outputs as the file arrives. · Expect: At 16:25, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log. · Copy the prompt from the prompt sheet, Demo 1.9. The live answer may use other words; point at what the Watch for line asks. · Fallback: If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. The expected result is on the staff backup page, Demo 1.9. · Say: “Nobody pressed Send. This is tomorrow.”"
 },
 {
 "say": null,

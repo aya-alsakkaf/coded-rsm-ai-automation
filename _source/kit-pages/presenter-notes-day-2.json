@@ -166,7 +166,7 @@
 "do": "Start the timer. Walk the room. Ask each team what they found so far.",
 "expect": "One card per team with a time, a folder, a skill, a named output and a named reviewer.",
 "silent": null,
-"fallback": "A team whose agent is not ready takes the invoice workflow: one member turns the Task 1.4 Project into a skill first.",
+"fallback": "A team whose agent is not ready takes the invoice workflow: one member turns the Task 1.5 Project into a skill first.",
 "more": [
 "Give the hint at about 6 min.",
 "Fast finishers have an extra task on the slide."
@@ -175,7 +175,7 @@
 "t": "c1",
 "k": "task",
 "h": "Your turn 2.1: Your team's workflow card (20 min, in your team)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each team what they found so far. · Expect: One card per team with a time, a folder, a skill, a named output and a named reviewer. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: A team whose agent is not ready takes the invoice workflow: one member turns the Task 1.4 Project into a skill first. · Say: “Fill all five boxes. A blank box is a risk.”"
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each team what they found so far. · Expect: One card per team with a time, a folder, a skill, a named output and a named reviewer. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: A team whose agent is not ready takes the invoice workflow: one member turns the Task 1.5 Project into a skill first. · Say: “Fill all five boxes. A blank box is a risk.”"
 },
 {
 "say": null,
