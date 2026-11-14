@@ -7,6 +7,88 @@ import content_demos as CD
 from content_demos import DEMOS
 import data as D
 from data import num
+from deck import _slide, _merge, _t
+
+# ------------------------------------------------------------------ kit-only slide helpers (the engine is never edited)
+def askslide(sid, topic, tag, q, ph, take, n=None):
+    """A question with a search bar. The trainer types the room's answers; each one shows as a chip on the screen.
+    Nothing is saved or sent: the answers live in the page until it reloads."""
+    _t(topic)
+    bar = (f'<form class="wai-bar" autocomplete="off" role="search"><svg class="wai-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 21 21"/></svg>'
+           f'<input class="wai-in" type="text" maxlength="60" spellcheck="false" placeholder="{e(ph)}" aria-label="{e(ph)}"><button class="wai-go" type="submit">Add</button></form>')
+    inner = (f'  <div class="wai">\n   {eyebrow(e(tag), rule=True)}\n   <h1 class="cd-h1 wai-q">{hl(q)}</h1>\n   {bar}\n'
+             f'   <div class="wai-out" aria-live="polite"></div>\n   <div class="wai-foot"><button class="wai-clear" type="button">Clear</button></div>\n  </div>\n  ' + key(take))
+    return _slide(section("cd-slide--stage wai-slide", inner, strip(q), sid=sid), sid, "ask", q, topic, q, [tag, q, take], ["Add", "Clear"], _merge({}, n))
+
+def relabel(sl, old, new, old_h, new_h):
+    """The same slide with another menu label (the engine names the weak and strong demo after the opener)."""
+    out = Slide(str(sl).replace(old, new))
+    out.rec = dict(sl.rec, title=sl.rec["title"].replace(old, new))
+    out.rec["note"] = dict(sl.rec["note"], h=sl.rec["note"]["h"].replace(old_h, new_h))
+    return out
+
+EXTRA_CSS = """
+.wai-slide .cd-wrap{justify-content:center}
+.wai{display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(14px,2.2vh,24px);width:100%;max-width:1080px;margin:0 auto}
+.wai .cd-eyebrow{justify-content:center}
+.wai-q{margin:0;font-size:clamp(56px,7.4vw,112px);line-height:1}
+.wai-bar{display:flex;align-items:center;gap:14px;width:min(860px,92%);padding:10px 10px 10px 26px;border-radius:999px;
+  background:rgba(255,255,255,.96);box-shadow:0 22px 60px -24px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.22);transition:box-shadow .2s}
+.wai-bar:focus-within{box-shadow:0 22px 60px -24px rgba(0,0,0,.85),0 0 0 5px color-mix(in srgb,var(--cd-accent) 55%,transparent)}
+.wai-ic{width:30px;height:30px;flex:none;fill:none;stroke:#3C4A60;stroke-width:2.4;stroke-linecap:round}
+.wai-in{flex:1;min-width:0;border:0;outline:0;background:transparent;font:600 clamp(20px,1.9vw,28px)/1.2 var(--cd-font-sans);color:#0C1B33;padding:10px 0}
+.wai-in::placeholder{color:#5B677A;font-weight:500}
+.wai-go{flex:none;border:0;border-radius:999px;padding:14px 26px;font:700 18px/1 var(--cd-font-sans);color:#fff;background:#007DB4;cursor:pointer}
+.wai-go:hover,.wai-go:focus-visible{background:#00699A;outline:none}
+.wai-out{display:flex;flex-wrap:wrap;justify-content:center;align-content:flex-start;gap:12px;width:100%;min-height:clamp(120px,20vh,220px);max-height:34vh;overflow:hidden}
+.wai-chip{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:12px 22px;cursor:pointer;
+  font:600 clamp(20px,1.8vw,27px)/1.15 var(--cd-font-sans);color:var(--cd-text-strong,#fff);
+  background:color-mix(in srgb,var(--cd-accent) 22%,rgba(255,255,255,.06));border:1px solid color-mix(in srgb,var(--cd-accent) 60%,transparent)}
+.wai-chip:hover{border-color:#fff}
+.wai-chip b{font:700 .8em/1 var(--cd-font-mono);color:var(--cd-accent-soft,#9FC0F5)}
+.wai-chip b:empty{display:none}
+.wai-out.wai-many .wai-chip{font-size:clamp(17px,1.4vw,21px);padding:9px 16px}
+.wai-out.wai-lots .wai-chip{font-size:clamp(14px,1.1vw,17px);padding:7px 13px}
+.wai-pop{animation:waipop .45s cubic-bezier(.2,1.4,.4,1)}
+@keyframes waipop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+.wai-foot{min-height:30px}
+.wai-clear{border:1px solid rgba(255,255,255,.28);background:transparent;color:var(--cd-text-quiet,#B4C0D3);border-radius:999px;padding:7px 18px;font:600 14px/1 var(--cd-font-sans);cursor:pointer}
+.wai-clear:hover{color:#fff;border-color:#fff}
+.wai-out:empty + .wai-foot .wai-clear{visibility:hidden}
+@media (prefers-reduced-motion: reduce){.wai-pop{animation:none}}
+"""
+
+EXTRA_JS = r"""
+(function(){
+  [].forEach.call(document.querySelectorAll('.wai'), function(w){
+    var f = w.querySelector('.wai-bar'), inp = w.querySelector('.wai-in'), out = w.querySelector('.wai-out'), clr = w.querySelector('.wai-clear');
+    var seen = {};
+    function size(){ var n = out.children.length; out.classList.toggle('wai-many', n > 8); out.classList.toggle('wai-lots', n > 16); }
+    function pop(c){ c.classList.remove('wai-pop'); void c.offsetWidth; c.classList.add('wai-pop'); }
+    f.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var t = (inp.value || '').replace(/\s+/g, ' ').trim(); if (!t) return;
+      var k = t.toLowerCase(), c = seen[k];
+      if (c) { var n = (+c.getAttribute('data-n') || 1) + 1; c.setAttribute('data-n', n); c.querySelector('b').textContent = '×' + n; pop(c); }
+      else {
+        c = document.createElement('button'); c.type = 'button'; c.className = 'wai-chip'; c.setAttribute('data-n', '1'); c.title = 'Click to remove';
+        var sp = document.createElement('span'); sp.textContent = t; c.appendChild(sp); c.appendChild(document.createElement('b'));
+        c.addEventListener('click', function(){ delete seen[k]; c.remove(); size(); });
+        out.appendChild(c); seen[k] = c; pop(c);
+      }
+      inp.value = ''; inp.focus(); size();
+    });
+    inp.addEventListener('keydown', function(ev){
+      var D = window.CD_DECK, empty = !inp.value;
+      if (ev.key === 'Escape') { inp.blur(); return; }
+      if (!D) return;
+      if (ev.key === 'PageDown' || (empty && ev.key === 'ArrowRight')) { ev.preventDefault(); inp.blur(); D.goTo(D.current + 1); }
+      else if (ev.key === 'PageUp' || (empty && ev.key === 'ArrowLeft')) { ev.preventDefault(); inp.blur(); D.goTo(D.current - 1); }
+    });
+    clr.addEventListener('click', function(){ out.innerHTML = ''; seen = {}; size(); inp.focus(); });
+  });
+})();
+"""
 
 SECTIONS = {
  1: [("Opening", "g-mark", ["open"]), ("AI foundations", "g-code", ["b1"]), ("Find the work", "g-frame", ["b2", "b3"]), ("Build", "g-impact", ["b4", "b5", "b6"]), ("Close", "g-progress", ["b7", "close"])],
@@ -17,9 +99,8 @@ FLOW = {
  2: (["L1", "L2", "L3", "L4", "L5", "Demo"], {"c1": 0, "c2": 1, "c3": 2, "c4": 3, "c5": 4, "c6": 5}),
 }
 COVER_NOTES = {
- 1: N(do="Welcome the room. Introduce yourself and CODED in one minute.", more=["Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:55. Prayer room and toilets.",
-      "Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room."],
-      say="Over two days you will build an agent for a task you repeat every week, and make it run on its own.", silent="ask who has used any AI tool at work this week."),
+ 1: N(do="Leave this slide up while people arrive and open their laptops. Press → at 08:30.", more=["The next slide introduces CODED and you."],
+      say="Over two days you will build an agent for a task you repeat every week, and make it run on its own."),
  2: N(do="Welcome back. Check that every laptop is signed in and the sandbox Drive opens.", more=["Teams sit together from the start today.", "The callback quiz comes after today's map."],
       say="Yesterday every one of you built an agent. Today one agent per team learns to run without you.", silent="ask one person what their skill is called."),
 }
@@ -36,29 +117,39 @@ CLOSE = {
 
 # ------------------------------------------------------------------ Day 1 · Designing AI Agents for Real Work
 def day1():
-    opener = [story("b0story", "open", "Opener · one invoice", "Sunday 1 November, 08:40",
-        f"Dana, an associate at {D.FIRM}, opens a supplier invoice for {D.CO_SHORT}. She needs the invoice number, the amount and the PO for a working paper. <b>She types three words.</b>",
-        "Same tool. Same invoice. <span class=\"hl\">Watch what the request changes.</span>", "See why the request decides the quality of the result.",
-        n=N(do="Read the story aloud. Ask what they would type.", expect="Short answers, like a question about the invoice.", silent="Say what most people type: a short question, like Dana."), time="08:45-08:52"),
-        showcase("ws", "open", CD.SHOWCASE, n=N(do="Press → through the steps.",
-            more=["Step 1: the same invoice in both windows.", "Steps 2 and 3: the weak request and its answer. Read the red flags aloud.",
-                  "Steps 4 to 8: Role, Steps, Rules, Format, When unsure, one per press. Ask what each part adds.", "Then the strong answer: point at the exact amount and the Not found.",
-                  "Then the scorecard and the lesson.", "Optional: run both live in two windows (prompt sheet, Demo 1.0)."],
-            silent="ask before the parts: could the weak answer go into a working paper?", say="Same tool, same invoice. I only changed the request.", time="5 min"))]
-    s = opening(1, opener=opener)
+    s = [cover(1)]
+    s.append(cards3("b0welcome", "open", "Welcome · who we are", "Welcome to <span class=\"hl\">CODED.</span>",
+        [("Who we are", "CODED Academy", "Founded in Kuwait in 2015 as the first coding academy in the Middle East. We teach coding and AI to people and to companies.", "CODED Professionals builds programs for teams."),
+         ("Who is teaching", "Your trainer", "A CODED Professionals instructor who builds AI workflows and teaches them to teams across Kuwait.", "Ask questions at any time."),
+         ("Who is here", "18 RSM colleagues", "Assurance, Corporate Finance, Support and Analytics Advisory. Different jobs, one goal: less time on work that repeats.", "Your examples shape the two days.")],
+        "Two hands-on days, on fictional files. You build, and we help.",
+        n=N(time="08:30-08:35", do="Introduce yourself in one minute: your name, your role at CODED, and one way you use AI every week.",
+            more=["Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:55. Prayer room and toilets.",
+                  "Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room.", "The pre-MAP test is the next slide."],
+            silent="ask who has used any AI tool at work this week.", say="We teach by building. You do the work on your laptop, and we walk the room.")))
+    if "pre" in wk.FORM_DAY.get(1, []): s.append(mapslide("map1", "open", "before"))
+    s += [outcomes(1), road(1)]
     # Lesson 1 · AI foundations
-    s.append(story("b1story", "b1", "Lesson 1 · AI foundations", "Sunday 1 November, 08:52",
+    s.append(story("b1story", "b1", "Lesson 1 · AI foundations", "Sunday 1 November, 08:50",
         "Most of this room already uses AI at work, in more than one tool. <b>Before we build anything, one question: what is it actually doing when it answers?</b>",
         "Know what it does <span class=\"hl\">and where it fails.</span>", "Explain what generative AI does well and where it can be wrong.",
         n=N(do="Run the live poll on the shared board: which AI tools did you use this month, and for what? Read three answers aloud.", expect="ChatGPT, Copilot, some Claude; emails, summaries, Excel help.",
-            silent="share your own answer first.", more=["Two minutes for the poll, then move on."]), time="08:52-09:20"))
+            silent="share your own answer first.", more=["Two minutes for the poll, then move on."]), time="08:50-09:20"))
+    s.append(askslide("b1ask", "b1", "Lesson 1 · your words", "What is <span class=\"hl\">AI?</span>", "Type an answer from the room, then press Enter",
+        "Your answers stay on the screen. Next, we see what AI really does.",
+        n=N(time="4 min", do="Click the search bar. Ask the room: what is AI? Type each answer as people say it and press Enter.",
+            expect="A chatbot, a search engine, a robot, something that thinks, ChatGPT, automation.",
+            more=["The same answer twice shows ×2 on its chip. Click a chip to remove a typo. Clear empties the board.",
+                  "Press Esc to leave the search bar, then → to move on. With the bar empty, → and ← still move slides.",
+                  "Do not correct anyone yet. The next three slides answer the question. The answers stay until the page reloads, so you can come back here."],
+            silent="type the first answer yourself: a smart search engine. Ask if anyone agrees.", say="There are no wrong answers here. First, what does this room think?")))
     s.append(scene("b1an", "b1", "Lesson 1 · the picture", "A very well-read <span class=\"hl\">new joiner.</span>",
         "It has read more than any associate ever will, so its drafts are fast and fluent. It has never seen this client's file, so it fills gaps with what is usual.",
         "Fast and fluent. Not checked.",
         [{"ground": 268}, {"building": (240, 268), "tone": "dim"}, {"person": (110, 268), "tone": "hot", "label": "New joiner", "anim": "bob"},
          {"doc": (330, 250), "label": "Client file", "tone": "dim"}, {"move": "doc", "path": [(140, 200), (240, 150), (320, 200)], "dur": 5},
          {"pill": "Read a lot", "at": (130, 40), "tone": "hot", "delay": 0}, {"pill": "Drafts fast", "at": (340, 40), "tone": "hot", "delay": 1.5}, {"pill": "Never saw this file", "at": (240, 86), "tone": "bad", "delay": 3}],
-        n=N(do="Ask: what would you check first in a new joiner's first working paper?", expect="The figures and the sources.", silent="say you would tick every figure.",
+        n=N(do="Point back to the room's answers: which of them fit this picture? Then ask: what would you check first in a new joiner's first working paper?", expect="The figures and the sources.", silent="say you would tick every figure.",
             say="Treat it like a talented new joiner. Useful from day one, reviewed every time.")))
     s.append(term("b1t1", "b1", "Lesson 1 · the idea", "What it <span class=\"hl\">really does.</span>", "Generative AI",
         "A model trained on very large amounts of text that writes by <b>predicting the most likely next word</b>, one word at a time. That is why it reads, summarizes, extracts and drafts well.",
@@ -73,8 +164,22 @@ def day1():
         "When AI writes something that <b>sounds right but is not true</b>: a wrong amount, date, name or source, written with full confidence.",
         "A confident first draft…", "…that <b>nobody has ticked yet</b>. Professional skepticism applies.", "Tick every figure against the source document.",
         n=N(do="Ask: where in audit work would a wrong figure hurt most?", expect="Reconciliations, confirmations, the report.", silent="say: in a working paper your supervisor signs.")))
-    s.append(player("b1demo", "b1", "d11", n=N(expect="Four rows right, one wrong: WDS-20931 shows the figure of another Wafra line.",
-        more=["If your live run is right on every row, say: right this time, and you only know because you ticked it against page 2. Then play this slide."])))
+    s.append(cards3("b1cases", "b1", "Lesson 1 · two real cases", "Confident, fluent <span class=\"hl\">and made up.</span>",
+        [("Case 1 · New York, 2023", "Court cases that never existed", "Two lawyers used ChatGPT to find past cases for a client's claim against an airline. It invented the cases and their quotes, and said they were real. The lawyers did not check.",
+          "The judge fined the two lawyers and their firm $5,000."),
+         ("Case 2 · Canada, 2024", "A refund rule the airline never had", "Air Canada's website chatbot told a customer, whose grandmother had just died, that he could ask for a lower bereavement fare after his flight. The airline's real policy said no.",
+          "Air Canada said the chatbot was responsible for its own words. The tribunal disagreed, and the airline paid.")],
+        "The AI was wrong, and the people paid. Check before anyone relies on it.",
+        src="Sources: Mata v. Avianca, Inc., No. 22-cv-1461 (S.D.N.Y., 22 June 2023); Moffatt v. Air Canada, 2024 BCCRT 149 (14 February 2024).",
+        n=N(time="4 min", do="Tell each case in about one minute. Then ask: who paid for the mistake, the tool or the people?", expect="The lawyers and the airline. Nobody blames the tool.",
+            more=["Case 1: the lawyer asked ChatGPT if the cases were real, and it said yes. The judge also made them write to each real judge whose name was on a fake decision.",
+                  "Case 2: Air Canada argued the chatbot was a separate legal entity. The tribunal rejected this and ordered the airline to pay about CA$812.",
+                  "Optional, close to audit work: in October 2025 Deloitte Australia refunded part of a AU$440,000 government fee. Its report had made-up references and a made-up quote from a court judgment. The revised report says a generative AI tool was used."],
+            silent="ask: whose name goes on a working paper, yours or Claude's?", say="The tool never signs. You do.")))
+    s.append(check("b1chk", "b1", f"Claude gives KWD {D.num(D.AI_WRONG[1])} for an invoice that says KWD {D.num(D.INV[D.AI_WRONG[0]][4])}. <b>Why can this happen?</b>",
+        [("It predicted a likely figure and nothing checked it", 1, "Right. It predicts likely words. You tick against the source."),
+         ("It rounds amounts on purpose", 0, "It did not round. It took another likely figure."),
+         ("The invoice must be wrong", 0, "The invoice is the source. The answer must match it.")]))
     s.append(term("b1t3", "b1", "Lesson 1 · the data rule", "Dummy data today. <span class=\"hl\">RSM's policy always.</span>", "The data rule",
         "No client data goes into an AI tool that RSM has not approved. Today every file is fictional. Back at work, <b>RSM's AI policy decides</b> what may go in.",
         "Engagement confidentiality for email…", "…applies to <b>AI tools in the same way</b>.", "When you are not sure, treat it as client data and ask first.",
@@ -87,15 +192,8 @@ def day1():
          ("Family 2", "AI inside your apps", "Copilot in Excel and Outlook, Gemini in Gmail and Docs.", "AI where the file already is."),
          ("Family 3", "Automation tools", "n8n, Power Automate, scheduled tasks.", "It runs without you.")],
         "This program uses Claude. The method works in all three.",
-        n=N(do="Ask which family each person used this week.", expect="Mostly family 1, some family 2.", silent="say which one you use most and why.")))
-    s.append(tslide("b1map", "b1", "Lesson 1 · the transfer map", "Same building blocks, <span class=\"hl\">different names.</span>", C.TRANSFER_HEAD, C.TRANSFER,
-        "Learn the method once. The card works in any tool.", cls="tight",
-        n=N(do="Read one row across. Ask: which tool does RSM use today?", expect="Copilot or ChatGPT for some; the card still applies.", silent="read the Package row: skill, custom GPT, agent, Gem.",
-            more=["Feature names change often; the site has the sources and the date checked."])))
-    s.append(check("b1chk", "b1", f"Claude gives KWD {D.num(D.AI_WRONG[1])} for an invoice that says KWD {D.num(D.INV[D.AI_WRONG[0]][4])}. <b>Why can this happen?</b>",
-        [("It predicted a likely figure and nothing checked it", 1, "Right. It predicts likely words. You tick against the source."),
-         ("It rounds amounts on purpose", 0, "It did not round. It took another likely figure."),
-         ("The invoice must be wrong", 0, "The invoice is the source. The answer must match it.")]))
+        n=N(do="Ask which family each person used this week.", expect="Mostly family 1, some family 2.", silent="say which one you use most and why.",
+            more=["Keep it short. The full map of Claude features in other tools comes at the end of the day, after they have used each one."])))
     s.append(listslide("b1tour", "b1", "Lesson 1 · the Claude tour", "Where today's tools <span class=\"hl\">live in Claude.</span>",
         ["<b>Chat:</b> the message box, with + to attach a file.", "<b>Projects:</b> instructions and knowledge for every chat inside.",
          "<b>Connectors:</b> Customize, then Connectors. Google Drive today.", "<b>Skills:</b> Customize, then Skills. A method Claude loads when it fits.",
@@ -103,7 +201,7 @@ def day1():
         "One box of the Agent Card at a time.",
         n=N(do="Show each place on the presenting laptop while you talk.", expect="People find Projects and Customize in under a minute.", silent="ask someone to find Customize on their screen.")))
     s.append(task("b1task", "b1", "t11", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    # Lesson 2 · Why chat isn't enough, and finding the work
+    # Lesson 2 · Why chat isn't enough: a good prompt, what an agent is, and finding the work
     s.append(story("b2story", "b2", "Lesson 2 · Why chat isn't enough", "Sunday 1 November, 09:30",
         f"Faisal, a supervisor, gets two reconciliation tables for the same {D.CO_SHORT} invoices. <b>Different columns, different totals.</b> One flags a problem; the other says everything matches.",
         "Same files. <span class=\"hl\">Two answers.</span>", "Feel why one-off chat is not repeatable.",
@@ -114,13 +212,39 @@ def day1():
         [["Columns", "Invoice, amount, status", "Supplier, invoice, ledger, difference, comment"], ["Rows flagged", "None: every row Matched", "Two rows flagged"], ["Total checked", f"KWD {D.num(sum(r[4] for r in D.INVOICES))}", "5 invoices"]],
         "Same prompt, same files, two different tables.",
         n=N(do="First show three contrasting tables from the room. Then this slide.", expect="People see that only the chat changed: same prompt, same files.", silent="ask: which chat would you trust?",
-            say="Nothing changed except the chat. That is the problem we solve today.")))
+            say="Two things changed the tables: the request and the chat. We fix the request first.")))
+    s.append(term("b2why", "b2", "Lesson 2 · the prompt", "A better request. <span class=\"hl\">A better result.</span>", "Prompt",
+        "A <b>prompt</b> is the request you type. Claude knows only what you write. When the prompt leaves a gap, Claude fills it with what is <b>usual</b>, not with what <b>you need</b>.",
+        "A one-line brief to a new joiner…", "…versus a <b>full brief</b>: who, what, the rules and the shape.", "Most of the 18 tables differed because the 18 requests differed.",
+        n=N(do="Ask: what did your Task 1.2 request leave out?", expect="The columns, what counts as a difference, what to do when a row is missing.",
+            silent="read one short request from the room and ask what it does not say.")))
+    s.append(relabel(showcase("b2ws", "b2", CD.SHOWCASE, n=N(do="Press → through the steps.",
+            more=["Step 1: the same invoice in both windows.", "Steps 2 and 3: the weak request and its answer. Read the red flags aloud.",
+                  "Steps 4 to 8: Role, Steps, Rules, Format, When unsure, one per press. Ask what each part adds.", "Then the strong answer: point at the exact amount and the Not found.",
+                  "Then the scorecard and the lesson.", "Optional: run both live in two windows (prompt sheet, Demo 1.1)."],
+            silent="ask before the parts: could the weak answer go into a working paper?", say="Same tool, same invoice. I only changed the request.", time="5 min")),
+        "Opener · weak and strong prompt", "Demo 1.1 · weak and strong prompt", "Opener: weak and strong prompt", "Demo 1.1: weak and strong prompt"))
+    s.append(listslide("b2five", "b2", "Lesson 2 · how to write it", "Five parts of <span class=\"hl\">a good prompt.</span>",
+        ["<b>Role:</b> who Claude is, and the job in one line.", "<b>Steps:</b> what to do, in order.", "<b>Rules:</b> the source to use, units, dates and limits.",
+         "<b>Format:</b> the exact shape, with the columns in order.", "<b>When unsure:</b> what to write when something is missing. Never guess."],
+        "Attach the source file. Then check the answer against it.",
+        n=N(do="Map each part to the strong request you just saw.", expect="People say When unsure is the part they never write.",
+            more=["If the room is fast: two people rewrite their Task 1.2 request with the five parts and run it again, then compare it with their first table."],
+            silent="ask: which part was missing from your own Task 1.2 request?")))
+    s.append(check("b2pchk", "b2", "Which request gives an answer <b>you can put in a working paper?</b>",
+        [("“Summarize this invoice for me.”", 0, "No rules and no format: Claude fills the gaps."), ("Role, steps, rules, format and When unsure, with the invoice attached", 1, "Right. Five parts and the source."),
+         ("“Be very accurate with this invoice, please.”", 0, "Accurate is a wish, not a rule.")]))
     s.append(term("b2t1", "b2", "Lesson 2 · the idea", "A prompt is not <span class=\"hl\">a process.</span>", "Repeatable",
-        "A good prompt lives in one chat and is lost next time. A <b>repeatable</b> method keeps the same input, rules and output shape, so every run can be reviewed the same way.",
+        "Even a good prompt lives in one chat, and you type it again next time. A <b>repeatable</b> method keeps the same input, rules and output shape, so every run can be reviewed the same way.",
         "“Cook something nice”…", "…versus a <b>recipe card</b> anyone can follow.", "Audit work needs the same answer every time.",
         n=N(do="Ask: what makes an audit program repeatable?", expect="Written steps, the same working paper.", silent="say: it is written down, so anyone gets the same result.")))
     s.append(check("b2chk", "b2", "Two associates get different tables for the same invoices. <b>What is missing?</b>",
-        [("A faster laptop", 0, "Speed was not the problem."), ("Fixed input, rules and output shape", 1, "Right. That is what the next lesson builds."), ("A longer chat", 0, "Longer chats drift more, not less.")]))
+        [("A faster laptop", 0, "Speed was not the problem."), ("Fixed input, rules and output shape", 1, "Right. That is what an agent keeps."), ("A longer chat", 0, "Longer chats drift more, not less.")]))
+    s.append(term("b2agent", "b2", "Lesson 2 · the agent", "From a chat <span class=\"hl\">to an agent.</span>", "AI agent",
+        "An <b>agent</b> is AI set up to do <b>one job the same way every time</b>. Its instructions are saved, it reads the files it needs, it returns a fixed output, and it can run without you. Today you build one in Claude.",
+        "A chat answers one question, once…", "…an agent does <b>one job, every week</b>, from a written method.", "Chat is for questions. Agents are for repeated work.",
+        n=N(do="Link each part to the day: saved instructions in Lessons 3 and 4, files and a fixed output in Lesson 5, running without you on Day 2.",
+            expect="Some say an agent is a robot or a chatbot. Say: it is a saved method that can reach the files.", silent="say: think of a trained associate with a written procedure and the client file.")))
     s.append(term("b2t2", "b2", "Lesson 2 · agent-ready", "Which tasks <span class=\"hl\">suit an agent?</span>", "Agent-ready task",
         "A task that <b>repeats weekly</b>, has <b>clear rules</b>, and turns a <b>document in into a document out</b>. Judgment calls and client meetings stay with people.",
         "Three tags on a task…", "…three Yes means a <b>candidate agent</b>.", "Choose the task before you choose the tool.",
@@ -129,8 +253,8 @@ def day1():
     s.append(check("b2chk2", "b2", "Which of Dana's tasks is <b>not</b> a first agent?",
         [("Matching supplier invoices to the ledger", 0, "Three Yes: a strong candidate."), ("Discussing findings with the client's CFO", 1, "Right. It needs judgment and trust."), ("Chasing missing documents from clients", 0, "Three Yes: a candidate.")]))
     s.append(task("b2task2", "b2", "t13", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    s.append(timer_slide("b2board", "b2", "Board review · 10:17", "What repeats <span class=\"hl\">across departments?</span>",
-        "The shared board on screen: one task from each person, grouped by department.", 3,
+    s.append(timer_slide("b2board", "b2", "Board review · 10:18", "What repeats <span class=\"hl\">across departments?</span>",
+        "The shared board on screen: one task from each person, grouped by department.", 2,
         n=N(do="Read the clusters aloud. Name the tasks that appear in more than one department.", expect="Reconciliations, chasing documents, status reports.",
             silent="read the Support column first: it shows what the coordinators chase.", more=["Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3.", "Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance."])))
     # Lesson 3 · Design the agent, then pick your case
@@ -188,7 +312,7 @@ def day1():
         [["<b>Role</b>", "Who it is", "An audit associate at Mirqab"], ["<b>Steps</b>", "What to do, in order", "Read, find, compare"], ["<b>Rules</b>", "What must always be true", "KWD, three decimals, never round"],
          ["<b>Output format</b>", "The exact shape", "The template's columns"], ["<b>When unsure</b>", "What to do with a gap", "Write Not found. Never guess."]],
         "Role · Steps · Rules · Output format · When unsure.",
-        n=N(do="Map each part to Dana's card.", expect="When unsure is the part people miss.", silent="ask: which part would have saved Dana's PO?")))
+        n=N(do="Link back to Demo 1.1: the same five parts, now saved as the agent's instructions. Map each part to Dana's card.", expect="When unsure is the part people miss.", silent="ask: which part would have saved Dana's PO?")))
     s.append(term("b4t2", "b4", "Lesson 4 · test", "Show one example. <span class=\"hl\">Then test three.</span>", "Example output and testing",
         "One filled <b>example output</b> in the knowledge teaches the shape faster than a description. Then check <b>three cases where you know the answer</b> before you trust it.",
         "A new joiner learns from one good working paper…", "…and you <b>review their first three</b>.", "Fix the instructions, not the answer.",
@@ -254,6 +378,11 @@ def day1():
         n=N(do="Teams demo at their own tables at the same time. Walk between them.", expect="Most agents run; some flag the messy sample.", silent="start the first team yourself.",
             fallback="If a live run hangs, show the last good result.", say="Card, then run. Ninety seconds.")))
     s.append(player("b7demo", "b7", "d111"))
+    s.append(tslide("b7map", "b7", "Lesson 7 · the transfer map", "Same building blocks, <span class=\"hl\">different names.</span>", C.TRANSFER_HEAD, C.TRANSFER,
+        "Learn the method once. The card works in any tool.", cls="tight",
+        n=N(time="2 min", do="Read one row across. You used the first four rows today; tomorrow fills the When row. Ask: which tool does RSM use today?",
+            expect="Copilot or ChatGPT for some; the card still applies.", silent="read the Package row: skill, custom GPT, agent, Gem.",
+            more=["Feature names change often; the site has the sources and the date checked.", "The same map is on the cheat sheet."])))
     s.append(wrap("w1", "close", "One card. One Project. <span class=\"hl\">One skill each.</span>",
         [("You built", "Your own agent", "A card, a Project, a folder, a fixed shape and a skill."), ("You found", "2 planted problems", f"SCC-0718 and the {D.CUTOFF_INV} cut-off, plus your messy file."),
          ("The habit", "Flag, never guess", "Claude does the first pass. You review.")],

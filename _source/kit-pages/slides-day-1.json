@@ -26,6 +26,31 @@
 },
 {
 "n": 2,
+"id": "b0welcome",
+"kind": "cards",
+"title": "Welcome to CODED.",
+"topic": "open",
+"kit": [
+"Welcome · who we are",
+"Welcome to CODED.",
+"Two hands-on days, on fictional files. You build, and we help.",
+"Who we are",
+"CODED Academy",
+"Founded in Kuwait in 2015 as the first coding academy in the Middle East. We teach coding and AI to people and to companies.",
+"CODED Professionals builds programs for teams.",
+"Who is teaching",
+"Your trainer",
+"A CODED Professionals instructor who builds AI workflows and teaches them to teams across Kuwait.",
+"Ask questions at any time.",
+"Who is here",
+"18 RSM colleagues",
+"Assurance, Corporate Finance, Support and Analytics Advisory. Different jobs, one goal: less time on work that repeats.",
+"Your examples shape the two days."
+],
+"chrome": []
+},
+{
+"n": 3,
 "id": "map1",
 "kind": "map",
 "title": "MAP test · before",
@@ -50,115 +75,14 @@
 ]
 },
 {
-"n": 3,
-"id": "b0story",
-"kind": "story",
-"title": "Opener · one invoice",
-"topic": "open",
-"kit": [
-"Opener · one invoice",
-"Sunday 1 November, 08:40",
-"Dana, an associate at Mirqab & Co., opens a supplier invoice for Abdali Foods. She needs the invoice number, the amount and the PO for a working paper. She types three words.",
-"Same tool. Same invoice. Watch what the request changes.",
-"See why the request decides the quality of the result.",
-"·"
-],
-"chrome": [
-"The starting point",
-"By the end of this block:"
-]
-},
-{
 "n": 4,
-"id": "ws",
-"kind": "showcase",
-"title": "Opener · weak and strong prompt",
-"topic": "open",
-"kit": [
-"Opener · one invoice",
-"Same tool. Same invoice. Two requests.",
-"abdali-supplier-invoices-oct-2026.pdf",
-"What's in this?",
-"Claude",
-"The request decides the result.",
-"Same tool, same invoice. Only the instruction changed.",
-"This is an invoice from Bayan Packaging for cartons and shrink film.",
-"It is dated in October and is for about 2,100 dinars.",
-"It looks like a standard packaging purchase.",
-"No invoice number",
-"Amount rounded",
-"PO not mentioned",
-"Role",
-"You are an audit associate at Mirqab & Co.",
-"Steps",
-"Read the attached invoice. Find the supplier, the invoice number, the date, the PO number and the amount.",
-"Rules",
-"Use only the invoice. Give the amount in KWD with three decimals. Do not round.",
-"Format",
-"One table row: Supplier, Invoice no., Date, PO no., Amount (KWD).",
-"When unsure",
-"If a field is not on the invoice, write Not found. Never guess.",
-"Field",
-"Weak answer",
-"Five-part answer",
-"Invoice no.",
-"Missing",
-"BPK-4471",
-"Amount",
-"About 2,100",
-"KWD 2,145.750",
-"PO no.",
-"Not mentioned",
-"Not found (flagged)",
-"Bayan Packaging Co. W.L.L. · BPK-4471 · 2026-10-12",
-"Amount: KWD 2,145.750 · PO no.: Not found",
-"Exact amount",
-"Flags the gap",
-"Ready for a working paper",
-"Exact figures?",
-"No",
-"Yes",
-"Says what is missing?",
-"No",
-"Yes",
-"Ready to use?",
-"Ask again",
-"After a tick"
-],
-"chrome": [
-"Same file",
-"Weak prompt",
-"Weak result",
-"Strong result",
-"Compare",
-"The lesson",
-"Strong prompt",
-"Weak",
-"Strong",
-"Message",
-"next",
-"back",
-"replay",
-"Space",
-"Enter",
-"R",
-"Example",
-"typical result",
-"Fictional training data from",
-"W",
-"X",
-"P",
-"PDF"
-]
-},
-{
-"n": 5,
 "id": "outcomes1",
 "kind": "outcomes",
 "title": "Outcomes",
 "topic": "open",
 "kit": [
 "Explain why AI can give a confident figure that is wrong, and tick it against the source.",
+"Write a five-part prompt that gets an exact, checkable answer.",
 "Find the tasks in your work that suit an agent, and write an Agent Card.",
 "Build a Claude Project that gives the same, checkable table every run.",
 "Read from a Drive folder and return a fixed-shape output.",
@@ -171,7 +95,7 @@
 ]
 },
 {
-"n": 6,
+"n": 5,
 "id": "road1",
 "kind": "road",
 "title": "Today's map",
@@ -180,20 +104,20 @@
 "One firm, one client. Seven lessons.",
 "Everything uses Mirqab & Co., a fictional Kuwaiti audit firm, and its fictional client Abdali Foods. Breaks about every hour, lunch with Dhuhr, and an Asr break.",
 "08:30-08:35",
-"Welcome and sign-in check",
-"Open claude.ai and the workshop site",
+"Welcome to CODED",
+"Who we are, your trainer, and the sign-in check",
 "08:35-08:45",
 "Pre-MAP test",
 "10 minutes. Scan the QR code. It also checks your phone",
-"08:45-08:52",
-"Opener: one invoice, two requests",
-"The same invoice, a weak and a five-part request",
-"08:52-09:20",
+"08:45-08:50",
+"Outcomes and today's map",
+"What you will be able to do by 16:30",
+"08:50-09:20",
 "Lesson 1 · AI foundations",
-"What AI is, where it fails, the tools, the transfer map · Task 1.1",
+"What AI is, where it fails, two real cases, the tools · Task 1.1",
 "09:30-10:20",
 "Lesson 2 · Why chat isn't enough, and finding the work",
-"Same task, 18 answers · your task inventory · Tasks 1.2 and 1.3",
+"Same task, 18 answers · a good prompt · what an agent is · Tasks 1.2 and 1.3",
 "10:30-11:30",
 "Lesson 3 · Design the agent, then pick your case",
 "The Agent Card and Projects · Tasks 1.4 and 1.5",
@@ -208,21 +132,21 @@
 "Skills, the messy sample and the clock · Tasks 1.9 and 1.10",
 "16:10-16:30",
 "Lesson 7 · Show and tell, and the Day 2 hook",
-"Team demos and the agent that ran itself"
+"Team demos, the agent that ran itself, the transfer map"
 ],
 "chrome": [
 "The shape of Day"
 ]
 },
 {
-"n": 7,
+"n": 6,
 "id": "b1story",
 "kind": "story",
 "title": "Lesson 1 · AI foundations",
 "topic": "b1",
 "kit": [
 "Lesson 1 · AI foundations",
-"Sunday 1 November, 08:52",
+"Sunday 1 November, 08:50",
 "Most of this room already uses AI at work, in more than one tool. Before we build anything, one question: what is it actually doing when it answers?",
 "Know what it does and where it fails.",
 "Explain what generative AI does well and where it can be wrong.",
@@ -231,6 +155,22 @@
 "chrome": [
 "The starting point",
 "By the end of this block:"
+]
+},
+{
+"n": 7,
+"id": "b1ask",
+"kind": "ask",
+"title": "What is AI?",
+"topic": "b1",
+"kit": [
+"Lesson 1 · your words",
+"What is AI?",
+"Your answers stay on the screen. Next, we see what AI really does."
+],
+"chrome": [
+"Add",
+"Clear"
 ]
 },
 {
@@ -359,84 +299,49 @@
 },
 {
 "n": 12,
-"id": "b1demo",
-"kind": "player",
-"title": "Demo 1.1 · playback",
+"id": "b1cases",
+"kind": "cards",
+"title": "Confident, fluent and made up.",
 "topic": "b1",
 "kit": [
-"Demo 1.1",
-"Where it goes wrong",
-"Claude",
-"Tick every figure against the source before it goes into a working paper.",
-"Task",
-"List each invoice in the attached files and its amount.",
-"Invoice",
-"AI answer (KWD)",
-"The invoice says (KWD)",
-"BPK-4471",
-"2,145.750",
-"2,145.750",
-"WDS-20931",
-"2,240.000",
-"3,860.000",
-"SCC-0718",
-"1,248.500",
-"1,248.500",
-"SGT-11205",
-"5,312.250",
-"5,312.250",
-"FSC-3390",
-"742.125",
-"742.125",
-"Four rows are right. One is not: WDS-20931.",
-"Why: the ledger has two Wafra lines; the AI took the other one's 2,240.000, not the invoice.",
-"The habit: tick each figure against the source document.",
-"abdali-supplier-invoices-oct-2026.pdf",
-"abdali-purchase-ledger-oct-2026.xlsx",
-"abdali-engagement-letter-2026.docx"
+"Lesson 1 · two real cases",
+"Confident, fluent and made up.",
+"The AI was wrong, and the people paid. Check before anyone relies on it.",
+"Sources: Mata v. Avianca, Inc., No. 22-cv-1461 (S.D.N.Y., 22 June 2023); Moffatt v. Air Canada, 2024 BCCRT 149 (14 February 2024).",
+"Case 1 · New York, 2023",
+"Court cases that never existed",
+"Two lawyers used ChatGPT to find past cases for a client's claim against an airline. It invented the cases and their quotes, and said they were real. The lawyers did not check.",
+"The judge fined the two lawyers and their firm $5,000.",
+"Case 2 · Canada, 2024",
+"A refund rule the airline never had",
+"Air Canada's website chatbot told a customer, whose grandmother had just died, that he could ask for a lower bereavement fare after his flight. The airline's real policy said no.",
+"Air Canada said the chatbot was responsible for its own words. The tribunal disagreed, and the airline paid."
 ],
-"chrome": [
-"Prompt playback",
-"Example",
-"typical result",
-"the perfect run",
-"fictional data",
-"Press",
-"to build the prompt, one part at a time",
-"file attached",
-"files attached",
-"Message",
-"The formula",
-"Send",
-"Result",
-"Decision",
-"Back",
-"Replay",
-"Next",
-"next step",
-"back",
-"replay",
-"Space",
-"Enter",
-"R",
-"Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.",
-"Word",
-"Excel",
-"PowerPoint",
-"PDF",
-"Email",
-"Text",
-"file",
-"W",
-"X",
-"P",
-"CSV",
-"T",
-"F"
-]
+"chrome": []
 },
 {
 "n": 13,
+"id": "b1chk",
+"kind": "check",
+"title": "Quick check",
+"topic": "b1",
+"kit": [
+"Claude gives KWD 2,240.000 for an invoice that says KWD 3,860.000. Why can this happen?",
+"It predicted a likely figure and nothing checked it",
+"It rounds amounts on purpose",
+"The invoice must be wrong"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 14,
 "id": "b1t3",
 "kind": "term",
 "title": "Dummy data today. RSM's policy always.",
@@ -455,7 +360,7 @@
 ]
 },
 {
-"n": 14,
+"n": 15,
 "id": "b1chk0",
 "kind": "check",
 "title": "Quick check",
@@ -476,7 +381,7 @@
 ]
 },
 {
-"n": 15,
+"n": 16,
 "id": "b1tools",
 "kind": "cards",
 "title": "Three families of AI tools.",
@@ -501,71 +406,7 @@
 "chrome": []
 },
 {
-"n": 16,
-"id": "b1map",
-"kind": "table",
-"title": "Same building blocks, different names.",
-"topic": "b1",
-"kit": [
-"Lesson 1 · the transfer map",
-"Same building blocks, different names.",
-"Learn the method once. The card works in any tool.",
-"Agent Card box",
-"Claude (today)",
-"ChatGPT",
-"Microsoft 365 Copilot",
-"Gemini",
-"Instruction: saved rules and files",
-"Project",
-"Project or custom GPT",
-"Agent (Agent Builder) or Notebook",
-"Gem",
-"Input: reach your files and email",
-"Connectors",
-"Apps (formerly connectors)",
-"Work data in SharePoint, OneDrive, Outlook",
-"Connected apps (Gmail, Drive, Docs)",
-"Output: a file you open and edit",
-"Artifact or file",
-"Canvas",
-"Copilot Page",
-"Canvas",
-"Package: a reusable method",
-"Skill",
-"Skill (beta) or custom GPT",
-"Agent",
-"Gem",
-"When: runs on its own",
-"Scheduled task",
-"Scheduled task",
-"Scheduled prompt",
-"Scheduled action"
-],
-"chrome": []
-},
-{
 "n": 17,
-"id": "b1chk",
-"kind": "check",
-"title": "Quick check",
-"topic": "b1",
-"kit": [
-"Claude gives KWD 2,240.000 for an invoice that says KWD 3,860.000. Why can this happen?",
-"It predicted a likely figure and nothing checked it",
-"It rounds amounts on purpose",
-"The invoice must be wrong"
-],
-"chrome": [
-"Quick check",
-"A",
-"B",
-"C",
-"Correct",
-"Not quite"
-]
-},
-{
-"n": 18,
 "id": "b1tour",
 "kind": "list",
 "title": "Where today's tools live in Claude.",
@@ -584,7 +425,7 @@
 "chrome": []
 },
 {
-"n": 19,
+"n": 18,
 "id": "b1task",
 "kind": "task",
 "title": "Your turn 1.1",
@@ -637,7 +478,7 @@
 ]
 },
 {
-"n": 20,
+"n": 19,
 "id": "b2story",
 "kind": "story",
 "title": "Lesson 2 · Why chat isn't enough",
@@ -656,7 +497,7 @@
 ]
 },
 {
-"n": 21,
+"n": 20,
 "id": "b2task",
 "kind": "task",
 "title": "Your turn 1.2",
@@ -701,7 +542,7 @@
 ]
 },
 {
-"n": 22,
+"n": 21,
 "id": "b2two",
 "kind": "table",
 "title": "The answer depended on the chat.",
@@ -725,7 +566,148 @@
 "chrome": []
 },
 {
+"n": 22,
+"id": "b2why",
+"kind": "term",
+"title": "A better request. A better result.",
+"topic": "b2",
+"kit": [
+"Lesson 2 · the prompt",
+"A better request. A better result.",
+"Prompt",
+"A prompt is the request you type. Claude knows only what you write. When the prompt leaves a gap, Claude fills it with what is usual, not with what you need.",
+"A one-line brief to a new joiner…",
+"…versus a full brief: who, what, the rules and the shape.",
+"Most of the 18 tables differed because the 18 requests differed."
+],
+"chrome": [
+"The idea"
+]
+},
+{
 "n": 23,
+"id": "b2ws",
+"kind": "showcase",
+"title": "Demo 1.1 · weak and strong prompt",
+"topic": "b2",
+"kit": [
+"Demo 1.1 · one invoice",
+"Same tool. Same invoice. Two requests.",
+"abdali-supplier-invoices-oct-2026.pdf",
+"What's in this?",
+"Claude",
+"The request decides the result.",
+"Same tool, same invoice. Only the instruction changed.",
+"This is an invoice from Bayan Packaging for cartons and shrink film.",
+"It is dated in October and is for about 2,100 dinars.",
+"It looks like a standard packaging purchase.",
+"No invoice number",
+"Amount rounded",
+"PO not mentioned",
+"Role",
+"You are an audit associate at Mirqab & Co.",
+"Steps",
+"Read the attached invoice. Find the supplier, the invoice number, the date, the PO number and the amount.",
+"Rules",
+"Use only the invoice. Give the amount in KWD with three decimals. Do not round.",
+"Format",
+"One table row: Supplier, Invoice no., Date, PO no., Amount (KWD).",
+"When unsure",
+"If a field is not on the invoice, write Not found. Never guess.",
+"Field",
+"Weak answer",
+"Five-part answer",
+"Invoice no.",
+"Missing",
+"BPK-4471",
+"Amount",
+"About 2,100",
+"KWD 2,145.750",
+"PO no.",
+"Not mentioned",
+"Not found (flagged)",
+"Bayan Packaging Co. W.L.L. · BPK-4471 · 2026-10-12",
+"Amount: KWD 2,145.750 · PO no.: Not found",
+"Exact amount",
+"Flags the gap",
+"Ready for a working paper",
+"Exact figures?",
+"No",
+"Yes",
+"Says what is missing?",
+"No",
+"Yes",
+"Ready to use?",
+"Ask again",
+"After a tick"
+],
+"chrome": [
+"Same file",
+"Weak prompt",
+"Weak result",
+"Strong result",
+"Compare",
+"The lesson",
+"Strong prompt",
+"Weak",
+"Strong",
+"Message",
+"next",
+"back",
+"replay",
+"Space",
+"Enter",
+"R",
+"Example",
+"typical result",
+"Fictional training data from",
+"W",
+"X",
+"P",
+"PDF"
+]
+},
+{
+"n": 24,
+"id": "b2five",
+"kind": "list",
+"title": "Five parts of a good prompt.",
+"topic": "b2",
+"kit": [
+"Lesson 2 · how to write it",
+"Five parts of a good prompt.",
+"Attach the source file. Then check the answer against it.",
+"Role: who Claude is, and the job in one line.",
+"Steps: what to do, in order.",
+"Rules: the source to use, units, dates and limits.",
+"Format: the exact shape, with the columns in order.",
+"When unsure: what to write when something is missing. Never guess."
+],
+"chrome": []
+},
+{
+"n": 25,
+"id": "b2pchk",
+"kind": "check",
+"title": "Quick check",
+"topic": "b2",
+"kit": [
+"Which request gives an answer you can put in a working paper?",
+"“Summarize this invoice for me.”",
+"Role, steps, rules, format and When unsure, with the invoice attached",
+"“Be very accurate with this invoice, please.”"
+],
+"chrome": [
+"Quick check",
+"A",
+"B",
+"C",
+"Correct",
+"Not quite"
+]
+},
+{
+"n": 26,
 "id": "b2t1",
 "kind": "term",
 "title": "A prompt is not a process.",
@@ -734,7 +716,7 @@
 "Lesson 2 · the idea",
 "A prompt is not a process.",
 "Repeatable",
-"A good prompt lives in one chat and is lost next time. A repeatable method keeps the same input, rules and output shape, so every run can be reviewed the same way.",
+"Even a good prompt lives in one chat, and you type it again next time. A repeatable method keeps the same input, rules and output shape, so every run can be reviewed the same way.",
 "“Cook something nice”…",
 "…versus a recipe card anyone can follow.",
 "Audit work needs the same answer every time."
@@ -744,7 +726,7 @@
 ]
 },
 {
-"n": 24,
+"n": 27,
 "id": "b2chk",
 "kind": "check",
 "title": "Quick check",
@@ -765,7 +747,26 @@
 ]
 },
 {
-"n": 25,
+"n": 28,
+"id": "b2agent",
+"kind": "term",
+"title": "From a chat to an agent.",
+"topic": "b2",
+"kit": [
+"Lesson 2 · the agent",
+"From a chat to an agent.",
+"AI agent",
+"An agent is AI set up to do one job the same way every time. Its instructions are saved, it reads the files it needs, it returns a fixed output, and it can run without you. Today you build one in Claude.",
+"A chat answers one question, once…",
+"…an agent does one job, every week, from a written method.",
+"Chat is for questions. Agents are for repeated work."
+],
+"chrome": [
+"The idea"
+]
+},
+{
+"n": 29,
 "id": "b2t2",
 "kind": "term",
 "title": "Which tasks suit an agent?",
@@ -784,7 +785,7 @@
 ]
 },
 {
-"n": 26,
+"n": 30,
 "id": "b2demo",
 "kind": "player",
 "title": "Demo 1.2 · playback",
@@ -869,7 +870,7 @@
 ]
 },
 {
-"n": 27,
+"n": 31,
 "id": "b2chk2",
 "kind": "check",
 "title": "Quick check",
@@ -890,7 +891,7 @@
 ]
 },
 {
-"n": 28,
+"n": 32,
 "id": "b2task2",
 "kind": "task",
 "title": "Your turn 1.3",
@@ -939,13 +940,13 @@
 ]
 },
 {
-"n": 29,
+"n": 33,
 "id": "b2board",
 "kind": "timer",
 "title": "What repeats across departments?",
 "topic": "b2",
 "kit": [
-"Board review · 10:17",
+"Board review · 10:18",
 "What repeats across departments?",
 "The shared board on screen: one task from each person, grouped by department."
 ],
@@ -958,7 +959,7 @@
 ]
 },
 {
-"n": 30,
+"n": 34,
 "id": "b3story",
 "kind": "story",
 "title": "Lesson 3 · Design the agent",
@@ -977,7 +978,7 @@
 ]
 },
 {
-"n": 31,
+"n": 35,
 "id": "b3scene",
 "kind": "scene",
 "title": "The audit program every associate follows.",
@@ -997,7 +998,7 @@
 "chrome": []
 },
 {
-"n": 32,
+"n": 36,
 "id": "b3t1",
 "kind": "term",
 "title": "Four boxes before any build.",
@@ -1016,7 +1017,7 @@
 ]
 },
 {
-"n": 33,
+"n": 37,
 "id": "b3chk0",
 "kind": "check",
 "title": "Quick check",
@@ -1037,7 +1038,7 @@
 ]
 },
 {
-"n": 34,
+"n": 38,
 "id": "b3t2",
 "kind": "term",
 "title": "Claude follows what you write.",
@@ -1056,7 +1057,7 @@
 ]
 },
 {
-"n": 35,
+"n": 39,
 "id": "b3chk",
 "kind": "check",
 "title": "Quick check",
@@ -1077,7 +1078,7 @@
 ]
 },
 {
-"n": 36,
+"n": 40,
 "id": "b3t3",
 "kind": "term",
 "title": "A Project is the agent's home.",
@@ -1096,7 +1097,7 @@
 ]
 },
 {
-"n": 37,
+"n": 41,
 "id": "b3t4",
 "kind": "term",
 "title": "Templates stay. Documents come and go.",
@@ -1115,7 +1116,7 @@
 ]
 },
 {
-"n": 38,
+"n": 42,
 "id": "b3chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1136,7 +1137,7 @@
 ]
 },
 {
-"n": 39,
+"n": 43,
 "id": "b3pp",
 "kind": "player",
 "title": "Demo 1.3 · playback",
@@ -1215,7 +1216,7 @@
 ]
 },
 {
-"n": 40,
+"n": 44,
 "id": "b3task",
 "kind": "task",
 "title": "Your turn 1.4",
@@ -1269,7 +1270,7 @@
 ]
 },
 {
-"n": 41,
+"n": 45,
 "id": "b3t5",
 "kind": "term",
 "title": "Pick the task with the highest score.",
@@ -1288,7 +1289,7 @@
 ]
 },
 {
-"n": 42,
+"n": 46,
 "id": "b3demo",
 "kind": "player",
 "title": "Demo 1.4 · playback",
@@ -1371,7 +1372,7 @@
 ]
 },
 {
-"n": 43,
+"n": 47,
 "id": "b3tracks",
 "kind": "table",
 "title": "Pick a track for your agent.",
@@ -1399,7 +1400,7 @@
 "chrome": []
 },
 {
-"n": 44,
+"n": 48,
 "id": "b3task2",
 "kind": "task",
 "title": "Your turn 1.5",
@@ -1448,7 +1449,7 @@
 ]
 },
 {
-"n": 45,
+"n": 49,
 "id": "b4story",
 "kind": "story",
 "title": "Lesson 4 · Build: Instruction",
@@ -1467,7 +1468,7 @@
 ]
 },
 {
-"n": 46,
+"n": 50,
 "id": "b4parts",
 "kind": "table",
 "title": "Five parts. Every instruction.",
@@ -1498,7 +1499,7 @@
 "chrome": []
 },
 {
-"n": 47,
+"n": 51,
 "id": "b4t2",
 "kind": "term",
 "title": "Show one example. Then test three.",
@@ -1517,7 +1518,7 @@
 ]
 },
 {
-"n": 48,
+"n": 52,
 "id": "b4chk",
 "kind": "check",
 "title": "Quick check",
@@ -1538,7 +1539,7 @@
 ]
 },
 {
-"n": 49,
+"n": 53,
 "id": "b4pp",
 "kind": "player",
 "title": "Demo 1.5 · playback",
@@ -1634,7 +1635,7 @@
 ]
 },
 {
-"n": 50,
+"n": 54,
 "id": "b4map",
 "kind": "table",
 "title": "Instructions in other tools.",
@@ -1656,7 +1657,7 @@
 "chrome": []
 },
 {
-"n": 51,
+"n": 55,
 "id": "b4task",
 "kind": "task",
 "title": "Your turn 1.6",
@@ -1712,7 +1713,7 @@
 ]
 },
 {
-"n": 52,
+"n": 56,
 "id": "b5story",
 "kind": "story",
 "title": "Lesson 5 · Build: Input and Output",
@@ -1731,7 +1732,7 @@
 ]
 },
 {
-"n": 53,
+"n": 57,
 "id": "b5t1",
 "kind": "term",
 "title": "A key to one cabinet, not the whole archive.",
@@ -1750,7 +1751,7 @@
 ]
 },
 {
-"n": 54,
+"n": 58,
 "id": "b5chk1",
 "kind": "check",
 "title": "Quick check",
@@ -1771,7 +1772,7 @@
 ]
 },
 {
-"n": 55,
+"n": 59,
 "id": "b5pp1",
 "kind": "player",
 "title": "Demo 1.6 · playback",
@@ -1841,7 +1842,7 @@
 ]
 },
 {
-"n": 56,
+"n": 60,
 "id": "b5task1",
 "kind": "task",
 "title": "Your turn 1.7",
@@ -1894,7 +1895,7 @@
 ]
 },
 {
-"n": 57,
+"n": 61,
 "id": "b5t2",
 "kind": "term",
 "title": "Same shape. Every run.",
@@ -1913,7 +1914,7 @@
 ]
 },
 {
-"n": 58,
+"n": 62,
 "id": "b5chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1934,7 +1935,7 @@
 ]
 },
 {
-"n": 59,
+"n": 63,
 "id": "b5pp2",
 "kind": "player",
 "title": "Demo 1.7 · playback",
@@ -2008,7 +2009,7 @@
 ]
 },
 {
-"n": 60,
+"n": 64,
 "id": "b5map",
 "kind": "table",
 "title": "Input and output in other tools.",
@@ -2035,7 +2036,7 @@
 "chrome": []
 },
 {
-"n": 61,
+"n": 65,
 "id": "b5task2",
 "kind": "task",
 "title": "Your turn 1.8",
@@ -2090,7 +2091,7 @@
 ]
 },
 {
-"n": 62,
+"n": 66,
 "id": "b6story",
 "kind": "story",
 "title": "Lesson 6 · Build: Package",
@@ -2109,7 +2110,7 @@
 ]
 },
 {
-"n": 63,
+"n": 67,
 "id": "b6t1",
 "kind": "term",
 "title": "From your desk to the firm's manual.",
@@ -2128,7 +2129,7 @@
 ]
 },
 {
-"n": 64,
+"n": 68,
 "id": "b6chk",
 "kind": "check",
 "title": "Quick check",
@@ -2149,7 +2150,7 @@
 ]
 },
 {
-"n": 65,
+"n": 69,
 "id": "b6pp",
 "kind": "player",
 "title": "Demo 1.8 · playback",
@@ -2222,7 +2223,7 @@
 ]
 },
 {
-"n": 66,
+"n": 70,
 "id": "b6map",
 "kind": "table",
 "title": "A packaged method in other tools.",
@@ -2244,7 +2245,7 @@
 "chrome": []
 },
 {
-"n": 67,
+"n": 71,
 "id": "b6chk2",
 "kind": "check",
 "title": "Quick check",
@@ -2265,7 +2266,7 @@
 ]
 },
 {
-"n": 68,
+"n": 72,
 "id": "b6task",
 "kind": "task",
 "title": "Your turn 1.9",
@@ -2285,7 +2286,7 @@
 "In your Project, ask Claude to turn your instructions into a skill. Save it.",
 "Open a new chat outside the Project. Attach your pack and ask for the task in one line.",
 "Check that Claude uses your skill and returns the same shape.",
-"Use the transfer map. Add one line to your Agent Card: where this skill would live in ChatGPT, Copilot or Gemini.",
+"Use the Package row on the transfer slide or the cheat sheet. Add one line to your Agent Card: where this skill would live in ChatGPT, Copilot or Gemini.",
 "Make the skill",
 "Turn the instructions and knowledge of this Project into a skill named [your-skill-name]. Keep every rule word for word. Describe when to use it in one line.",
 "Test it in a new chat",
@@ -2322,7 +2323,7 @@
 ]
 },
 {
-"n": 69,
+"n": 73,
 "id": "b6task2",
 "kind": "task",
 "title": "Your turn 1.10",
@@ -2375,7 +2376,7 @@
 ]
 },
 {
-"n": 70,
+"n": 74,
 "id": "b7show",
 "kind": "timer",
 "title": "Four teams. Ninety seconds each person.",
@@ -2394,7 +2395,7 @@
 ]
 },
 {
-"n": 71,
+"n": 75,
 "id": "b7demo",
 "kind": "player",
 "title": "Demo 1.9 · playback",
@@ -2465,7 +2466,50 @@
 ]
 },
 {
-"n": 72,
+"n": 76,
+"id": "b7map",
+"kind": "table",
+"title": "Same building blocks, different names.",
+"topic": "b7",
+"kit": [
+"Lesson 7 · the transfer map",
+"Same building blocks, different names.",
+"Learn the method once. The card works in any tool.",
+"Agent Card box",
+"Claude (today)",
+"ChatGPT",
+"Microsoft 365 Copilot",
+"Gemini",
+"Instruction: saved rules and files",
+"Project",
+"Project or custom GPT",
+"Agent (Agent Builder) or Notebook",
+"Gem",
+"Input: reach your files and email",
+"Connectors",
+"Apps (formerly connectors)",
+"Work data in SharePoint, OneDrive, Outlook",
+"Connected apps (Gmail, Drive, Docs)",
+"Output: a file you open and edit",
+"Artifact or file",
+"Canvas",
+"Copilot Page",
+"Canvas",
+"Package: a reusable method",
+"Skill",
+"Skill (beta) or custom GPT",
+"Agent",
+"Gem",
+"When: runs on its own",
+"Scheduled task",
+"Scheduled task",
+"Scheduled prompt",
+"Scheduled action"
+],
+"chrome": []
+},
+{
+"n": 77,
 "id": "w1",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -2490,7 +2534,7 @@
 ]
 },
 {
-"n": 73,
+"n": 78,
 "id": "close1",
 "kind": "close",
 "title": "Close",

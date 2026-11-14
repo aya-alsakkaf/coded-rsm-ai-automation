@@ -1,19 +1,35 @@
 [
 {
 "say": "Over two days you will build an agent for a task you repeat every week, and make it run on its own.",
-"do": "Welcome the room. Introduce yourself and CODED in one minute.",
+"do": "Leave this slide up while people arrive and open their laptops. Press → at 08:30.",
 "expect": null,
-"silent": "ask who has used any AI tool at work this week.",
+"silent": null,
 "fallback": null,
 "more": [
-"Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:55. Prayer room and toilets.",
-"Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room."
+"The next slide introduces CODED and you."
 ],
 "time": "08:30 · cover",
 "t": "open",
 "k": "cover",
 "h": "Cover: welcome",
-"flat": "08:30 · cover. · Do: Welcome the room. Introduce yourself and CODED in one minute. · Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:55. Prayer room and toilets. · Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room. · If the room is silent: ask who has used any AI tool at work this week. · Say: “Over two days you will build an agent for a task you repeat every week, and make it run on its own.”"
+"flat": "08:30 · cover. · Do: Leave this slide up while people arrive and open their laptops. Press → at 08:30. · The next slide introduces CODED and you. · Say: “Over two days you will build an agent for a task you repeat every week, and make it run on its own.”"
+},
+{
+"say": "We teach by building. You do the work on your laptop, and we walk the room.",
+"do": "Introduce yourself in one minute: your name, your role at CODED, and one way you use AI every week.",
+"expect": null,
+"silent": "ask who has used any AI tool at work this week.",
+"fallback": null,
+"more": [
+"Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:55. Prayer room and toilets.",
+"Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room.",
+"The pre-MAP test is the next slide."
+],
+"time": "08:30-08:35",
+"t": "open",
+"k": "cards",
+"h": "Welcome to CODED.",
+"flat": "08:30-08:35. · Do: Introduce yourself in one minute: your name, your role at CODED, and one way you use AI every week. · Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:55. Prayer room and toilets. · Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room. · The pre-MAP test is the next slide. · If the room is silent: ask who has used any AI tool at work this week. · Say: “We teach by building. You do the work on your laptop, and we walk the room.”"
 },
 {
 "say": "Answer honestly. If you are not sure, pick your best guess. This measures the workshop, not you.",
@@ -31,39 +47,6 @@
 "k": "map",
 "h": "MAP test (before)",
 "flat": "10 min. · Do: Phones only. No notes, no search, no AI. It is not graded. · Leave the slide up while they scan. The same link is on the workshop home and the day page. · This is also the pre-flight check: help anyone whose phone does not open the link. · Check the response count in the portal before you move on. · Fallback: read out the short link (/pre) if a phone cannot scan. · Say: “Answer honestly. If you are not sure, pick your best guess. This measures the workshop, not you.”"
-},
-{
-"say": null,
-"do": "Read the story aloud. Ask what they would type.",
-"expect": "Short answers, like a question about the invoice.",
-"silent": "Say what most people type: a short question, like Dana.",
-"fallback": null,
-"more": [],
-"time": "08:45-08:52",
-"t": "open",
-"k": "story",
-"h": "Opener · one invoice",
-"flat": "08:45-08:52. · Do: Read the story aloud. Ask what they would type. · Expect: Short answers, like a question about the invoice. · If the room is silent: Say what most people type: a short question, like Dana."
-},
-{
-"say": "Same tool, same invoice. I only changed the request.",
-"do": "Press → through the steps.",
-"expect": null,
-"silent": "ask before the parts: could the weak answer go into a working paper?",
-"fallback": null,
-"more": [
-"Step 1: the same invoice in both windows.",
-"Steps 2 and 3: the weak request and its answer. Read the red flags aloud.",
-"Steps 4 to 8: Role, Steps, Rules, Format, When unsure, one per press. Ask what each part adds.",
-"Then the strong answer: point at the exact amount and the Not found.",
-"Then the scorecard and the lesson.",
-"Optional: run both live in two windows (prompt sheet, Demo 1.0)."
-],
-"time": "5 min",
-"t": "open",
-"k": "showcase",
-"h": "Opener: weak and strong prompt",
-"flat": "5 min. · Do: Press → through the steps. · Step 1: the same invoice in both windows. · Steps 2 and 3: the weak request and its answer. Read the red flags aloud. · Steps 4 to 8: Role, Steps, Rules, Format, When unsure, one per press. Ask what each part adds. · Then the strong answer: point at the exact amount and the Not found. · Then the scorecard and the lesson. · Optional: run both live in two windows (prompt sheet, Demo 1.0). · If the room is silent: ask before the parts: could the weak answer go into a working paper? · Say: “Same tool, same invoice. I only changed the request.”"
 },
 {
 "say": "These are the things you will do yourself today, on fictional files.",
@@ -100,15 +83,32 @@
 "more": [
 "Two minutes for the poll, then move on."
 ],
-"time": "08:52-09:20",
+"time": "08:50-09:20",
 "t": "b1",
 "k": "story",
 "h": "Lesson 1 · AI foundations",
-"flat": "08:52-09:20. · Do: Run the live poll on the shared board: which AI tools did you use this month, and for what? Read three answers aloud. · Expect: ChatGPT, Copilot, some Claude; emails, summaries, Excel help. · Two minutes for the poll, then move on. · If the room is silent: share your own answer first."
+"flat": "08:50-09:20. · Do: Run the live poll on the shared board: which AI tools did you use this month, and for what? Read three answers aloud. · Expect: ChatGPT, Copilot, some Claude; emails, summaries, Excel help. · Two minutes for the poll, then move on. · If the room is silent: share your own answer first."
+},
+{
+"say": "There are no wrong answers here. First, what does this room think?",
+"do": "Click the search bar. Ask the room: what is AI? Type each answer as people say it and press Enter.",
+"expect": "A chatbot, a search engine, a robot, something that thinks, ChatGPT, automation.",
+"silent": "type the first answer yourself: a smart search engine. Ask if anyone agrees.",
+"fallback": null,
+"more": [
+"The same answer twice shows ×2 on its chip. Click a chip to remove a typo. Clear empties the board.",
+"Press Esc to leave the search bar, then → to move on. With the bar empty, → and ← still move slides.",
+"Do not correct anyone yet. The next three slides answer the question. The answers stay until the page reloads, so you can come back here."
+],
+"time": "4 min",
+"t": "b1",
+"k": "ask",
+"h": "What is AI?",
+"flat": "4 min. · Do: Click the search bar. Ask the room: what is AI? Type each answer as people say it and press Enter. · Expect: A chatbot, a search engine, a robot, something that thinks, ChatGPT, automation. · The same answer twice shows ×2 on its chip. Click a chip to remove a typo. Clear empties the board. · Press Esc to leave the search bar, then → to move on. With the bar empty, → and ← still move slides. · Do not correct anyone yet. The next three slides answer the question. The answers stay until the page reloads, so you can come back here. · If the room is silent: type the first answer yourself: a smart search engine. Ask if anyone agrees. · Say: “There are no wrong answers here. First, what does this room think?”"
 },
 {
 "say": "Treat it like a talented new joiner. Useful from day one, reviewed every time.",
-"do": "Ask: what would you check first in a new joiner's first working paper?",
+"do": "Point back to the room's answers: which of them fit this picture? Then ask: what would you check first in a new joiner's first working paper?",
 "expect": "The figures and the sources.",
 "silent": "say you would tick every figure.",
 "fallback": null,
@@ -117,7 +117,7 @@
 "t": "b1",
 "k": "scene",
 "h": "A very well-read new joiner.",
-"flat": "Do: Ask: what would you check first in a new joiner's first working paper? · Expect: The figures and the sources. · If the room is silent: say you would tick every figure. · Say: “Treat it like a talented new joiner. Useful from day one, reviewed every time.”"
+"flat": "Do: Point back to the room's answers: which of them fit this picture? Then ask: what would you check first in a new joiner's first working paper? · Expect: The figures and the sources. · If the room is silent: say you would tick every figure. · Say: “Treat it like a talented new joiner. Useful from day one, reviewed every time.”"
 },
 {
 "say": null,
@@ -163,20 +163,34 @@
 "flat": "Do: Ask: where in audit work would a wrong figure hurt most? · Expect: Reconciliations, confirmations, the report. · If the room is silent: say: in a working paper your supervisor signs."
 },
 {
-"say": "It reads well and it is wrong in one place. Only the source tells you which place.",
-"do": "Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud.",
-"expect": "Four rows right, one wrong: WDS-20931 shows the figure of another Wafra line.",
-"silent": null,
-"fallback": "Show the backup table: the wrong row is WDS-20931.",
+"say": "The tool never signs. You do.",
+"do": "Tell each case in about one minute. Then ask: who paid for the mistake, the tool or the people?",
+"expect": "The lawyers and the airline. Nobody blames the tool.",
+"silent": "ask: whose name goes on a working paper, yours or Claude's?",
+"fallback": null,
 "more": [
-"This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words.",
-"If your live run is right on every row, say: right this time, and you only know because you ticked it against page 2. Then play this slide."
+"Case 1: the lawyer asked ChatGPT if the cases were real, and it said yes. The judge also made them write to each real judge whose name was on a fake decision.",
+"Case 2: Air Canada argued the chatbot was a separate legal entity. The tribunal rejected this and ordered the airline to pay about CA$812.",
+"Optional, close to audit work: in October 2025 Deloitte Australia refunded part of a AU$440,000 government fee. Its report had made-up references and a made-up quote from a court judgment. The revised report says a generative AI tool was used."
 ],
-"time": "3 to 4 min",
+"time": "4 min",
 "t": "b1",
-"k": "player",
-"h": "Prompt playback, Demo 1.1: Where it goes wrong",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: Four rows right, one wrong: WDS-20931 shows the figure of another Wafra line. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · If your live run is right on every row, say: right this time, and you only know because you ticked it against page 2. Then play this slide. · Fallback: Show the backup table: the wrong row is WDS-20931. · Say: “It reads well and it is wrong in one place. Only the source tells you which place.”"
+"k": "cards",
+"h": "Confident, fluent and made up.",
+"flat": "4 min. · Do: Tell each case in about one minute. Then ask: who paid for the mistake, the tool or the people? · Expect: The lawyers and the airline. Nobody blames the tool. · Case 1: the lawyer asked ChatGPT if the cases were real, and it said yes. The judge also made them write to each real judge whose name was on a fake decision. · Case 2: Air Canada argued the chatbot was a separate legal entity. The tribunal rejected this and ordered the airline to pay about CA$812. · Optional, close to audit work: in October 2025 Deloitte Australia refunded part of a AU$440,000 government fee. Its report had made-up references and a made-up quote from a court judgment. The revised report says a generative AI tool was used. · If the room is silent: ask: whose name goes on a working paper, yours or Claude's? · Say: “The tool never signs. You do.”"
+},
+{
+"say": null,
+"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"expect": "Option A.",
+"silent": "ask one table to choose together, then tap their choice.",
+"fallback": null,
+"more": [],
+"time": "1 min",
+"t": "b1",
+"k": "check",
+"h": "Quick check",
+"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · If the room is silent: ask one table to choose together, then tap their choice."
 },
 {
 "say": null,
@@ -210,40 +224,14 @@
 "expect": "Mostly family 1, some family 2.",
 "silent": "say which one you use most and why.",
 "fallback": null,
-"more": [],
+"more": [
+"Keep it short. The full map of Claude features in other tools comes at the end of the day, after they have used each one."
+],
 "time": null,
 "t": "b1",
 "k": "cards",
 "h": "Three families of AI tools.",
-"flat": "Do: Ask which family each person used this week. · Expect: Mostly family 1, some family 2. · If the room is silent: say which one you use most and why."
-},
-{
-"say": null,
-"do": "Read one row across. Ask: which tool does RSM use today?",
-"expect": "Copilot or ChatGPT for some; the card still applies.",
-"silent": "read the Package row: skill, custom GPT, agent, Gem.",
-"fallback": null,
-"more": [
-"Feature names change often; the site has the sources and the date checked."
-],
-"time": null,
-"t": "b1",
-"k": "table",
-"h": "Same building blocks, different names.",
-"flat": "Do: Read one row across. Ask: which tool does RSM use today? · Expect: Copilot or ChatGPT for some; the card still applies. · Feature names change often; the site has the sources and the date checked. · If the room is silent: read the Package row: skill, custom GPT, agent, Gem."
-},
-{
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
-"expect": "Option A.",
-"silent": "ask one table to choose together, then tap their choice.",
-"fallback": null,
-"more": [],
-"time": "1 min",
-"t": "b1",
-"k": "check",
-"h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "Do: Ask which family each person used this week. · Expect: Mostly family 1, some family 2. · Keep it short. The full map of Claude features in other tools comes at the end of the day, after they have used each one. · If the room is silent: say which one you use most and why."
 },
 {
 "say": null,
@@ -294,17 +282,17 @@
 "silent": null,
 "fallback": "If Claude is slow, pairs share one laptop. Show the backup table in the debrief.",
 "more": [
-"Give the hint at about 6 min.",
+"Give the hint at about 5 min.",
 "Fast finishers have an extra task on the slide."
 ],
-"time": "18 min work, then share",
+"time": "15 min work, then share",
 "t": "b2",
 "k": "task",
-"h": "Your turn 1.2: Same task, 18 answers (18 min, on your own, then in pairs)",
-"flat": "18 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: Tables that differ: different columns and different totals. Many miss one of the two problems: SCC-0718 (ledger 1,284.500, invoice 1,248.500) or FSC-3390 (not in the October ledger). · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: If Claude is slow, pairs share one laptop. Show the backup table in the debrief. · Say: “Same files, same tool, 18 people. Count how many different tables we get.”"
+"h": "Your turn 1.2: Same task, 18 answers (15 min, on your own, then in pairs)",
+"flat": "15 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: Tables that differ: different columns and different totals. Many miss one of the two problems: SCC-0718 (ledger 1,284.500, invoice 1,248.500) or FSC-3390 (not in the October ledger). · Give the hint at about 5 min. · Fast finishers have an extra task on the slide. · Fallback: If Claude is slow, pairs share one laptop. Show the backup table in the debrief. · Say: “Same files, same tool, 18 people. Count how many different tables we get.”"
 },
 {
-"say": "Nothing changed except the chat. That is the problem we solve today.",
+"say": "Two things changed the tables: the request and the chat. We fix the request first.",
 "do": "First show three contrasting tables from the room. Then this slide.",
 "expect": "People see that only the chat changed: same prompt, same files.",
 "silent": "ask: which chat would you trust?",
@@ -314,7 +302,68 @@
 "t": "b2",
 "k": "table",
 "h": "The answer depended on the chat.",
-"flat": "Do: First show three contrasting tables from the room. Then this slide. · Expect: People see that only the chat changed: same prompt, same files. · If the room is silent: ask: which chat would you trust? · Say: “Nothing changed except the chat. That is the problem we solve today.”"
+"flat": "Do: First show three contrasting tables from the room. Then this slide. · Expect: People see that only the chat changed: same prompt, same files. · If the room is silent: ask: which chat would you trust? · Say: “Two things changed the tables: the request and the chat. We fix the request first.”"
+},
+{
+"say": null,
+"do": "Ask: what did your Task 1.2 request leave out?",
+"expect": "The columns, what counts as a difference, what to do when a row is missing.",
+"silent": "read one short request from the room and ask what it does not say.",
+"fallback": null,
+"more": [],
+"time": null,
+"t": "b2",
+"k": "term",
+"h": "A better request. A better result.",
+"flat": "Do: Ask: what did your Task 1.2 request leave out? · Expect: The columns, what counts as a difference, what to do when a row is missing. · If the room is silent: read one short request from the room and ask what it does not say."
+},
+{
+"say": "Same tool, same invoice. I only changed the request.",
+"do": "Press → through the steps.",
+"expect": null,
+"silent": "ask before the parts: could the weak answer go into a working paper?",
+"fallback": null,
+"more": [
+"Step 1: the same invoice in both windows.",
+"Steps 2 and 3: the weak request and its answer. Read the red flags aloud.",
+"Steps 4 to 8: Role, Steps, Rules, Format, When unsure, one per press. Ask what each part adds.",
+"Then the strong answer: point at the exact amount and the Not found.",
+"Then the scorecard and the lesson.",
+"Optional: run both live in two windows (prompt sheet, Demo 1.1)."
+],
+"time": "5 min",
+"t": "b2",
+"k": "showcase",
+"h": "Demo 1.1: weak and strong prompt",
+"flat": "5 min. · Do: Press → through the steps. · Step 1: the same invoice in both windows. · Steps 2 and 3: the weak request and its answer. Read the red flags aloud. · Steps 4 to 8: Role, Steps, Rules, Format, When unsure, one per press. Ask what each part adds. · Then the strong answer: point at the exact amount and the Not found. · Then the scorecard and the lesson. · Optional: run both live in two windows (prompt sheet, Demo 1.1). · If the room is silent: ask before the parts: could the weak answer go into a working paper? · Say: “Same tool, same invoice. I only changed the request.”"
+},
+{
+"say": null,
+"do": "Map each part to the strong request you just saw.",
+"expect": "People say When unsure is the part they never write.",
+"silent": "ask: which part was missing from your own Task 1.2 request?",
+"fallback": null,
+"more": [
+"If the room is fast: two people rewrite their Task 1.2 request with the five parts and run it again, then compare it with their first table."
+],
+"time": null,
+"t": "b2",
+"k": "list",
+"h": "Five parts of a good prompt.",
+"flat": "Do: Map each part to the strong request you just saw. · Expect: People say When unsure is the part they never write. · If the room is fast: two people rewrite their Task 1.2 request with the five parts and run it again, then compare it with their first table. · If the room is silent: ask: which part was missing from your own Task 1.2 request?"
+},
+{
+"say": null,
+"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"expect": "Option B.",
+"silent": "ask one table to choose together, then tap their choice.",
+"fallback": null,
+"more": [],
+"time": "1 min",
+"t": "b2",
+"k": "check",
+"h": "Quick check",
+"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
 },
 {
 "say": null,
@@ -341,6 +390,19 @@
 "k": "check",
 "h": "Quick check",
 "flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+},
+{
+"say": null,
+"do": "Link each part to the day: saved instructions in Lessons 3 and 4, files and a fixed output in Lesson 5, running without you on Day 2.",
+"expect": "Some say an agent is a robot or a chatbot. Say: it is a saved method that can reach the files.",
+"silent": "say: think of a trained associate with a written procedure and the client file.",
+"fallback": null,
+"more": [],
+"time": null,
+"t": "b2",
+"k": "term",
+"h": "From a chat to an agent.",
+"flat": "Do: Link each part to the day: saved instructions in Lessons 3 and 4, files and a fixed output in Lesson 5, running without you on Day 2. · Expect: Some say an agent is a robot or a chatbot. Say: it is a saved method that can reach the files. · If the room is silent: say: think of a trained associate with a written procedure and the client file."
 },
 {
 "say": null,
@@ -390,14 +452,14 @@
 "silent": null,
 "fallback": "Anyone stuck starts from Dana's list on the slide and changes it to their own work.",
 "more": [
-"Give the hint at about 4 min.",
+"Give the hint at about 3 min.",
 "Fast finishers have an extra task on the slide."
 ],
-"time": "12 min work, then share",
+"time": "10 min work, then share",
 "t": "b2",
 "k": "task",
-"h": "Your turn 1.3: Your task inventory (12 min, on your own)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: 10 tasks, tagged; a top 3; one task on the shared board under the right department. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone stuck starts from Dana's list on the slide and changes it to their own work. · Say: “Preparers: what do you rebuild on every engagement? Reviewers: what do you check every time? Coordinators: what do you chase every week, from requests to new-client KYC files?”"
+"h": "Your turn 1.3: Your task inventory (10 min, on your own)",
+"flat": "10 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: 10 tasks, tagged; a top 3; one task on the shared board under the right department. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone stuck starts from Dana's list on the slide and changes it to their own work. · Say: “Preparers: what do you rebuild on every engagement? Reviewers: what do you check every time? Coordinators: what do you chase every week, from requests to new-client KYC files?”"
 },
 {
 "say": null,
@@ -409,11 +471,11 @@
 "Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3.",
 "Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance."
 ],
-"time": "3 min",
+"time": "2 min",
 "t": "b2",
 "k": "timer",
 "h": "What repeats across departments?",
-"flat": "3 min. · Do: Read the clusters aloud. Name the tasks that appear in more than one department. · Expect: Reconciliations, chasing documents, status reports. · Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3. · Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance. · If the room is silent: read the Support column first: it shows what the coordinators chase."
+"flat": "2 min. · Do: Read the clusters aloud. Name the tasks that appear in more than one department. · Expect: Reconciliations, chasing documents, status reports. · Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3. · Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance. · If the room is silent: read the Support column first: it shows what the coordinators chase."
 },
 {
 "say": null,
@@ -635,7 +697,7 @@
 },
 {
 "say": null,
-"do": "Map each part to Dana's card.",
+"do": "Link back to Demo 1.1: the same five parts, now saved as the agent's instructions. Map each part to Dana's card.",
 "expect": "When unsure is the part people miss.",
 "silent": "ask: which part would have saved Dana's PO?",
 "fallback": null,
@@ -644,7 +706,7 @@
 "t": "b4",
 "k": "table",
 "h": "Five parts. Every instruction.",
-"flat": "Do: Map each part to Dana's card. · Expect: When unsure is the part people miss. · If the room is silent: ask: which part would have saved Dana's PO?"
+"flat": "Do: Link back to Demo 1.1: the same five parts, now saved as the agent's instructions. Map each part to Dana's card. · Expect: When unsure is the part people miss. · If the room is silent: ask: which part would have saved Dana's PO?"
 },
 {
 "say": null,
@@ -995,6 +1057,22 @@
 "k": "player",
 "h": "Prompt playback, Demo 1.9: The agent that ran itself",
 "flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: At 16:25, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · Fallback: If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. · Say: “Nobody pressed Send. This is tomorrow.”"
+},
+{
+"say": null,
+"do": "Read one row across. You used the first four rows today; tomorrow fills the When row. Ask: which tool does RSM use today?",
+"expect": "Copilot or ChatGPT for some; the card still applies.",
+"silent": "read the Package row: skill, custom GPT, agent, Gem.",
+"fallback": null,
+"more": [
+"Feature names change often; the site has the sources and the date checked.",
+"The same map is on the cheat sheet."
+],
+"time": "2 min",
+"t": "b7",
+"k": "table",
+"h": "Same building blocks, different names.",
+"flat": "2 min. · Do: Read one row across. You used the first four rows today; tomorrow fills the When row. Ask: which tool does RSM use today? · Expect: Copilot or ChatGPT for some; the card still applies. · Feature names change often; the site has the sources and the date checked. · The same map is on the cheat sheet. · If the room is silent: read the Package row: skill, custom GPT, agent, Gem."
 },
 {
 "say": null,

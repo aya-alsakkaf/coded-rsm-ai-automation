@@ -23,7 +23,7 @@ INVOICES = [
     ("FSC-3390", "Fintas Spice Co.", "2026-10-27", "PO-2230", 742.125, "Spice blends"),
 ]
 INV = {r[0]: r for r in INVOICES}
-OPENER_INV = INVOICES[0]                     # Demo 1.0: no PO number on it
+OPENER_INV = INVOICES[0]                     # Demo 1.1 (weak and strong request): no PO number on it
 WRONG_INV, WRONG_LEDGER = "SCC-0718", 1284.500  # posted at 1,284.500 (digits swapped)
 WRONG_DIFF = round(WRONG_LEDGER - INV[WRONG_INV][4], 3)   # 36.000
 CUTOFF_INV, CUTOFF_POSTED = "FSC-3390", "2026-11-03"     # dated 27 October, posted in November
@@ -61,8 +61,8 @@ TEMPLATE_HEAD = ["Invoice no.", "Supplier", "Invoice date", "PO no.", "Invoice a
 TEMPLATE_EXAMPLE = ["EX-0001", "Example Supplier W.L.L.", "2026-09-30", "PO-0000", "1,000.000", "1,000.000", "0.000", "Matched", "Example row: delete it"]
 STATUSES = ["Matched", "Amount differs", "Not in ledger", "Not found"]
 
-# what a weak chat answer typically gets wrong (Demo 1.1 and the Task 1.2 debrief)
-AI_WRONG = ("WDS-20931", 2240.000)           # Demo 1.1: the AI took the amount of the other Wafra line (WDS-20988), not a Task 1.2 problem
+# what a weak chat answer typically gets wrong (the Lesson 1 quick check after the two real cases)
+AI_WRONG = ("WDS-20931", 2240.000)           # the AI took the amount of the other Wafra line (WDS-20988), not a Task 1.2 problem
 
 # ------------------------------------------------------------------ Task 1.1: the engagement letter (planted: no section on management's responsibilities)
 LETTER_DATE = "7 September 2026"

@@ -11,12 +11,12 @@ Generated from `_source/kit/` by `_source/tools/class_plan.py`. Do not edit by h
 
 | Time | Block | Minutes | What happens |
 |---|---|---|---|
-| 08:30-08:35 | Welcome and sign-in check | 5 | Open claude.ai and the workshop site |
+| 08:30-08:35 | Welcome to CODED | 5 | Who we are, your trainer, and the sign-in check |
 | 08:35-08:45 | Pre-MAP test | 10 | 10 minutes. Scan the QR code. It also checks your phone |
-| 08:45-08:52 | Opener: one invoice, two requests | 7 | The same invoice, a weak and a five-part request |
-| 08:52-09:20 | Lesson 1 · AI foundations | 28 | What AI is, where it fails, the tools, the transfer map · Task 1.1 |
+| 08:45-08:50 | Outcomes and today's map | 5 | What you will be able to do by 16:30 |
+| 08:50-09:20 | Lesson 1 · AI foundations | 30 | What AI is, where it fails, two real cases, the tools · Task 1.1 |
 | 09:20-09:30 | Break | 10 | Break |
-| 09:30-10:20 | Lesson 2 · Why chat isn't enough, and finding the work | 50 | Same task, 18 answers · your task inventory · Tasks 1.2 and 1.3 |
+| 09:30-10:20 | Lesson 2 · Why chat isn't enough, and finding the work | 50 | Same task, 18 answers · a good prompt · what an agent is · Tasks 1.2 and 1.3 |
 | 10:20-10:30 | Break | 10 | Break |
 | 10:30-11:30 | Lesson 3 · Design the agent, then pick your case | 60 | The Agent Card and Projects · Tasks 1.4 and 1.5 |
 | 11:30-12:30 | Lunch and Dhuhr prayer | 60 | Break |
@@ -26,15 +26,15 @@ Generated from `_source/kit/` by `_source/tools/class_plan.py`. Do not edit by h
 | 14:55-15:15 | Asr prayer and break | 20 | Break |
 | 15:15-16:00 | Lesson 6 · Build: Package | 45 | Skills, the messy sample and the clock · Tasks 1.9 and 1.10 |
 | 16:00-16:10 | Break | 10 | Break |
-| 16:10-16:30 | Lesson 7 · Show and tell, and the Day 2 hook | 20 | Team demos and the agent that ran itself |
+| 16:10-16:30 | Lesson 7 · Show and tell, and the Day 2 hook | 20 | Team demos, the agent that ran itself, the transfer map |
 
 Teaching minutes: 360.
 
 | Task | Title | Minutes | Who | Files | Deliverable |
 |---|---|---|---|---|---|
 | 1.1 | First Claude chat | 7 | on your own | abdali-engagement-letter-2026.docx | Three answers from Claude, one of them ticked against the letter. |
-| 1.2 | Same task, 18 answers | 18 | on your own, then in pairs | abdali-supplier-invoices-oct-2026.pdf, abdali-purchase-ledger-oct-2026.xlsx | Your own reconciliation table, compared with a neighbor's. |
-| 1.3 | Your task inventory | 12 | on your own | your own work | 10 tasks tagged, your top 3, and the strongest one on the shared board. |
+| 1.2 | Same task, 18 answers | 15 | on your own, then in pairs | abdali-supplier-invoices-oct-2026.pdf, abdali-purchase-ledger-oct-2026.xlsx | Your own reconciliation table, compared with a neighbor's. |
+| 1.3 | Your task inventory | 10 | on your own | your own work | 10 tasks tagged, your top 3, and the strongest one on the shared board. |
 | 1.4 | Build the invoice agent with me | 20 | on your own, with the trainer | abdali-supplier-invoices-oct-2026.pdf, abdali-purchase-ledger-oct-2026.xlsx, mirqab-invoice-match-template.xlsx | A Project named Mirqab invoice match and a table that flags both problems. |
 | 1.5 | Write your Agent Card v1 | 20 | on your own | your own work | An approved Agent Card v1 on the shared board. |
 | 1.6 | Build v1 of your agent | 65 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | Your own Project, right on the three items you checked by hand. |

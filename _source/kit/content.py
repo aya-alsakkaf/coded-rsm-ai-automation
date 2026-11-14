@@ -40,14 +40,14 @@ OUTCOMES = ["I can explain what generative AI does well and where it can be wron
 DAYS = {
 1: {"title": "Designing AI Agents for Real Work", "claim": "One card, one Project, one agent you can trust.",
     "sub": "Find the task that repeats every week, describe it as an Agent Card, and build it in Claude, one box at a time.",
-    "brief": "Day 1 starts with what AI is and where it fails. Then 18 people do the same task and get 18 different tables. You find the tasks worth an agent, write an Agent Card, and build your own agent in Claude: a Project, a Drive folder, a fixed-shape output and a skill.",
+    "brief": "Day 1 starts with what AI is and where it fails, with two real cases. Then 18 people do the same task and get 18 different tables. You learn to write a good prompt and what an agent is, find the tasks worth an agent, write an Agent Card, and build your own agent in Claude: a Project, a Drive folder, a fixed-shape output and a skill.",
     "artifact": "Your own agent: an Agent Card, a Project, a connected folder, a fixed-shape output and a skill",
-    "blocks": [("08:30-08:35", "Welcome and sign-in check", "Open claude.ai and the workshop site"),
+    "blocks": [("08:30-08:35", "Welcome to CODED", "Who we are, your trainer, and the sign-in check"),
                ("08:35-08:45", "Pre-MAP test", "10 minutes. Scan the QR code. It also checks your phone"),
-               ("08:45-08:52", "Opener: one invoice, two requests", "The same invoice, a weak and a five-part request"),
-               ("08:52-09:20", "Lesson 1 · AI foundations", "What AI is, where it fails, the tools, the transfer map · Task 1.1"),
+               ("08:45-08:50", "Outcomes and today's map", "What you will be able to do by 16:30"),
+               ("08:50-09:20", "Lesson 1 · AI foundations", "What AI is, where it fails, two real cases, the tools · Task 1.1"),
                ("09:20-09:30", "Break", ""),
-               ("09:30-10:20", "Lesson 2 · Why chat isn't enough, and finding the work", "Same task, 18 answers · your task inventory · Tasks 1.2 and 1.3"),
+               ("09:30-10:20", "Lesson 2 · Why chat isn't enough, and finding the work", "Same task, 18 answers · a good prompt · what an agent is · Tasks 1.2 and 1.3"),
                ("10:20-10:30", "Break", ""),
                ("10:30-11:30", "Lesson 3 · Design the agent, then pick your case", "The Agent Card and Projects · Tasks 1.4 and 1.5"),
                ("11:30-12:30", "Lunch and Dhuhr prayer", ""),
@@ -57,8 +57,9 @@ DAYS = {
                ("14:55-15:15", "Asr prayer and break", ""),
                ("15:15-16:00", "Lesson 6 · Build: Package", "Skills, the messy sample and the clock · Tasks 1.9 and 1.10"),
                ("16:00-16:10", "Break", ""),
-               ("16:10-16:30", "Lesson 7 · Show and tell, and the Day 2 hook", "Team demos and the agent that ran itself")],
+               ("16:10-16:30", "Lesson 7 · Show and tell, and the Day 2 hook", "Team demos, the agent that ran itself, the transfer map")],
     "outcomes": ["Explain why AI can give a <b>confident figure that is wrong</b>, and tick it against the source.",
+                 "Write a <b>five-part prompt</b> that gets an exact, checkable answer.",
                  "Find the tasks in your work that suit an agent, and write an <b>Agent Card</b>.",
                  "Build a <b>Claude Project</b> that gives the same, checkable table every run.",
                  "Read from a <b>Drive folder</b> and return a <b>fixed-shape output</b>.",
@@ -108,7 +109,7 @@ LLM_TREE = {
 LLM = {"tree": LLM_TREE, "foot": "Percentages are illustrative."}
 SORT_LABELS = {"green": "Green · go ahead", "amber": "Amber · approved account, no names", "red": "Red · never"}
 
-# ------------------------------------------------------------------ the transfer map (Lesson 1, every build lesson, the cheat sheet)
+# ------------------------------------------------------------------ the transfer map (every build lesson, the end of Day 1, the cheat sheet)
 TRANSFER_HEAD = ["Agent Card box", "Claude (today)", "ChatGPT", "Microsoft 365 Copilot", "Gemini"]
 TRANSFER = [["Instruction: saved rules and files", "Project", "Project or custom GPT", "Agent (Agent Builder) or Notebook", "Gem"],
             ["Input: reach your files and email", "Connectors", "Apps (formerly connectors)", "Work data in SharePoint, OneDrive, Outlook", "Connected apps (Gmail, Drive, Docs)"],
@@ -128,7 +129,7 @@ MAP = [
   "a": 0, "day": 1, "topic": "Where AI fails", "where": "Day 1 · Lesson 1 · where it fails, and Task 1.1"},
  {"q": "Every month, three coordinators turn the same client emails into a request tracker, each in their own chat. Their trackers never look the same. What fixes this best?",
   "o": ["Each coordinator writes a longer, more detailed prompt", "Ask Claude to be careful and check its work twice", "Save the rules and an example output in a Project", "Use a different AI tool that gives more stable answers"],
-  "a": 2, "day": 1, "topic": "Repeatable", "where": "Day 1 · Lessons 2 and 3 · repeatable, the Agent Card and Projects"},
+  "a": 2, "day": 1, "topic": "Repeatable", "where": "Day 1 · Lessons 2 and 3 · a good prompt, repeatable, the Agent Card and Projects"},
  {"q": "Which task is the best first agent for an audit team?",
   "o": ["Filling in the client-acceptance checklist once a year", "Choosing each week which findings to raise with the client", "Joining the weekly progress call with the client's finance team", "Matching each week's bank statement to the cash book"],
   "a": 3, "day": 1, "topic": "Agent-ready tasks", "where": "Day 1 · Lessons 2 and 3 · agent-ready tasks and scoring a use case"},
@@ -137,7 +138,7 @@ MAP = [
   "a": 2, "day": 1, "topic": "Rules versus input", "where": "Day 1 · Lessons 3 and 4 · knowledge versus input; the five-part instruction"},
  {"q": "Your firm later moves to Microsoft 365 Copilot. What carries over from today?",
   "o": ["The Agent Card: input, instruction, output, when", "Nothing, because every AI tool works differently", "Only the exact prompts, copied word for word", "Only the sample files and the output template"],
-  "a": 0, "day": 1, "topic": "Transfer", "where": "Day 1 · Lesson 1 · the transfer map, and every build lesson"},
+  "a": 0, "day": 1, "topic": "Transfer", "where": "Day 1 · the transfer slides in Lessons 4 to 6, and the transfer map in Lesson 7"},
  {"q": "Your agent works only when you open Claude and attach files. What lets it run each morning without you?",
   "o": ["A longer prompt that tells Claude to remember the task", "A skill, a connected input folder and a scheduled task", "A rule in the Project that says run every morning", "Sharing the Project with a colleague who presses Send"],
   "a": 1, "day": 2, "topic": "Scheduled tasks", "where": "Day 2 · Lessons 1 and 2"},
@@ -168,7 +169,7 @@ MAP_MIN = 10
 MAP_LEDE = {"before": f"{len(MAP)} questions and {len(OUTCOMES)} confidence ratings, about {MAP_MIN} minutes. The same test at the end of Day 2. Not graded. Phone only: no notes, no search, no AI."}
 
 # ------------------------------------------------------------------ the approved slide plan
-SLIDES = {1: 73, 2: 55}
+SLIDES = {1: 78, 2: 55}
 
 # ------------------------------------------------------------------ MAP tests and the final survey (the three portal drafts of this program, updated in place)
 PORTAL = "https://platform.joincoded.com/sv/"
@@ -183,7 +184,7 @@ FORMS = {
 
 # ------------------------------------------------------------------ the workshop home (hub)
 DAYS[1].update({"cat": "Design and build", "icon": "doc", "tag": "the Agent Card",
-                "bullets": ["What AI is, where it fails, and the tools it lives in", "Find the work worth an agent; write the Agent Card", "Build it in Claude: Project, connector, output, skill"]})
+                "bullets": ["What AI is, where it fails, and two real cases", "Write a good prompt; find the work worth an agent", "Build it in Claude: Project, connector, output, skill"]})
 DAYS[2].update({"cat": "Automate", "icon": "dash", "tag": "scheduled workflows",
                 "bullets": ["Trigger, steps, output and review", "A scheduled task that runs your skill on new files", "Department rules, a run log and Demo Day"]})
 HABIT = [("One card", "Input, Instruction, Output. Then When."), ("Five parts", "Role, Steps, Rules, Output format, When unsure."),
@@ -319,6 +320,14 @@ FACILITATOR = [
 LABS = {
  1: {"title": "Build your agent, step by step", "intro": "Work through the steps as the day goes. Your notes and done marks stay in this browser. Paste your card to the shared board when the trainer asks.",
      "steps": [
+        {"title": "Your first Claude chat (Task 1.1)", "do": ["Open claude.ai. Start a new chat and attach abdali-engagement-letter-2026.docx with the + button.",
+          "Ask the three questions from the prompt sheet, one at a time: a summary, every date, and what is missing.", "Check one of Claude's answers against the letter yourself."],
+         "hint": "Compare Claude's dates with the Timetable section of the letter.", "check": {"kind": "note", "label": "One answer you checked, and what the letter says"},
+         "answer": [("p", f"Dates: letter {D.LETTER_DATE}; sign and return by {D.LETTER['sign_by']}; report by {D.LETTER['report']}. Missing: a section on {D.LETTER_MISSING.lower()}.")]},
+        {"title": "Same task, 18 answers (Task 1.2)", "do": ["Start a new chat. Attach the invoice pack and the October purchase ledger.",
+          "Write your own request: a table that checks each invoice against the ledger. You have 7 minutes.", "Compare your table with your neighbor's: the columns, the totals and what each of you flagged."],
+         "hint": "Check every row against both files: number, date and amount.", "check": {"kind": "note", "label": "What your table and your neighbor's did differently"},
+         "answer": [("p", f"Tables differ in columns and totals. The right check finds two problems: SCC-0718 (invoice KWD {D.num(D.INV['SCC-0718'][4])}, ledger KWD {D.num(D.WRONG_LEDGER)}) and FSC-3390 (not in the October ledger).")]},
         {"title": "Your task inventory (Task 1.3)", "do": ["List 10 tasks from your last week.", "Tag each one: repeats weekly, clear rules, document in and document out.",
           "Preparers: what do you rebuild on every engagement? Reviewers: what do you check every time? Coordinators: what do you chase every week, such as requests or new-client KYC files?"],
          "hint": "If a task needs a meeting or a judgment call, it is not your first agent.", "check": {"kind": "note", "label": "Your top 3 tasks"},
@@ -379,12 +388,13 @@ LABS = {
 
 # ------------------------------------------------------------------ the minutes inside each session (lesson plan)
 SEGMENTS = {
- 1: [("08:30-08:52", "Opening", [("08:30", 5, "Welcome and sign-in check"), ("08:35", 10, "Pre-MAP test"), ("08:45", 7, "Opener: Demo 1.0, outcomes, today's map")]),
-     ("08:52-09:20", "Lesson 1 · AI foundations", [("08:52", 3, "Live poll and story"), ("08:55", 5, "How AI writes: the next-word widget"), ("09:00", 4, "Where it fails: Demo 1.1"),
-                                                   ("09:04", 3, "The data rule, with a check"), ("09:07", 4, "Three families of tools and the transfer map"), ("09:11", 1, "Quick check"),
+ 1: [("08:30-08:50", "Opening", [("08:30", 5, "Welcome to CODED, your trainer and the sign-in check"), ("08:35", 10, "Pre-MAP test"), ("08:45", 5, "Outcomes and today's map")]),
+     ("08:50-09:20", "Lesson 1 · AI foundations", [("08:50", 3, "Live poll and story"), ("08:53", 4, "What is AI? The room's answers in the search bar"), ("08:57", 6, "The new joiner, generative AI and the next-word widget"),
+                                                   ("09:03", 5, "Hallucination: two real cases, with a check"), ("09:08", 3, "The data rule, with a check"), ("09:11", 1, "Three families of tools"),
                                                    ("09:12", 1, "The Claude tour"), ("09:13", 7, "Task 1.1 · First Claude chat")]),
-     ("09:30-10:20", "Lesson 2 · Why chat isn't enough, and finding the work", [("09:30", 2, "Story: two tables"), ("09:32", 18, "Task 1.2 · Same task, 18 answers"), ("09:50", 5, "Debrief: three tables, two chats"),
-                                                   ("09:55", 5, "Repeatable: concept and check"), ("10:00", 5, "Agent-ready tasks, Demo 1.2 and a check"), ("10:05", 12, "Task 1.3 · Task inventory"), ("10:17", 3, "Board review")]),
+     ("09:30-10:20", "Lesson 2 · Why chat isn't enough, and finding the work", [("09:30", 2, "Story: two tables"), ("09:32", 15, "Task 1.2 · Same task, 18 answers"), ("09:47", 4, "Debrief: three tables, two chats"),
+                                                   ("09:51", 9, "Why the prompt matters, Demo 1.1, the five parts, with a check"), ("10:00", 2, "Repeatable: a prompt is not a process, with a check"),
+                                                   ("10:02", 2, "What an agent is"), ("10:04", 4, "Agent-ready tasks, Demo 1.2 and a check"), ("10:08", 10, "Task 1.3 · Task inventory"), ("10:18", 2, "Board review")]),
      ("10:30-11:30", "Lesson 3 · Design the agent, then pick your case", [("10:30", 10, "The Agent Card, literal instructions, Projects, knowledge versus input, with checks"), ("10:40", 5, "Demo 1.3 · From card to agent"),
                                                    ("10:45", 20, "Task 1.4 · Build the invoice agent with me"), ("11:05", 5, "Scoring a use case and Demo 1.4"), ("11:10", 20, "Task 1.5 · Agent Card v1")]),
      ("12:30-13:50", "Lesson 4 · Build: Instruction", [("12:30", 5, "Late approvals and the story"), ("12:35", 5, "The five-part instruction, an example output, test before you trust, with a check"),
@@ -393,7 +403,8 @@ SEGMENTS = {
                                                    ("14:10", 15, "Task 1.7 · Run from the folder"), ("14:25", 5, "Artifacts and a fixed shape, with a check"), ("14:30", 5, "Demo 1.7 and the transfer slide (before the task)"),
                                                    ("14:35", 20, "Task 1.8 · Fixed-shape output")]),
      ("15:15-16:00", "Lesson 6 · Build: Package", [("15:15", 5, "Skills: story, concept and check"), ("15:20", 4, "Demo 1.8"), ("15:24", 2, "Transfer: packaged methods in other tools, with a check"), ("15:26", 20, "Task 1.9 · Make your skill"), ("15:46", 14, "Task 1.10 · The messy sample and the clock")]),
-     ("16:10-16:30", "Lesson 7 · Show and tell, and the Day 2 hook", [("16:10", 12, "Team demos"), ("16:22", 5, "Demo 1.9 · The agent that ran itself"), ("16:27", 3, "Wrap, the When box and the team vote")])],
+     ("16:10-16:30", "Lesson 7 · Show and tell, and the Day 2 hook", [("16:10", 12, "Team demos"), ("16:22", 4, "Demo 1.9 · The agent that ran itself"), ("16:26", 2, "The transfer map: the same card in other tools"),
+                                                   ("16:28", 2, "Wrap, the When box and the team vote")])],
  2: [("08:30-09:20", "Lesson 1 · From agent to system", [("08:30", 8, "Callback and three checks"), ("08:38", 2, "Story: who runs it when you are on leave?"), ("08:40", 8, "Trigger, steps, output and review, with a check"),
                                                    ("08:48", 2, "The team vote result"), ("08:50", 5, "Demo 2.1"), ("08:55", 20, "Task 2.1 · Workflow card"), ("09:15", 5, "Share-back")]),
      ("09:30-10:20", "Lesson 2 · Make it run on its own", [("09:30", 2, "Story"), ("09:32", 5, "Scheduled tasks: what they are and the steps"), ("09:37", 1, "Quick check"),

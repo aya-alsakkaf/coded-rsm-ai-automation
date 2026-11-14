@@ -2707,6 +2707,35 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 .llm-note{font-size:13.5px;color:var(--w7);margin-top:8px;min-height:1.3em}
 .llm-note b{color:var(--rose-lt)}
 .llm-foot{font-family:var(--mono);font-size:11px;color:var(--w6);margin-top:6px}
+
+.wai-slide .cd-wrap{justify-content:center}
+.wai{display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(14px,2.2vh,24px);width:100%;max-width:1080px;margin:0 auto}
+.wai .cd-eyebrow{justify-content:center}
+.wai-q{margin:0;font-size:clamp(56px,7.4vw,112px);line-height:1}
+.wai-bar{display:flex;align-items:center;gap:14px;width:min(860px,92%);padding:10px 10px 10px 26px;border-radius:999px;
+  background:rgba(255,255,255,.96);box-shadow:0 22px 60px -24px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.22);transition:box-shadow .2s}
+.wai-bar:focus-within{box-shadow:0 22px 60px -24px rgba(0,0,0,.85),0 0 0 5px color-mix(in srgb,var(--cd-accent) 55%,transparent)}
+.wai-ic{width:30px;height:30px;flex:none;fill:none;stroke:#3C4A60;stroke-width:2.4;stroke-linecap:round}
+.wai-in{flex:1;min-width:0;border:0;outline:0;background:transparent;font:600 clamp(20px,1.9vw,28px)/1.2 var(--cd-font-sans);color:#0C1B33;padding:10px 0}
+.wai-in::placeholder{color:#5B677A;font-weight:500}
+.wai-go{flex:none;border:0;border-radius:999px;padding:14px 26px;font:700 18px/1 var(--cd-font-sans);color:#fff;background:#007DB4;cursor:pointer}
+.wai-go:hover,.wai-go:focus-visible{background:#00699A;outline:none}
+.wai-out{display:flex;flex-wrap:wrap;justify-content:center;align-content:flex-start;gap:12px;width:100%;min-height:clamp(120px,20vh,220px);max-height:34vh;overflow:hidden}
+.wai-chip{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:12px 22px;cursor:pointer;
+  font:600 clamp(20px,1.8vw,27px)/1.15 var(--cd-font-sans);color:var(--cd-text-strong,#fff);
+  background:color-mix(in srgb,var(--cd-accent) 22%,rgba(255,255,255,.06));border:1px solid color-mix(in srgb,var(--cd-accent) 60%,transparent)}
+.wai-chip:hover{border-color:#fff}
+.wai-chip b{font:700 .8em/1 var(--cd-font-mono);color:var(--cd-accent-soft,#8CC4DD)}
+.wai-chip b:empty{display:none}
+.wai-out.wai-many .wai-chip{font-size:clamp(17px,1.4vw,21px);padding:9px 16px}
+.wai-out.wai-lots .wai-chip{font-size:clamp(14px,1.1vw,17px);padding:7px 13px}
+.wai-pop{animation:waipop .45s cubic-bezier(.2,1.4,.4,1)}
+@keyframes waipop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+.wai-foot{min-height:30px}
+.wai-clear{border:1px solid rgba(255,255,255,.28);background:transparent;color:var(--cd-text-quiet,#B4C0D3);border-radius:999px;padding:7px 18px;font:600 14px/1 var(--cd-font-sans);cursor:pointer}
+.wai-clear:hover{color:#fff;border-color:#fff}
+.wai-out:empty + .wai-foot .wai-clear{visibility:hidden}
+@media (prefers-reduced-motion: reduce){.wai-pop{animation:none}}
 </style>
 </head>
 <body>
@@ -2788,7 +2817,14 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-cover-side"><div class="wk-lockup wk-lockup--cover"><svg class="cd-logo" role="img" aria-label="CODED"><use href="#coded-wordmark"/></svg><span class="wk-x" aria-hidden="true">×</span><img src="data:image/png;base64,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" alt="RSM Albazie &amp; Co." style="height:calc(var(--lh,26px)*1.0)"></div></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-map-slide" id="map1" data-sec="0" data-ch="MAP test · before" data-screen-label="02 MAP test · before">
+<section class="cd-slide cd-slide--stage" id="b0welcome" data-sec="0" data-ch="Welcome to CODED." data-screen-label="02 Welcome to CODED.">
+ <div class="cd-wrap">
+<div class="cd-head"><div><div class="cd-eyebrow">Welcome · who we are</div><h2 class="cd-h2">Welcome to <em>CODED.</em></h2></div></div>
+  <div class="cd-cards cd-cols-3 wk-cards"><div class="cd-card cd-up wk-c3" style="--i:0"><span class="cd-k">Who we are</span><b>CODED Academy</b><p>Founded in Kuwait in 2015 as the first coding academy in the Middle East. We teach coding and AI to people and to companies.</p><small>CODED Professionals builds programs for teams.</small></div><div class="cd-card cd-up wk-c3" style="--i:1"><span class="cd-k">Who is teaching</span><b>Your trainer</b><p>A CODED Professionals instructor who builds AI workflows and teaches them to teams across Kuwait.</p><small>Ask questions at any time.</small></div><div class="cd-card cd-up wk-c3" style="--i:2"><span class="cd-k">Who is here</span><b>18 RSM colleagues</b><p>Assurance, Corporate Finance, Support and Analytics Advisory. Different jobs, one goal: less time on work that repeats.</p><small>Your examples shape the two days.</small></div></div>
+  <p class="wk-key">Two hands-on days, on fictional files. You build, and we help.</p>
+ </div>
+</section>
+<section class="cd-slide cd-slide--stage wk-map-slide" id="map1" data-sec="0" data-ch="MAP test · before" data-screen-label="03 MAP test · before">
  <div class="cd-wrap">
   <div class="wk-map-grid">
    <div class="wk-map-text"><div class="cd-eyebrow">MAP test · before<span class=cd-rule></span></div><h2 class="cd-h2">Scan the QR code. <em>10 minutes.</em></h2><p class="cd-lede">13 questions and 6 confidence ratings, about 10 minutes. The same test at the end of Day 2. Not graded. Phone only: no notes, no search, no AI.</p><div class="wk-map-timer"><span class="cd-chip">Time</span><span class="wk-timer-pair"><button class="cd-timer" type="button" aria-pressed="false" data-wk-min="10" title="Click to start or pause"><span class="cd-dot"></span><span class="cd-t">10:00</span></button><button class="wk-reset wk-plus" type="button" aria-label="Add one minute">+1 min</button><button class="wk-reset" type="button" aria-label="Reset the timer">Reset</button></span></div></div>
@@ -2796,62 +2832,43 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--section wk-story-slide" id="b0story" data-sec="0" data-ch="Opener · one invoice" data-screen-label="03 Opener · one invoice">
- <div class="cd-wrap">
-  <div class="cd-sec-panel"><span class="cd-sec-num">·</span><span class="cd-sec-lbl">Opener · one invoice</span></div>
-  <div class="cd-sec-body">
-    <div class="cd-eyebrow">one invoice<span class=cd-rule></span></div>
-    <div class="wk-story"><span class="cd-k">The starting point · Sunday 1 November, 08:40</span><p>Dana, an associate at Mirqab & Co., opens a supplier invoice for Abdali Foods. She needs the invoice number, the amount and the PO for a working paper. <b>She types three words.</b></p></div>
-    <h1 class="cd-h1">Same tool. Same invoice. <em>Watch what the request changes.</em></h1>
-    <p class="wk-key wk-key--goal"><b>By the end of this block:</b> See why the request decides the quality of the result.</p>
-  </div>
- </div>
-</section>
-<section class="cd-slide cd-slide--stage wk-ws ws-slide" id="ws" data-sec="0" data-ch="Opener · weak and strong prompt" data-screen-label="04 Opener · weak and strong prompt">
- <div class="cd-wrap">
-<div class="wk-widget"><div class="ws-top"><div><div class="cd-eyebrow">Opener · one invoice</div><h2 class="cd-h2">Same tool. Same invoice. <em>Two requests.</em></h2></div><ol class="ws-steps" data-r="steps"><li data-s="0"><span>1</span><em>Same file</em></li><li data-s="1"><span>2</span><em>Weak prompt</em></li><li data-s="2"><span>3</span><em>Weak result</em></li><li data-s="3"><span>4</span><em>Role</em></li><li data-s="4"><span>5</span><em>Steps</em></li><li data-s="5"><span>6</span><em>Rules</em></li><li data-s="6"><span>7</span><em>Format</em></li><li data-s="7"><span>8</span><em>When unsure</em></li><li data-s="8"><span>9</span><em>Strong result</em></li><li data-s="9"><span>10</span><em>Compare</em></li><li data-s="10"><span>11</span><em>The lesson</em></li></ol></div>
-<div class="ws-grid"><div class="ws-win weak" data-r="weak">
-  <div class="ws-head"><span class="ws-lbl weak">Weak prompt</span><div class="chat-av"><svg class="icn" viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg></div><div class="chat-who">Claude</div></div>
-  <div class="ws-body"><div class="ws-sent" data-r="weak-sent"></div><div class="ws-think" data-r="weak-think"><span></span><span></span><span></span></div><div class="ws-ans" data-r="weak-ans"><div class="ws-wall"><p>This is an invoice from Bayan Packaging for cartons and shrink film.</p><p>It is dated in October and is for about 2,100 dinars.</p><p>It looks like a standard packaging purchase.</p><div class="ws-fade"></div></div></div></div>
-  <div class="ws-flags" data-r="weak-flags"><span class="ws-flag bad">✗ No invoice number</span><span class="ws-flag bad">✗ Amount rounded</span><span class="ws-flag bad">✗ PO not mentioned</span></div>
-  <div class="ws-compose" data-r="weak-compose"><div class="ws-files"><span class="ws-att" style="--fc:#C8303A"><span class="ws-ic">PDF</span><b>abdali-supplier-invoices-oct-2026.pdf</b></span></div>
-    <div class="ws-box" data-ph="Message Claude"><div class="ws-prompt" data-r="weak-prompt"><span class="ws-weaktxt" data-full="What&#x27;s in this?"></span><span class="ws-caret"></span></div><button class="ws-send" data-r="weak-send" type="button" aria-label="Send the weak prompt"><svg class="icn" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-3-7z"/></svg></button></div></div>
-</div><div class="ws-win strong" data-r="strong">
-  <div class="ws-head"><span class="ws-lbl strong">Strong prompt</span><div class="chat-av"><svg class="icn" viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg></div><div class="chat-who">Claude</div></div>
-  <div class="ws-body"><div class="ws-sent" data-r="strong-sent"></div><div class="ws-think" data-r="strong-think"><span></span><span></span><span></span></div><div class="ws-ans" data-r="strong-ans"><div class="ws-tw"><table class="ws-table"><thead><tr><th>Field</th><th>Weak answer</th><th>Five-part answer</th></tr></thead><tbody><tr class="ws-row"><td>Invoice no.</td><td>Missing</td><td>BPK-4471</td></tr><tr class="ws-row"><td>Amount</td><td>About 2,100</td><td>KWD 2,145.750</td></tr><tr class="ws-row"><td>PO no.</td><td>Not mentioned</td><td>Not found (flagged)</td></tr></tbody></table></div><ul class="ws-ul"><li class="ws-li"><b>Bayan Packaging Co. W.L.L.</b> · BPK-4471 · 2026-10-12</li><li class="ws-li"><b>Amount:</b> KWD 2,145.750 · <b>PO no.:</b> Not found</li></ul></div></div>
-  <div class="ws-flags" data-r="strong-flags"><span class="ws-flag good">✓ Exact amount</span><span class="ws-flag good">✓ Flags the gap</span><span class="ws-flag good">✓ Ready for a working paper</span></div>
-  <div class="ws-compose" data-r="strong-compose"><div class="ws-files"><span class="ws-att" style="--fc:#C8303A"><span class="ws-ic">PDF</span><b>abdali-supplier-invoices-oct-2026.pdf</b></span></div>
-    <div class="ws-box" data-ph="Message Claude"><div class="ws-prompt" data-r="strong-prompt"><span class="ws-seg" data-k="0"><span class="ws-tag">Role</span><span class="ws-txt" data-full="You are an audit associate at Mirqab &amp; Co."></span></span><span class="ws-seg" data-k="1"><span class="ws-tag">Steps</span><span class="ws-txt" data-full="Read the attached invoice. Find the supplier, the invoice number, the date, the PO number and the amount."></span></span><span class="ws-seg" data-k="2"><span class="ws-tag">Rules</span><span class="ws-txt" data-full="Use only the invoice. Give the amount in KWD with three decimals. Do not round."></span></span><span class="ws-seg" data-k="3"><span class="ws-tag">Format</span><span class="ws-txt" data-full="One table row: Supplier, Invoice no., Date, PO no., Amount (KWD)."></span></span><span class="ws-seg" data-k="4"><span class="ws-tag">When unsure</span><span class="ws-txt" data-full="If a field is not on the invoice, write Not found. Never guess."></span></span><span class="ws-caret"></span></div><button class="ws-send" data-r="strong-send" type="button" aria-label="Send the strong prompt"><svg class="icn" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-3-7z"/></svg></button></div></div>
-</div><div class="ws-score" data-r="score"><div class="ws-sk h"></div><div class="ws-sw h">Weak</div><div class="ws-ss h">Strong</div><div class="ws-sk">Exact figures?</div><div class="ws-sw">No</div><div class="ws-ss">Yes</div><div class="ws-sk">Says what is missing?</div><div class="ws-sw">No</div><div class="ws-ss">Yes</div><div class="ws-sk">Ready to use?</div><div class="ws-sw">Ask again</div><div class="ws-ss">After a tick</div></div></div>
-<div class="ws-punch" data-r="punch"><div class="ws-pt">The request decides the result.</div><div class="ws-ps">Same tool, same invoice. Only the instruction changed.</div></div>
-<div class="ws-foot"><span class="ws-keys"><kbd>→</kbd> <kbd>Space</kbd> <kbd>Enter</kbd> next · <kbd>←</kbd> back · <kbd>R</kbd> replay</span><span class="wk-src">Example · typical result. Fictional training data from abdali-supplier-invoices-oct-2026.pdf.</span></div></div>
- </div>
-</section>
-<section class="cd-slide cd-slide--stage" id="outcomes1" data-sec="0" data-ch="Outcomes" data-screen-label="05 Outcomes">
+<section class="cd-slide cd-slide--stage" id="outcomes1" data-sec="0" data-ch="Outcomes" data-screen-label="04 Outcomes">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Outcomes for today</div><h2 class="cd-h2">By the end of Day 1, <em>you will be able to:</em></h2></div></div>
-  <ul class="wk-checks wk-checks--big"><li class="cd-up" style="--i:0"><svg class="cd-ic"><use href="#i-check"/></svg><span>Explain why AI can give a <b>confident figure that is wrong</b>, and tick it against the source.</span></li><li class="cd-up" style="--i:1"><svg class="cd-ic"><use href="#i-check"/></svg><span>Find the tasks in your work that suit an agent, and write an <b>Agent Card</b>.</span></li><li class="cd-up" style="--i:2"><svg class="cd-ic"><use href="#i-check"/></svg><span>Build a <b>Claude Project</b> that gives the same, checkable table every run.</span></li><li class="cd-up" style="--i:3"><svg class="cd-ic"><use href="#i-check"/></svg><span>Read from a <b>Drive folder</b> and return a <b>fixed-shape output</b>.</span></li><li class="cd-up" style="--i:4"><svg class="cd-ic"><use href="#i-check"/></svg><span>Package your method as a <b>skill</b> you can share.</span></li></ul>
+  <ul class="wk-checks wk-checks--big"><li class="cd-up" style="--i:0"><svg class="cd-ic"><use href="#i-check"/></svg><span>Explain why AI can give a <b>confident figure that is wrong</b>, and tick it against the source.</span></li><li class="cd-up" style="--i:1"><svg class="cd-ic"><use href="#i-check"/></svg><span>Write a <b>five-part prompt</b> that gets an exact, checkable answer.</span></li><li class="cd-up" style="--i:2"><svg class="cd-ic"><use href="#i-check"/></svg><span>Find the tasks in your work that suit an agent, and write an <b>Agent Card</b>.</span></li><li class="cd-up" style="--i:3"><svg class="cd-ic"><use href="#i-check"/></svg><span>Build a <b>Claude Project</b> that gives the same, checkable table every run.</span></li><li class="cd-up" style="--i:4"><svg class="cd-ic"><use href="#i-check"/></svg><span>Read from a <b>Drive folder</b> and return a <b>fixed-shape output</b>.</span></li><li class="cd-up" style="--i:5"><svg class="cd-ic"><use href="#i-check"/></svg><span>Package your method as a <b>skill</b> you can share.</span></li></ul>
  </div>
 </section>
-<section class="cd-slide cd-slide--split wk-roadmap" id="road1" data-sec="0" data-ch="Today&#x27;s map" data-screen-label="06 Today&#x27;s map">
+<section class="cd-slide cd-slide--split wk-roadmap" id="road1" data-sec="0" data-ch="Today&#x27;s map" data-screen-label="05 Today&#x27;s map">
  <div class="cd-wrap">
   <div class="cd-rail">
     <div class="cd-eyebrow">The shape of Day 1<span class=cd-rule></span></div>
     <h2 class="cd-h2">One firm, one client. <em>Seven lessons.</em></h2>
     <p class="cd-lede">Everything uses Mirqab &amp; Co., a fictional Kuwaiti audit firm, and its fictional client Abdali Foods. Breaks about every hour, lunch with Dhuhr, and an Asr break.</p>
   </div>
-  <div class="cd-agenda wk-agenda"><div class="cd-up" style="--i:0"><span class="cd-n">08:30</span><b>Welcome and sign-in check<small>Open claude.ai and the workshop site</small></b><span class="cd-dur">08:30-08:35</span></div><div class="cd-up" style="--i:1"><span class="cd-n">08:35</span><b>Pre-MAP test<small>10 minutes. Scan the QR code. It also checks your phone</small></b><span class="cd-dur">08:35-08:45</span></div><div class="cd-up" style="--i:2"><span class="cd-n">08:45</span><b>Opener: one invoice, two requests<small>The same invoice, a weak and a five-part request</small></b><span class="cd-dur">08:45-08:52</span></div><div class="cd-up" style="--i:3"><span class="cd-n">08:52</span><b>Lesson 1 · AI foundations<small>What AI is, where it fails, the tools, the transfer map · Task 1.1</small></b><span class="cd-dur">08:52-09:20</span></div><div class="cd-up" style="--i:4"><span class="cd-n">09:30</span><b>Lesson 2 · Why chat isn&#x27;t enough, and finding the work<small>Same task, 18 answers · your task inventory · Tasks 1.2 and 1.3</small></b><span class="cd-dur">09:30-10:20</span></div><div class="cd-up" style="--i:5"><span class="cd-n">10:30</span><b>Lesson 3 · Design the agent, then pick your case<small>The Agent Card and Projects · Tasks 1.4 and 1.5</small></b><span class="cd-dur">10:30-11:30</span></div><div class="cd-up" style="--i:6"><span class="cd-n">12:30</span><b>Lesson 4 · Build: Instruction<small>The five-part instruction · Task 1.6</small></b><span class="cd-dur">12:30-13:50</span></div><div class="cd-up" style="--i:7"><span class="cd-n">14:00</span><b>Lesson 5 · Build: Input and Output<small>Connectors and fixed-shape outputs · Tasks 1.7 and 1.8</small></b><span class="cd-dur">14:00-14:55</span></div><div class="cd-up" style="--i:8"><span class="cd-n">15:15</span><b>Lesson 6 · Build: Package<small>Skills, the messy sample and the clock · Tasks 1.9 and 1.10</small></b><span class="cd-dur">15:15-16:00</span></div><div class="cd-up" style="--i:9"><span class="cd-n">16:10</span><b>Lesson 7 · Show and tell, and the Day 2 hook<small>Team demos and the agent that ran itself</small></b><span class="cd-dur">16:10-16:30</span></div></div>
+  <div class="cd-agenda wk-agenda"><div class="cd-up" style="--i:0"><span class="cd-n">08:30</span><b>Welcome to CODED<small>Who we are, your trainer, and the sign-in check</small></b><span class="cd-dur">08:30-08:35</span></div><div class="cd-up" style="--i:1"><span class="cd-n">08:35</span><b>Pre-MAP test<small>10 minutes. Scan the QR code. It also checks your phone</small></b><span class="cd-dur">08:35-08:45</span></div><div class="cd-up" style="--i:2"><span class="cd-n">08:45</span><b>Outcomes and today&#x27;s map<small>What you will be able to do by 16:30</small></b><span class="cd-dur">08:45-08:50</span></div><div class="cd-up" style="--i:3"><span class="cd-n">08:50</span><b>Lesson 1 · AI foundations<small>What AI is, where it fails, two real cases, the tools · Task 1.1</small></b><span class="cd-dur">08:50-09:20</span></div><div class="cd-up" style="--i:4"><span class="cd-n">09:30</span><b>Lesson 2 · Why chat isn&#x27;t enough, and finding the work<small>Same task, 18 answers · a good prompt · what an agent is · Tasks 1.2 and 1.3</small></b><span class="cd-dur">09:30-10:20</span></div><div class="cd-up" style="--i:5"><span class="cd-n">10:30</span><b>Lesson 3 · Design the agent, then pick your case<small>The Agent Card and Projects · Tasks 1.4 and 1.5</small></b><span class="cd-dur">10:30-11:30</span></div><div class="cd-up" style="--i:6"><span class="cd-n">12:30</span><b>Lesson 4 · Build: Instruction<small>The five-part instruction · Task 1.6</small></b><span class="cd-dur">12:30-13:50</span></div><div class="cd-up" style="--i:7"><span class="cd-n">14:00</span><b>Lesson 5 · Build: Input and Output<small>Connectors and fixed-shape outputs · Tasks 1.7 and 1.8</small></b><span class="cd-dur">14:00-14:55</span></div><div class="cd-up" style="--i:8"><span class="cd-n">15:15</span><b>Lesson 6 · Build: Package<small>Skills, the messy sample and the clock · Tasks 1.9 and 1.10</small></b><span class="cd-dur">15:15-16:00</span></div><div class="cd-up" style="--i:9"><span class="cd-n">16:10</span><b>Lesson 7 · Show and tell, and the Day 2 hook<small>Team demos, the agent that ran itself, the transfer map</small></b><span class="cd-dur">16:10-16:30</span></div></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--section wk-story-slide" id="b1story" data-sec="1" data-ch="Lesson 1 · AI foundations" data-screen-label="07 Lesson 1 · AI foundations">
+<section class="cd-slide cd-slide--section wk-story-slide" id="b1story" data-sec="1" data-ch="Lesson 1 · AI foundations" data-screen-label="06 Lesson 1 · AI foundations">
  <div class="cd-wrap">
   <div class="cd-sec-panel"><span class="cd-sec-num">01</span><span class="cd-sec-lbl">Lesson 1 · AI foundations</span></div>
   <div class="cd-sec-body">
     <div class="cd-eyebrow">AI foundations<span class=cd-rule></span></div>
-    <div class="wk-story"><span class="cd-k">The starting point · Sunday 1 November, 08:52</span><p>Most of this room already uses AI at work, in more than one tool. <b>Before we build anything, one question: what is it actually doing when it answers?</b></p></div>
+    <div class="wk-story"><span class="cd-k">The starting point · Sunday 1 November, 08:50</span><p>Most of this room already uses AI at work, in more than one tool. <b>Before we build anything, one question: what is it actually doing when it answers?</b></p></div>
     <h1 class="cd-h1">Know what it does <em>and where it fails.</em></h1>
     <p class="wk-key wk-key--goal"><b>By the end of this block:</b> Explain what generative AI does well and where it can be wrong.</p>
   </div>
+ </div>
+</section>
+<section class="cd-slide cd-slide--stage wai-slide" id="b1ask" data-sec="1" data-ch="What is AI?" data-screen-label="07 What is AI?">
+ <div class="cd-wrap">
+  <div class="wai">
+   <div class="cd-eyebrow">Lesson 1 · your words<span class=cd-rule></span></div>
+   <h1 class="cd-h1 wai-q">What is <em>AI?</em></h1>
+   <form class="wai-bar" autocomplete="off" role="search"><svg class="wai-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 21 21"/></svg><input class="wai-in" type="text" maxlength="60" spellcheck="false" placeholder="Type an answer from the room, then press Enter" aria-label="Type an answer from the room, then press Enter"><button class="wai-go" type="submit">Add</button></form>
+   <div class="wai-out" aria-live="polite"></div>
+   <div class="wai-foot"><button class="wai-clear" type="button">Clear</button></div>
+  </div>
+  <p class="wk-key">Your answers stay on the screen. Next, we see what AI really does.</p>
  </div>
 </section>
 <section class="cd-slide cd-slide--stage wk-scene-slide" id="b1an" data-sec="1" data-ch="A very well-read new joiner." data-screen-label="08 A very well-read new joiner.">
@@ -2895,72 +2912,15 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">Tick every figure against the source document.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b1demo" data-sec="1" data-ch="Demo 1.1 · playback" data-screen-label="12 Demo 1.1 · playback">
+<section class="cd-slide cd-slide--stage" id="b1cases" data-sec="1" data-ch="Confident, fluent and made up." data-screen-label="12 Confident, fluent and made up.">
  <div class="cd-wrap">
-<div class="wk-widget"><div class="pp-top"><div><div class="cd-eyebrow">Demo 1.1 · Prompt playback</div><span class="cd-chip wk-tool">Claude · Example · typical result</span>
-<h2 class="cd-h2">Where it goes wrong</h2></div></div>
-<div class="pp">
- <div class="pp-win">
-  <div class="chat-bar"><div class="chat-av"><svg class="icn" viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg></div><div><div class="chat-who">Claude</div><div class="chat-sub">the perfect run · fictional data</div></div></div>
-  <div class="pp-body">
-   <div class="pp-empty" data-r="empty">Press <kbd>→</kbd> to build the prompt, one part at a time.</div>
-   <div class="pp-sent" data-r="sent"></div>
-   <div class="pp-think" data-r="think"><span></span><span></span><span></span></div>
-   <div class="pp-ans" data-r="ans">
-     <div class="pp-tw"><table class="pp-table"><thead><tr><th class="">Invoice</th><th class="">AI answer (KWD)</th><th class="best">The invoice says (KWD)</th></tr></thead><tbody><tr class="pp-row"><td class="">BPK-4471</td><td class="">2,145.750</td><td class="best">2,145.750</td></tr><tr class="pp-row"><td class="">WDS-20931</td><td class="">2,240.000</td><td class="best">3,860.000</td></tr><tr class="pp-row"><td class="">SCC-0718</td><td class="">1,248.500</td><td class="best">1,248.500</td></tr><tr class="pp-row"><td class="">SGT-11205</td><td class="">5,312.250</td><td class="best">5,312.250</td></tr><tr class="pp-row"><td class="">FSC-3390</td><td class="">742.125</td><td class="best">742.125</td></tr></tbody></table></div>
-     <ul class="pp-reco" data-r="reco"><li><b>Four rows are right.</b> One is not: WDS-20931.</li><li><b>Why:</b> the ledger has two Wafra lines; the AI took the other one's 2,240.000, not the invoice.</li><li><b>The habit:</b> tick each figure against the source document.</li></ul>
-   </div>
-  </div>
-  <div class="pp-compose" data-r="compose">
-   <div class="pp-flbl"><svg class="pp-clip" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11l-8.5 8.5a5 5 0 01-7-7L14 4a3.5 3.5 0 015 5l-8.5 8.5a2 2 0 01-3-3L15 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> 3 files attached</div><div class="pp-files"><span class="pp-att" style="--fc:#C8303A"><span class="pp-ic">PDF</span><span class="pp-fn"><b>abdali-supplier-invoices-oct-2026.pdf</b><i>PDF file · attached</i></span></span><span class="pp-att" style="--fc:#17744A"><span class="pp-ic">X</span><span class="pp-fn"><b>abdali-purchase-ledger-oct-2026.xlsx</b><i>Excel file · attached</i></span></span><span class="pp-att" style="--fc:#1F64B4"><span class="pp-ic">W</span><span class="pp-fn"><b>abdali-engagement-letter-2026.docx</b><i>Word file · attached</i></span></span></div>
-   <div class="pp-box"><div class="pp-ph">Message Claude</div><div class="pp-prompt" data-r="prompt"><span class="pp-seg" data-k="0"><span class="pp-tag">Task</span><span class="pp-txt" data-full="List each invoice in the attached files and its amount."></span></span><span class="pp-caret"></span></div>
-   <button class="pp-send" data-r="send" type="button" aria-label="Send"><svg class="icn" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-3-7z"/></svg></button></div>
-  </div>
- </div>
- <aside class="pp-side">
-  <div class="pp-lbl">The formula</div>
-  <ol class="pp-steps" data-r="steps"><li data-s="1"><span class="pp-n">1</span>Task</li><li data-s="2"><span class="pp-n">2</span>Send</li><li data-s="3"><span class="pp-n">3</span>Result</li><li data-s="4"><span class="pp-n">4</span>Decision</li></ol>
-  <div class="pp-decide" data-r="decide"><span class="pp-tag ok">Decision</span><div>Tick every figure against the source before it goes into a working paper.</div></div>
-  <div class="pp-ctrl">
-   <button class="pp-btn" data-r="back" type="button">‹ Back</button><button class="pp-btn" data-r="replay" type="button">↺ Replay</button><button class="pp-btn pri" data-r="next" type="button">Next ›</button>
-  </div>
-  <div class="pp-keys"><kbd>→</kbd> <kbd>Space</kbd> <kbd>Enter</kbd> next step · <kbd>←</kbd> back · <kbd>R</kbd> replay</div>
- </aside>
-</div>
-<p class="wk-src">Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.</p></div>
+<div class="cd-head"><div><div class="cd-eyebrow">Lesson 1 · two real cases</div><h2 class="cd-h2">Confident, fluent <em>and made up.</em></h2></div></div>
+  <div class="cd-cards cd-cols-2 wk-cards"><div class="cd-card cd-up wk-c3" style="--i:0"><span class="cd-k">Case 1 · New York, 2023</span><b>Court cases that never existed</b><p>Two lawyers used ChatGPT to find past cases for a client's claim against an airline. It invented the cases and their quotes, and said they were real. The lawyers did not check.</p><small>The judge fined the two lawyers and their firm $5,000.</small></div><div class="cd-card cd-up wk-c3" style="--i:1"><span class="cd-k">Case 2 · Canada, 2024</span><b>A refund rule the airline never had</b><p>Air Canada's website chatbot told a customer, whose grandmother had just died, that he could ask for a lower bereavement fare after his flight. The airline's real policy said no.</p><small>Air Canada said the chatbot was responsible for its own words. The tribunal disagreed, and the airline paid.</small></div></div>
+  <p class="wk-key">The AI was wrong, and the people paid. Check before anyone relies on it.</p>
+  <p class="wk-src">Sources: Mata v. Avianca, Inc., No. 22-cv-1461 (S.D.N.Y., 22 June 2023); Moffatt v. Air Canada, 2024 BCCRT 149 (14 February 2024).</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b1t3" data-sec="1" data-ch="Dummy data today. RSM&#x27;s policy always." data-screen-label="13 Dummy data today. RSM&#x27;s policy always.">
- <div class="cd-wrap">
-<div class="cd-head"><div><div class="cd-eyebrow">Lesson 1 · the data rule</div><h2 class="cd-h2">Dummy data today. <em>RSM's policy always.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
-  <div class="wk-def"><span class="cd-k">THE DATA RULE</span><p>No client data goes into an AI tool that RSM has not approved. Today every file is fictional. Back at work, <b>RSM's AI policy decides</b> what may go in.</p></div>
-  <div class="wk-link"><div>Engagement confidentiality for email…</div><span class="wk-link-ar"><svg class="cd-ic"><use href="#i-arrow"/></svg></span><div class="wk-link-to">…applies to <b>AI tools in the same way</b>.</div></div>
-  <p class="wk-key">When you are not sure, treat it as client data and ask first.</p>
- </div>
-</section>
-<section class="cd-slide cd-slide--stage wk-check" id="b1chk0" data-sec="1" data-ch="Quick check" data-screen-label="14 Quick check">
- <div class="cd-wrap">
-  <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
-  <h2 class="cd-h2 wk-check-q">A colleague asks you to try your agent on a client's real invoices this afternoon. <b>What do you do first?</b></h2>
-  <div class="cd-mcq wk-mcq"><button type="button" aria-pressed="false" data-fb="What you upload leaves the firm&#x27;s control."><span class="cd-key">A</span><span>Use it: the agent only reads files, it keeps nothing</span></button><button type="button" aria-pressed="false" data-correct data-fb="Right. RSM&#x27;s policy decides."><span class="cd-key">B</span><span>Check RSM&#x27;s AI policy and use only an approved tool</span></button><button type="button" aria-pressed="false" data-fb="Invoices are client data."><span class="cd-key">C</span><span>Use it, because invoices are not sensitive</span></button></div>
-  <div class="wk-fb" aria-live="polite"></div>
- </div>
-</section>
-<section class="cd-slide cd-slide--stage" id="b1tools" data-sec="1" data-ch="Three families of AI tools." data-screen-label="15 Three families of AI tools.">
- <div class="cd-wrap">
-<div class="cd-head"><div><div class="cd-eyebrow">Lesson 1 · the tools available</div><h2 class="cd-h2">Three families <em>of AI tools.</em></h2></div></div>
-  <div class="cd-cards cd-cols-3 wk-cards"><div class="cd-card cd-up wk-c3" style="--i:0"><span class="cd-k">Family 1</span><b>Chat assistants</b><p>Claude, ChatGPT, Microsoft 365 Copilot, Gemini.</p><small>You ask; it drafts.</small></div><div class="cd-card cd-up wk-c3" style="--i:1"><span class="cd-k">Family 2</span><b>AI inside your apps</b><p>Copilot in Excel and Outlook, Gemini in Gmail and Docs.</p><small>AI where the file already is.</small></div><div class="cd-card cd-up wk-c3" style="--i:2"><span class="cd-k">Family 3</span><b>Automation tools</b><p>n8n, Power Automate, scheduled tasks.</p><small>It runs without you.</small></div></div>
-  <p class="wk-key">This program uses Claude. The method works in all three.</p>
- </div>
-</section>
-<section class="cd-slide cd-slide--stage" id="b1map" data-sec="1" data-ch="Same building blocks, different names." data-screen-label="16 Same building blocks, different names.">
- <div class="cd-wrap">
-<div class="cd-head"><div><div class="cd-eyebrow">Lesson 1 · the transfer map</div><h2 class="cd-h2">Same building blocks, <em>different names.</em></h2></div></div>
-  <div class="wk-tw"><table class="wk-table wk-table--tight"><thead><tr><th>Agent Card box</th><th>Claude (today)</th><th>ChatGPT</th><th>Microsoft 365 Copilot</th><th>Gemini</th></tr></thead><tbody><tr><td>Instruction: saved rules and files</td><td>Project</td><td>Project or custom GPT</td><td>Agent (Agent Builder) or Notebook</td><td>Gem</td></tr><tr><td>Input: reach your files and email</td><td>Connectors</td><td>Apps (formerly connectors)</td><td>Work data in SharePoint, OneDrive, Outlook</td><td>Connected apps (Gmail, Drive, Docs)</td></tr><tr><td>Output: a file you open and edit</td><td>Artifact or file</td><td>Canvas</td><td>Copilot Page</td><td>Canvas</td></tr><tr><td>Package: a reusable method</td><td>Skill</td><td>Skill (beta) or custom GPT</td><td>Agent</td><td>Gem</td></tr><tr><td>When: runs on its own</td><td>Scheduled task</td><td>Scheduled task</td><td>Scheduled prompt</td><td>Scheduled action</td></tr></tbody></table></div>
-  <p class="wk-key">Learn the method once. The card works in any tool.</p>
- </div>
-</section>
-<section class="cd-slide cd-slide--stage wk-check" id="b1chk" data-sec="1" data-ch="Quick check" data-screen-label="17 Quick check">
+<section class="cd-slide cd-slide--stage wk-check" id="b1chk" data-sec="1" data-ch="Quick check" data-screen-label="13 Quick check">
  <div class="cd-wrap">
   <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
   <h2 class="cd-h2 wk-check-q">Claude gives KWD 2,240.000 for an invoice that says KWD 3,860.000. <b>Why can this happen?</b></h2>
@@ -2968,14 +2928,37 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-fb" aria-live="polite"></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b1tour" data-sec="1" data-ch="Where today&#x27;s tools live in Claude." data-screen-label="18 Where today&#x27;s tools live in Claude.">
+<section class="cd-slide cd-slide--stage" id="b1t3" data-sec="1" data-ch="Dummy data today. RSM&#x27;s policy always." data-screen-label="14 Dummy data today. RSM&#x27;s policy always.">
+ <div class="cd-wrap">
+<div class="cd-head"><div><div class="cd-eyebrow">Lesson 1 · the data rule</div><h2 class="cd-h2">Dummy data today. <em>RSM's policy always.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
+  <div class="wk-def"><span class="cd-k">THE DATA RULE</span><p>No client data goes into an AI tool that RSM has not approved. Today every file is fictional. Back at work, <b>RSM's AI policy decides</b> what may go in.</p></div>
+  <div class="wk-link"><div>Engagement confidentiality for email…</div><span class="wk-link-ar"><svg class="cd-ic"><use href="#i-arrow"/></svg></span><div class="wk-link-to">…applies to <b>AI tools in the same way</b>.</div></div>
+  <p class="wk-key">When you are not sure, treat it as client data and ask first.</p>
+ </div>
+</section>
+<section class="cd-slide cd-slide--stage wk-check" id="b1chk0" data-sec="1" data-ch="Quick check" data-screen-label="15 Quick check">
+ <div class="cd-wrap">
+  <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
+  <h2 class="cd-h2 wk-check-q">A colleague asks you to try your agent on a client's real invoices this afternoon. <b>What do you do first?</b></h2>
+  <div class="cd-mcq wk-mcq"><button type="button" aria-pressed="false" data-fb="What you upload leaves the firm&#x27;s control."><span class="cd-key">A</span><span>Use it: the agent only reads files, it keeps nothing</span></button><button type="button" aria-pressed="false" data-correct data-fb="Right. RSM&#x27;s policy decides."><span class="cd-key">B</span><span>Check RSM&#x27;s AI policy and use only an approved tool</span></button><button type="button" aria-pressed="false" data-fb="Invoices are client data."><span class="cd-key">C</span><span>Use it, because invoices are not sensitive</span></button></div>
+  <div class="wk-fb" aria-live="polite"></div>
+ </div>
+</section>
+<section class="cd-slide cd-slide--stage" id="b1tools" data-sec="1" data-ch="Three families of AI tools." data-screen-label="16 Three families of AI tools.">
+ <div class="cd-wrap">
+<div class="cd-head"><div><div class="cd-eyebrow">Lesson 1 · the tools available</div><h2 class="cd-h2">Three families <em>of AI tools.</em></h2></div></div>
+  <div class="cd-cards cd-cols-3 wk-cards"><div class="cd-card cd-up wk-c3" style="--i:0"><span class="cd-k">Family 1</span><b>Chat assistants</b><p>Claude, ChatGPT, Microsoft 365 Copilot, Gemini.</p><small>You ask; it drafts.</small></div><div class="cd-card cd-up wk-c3" style="--i:1"><span class="cd-k">Family 2</span><b>AI inside your apps</b><p>Copilot in Excel and Outlook, Gemini in Gmail and Docs.</p><small>AI where the file already is.</small></div><div class="cd-card cd-up wk-c3" style="--i:2"><span class="cd-k">Family 3</span><b>Automation tools</b><p>n8n, Power Automate, scheduled tasks.</p><small>It runs without you.</small></div></div>
+  <p class="wk-key">This program uses Claude. The method works in all three.</p>
+ </div>
+</section>
+<section class="cd-slide cd-slide--stage" id="b1tour" data-sec="1" data-ch="Where today&#x27;s tools live in Claude." data-screen-label="17 Where today&#x27;s tools live in Claude.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 1 · the Claude tour</div><h2 class="cd-h2">Where today's tools <em>live in Claude.</em></h2></div></div>
   <ul class="wk-checks wk-checks--big"><li class="cd-up" style="--i:0"><svg class="cd-ic"><use href="#i-check"/></svg><span><b>Chat:</b> the message box, with + to attach a file.</span></li><li class="cd-up" style="--i:1"><svg class="cd-ic"><use href="#i-check"/></svg><span><b>Projects:</b> instructions and knowledge for every chat inside.</span></li><li class="cd-up" style="--i:2"><svg class="cd-ic"><use href="#i-check"/></svg><span><b>Connectors:</b> Customize, then Connectors. Google Drive today.</span></li><li class="cd-up" style="--i:3"><svg class="cd-ic"><use href="#i-check"/></svg><span><b>Skills:</b> Customize, then Skills. A method Claude loads when it fits.</span></li><li class="cd-up" style="--i:4"><svg class="cd-ic"><use href="#i-check"/></svg><span><b>Artifacts:</b> tables and files Claude makes, to open and download.</span></li><li class="cd-up" style="--i:5"><svg class="cd-ic"><use href="#i-check"/></svg><span><b>Scheduled tasks:</b> click Scheduled in the left sidebar. Tomorrow's tool.</span></li></ul>
   <p class="wk-key">One box of the Agent Card at a time.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--split cd-slide--exercise" id="b1task" data-sec="1" data-ch="Your turn 1.1" data-screen-label="19 Your turn 1.1">
+<section class="cd-slide cd-slide--split cd-slide--exercise" id="b1task" data-sec="1" data-ch="Your turn 1.1" data-screen-label="18 Your turn 1.1">
  <div class="cd-wrap">
   <div class="cd-rail">
     <div class="cd-eyebrow wk-task-eyebrow">Task 1.1 · Your turn · on your own · 7 min</div>
@@ -2992,7 +2975,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--section wk-story-slide" id="b2story" data-sec="2" data-ch="Lesson 2 · Why chat isn&#x27;t enough" data-screen-label="20 Lesson 2 · Why chat isn&#x27;t enough">
+<section class="cd-slide cd-slide--section wk-story-slide" id="b2story" data-sec="2" data-ch="Lesson 2 · Why chat isn&#x27;t enough" data-screen-label="19 Lesson 2 · Why chat isn&#x27;t enough">
  <div class="cd-wrap">
   <div class="cd-sec-panel"><span class="cd-sec-num">02</span><span class="cd-sec-lbl">Lesson 2 · Why chat isn&#x27;t enough</span></div>
   <div class="cd-sec-body">
@@ -3003,10 +2986,10 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--split cd-slide--exercise" id="b2task" data-sec="2" data-ch="Your turn 1.2" data-screen-label="21 Your turn 1.2">
+<section class="cd-slide cd-slide--split cd-slide--exercise" id="b2task" data-sec="2" data-ch="Your turn 1.2" data-screen-label="20 Your turn 1.2">
  <div class="cd-wrap">
   <div class="cd-rail">
-    <div class="cd-eyebrow wk-task-eyebrow">Task 1.2 · Your turn · on your own, then in pairs · 18 min</div>
+    <div class="cd-eyebrow wk-task-eyebrow">Task 1.2 · Your turn · on your own, then in pairs · 15 min</div>
     <div class="cd-band"><svg class="cd-ic"><use href="#i-hand"/></svg>Claude chat</div>
     <h2 class="cd-h2">Your turn: <em>same task, 18 answers.</em></h2>
     <div class="wk-files"><span class="cd-chip wk-file"><svg class="cd-ic"><use href="#i-folder"/></svg>abdali-supplier-invoices-oct-2026.pdf</span><span class="cd-chip wk-file"><svg class="cd-ic"><use href="#i-folder"/></svg>abdali-purchase-ledger-oct-2026.xlsx</span></div>
@@ -3014,36 +2997,87 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
     <p class="wk-more"><b>Finished early?</b> Run the same request again in a new chat. Compare the two tables.</p>
   </div>
   <div class="cd-exercise">
-    <div class="cd-exercise-head"><span class="cd-chip">Your time: 18 min</span><span class="wk-timer-pair"><button class="cd-timer" type="button" aria-pressed="false" data-wk-min="18" title="Click to start or pause"><span class="cd-dot"></span><span class="cd-t">18:00</span></button><button class="wk-reset wk-plus" type="button" aria-label="Add one minute">+1 min</button><button class="wk-reset" type="button" aria-label="Reset the timer">Reset</button></span></div>
+    <div class="cd-exercise-head"><span class="cd-chip">Your time: 15 min</span><span class="wk-timer-pair"><button class="cd-timer" type="button" aria-pressed="false" data-wk-min="15" title="Click to start or pause"><span class="cd-dot"></span><span class="cd-t">15:00</span></button><button class="wk-reset wk-plus" type="button" aria-label="Add one minute">+1 min</button><button class="wk-reset" type="button" aria-label="Reset the timer">Reset</button></span></div>
     <ol class="cd-steps"><li>Start a new chat. Attach the invoice pack and the October purchase ledger.</li><li>Write your own request: a table that checks each invoice against the ledger. You have 7 minutes.</li><li>Compare your table with your neighbor&#x27;s: columns, totals, and what each of you flagged.</li><li>Be ready to show your table on the screen.</li></ol>
     <div class="cd-deliverable wk-task-note"><span><b>You hand in</b> Your own reconciliation table, compared with a neighbor&#x27;s.</span></div><div class="cd-deliverable wk-task-note"><span><b>What to look for</b> Check every row against both files: number, date and amount.</span></div>
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b2two" data-sec="2" data-ch="The answer depended on the chat." data-screen-label="22 The answer depended on the chat.">
+<section class="cd-slide cd-slide--stage" id="b2two" data-sec="2" data-ch="The answer depended on the chat." data-screen-label="21 The answer depended on the chat.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Debrief · one prompt, two chats</div><h2 class="cd-h2">The answer depended <em>on the chat.</em></h2></div></div>
   <div class="wk-tw"><table class="wk-table "><thead><tr><th></th><th>Chat A</th><th>Chat B</th></tr></thead><tbody><tr><td>Columns</td><td>Invoice, amount, status</td><td>Supplier, invoice, ledger, difference, comment</td></tr><tr><td>Rows flagged</td><td>None: every row Matched</td><td>Two rows flagged</td></tr><tr><td>Total checked</td><td>KWD 13,308.625</td><td>5 invoices</td></tr></tbody></table></div>
   <p class="wk-key">Same prompt, same files, two different tables.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b2t1" data-sec="2" data-ch="A prompt is not a process." data-screen-label="23 A prompt is not a process.">
+<section class="cd-slide cd-slide--stage" id="b2why" data-sec="2" data-ch="A better request. A better result." data-screen-label="22 A better request. A better result.">
+ <div class="cd-wrap">
+<div class="cd-head"><div><div class="cd-eyebrow">Lesson 2 · the prompt</div><h2 class="cd-h2">A better request. <em>A better result.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
+  <div class="wk-def"><span class="cd-k">PROMPT</span><p>A <b>prompt</b> is the request you type. Claude knows only what you write. When the prompt leaves a gap, Claude fills it with what is <b>usual</b>, not with what <b>you need</b>.</p></div>
+  <div class="wk-link"><div>A one-line brief to a new joiner…</div><span class="wk-link-ar"><svg class="cd-ic"><use href="#i-arrow"/></svg></span><div class="wk-link-to">…versus a <b>full brief</b>: who, what, the rules and the shape.</div></div>
+  <p class="wk-key">Most of the 18 tables differed because the 18 requests differed.</p>
+ </div>
+</section>
+<section class="cd-slide cd-slide--stage wk-ws ws-slide" id="b2ws" data-sec="2" data-ch="Demo 1.1 · weak and strong prompt" data-screen-label="23 Demo 1.1 · weak and strong prompt">
+ <div class="cd-wrap">
+<div class="wk-widget"><div class="ws-top"><div><div class="cd-eyebrow">Demo 1.1 · one invoice</div><h2 class="cd-h2">Same tool. Same invoice. <em>Two requests.</em></h2></div><ol class="ws-steps" data-r="steps"><li data-s="0"><span>1</span><em>Same file</em></li><li data-s="1"><span>2</span><em>Weak prompt</em></li><li data-s="2"><span>3</span><em>Weak result</em></li><li data-s="3"><span>4</span><em>Role</em></li><li data-s="4"><span>5</span><em>Steps</em></li><li data-s="5"><span>6</span><em>Rules</em></li><li data-s="6"><span>7</span><em>Format</em></li><li data-s="7"><span>8</span><em>When unsure</em></li><li data-s="8"><span>9</span><em>Strong result</em></li><li data-s="9"><span>10</span><em>Compare</em></li><li data-s="10"><span>11</span><em>The lesson</em></li></ol></div>
+<div class="ws-grid"><div class="ws-win weak" data-r="weak">
+  <div class="ws-head"><span class="ws-lbl weak">Weak prompt</span><div class="chat-av"><svg class="icn" viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg></div><div class="chat-who">Claude</div></div>
+  <div class="ws-body"><div class="ws-sent" data-r="weak-sent"></div><div class="ws-think" data-r="weak-think"><span></span><span></span><span></span></div><div class="ws-ans" data-r="weak-ans"><div class="ws-wall"><p>This is an invoice from Bayan Packaging for cartons and shrink film.</p><p>It is dated in October and is for about 2,100 dinars.</p><p>It looks like a standard packaging purchase.</p><div class="ws-fade"></div></div></div></div>
+  <div class="ws-flags" data-r="weak-flags"><span class="ws-flag bad">✗ No invoice number</span><span class="ws-flag bad">✗ Amount rounded</span><span class="ws-flag bad">✗ PO not mentioned</span></div>
+  <div class="ws-compose" data-r="weak-compose"><div class="ws-files"><span class="ws-att" style="--fc:#C8303A"><span class="ws-ic">PDF</span><b>abdali-supplier-invoices-oct-2026.pdf</b></span></div>
+    <div class="ws-box" data-ph="Message Claude"><div class="ws-prompt" data-r="weak-prompt"><span class="ws-weaktxt" data-full="What&#x27;s in this?"></span><span class="ws-caret"></span></div><button class="ws-send" data-r="weak-send" type="button" aria-label="Send the weak prompt"><svg class="icn" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-3-7z"/></svg></button></div></div>
+</div><div class="ws-win strong" data-r="strong">
+  <div class="ws-head"><span class="ws-lbl strong">Strong prompt</span><div class="chat-av"><svg class="icn" viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg></div><div class="chat-who">Claude</div></div>
+  <div class="ws-body"><div class="ws-sent" data-r="strong-sent"></div><div class="ws-think" data-r="strong-think"><span></span><span></span><span></span></div><div class="ws-ans" data-r="strong-ans"><div class="ws-tw"><table class="ws-table"><thead><tr><th>Field</th><th>Weak answer</th><th>Five-part answer</th></tr></thead><tbody><tr class="ws-row"><td>Invoice no.</td><td>Missing</td><td>BPK-4471</td></tr><tr class="ws-row"><td>Amount</td><td>About 2,100</td><td>KWD 2,145.750</td></tr><tr class="ws-row"><td>PO no.</td><td>Not mentioned</td><td>Not found (flagged)</td></tr></tbody></table></div><ul class="ws-ul"><li class="ws-li"><b>Bayan Packaging Co. W.L.L.</b> · BPK-4471 · 2026-10-12</li><li class="ws-li"><b>Amount:</b> KWD 2,145.750 · <b>PO no.:</b> Not found</li></ul></div></div>
+  <div class="ws-flags" data-r="strong-flags"><span class="ws-flag good">✓ Exact amount</span><span class="ws-flag good">✓ Flags the gap</span><span class="ws-flag good">✓ Ready for a working paper</span></div>
+  <div class="ws-compose" data-r="strong-compose"><div class="ws-files"><span class="ws-att" style="--fc:#C8303A"><span class="ws-ic">PDF</span><b>abdali-supplier-invoices-oct-2026.pdf</b></span></div>
+    <div class="ws-box" data-ph="Message Claude"><div class="ws-prompt" data-r="strong-prompt"><span class="ws-seg" data-k="0"><span class="ws-tag">Role</span><span class="ws-txt" data-full="You are an audit associate at Mirqab &amp; Co."></span></span><span class="ws-seg" data-k="1"><span class="ws-tag">Steps</span><span class="ws-txt" data-full="Read the attached invoice. Find the supplier, the invoice number, the date, the PO number and the amount."></span></span><span class="ws-seg" data-k="2"><span class="ws-tag">Rules</span><span class="ws-txt" data-full="Use only the invoice. Give the amount in KWD with three decimals. Do not round."></span></span><span class="ws-seg" data-k="3"><span class="ws-tag">Format</span><span class="ws-txt" data-full="One table row: Supplier, Invoice no., Date, PO no., Amount (KWD)."></span></span><span class="ws-seg" data-k="4"><span class="ws-tag">When unsure</span><span class="ws-txt" data-full="If a field is not on the invoice, write Not found. Never guess."></span></span><span class="ws-caret"></span></div><button class="ws-send" data-r="strong-send" type="button" aria-label="Send the strong prompt"><svg class="icn" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-3-7z"/></svg></button></div></div>
+</div><div class="ws-score" data-r="score"><div class="ws-sk h"></div><div class="ws-sw h">Weak</div><div class="ws-ss h">Strong</div><div class="ws-sk">Exact figures?</div><div class="ws-sw">No</div><div class="ws-ss">Yes</div><div class="ws-sk">Says what is missing?</div><div class="ws-sw">No</div><div class="ws-ss">Yes</div><div class="ws-sk">Ready to use?</div><div class="ws-sw">Ask again</div><div class="ws-ss">After a tick</div></div></div>
+<div class="ws-punch" data-r="punch"><div class="ws-pt">The request decides the result.</div><div class="ws-ps">Same tool, same invoice. Only the instruction changed.</div></div>
+<div class="ws-foot"><span class="ws-keys"><kbd>→</kbd> <kbd>Space</kbd> <kbd>Enter</kbd> next · <kbd>←</kbd> back · <kbd>R</kbd> replay</span><span class="wk-src">Example · typical result. Fictional training data from abdali-supplier-invoices-oct-2026.pdf.</span></div></div>
+ </div>
+</section>
+<section class="cd-slide cd-slide--stage" id="b2five" data-sec="2" data-ch="Five parts of a good prompt." data-screen-label="24 Five parts of a good prompt.">
+ <div class="cd-wrap">
+<div class="cd-head"><div><div class="cd-eyebrow">Lesson 2 · how to write it</div><h2 class="cd-h2">Five parts of <em>a good prompt.</em></h2></div></div>
+  <ul class="wk-checks wk-checks--big"><li class="cd-up" style="--i:0"><svg class="cd-ic"><use href="#i-check"/></svg><span><b>Role:</b> who Claude is, and the job in one line.</span></li><li class="cd-up" style="--i:1"><svg class="cd-ic"><use href="#i-check"/></svg><span><b>Steps:</b> what to do, in order.</span></li><li class="cd-up" style="--i:2"><svg class="cd-ic"><use href="#i-check"/></svg><span><b>Rules:</b> the source to use, units, dates and limits.</span></li><li class="cd-up" style="--i:3"><svg class="cd-ic"><use href="#i-check"/></svg><span><b>Format:</b> the exact shape, with the columns in order.</span></li><li class="cd-up" style="--i:4"><svg class="cd-ic"><use href="#i-check"/></svg><span><b>When unsure:</b> what to write when something is missing. Never guess.</span></li></ul>
+  <p class="wk-key">Attach the source file. Then check the answer against it.</p>
+ </div>
+</section>
+<section class="cd-slide cd-slide--stage wk-check" id="b2pchk" data-sec="2" data-ch="Quick check" data-screen-label="25 Quick check">
+ <div class="cd-wrap">
+  <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
+  <h2 class="cd-h2 wk-check-q">Which request gives an answer <b>you can put in a working paper?</b></h2>
+  <div class="cd-mcq wk-mcq"><button type="button" aria-pressed="false" data-fb="No rules and no format: Claude fills the gaps."><span class="cd-key">A</span><span>“Summarize this invoice for me.”</span></button><button type="button" aria-pressed="false" data-correct data-fb="Right. Five parts and the source."><span class="cd-key">B</span><span>Role, steps, rules, format and When unsure, with the invoice attached</span></button><button type="button" aria-pressed="false" data-fb="Accurate is a wish, not a rule."><span class="cd-key">C</span><span>“Be very accurate with this invoice, please.”</span></button></div>
+  <div class="wk-fb" aria-live="polite"></div>
+ </div>
+</section>
+<section class="cd-slide cd-slide--stage" id="b2t1" data-sec="2" data-ch="A prompt is not a process." data-screen-label="26 A prompt is not a process.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 2 · the idea</div><h2 class="cd-h2">A prompt is not <em>a process.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
-  <div class="wk-def"><span class="cd-k">REPEATABLE</span><p>A good prompt lives in one chat and is lost next time. A <b>repeatable</b> method keeps the same input, rules and output shape, so every run can be reviewed the same way.</p></div>
+  <div class="wk-def"><span class="cd-k">REPEATABLE</span><p>Even a good prompt lives in one chat, and you type it again next time. A <b>repeatable</b> method keeps the same input, rules and output shape, so every run can be reviewed the same way.</p></div>
   <div class="wk-link"><div>“Cook something nice”…</div><span class="wk-link-ar"><svg class="cd-ic"><use href="#i-arrow"/></svg></span><div class="wk-link-to">…versus a <b>recipe card</b> anyone can follow.</div></div>
   <p class="wk-key">Audit work needs the same answer every time.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-check" id="b2chk" data-sec="2" data-ch="Quick check" data-screen-label="24 Quick check">
+<section class="cd-slide cd-slide--stage wk-check" id="b2chk" data-sec="2" data-ch="Quick check" data-screen-label="27 Quick check">
  <div class="cd-wrap">
   <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
   <h2 class="cd-h2 wk-check-q">Two associates get different tables for the same invoices. <b>What is missing?</b></h2>
-  <div class="cd-mcq wk-mcq"><button type="button" aria-pressed="false" data-fb="Speed was not the problem."><span class="cd-key">A</span><span>A faster laptop</span></button><button type="button" aria-pressed="false" data-correct data-fb="Right. That is what the next lesson builds."><span class="cd-key">B</span><span>Fixed input, rules and output shape</span></button><button type="button" aria-pressed="false" data-fb="Longer chats drift more, not less."><span class="cd-key">C</span><span>A longer chat</span></button></div>
+  <div class="cd-mcq wk-mcq"><button type="button" aria-pressed="false" data-fb="Speed was not the problem."><span class="cd-key">A</span><span>A faster laptop</span></button><button type="button" aria-pressed="false" data-correct data-fb="Right. That is what an agent keeps."><span class="cd-key">B</span><span>Fixed input, rules and output shape</span></button><button type="button" aria-pressed="false" data-fb="Longer chats drift more, not less."><span class="cd-key">C</span><span>A longer chat</span></button></div>
   <div class="wk-fb" aria-live="polite"></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b2t2" data-sec="2" data-ch="Which tasks suit an agent?" data-screen-label="25 Which tasks suit an agent?">
+<section class="cd-slide cd-slide--stage" id="b2agent" data-sec="2" data-ch="From a chat to an agent." data-screen-label="28 From a chat to an agent.">
+ <div class="cd-wrap">
+<div class="cd-head"><div><div class="cd-eyebrow">Lesson 2 · the agent</div><h2 class="cd-h2">From a chat <em>to an agent.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
+  <div class="wk-def"><span class="cd-k">AI AGENT</span><p>An <b>agent</b> is AI set up to do <b>one job the same way every time</b>. Its instructions are saved, it reads the files it needs, it returns a fixed output, and it can run without you. Today you build one in Claude.</p></div>
+  <div class="wk-link"><div>A chat answers one question, once…</div><span class="wk-link-ar"><svg class="cd-ic"><use href="#i-arrow"/></svg></span><div class="wk-link-to">…an agent does <b>one job, every week</b>, from a written method.</div></div>
+  <p class="wk-key">Chat is for questions. Agents are for repeated work.</p>
+ </div>
+</section>
+<section class="cd-slide cd-slide--stage" id="b2t2" data-sec="2" data-ch="Which tasks suit an agent?" data-screen-label="29 Which tasks suit an agent?">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 2 · agent-ready</div><h2 class="cd-h2">Which tasks <em>suit an agent?</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
   <div class="wk-def"><span class="cd-k">AGENT-READY TASK</span><p>A task that <b>repeats weekly</b>, has <b>clear rules</b>, and turns a <b>document in into a document out</b>. Judgment calls and client meetings stay with people.</p></div>
@@ -3051,7 +3085,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">Choose the task before you choose the tool.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b2demo" data-sec="2" data-ch="Demo 1.2 · playback" data-screen-label="26 Demo 1.2 · playback">
+<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b2demo" data-sec="2" data-ch="Demo 1.2 · playback" data-screen-label="30 Demo 1.2 · playback">
  <div class="cd-wrap">
 <div class="wk-widget"><div class="pp-top"><div><div class="cd-eyebrow">Demo 1.2 · Prompt playback</div><span class="cd-chip wk-tool">Claude · Example · typical result</span>
 <h2 class="cd-h2">Dana tags her task list</h2></div></div>
@@ -3086,7 +3120,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 <p class="wk-src">Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.</p></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-check" id="b2chk2" data-sec="2" data-ch="Quick check" data-screen-label="27 Quick check">
+<section class="cd-slide cd-slide--stage wk-check" id="b2chk2" data-sec="2" data-ch="Quick check" data-screen-label="31 Quick check">
  <div class="cd-wrap">
   <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
   <h2 class="cd-h2 wk-check-q">Which of Dana's tasks is <b>not</b> a first agent?</h2>
@@ -3094,10 +3128,10 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-fb" aria-live="polite"></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--split cd-slide--exercise" id="b2task2" data-sec="2" data-ch="Your turn 1.3" data-screen-label="28 Your turn 1.3">
+<section class="cd-slide cd-slide--split cd-slide--exercise" id="b2task2" data-sec="2" data-ch="Your turn 1.3" data-screen-label="32 Your turn 1.3">
  <div class="cd-wrap">
   <div class="cd-rail">
-    <div class="cd-eyebrow wk-task-eyebrow">Task 1.3 · Your turn · on your own · 12 min</div>
+    <div class="cd-eyebrow wk-task-eyebrow">Task 1.3 · Your turn · on your own · 10 min</div>
     <div class="cd-band"><svg class="cd-ic"><use href="#i-hand"/></svg>The Day 1 lab page</div>
     <h2 class="cd-h2">Your turn: <em>your task inventory.</em></h2>
     
@@ -3105,21 +3139,21 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
     <p class="wk-more"><b>Finished early?</b> Write the minutes per week for each of your top 3.</p>
   </div>
   <div class="cd-exercise">
-    <div class="cd-exercise-head"><span class="cd-chip">Your time: 12 min</span><span class="wk-timer-pair"><button class="cd-timer" type="button" aria-pressed="false" data-wk-min="12" title="Click to start or pause"><span class="cd-dot"></span><span class="cd-t">12:00</span></button><button class="wk-reset wk-plus" type="button" aria-label="Add one minute">+1 min</button><button class="wk-reset" type="button" aria-label="Reset the timer">Reset</button></span></div>
+    <div class="cd-exercise-head"><span class="cd-chip">Your time: 10 min</span><span class="wk-timer-pair"><button class="cd-timer" type="button" aria-pressed="false" data-wk-min="10" title="Click to start or pause"><span class="cd-dot"></span><span class="cd-t">10:00</span></button><button class="wk-reset wk-plus" type="button" aria-label="Add one minute">+1 min</button><button class="wk-reset" type="button" aria-label="Reset the timer">Reset</button></span></div>
     <ol class="cd-steps"><li>Open the Day 1 lab page. List 10 tasks from your last week.</li><li>Tag each one: repeats weekly, clear rules, document in and document out.</li><li>Use the prompt card for your role (on the lab page). Pick the 3 tasks with three tags.</li><li>Post your strongest task on the shared board, under your department.</li></ol>
     <div class="wk-chat wk-chat--tight"><div class="wk-chat-bar"><span class="wk-chat-av"><svg class="cd-ic"><use href="#i-chat"/></svg></span><div><b>The Day 1 lab page</b><small>copy, paste, then check</small></div></div><div class="wk-chat-body"><div class="wk-msg wk-msg--me"><span class="wk-msg-k">Optional: ask Claude to tag your list</span><span class="ptxt">Tag each task in my list with three tags: repeats weekly, clear rules, document in and document out. A table with Yes or No for each tag, then my top 3. My tasks: [paste your list, with no client or firm names].</span><button class="wk-copy" type="button">Copy</button></div><div class="wk-msg wk-msg--them"><span class="wk-msg-k">What to look for</span>If a task needs a meeting or a judgment call, it is not your first agent.</div></div><div class="wk-chat-foot">Task 1.3 is on your prompt sheet. Claude slow or a file not loading? Continue from the backup on the screen.</div></div>
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-statement" id="b2board" data-sec="2" data-ch="What repeats across departments?" data-screen-label="29 What repeats across departments?">
+<section class="cd-slide cd-slide--stage wk-statement" id="b2board" data-sec="2" data-ch="What repeats across departments?" data-screen-label="33 What repeats across departments?">
  <div class="cd-wrap">
-  <div class="cd-eyebrow">Board review · 10:17<span class=cd-rule></span></div>
+  <div class="cd-eyebrow">Board review · 10:18<span class=cd-rule></span></div>
   <h2 class="cd-h1 wk-rule">What repeats <em>across departments?</em></h2>
   <p class="cd-lede wk-lead">The shared board on screen: one task from each person, grouped by department.</p>
-  <div class="wk-map-timer"><span class="cd-chip">Time</span><span class="wk-timer-pair"><button class="cd-timer" type="button" aria-pressed="false" data-wk-min="3" title="Click to start or pause"><span class="cd-dot"></span><span class="cd-t">3:00</span></button><button class="wk-reset wk-plus" type="button" aria-label="Add one minute">+1 min</button><button class="wk-reset" type="button" aria-label="Reset the timer">Reset</button></span></div>
+  <div class="wk-map-timer"><span class="cd-chip">Time</span><span class="wk-timer-pair"><button class="cd-timer" type="button" aria-pressed="false" data-wk-min="2" title="Click to start or pause"><span class="cd-dot"></span><span class="cd-t">2:00</span></button><button class="wk-reset wk-plus" type="button" aria-label="Add one minute">+1 min</button><button class="wk-reset" type="button" aria-label="Reset the timer">Reset</button></span></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--section wk-story-slide" id="b3story" data-sec="2" data-ch="Lesson 3 · Design the agent" data-screen-label="30 Lesson 3 · Design the agent">
+<section class="cd-slide cd-slide--section wk-story-slide" id="b3story" data-sec="2" data-ch="Lesson 3 · Design the agent" data-screen-label="34 Lesson 3 · Design the agent">
  <div class="cd-wrap">
   <div class="cd-sec-panel"><span class="cd-sec-num">03</span><span class="cd-sec-lbl">Lesson 3 · Design the agent</span></div>
   <div class="cd-sec-body">
@@ -3130,12 +3164,12 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-scene-slide" id="b3scene" data-sec="2" data-ch="The audit program every associate follows." data-screen-label="31 The audit program every associate follows.">
+<section class="cd-slide cd-slide--stage wk-scene-slide" id="b3scene" data-sec="2" data-ch="The audit program every associate follows." data-screen-label="35 The audit program every associate follows.">
  <div class="cd-wrap">
   <div class="wk-ana"><div class="wk-ana-text"><div class="cd-eyebrow">Lesson 3 · the picture<span class=cd-rule></span></div><h2 class="cd-h1 wk-rule">The audit program <em>every associate follows.</em></h2><p class="cd-lede">It says what to read, what to do and what the working paper looks like. An Agent Card does the same for an agent, in four boxes.</p><p class="wk-key">Input · Instruction · Output · When.</p></div><div class="wk-ana-viz cd-up" style="--i:1"><svg viewBox="0 0 480 300" class="wk-scene" role="img" aria-label="Input · Instruction · Output · Same steps · Same shape · When: Day 2"><path d="M10 268 H470" class="sc-ground"/><g><path d="M72 180 h24 l12 12 v38 h-36 Z" class="sc-hot sc-fill"/><path d="M80 200 h20 M80 210 h20 M80 220 h14" class="sc-dim"/></g><text x="90" y="252" text-anchor="middle" class="viz-lbl hot">Input</text><g><rect x="210" y="206" width="60" height="38" rx="4" class="sc-line sc-fill"/><path d="M200 250 h80 l-8 -6 h-64 Z" class="sc-line"/><path d="M222 220 h36 M222 230 h24" class="sc-dim"/></g><text x="240" y="272" text-anchor="middle" class="viz-lbl ">Instruction</text><g><path d="M372 180 h24 l12 12 v38 h-36 Z" class="sc-ok sc-fill"/><path d="M380 200 h20 M380 210 h20 M380 220 h14" class="sc-dim"/></g><text x="390" y="252" text-anchor="middle" class="viz-lbl ok">Output</text><path d="M110 190 L240 160 L370 190" class="sc-path dtdash"/><g><g><path d="M-18 -50 h24 l12 12 v38 h-36 Z" class="sc-line sc-fill"/><path d="M-10 -30 h20 M-10 -20 h20 M-10 -10 h14" class="sc-dim"/></g><animateMotion dur="5s" begin="0s" repeatCount="indefinite" path="M110 190 L240 160 L370 190"/></g><g class="dtpop" style="--dur:8s;--delay:0s"><rect x="80" y="35" width="120" height="28" rx="14" class="sc-pill hot"/><text x="140" y="54" text-anchor="middle" class="viz-lbl hot">Same steps</text></g><g class="dtpop" style="--dur:8s;--delay:1.5s"><rect x="280" y="35" width="120" height="28" rx="14" class="sc-pill hot"/><text x="340" y="54" text-anchor="middle" class="viz-lbl hot">Same shape</text></g><g class="dtpop" style="--dur:8s;--delay:3s"><rect x="176" y="85" width="129" height="28" rx="14" class="sc-pill "/><text x="240" y="104" text-anchor="middle" class="viz-lbl ">When: Day 2</text></g></svg></div></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b3t1" data-sec="2" data-ch="Four boxes before any build." data-screen-label="32 Four boxes before any build.">
+<section class="cd-slide cd-slide--stage" id="b3t1" data-sec="2" data-ch="Four boxes before any build." data-screen-label="36 Four boxes before any build.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 3 · the idea</div><h2 class="cd-h2">Four boxes <em>before any build.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
   <div class="wk-def"><span class="cd-k">THE AGENT CARD</span><p><b>Input:</b> what it works on. <b>Instruction:</b> the rules it follows. <b>Output:</b> what it hands back, in a fixed shape. <b>When:</b> when it runs without you (empty until Day 2).</p></div>
@@ -3143,7 +3177,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">This card fixes what went wrong in Task 1.2.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-check" id="b3chk0" data-sec="2" data-ch="Quick check" data-screen-label="33 Quick check">
+<section class="cd-slide cd-slide--stage wk-check" id="b3chk0" data-sec="2" data-ch="Quick check" data-screen-label="37 Quick check">
  <div class="cd-wrap">
   <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
   <h2 class="cd-h2 wk-check-q">Dana writes: <b>the month's supplier invoices (PDF) and the purchase ledger.</b> Which box of the card is this?</h2>
@@ -3151,7 +3185,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-fb" aria-live="polite"></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b3t2" data-sec="2" data-ch="Claude follows what you write." data-screen-label="34 Claude follows what you write.">
+<section class="cd-slide cd-slide--stage" id="b3t2" data-sec="2" data-ch="Claude follows what you write." data-screen-label="38 Claude follows what you write.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 3 · literal</div><h2 class="cd-h2">Claude follows <em>what you write.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
   <div class="wk-def"><span class="cd-k">LITERAL INSTRUCTIONS</span><p>Claude does what the words say, not what you meant. “Check the invoices” leaves the checking to chance. “Match number, date and amount; flag any difference” does not.</p></div>
@@ -3159,7 +3193,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">Vague words caused the misses in Task 1.2.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-check" id="b3chk" data-sec="2" data-ch="Quick check" data-screen-label="35 Quick check">
+<section class="cd-slide cd-slide--stage wk-check" id="b3chk" data-sec="2" data-ch="Quick check" data-screen-label="39 Quick check">
  <div class="cd-wrap">
   <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
   <h2 class="cd-h2 wk-check-q">Which Instruction line will give the <b>same result every run?</b></h2>
@@ -3167,7 +3201,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-fb" aria-live="polite"></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b3t3" data-sec="2" data-ch="A Project is the agent&#x27;s home." data-screen-label="36 A Project is the agent&#x27;s home.">
+<section class="cd-slide cd-slide--stage" id="b3t3" data-sec="2" data-ch="A Project is the agent&#x27;s home." data-screen-label="40 A Project is the agent&#x27;s home.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 3 · the home</div><h2 class="cd-h2">A Project is <em>the agent's home.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
   <div class="wk-def"><span class="cd-k">CLAUDE PROJECT</span><p>A <b>Project</b> keeps instructions and knowledge files. Claude uses them in <b>every chat inside it</b>, so nobody explains the task again.</p></div>
@@ -3175,7 +3209,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">Projects: + New Project, then Set project instructions.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b3t4" data-sec="2" data-ch="Templates stay. Documents come and go." data-screen-label="37 Templates stay. Documents come and go.">
+<section class="cd-slide cd-slide--stage" id="b3t4" data-sec="2" data-ch="Templates stay. Documents come and go." data-screen-label="41 Templates stay. Documents come and go.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 3 · knowledge or input</div><h2 class="cd-h2">Templates stay. <em>Documents come and go.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
   <div class="wk-def"><span class="cd-k">KNOWLEDGE VERSUS INPUT</span><p><b>Knowledge:</b> templates, reference files and one example output, saved in the Project. The rules go in the instructions. <b>Input:</b> this month's documents, attached or read with each run.</p></div>
@@ -3183,7 +3217,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">Mixing the two is the most common build error.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-check" id="b3chk2" data-sec="2" data-ch="Quick check" data-screen-label="38 Quick check">
+<section class="cd-slide cd-slide--stage wk-check" id="b3chk2" data-sec="2" data-ch="Quick check" data-screen-label="42 Quick check">
  <div class="cd-wrap">
   <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
   <h2 class="cd-h2 wk-check-q">Where does <b>this month's invoice pack</b> go?</h2>
@@ -3191,7 +3225,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-fb" aria-live="polite"></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b3pp" data-sec="2" data-ch="Demo 1.3 · playback" data-screen-label="39 Demo 1.3 · playback">
+<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b3pp" data-sec="2" data-ch="Demo 1.3 · playback" data-screen-label="43 Demo 1.3 · playback">
  <div class="cd-wrap">
 <div class="wk-widget"><div class="pp-top"><div><div class="cd-eyebrow">Demo 1.3 · Prompt playback</div><span class="cd-chip wk-tool">Claude Projects · Example · typical result</span>
 <h2 class="cd-h2">From card to agent</h2></div></div>
@@ -3226,7 +3260,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 <p class="wk-src">Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.</p></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--split cd-slide--exercise" id="b3task" data-sec="2" data-ch="Your turn 1.4" data-screen-label="40 Your turn 1.4">
+<section class="cd-slide cd-slide--split cd-slide--exercise" id="b3task" data-sec="2" data-ch="Your turn 1.4" data-screen-label="44 Your turn 1.4">
  <div class="cd-wrap">
   <div class="cd-rail">
     <div class="cd-eyebrow wk-task-eyebrow">Task 1.4 · Your turn · on your own, with the trainer · 20 min</div>
@@ -3243,7 +3277,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b3t5" data-sec="2" data-ch="Pick the task with the highest score." data-screen-label="41 Pick the task with the highest score.">
+<section class="cd-slide cd-slide--stage" id="b3t5" data-sec="2" data-ch="Pick the task with the highest score." data-screen-label="45 Pick the task with the highest score.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 3 · choosing</div><h2 class="cd-h2">Pick the task <em>with the highest score.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
   <div class="wk-def"><span class="cd-k">SCORING A USE CASE</span><p>Score each candidate from 1 to 5 on four points. The points are <b>how often</b>, <b>minutes each time</b>, <b>how clear the rules are</b>, and <b>can it run on a schedule</b>.</p></div>
@@ -3251,7 +3285,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">Day 2 needs an agent that can run without you.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b3demo" data-sec="2" data-ch="Demo 1.4 · playback" data-screen-label="42 Demo 1.4 · playback">
+<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b3demo" data-sec="2" data-ch="Demo 1.4 · playback" data-screen-label="46 Demo 1.4 · playback">
  <div class="cd-wrap">
 <div class="wk-widget"><div class="pp-top"><div><div class="cd-eyebrow">Demo 1.4 · Prompt playback</div><span class="cd-chip wk-tool">Claude · Example · typical result</span>
 <h2 class="cd-h2">Dana scores her three candidates</h2></div></div>
@@ -3286,14 +3320,14 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 <p class="wk-src">Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.</p></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b3tracks" data-sec="2" data-ch="Pick a track for your agent." data-screen-label="43 Pick a track for your agent.">
+<section class="cd-slide cd-slide--stage" id="b3tracks" data-sec="2" data-ch="Pick a track for your agent." data-screen-label="47 Pick a track for your agent.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 3 · the four tracks</div><h2 class="cd-h2">Pick a track <em>for your agent.</em></h2></div></div>
   <div class="wk-tw"><table class="wk-table wk-table--tight"><thead><tr><th>Track</th><th>Starting example</th><th>Pack</th></tr></thead><tbody><tr><td>Extraction</td><td>Lease agreements → a key-terms schedule</td><td>6 leases, 2 with unusual clauses</td></tr><tr><td>Analysis</td><td>Two-year trial balance → movements over the threshold, with questions for the client</td><td>24 accounts; flag over 10% and over KWD 5,000</td></tr><tr><td>Workflow</td><td>Request list and client emails → status tracker and follow-up drafts</td><td>15 requests, 10 emails</td></tr><tr><td>Reporting</td><td>Engagement status sheets → one weekly summary for a manager</td><td>3 engagements</td></tr></tbody></table></div>
   <p class="wk-key">Your own task fits a track. If not, ask Claude for a dummy pack with 2 planted errors (10 minutes).</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--split cd-slide--exercise" id="b3task2" data-sec="2" data-ch="Your turn 1.5" data-screen-label="44 Your turn 1.5">
+<section class="cd-slide cd-slide--split cd-slide--exercise" id="b3task2" data-sec="2" data-ch="Your turn 1.5" data-screen-label="48 Your turn 1.5">
  <div class="cd-wrap">
   <div class="cd-rail">
     <div class="cd-eyebrow wk-task-eyebrow">Task 1.5 · Your turn · on your own · 20 min</div>
@@ -3310,7 +3344,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--section wk-story-slide" id="b4story" data-sec="3" data-ch="Lesson 4 · Build: Instruction" data-screen-label="45 Lesson 4 · Build: Instruction">
+<section class="cd-slide cd-slide--section wk-story-slide" id="b4story" data-sec="3" data-ch="Lesson 4 · Build: Instruction" data-screen-label="49 Lesson 4 · Build: Instruction">
  <div class="cd-wrap">
   <div class="cd-sec-panel"><span class="cd-sec-num">04</span><span class="cd-sec-lbl">Lesson 4 · Build: Instruction</span></div>
   <div class="cd-sec-body">
@@ -3321,14 +3355,14 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b4parts" data-sec="3" data-ch="Five parts. Every instruction." data-screen-label="46 Five parts. Every instruction.">
+<section class="cd-slide cd-slide--stage" id="b4parts" data-sec="3" data-ch="Five parts. Every instruction." data-screen-label="50 Five parts. Every instruction.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 4 · the five parts</div><h2 class="cd-h2">Five parts. <em>Every instruction.</em></h2></div></div>
   <div class="wk-tw"><table class="wk-table "><thead><tr><th>Part</th><th>It tells Claude</th><th>Invoice agent</th></tr></thead><tbody><tr><td><b>Role</b></td><td>Who it is</td><td>An audit associate at Mirqab</td></tr><tr><td><b>Steps</b></td><td>What to do, in order</td><td>Read, find, compare</td></tr><tr><td><b>Rules</b></td><td>What must always be true</td><td>KWD, three decimals, never round</td></tr><tr><td><b>Output format</b></td><td>The exact shape</td><td>The template's columns</td></tr><tr><td><b>When unsure</b></td><td>What to do with a gap</td><td>Write Not found. Never guess.</td></tr></tbody></table></div>
   <p class="wk-key">Role · Steps · Rules · Output format · When unsure.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b4t2" data-sec="3" data-ch="Show one example. Then test three." data-screen-label="47 Show one example. Then test three.">
+<section class="cd-slide cd-slide--stage" id="b4t2" data-sec="3" data-ch="Show one example. Then test three." data-screen-label="51 Show one example. Then test three.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 4 · test</div><h2 class="cd-h2">Show one example. <em>Then test three.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
   <div class="wk-def"><span class="cd-k">EXAMPLE OUTPUT AND TESTING</span><p>One filled <b>example output</b> in the knowledge teaches the shape faster than a description. Then check <b>three cases where you know the answer</b> before you trust it.</p></div>
@@ -3336,7 +3370,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">Fix the instructions, not the answer.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-check" id="b4chk" data-sec="3" data-ch="Quick check" data-screen-label="48 Quick check">
+<section class="cd-slide cd-slide--stage wk-check" id="b4chk" data-sec="3" data-ch="Quick check" data-screen-label="52 Quick check">
  <div class="cd-wrap">
   <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
   <h2 class="cd-h2 wk-check-q">Your agent fills in a likely PO number when the invoice has none. <b>What do you fix?</b></h2>
@@ -3344,7 +3378,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-fb" aria-live="polite"></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b4pp" data-sec="3" data-ch="Demo 1.5 · playback" data-screen-label="49 Demo 1.5 · playback">
+<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b4pp" data-sec="3" data-ch="Demo 1.5 · playback" data-screen-label="53 Demo 1.5 · playback">
  <div class="cd-wrap">
 <div class="wk-widget"><div class="pp-top"><div><div class="cd-eyebrow">Demo 1.5 · Prompt playback</div><span class="cd-chip wk-tool">Claude Projects · Example · typical result</span>
 <h2 class="cd-h2">From card to five-part instructions</h2></div></div>
@@ -3379,14 +3413,14 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 <p class="wk-src">Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.</p></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b4map" data-sec="3" data-ch="Instructions in other tools." data-screen-label="50 Instructions in other tools.">
+<section class="cd-slide cd-slide--stage" id="b4map" data-sec="3" data-ch="Instructions in other tools." data-screen-label="54 Instructions in other tools.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 4 · transfer</div><h2 class="cd-h2">Instructions <em>in other tools.</em></h2></div></div>
   <div class="wk-tw"><table class="wk-table wk-table--tight"><thead><tr><th></th><th>Claude</th><th>ChatGPT</th><th>Microsoft 365 Copilot</th><th>Gemini</th></tr></thead><tbody><tr><td>Instruction</td><td>Project</td><td>Project or custom GPT</td><td>Agent (Agent Builder) or Notebook</td><td>Gem</td></tr></tbody></table></div>
   <p class="wk-key">The five parts work in every assistant. Paste them where the tool keeps its instructions.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--split cd-slide--exercise" id="b4task" data-sec="3" data-ch="Your turn 1.6" data-screen-label="51 Your turn 1.6">
+<section class="cd-slide cd-slide--split cd-slide--exercise" id="b4task" data-sec="3" data-ch="Your turn 1.6" data-screen-label="55 Your turn 1.6">
  <div class="cd-wrap">
   <div class="cd-rail">
     <div class="cd-eyebrow wk-task-eyebrow">Task 1.6 · Your turn · on your own · 65 min</div>
@@ -3403,7 +3437,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--section wk-story-slide" id="b5story" data-sec="3" data-ch="Lesson 5 · Build: Input and Output" data-screen-label="52 Lesson 5 · Build: Input and Output">
+<section class="cd-slide cd-slide--section wk-story-slide" id="b5story" data-sec="3" data-ch="Lesson 5 · Build: Input and Output" data-screen-label="56 Lesson 5 · Build: Input and Output">
  <div class="cd-wrap">
   <div class="cd-sec-panel"><span class="cd-sec-num">05</span><span class="cd-sec-lbl">Lesson 5 · Build: Input and Output</span></div>
   <div class="cd-sec-body">
@@ -3414,7 +3448,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b5t1" data-sec="3" data-ch="A key to one cabinet, not the whole archive." data-screen-label="53 A key to one cabinet, not the whole archive.">
+<section class="cd-slide cd-slide--stage" id="b5t1" data-sec="3" data-ch="A key to one cabinet, not the whole archive." data-screen-label="57 A key to one cabinet, not the whole archive.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 5 · input</div><h2 class="cd-h2">A key to one cabinet, <em>not the whole archive.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
   <div class="wk-def"><span class="cd-k">CONNECTOR</span><p>A <b>connector</b> lets Claude read from an app such as Google Drive. It reaches every file the signed-in account can open, so today you use a CODED account that opens only the <b>Mirqab sandbox</b>.</p></div>
@@ -3422,7 +3456,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">Customize, then Connectors, then Google Drive.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-check" id="b5chk1" data-sec="3" data-ch="Quick check" data-screen-label="54 Quick check">
+<section class="cd-slide cd-slide--stage wk-check" id="b5chk1" data-sec="3" data-ch="Quick check" data-screen-label="58 Quick check">
  <div class="cd-wrap">
   <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
   <h2 class="cd-h2 wk-check-q">Your agent will run tomorrow at 08:00. <b>Why can it not use files you drag in?</b></h2>
@@ -3430,7 +3464,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-fb" aria-live="polite"></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b5pp1" data-sec="3" data-ch="Demo 1.6 · playback" data-screen-label="55 Demo 1.6 · playback">
+<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b5pp1" data-sec="3" data-ch="Demo 1.6 · playback" data-screen-label="59 Demo 1.6 · playback">
  <div class="cd-wrap">
 <div class="wk-widget"><div class="pp-top"><div><div class="cd-eyebrow">Demo 1.6 · Prompt playback</div><span class="cd-chip wk-tool">Claude · Example · typical result</span>
 <h2 class="cd-h2">Read from the folder</h2></div></div>
@@ -3465,7 +3499,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 <p class="wk-src">Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.</p></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--split cd-slide--exercise" id="b5task1" data-sec="3" data-ch="Your turn 1.7" data-screen-label="56 Your turn 1.7">
+<section class="cd-slide cd-slide--split cd-slide--exercise" id="b5task1" data-sec="3" data-ch="Your turn 1.7" data-screen-label="60 Your turn 1.7">
  <div class="cd-wrap">
   <div class="cd-rail">
     <div class="cd-eyebrow wk-task-eyebrow">Task 1.7 · Your turn · on your own · 15 min</div>
@@ -3482,7 +3516,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b5t2" data-sec="3" data-ch="Same shape. Every run." data-screen-label="57 Same shape. Every run.">
+<section class="cd-slide cd-slide--stage" id="b5t2" data-sec="3" data-ch="Same shape. Every run." data-screen-label="61 Same shape. Every run.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 5 · output</div><h2 class="cd-h2">Same shape. <em>Every run.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
   <div class="wk-def"><span class="cd-k">ARTIFACT AND FIXED SHAPE</span><p>An <b>artifact</b> is an output you can open, edit and download, such as a table or a file. A <b>fixed shape</b> means the same columns, order and total line on every run.</p></div>
@@ -3490,7 +3524,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">Name the columns, in order, in the instructions.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-check" id="b5chk2" data-sec="3" data-ch="Quick check" data-screen-label="58 Quick check">
+<section class="cd-slide cd-slide--stage wk-check" id="b5chk2" data-sec="3" data-ch="Quick check" data-screen-label="62 Quick check">
  <div class="cd-wrap">
   <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
   <h2 class="cd-h2 wk-check-q">Why does a scheduled agent need a <b>fixed output shape?</b></h2>
@@ -3498,7 +3532,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-fb" aria-live="polite"></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b5pp2" data-sec="3" data-ch="Demo 1.7 · playback" data-screen-label="59 Demo 1.7 · playback">
+<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b5pp2" data-sec="3" data-ch="Demo 1.7 · playback" data-screen-label="63 Demo 1.7 · playback">
  <div class="cd-wrap">
 <div class="wk-widget"><div class="pp-top"><div><div class="cd-eyebrow">Demo 1.7 · Prompt playback</div><span class="cd-chip wk-tool">Claude · Example · typical result</span>
 <h2 class="cd-h2">Same shape every run</h2></div></div>
@@ -3533,14 +3567,14 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 <p class="wk-src">Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.</p></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b5map" data-sec="3" data-ch="Input and output in other tools." data-screen-label="60 Input and output in other tools.">
+<section class="cd-slide cd-slide--stage" id="b5map" data-sec="3" data-ch="Input and output in other tools." data-screen-label="64 Input and output in other tools.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 5 · transfer</div><h2 class="cd-h2">Input and output <em>in other tools.</em></h2></div></div>
   <div class="wk-tw"><table class="wk-table wk-table--tight"><thead><tr><th></th><th>Claude</th><th>ChatGPT</th><th>Microsoft 365 Copilot</th><th>Gemini</th></tr></thead><tbody><tr><td>Input</td><td>Connectors</td><td>Apps (formerly connectors)</td><td>Work data in SharePoint, OneDrive, Outlook</td><td>Connected apps (Gmail, Drive, Docs)</td></tr><tr><td>Output</td><td>Artifact or file</td><td>Canvas</td><td>Copilot Page</td><td>Canvas</td></tr></tbody></table></div>
   <p class="wk-key">The boxes stay the same. Only the button names change.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--split cd-slide--exercise" id="b5task2" data-sec="3" data-ch="Your turn 1.8" data-screen-label="61 Your turn 1.8">
+<section class="cd-slide cd-slide--split cd-slide--exercise" id="b5task2" data-sec="3" data-ch="Your turn 1.8" data-screen-label="65 Your turn 1.8">
  <div class="cd-wrap">
   <div class="cd-rail">
     <div class="cd-eyebrow wk-task-eyebrow">Task 1.8 · Your turn · on your own · 20 min</div>
@@ -3557,7 +3591,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--section wk-story-slide" id="b6story" data-sec="3" data-ch="Lesson 6 · Build: Package" data-screen-label="62 Lesson 6 · Build: Package">
+<section class="cd-slide cd-slide--section wk-story-slide" id="b6story" data-sec="3" data-ch="Lesson 6 · Build: Package" data-screen-label="66 Lesson 6 · Build: Package">
  <div class="cd-wrap">
   <div class="cd-sec-panel"><span class="cd-sec-num">06</span><span class="cd-sec-lbl">Lesson 6 · Build: Package</span></div>
   <div class="cd-sec-body">
@@ -3568,7 +3602,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b6t1" data-sec="3" data-ch="From your desk to the firm&#x27;s manual." data-screen-label="63 From your desk to the firm&#x27;s manual.">
+<section class="cd-slide cd-slide--stage" id="b6t1" data-sec="3" data-ch="From your desk to the firm&#x27;s manual." data-screen-label="67 From your desk to the firm&#x27;s manual.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 6 · the idea</div><h2 class="cd-h2">From your desk <em>to the firm's manual.</em></h2></div><div class="wk-chips"><span class="cd-chip">The idea</span></div></div>
   <div class="wk-def"><span class="cd-k">SKILL</span><p>A <b>skill</b> is a saved method that Claude loads when a task matches it. It works in any chat, in Cowork and in scheduled tasks, and you can share it.</p></div>
@@ -3576,7 +3610,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">Customize, then Skills. Code execution must be on.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-check" id="b6chk" data-sec="3" data-ch="Quick check" data-screen-label="64 Quick check">
+<section class="cd-slide cd-slide--stage wk-check" id="b6chk" data-sec="3" data-ch="Quick check" data-screen-label="68 Quick check">
  <div class="cd-wrap">
   <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
   <h2 class="cd-h2 wk-check-q">Your method must work in any chat, in Cowork and on a schedule. <b>What do you package it as?</b></h2>
@@ -3584,7 +3618,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-fb" aria-live="polite"></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b6pp" data-sec="3" data-ch="Demo 1.8 · playback" data-screen-label="65 Demo 1.8 · playback">
+<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b6pp" data-sec="3" data-ch="Demo 1.8 · playback" data-screen-label="69 Demo 1.8 · playback">
  <div class="cd-wrap">
 <div class="wk-widget"><div class="pp-top"><div><div class="cd-eyebrow">Demo 1.8 · Prompt playback</div><span class="cd-chip wk-tool">Claude · Example · typical result</span>
 <h2 class="cd-h2">From Project to skill</h2></div></div>
@@ -3619,14 +3653,14 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 <p class="wk-src">Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.</p></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="b6map" data-sec="3" data-ch="A packaged method in other tools." data-screen-label="66 A packaged method in other tools.">
+<section class="cd-slide cd-slide--stage" id="b6map" data-sec="3" data-ch="A packaged method in other tools." data-screen-label="70 A packaged method in other tools.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 6 · transfer</div><h2 class="cd-h2">A packaged method <em>in other tools.</em></h2></div></div>
   <div class="wk-tw"><table class="wk-table wk-table--tight"><thead><tr><th></th><th>Claude</th><th>ChatGPT</th><th>Microsoft 365 Copilot</th><th>Gemini</th></tr></thead><tbody><tr><td>Package</td><td>Skill</td><td>Skill (beta) or custom GPT</td><td>Agent</td><td>Gem</td></tr></tbody></table></div>
   <p class="wk-key">Elsewhere it is a ChatGPT skill or custom GPT, a Copilot agent or a Gem. The card inside stays the same.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-check" id="b6chk2" data-sec="3" data-ch="Quick check" data-screen-label="67 Quick check">
+<section class="cd-slide cd-slide--stage wk-check" id="b6chk2" data-sec="3" data-ch="Quick check" data-screen-label="71 Quick check">
  <div class="cd-wrap">
   <span class="cd-hint wk-check-hint"><svg class="cd-ic"><use href="#i-chat"/></svg>Quick check</span>
   <h2 class="cd-h2 wk-check-q">A colleague in another firm uses ChatGPT. <b>Where would your invoice skill live there?</b></h2>
@@ -3634,7 +3668,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-fb" aria-live="polite"></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--split cd-slide--exercise" id="b6task" data-sec="3" data-ch="Your turn 1.9" data-screen-label="68 Your turn 1.9">
+<section class="cd-slide cd-slide--split cd-slide--exercise" id="b6task" data-sec="3" data-ch="Your turn 1.9" data-screen-label="72 Your turn 1.9">
  <div class="cd-wrap">
   <div class="cd-rail">
     <div class="cd-eyebrow wk-task-eyebrow">Task 1.9 · Your turn · on your own · 20 min</div>
@@ -3646,12 +3680,12 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
   <div class="cd-exercise">
     <div class="cd-exercise-head"><span class="cd-chip">Your time: 20 min</span><span class="wk-timer-pair"><button class="cd-timer" type="button" aria-pressed="false" data-wk-min="20" title="Click to start or pause"><span class="cd-dot"></span><span class="cd-t">20:00</span></button><button class="wk-reset wk-plus" type="button" aria-label="Add one minute">+1 min</button><button class="wk-reset" type="button" aria-label="Reset the timer">Reset</button></span></div>
-    <ol class="cd-steps"><li>Code execution is on for the team: the owner turned it on. If your skill does not save, tell the trainer.</li><li>In your Project, ask Claude to turn your instructions into a skill. Save it.</li><li>Open a new chat outside the Project. Attach your pack and ask for the task in one line.</li><li>Check that Claude uses your skill and returns the same shape.</li><li>Use the transfer map. Add one line to your Agent Card: where this skill would live in ChatGPT, Copilot or Gemini.</li></ol>
+    <ol class="cd-steps"><li>Code execution is on for the team: the owner turned it on. If your skill does not save, tell the trainer.</li><li>In your Project, ask Claude to turn your instructions into a skill. Save it.</li><li>Open a new chat outside the Project. Attach your pack and ask for the task in one line.</li><li>Check that Claude uses your skill and returns the same shape.</li><li>Use the Package row on the transfer slide or the cheat sheet. Add one line to your Agent Card: where this skill would live in ChatGPT, Copilot or Gemini.</li></ol>
     <div class="wk-chat wk-chat--tight"><div class="wk-chat-bar"><span class="wk-chat-av"><svg class="cd-ic"><use href="#i-chat"/></svg></span><div><b>Claude · skills</b><small>copy, paste, then check</small></div></div><div class="wk-chat-body"><div class="wk-msg wk-msg--me"><span class="wk-msg-k">Make the skill</span><span class="ptxt">Turn the instructions and knowledge of this Project into a skill named [your-skill-name]. Keep every rule word for word. Describe when to use it in one line.</span><button class="wk-copy" type="button">Copy</button></div><div class="wk-msg wk-msg--me"><span class="wk-msg-k">Test it in a new chat</span><span class="ptxt">[One line that asks for your task], using the attached sample.</span><button class="wk-copy" type="button">Copy</button></div><div class="wk-msg wk-msg--them"><span class="wk-msg-k">What to look for</span>A skill needs a clear name and one line on when to use it.</div></div><div class="wk-chat-foot">Task 1.9 is on your prompt sheet. Claude slow or a file not loading? Continue from the backup on the screen.</div></div>
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--split cd-slide--exercise" id="b6task2" data-sec="3" data-ch="Your turn 1.10" data-screen-label="69 Your turn 1.10">
+<section class="cd-slide cd-slide--split cd-slide--exercise" id="b6task2" data-sec="3" data-ch="Your turn 1.10" data-screen-label="73 Your turn 1.10">
  <div class="cd-wrap">
   <div class="cd-rail">
     <div class="cd-eyebrow wk-task-eyebrow">Task 1.10 · Your turn · on your own · 14 min</div>
@@ -3668,7 +3702,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-statement" id="b7show" data-sec="4" data-ch="Four teams. Ninety seconds each person." data-screen-label="70 Four teams. Ninety seconds each person.">
+<section class="cd-slide cd-slide--stage wk-statement" id="b7show" data-sec="4" data-ch="Four teams. Ninety seconds each person." data-screen-label="74 Four teams. Ninety seconds each person.">
  <div class="cd-wrap">
   <div class="cd-eyebrow">Show and tell · 16:10<span class=cd-rule></span></div>
   <h2 class="cd-h1 wk-rule">Four teams. <em>Ninety seconds each person.</em></h2>
@@ -3676,7 +3710,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <div class="wk-map-timer"><span class="cd-chip">Time</span><span class="wk-timer-pair"><button class="cd-timer" type="button" aria-pressed="false" data-wk-min="12" title="Click to start or pause"><span class="cd-dot"></span><span class="cd-t">12:00</span></button><button class="wk-reset wk-plus" type="button" aria-label="Add one minute">+1 min</button><button class="wk-reset" type="button" aria-label="Reset the timer">Reset</button></span></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b7demo" data-sec="4" data-ch="Demo 1.9 · playback" data-screen-label="71 Demo 1.9 · playback">
+<section class="cd-slide cd-slide--stage wk-pp pp-slide" id="b7demo" data-sec="4" data-ch="Demo 1.9 · playback" data-screen-label="75 Demo 1.9 · playback">
  <div class="cd-wrap">
 <div class="wk-widget"><div class="pp-top"><div><div class="cd-eyebrow">Demo 1.9 · Prompt playback</div><span class="cd-chip wk-tool">Claude · Example · typical result</span>
 <h2 class="cd-h2">The agent that ran itself</h2></div></div>
@@ -3711,14 +3745,21 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 <p class="wk-src">Playback of the ideal run. The live tool may word it differently. All figures are fictional training data.</p></div>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage" id="w1" data-sec="4" data-ch="Wrap-up" data-screen-label="72 Wrap-up">
+<section class="cd-slide cd-slide--stage" id="b7map" data-sec="4" data-ch="Same building blocks, different names." data-screen-label="76 Same building blocks, different names.">
+ <div class="cd-wrap">
+<div class="cd-head"><div><div class="cd-eyebrow">Lesson 7 · the transfer map</div><h2 class="cd-h2">Same building blocks, <em>different names.</em></h2></div></div>
+  <div class="wk-tw"><table class="wk-table wk-table--tight"><thead><tr><th>Agent Card box</th><th>Claude (today)</th><th>ChatGPT</th><th>Microsoft 365 Copilot</th><th>Gemini</th></tr></thead><tbody><tr><td>Instruction: saved rules and files</td><td>Project</td><td>Project or custom GPT</td><td>Agent (Agent Builder) or Notebook</td><td>Gem</td></tr><tr><td>Input: reach your files and email</td><td>Connectors</td><td>Apps (formerly connectors)</td><td>Work data in SharePoint, OneDrive, Outlook</td><td>Connected apps (Gmail, Drive, Docs)</td></tr><tr><td>Output: a file you open and edit</td><td>Artifact or file</td><td>Canvas</td><td>Copilot Page</td><td>Canvas</td></tr><tr><td>Package: a reusable method</td><td>Skill</td><td>Skill (beta) or custom GPT</td><td>Agent</td><td>Gem</td></tr><tr><td>When: runs on its own</td><td>Scheduled task</td><td>Scheduled task</td><td>Scheduled prompt</td><td>Scheduled action</td></tr></tbody></table></div>
+  <p class="wk-key">Learn the method once. The card works in any tool.</p>
+ </div>
+</section>
+<section class="cd-slide cd-slide--stage" id="w1" data-sec="4" data-ch="Wrap-up" data-screen-label="77 Wrap-up">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Today · wrap-up</div><h2 class="cd-h2">One card. One Project. <em>One skill each.</em></h2></div></div>
   <div class="cd-cards cd-cols-3 wk-cards"><div class="cd-card cd-up" style="--i:0"><span class="cd-k">You built</span><b>Your own agent</b><p>A card, a Project, a folder, a fixed shape and a skill.</p></div><div class="cd-card cd-up" style="--i:1"><span class="cd-k">You found</span><b>2 planted problems</b><p>SCC-0718 and the FSC-3390 cut-off, plus your messy file.</p></div><div class="cd-card cd-up" style="--i:2"><span class="cd-k">The habit</span><b>Flag, never guess</b><p>Claude does the first pass. You review.</p></div></div>
   <p class="wk-key">Next → Tomorrow: your team&#x27;s agent runs on a schedule. Vote on the board for the agent to automate by 08:40.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--end wk-close" id="close1" data-sec="4" data-ch="Close" data-screen-label="73 Close">
+<section class="cd-slide cd-slide--end wk-close" id="close1" data-sec="4" data-ch="Close" data-screen-label="78 Close">
  <div class="cd-ghost-word" aria-hidden="true">END</div>
  <div class="cd-wrap">
   <span class="cd-hint">Day 1 · close</span>
@@ -4044,6 +4085,36 @@ function llmReset(){llm.step=0;llm.words=[];var t=document.getElementById('llm-t
   document.getElementById('llm-reset').addEventListener('click',llmReset);
   llmReset();})();
 
+
+(function(){
+  [].forEach.call(document.querySelectorAll('.wai'), function(w){
+    var f = w.querySelector('.wai-bar'), inp = w.querySelector('.wai-in'), out = w.querySelector('.wai-out'), clr = w.querySelector('.wai-clear');
+    var seen = {};
+    function size(){ var n = out.children.length; out.classList.toggle('wai-many', n > 8); out.classList.toggle('wai-lots', n > 16); }
+    function pop(c){ c.classList.remove('wai-pop'); void c.offsetWidth; c.classList.add('wai-pop'); }
+    f.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var t = (inp.value || '').replace(/\s+/g, ' ').trim(); if (!t) return;
+      var k = t.toLowerCase(), c = seen[k];
+      if (c) { var n = (+c.getAttribute('data-n') || 1) + 1; c.setAttribute('data-n', n); c.querySelector('b').textContent = '×' + n; pop(c); }
+      else {
+        c = document.createElement('button'); c.type = 'button'; c.className = 'wai-chip'; c.setAttribute('data-n', '1'); c.title = 'Click to remove';
+        var sp = document.createElement('span'); sp.textContent = t; c.appendChild(sp); c.appendChild(document.createElement('b'));
+        c.addEventListener('click', function(){ delete seen[k]; c.remove(); size(); });
+        out.appendChild(c); seen[k] = c; pop(c);
+      }
+      inp.value = ''; inp.focus(); size();
+    });
+    inp.addEventListener('keydown', function(ev){
+      var D = window.CD_DECK, empty = !inp.value;
+      if (ev.key === 'Escape') { inp.blur(); return; }
+      if (!D) return;
+      if (ev.key === 'PageDown' || (empty && ev.key === 'ArrowRight')) { ev.preventDefault(); inp.blur(); D.goTo(D.current + 1); }
+      else if (ev.key === 'PageUp' || (empty && ev.key === 'ArrowLeft')) { ev.preventDefault(); inp.blur(); D.goTo(D.current - 1); }
+    });
+    clr.addEventListener('click', function(){ out.innerHTML = ''; seen = {}; size(); inp.focus(); });
+  });
+})();
 
 </script>
 <script>addEventListener("keydown",function(e){if((e.key===" "||e.key==="Enter")&&e.target&&e.target.closest&&e.target.closest("button,input,a,.wk-w")){e.stopPropagation();}},true);</script>

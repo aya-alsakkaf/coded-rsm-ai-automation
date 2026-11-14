@@ -129,32 +129,6 @@ CHECK3 = [("Extraction", "Leases 1, 4 and 6", "Lease 1: option to renew for 3 ye
 MOVE_ROWS = [(m[0], f"{m[2]:,}", f"{m[3]:,}", f"{m[4]:+,}", f"{m[5]:.1f}%") for m in D.MOVES if m[6]]
 
 # ===================================================================== DAY 1
-demo("d10", day=1, skill="1.0", sec=1, title="One invoice, two requests", tool="Claude", files=[F_INV], kind="showcase",
- setup=["[T] Open claude.ai in two windows. Upload abdali-supplier-invoices-oct-2026.pdf to both.", "[T] Type the weak request in one window and the five-part request in the other. Ask about invoice BPK-4471 (page 1)."],
- prompts=[("Weak", "What's in this?"), ("Strong", joined(OPENER_PARTS) + " Use invoice BPK-4471 on page 1.")],
- expected=f"Weak: a readable paragraph about packaging that gives a rounded amount and no invoice number. Strong: one row: {D.OPENER_INV[1]}, {D.OPENER_INV[0]}, 12 October 2026, PO number Not found, KWD {num(D.OPENER_INV[4])}.",
- say="Same tool. Same invoice. The only thing that changed is the request.",
- point="The request decides the result. You still check it.",
- backup=[("h", "Weak request: typical result"), ("p", "“This is an invoice from Bayan Packaging for cartons and shrink film, dated in October, for about 2,100 dinars. It looks like a standard packaging purchase.”"),
-         ("h", "Five-part request: typical result"), tbl(["Supplier", "Invoice no.", "Date", "PO no.", "Amount (KWD)"], [(D.OPENER_INV[1], D.OPENER_INV[0], "2026-10-12", "Not found", num(D.OPENER_INV[4]))])],
- fallback="Play the opener slide step by step.",
- hint="Which answer could go into a working paper today?")
-
-demo("d11", day=1, skill="1.1", sec=2, title="Where it goes wrong", tool="Claude", files=[F_INV, F_LEDGER, F_LETTER], kind="player",
- setup=["[T] Upload the invoices and the ledger to one chat.", "Ask for every invoice and its amount in one short line. Compare one row with page 2 of the invoices.",
-        "[T] Then attach abdali-engagement-letter-2026.docx and ask when the client must sign and return it. Check the answer against the letter."],
- prompts=[("A short request", "List each invoice in the attached files and its amount."), ("A date to check", "By what date must the client sign and return the attached engagement letter? Quote the sentence.")],
- expected=f"Most rows are right. In the typical wrong run, {D.AI_WRONG[0]} shows KWD {num(D.AI_WRONG[1])} (the amount of the other Wafra line, WDS-20988) instead of KWD {num(D.INV[D.AI_WRONG[0]][4])} (the invoice).",
- say="It reads well and it is wrong in one place. Only the source tells you which place.",
- point="Tick every figure against the source, as you would a junior's working paper.",
- backup=[("h", "A typical wrong answer"), tbl(["Invoice", "AI answer (KWD)", "The invoice says (KWD)"], [(r[0], num(D.AI_WRONG[1] if r[0] == D.AI_WRONG[0] else r[4]), num(r[4])) for r in D.INVOICES])],
- fallback=f"Show the backup table: the wrong row is {D.AI_WRONG[0]}.",
- hint=f"Open page 2 of the invoice pack and compare it with the {D.AI_WRONG[0]} row.",
- player={"parts": [["Task", "List each invoice in the attached files and its amount."]],
-         "table": [["Invoice", "AI answer (KWD)", "The invoice says (KWD)"]] + [[r[0], num(D.AI_WRONG[1] if r[0] == D.AI_WRONG[0] else r[4]), num(r[4])] for r in D.INVOICES], "best": 2,
-         "reco": [f"<b>Four rows are right.</b> One is not: {D.AI_WRONG[0]}.", f"<b>Why:</b> the ledger has two Wafra lines; the AI took the other one's {num(D.AI_WRONG[1])}, not the invoice.", "<b>The habit:</b> tick each figure against the source document."],
-         "control": "Tick every figure against the source before it goes into a working paper."})
-
 demo("t11", day=1, skill="1.1", sec=2, title="First Claude chat", tool="Claude", files=[F_LETTER], kind="task", hands_on=True, minutes=7, solo="on your own",
  setup=["Open claude.ai. Start a new chat and attach abdali-engagement-letter-2026.docx with the + button.", "Ask the three questions below, one at a time.",
         "Check one answer against the letter yourself."],
@@ -176,7 +150,7 @@ demo("t11", day=1, skill="1.1", sec=2, title="First Claude chat", tool="Claude",
  stretch=["Ask Claude which paragraph each date came from, then check two of them."],
  stretch_prompts=[("Where each date came from", "For each date you listed, give the section heading it came from.")])
 
-demo("t12", day=1, skill="1.2", sec=3, title="Same task, 18 answers", tool="Claude chat", files=[F_INV, F_LEDGER], kind="task", hands_on=True, minutes=18, solo="on your own, then in pairs",
+demo("t12", day=1, skill="1.2", sec=3, title="Same task, 18 answers", tool="Claude chat", files=[F_INV, F_LEDGER], kind="task", hands_on=True, minutes=15, solo="on your own, then in pairs",
  setup=["Start a new chat. Attach the invoice pack and the October purchase ledger.", "Write your own request: a table that checks each invoice against the ledger. You have 7 minutes.",
         "Compare your table with your neighbor's: columns, totals, and what each of you flagged.", "Be ready to show your table on the screen."],
  prompts=[],
@@ -192,6 +166,17 @@ demo("t12", day=1, skill="1.2", sec=3, title="Same task, 18 answers", tool="Clau
  fallback="If Claude is slow, pairs share one laptop. Show the backup table in the debrief.",
  hint="Check every row against both files: number, date and amount.",
  stretch=["Run the same request again in a new chat. Compare the two tables."])
+
+demo("d10", day=1, skill="1.1", sec=3, title="One invoice, two requests", tool="Claude", files=[F_INV], kind="showcase",
+ setup=["[T] Open claude.ai in two windows. Upload abdali-supplier-invoices-oct-2026.pdf to both.", "[T] Type the weak request in one window and the five-part request in the other. Ask about invoice BPK-4471 (page 1)."],
+ prompts=[("Weak", "What's in this?"), ("Strong", joined(OPENER_PARTS) + " Use invoice BPK-4471 on page 1.")],
+ expected=f"Weak: a readable paragraph about packaging that gives a rounded amount and no invoice number. Strong: one row: {D.OPENER_INV[1]}, {D.OPENER_INV[0]}, 12 October 2026, PO number Not found, KWD {num(D.OPENER_INV[4])}.",
+ say="Same tool. Same invoice. The only thing that changed is the request.",
+ point="The request decides the result. You still check it.",
+ backup=[("h", "Weak request: typical result"), ("p", "“This is an invoice from Bayan Packaging for cartons and shrink film, dated in October, for about 2,100 dinars. It looks like a standard packaging purchase.”"),
+         ("h", "Five-part request: typical result"), tbl(["Supplier", "Invoice no.", "Date", "PO no.", "Amount (KWD)"], [(D.OPENER_INV[1], D.OPENER_INV[0], "2026-10-12", "Not found", num(D.OPENER_INV[4]))])],
+ fallback="Play the Demo 1.1 slide step by step.",
+ hint="Which answer could go into a working paper today?")
 
 demo("d13", day=1, skill="1.2", sec=3, title="Dana tags her task list", tool="Claude", files=[], kind="player",
  setup=["[T] Paste Dana's seven tasks into a new chat with the prompt below."],
@@ -214,7 +199,7 @@ demo("d13", day=1, skill="1.2", sec=3, title="Dana tags her task list", tool="Cl
          "reco": ["<b>Top 3:</b> invoice matching, lead schedules, chasing documents.", "<b>Not an agent:</b> the CFO meeting. Judgment and trust stay with people.", "<b>Next:</b> do the same with your own week."],
          "control": "You decide the top 3. Claude only sorts your list."})
 
-demo("t13", day=1, skill="1.3", sec=3, title="Your task inventory", tool="The Day 1 lab page", files=[], kind="task", hands_on=True, minutes=12, solo="on your own",
+demo("t13", day=1, skill="1.3", sec=3, title="Your task inventory", tool="The Day 1 lab page", files=[], kind="task", hands_on=True, minutes=10, solo="on your own",
  setup=["Open the Day 1 lab page. List 10 tasks from your last week.", "Tag each one: repeats weekly, clear rules, document in and document out.",
         "Use the prompt card for your role (on the lab page). Pick the 3 tasks with three tags.", "Post your strongest task on the shared board, under your department."],
  prompts=[("Optional: ask Claude to tag your list", "Tag each task in my list with three tags: repeats weekly, clear rules, document in and document out. A table with Yes or No for each tag, then my top 3. My tasks: [paste your list, with no client or firm names].")],
@@ -399,7 +384,7 @@ demo("d19", day=1, skill="1.8", sec=7, title="From Project to skill", tool="Clau
 demo("t19", day=1, skill="1.9", sec=7, title="Make your skill", tool="Claude · skills", files=[F_LEASES, F_TB, F_PBC, F_EMAILS, F_STATUS], kind="task", hands_on=True, minutes=20, solo="on your own",
  setup=["Code execution is on for the team: the owner turned it on. If your skill does not save, tell the trainer.", "In your Project, ask Claude to turn your instructions into a skill. Save it.",
         "Open a new chat outside the Project. Attach your pack and ask for the task in one line.", "Check that Claude uses your skill and returns the same shape.",
-        "Use the transfer map. Add one line to your Agent Card: where this skill would live in ChatGPT, Copilot or Gemini."],
+        "Use the Package row on the transfer slide or the cheat sheet. Add one line to your Agent Card: where this skill would live in ChatGPT, Copilot or Gemini."],
  prompts=[("Make the skill", "Turn the instructions and knowledge of this Project into a skill named [your-skill-name]. Keep every rule word for word. Describe when to use it in one line."),
           ("Test it in a new chat", "[One line that asks for your task], using the attached sample.")],
  expected="A saved skill; a fresh chat that uses it and returns the same shape as the Project; one transfer line on the card.",
@@ -622,9 +607,9 @@ demo("t26", day=2, skill="2.5", sec=13, title="Clean runs, a failed run and the 
  hint="Every number on your demo comes from your run log or the Clock tab.",
  stretch=["List the next two tasks your team would automate."])
 
-# ===================================================================== the opener (Day 1)
+# ===================================================================== Demo 1.1: one invoice, two requests (Day 1, Lesson 2)
 SHOWCASE = {
- "eyebrow": "Opener · one invoice", "title": "Same tool. Same invoice. <span class=\"hl\">Two requests.</span>", "tool": "Claude", "file": F_INV,
+ "eyebrow": "Demo 1.1 · one invoice", "title": "Same tool. Same invoice. <span class=\"hl\">Two requests.</span>", "tool": "Claude", "file": F_INV,
  "weak": "What's in this?",
  "weak_answer": ["This is an invoice from Bayan Packaging for cartons and shrink film.", "It is dated in October and is for about 2,100 dinars.", "It looks like a standard packaging purchase."],
  "weak_flags": ["No invoice number", "Amount rounded", "PO not mentioned"],

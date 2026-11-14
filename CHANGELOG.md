@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-11-14 · Day 1 edits (Aya)
+
+- Opening: the Dana story and the weak-and-strong opener are gone. Day 1 now runs cover, **Welcome to CODED** (who we are, your trainer, who is
+  here; generic, the trainer introduces themselves), pre-MAP, outcomes, today's map. Opening 08:30-08:50; Lesson 1 starts 08:50.
+- Lesson 1: a **What is AI?** slide after the AI foundations story, with a search bar. The trainer types the room's answers; each shows as a chip
+  (a repeat shows ×2, a click removes a typo, Clear empties it). Nothing is saved or sent. Esc leaves the bar; with the bar empty, → and ← move slides.
+- Lesson 1: Demo 1.1 (the wrong invoice row) is replaced by **two real hallucination cases**: Mata v. Avianca (fake court cases, 2023) and
+  Moffatt v. Air Canada (a chatbot's made-up refund rule, 2024), with sources on the slide. The quick check on a wrong invoice figure follows it.
+- The **transfer map** moves from Lesson 1 to the end of Day 1 (Lesson 7, before the wrap). The Lesson 4 to 6 transfer slides stay.
+- Lesson 2, after Task 1.2: why the prompt matters, **Demo 1.1** (the weak and strong request, moved here from the opener and renumbered from 1.0),
+  the five parts of a good prompt, a check, then repeatable, **what an agent is**, then agent-ready tasks. Task 1.2 is 15 minutes (was 18),
+  Task 1.3 is 10 (was 12), the board review 2 (was 3), so Lesson 2 still ends at 10:20.
+- Day 1 outcomes add "Write a five-part prompt". Day 1 is 78 slides (was 73).
+- Day 1 lab page: Task 1.1 and Task 1.2 added as the first two steps (it started at Task 1.3).
+- Lesson plan, class plan, prompt sheet, answer key, backups, notes, day page and hub rebuilt from the kit. Portal surveys unchanged.
+
 ## 2026-11-11 · Hours 08:30-16:30
 
 - Both days now run 08:30-16:30 (was 16:00). Day 1: Task 1.6 is 65 minutes (struggle 30, unlock 15, fix 20; hint at 15, common fixes at 30).
