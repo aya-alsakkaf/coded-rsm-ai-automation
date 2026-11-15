@@ -406,10 +406,10 @@ def day2():
     s = opening(2)
     # Callback · Day 1
     s.append(rule("c1rule", "open", "Callback · Day 1", "Yesterday you built it. <span class=\"hl\">Today you package it and schedule it.</span>",
-        "Each of you has an Agent Card, a Project and a connected folder. Two quick questions, then skills.",
-        n=N(do="Open the Outputs folder and show the 16:25 file from yesterday's scheduled run.", time="08:33-08:35")))
+        "Each of you has an Agent Card and a Project. Two quick questions, then skills.",
+        n=N(do="Click Scheduled in the left sidebar and open yesterday's 16:25 run.", time="08:33-08:35")))
     s.append(check("c1chk1", "open", "Where does this month's invoice pack go in an agent?",
-        [("Into the Project knowledge", 0, "Knowledge is what stays the same."), ("Into each run, from the folder", 1, "Right. Input changes every run."), ("Into the instructions", 0, "Instructions hold the rules.")]))
+        [("Into the Project knowledge", 0, "Knowledge is what stays the same."), ("Into each run, with this month's files", 1, "Right. Input changes every run."), ("Into the instructions", 0, "Instructions hold the rules.")]))
     s.append(check("c1chk2", "open", "An invoice has no PO number. <b>What should the agent write?</b>",
         [("Not found, and a note", 1, "Right. Flag, never guess."), ("The most likely PO", 0, "That is a guess."), ("Nothing", 0, "A blank hides the gap.")]))
     # Lesson 1 · Skills
@@ -424,7 +424,7 @@ def day2():
         "A prompt asks once. Instructions set the context. A skill holds the method. An agent puts them together.", cls="tight"))
     s.append(listslide("s1why", "s1", "Lesson 1 · why combine them", "Why we <span class=\"hl\">combine them.</span>",
         ["<b>Prompt:</b> says what to do on this run. Alone, it is gone when the chat ends.", "<b>Project instructions:</b> keep the context and the template. Alone, they stay in one Project.",
-         "<b>Skill:</b> keeps the method: steps, rules, output. Alone, it has no files and no schedule.", "<b>Connectors and a schedule:</b> bring the input and the When.",
+         "<b>Skill:</b> keeps the method: steps, rules, output. Alone, it has no files and no schedule.", "<b>The input and a schedule:</b> the files to read, and the When.",
          "<b>Together:</b> the same checked result, every run, without you."],
         "Prompt: this run. Project: this context. Skill: this method. Agent: all of them."))
     s.append(term("s1pick", "s1", "Lesson 1 · how a skill loads", "How Claude <span class=\"hl\">picks a skill.</span>", "Skill description",
@@ -476,15 +476,15 @@ def day2():
         "Your skill builds the dashboard in two minutes. <b>But on Sunday at 08:00 you are in a client meeting, and nobody opens Claude.</b>",
         "Set it once. <span class=\"hl\">It runs on time.</span>", "Put your own skill on a weekly schedule and test it once.", time="10:55-11:30"))
     s.append(term("t3term", "t3", "Lesson 3 · the idea", "A calendar reminder <span class=\"hl\">that also does the work.</span>", "Scheduled task",
-        "A <b>scheduled task</b> is a saved prompt that Claude runs hourly, daily, on weekdays, weekly or on demand. Its prompt calls your <b>skill</b> and reads through your <b>connectors</b>.",
+        "A <b>scheduled task</b> is a saved prompt that Claude runs hourly, daily, on weekdays, weekly or on demand. Its prompt calls your <b>skill</b>, and the run reads the file stored in that skill.",
         "A reminder that only reminds you…", "…versus one that <b>does the work and leaves the file</b>.", "Click Scheduled in the left sidebar, then New task."))
     s.append(listslide("t3fresh", "t3", "Lesson 3 · how a run works", "Each run <span class=\"hl\">starts fresh.</span>",
-        ["<b>No memory:</b> the prompt, the skill and the folders must say everything.", "<b>Runs remotely:</b> with Drive, your laptop can be closed.",
-         "<b>Names:</b> each output has the date and time in its name.", "<b>Run log:</b> one line per run: date, files read, items flagged, file saved.",
-         "<b>Empty folder:</b> the log says No new files, and the run stops."],
-        "Read the run log every morning, even on quiet days."))
-    s.append(check("t3chk", "t3", "Your scheduled task runs at 08:00. <b>What should it rely on from yesterday's run?</b>",
-        [("Its memory of yesterday's session", 0, "Each run is its own session."), ("Only what the run log and the folders show", 1, "Right. Write down what each run needs."), ("The last file it read", 0, "Do not rely on it to recall files.")]))
+        ["<b>No memory:</b> the prompt and the skill must say everything.", "<b>Runs remotely:</b> your laptop can be closed.",
+         "<b>Input inside the skill:</b> today the file is a reference file in your skill. At work, an approved tool brings new files.",
+         "<b>Run log:</b> the first line of every run: date and time, file read, items flagged.", "<b>History:</b> the Scheduled page keeps every past run for review."],
+        "Open the latest run every morning, even on quiet days."))
+    s.append(check("t3chk", "t3", "Your scheduled task runs at 08:00. <b>What does each run know?</b>",
+        [("Everything from last week's run", 0, "Each run is its own session."), ("Only what the prompt and the skill say", 1, "Right. Write down everything a run needs."), ("What you typed in your last chat", 0, "A run does not see your chats.")]))
     s.append(livedemo("t3demo", "t3", "e23", time="5 min"))
     s.append(task("t3task", "t3", "u25", n=N(do="Start the timer. Walk the room.")))
     s.append(tslide("t3map", "t3", "Lesson 3 · transfer", "Scheduling <span class=\"hl\">in other tools.</span>", ["", "Claude", "ChatGPT", "Microsoft 365 Copilot", "Gemini"],
@@ -503,7 +503,7 @@ def day2():
         "Claude reads and writes. n8n and Power Automate connect systems.", cls="tight"))
     s.append(listslide("n4limits", "n4", "Lesson 4 · the limits", "What Claude <span class=\"hl\">cannot do yet.</span>",
         ["<b>Event triggers:</b> scheduled tasks start at a time or on demand, not when an email or a file arrives.", "<b>Exact, high-volume moves:</b> copying thousands of rows the same way every time is a job for fixed steps.",
-         "<b>Company controls:</b> it runs on your account, without the retries, alerts and approval trail IT expects.", "<b>Every system:</b> it reaches only the apps it has connectors for.",
+         "<b>Company controls:</b> it runs on your account, without the retries, alerts and approval trail IT expects.", "<b>Every system:</b> it reaches only the apps your firm allows it to connect to.",
          "<b>Same words every time:</b> AI may word a result differently on each run, so you still check it."],
         "Where Claude stops, an automation tool starts."))
     s.append(listslide("n4when", "n4", "Lesson 4 · when to switch", "When to <span class=\"hl\">switch.</span>",

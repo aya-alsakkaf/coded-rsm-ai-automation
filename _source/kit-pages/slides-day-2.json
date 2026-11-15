@@ -97,7 +97,7 @@
 "kit": [
 "Callback · Day 1",
 "Yesterday you built it. Today you package it and schedule it.",
-"Each of you has an Agent Card, a Project and a connected folder. Two quick questions, then skills."
+"Each of you has an Agent Card and a Project. Two quick questions, then skills."
 ],
 "chrome": []
 },
@@ -110,7 +110,7 @@
 "kit": [
 "Where does this month's invoice pack go in an agent?",
 "Into the Project knowledge",
-"Into each run, from the folder",
+"Into each run, with this month's files",
 "Into the instructions"
 ],
 "chrome": [
@@ -212,7 +212,7 @@
 "Prompt: says what to do on this run. Alone, it is gone when the chat ends.",
 "Project instructions: keep the context and the template. Alone, they stay in one Project.",
 "Skill: keeps the method: steps, rules, output. Alone, it has no files and no schedule.",
-"Connectors and a schedule: bring the input and the When.",
+"The input and a schedule: the files to read, and the When.",
 "Together: the same checked result, every run, without you."
 ],
 "chrome": []
@@ -728,7 +728,7 @@
 "Lesson 3 · the idea",
 "A calendar reminder that also does the work.",
 "Scheduled task",
-"A scheduled task is a saved prompt that Claude runs hourly, daily, on weekdays, weekly or on demand. Its prompt calls your skill and reads through your connectors.",
+"A scheduled task is a saved prompt that Claude runs hourly, daily, on weekdays, weekly or on demand. Its prompt calls your skill, and the run reads the file stored in that skill.",
 "A reminder that only reminds you…",
 "…versus one that does the work and leaves the file.",
 "Click Scheduled in the left sidebar, then New task."
@@ -746,12 +746,12 @@
 "kit": [
 "Lesson 3 · how a run works",
 "Each run starts fresh.",
-"Read the run log every morning, even on quiet days.",
-"No memory: the prompt, the skill and the folders must say everything.",
-"Runs remotely: with Drive, your laptop can be closed.",
-"Names: each output has the date and time in its name.",
-"Run log: one line per run: date, files read, items flagged, file saved.",
-"Empty folder: the log says No new files, and the run stops."
+"Open the latest run every morning, even on quiet days.",
+"No memory: the prompt and the skill must say everything.",
+"Runs remotely: your laptop can be closed.",
+"Input inside the skill: today the file is a reference file in your skill. At work, an approved tool brings new files.",
+"Run log: the first line of every run: date and time, file read, items flagged.",
+"History: the Scheduled page keeps every past run for review."
 ],
 "chrome": []
 },
@@ -762,10 +762,10 @@
 "title": "Quick check",
 "topic": "t3",
 "kit": [
-"Your scheduled task runs at 08:00. What should it rely on from yesterday's run?",
-"Its memory of yesterday's session",
-"Only what the run log and the folders show",
-"The last file it read"
+"Your scheduled task runs at 08:00. What does each run know?",
+"Everything from last week's run",
+"Only what the prompt and the skill say",
+"What you typed in your last chat"
 ],
 "chrome": [
 "Quick check",
@@ -785,9 +785,11 @@
 "kit": [
 "Demo 2.3 · Claude · scheduled tasks",
 "Schedule the invoice skill.",
-"Run it once on demand, then open Outputs and Log.",
+"Read the first line of the run: when, what it read, what it flagged.",
 "A scheduled task is a calendar reminder that also does the work.",
-"Demo 2.3"
+"Demo 2.3",
+"abdali-supplier-invoices-oct-2026.pdf",
+"abdali-purchase-ledger-oct-2026.xlsx"
 ],
 "chrome": [
 "Live in Claude",
@@ -809,15 +811,17 @@
 "Task 2.5",
 "on your own",
 "Claude · scheduled tasks",
-"Most failures are a folder name that does not match the Drive exactly.",
-"Add one line to the prompt: the first line of the output says how many files were read.",
-"Rename your test file (or pack file) so it starts with your initials. Upload it to Mirqab sandbox → your Day 1 track folder → Inbox.",
-"In Claude, click Scheduled in the left sidebar, then New task, then Set up manually.",
-"Name it. Paste the Scheduled task prompt from the prompt sheet (Day 2 page → Open the prompt sheet), Task 2.5, and fill the brackets.",
-"Approval mode: the one that saves files without waiting. Frequency: weekly, Sunday at 08:00. Save.",
-"Run it once on demand. Open Outputs and Log: your file and your run log, both with your initials.",
+"If the run says the file is missing, the file is not inside the skill yet.",
+"Add a rule to the prompt: list the two items that need the reviewer first.",
+"New chat: attach your Task 2.1 test file (or your pack file). Send Add my file to the skill (prompt sheet, Task 2.5). Save the skill again.",
+"Click Scheduled in the left sidebar, then New task, then Set up manually.",
+"Name it. Paste the Scheduled task prompt (prompt sheet, Task 2.5) and fill the brackets.",
+"Frequency: weekly, Sunday at 08:00. Save. Run it once on demand.",
+"Open the run on the Scheduled page: the first line, then your output.",
+"Add my file to the skill",
+"Add the attached file to my [skill name] skill as a reference file. Keep every rule word for word. Then update the skill so I can save it again.",
 "Scheduled task prompt",
-"Use the [your skill name] skill. Read the files in Google Drive: Mirqab sandbox / [your Day 1 track folder] / Inbox whose names start with [your initials]. Do not move, rename or delete any file: the folder is shared today. Save the result in [your folder] / Outputs, named [your initials]-[task]-YYYY-MM-DD-HHMM, with the date and time of the run. Save a run log in [your folder] / Log, named runlog-[your initials]-YYYY-MM-DD-HHMM.txt, with one line: date, files read, items flagged, file saved. If there are no files to read, write No new files in the run log and stop.",
+"Use the [skill name] skill on its reference file [file name]. Build the output in its fixed layout. Start with one line: date and time of this run, file read, items flagged. Mark it DRAFT and end with Reviewed by: ____. If the reference file is missing or cannot be read, say so in that first line and stop. Never guess.",
 "Claude slow or a file not loading? Continue from the backup on the screen.",
 "Your turn: schedule your skill.",
 "Lesson 3 · Scheduled tasks"
@@ -943,7 +947,7 @@
 "Event triggers: scheduled tasks start at a time or on demand, not when an email or a file arrives.",
 "Exact, high-volume moves: copying thousands of rows the same way every time is a job for fixed steps.",
 "Company controls: it runs on your account, without the retries, alerts and approval trail IT expects.",
-"Every system: it reaches only the apps it has connectors for.",
+"Every system: it reaches only the apps your firm allows it to connect to.",
 "Same words every time: AI may word a result differently on each run, so you still check it."
 ],
 "chrome": []
@@ -1185,7 +1189,7 @@
 "Card (10 min): pick a pack (step 7 of the Day 2 lab page) or your own task. Fill the Project card from the prompt sheet.",
 "Build (25 min): a Project with five-part instructions, then a skill.",
 "Output (20 min): a dashboard or report, its layout written in the skill.",
-"When (15 min): a scheduled task, run once on demand, with a run log.",
+"When (15 min): the file inside your skill, then a scheduled task run once on demand.",
 "Check (15 min): three figures, DRAFT and Reviewed by, impact, demo script.",
 "Build plan",
 "Here is my project card: [paste it]. Give me a build plan for Claude in five steps: Project, skill, artifact, scheduled task, test. Two lines for each step. Do not build anything yet.",

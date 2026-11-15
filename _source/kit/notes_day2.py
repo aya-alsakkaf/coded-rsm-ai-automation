@@ -14,11 +14,11 @@ SCRIPT = {
  "road2": (None,
   "This is our day in six short lessons. Skills first, then artifacts, then schedules, all before lunch. After lunch, a short lesson on automation tools, and then the mini project. "
   "At 14:40 I pick a few projects to show the room. We finish at 15:30 with the post-test, the survey and your certificates. Breaks about every hour; Dhuhr at 11:30, Asr at 14:25."),
- "c1rule": ("Open the Outputs folder and show the 16:25 file.",
-  "Before we start, look at this. (Show the 16:25 file and its run log.) Yesterday afternoon, nobody touched a laptop, and the scheduled task still ran. It read the folder, saved this file and wrote this log. "
+ "c1rule": ("Click Scheduled in the left sidebar and open the 16:25 run.",
+  "Before we start, look at this. (Open the 16:25 run.) Yesterday afternoon, nobody touched a laptop, and the scheduled task still ran by itself and did the work. "
   "By the end of today, your own work runs like that. First, two quick questions about yesterday."),
  "c1chk1": (HANDS,
-  "Where do this month's invoices go? (Wait for hands.) The middle one: they come with each run, from the folder. Knowledge is only for what stays the same."),
+  "Where do this month's invoices go? (Wait for hands.) The middle one: this month's files come with each run. Knowledge is only for what stays the same."),
  "c1chk2": (HANDS,
   "And an invoice with no PO number? (Wait for hands.) The first one: Not found, with a note. A guess or a blank hides the gap from the reviewer."),
  "s1story": (None,
@@ -30,7 +30,7 @@ SCRIPT = {
   "And an agent is not one more button: it is all of these working together to do one job. Look at the last row: a question to a colleague, the planning memo, the audit program, and the trained associate."),
  "s1why": (None,
   "So why do we need all of them? Because each one fixes a different gap. The prompt is this run. The Project keeps the client context and the template. The skill keeps the method, so it works anywhere. "
-  "The connector brings the files, and the schedule brings the time. Take one away and something breaks: no skill, and your colleagues cannot use it; no connector, and someone must attach files; no schedule, and someone must press Send."),
+  "The input is the file it reads, and the schedule brings the time. Take one away and something breaks: no skill, and your colleagues cannot use it; no input, and there is nothing to check; no schedule, and someone must press Send."),
  "s1pick": (None,
   "How does Claude know which skill to use? It does not read every skill in full each time. It reads the short description first. If your request fits, it opens the whole skill. "
   "So the description is the most important line you write. If it says helps with Excel, Claude will not know when to use it. If it says match supplier invoices to a purchase ledger, it will."),
@@ -84,18 +84,15 @@ SCRIPT = {
   "Lesson 3, schedules. Your skill now builds the dashboard in two minutes. But someone still has to open Claude and ask. On Sunday morning you are at a client. Who presses Send? (Expected: nobody.) So we give it a time."),
  "t3term": ("Click Scheduled in the left sidebar on the presenting laptop.",
   "A scheduled task is a prompt Claude runs by itself on a timetable: every hour, every day, on weekdays, every week, or when you click run. "
-  "The prompt calls your skill, and the skill reads through your connectors. You saw yesterday's run at 16:25: that was one of these."),
+  "The prompt calls your skill. Today we keep the file inside the skill, so the run needs no connections to other apps. You saw yesterday's run at 16:25: that was one of these."),
  "t3fresh": (None,
-  "One thing to understand. Every run is a brand new session. It does not remember last week. So the prompt must name the skill and the folders, and each run leaves a run log: one line with the date, the files, the flags and the file it saved. "
-  "If there is nothing to read, the log says so and the run stops. Then you read the log every morning, even when it says nothing happened."),
- "t3chk": (HANDS,
-  "What can the 08:00 run count on from yesterday? (Wait for hands.) Only the run log and the folders. Write down everything a run needs."),
+  'One thing to understand. Every run is a brand new session. It does not remember last week, and it does not see your chats. So the prompt names the skill, and the skill holds the file. Today that file sits inside the skill. At work, an approved connection or an automation tool would bring new files each week. Every run starts its answer with one line: when it ran, what it read, what it flagged. And the Scheduled page keeps every run, so you can go back and review.'),
+ "t3chk": ('Ask for hands up on each option, then tap the most popular one.',
+  'What does the 08:00 run know? (Wait for hands.) The middle one. A run sees nothing but its prompt and its skill, so anything it needs must be written there.'),
  "t3demo": (None,
-  "Let me schedule my invoice skill. (Click Scheduled, then New task, then Set up manually.) A name. The prompt from the sheet: it names the skill and the folders. The approval mode, so it can save files without waiting for me. Daily at 08:00. "
-  "Save, and the most important click: run it once now. (Open Outputs and Log.) A file with today's date and time, and one line in the log. If the test works, the schedule works."),
- "t3task": ("Start the timer. Walk the room. Hint at 6 minutes: the folder name.",
-  "Your turn: your own skill on a schedule. Rename your test file so it starts with your initials, and upload it to your track folder's Inbox. Today these folders are shared, so your task only reads files and never moves or deletes them. "
-  "Use the prompt on the sheet, weekly on Sunday at 08:00, then run it once on demand and open the Log. Fifteen minutes."),
+  'Let me schedule my invoice skill. First, in a chat, I attach the October invoices and ledger and ask Claude to add them to the skill as reference files, then I save the skill again. (Click Scheduled, then New task, then Set up manually.) A name. The prompt from the sheet: it names the skill and the files inside it. Daily at 08:00. Save, and the most important click: run it once now. (Open the run.) The first line says when it ran, what it read and what it flagged. Then the same table as yesterday. If the test works, the schedule works.'),
+ "t3task": ('Start the timer. Walk the room. Hint at 6 minutes: is the file inside the skill?',
+  'Your turn: your own skill on a schedule, with no connections to other apps. First, attach your test file in a chat and use the first prompt on the sheet to add it to your skill, then save the skill again. Then click Scheduled, New task, Set up manually, and paste the second prompt. Set it for every Sunday morning at eight, save it, test it once right away, and open the result on the Scheduled page. Fifteen minutes.'),
  "t3map": (None,
   "Other tools have the same thing: ChatGPT has scheduled tasks, Copilot has scheduled prompts, Gemini has scheduled actions. But look at the second row. "
   "None of them starts when an email arrives. For that, you need an automation tool. That is our first lesson after lunch. Enjoy your lunch."),

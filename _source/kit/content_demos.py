@@ -1119,3 +1119,43 @@ DEMOS["e24"]["fallback"] = "If the video does not play, step through the backup 
 DEMOS["e24"]["backup"][1] = tbl(["Step", "n8n node", "What it does"], [("Trigger", "Schedule Trigger", "Starts the workflow every day at 08:00, or by hand with Execute workflow"),
          ("Function", "Code (Get this week's invoices)", "Returns this week's invoices as items"), ("Condition", "If (Over KWD 2,000?)", "amount_kwd is greater than 2000"),
          ("Output, true", "Edit Fields: Supervisor review", "Sets status Supervisor review and reviewer Faisal"), ("Output, false", "Edit Fields: Approved", "Sets status Approved")])
+
+# no connectors on Day 2 (Aya, 15 Nov 22:45: the trainees cannot use MCP connectors on their work accounts).
+# Scheduled tasks run the skill on a reference file stored inside the skill; output and the run-log line live in the run on the Scheduled page.
+ADD_TO_SKILL = ("Add the attached file to my [skill name] skill as a reference file. Keep every rule word for word. "
+                "Then update the skill so I can save it again.")
+SKILL_SCHED = ("Use the [skill name] skill on its reference file [file name]. Build the output in its fixed layout. Start with one line: "
+               "date and time of this run, file read, items flagged. Mark it DRAFT and end with Reviewed by: ____. "
+               "If the reference file is missing or cannot be read, say so in that first line and stop. Never guess.")
+INVOICE_SKILL_SCHED = ("Use the mirqab-invoice-match skill on its reference files abdali-supplier-invoices-oct-2026.pdf and abdali-purchase-ledger-oct-2026.xlsx. "
+                       "Return the match table in the template's columns. Start with one line: date and time of this run, files read, items flagged. "
+                       "Mark it DRAFT and end with Reviewed by: ____. If a file is missing or cannot be read, say so in that first line and stop. Never guess.")
+DEMOS["e23"].update(files=[F_INV, F_LEDGER],
+ setup=["[T] In Claude, click New chat. Attach the October invoices and ledger. Send Add the files to the skill, then save the skill again.",
+        "[T] Click Scheduled in the left sidebar, then New task, then Set up manually. If the form has no time field for Daily, use Create with Claude and say the time.",
+        "[T] Name, the Scheduled task prompt, frequency daily at 08:00. Save. Run it once on demand.",
+        "[T] Open the run on the Scheduled page: the first line, then the table."],
+ prompts=[("Add the files to the skill", "Add the two attached files to my mirqab-invoice-match skill as reference files. Keep every rule word for word. Then update the skill so I can save it again."),
+          ("Scheduled task prompt", INVOICE_SKILL_SCHED)],
+ expected="The task shows on the Scheduled page, daily at 08:00. The run on demand starts with one line (date and time, 2 files read, 2 flagged: SCC-0718, FSC-3390), then the match table, marked DRAFT with a Reviewed by line.",
+ backup=[("h", "The fields"), tbl(["Field", "Value"], [("Name", "Mirqab invoice match, daily"), ("Prompt", "Calls mirqab-invoice-match on its two reference files; first line is the run log; DRAFT and Reviewed by"),
+         ("Frequency", "Daily at 08:00 (Kuwait works Sunday to Thursday)"), ("Connectors", "None: the files live in the skill")]),
+         ("h", "The first line of the run"), ("p", "2026-11-16 11:05 · files read: 2 · flagged: 2 (SCC-0718, FSC-3390)")],
+ fallback="If the skill does not save with the files, run the scheduled prompt in a chat with the two files attached, and show the backup first line.",
+ hint="Read the first line of the run: when, what it read, what it flagged.")
+DEMOS["u25"].update(
+ setup=["New chat: attach your Task 2.1 test file (or your pack file). Send Add my file to the skill (prompt sheet, Task 2.5). Save the skill again.",
+        "Click Scheduled in the left sidebar, then New task, then Set up manually.",
+        "Name it. Paste the Scheduled task prompt (prompt sheet, Task 2.5) and fill the brackets.",
+        "Frequency: weekly, Sunday at 08:00. Save. Run it once on demand.",
+        "Open the run on the Scheduled page: the first line, then your output."],
+ prompts=[("Add my file to the skill", ADD_TO_SKILL), ("Scheduled task prompt", SKILL_SCHED)],
+ expected="A weekly task on the Scheduled page; one run on demand that starts with a run-log line, returns the skill's fixed output from the file inside the skill, and is marked DRAFT. No connectors used.",
+ backup=[("h", "Why the file lives in the skill today"), ("p", "Connectors are off on these accounts. The skill carries a sample file, so the schedule can run with no other app. At work, new files would come through a connector RSM approves, or through an automation tool such as n8n or Power Automate.")],
+ answer=[("h", "Check"), ("ul", ["The task is on the Scheduled page, weekly.", "The run on demand starts with one line: date and time, file read, items flagged.", "The output has the skill's fixed shape, DRAFT and a Reviewed by line.", "No connector was used."])],
+ fallback="If the form has no time field, use Create with Claude and say the time. If the skill will not save with the file, run the scheduled prompt in a chat with the file attached.",
+ hint="If the run says the file is missing, the file is not inside the skill yet.",
+ stretch=["Add a rule to the prompt: list the two items that need the reviewer first."])
+DEMOS["u26"]["setup"] = [x.replace("When (15 min): a scheduled task, run once on demand, with a run log.", "When (15 min): the file inside your skill, then a scheduled task run once on demand.") for x in DEMOS["u26"]["setup"]]
+PROJECT_CARD = PROJECT_CARD.replace("Input: [the file it reads, and where it lives]", "Input: [the file it reads; today it lives inside the skill]")
+DEMOS["u26"]["templates"] = [("Project card", PROJECT_CARD) if l == "Project card" else (l, t) for l, t in DEMOS["u26"]["templates"]]

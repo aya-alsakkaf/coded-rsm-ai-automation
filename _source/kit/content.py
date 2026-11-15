@@ -780,12 +780,12 @@ LABS[2] = {"title": "Skills, artifacts, schedules, then your own agent",
      "hint": "Every number on a slide must be on the dashboard.", "check": {"kind": "note", "label": "Your deck's audience, and the layout you added to your skill"},
      "answer": [("p", "Every figure on the slides is on the dashboard; the skill now names the dashboard layout.")]},
     {"title": "Schedule your skill (Task 2.5)",
-     "do": [f"Rename your test file so it starts with your initials. Upload it to {D.SANDBOX} → your Day 1 track folder → Inbox.",
-            "In Claude, click Scheduled in the left sidebar, then New task, then Set up manually.",
+     "do": [f"New chat: attach your test file. Paste Add my file to the skill from {CD.SHEET2}, Task 2.5. Save the skill again.",
+            "Click Scheduled in the left sidebar, then New task, then Set up manually.",
             f"Paste the Scheduled task prompt from {CD.SHEET2}, Task 2.5. Fill the brackets.",
-            "Approval mode: saves files without waiting. Weekly, Sunday at 08:00. Save. Run it once on demand.", "Open Outputs and Log: your file and your run log."],
-     "hint": "Most failures are a folder name that does not match the Drive exactly.", "check": {"kind": "note", "label": "Task name, frequency, and the line in your run log"},
-     "answer": [("p", "A weekly task; one run on demand; an output and a run log named with the initials; nothing moved or deleted.")]},
+            "Weekly, Sunday at 08:00. Save. Run it once on demand.", "Open the run on the Scheduled page: the first line, then your output."],
+     "hint": "If the run says the file is missing, the file is not inside the skill yet.", "check": {"kind": "note", "label": "Task name, frequency, and the first line of your run"},
+     "answer": [("p", "A weekly task; one run on demand that starts with a run-log line and returns the fixed output, marked DRAFT; no connector used.")]},
     {"title": "Claude or an automation tool? (Lesson 4)", "files": [CD.F_N8N_VIDEO],
      "do": ["Think of one task in your department that starts with an event: an email arrives, a form is sent, a file lands.",
             "Write it below with the tool you would use (Claude, n8n or Power Automate) and one reason.", "Watch the n8n demo: name the trigger, the steps and the outputs."],
@@ -795,7 +795,7 @@ LABS[2] = {"title": "Skills, artifacts, schedules, then your own agent",
     {"title": "Mini project: your department's agent (Task 2.6)", "files": X.PACK_FILES + [CD.F_BRIEFS],
      "do": ["Pick a department pack below (the briefs file describes each one), or your own task.",
             f"Paste the Project card from {CD.SHEET2}, Task 2.6, in the box below and fill it in.",
-            "Build in order: a Project with five-part instructions, a skill, a dashboard or report artifact, a scheduled task run once.",
+            "Build in order: a Project with five-part instructions, a skill (with your file inside it), a dashboard or report artifact, a scheduled task run once.",
             "Check three figures against the file with Check three figures. Mark the output DRAFT, with a Reviewed by line."],
      "hint": "Build in order: card, Project, skill, artifact, schedule. Check before you polish.",
      "check": {"kind": "note", "label": "Your Project card: paste the template here, then fill it in"},
@@ -853,3 +853,8 @@ for _i, (sid, t, c, blocks) in enumerate(FACILITATOR):
             "Remove the participants' access to the sandbox Drive after the results report."])])
 SLIDES = {1: 62, 2: 53}
 CD.retire_old_day2()
+
+# no connectors on Day 2 (Aya, 15 Nov 22:45): the pre-flight lines about Drive folders go
+RUNBOOK_PREFLIGHT[:] = [x for x in RUNBOOK_PREFLIGHT if not x.startswith(("Day 2, before 11:00:", "Day 2: participants upload"))] + [
+    "Day 2: no connectors on the trainees' accounts. Demo 2.3 attaches the October invoices and ledger (Day 1 lab, step 2) and adds them to mirqab-invoice-match as reference files before scheduling it."]
+SHEET["howto"] = [x.replace("<b>Download the file</b> on the card, or open it from your track folder in the sandbox Drive.", "<b>Download the file</b> on the card.") for x in SHEET["howto"]]

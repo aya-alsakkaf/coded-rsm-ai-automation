@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-11-15 22:45 · No connectors on Day 2 (Aya: the trainees cannot use MCP on their work accounts)
+
+- Task 2.5 and Demo 2.3: the schedule runs the skill on a reference file stored inside the skill (new prompts: Add my file to the skill,
+  and a scheduled prompt whose first line is the run log, marked DRAFT with Reviewed by). No Drive folders, no uploads, nothing moved.
+- Lesson 3 slides and script: "reads through your connectors" and the folder rules replaced by input inside the skill, the first-line run log
+  and the Scheduled page history; new check "What does each run know?". Callback: no "connected folder"; the 16:25 run is opened on the Scheduled page.
+- Lesson 1 "why combine": "the input and a schedule" instead of connectors. Lesson 4 limit: "only the apps your firm allows it to connect to".
+- Mini project: the file goes inside the skill before the schedule. Lab steps 5 and 7, the runbook and the prompt-sheet how-to updated.
+  The transfer map at the close still names connectors as the Claude feature for Input (a name map, not a task).
+
 ## 2026-11-15 night · Day 2 rebuilt on Aya's new order (skills, artifacts, schedules, automation tools, mini project)
 
 - New Day 2 (53 slides, 08:30 to 15:30): callback (two checks) → Lesson 1 · Skills (four building blocks: prompt, Project instructions,
