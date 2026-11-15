@@ -651,7 +651,7 @@
 "title": "Rewrite your request with the five parts.",
 "topic": "b2",
 "kit": [
-"Try it · 4 minutes",
+"Try it · 3 minutes",
 "Rewrite your request with the five parts.",
 "Take your Task 1.2 request. Add Role, Steps, Rules, Format and When unsure. Run it again in a new chat with the same two files. Is your table closer to your neighbor's now?"
 ],
@@ -743,6 +743,31 @@
 },
 {
 "n": 31,
+"id": "b2sort",
+"kind": "sort",
+"title": "Can an agent do this task?",
+"topic": "b2",
+"kit": [
+"Lesson 2 · agent or not?",
+"Can an agent do this task?",
+"Match supplier invoices to the purchase ledger every month",
+"Pull the key terms from 40 lease agreements",
+"Flag trial balance lines that moved more than 10% from last year",
+"Draft reminder emails for missing client documents",
+"Check a new client's KYC file for missing items",
+"Decide whether a misstatement is material",
+"Agree the audit fee with a new client",
+"Interview the finance manager about controls",
+"Yes: an agent can do it",
+"Partly: AI drafts, you decide",
+"No: keep it human"
+],
+"chrome": [
+"tap to reveal"
+]
+},
+{
+"n": 32,
 "id": "b2demo",
 "kind": "live",
 "title": "Demo 1.2 · live in Claude",
@@ -765,7 +790,7 @@
 ]
 },
 {
-"n": 32,
+"n": 33,
 "id": "b2chk2",
 "kind": "check",
 "title": "Quick check",
@@ -786,7 +811,7 @@
 ]
 },
 {
-"n": 33,
+"n": 34,
 "id": "b2task2",
 "kind": "task",
 "title": "Your turn 1.3",
@@ -835,13 +860,13 @@
 ]
 },
 {
-"n": 34,
+"n": 35,
 "id": "b2board",
 "kind": "timer",
 "title": "What repeats across departments?",
 "topic": "b2",
 "kit": [
-"Board review · 10:17",
+"Board review · 10:18",
 "What repeats across departments?",
 "The shared board on screen: one task from each person, grouped by department."
 ],
@@ -854,7 +879,7 @@
 ]
 },
 {
-"n": 35,
+"n": 36,
 "id": "b3story",
 "kind": "story",
 "title": "Lesson 3 · Pick and design",
@@ -873,7 +898,7 @@
 ]
 },
 {
-"n": 36,
+"n": 37,
 "id": "b3t5",
 "kind": "term",
 "title": "Pick the task with the highest score.",
@@ -892,7 +917,7 @@
 ]
 },
 {
-"n": 37,
+"n": 38,
 "id": "b3demo",
 "kind": "live",
 "title": "Demo 1.3 · live in Claude",
@@ -915,7 +940,7 @@
 ]
 },
 {
-"n": 38,
+"n": 39,
 "id": "b3tracks",
 "kind": "table",
 "title": "Pick a track for your agent.",
@@ -943,7 +968,7 @@
 "chrome": []
 },
 {
-"n": 39,
+"n": 40,
 "id": "b3scene",
 "kind": "scene",
 "title": "The audit program every associate follows.",
@@ -963,7 +988,7 @@
 "chrome": []
 },
 {
-"n": 40,
+"n": 41,
 "id": "b3t1",
 "kind": "term",
 "title": "Four boxes before any build.",
@@ -982,7 +1007,7 @@
 ]
 },
 {
-"n": 41,
+"n": 42,
 "id": "b3chk0",
 "kind": "check",
 "title": "Quick check",
@@ -1003,7 +1028,7 @@
 ]
 },
 {
-"n": 42,
+"n": 43,
 "id": "b3t2",
 "kind": "term",
 "title": "Claude follows what you write.",
@@ -1022,7 +1047,7 @@
 ]
 },
 {
-"n": 43,
+"n": 44,
 "id": "b3chk",
 "kind": "check",
 "title": "Quick check",
@@ -1043,7 +1068,7 @@
 ]
 },
 {
-"n": 44,
+"n": 45,
 "id": "b3task2",
 "kind": "task",
 "title": "Your turn 1.4",
@@ -1092,7 +1117,7 @@
 ]
 },
 {
-"n": 45,
+"n": 46,
 "id": "b3t3",
 "kind": "term",
 "title": "A Project is the agent's home.",
@@ -1111,7 +1136,7 @@
 ]
 },
 {
-"n": 46,
+"n": 47,
 "id": "b3t4",
 "kind": "term",
 "title": "Templates stay. Documents come and go.",
@@ -1130,7 +1155,7 @@
 ]
 },
 {
-"n": 47,
+"n": 48,
 "id": "b3chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1151,7 +1176,7 @@
 ]
 },
 {
-"n": 48,
+"n": 49,
 "id": "b3pp",
 "kind": "live",
 "title": "Demo 1.4 · live in Claude",
@@ -1175,7 +1200,7 @@
 ]
 },
 {
-"n": 49,
+"n": 50,
 "id": "b3task",
 "kind": "task",
 "title": "Your turn 1.5",
@@ -1229,7 +1254,7 @@
 ]
 },
 {
-"n": 50,
+"n": 51,
 "id": "b4story",
 "kind": "story",
 "title": "Lesson 4 · Build: Instruction",
@@ -1248,7 +1273,7 @@
 ]
 },
 {
-"n": 51,
+"n": 52,
 "id": "b4parts",
 "kind": "table",
 "title": "Five parts. Every instruction.",
@@ -1279,7 +1304,7 @@
 "chrome": []
 },
 {
-"n": 52,
+"n": 53,
 "id": "b4t2",
 "kind": "term",
 "title": "Show one example. Then test three.",
@@ -1298,7 +1323,7 @@
 ]
 },
 {
-"n": 53,
+"n": 54,
 "id": "b4chk",
 "kind": "check",
 "title": "Quick check",
@@ -1319,7 +1344,7 @@
 ]
 },
 {
-"n": 54,
+"n": 55,
 "id": "b4pp",
 "kind": "live",
 "title": "Demo 1.5 · live in Claude",
@@ -1345,7 +1370,7 @@
 ]
 },
 {
-"n": 55,
+"n": 56,
 "id": "b4map",
 "kind": "table",
 "title": "Instructions in other tools.",
@@ -1367,7 +1392,7 @@
 "chrome": []
 },
 {
-"n": 56,
+"n": 57,
 "id": "b4task",
 "kind": "task",
 "title": "Your turn 1.6",
@@ -1423,7 +1448,7 @@
 ]
 },
 {
-"n": 57,
+"n": 58,
 "id": "b5story",
 "kind": "story",
 "title": "Lesson 5 · Build: Input and Output",
@@ -1442,7 +1467,7 @@
 ]
 },
 {
-"n": 58,
+"n": 59,
 "id": "b5t1",
 "kind": "term",
 "title": "A key to one cabinet, not the whole archive.",
@@ -1461,7 +1486,7 @@
 ]
 },
 {
-"n": 59,
+"n": 60,
 "id": "b5chk1",
 "kind": "check",
 "title": "Quick check",
@@ -1482,7 +1507,7 @@
 ]
 },
 {
-"n": 60,
+"n": 61,
 "id": "b5pp1",
 "kind": "live",
 "title": "Demo 1.6 · live in Claude",
@@ -1507,7 +1532,7 @@
 ]
 },
 {
-"n": 61,
+"n": 62,
 "id": "b5task1",
 "kind": "task",
 "title": "Your turn 1.7",
@@ -1560,7 +1585,7 @@
 ]
 },
 {
-"n": 62,
+"n": 63,
 "id": "b5t2",
 "kind": "term",
 "title": "Same shape. Every run.",
@@ -1579,7 +1604,7 @@
 ]
 },
 {
-"n": 63,
+"n": 64,
 "id": "b5chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1600,7 +1625,7 @@
 ]
 },
 {
-"n": 64,
+"n": 65,
 "id": "b5pp2",
 "kind": "live",
 "title": "Demo 1.7 · live in Claude",
@@ -1626,7 +1651,7 @@
 ]
 },
 {
-"n": 65,
+"n": 66,
 "id": "b5map",
 "kind": "table",
 "title": "Input and output in other tools.",
@@ -1653,7 +1678,7 @@
 "chrome": []
 },
 {
-"n": 66,
+"n": 67,
 "id": "b5task2",
 "kind": "task",
 "title": "Your turn 1.8",
@@ -1708,7 +1733,7 @@
 ]
 },
 {
-"n": 67,
+"n": 68,
 "id": "b6story",
 "kind": "story",
 "title": "Lesson 6 · Build: Package",
@@ -1727,7 +1752,7 @@
 ]
 },
 {
-"n": 68,
+"n": 69,
 "id": "b6t1",
 "kind": "term",
 "title": "From your desk to the firm's manual.",
@@ -1746,7 +1771,7 @@
 ]
 },
 {
-"n": 69,
+"n": 70,
 "id": "b6chk",
 "kind": "check",
 "title": "Quick check",
@@ -1767,7 +1792,7 @@
 ]
 },
 {
-"n": 70,
+"n": 71,
 "id": "b6pp",
 "kind": "live",
 "title": "Demo 1.8 · live in Claude",
@@ -1791,7 +1816,7 @@
 ]
 },
 {
-"n": 71,
+"n": 72,
 "id": "b6map",
 "kind": "table",
 "title": "A packaged method in other tools.",
@@ -1813,7 +1838,7 @@
 "chrome": []
 },
 {
-"n": 72,
+"n": 73,
 "id": "b6chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1834,7 +1859,7 @@
 ]
 },
 {
-"n": 73,
+"n": 74,
 "id": "b6task",
 "kind": "task",
 "title": "Your turn 1.9",
@@ -1891,7 +1916,7 @@
 ]
 },
 {
-"n": 74,
+"n": 75,
 "id": "b6task2",
 "kind": "task",
 "title": "Your turn 1.10",
@@ -1944,7 +1969,7 @@
 ]
 },
 {
-"n": 75,
+"n": 76,
 "id": "b7show",
 "kind": "timer",
 "title": "Four teams. Ninety seconds each person.",
@@ -1963,7 +1988,7 @@
 ]
 },
 {
-"n": 76,
+"n": 77,
 "id": "b7demo",
 "kind": "live",
 "title": "Demo 1.9 · live in Claude",
@@ -1986,7 +2011,7 @@
 ]
 },
 {
-"n": 77,
+"n": 78,
 "id": "b7map",
 "kind": "table",
 "title": "Same building blocks, different names.",
@@ -2029,7 +2054,7 @@
 "chrome": []
 },
 {
-"n": 78,
+"n": 79,
 "id": "w1",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -2054,7 +2079,7 @@
 ]
 },
 {
-"n": 79,
+"n": 80,
 "id": "close1",
 "kind": "close",
 "title": "Close",

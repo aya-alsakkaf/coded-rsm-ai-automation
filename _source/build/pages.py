@@ -279,6 +279,9 @@ def daypage(d):
             + "".join(res(f"{dayp(x)}.html", f"Day {x} · {C.DAYS[x]['title']}", f"Day {x}", "cal") for x in DAYS if x != d)
             + res(f"{HUB}.html", both(), "Workshop", "grid"))
     sheet_line = ("Every prompt is on your prompt sheet." if wk.AI else "Every task, file and template is on your task sheet.")
+    # optional: HUB["day_your_turn_off"] lists the days whose page leaves out the Your turn section (the lab and the prompt sheet carry the tasks)
+    your_turn = "" if d in HB.get("day_your_turn_off", []) else (f'<section class="panel rvl"><h2>Your turn</h2><p class="muted">{nt} hands-on tasks. The timer runs on the main screen. {sheet_line}</p><div class="acts">{tasks}</div>'
+                 f'\n    <p class="smallnote">{e(C.SAMPLE_NOTE)} {e(HB.get("day_tool_note", ""))}</p></section>')
     body = f'''<main>{topbar(f"Day {d}")}
 {dhero(d, f"Day {d} · {e(Dd['title'])}", e(Dd["title"]), e(Dd["sub"]), [("cal", f"Day {d} of {wk.NDAYS} · {e(C.DAYDATE[d])}"), ("clock", e(C.HOURS)), ("pin", f"In person · {e(C.VENUE)}")])}
 <div class="wrap"><div class="d-grid">
@@ -286,8 +289,7 @@ def daypage(d):
   {day_path(d)}
   <section class="panel rvl"><h2>Day brief</h2><p class="brief">{e(Dd["brief"])}</p><p class="muted" style="margin-top:12px"><b>You build today:</b> {e(Dd["artifact"])}.</p></section>
   <section class="panel rvl"><h2>Run of show</h2><p class="muted">{breaks_line(d)}</p><ol class="ros">{ros}</ol></section>
-  <section class="panel rvl"><h2>Your turn</h2><p class="muted">{nt} hands-on tasks. The timer runs on the main screen. {sheet_line}</p><div class="acts">{tasks}</div>
-    <p class="smallnote">{e(C.SAMPLE_NOTE)} {e(HB.get("day_tool_note", ""))}</p></section>
+  {your_turn}
 </div>
 <aside class="d-side">
   <section class="panel"><h3>What you will be able to do</h3><ul class="leave">{"".join(f"<li>{ico('check', 15, 2.5)}<span>{x}</span></li>" for x in Dd["outcomes"])}</ul></section>

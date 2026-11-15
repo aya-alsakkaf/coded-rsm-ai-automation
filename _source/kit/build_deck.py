@@ -269,8 +269,8 @@ def day1():
     s.append(check("b2pchk", "b2", "Which request gives an answer <b>you can put in a working paper?</b>",
         [("“Summarize this invoice for me.”", 0, "No rules and no format: Claude fills the gaps."), ("Role, steps, rules, format and When unsure, with the invoice attached", 1, "Right. Five parts and the source."),
          ("“Be very accurate with this invoice, please.”", 0, "Accurate is a wish, not a rule.")]))
-    s.append(timer_slide("b2try", "b2", "Try it · 4 minutes", "Rewrite your request <span class=\"hl\">with the five parts.</span>",
-        "Take your Task 1.2 request. Add Role, Steps, Rules, Format and When unsure. Run it again in a new chat with the same two files. Is your table closer to your neighbor's now?", 4,
+    s.append(timer_slide("b2try", "b2", "Try it · 3 minutes", "Rewrite your request <span class=\"hl\">with the five parts.</span>",
+        "Take your Task 1.2 request. Add Role, Steps, Rules, Format and When unsure. Run it again in a new chat with the same two files. Is your table closer to your neighbor's now?", 3,
         n=N(do="Start the timer. Walk the room and read three rewritten requests.", expect="Tables look more alike: the same columns, and both problems found more often.",
             silent="ask one person to read their When unsure line aloud.", more=["The five parts are on the slide before the check, and on the prompt sheet under Demo 1.1."])))
     s.append(term("b2t1", "b2", "Lesson 2 · the idea", "A prompt is not <span class=\"hl\">a process.</span>", "Repeatable",
@@ -288,12 +288,23 @@ def day1():
         "A task that <b>repeats weekly</b>, has <b>clear rules</b>, and turns a <b>document in into a document out</b>. Judgment calls and client meetings stay with people.",
         "Three tags on a task…", "…three Yes means a <b>candidate agent</b>.", "Choose the task before you choose the tool.",
         n=N(do="Give one example of each tag from audit work.", expect="Invoice matching, lead schedules, confirmations.", silent="ask: which of your tasks repeats every week?")))
-    s.append(livedemo("b2demo", "b2", "d13"))
+    s.append(sortslide("b2sort", "b2", "Lesson 2 · agent or not?", "Can an agent <span class=\"hl\">do this task?</span>",
+        [("Match supplier invoices to the purchase ledger every month", "green"), ("Pull the key terms from 40 lease agreements", "green"),
+         ("Flag trial balance lines that moved more than 10% from last year", "green"), ("Draft reminder emails for missing client documents", "amber"),
+         ("Check a new client's KYC file for missing items", "amber"), ("Decide whether a misstatement is material", "red"),
+         ("Agree the audit fee with a new client", "red"), ("Interview the finance manager about controls", "red")],
+        {"green": "Yes: an agent can do it", "amber": "Partly: AI drafts, you decide", "red": "No: keep it human"},
+        n=N(time="4 min", do="Read each card aloud. Ask: can an agent do this? Hands up for yes, partly or no. Then tap the card to show the answer.",
+            expect="People argue about the amber cards. Good: AI can draft and check, but a person decides and signs.",
+            silent="say: if it needs judgment, a relationship or a signature, it stays with you.",
+            more=["Link each green card to the four points on the slide before: it repeats, it takes minutes each time, the rules are clear, and it can run on a schedule.",
+                  "Then Demo 1.2: Dana does the same with her own task list."])))
+    s.append(livedemo("b2demo", "b2", "d13", time="3 min"))
     s.append(check("b2chk2", "b2", "Which of Dana's tasks is <b>not</b> a first agent?",
         [("Matching supplier invoices to the ledger", 0, "Three Yes: a strong candidate."), ("Discussing findings with the client's CFO", 1, "Right. It needs judgment and trust."), ("Chasing missing documents from clients", 0, "Three Yes: a candidate.")]))
     s.append(task("b2task2", "b2", "t13", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    s.append(timer_slide("b2board", "b2", "Board review · 10:17", "What repeats <span class=\"hl\">across departments?</span>",
-        "The shared board on screen: one task from each person, grouped by department.", 3,
+    s.append(timer_slide("b2board", "b2", "Board review · 10:18", "What repeats <span class=\"hl\">across departments?</span>",
+        "The shared board on screen: one task from each person, grouped by department.", 2,
         n=N(do="Read the clusters aloud. Name the tasks that appear in more than one department.", expect="Reconciliations, chasing documents, status reports.",
             silent="read the Support column first: it shows what the coordinators chase.", more=["Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3.", "Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance."])))
     # Lesson 3 · Pick your task, design the agent, then build one together

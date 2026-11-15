@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-15 · Day 1 lab files and the Day 1 page (Aya)
+
+- Lesson 2: a new card sort after "Which tasks suit an agent?" (slide 31): Can an agent do this task? Eight audit tasks, tap to show Yes, Partly or No.
+  To fit it, Task 1.2 is 12 minutes, the Try it 3, Task 1.3 8, the board review 2 (10:18). Day 1 is 80 slides.
+- Day 1 lab: each step shows the files to download (Tasks 1.1, 1.2, 1.5, 1.6 and 1.10). Task 1.6 says which track uses which file.
+- Day 1 page: the Your turn section is gone; the lab and the prompt sheet carry the tasks. Day 2 keeps it.
+  This needed one opt-in engine switch, `HUB["day_your_turn_off"]` in `_source/build/pages.py` (default: unchanged).
+
 ## 2026-11-15 · Day 1: live demos and a step-by-step order (Aya)
 
 - Every Day 1 demo (1.1 to 1.9) runs live in Claude. Each playback slide is now a "Live in Claude" holding slide: the demo title, what to watch for,

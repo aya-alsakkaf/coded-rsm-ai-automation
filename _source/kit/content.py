@@ -169,7 +169,7 @@ MAP_MIN = 10
 MAP_LEDE = {"before": f"{len(MAP)} questions and {len(OUTCOMES)} confidence ratings, about {MAP_MIN} minutes. The same test at the end of Day 2. Not graded. Phone only: no notes, no search, no AI."}
 
 # ------------------------------------------------------------------ the approved slide plan
-SLIDES = {1: 79, 2: 55}
+SLIDES = {1: 80, 2: 55}
 
 # ------------------------------------------------------------------ MAP tests and the final survey (the three portal drafts of this program, updated in place)
 PORTAL = "https://platform.joincoded.com/sv/"
@@ -203,6 +203,7 @@ HUB = {
     "map_text": "13 questions. The same on Day 1 and Day 2. Not graded. It measures what the program changes. Phone only, no AI. Scan the QR code on the screen, or open the link on your phone. On Day 2, the final survey comes right after.",
     "about": "AI Innovation and Automation is a CODED Professionals program for RSM Albazie & Co.",
     "day_tool_note": "Use Claude at claude.ai with the workshop account from CODED.",
+    "day_your_turn_off": [1],    # Aya, 15 Nov: the Day 1 page has no Your turn section; the lab and the prompt sheet carry the tasks
 }
 SHEET = {"howto": ["<b>Watch the trainer first.</b> Then find the same card here.", "<b>Download the file</b> on the card, or open it from your track folder in the sandbox Drive.",
                    "Click <b>COPY</b>, paste the prompt into Claude, then fill any [brackets] with your own details.", "<b>Check the answer</b> against the file before you trust it: every figure, date and flag."],
@@ -320,11 +321,11 @@ FACILITATOR = [
 LABS = {
  1: {"title": "Build your agent, step by step", "intro": "Work through the steps as the day goes. Your notes and done marks stay in this browser. Paste your card to the shared board when the trainer asks.",
      "steps": [
-        {"title": "Your first Claude chat (Task 1.1)", "do": ["Open claude.ai. Start a new chat and attach abdali-engagement-letter-2026.docx with the + button.",
+        {"title": "Your first Claude chat (Task 1.1)", "files": CD.DEMOS["t11"]["files"], "do": ["Open claude.ai. Start a new chat and attach abdali-engagement-letter-2026.docx with the + button.",
           "Ask the three questions from the prompt sheet, one at a time: a summary, every date, and what is missing.", "Check one of Claude's answers against the letter yourself."],
          "hint": "Compare Claude's dates with the Timetable section of the letter.", "check": {"kind": "note", "label": "One answer you checked, and what the letter says"},
          "answer": [("p", f"Dates: letter {D.LETTER_DATE}; sign and return by {D.LETTER['sign_by']}; report by {D.LETTER['report']}. Missing: a section on {D.LETTER_MISSING.lower()}.")]},
-        {"title": "Same task, 18 answers (Task 1.2)", "do": ["Start a new chat. Attach the invoice pack and the October purchase ledger.",
+        {"title": "Same task, 18 answers (Task 1.2)", "files": CD.DEMOS["t12"]["files"], "do": ["Start a new chat. Attach the invoice pack and the October purchase ledger.",
           "Write your own request: a table that checks each invoice against the ledger. You have 7 minutes.", "Compare your table with your neighbor's: the columns, the totals and what each of you flagged."],
          "hint": "Check every row against both files: number, date and amount.", "check": {"kind": "note", "label": "What your table and your neighbor's did differently"},
          "answer": [("p", f"Tables differ in columns and totals. The right check finds two problems: SCC-0718 (invoice KWD {D.num(D.INV['SCC-0718'][4])}, ledger KWD {D.num(D.WRONG_LEDGER)}) and FSC-3390 (not in the October ledger).")]},
@@ -335,14 +336,14 @@ LABS = {
         {"title": "Agent Card v1 (Task 1.4)", "do": ["Write your card: Input, Instruction, Output. Leave When empty.", "Paste it on the shared board for approval."],
          "hint": "Read your Instruction box as if you were new. Would you know what to do?", "check": {"kind": "note", "label": "Your Agent Card"},
          "answer": [("p", "Approve when the input names a file type, the instruction has two rules and a When unsure line, and the output names its columns.")]},
-        {"title": "Build the invoice agent with the trainer (Task 1.5)", "do": ["Projects, + New Project: Mirqab invoice match.", "Set project instructions: paste the five parts from the prompt sheet.",
+        {"title": "Build the invoice agent with the trainer (Task 1.5)", "files": CD.DEMOS["t14"]["files"], "do": ["Projects, + New Project: Mirqab invoice match.", "Set project instructions: paste the five parts from the prompt sheet.",
           "Add mirqab-invoice-match-template.xlsx to the knowledge.", "Run it on the October invoices and ledger."],
          "hint": "At least two rows should not say Matched. Look at the amount on page 3.", "check": {"kind": "flag", "label": "Type the invoice number whose amount differs", "answer": "SCC-0718"},
          "answer": [("p", f"SCC-0718: invoice KWD {D.num(D.INV['SCC-0718'][4])}, ledger KWD {D.num(D.WRONG_LEDGER)}. Difference KWD {D.num(D.WRONG_DIFF)}.")]},
         {"title": "Find the cut-off item", "do": ["Look at the row the agent marked Not in ledger.", "Check its date on the invoice. Is it in the October ledger?"],
          "hint": "It is the last invoice in the pack.", "check": {"kind": "flag", "label": "Type the invoice number missing from the October ledger", "answer": "FSC-3390"},
          "answer": [("p", "FSC-3390 is dated 27 October and is not in the October ledger: a cut-off point to follow up.")]},
-        {"title": "Build v1 of your agent (Task 1.6)", "do": ["Create your own Project. Write the five parts.", "Add a template or one example output to the knowledge.", "Check 3 items of your pack by hand (the list is in Task 1.6). Run the agent and compare."],
+        {"title": "Build v1 of your agent (Task 1.6)", "files": CD.DEMOS["t16"]["files"], "do": ["Download only your track's files. Extraction: the lease agreements. Analysis: the trial balance. Workflow: the request list and the client emails. Reporting: the engagement status.", "Create your own Project. Write the five parts.", "Add a template or one example output to the knowledge.", "Check 3 items of your pack by hand (the list is in Task 1.6). Run the agent and compare."],
          "hint": "Fix the instructions, not the answer.", "check": {"kind": "note", "label": "Your 3 items: your answer and the agent's"},
          "answer": [("p", "Each track's expected findings are in the Day 1 answer key, Task 1.6.")]},
         {"title": "Read from the folder (Task 1.7)", "do": ["Customize, then Connectors: connect Google Drive.", "Run your agent on your track folder's Inbox. Ask it to list the files it read."],
@@ -354,7 +355,7 @@ LABS = {
         {"title": "Make your skill (Task 1.9)", "do": ["Ask Claude to turn your Project into a skill. Save it.", "Test it in a new chat outside the Project.", "Add one line to your card: where this skill would live in ChatGPT, Copilot or Gemini."],
          "hint": "A skill needs a short name and one line on when to use it.", "check": {"kind": "note", "label": "Your skill's name"},
          "answer": [("p", "The fresh chat uses the skill and returns the same shape as the Project. The transfer line names a ChatGPT skill or custom GPT, a Copilot agent or a Gem.")]},
-        {"title": "The messy sample and the clock (Task 1.10)", "do": ["Run your skill on the messy file for your track (Workflow: attach the request list too). It hides a gap the agent must flag (the invoice file has two). No two values in it conflict.", "Log the minutes by hand and with the agent on the board."],
+        {"title": "The messy sample and the clock (Task 1.10)", "files": CD.DEMOS["t110"]["files"], "do": ["Run your skill on the messy file for your track (Workflow: attach the request list too). It hides a gap the agent must flag (the invoice file has two). No two values in it conflict.", "Log the minutes by hand and with the agent on the board."],
          "hint": "A good agent flags what it cannot see.", "check": {"kind": "note", "label": "Minutes by hand, minutes with the agent"},
          "answer": [("ul", [f"{v[0]}: {v[2]}" for v in D.MESSY.values()])]},
      ]},
@@ -392,10 +393,11 @@ SEGMENTS = {
      ("08:50-09:20", "Lesson 1 · AI foundations", [("08:50", 3, "Live poll and story"), ("08:53", 4, "What is AI? The room's answers in the search bar"), ("08:57", 6, "The new joiner, generative AI and the next-word widget"),
                                                    ("09:03", 5, "Hallucination: two real cases, with a check"), ("09:08", 3, "The data rule, with a check"), ("09:11", 1, "Three families of tools"),
                                                    ("09:12", 1, "Claude basics: new chat, the + button, the message box"), ("09:13", 7, "Task 1.1 · First Claude chat")]),
-     ("09:30-10:20", "Lesson 2 · Why chat isn't enough, and finding the work", [("09:30", 2, "Story: two tables"), ("09:32", 13, "Task 1.2 · Same task, 18 answers"), ("09:45", 4, "Debrief: three tables, two chats"),
-                                                   ("09:49", 6, "Why the prompt matters, Demo 1.1 live in Claude, the five parts"), ("09:55", 1, "Check"), ("09:56", 4, "Try it: rewrite your request with the five parts"),
-                                                   ("10:00", 2, "Repeatable: a prompt is not a process, with a check"), ("10:02", 2, "What an agent is"), ("10:04", 4, "Agent-ready tasks, Demo 1.2 live and a check"),
-                                                   ("10:08", 9, "Task 1.3 · Task inventory"), ("10:17", 3, "Board review")]),
+     ("09:30-10:20", "Lesson 2 · Why chat isn't enough, and finding the work", [("09:30", 2, "Story: two tables"), ("09:32", 12, "Task 1.2 · Same task, 18 answers"), ("09:44", 4, "Debrief: three tables, two chats"),
+                                                   ("09:48", 6, "Why the prompt matters, Demo 1.1 live in Claude, the five parts"), ("09:54", 1, "Check"), ("09:55", 3, "Try it: rewrite your request with the five parts"),
+                                                   ("09:58", 2, "Repeatable: a prompt is not a process, with a check"), ("10:00", 2, "What an agent is"), ("10:02", 1, "Agent-ready tasks: the four points"),
+                                                   ("10:03", 4, "Can an agent do this task? The room sorts eight tasks"), ("10:07", 3, "Demo 1.2 live and a check"),
+                                                   ("10:10", 8, "Task 1.3 · Task inventory"), ("10:18", 2, "Board review")]),
      ("10:30-11:30", "Lesson 3 · Pick your task and design the agent", [("10:30", 2, "Story"), ("10:32", 2, "Scoring a use case"), ("10:34", 4, "Demo 1.3 live · Dana scores her three candidates"),
                                                    ("10:38", 1, "The four tracks"), ("10:39", 6, "The Agent Card and literal instructions, with checks"), ("10:45", 17, "Task 1.4 · Agent Card v1"),
                                                    ("11:02", 4, "Projects, knowledge versus input, with a check"), ("11:06", 5, "Demo 1.4 live · From card to agent"), ("11:11", 19, "Task 1.5 · Build the invoice agent with me")]),

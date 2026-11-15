@@ -15,3 +15,7 @@
    with REDIRECTS from the root names to `/staff/...`; the two staff-deck links on the index still open the public decks.
 7. **Break list on the day pages.** `pages.py` joins the break times with " and " ("Breaks at 09:20 and 10:20 and 11:30 …"). Use commas with "and"
    before the last one. Found by the review-round-1 audit (10 Nov 2026); the kit cannot change engine strings.
+
+## 2026-11-15 · Day page: no way to hide the Your turn section
+
+A trainer wanted the Day 1 page without the Your turn task list (the lab and the prompt sheet already carry the tasks). There was no kit option, so `pages.py` got an opt-in `HUB["day_your_turn_off"]` list of days (default: every day keeps the section). Suggest adding this option to the engine.

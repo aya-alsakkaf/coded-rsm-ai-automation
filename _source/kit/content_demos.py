@@ -150,7 +150,7 @@ demo("t11", day=1, skill="1.1", sec=2, title="First Claude chat", tool="Claude",
  stretch=["Ask Claude which paragraph each date came from, then check two of them."],
  stretch_prompts=[("Where each date came from", "For each date you listed, give the section heading it came from.")])
 
-demo("t12", day=1, skill="1.2", sec=3, title="Same task, 18 answers", tool="Claude chat", files=[F_INV, F_LEDGER], kind="task", hands_on=True, minutes=13, solo="on your own, then in pairs",
+demo("t12", day=1, skill="1.2", sec=3, title="Same task, 18 answers", tool="Claude chat", files=[F_INV, F_LEDGER], kind="task", hands_on=True, minutes=12, solo="on your own, then in pairs",
  setup=["Start a new chat. Attach the invoice pack and the October purchase ledger.", "Write your own request: a table that checks each invoice against the ledger. You have 7 minutes.",
         "Compare your table with your neighbor's: columns, totals, and what each of you flagged.", "Be ready to show your table on the screen."],
  prompts=[],
@@ -199,7 +199,7 @@ demo("d13", day=1, skill="1.2", sec=3, title="Dana tags her task list", tool="Cl
          "reco": ["<b>Top 3:</b> invoice matching, lead schedules, chasing documents.", "<b>Not an agent:</b> the CFO meeting. Judgment and trust stay with people.", "<b>Next:</b> do the same with your own week."],
          "control": "You decide the top 3. Claude only sorts your list."})
 
-demo("t13", day=1, skill="1.3", sec=3, title="Your task inventory", tool="The Day 1 lab page", files=[], kind="task", hands_on=True, minutes=9, solo="on your own",
+demo("t13", day=1, skill="1.3", sec=3, title="Your task inventory", tool="The Day 1 lab page", files=[], kind="task", hands_on=True, minutes=8, solo="on your own",
  setup=["Open the Day 1 lab page. List 10 tasks from your last week.", "Tag each one: repeats weekly, clear rules, document in and document out.",
         "Use the prompt card for your role (on the lab page). Pick the 3 tasks with three tags.", "Post your strongest task on the shared board, under your department."],
  prompts=[("Optional: ask Claude to tag your list", "Tag each task in my list with three tags: repeats weekly, clear rules, document in and document out. A table with Yes or No for each tag, then my top 3. My tasks: [paste your list, with no client or firm names].")],
