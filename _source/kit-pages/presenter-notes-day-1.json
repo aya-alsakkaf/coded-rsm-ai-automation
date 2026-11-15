@@ -1,1122 +1,1030 @@
 [
 {
-"say": "Over two days you will build an agent for a task you repeat every week, and make it run on its own.",
-"do": "Leave this slide up while people arrive and open their laptops. Press → at 08:30.",
+"say": "Good morning, everyone, and welcome. Please find a seat and open your laptop. We start in a few minutes.",
+"do": "Leave this up while people arrive. Press → at 08:30.",
 "expect": null,
 "silent": null,
 "fallback": null,
-"more": [
-"The next slide introduces CODED and you."
-],
+"more": [],
 "time": "08:30 · cover",
 "t": "open",
 "k": "cover",
 "h": "Cover: welcome",
-"flat": "08:30 · cover. · Do: Leave this slide up while people arrive and open their laptops. Press → at 08:30. · The next slide introduces CODED and you. · Say: “Over two days you will build an agent for a task you repeat every week, and make it run on its own.”"
+"flat": "08:30 · cover. · Do: Leave this up while people arrive. Press → at 08:30. · Say: “Good morning, everyone, and welcome. Please find a seat and open your laptop. We start in a few minutes.”"
 },
 {
-"say": "We teach by building. You do the work on your laptop, and we walk the room.",
-"do": "Introduce yourself in one minute: your name, your role at CODED, and one way you use AI every week.",
+"say": "Welcome to CODED. My name is [your name], and I am with you for these two days. CODED started in Kuwait in 2015, and today we train people and companies to use coding and AI in their real work. About me: [your role at CODED, and one way you use AI every week]. You come from four teams, but you share one problem: tasks that come back every week. By tomorrow afternoon, each team will have an agent that does one of them. Two practical points. We take a break about every hour; lunch and Dhuhr are at 11:30, and Asr is at 14:55. And please open claude.ai with the workshop account, and the workshop site. If anything does not open, raise your hand and we come to you.",
+"do": null,
 "expect": null,
-"silent": "ask who has used any AI tool at work this week.",
+"silent": null,
 "fallback": null,
-"more": [
-"Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:55. Prayer room and toilets.",
-"Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room.",
-"The pre-MAP test is the next slide."
-],
+"more": [],
 "time": "08:30-08:35",
 "t": "open",
 "k": "cards",
 "h": "Welcome to CODED.",
-"flat": "08:30-08:35. · Do: Introduce yourself in one minute: your name, your role at CODED, and one way you use AI every week. · Housekeeping: breaks about every hour, lunch and Dhuhr at 11:30, Asr at 14:55. Prayer room and toilets. · Sign-in check: every laptop opens claude.ai with the workshop account, and the workshop site. Helpers walk the room. · The pre-MAP test is the next slide. · If the room is silent: ask who has used any AI tool at work this week. · Say: “We teach by building. You do the work on your laptop, and we walk the room.”"
+"flat": "08:30-08:35. · Say: “Welcome to CODED. My name is [your name], and I am with you for these two days. CODED started in Kuwait in 2015, and today we train people and companies to use coding and AI in their real work. About me: [your role at CODED, and one way you use AI every week]. You come from four teams, but you share one problem: tasks that come back every week. By tomorrow afternoon, each team will have an agent that does one of them. Two practical points. We take a break about every hour; lunch and Dhuhr are at 11:30, and Asr is at 14:55. And please open claude.ai with the workshop account, and the workshop site. If anything does not open, raise your hand and we come to you.”"
 },
 {
-"say": "Answer honestly. If you are not sure, pick your best guess. This measures the workshop, not you.",
-"do": "Phones only. No notes, no search, no AI. It is not graded.",
+"say": "Before we teach anything, we want to see where you are today. Scan the QR code with your phone. It takes about ten minutes. Use only your phone: nothing else open, no searching, no AI tools. It is not graded. If you are not sure, choose your best guess. You take the same test at the end of tomorrow, so we can see how far you came.",
+"do": "Check the response count in the portal before you move on.",
 "expect": null,
 "silent": null,
 "fallback": "read out the short link (/pre) if a phone cannot scan.",
-"more": [
-"Leave the slide up while they scan. The same link is on the workshop home and the day page.",
-"This is also the pre-flight check: help anyone whose phone does not open the link.",
-"Check the response count in the portal before you move on."
-],
+"more": [],
 "time": "10 min",
 "t": "open",
 "k": "map",
 "h": "MAP test (before)",
-"flat": "10 min. · Do: Phones only. No notes, no search, no AI. It is not graded. · Leave the slide up while they scan. The same link is on the workshop home and the day page. · This is also the pre-flight check: help anyone whose phone does not open the link. · Check the response count in the portal before you move on. · Fallback: read out the short link (/pre) if a phone cannot scan. · Say: “Answer honestly. If you are not sure, pick your best guess. This measures the workshop, not you.”"
+"flat": "10 min. · Do: Check the response count in the portal before you move on. · Fallback: read out the short link (/pre) if a phone cannot scan. · Say: “Before we teach anything, we want to see where you are today. Scan the QR code with your phone. It takes about ten minutes. Use only your phone: nothing else open, no searching, no AI tools. It is not graded. If you are not sure, choose your best guess. You take the same test at the end of tomorrow, so we can see how far you came.”"
 },
 {
-"say": "These are the things you will do yourself today, on fictional files.",
-"do": "Read the outcomes. Ask which one matters most for their team.",
-"expect": "Most people pick the Project or the skill.",
-"silent": "pick one and say why it matters for audit work.",
+"say": "Here is what you will be able to do by 16:30. Notice the verbs: explain, write, find, build, read, package. You will do every one of these yourself, on your own laptop. Which one matters most for your team? (Take two answers.)",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "open",
 "k": "outcomes",
 "h": "Outcomes",
-"flat": "Do: Read the outcomes. Ask which one matters most for their team. · Expect: Most people pick the Project or the skill. · If the room is silent: pick one and say why it matters for audit work. · Say: “These are the things you will do yourself today, on fictional files.”"
+"flat": "Say: “Here is what you will be able to do by 16:30. Notice the verbs: explain, write, find, build, read, package. You will do every one of these yourself, on your own laptop. Which one matters most for your team? (Take two answers.)”"
 },
 {
-"say": "Mirqab is fictional, so you can make mistakes safely. Every file is made up.",
-"do": "Point to the breaks: the cup button starts the break clock.",
+"say": "This is our day. Everything today uses one fictional audit firm, Mirqab and Co., and its fictional client, Abdali Foods. Every file is made up, so you can make mistakes safely, and no real client data goes anywhere. We work in seven short lessons, with a break about every hour.",
+"do": null,
 "expect": null,
-"silent": "ask which block they expect to be hardest.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "open",
 "k": "road",
 "h": "Road: the shape of Day 1",
-"flat": "Do: Point to the breaks: the cup button starts the break clock. · If the room is silent: ask which block they expect to be hardest. · Say: “Mirqab is fictional, so you can make mistakes safely. Every file is made up.”"
+"flat": "Say: “This is our day. Everything today uses one fictional audit firm, Mirqab and Co., and its fictional client, Abdali Foods. Every file is made up, so you can make mistakes safely, and no real client data goes anywhere. We work in seven short lessons, with a break about every hour.”"
 },
 {
-"say": null,
-"do": "Run the live poll on the shared board: which AI tools did you use this month, and for what? Read three answers aloud.",
-"expect": "ChatGPT, Copilot, some Claude; emails, summaries, Excel help.",
-"silent": "share your own answer first.",
+"say": "Let us start with a show of hands. Who used an AI tool at work this month? Keep your hand up if it was ChatGPT. Copilot? Claude? What did you use it for? (Take three answers.) So most of us already use AI. Before we build anything, I want us to agree on one thing: what is really happening when it gives you an answer?",
+"do": "Ask for a show of hands.",
+"expect": null,
+"silent": null,
 "fallback": null,
-"more": [
-"Two minutes for the poll, then move on."
-],
+"more": [],
 "time": "08:50-09:20",
 "t": "b1",
 "k": "story",
 "h": "Lesson 1 · AI foundations",
-"flat": "08:50-09:20. · Do: Run the live poll on the shared board: which AI tools did you use this month, and for what? Read three answers aloud. · Expect: ChatGPT, Copilot, some Claude; emails, summaries, Excel help. · Two minutes for the poll, then move on. · If the room is silent: share your own answer first."
+"flat": "08:50-09:20. · Do: Ask for a show of hands. · Say: “Let us start with a show of hands. Who used an AI tool at work this month? Keep your hand up if it was ChatGPT. Copilot? Claude? What did you use it for? (Take three answers.) So most of us already use AI. Before we build anything, I want us to agree on one thing: what is really happening when it gives you an answer?”"
 },
 {
-"say": "There are no wrong answers here. First, what does this room think?",
-"do": "Click the search bar. Ask the room: what is AI? Type each answer as people say it and press Enter.",
-"expect": "A chatbot, a search engine, a robot, something that thinks, ChatGPT, automation.",
-"silent": "type the first answer yourself: a smart search engine. Ask if anyone agrees.",
+"say": "In your own words: what is AI? There is no wrong answer. Call it out, and I will type it. (Type each answer. Do not correct anyone yet.) Good. Keep these answers in mind. In the next few minutes we will see which ones are closest to how it really works.",
+"do": "Click the search bar. Type each answer and press Enter. Esc leaves the bar; → moves on.",
+"expect": null,
+"silent": null,
 "fallback": null,
-"more": [
-"The same answer twice shows ×2 on its chip. Click a chip to remove a typo. Clear empties the board.",
-"Press Esc to leave the search bar, then → to move on. With the bar empty, → and ← still move slides.",
-"Do not correct anyone yet. The next three slides answer the question. The answers stay until the page reloads, so you can come back here."
-],
+"more": [],
 "time": "4 min",
 "t": "b1",
 "k": "ask",
 "h": "What is AI?",
-"flat": "4 min. · Do: Click the search bar. Ask the room: what is AI? Type each answer as people say it and press Enter. · Expect: A chatbot, a search engine, a robot, something that thinks, ChatGPT, automation. · The same answer twice shows ×2 on its chip. Click a chip to remove a typo. Clear empties the board. · Press Esc to leave the search bar, then → to move on. With the bar empty, → and ← still move slides. · Do not correct anyone yet. The next three slides answer the question. The answers stay until the page reloads, so you can come back here. · If the room is silent: type the first answer yourself: a smart search engine. Ask if anyone agrees. · Say: “There are no wrong answers here. First, what does this room think?”"
+"flat": "4 min. · Do: Click the search bar. Type each answer and press Enter. Esc leaves the bar; → moves on. · Say: “In your own words: what is AI? There is no wrong answer. Call it out, and I will type it. (Type each answer. Do not correct anyone yet.) Good. Keep these answers in mind. In the next few minutes we will see which ones are closest to how it really works.”"
 },
 {
-"say": "Treat it like a talented new joiner. Useful from day one, reviewed every time.",
-"do": "Point back to the room's answers: which of them fit this picture? Then ask: what would you check first in a new joiner's first working paper?",
-"expect": "The figures and the sources.",
-"silent": "say you would tick every figure.",
+"say": "Here is the picture I want you to keep all day. Imagine a new joiner who has read more than anyone in this firm. Ask for a draft and it comes back in seconds, well written. But this new joiner has never seen your client's file. So when something is missing, it writes what is normal, not what is true. Look back at your answers: which of them fit this picture? And with a new joiner's first working paper, what would you check first? (Expected: the figures and the sources.) Exactly. Useful from day one, reviewed every time.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b1",
 "k": "scene",
 "h": "A very well-read new joiner.",
-"flat": "Do: Point back to the room's answers: which of them fit this picture? Then ask: what would you check first in a new joiner's first working paper? · Expect: The figures and the sources. · If the room is silent: say you would tick every figure. · Say: “Treat it like a talented new joiner. Useful from day one, reviewed every time.”"
+"flat": "Say: “Here is the picture I want you to keep all day. Imagine a new joiner who has read more than anyone in this firm. Ask for a draft and it comes back in seconds, well written. But this new joiner has never seen your client's file. So when something is missing, it writes what is normal, not what is true. Look back at your answers: which of them fit this picture? And with a new joiner's first working paper, what would you check first? (Expected: the figures and the sources.) Exactly. Useful from day one, reviewed every time.”"
 },
 {
-"say": null,
-"do": "Link back to the new joiner: same idea, much bigger memory.",
-"expect": "People connect likely with not checked.",
-"silent": "ask: is a likely date always the right date?",
+"say": "So what is it really doing? It learned from a huge amount of text. When it writes, it looks at the words so far and picks the word that most often comes next. Then the next one, and the next. That is why it is so good at reading, summarizing and drafting. But a likely word is not a checked word. Unless you give it the source, it is not looking anything up.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b1",
 "k": "term",
 "h": "What it really does.",
-"flat": "Do: Link back to the new joiner: same idea, much bigger memory. · Expect: People connect likely with not checked. · If the room is silent: ask: is a likely date always the right date?"
+"flat": "Say: “So what is it really doing? It learned from a huge amount of text. When it writes, it looks at the words so far and picks the word that most often comes next. Then the next one, and the next. That is why it is so good at reading, summarizing and drafting. But a likely word is not a checked word. Unless you give it the source, it is not looking anything up.”"
 },
 {
-"say": "It is not looking at the ledger. A posting month is just another word to it.",
-"do": "Read the start of the sentence. Ask the room which word comes next, and click their choice.",
+"say": "Let me show you. Here is the start of a sentence from an audit file. Which word comes next? Call it out. (Click their choice.) Every possible word gets a score, and the model picks one. Now watch: I pick Paris, which has only a one percent chance. Read the sentence now. It still sounds confident. The model is not looking at the ledger. To it, a month is just another word. The percentages here are only an illustration.",
+"do": "Read the sentence. Click the room's choice. Then click Pick the top word, start again, and pick Paris.",
 "expect": null,
-"silent": "ask one person to choose for the room.",
+"silent": null,
 "fallback": null,
-"more": [
-"Click Pick the top word: November is the most likely word. It is also right here, by luck.",
-"Start again and pick Paris (1%). The sentence still sounds confident.",
-"The percentages are illustrative."
-],
+"more": [],
 "time": "5 min",
 "t": "b1",
 "k": "llm",
 "h": "It writes by guessing the next word.",
-"flat": "5 min. · Do: Read the start of the sentence. Ask the room which word comes next, and click their choice. · Click Pick the top word: November is the most likely word. It is also right here, by luck. · Start again and pick Paris (1%). The sentence still sounds confident. · The percentages are illustrative. · If the room is silent: ask one person to choose for the room. · Say: “It is not looking at the ledger. A posting month is just another word to it.”"
+"flat": "5 min. · Do: Read the sentence. Click the room's choice. Then click Pick the top word, start again, and pick Paris. · Say: “Let me show you. Here is the start of a sentence from an audit file. Which word comes next? Call it out. (Click their choice.) Every possible word gets a score, and the model picks one. Now watch: I pick Paris, which has only a one percent chance. Read the sentence now. It still sounds confident. The model is not looking at the ledger. To it, a month is just another word. The percentages here are only an illustration.”"
 },
 {
-"say": null,
-"do": "Ask: where in audit work would a wrong figure hurt most?",
-"expect": "Reconciliations, confirmations, the report.",
-"silent": "say: in a working paper your supervisor signs.",
+"say": "This has a name: hallucination. It produces text that sounds correct, yet is false. A wrong amount, a wrong date, a source that does not exist. And it says it with full confidence, with no warning. Where in your work would a wrong figure hurt most? (Expected: reconciliations, confirmations, the report.) Yes. That is why professional skepticism still applies: every figure gets ticked against its source.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b1",
 "k": "term",
 "h": "Fluent and wrong.",
-"flat": "Do: Ask: where in audit work would a wrong figure hurt most? · Expect: Reconciliations, confirmations, the report. · If the room is silent: say: in a working paper your supervisor signs."
+"flat": "Say: “This has a name: hallucination. It produces text that sounds correct, yet is false. A wrong amount, a wrong date, a source that does not exist. And it says it with full confidence, with no warning. Where in your work would a wrong figure hurt most? (Expected: reconciliations, confirmations, the report.) Yes. That is why professional skepticism still applies: every figure gets ticked against its source.”"
 },
 {
-"say": "The tool never signs. You do.",
-"do": "Tell each case in about one minute. Then ask: who paid for the mistake, the tool or the people?",
-"expect": "The lawyers and the airline. Nobody blames the tool.",
-"silent": "ask: whose name goes on a working paper, yours or Claude's?",
+"say": "This is not theory. Two real cases. In New York in 2023, two lawyers asked ChatGPT for past court decisions to support their client. It made the cases up, with quotes, and when the lawyer asked if they were real, it said yes. Nobody checked. The judge fined them and their firm 5,000 dollars, and made them write to every real judge whose name was on a fake decision. In Canada in 2024, Air Canada's chatbot invented a refund rule for a customer whose grandmother had died. The airline argued the chatbot should answer for what it said. The tribunal disagreed: the company is responsible, and the airline paid. So who paid for the mistake: the tool, or the people? (Expected: the people.) Exactly. The tool never signs. You do. (Optional, closer to our work: in 2025, Deloitte Australia refunded part of a government fee after a report with made-up references and a made-up court quote.)",
+"do": "Tell each case in about one minute.",
+"expect": null,
+"silent": null,
 "fallback": null,
-"more": [
-"Case 1: the lawyer asked ChatGPT if the cases were real, and it said yes. The judge also made them write to each real judge whose name was on a fake decision.",
-"Case 2: Air Canada argued the chatbot was a separate legal entity. The tribunal rejected this and ordered the airline to pay about CA$812.",
-"Optional, close to audit work: in October 2025 Deloitte Australia refunded part of a AU$440,000 government fee. Its report had made-up references and a made-up quote from a court judgment. The revised report says a generative AI tool was used."
-],
+"more": [],
 "time": "4 min",
 "t": "b1",
 "k": "cards",
 "h": "Confident, fluent and made up.",
-"flat": "4 min. · Do: Tell each case in about one minute. Then ask: who paid for the mistake, the tool or the people? · Expect: The lawyers and the airline. Nobody blames the tool. · Case 1: the lawyer asked ChatGPT if the cases were real, and it said yes. The judge also made them write to each real judge whose name was on a fake decision. · Case 2: Air Canada argued the chatbot was a separate legal entity. The tribunal rejected this and ordered the airline to pay about CA$812. · Optional, close to audit work: in October 2025 Deloitte Australia refunded part of a AU$440,000 government fee. Its report had made-up references and a made-up quote from a court judgment. The revised report says a generative AI tool was used. · If the room is silent: ask: whose name goes on a working paper, yours or Claude's? · Say: “The tool never signs. You do.”"
+"flat": "4 min. · Do: Tell each case in about one minute. · Say: “This is not theory. Two real cases. In New York in 2023, two lawyers asked ChatGPT for past court decisions to support their client. It made the cases up, with quotes, and when the lawyer asked if they were real, it said yes. Nobody checked. The judge fined them and their firm 5,000 dollars, and made them write to every real judge whose name was on a fake decision. In Canada in 2024, Air Canada's chatbot invented a refund rule for a customer whose grandmother had died. The airline argued the chatbot should answer for what it said. The tribunal disagreed: the company is responsible, and the airline paid. So who paid for the mistake: the tool, or the people? (Expected: the people.) Exactly. The tool never signs. You do. (Optional, closer to our work: in 2025, Deloitte Australia refunded part of a government fee after a report with made-up references and a made-up court quote.)”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "Quick check. Read the question with me. (Wait for hands.) The answer is the first one: the model guessed a figure that looked likely, and no one checked it. The invoice is the source, and the answer must match it.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option A.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b1",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · Say: “Quick check. Read the question with me. (Wait for hands.) The answer is the first one: the model guessed a figure that looked likely, and no one checked it. The invoice is the source, and the answer must match it.”"
 },
 {
-"say": null,
-"do": "Point to the safe-use card on the site.",
-"expect": "Questions about which tools RSM approves: say IT or Risk Management decides.",
-"silent": "ask: would you email a client's ledger to a personal address?",
+"say": "Now an important rule. Today every file is fictional, so you can try anything. Back at RSM it is different: client data only goes into tools that RSM has approved. Think of email. You would never send a client's ledger to your personal email. The same care applies to AI tools. Which tools are approved is RSM's decision, made by IT or Risk, not by us. If in doubt, assume it is client data and ask before you upload. The safe-use card on the workshop site has this rule.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b1",
 "k": "term",
 "h": "Dummy data today. RSM's policy always.",
-"flat": "Do: Point to the safe-use card on the site. · Expect: Questions about which tools RSM approves: say IT or Risk Management decides. · If the room is silent: ask: would you email a client's ledger to a personal address?"
+"flat": "Say: “Now an important rule. Today every file is fictional, so you can try anything. Back at RSM it is different: client data only goes into tools that RSM has approved. Think of email. You would never send a client's ledger to your personal email. The same care applies to AI tools. Which tools are approved is RSM's decision, made by IT or Risk, not by us. If in doubt, assume it is client data and ask before you upload. The safe-use card on the workshop site has this rule.”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "Another quick check. What do you do first? (Wait for hands.) The answer is the second one: you look at the firm's policy first, and you only use a tool RSM has approved. What you upload leaves the firm's control, and invoices are client data.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b1",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · Say: “Another quick check. What do you do first? (Wait for hands.) The answer is the second one: you look at the firm's policy first, and you only use a tool RSM has approved. What you upload leaves the firm's control, and invoices are client data.”"
 },
 {
-"say": null,
-"do": "Ask which family each person used this week.",
-"expect": "Mostly family 1, some family 2.",
-"silent": "say which one you use most and why.",
+"say": "AI tools come in three families. First, chat assistants such as Claude, ChatGPT, Copilot and Gemini: you ask, and it drafts. Second, AI built into the apps you already use, like Copilot in Excel and Outlook. Third, automation tools that run on their own. Which family did you use this week? (Take two answers.) In this program we use Claude, but the method you learn works in all three.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
-"more": [
-"Keep it short. The full map of Claude features in other tools comes at the end of the day, after they have used each one."
-],
+"more": [],
 "time": null,
 "t": "b1",
 "k": "cards",
 "h": "Three families of AI tools.",
-"flat": "Do: Ask which family each person used this week. · Expect: Mostly family 1, some family 2. · Keep it short. The full map of Claude features in other tools comes at the end of the day, after they have used each one. · If the room is silent: say which one you use most and why."
+"flat": "Say: “AI tools come in three families. First, chat assistants such as Claude, ChatGPT, Copilot and Gemini: you ask, and it drafts. Second, AI built into the apps you already use, like Copilot in Excel and Outlook. Third, automation tools that run on their own. Which family did you use this week? (Take two answers.) In this program we use Claude, but the method you learn works in all three.”"
 },
 {
-"say": null,
-"do": "Show each one on the presenting laptop while you talk.",
-"expect": "Everyone finds the + button in under a minute.",
-"silent": "ask someone to attach a file on their screen.",
+"say": "Before your first task, you need only three things in Claude. Watch my screen. Here is New chat: start a fresh one for every new job, so old answers do not mix in. Here is the plus button: this is how you give Claude the file to read. And here is where you type. That is all for now. The other features come later, one lesson at a time.",
+"do": "Show each one on your own screen as you say it.",
+"expect": null,
+"silent": null,
 "fallback": null,
-"more": [
-"Keep the rest of Claude closed for now. Each feature gets its own lesson: Projects in Lesson 3, connectors in Lesson 5, skills in Lesson 6, scheduled tasks on Day 2."
-],
+"more": [],
 "time": null,
 "t": "b1",
 "k": "list",
 "h": "Three things for your first chat.",
-"flat": "Do: Show each one on the presenting laptop while you talk. · Expect: Everyone finds the + button in under a minute. · Keep the rest of Claude closed for now. Each feature gets its own lesson: Projects in Lesson 3, connectors in Lesson 5, skills in Lesson 6, scheduled tasks on Day 2. · If the room is silent: ask someone to attach a file on their screen."
+"flat": "Do: Show each one on your own screen as you say it. · Say: “Before your first task, you need only three things in Claude. Watch my screen. Here is New chat: start a fresh one for every new job, so old answers do not mix in. Here is the plus button: this is how you give Claude the file to read. And here is where you type. That is all for now. The other features come later, one lesson at a time.”"
 },
 {
-"say": "Three questions, one file. Then you check one answer yourself.",
-"do": "Start the timer. Walk the room. Ask each person what they found so far.",
+"say": "Your first task. Open the Day 1 lab page and download the engagement letter from step 1. Start a new chat, attach the letter, and ask the three questions from the prompt sheet, one at a time. Then read the letter and verify one answer for yourself. You have 7 minutes. Raise your hand if anything does not open.",
+"do": "Start the timer. Walk the room.",
 "expect": "A 5-line summary; the dates (letter 7 September 2026, financial year end 31 December 2026, sign by 30 September 2026, interim work 16 November to 3 December 2026, year-end work 1 to 25 February 2027, report by 31 March 2027); and the missing section: responsibilities of management.",
 "silent": null,
 "fallback": "If upload fails, open the letter and paste the Timetable section into the chat.",
-"more": [
-"Give the hint at about 3 min.",
-"Fast finishers have an extra task on the slide."
-],
+"more": [],
 "time": "7 min work, then share",
 "t": "b1",
 "k": "task",
 "h": "Your turn 1.1: First Claude chat (7 min, on your own)",
-"flat": "7 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A 5-line summary; the dates (letter 7 September 2026, financial year end 31 December 2026, sign by 30 September 2026, interim work 16 November to 3 December 2026, year-end work 1 to 25 February 2027, report by 31 March 2027); and the missing section: responsibilities of management. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: If upload fails, open the letter and paste the Timetable section into the chat. · Say: “Three questions, one file. Then you check one answer yourself.”"
+"flat": "7 min work, then share. · Do: Start the timer. Walk the room. · Expect: A 5-line summary; the dates (letter 7 September 2026, financial year end 31 December 2026, sign by 30 September 2026, interim work 16 November to 3 December 2026, year-end work 1 to 25 February 2027, report by 31 March 2027); and the missing section: responsibilities of management. · Fallback: If upload fails, open the letter and paste the Timetable section into the chat. · Say: “Your first task. Open the Day 1 lab page and download the engagement letter from step 1. Start a new chat, attach the letter, and ask the three questions from the prompt sheet, one at a time. Then read the letter and verify one answer for yourself. You have 7 minutes. Raise your hand if anything does not open.”"
 },
 {
-"say": null,
-"do": "Ask: which table would you sign off?",
-"expect": "Neither, until they match.",
-"silent": "say: neither. Then start the task.",
+"say": "Welcome back. Meet Faisal, a supervisor at Mirqab. Two associates send him a reconciliation for the same invoices. The columns are different, and so are the totals. One finds a problem, and the other says all is fine. Which one would you sign off? (Expected: neither.) Right, neither. Let us see if the same thing happens in this room.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "09:30-10:20",
 "t": "b2",
 "k": "story",
 "h": "Lesson 2 · Why chat isn't enough",
-"flat": "09:30-10:20. · Do: Ask: which table would you sign off? · Expect: Neither, until they match. · If the room is silent: say: neither. Then start the task."
+"flat": "09:30-10:20. · Say: “Welcome back. Meet Faisal, a supervisor at Mirqab. Two associates send him a reconciliation for the same invoices. The columns are different, and so are the totals. One finds a problem, and the other says all is fine. Which one would you sign off? (Expected: neither.) Right, neither. Let us see if the same thing happens in this room.”"
 },
 {
-"say": "Same files, same tool, 18 people. Count how many different tables we get.",
-"do": "Start the timer. Walk the room. Ask each person what they found so far.",
+"say": "Now you do Faisal's task. Download the invoice pack and the October ledger from step 2 of the lab page. In a new chat, attach both. Then ask Claude, in your own words, to compare every invoice with the ledger in a table. There is nothing to copy this time. You have 7 minutes, and then you compare with your neighbor. Let us count how many different tables we get.",
+"do": "Start the timer. Walk the room.",
 "expect": "Tables that differ: different columns and different totals. Many miss one of the two problems: SCC-0718 (ledger 1,284.500, invoice 1,248.500) or FSC-3390 (not in the October ledger).",
 "silent": null,
 "fallback": "If Claude is slow, pairs share one laptop. Show the backup table in the debrief.",
-"more": [
-"Give the hint at about 4 min.",
-"Fast finishers have an extra task on the slide."
-],
+"more": [],
 "time": "12 min work, then share",
 "t": "b2",
 "k": "task",
 "h": "Your turn 1.2: Same task, 18 answers (12 min, on your own, then in pairs)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: Tables that differ: different columns and different totals. Many miss one of the two problems: SCC-0718 (ledger 1,284.500, invoice 1,248.500) or FSC-3390 (not in the October ledger). · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If Claude is slow, pairs share one laptop. Show the backup table in the debrief. · Say: “Same files, same tool, 18 people. Count how many different tables we get.”"
+"flat": "12 min work, then share. · Do: Start the timer. Walk the room. · Expect: Tables that differ: different columns and different totals. Many miss one of the two problems: SCC-0718 (ledger 1,284.500, invoice 1,248.500) or FSC-3390 (not in the October ledger). · Fallback: If Claude is slow, pairs share one laptop. Show the backup table in the debrief. · Say: “Now you do Faisal's task. Download the invoice pack and the October ledger from step 2 of the lab page. In a new chat, attach both. Then ask Claude, in your own words, to compare every invoice with the ledger in a table. There is nothing to copy this time. You have 7 minutes, and then you compare with your neighbor. Let us count how many different tables we get.”"
 },
 {
-"say": "Two things changed the tables: the request and the chat. We fix the request first.",
-"do": "First show three contrasting tables from the room. Then this slide.",
-"expect": "People see that only the chat changed: same prompt, same files.",
-"silent": "ask: which chat would you trust?",
+"say": "Let us look at three of your tables. (Show three.) Different columns, different totals, and some missed a problem. Now look at this: one request, one set of files, two chats, and still two different tables. Two things changed the result: the request, and the chat. We fix the request first.",
+"do": "First show three tables from the room. Then this slide.",
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b2",
 "k": "table",
 "h": "The answer depended on the chat.",
-"flat": "Do: First show three contrasting tables from the room. Then this slide. · Expect: People see that only the chat changed: same prompt, same files. · If the room is silent: ask: which chat would you trust? · Say: “Two things changed the tables: the request and the chat. We fix the request first.”"
+"flat": "Do: First show three tables from the room. Then this slide. · Say: “Let us look at three of your tables. (Show three.) Different columns, different totals, and some missed a problem. Now look at this: one request, one set of files, two chats, and still two different tables. Two things changed the result: the request, and the chat. We fix the request first.”"
 },
 {
-"say": null,
-"do": "Ask: what did your Task 1.2 request leave out?",
-"expect": "The columns, what counts as a difference, what to do when a row is missing.",
-"silent": "read one short request from the room and ask what it does not say.",
+"say": "A prompt is simply what you type. And here is the key point: Claude can only use the words you give it. If your request does not say which columns, what counts as a difference, or what to do when something is missing, Claude fills the gap with what is common, not with what you need. It is like briefing a new joiner in one line and then being surprised by the result. What did your own request leave out? (Expected: the columns, the rules, what to do with gaps.)",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b2",
 "k": "term",
 "h": "A better request. A better result.",
-"flat": "Do: Ask: what did your Task 1.2 request leave out? · Expect: The columns, what counts as a difference, what to do when a row is missing. · If the room is silent: read one short request from the room and ask what it does not say."
+"flat": "Say: “A prompt is simply what you type. And here is the key point: Claude can only use the words you give it. If your request does not say which columns, what counts as a difference, or what to do when something is missing, Claude fills the gap with what is common, not with what you need. It is like briefing a new joiner in one line and then being surprised by the result. What did your own request leave out? (Expected: the columns, the rules, what to do with gaps.)”"
 },
 {
-"say": "Same tool. Same invoice. The only thing that changed is the request.",
+"say": "Let me show you the difference, live. One invoice, two chats. On the left, a weak request, the kind we all write. On the right, a request with five parts. (Send the weak one.) It reads well, but there is no invoice number, and the amount is rounded. Could this go into a working paper? (No.) Now the strong one. Before I send it, listen to its five parts: who Claude is, the steps, the rules, the format, and what to do when unsure. (Send it.) One clean row with the exact amount. And where the PO number is missing, it says Not found instead of guessing. Same tool, same invoice. I only changed the request.",
 "do": "Switch to Claude. Open two chats side by side and attach abdali-supplier-invoices-oct-2026.pdf to both. Send the weak request in one and the five-part request in the other, about invoice BPK-4471 (page 1).",
-"expect": "Weak: a readable paragraph about packaging that gives a rounded amount and no invoice number. Strong: one row: Bayan Packaging Co. W.L.L., BPK-4471, 12 October 2026, PO number Not found, KWD 2,145.750.",
-"silent": "ask before the strong request: could the weak answer go into a working paper?",
+"expect": null,
+"silent": null,
 "fallback": "If Claude is slow or the file will not load, read the expected results aloud and keep going. The expected result is on the staff backup page, Demo 1.1.",
-"more": [
-"Copy the prompt from the prompt sheet, Demo 1.1. The live answer may use other words; point at what the Watch for line asks.",
-"Before you send the strong request, read its five parts aloud: Role, Steps, Rules, Format, When unsure. Ask what each part adds.",
-"Point at the strong answer: the exact amount, the invoice number and PO number Not found.",
-"Both prompts are on the prompt sheet, Demo 1.1."
-],
+"more": [],
 "time": "5 min",
 "t": "b2",
 "k": "live",
 "h": "Demo 1.1 live in Claude: One invoice, two requests",
-"flat": "5 min. · Do: Switch to Claude. Open two chats side by side and attach abdali-supplier-invoices-oct-2026.pdf to both. Send the weak request in one and the five-part request in the other, about invoice BPK-4471 (page 1). · Expect: Weak: a readable paragraph about packaging that gives a rounded amount and no invoice number. Strong: one row: Bayan Packaging Co. W.L.L., BPK-4471, 12 October 2026, PO number Not found, KWD 2,145.750. · Copy the prompt from the prompt sheet, Demo 1.1. The live answer may use other words; point at what the Watch for line asks. · Before you send the strong request, read its five parts aloud: Role, Steps, Rules, Format, When unsure. Ask what each part adds. · Point at the strong answer: the exact amount, the invoice number and PO number Not found. · Both prompts are on the prompt sheet, Demo 1.1. · If the room is silent: ask before the strong request: could the weak answer go into a working paper? · Fallback: If Claude is slow or the file will not load, read the expected results aloud and keep going. The expected result is on the staff backup page, Demo 1.1. · Say: “Same tool. Same invoice. The only thing that changed is the request.”"
+"flat": "5 min. · Do: Switch to Claude. Open two chats side by side and attach abdali-supplier-invoices-oct-2026.pdf to both. Send the weak request in one and the five-part request in the other, about invoice BPK-4471 (page 1). · Fallback: If Claude is slow or the file will not load, read the expected results aloud and keep going. The expected result is on the staff backup page, Demo 1.1. · Say: “Let me show you the difference, live. One invoice, two chats. On the left, a weak request, the kind we all write. On the right, a request with five parts. (Send the weak one.) It reads well, but there is no invoice number, and the amount is rounded. Could this go into a working paper? (No.) Now the strong one. Before I send it, listen to its five parts: who Claude is, the steps, the rules, the format, and what to do when unsure. (Send it.) One clean row with the exact amount. And where the PO number is missing, it says Not found instead of guessing. Same tool, same invoice. I only changed the request.”"
 },
 {
-"say": null,
-"do": "Map each part to the strong request you just saw.",
-"expect": "People say When unsure is the part they never write.",
-"silent": "ask: which part was missing from your own Task 1.2 request?",
+"say": "So here is the recipe, in five parts. Role: tell Claude who it is and what the job is. Steps: the order of the work. Rules: the source to use, the units and the dates. Format: the exact shape you want back. And the last part: what Claude should do when information is missing. That last one is the part people forget, and it is the part that stops the guessing. Then always attach the file, and check the answer yourself. Which part was missing from your request in Task 1.2?",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
-"more": [
-"If the room is fast: two people rewrite their Task 1.2 request with the five parts and run it again, then compare it with their first table."
-],
+"more": [],
 "time": null,
 "t": "b2",
 "k": "list",
 "h": "Five parts of a good prompt.",
-"flat": "Do: Map each part to the strong request you just saw. · Expect: People say When unsure is the part they never write. · If the room is fast: two people rewrite their Task 1.2 request with the five parts and run it again, then compare it with their first table. · If the room is silent: ask: which part was missing from your own Task 1.2 request?"
+"flat": "Say: “So here is the recipe, in five parts. Role: tell Claude who it is and what the job is. Steps: the order of the work. Rules: the source to use, the units and the dates. Format: the exact shape you want back. And the last part: what Claude should do when information is missing. That last one is the part people forget, and it is the part that stops the guessing. Then always attach the file, and check the answer yourself. Which part was missing from your request in Task 1.2?”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "Which request gives you something you can put in a working paper? (Wait for hands.) The middle one. The first has no rules and no format, so Claude fills the gaps. The third is only a wish: being accurate is not a rule Claude can follow.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b2",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · Say: “Which request gives you something you can put in a working paper? (Wait for hands.) The middle one. The first has no rules and no format, so Claude fills the gaps. The third is only a wish: being accurate is not a rule Claude can follow.”"
 },
 {
-"say": null,
-"do": "Start the timer. Walk the room and read three rewritten requests.",
-"expect": "Tables look more alike: the same columns, and both problems found more often.",
-"silent": "ask one person to read their When unsure line aloud.",
+"say": "Now you try. Take the request you wrote in Task 1.2 and rewrite it using the five parts. Open a new chat, attach the two files again, and run it. Then compare with your neighbor's table. Are they closer now? You have 3 minutes. The five parts are also on the prompt sheet, under Demo 1.1.",
+"do": "Start the timer. Walk the room.",
+"expect": null,
+"silent": null,
 "fallback": null,
-"more": [
-"The five parts are on the slide before the check, and on the prompt sheet under Demo 1.1."
-],
+"more": [],
 "time": "3 min",
 "t": "b2",
 "k": "timer",
 "h": "Rewrite your request with the five parts.",
-"flat": "3 min. · Do: Start the timer. Walk the room and read three rewritten requests. · Expect: Tables look more alike: the same columns, and both problems found more often. · The five parts are on the slide before the check, and on the prompt sheet under Demo 1.1. · If the room is silent: ask one person to read their When unsure line aloud."
+"flat": "3 min. · Do: Start the timer. Walk the room. · Say: “Now you try. Take the request you wrote in Task 1.2 and rewrite it using the five parts. Open a new chat, attach the two files again, and run it. Then compare with your neighbor's table. Are they closer now? You have 3 minutes. The five parts are also on the prompt sheet, under Demo 1.1.”"
 },
 {
-"say": null,
-"do": "Ask: what makes an audit program repeatable?",
-"expect": "Written steps, the same working paper.",
-"silent": "say: it is written down, so anyone gets the same result.",
+"say": "A good prompt is a big step. But think about next week. Where is your prompt? In an old chat, somewhere. You will type it again, a little differently, and get a slightly different table. That is a prompt, not a process. Think of an audit program: written steps, the same working paper, whoever does the work. That is what we want from AI: the same input, the same rules, the same shape, every time.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b2",
 "k": "term",
 "h": "A prompt is not a process.",
-"flat": "Do: Ask: what makes an audit program repeatable? · Expect: Written steps, the same working paper. · If the room is silent: say: it is written down, so anyone gets the same result."
+"flat": "Say: “A good prompt is a big step. But think about next week. Where is your prompt? In an old chat, somewhere. You will type it again, a little differently, and get a slightly different table. That is a prompt, not a process. Think of an audit program: written steps, the same working paper, whoever does the work. That is what we want from AI: the same input, the same rules, the same shape, every time.”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "Two associates, same invoices, different tables. What is missing? (Wait for hands.) The middle one: a fixed input, fixed rules and a fixed shape. And that is exactly what an agent keeps for you.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b2",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · Say: “Two associates, same invoices, different tables. What is missing? (Wait for hands.) The middle one: a fixed input, fixed rules and a fixed shape. And that is exactly what an agent keeps for you.”"
 },
 {
-"say": null,
-"do": "Link each part to the day: saved instructions in Lessons 3 and 4, files and a fixed output in Lesson 5, running without you on Day 2.",
-"expect": "Some say an agent is a robot or a chatbot. Say: it is a saved method that can reach the files.",
-"silent": "say: think of a trained associate with a written procedure and the client file.",
+"say": "So what is an agent? It is AI that you prepare for one job, and it does that job identically each time. Its instructions are saved, so you never type them again. It can reach the files it needs. It always gives back the same shape. And from tomorrow, it can run on a schedule, without you. Think of a trained associate with a written procedure and access to the client file. A chat answers a question. An agent does a job. Today you build your first one, piece by piece.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b2",
 "k": "term",
 "h": "From a chat to an agent.",
-"flat": "Do: Link each part to the day: saved instructions in Lessons 3 and 4, files and a fixed output in Lesson 5, running without you on Day 2. · Expect: Some say an agent is a robot or a chatbot. Say: it is a saved method that can reach the files. · If the room is silent: say: think of a trained associate with a written procedure and the client file."
+"flat": "Say: “So what is an agent? It is AI that you prepare for one job, and it does that job identically each time. Its instructions are saved, so you never type them again. It can reach the files it needs. It always gives back the same shape. And from tomorrow, it can run on a schedule, without you. Think of a trained associate with a written procedure and access to the client file. A chat answers a question. An agent does a job. Today you build your first one, piece by piece.”"
 },
 {
-"say": null,
-"do": "Give one example of each tag from audit work.",
-"expect": "Invoice matching, lead schedules, confirmations.",
-"silent": "ask: which of your tasks repeats every week?",
+"say": "Not every task should become an agent. Ask three questions about a task. Does it come back every week? Are the rules clear enough to write down? Does a document go in, and a document come out? Three yes answers, and you have a candidate. Anything that needs judgment, or a meeting with a client, stays with you. Pick the task first, and the tool second.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b2",
 "k": "term",
 "h": "Which tasks suit an agent?",
-"flat": "Do: Give one example of each tag from audit work. · Expect: Invoice matching, lead schedules, confirmations. · If the room is silent: ask: which of your tasks repeats every week?"
+"flat": "Say: “Not every task should become an agent. Ask three questions about a task. Does it come back every week? Are the rules clear enough to write down? Does a document go in, and a document come out? Three yes answers, and you have a candidate. Anything that needs judgment, or a meeting with a client, stays with you. Pick the task first, and the tool second.”"
 },
 {
-"say": null,
-"do": "Read each card aloud. Ask: can an agent do this? Hands up for yes, partly or no. Then tap the card to show the answer.",
-"expect": "People argue about the amber cards. Good: AI can draft and check, but a person decides and signs.",
-"silent": "say: if it needs judgment, a relationship or a signature, it stays with you.",
+"say": "Let us practice together. I read a task, and you decide: can an agent do it? Thumbs up for yes, thumbs sideways for partly, thumbs down for no. Everyone votes, from every department. (Read each card, count the thumbs, then tap it.) Do you see the pattern? If a task repeats and the rules are clear, an agent can do it. If it needs judgment, a relationship or a signature, it stays with a person. And in the middle, AI drafts and you decide.",
+"do": "Read a card. Count the thumbs. Tap the card.",
+"expect": null,
+"silent": null,
 "fallback": null,
-"more": [
-"Link each green card to the four points on the slide before: it repeats, it takes minutes each time, the rules are clear, and it can run on a schedule.",
-"Then Demo 1.2: Dana does the same with her own task list."
-],
+"more": [],
 "time": "4 min",
 "t": "b2",
 "k": "sort",
 "h": "Can an agent do this task?",
-"flat": "4 min. · Do: Read each card aloud. Ask: can an agent do this? Hands up for yes, partly or no. Then tap the card to show the answer. · Expect: People argue about the amber cards. Good: AI can draft and check, but a person decides and signs. · Link each green card to the four points on the slide before: it repeats, it takes minutes each time, the rules are clear, and it can run on a schedule. · Then Demo 1.2: Dana does the same with her own task list. · If the room is silent: say: if it needs judgment, a relationship or a signature, it stays with you."
+"flat": "4 min. · Do: Read a card. Count the thumbs. Tap the card. · Say: “Let us practice together. I read a task, and you decide: can an agent do it? Thumbs up for yes, thumbs sideways for partly, thumbs down for no. Everyone votes, from every department. (Read each card, count the thumbs, then tap it.) Do you see the pattern? If a task repeats and the rules are clear, an agent can do it. If it needs judgment, a relationship or a signature, it stays with a person. And in the middle, AI drafts and you decide.”"
 },
 {
-"say": "Three tags. A task that gets three Yes is a candidate agent.",
+"say": "Now let us watch Dana, an associate at Mirqab, do this with her own task list. She asks Claude to tag each of her tasks with the three questions. (Run it.) Count how many yes answers each row gets. Three yes means a candidate agent. The meeting with the client's CFO gets three no. That one stays with Dana.",
 "do": "Switch to Claude and run it live. Paste Dana's seven tasks into a new chat with the prompt below.",
-"expect": "A table with three Yes for invoice matching, lead schedules and chasing documents. The CFO discussion gets three No. The KYC check has clear rules but is not weekly: a later agent.",
+"expect": null,
 "silent": null,
 "fallback": "Show the backup table. The expected result is on the staff backup page, Demo 1.2.",
-"more": [
-"Copy the prompt from the prompt sheet, Demo 1.2. The live answer may use other words; point at what the Watch for line asks."
-],
+"more": [],
 "time": "3 min",
 "t": "b2",
 "k": "live",
 "h": "Demo 1.2 live in Claude: Dana tags her task list",
-"flat": "3 min. · Do: Switch to Claude and run it live. Paste Dana's seven tasks into a new chat with the prompt below. · Expect: A table with three Yes for invoice matching, lead schedules and chasing documents. The CFO discussion gets three No. The KYC check has clear rules but is not weekly: a later agent. · Copy the prompt from the prompt sheet, Demo 1.2. The live answer may use other words; point at what the Watch for line asks. · Fallback: Show the backup table. The expected result is on the staff backup page, Demo 1.2. · Say: “Three tags. A task that gets three Yes is a candidate agent.”"
+"flat": "3 min. · Do: Switch to Claude and run it live. Paste Dana's seven tasks into a new chat with the prompt below. · Fallback: Show the backup table. The expected result is on the staff backup page, Demo 1.2. · Say: “Now let us watch Dana, an associate at Mirqab, do this with her own task list. She asks Claude to tag each of her tasks with the three questions. (Run it.) Count how many yes answers each row gets. Three yes means a candidate agent. The meeting with the client's CFO gets three no. That one stays with Dana.”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "Which of Dana's tasks should not be her first agent? (Wait for hands.) The CFO discussion. It is a meeting that needs judgment, not a document in and a document out.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b2",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · Say: “Which of Dana's tasks should not be her first agent? (Wait for hands.) The CFO discussion. It is a meeting that needs judgment, not a document in and a document out.”"
 },
 {
-"say": "Preparers: what do you rebuild on every engagement? Reviewers: what do you check every time? Coordinators: what do you chase every week, from requests to new-client KYC files?",
-"do": "Start the timer. Walk the room. Ask each person what they found so far.",
-"expect": "10 tasks, tagged; a top 3; one task on the shared board under the right department.",
+"say": "Now your own work. Open step 3 of the lab page. Write down ten things you worked on last week, each on its own line. Then ask the three questions about each one, and pick your top three. Preparers, think about what you rebuild on every engagement. Reviewers, think about what you check every time. Coordinators, think about what you chase every week. You have 8 minutes. Then I ask each of you for your strongest task.",
+"do": "Start the timer. Walk the room.",
+"expect": "10 tasks, tagged; a top 3; the strongest task said aloud for the room review.",
 "silent": null,
 "fallback": "Anyone stuck starts from Dana's list on the slide and changes it to their own work.",
-"more": [
-"Give the hint at about 3 min.",
-"Fast finishers have an extra task on the slide."
-],
+"more": [],
 "time": "8 min work, then share",
 "t": "b2",
 "k": "task",
 "h": "Your turn 1.3: Your task inventory (8 min, on your own)",
-"flat": "8 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: 10 tasks, tagged; a top 3; one task on the shared board under the right department. · Give the hint at about 3 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone stuck starts from Dana's list on the slide and changes it to their own work. · Say: “Preparers: what do you rebuild on every engagement? Reviewers: what do you check every time? Coordinators: what do you chase every week, from requests to new-client KYC files?”"
+"flat": "8 min work, then share. · Do: Start the timer. Walk the room. · Expect: 10 tasks, tagged; a top 3; the strongest task said aloud for the room review. · Fallback: Anyone stuck starts from Dana's list on the slide and changes it to their own work. · Say: “Now your own work. Open step 3 of the lab page. Write down ten things you worked on last week, each on its own line. Then ask the three questions about each one, and pick your top three. Preparers, think about what you rebuild on every engagement. Reviewers, think about what you check every time. Coordinators, think about what you chase every week. You have 8 minutes. Then I ask each of you for your strongest task.”"
 },
 {
-"say": null,
-"do": "Read the clusters aloud. Name the tasks that appear in more than one department.",
-"expect": "Reconciliations, chasing documents, status reports.",
-"silent": "read the Support column first: it shows what the coordinators chase.",
+"say": "Let us hear them. One at a time, tell me your strongest task and your department. (Type each one.) Look at what comes up more than once, across departments. Those are the best first agents. Keep yours in mind: in the next lesson, you choose one.",
+"do": "Click the search bar. Type each person's strongest task and press Enter. A repeat shows ×2.",
+"expect": null,
+"silent": null,
 "fallback": null,
-"more": [
-"Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3.",
-"Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance."
-],
+"more": [],
 "time": "2 min",
 "t": "b2",
-"k": "timer",
+"k": "ask",
 "h": "What repeats across departments?",
-"flat": "2 min. · Do: Read the clusters aloud. Name the tasks that appear in more than one department. · Expect: Reconciliations, chasing documents, status reports. · Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3. · Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance. · If the room is silent: read the Support column first: it shows what the coordinators chase."
+"flat": "2 min. · Do: Click the search bar. Type each person's strongest task and press Enter. A repeat shows ×2. · Say: “Let us hear them. One at a time, tell me your strongest task and your department. (Type each one.) Look at what comes up more than once, across departments. Those are the best first agents. Keep yours in mind: in the next lesson, you choose one.”"
 },
 {
-"say": null,
-"do": "Ask: what does an audit program give a new associate?",
-"expect": "Steps, rules, the template.",
-"silent": "say: it removes the guessing.",
+"say": "Welcome back. Faisal asks a good question: everyone at Mirqab follows one audit program and fills the same working paper, so why are the AI tables all different? Because nothing was written down. In this lesson, you pick your task, write it down as an Agent Card, and then we build one together.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "10:30-11:30",
 "t": "b3",
 "k": "story",
 "h": "Lesson 3 · Pick and design",
-"flat": "10:30-11:30. · Do: Ask: what does an audit program give a new associate? · Expect: Steps, rules, the template. · If the room is silent: say: it removes the guessing."
+"flat": "10:30-11:30. · Say: “Welcome back. Faisal asks a good question: everyone at Mirqab follows one audit program and fills the same working paper, so why are the AI tables all different? Because nothing was written down. In this lesson, you pick your task, write it down as an Agent Card, and then we build one together.”"
 },
 {
-"say": null,
-"do": "Start from the board you just reviewed. Score one task with the room.",
-"expect": "Invoice matching or chasing documents scores high.",
-"silent": "score Dana's invoice task yourself.",
+"say": "You have your top three. Now pick one, with a score. Give each task 1 to 5 on four points: how often it happens, how many minutes it takes, how clear the rules are, and whether it can run on a schedule. Add them up; the highest total wins. Be careful: the most exciting task is often not the best first agent. Tomorrow your agent has to run without you, so pick one that can.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b3",
 "k": "term",
 "h": "Pick the task with the highest score.",
-"flat": "Do: Start from the board you just reviewed. Score one task with the room. · Expect: Invoice matching or chasing documents scores high. · If the room is silent: score Dana's invoice task yourself."
+"flat": "Say: “You have your top three. Now pick one, with a score. Give each task 1 to 5 on four points: how often it happens, how many minutes it takes, how clear the rules are, and whether it can run on a schedule. Add them up; the highest total wins. Be careful: the most exciting task is often not the best first agent. Tomorrow your agent has to run without you, so pick one that can.”"
 },
 {
-"say": "Four questions. The total decides the first agent, not the most interesting task.",
+"say": "Let us watch Dana score her three candidates. (Run it.) Which task has the highest total? (Expected: invoice matching, 19 out of 20.) Not the most exciting task, but the one that comes back every month, takes time, and has clear rules. That is Dana's first agent.",
 "do": "Switch to Claude and run it live. Paste the prompt below into a new chat.",
-"expect": "Invoice matching scores highest (19 of 20), then chasing documents (16), then lead schedules (15).",
+"expect": null,
 "silent": null,
 "fallback": "Show the backup table. The expected result is on the staff backup page, Demo 1.3.",
-"more": [
-"Copy the prompt from the prompt sheet, Demo 1.3. The live answer may use other words; point at what the Watch for line asks."
-],
+"more": [],
 "time": "4 min",
 "t": "b3",
 "k": "live",
 "h": "Demo 1.3 live in Claude: Dana scores her three candidates",
-"flat": "4 min. · Do: Switch to Claude and run it live. Paste the prompt below into a new chat. · Expect: Invoice matching scores highest (19 of 20), then chasing documents (16), then lead schedules (15). · Copy the prompt from the prompt sheet, Demo 1.3. The live answer may use other words; point at what the Watch for line asks. · Fallback: Show the backup table. The expected result is on the staff backup page, Demo 1.3. · Say: “Four questions. The total decides the first agent, not the most interesting task.”"
+"flat": "4 min. · Do: Switch to Claude and run it live. Paste the prompt below into a new chat. · Fallback: Show the backup table. The expected result is on the staff backup page, Demo 1.3. · Say: “Let us watch Dana score her three candidates. (Run it.) Which task has the highest total? (Expected: invoice matching, 19 out of 20.) Not the most exciting task, but the one that comes back every month, takes time, and has clear rules. That is Dana's first agent.”"
 },
 {
-"say": null,
-"do": "Read the four tracks. Match them to the board clusters.",
-"expect": "Assurance picks extraction or analysis; Support picks workflow or reporting.",
-"silent": "say which track the coordinators' tasks fit.",
+"say": "Your task fits one of four tracks. Extraction: pulling information out of documents, like lease terms. Analysis: comparing numbers, like a trial balance over two years. Workflow: requests and follow-ups, like chasing missing documents. Reporting: turning status sheets into one weekly summary. Each track has a practice pack of fictional files, so you never use real client data. Which track fits the task you picked?",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b3",
 "k": "table",
 "h": "Pick a track for your agent.",
-"flat": "Do: Read the four tracks. Match them to the board clusters. · Expect: Assurance picks extraction or analysis; Support picks workflow or reporting. · If the room is silent: say which track the coordinators' tasks fit."
+"flat": "Say: “Your task fits one of four tracks. Extraction: pulling information out of documents, like lease terms. Analysis: comparing numbers, like a trial balance over two years. Workflow: requests and follow-ups, like chasing missing documents. Reporting: turning status sheets into one weekly summary. Each track has a practice pack of fictional files, so you never use real client data. Which track fits the task you picked?”"
 },
 {
-"say": "A card a new joiner could follow is a card Claude can follow.",
-"do": "Point to each box as it appears.",
-"expect": "People map their own task to the boxes.",
-"silent": "map the invoice task yourself first.",
+"say": "Think about the audit program a new associate follows. It lists the documents to read, the steps to follow, and how the final working paper must look. The Agent Card gives an agent that same structure, in four boxes: Input, Instruction, Output and When. If a new joiner could follow your card, Claude can follow it too.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b3",
 "k": "scene",
 "h": "The audit program every associate follows.",
-"flat": "Do: Point to each box as it appears. · Expect: People map their own task to the boxes. · If the room is silent: map the invoice task yourself first. · Say: “A card a new joiner could follow is a card Claude can follow.”"
+"flat": "Say: “Think about the audit program a new associate follows. It lists the documents to read, the steps to follow, and how the final working paper must look. The Agent Card gives an agent that same structure, in four boxes: Input, Instruction, Output and When. If a new joiner could follow your card, Claude can follow it too.”"
 },
 {
-"say": null,
-"do": "Show Dana's invoice card from the site.",
-"expect": "People see that each box answers one question.",
-"silent": "ask: which box was missing in Task 1.2?",
+"say": "Four boxes. Input: the files the agent reads. Instruction: its rules. Output: the result it returns, in the same shape every time. And When: when it runs without you. Leave When empty today; that is tomorrow's job. This card fixes exactly what happened in Task 1.2, where each of us had a different input, different rules and a different shape.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b3",
 "k": "term",
 "h": "Four boxes before any build.",
-"flat": "Do: Show Dana's invoice card from the site. · Expect: People see that each box answers one question. · If the room is silent: ask: which box was missing in Task 1.2?"
+"flat": "Say: “Four boxes. Input: the files the agent reads. Instruction: its rules. Output: the result it returns, in the same shape every time. And When: when it runs without you. Leave When empty today; that is tomorrow's job. This card fixes exactly what happened in Task 1.2, where each of us had a different input, different rules and a different shape.”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "Dana writes down the month's invoices and the ledger. Which box is that? (Wait for hands.) Input. It is what the agent works on.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option A.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b3",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · Say: “Dana writes down the month's invoices and the ledger. Which box is that? (Wait for hands.) Input. It is what the agent works on.”"
 },
 {
-"say": null,
-"do": "Rewrite one vague line from the room into a literal one.",
-"expect": "People add the fields and the rule.",
-"silent": "rewrite “review the leases” as an example.",
+"say": "One more thing about the Instruction box. Claude follows your exact words. It cannot read your mind. If you write: check the invoices, how should it check? It guesses. If you write: match the invoice number, the date and the amount, then flag every difference, there is nothing left to guess. Give me a vague line from your own work, and let us make it exact together.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b3",
 "k": "term",
 "h": "Claude follows what you write.",
-"flat": "Do: Rewrite one vague line from the room into a literal one. · Expect: People add the fields and the rule. · If the room is silent: rewrite “review the leases” as an example."
+"flat": "Say: “One more thing about the Instruction box. Claude follows your exact words. It cannot read your mind. If you write: check the invoices, how should it check? It guesses. If you write: match the invoice number, the date and the amount, then flag every difference, there is nothing left to guess. Give me a vague line from your own work, and let us make it exact together.”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "Which line gives the same result every run? (Wait for hands.) The middle one. Careful and good are wishes. Number, date and amount are things Claude can actually check.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b3",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · Say: “Which line gives the same result every run? (Wait for hands.) The middle one. Careful and good are wishes. Number, date and amount are things Claude can actually check.”"
 },
 {
-"say": "Your card, your task. Build it on the track pack: no real files today.",
-"do": "Start the timer. Walk the room. Ask each person what they found so far.",
+"say": "Now write your own card. Open step 4 of the lab page. First, score your top three tasks and pick the winner, then choose its track. Next, open the prompt sheet, grab the Agent Card template, paste it into the box, and fill in each line. Leave When empty. When you finish, raise your hand, and I come to approve your card. You have 17 minutes.",
+"do": "Start the timer. Walk the room and approve cards.",
 "expect": "An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks.",
 "silent": null,
 "fallback": "Anyone without a task of their own takes the track pack's starting example.",
-"more": [
-"Give the hint at about 5 min.",
-"Fast finishers have an extra task on the slide."
-],
+"more": [],
 "time": "17 min work, then share",
 "t": "b3",
 "k": "task",
 "h": "Your turn 1.4: Write your Agent Card v1 (17 min, on your own)",
-"flat": "17 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks. · Give the hint at about 5 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone without a task of their own takes the track pack's starting example. · Say: “Your card, your task. Build it on the track pack: no real files today.”"
+"flat": "17 min work, then share. · Do: Start the timer. Walk the room and approve cards. · Expect: An Agent Card with a clear input file, an instruction with rules, and an output with named columns; placed in one of the four tracks. · Fallback: Anyone without a task of their own takes the track pack's starting example. · Say: “Now write your own card. Open step 4 of the lab page. First, score your top three tasks and pick the winner, then choose its track. Next, open the prompt sheet, grab the Agent Card template, paste it into the box, and fill in each line. Leave When empty. When you finish, raise your hand, and I come to approve your card. You have 17 minutes.”"
 },
 {
-"say": null,
-"do": "Open Projects on the presenting laptop.",
-"expect": "Everyone finds + New Project.",
-"silent": "ask: where would you keep the invoice template?",
+"say": "Where does a card live in Claude? In a Project. A Project keeps your instructions and your reference files, and every chat inside it uses them, so nobody has to explain the task again. It is like a client file that already has the procedures inside. Watch my screen: Projects, New Project, and then the instructions.",
+"do": "Open Projects on your screen.",
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b3",
 "k": "term",
 "h": "A Project is the agent's home.",
-"flat": "Do: Open Projects on the presenting laptop. · Expect: Everyone finds + New Project. · If the room is silent: ask: where would you keep the invoice template?"
+"flat": "Do: Open Projects on your screen. · Say: “Where does a card live in Claude? In a Project. A Project keeps your instructions and your reference files, and every chat inside it uses them, so nobody has to explain the task again. It is like a client file that already has the procedures inside. Watch my screen: Projects, New Project, and then the instructions.”"
 },
 {
-"say": null,
-"do": "Ask: where does next month's ledger go?",
-"expect": "With the run, not in knowledge.",
-"silent": "say it, then ask why.",
+"say": "One difference matters a lot. Some files stay the same: the template, a reference list, one example of a finished output. Those go into the Project's knowledge. Other files change every month: this month's invoices and this month's ledger. Those come with each run. So where does next month's ledger go? (Expected: with the run.) Right. Mixing these up is the mistake we see most.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b3",
 "k": "term",
 "h": "Templates stay. Documents come and go.",
-"flat": "Do: Ask: where does next month's ledger go? · Expect: With the run, not in knowledge. · If the room is silent: say it, then ask why."
+"flat": "Say: “One difference matters a lot. Some files stay the same: the template, a reference list, one example of a finished output. Those go into the Project's knowledge. Other files change every month: this month's invoices and this month's ledger. Those come with each run. So where does next month's ledger go? (Expected: with the run.) Right. Mixing these up is the mistake we see most.”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "So, this month's invoices: where do they belong? (Wait for hands.) The middle one: it comes with each run, either attached or taken from the folder. Knowledge is only for what stays the same.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b3",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · Say: “So, this month's invoices: where do they belong? (Wait for hands.) The middle one: it comes with each run, either attached or taken from the folder. Knowledge is only for what stays the same.”"
 },
 {
-"say": "The card says what. The Project keeps it, for every chat inside it.",
+"say": "Let me turn Dana's card into an agent, live. (Create the Project.) A new Project, named Mirqab invoice match. In the instructions, I paste the card's rules, in five parts. In the knowledge, I add the template, because it never changes. The invoices are not here: they come with each run. One card, saved once, used in every chat.",
 "do": "Switch to Claude and run it live. Show the invoice Agent Card. Build the Project live: + New Project, name it Mirqab invoice match. Set project instructions: paste the five parts. Add mirqab-invoice-match-template.xlsx to the knowledge.",
-"expect": "A Project named Mirqab invoice match with the five-part instructions and the template in its knowledge.",
+"expect": null,
 "silent": null,
 "fallback": "Show the backup table and build the Project after the slide. The expected result is on the staff backup page, Demo 1.4.",
-"more": [
-"Copy the prompt from the prompt sheet, Demo 1.4. The live answer may use other words; point at what the Watch for line asks."
-],
+"more": [],
 "time": "5 min",
 "t": "b3",
 "k": "live",
 "h": "Demo 1.4 live in Claude: From card to agent",
-"flat": "5 min. · Do: Switch to Claude and run it live. Show the invoice Agent Card. Build the Project live: + New Project, name it Mirqab invoice match. Set project instructions: paste the five parts. Add mirqab-invoice-match-template.xlsx to the knowledge. · Expect: A Project named Mirqab invoice match with the five-part instructions and the template in its knowledge. · Copy the prompt from the prompt sheet, Demo 1.4. The live answer may use other words; point at what the Watch for line asks. · Fallback: Show the backup table and build the Project after the slide. The expected result is on the staff backup page, Demo 1.4. · Say: “The card says what. The Project keeps it, for every chat inside it.”"
+"flat": "5 min. · Do: Switch to Claude and run it live. Show the invoice Agent Card. Build the Project live: + New Project, name it Mirqab invoice match. Set project instructions: paste the five parts. Add mirqab-invoice-match-template.xlsx to the knowledge. · Fallback: Show the backup table and build the Project after the slide. The expected result is on the staff backup page, Demo 1.4. · Say: “Let me turn Dana's card into an agent, live. (Create the Project.) A new Project, named Mirqab invoice match. In the instructions, I paste the card's rules, in five parts. In the knowledge, I add the template, because it never changes. The invoices are not here: they come with each run. One card, saved once, used in every chat.”"
 },
 {
-"say": "Same files as Task 1.2. This time we all use the same card.",
-"do": "Start the timer. Walk the room. Ask each person what they found so far.",
+"say": "Now you build the same agent with me, step by step. Get the three files from the lab page, step 5. Together we create the Project, paste the instructions from the prompt sheet, add the template, and run it. Follow my screen. If you fall behind, raise your hand and we help you catch up. When it finishes, look at the Status column: two rows should show a problem.",
+"do": "Start the timer. Build it on your screen, step by step.",
 "expect": "The same table for everyone: BPK-4471, WDS-20931 and SGT-11205 Matched; SCC-0718 Amount differs (36.000); FSC-3390 Not in ledger.",
 "silent": null,
 "fallback": "Anyone behind copies the instructions from the prompt sheet and runs it with the trainer's next run.",
-"more": [
-"Give the hint at about 6 min.",
-"Fast finishers have an extra task on the slide."
-],
+"more": [],
 "time": "19 min work, then share",
 "t": "b3",
 "k": "task",
 "h": "Your turn 1.5: Build the invoice agent with me (19 min, on your own, with the trainer)",
-"flat": "19 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: The same table for everyone: BPK-4471, WDS-20931 and SGT-11205 Matched; SCC-0718 Amount differs (36.000); FSC-3390 Not in ledger. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: Anyone behind copies the instructions from the prompt sheet and runs it with the trainer's next run. · Say: “Same files as Task 1.2. This time we all use the same card.”"
+"flat": "19 min work, then share. · Do: Start the timer. Build it on your screen, step by step. · Expect: The same table for everyone: BPK-4471, WDS-20931 and SGT-11205 Matched; SCC-0718 Amount differs (36.000); FSC-3390 Not in ledger. · Fallback: Anyone behind copies the instructions from the prompt sheet and runs it with the trainer's next run. · Say: “Now you build the same agent with me, step by step. Get the three files from the lab page, step 5. Together we create the Project, paste the instructions from the prompt sheet, add the template, and run it. Follow my screen. If you fall behind, raise your hand and we help you catch up. When it finishes, look at the Status column: two rows should show a problem.”"
 },
 {
-"say": null,
-"do": "Approve the remaining cards in the first five minutes while the room reads.",
-"expect": "All cards approved by 12:35.",
-"silent": "ask: what should the agent have written?",
+"say": "Welcome back from lunch. Faisal reviews Dana's first agent. At first glance the table is fine. Then he spots it: an invoice without a PO number, and the agent made one up. What should the agent have written? (Expected: Not found.) Exactly. This lesson is about instructions that stop that from happening.",
+"do": "Approve the last Agent Cards while the room settles.",
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "12:30-13:50",
 "t": "b4",
 "k": "story",
 "h": "Lesson 4 · Build: Instruction",
-"flat": "12:30-13:50. · Do: Approve the remaining cards in the first five minutes while the room reads. · Expect: All cards approved by 12:35. · If the room is silent: ask: what should the agent have written?"
+"flat": "12:30-13:50. · Do: Approve the last Agent Cards while the room settles. · Say: “Welcome back from lunch. Faisal reviews Dana's first agent. At first glance the table is fine. Then he spots it: an invoice without a PO number, and the agent made one up. What should the agent have written? (Expected: Not found.) Exactly. This lesson is about instructions that stop that from happening.”"
 },
 {
-"say": null,
-"do": "Link back to Demo 1.1: the same five parts, now saved as the agent's instructions. Map each part to Dana's card.",
-"expect": "When unsure is the part people miss.",
-"silent": "ask: which part would have saved Dana's PO?",
+"say": "Remember the five parts from this morning? Here they are again, now saved as the agent's instructions. Look at the invoice agent column. Which part would have saved Dana's PO number? (Expected: When unsure.) Yes. It is the part people forget, and the part that stops the agent from guessing.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b4",
 "k": "table",
 "h": "Five parts. Every instruction.",
-"flat": "Do: Link back to Demo 1.1: the same five parts, now saved as the agent's instructions. Map each part to Dana's card. · Expect: When unsure is the part people miss. · If the room is silent: ask: which part would have saved Dana's PO?"
+"flat": "Say: “Remember the five parts from this morning? Here they are again, now saved as the agent's instructions. Look at the invoice agent column. Which part would have saved Dana's PO number? (Expected: When unsure.) Yes. It is the part people forget, and the part that stops the agent from guessing.”"
 },
 {
-"say": null,
-"do": "Show the template with its example row.",
-"expect": "People see the example row in the knowledge file.",
-"silent": "ask: how many tests before you trust a new joiner?",
+"say": "Two habits make agents reliable. First, show one example: a single finished output saved in the Project shows Claude the shape better than any long explanation. Second, test before you trust: check three cases where you already know the answer. It is what you do with a new joiner: you give them one model working paper, then check the first three they do. And when something is wrong, change the instructions, not the result.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b4",
 "k": "term",
 "h": "Show one example. Then test three.",
-"flat": "Do: Show the template with its example row. · Expect: People see the example row in the knowledge file. · If the room is silent: ask: how many tests before you trust a new joiner?"
+"flat": "Say: “Two habits make agents reliable. First, show one example: a single finished output saved in the Project shows Claude the shape better than any long explanation. Second, test before you trust: check three cases where you already know the answer. It is what you do with a new joiner: you give them one model working paper, then check the first three they do. And when something is wrong, change the instructions, not the result.”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "Your agent invents a PO number when there is none. What do you fix? (Wait for hands.) The When unsure part: tell it to write Not found, and never to guess. Fix the rule once, instead of fixing every answer by hand.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b4",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · Say: “Your agent invents a PO number when there is none. What do you fix? (Wait for hands.) The When unsure part: tell it to write Not found, and never to guess. Fix the rule once, instead of fixing every answer by hand.”"
 },
 {
-"say": "Five parts. The fifth one, when unsure, is the one people forget.",
+"say": "Let me show you a full run of Dana's agent. Here are the instructions, in five parts. (Run it.) I checked three rows by hand before, so I can compare. BPK-4471: matched. SCC-0718: the amount differs. And FSC-3390 is not in the ledger. Why? (Expected: it is outside the October ledger, a cut-off item.) The agent found it because the rules told it exactly what to compare.",
 "do": "Switch to Claude and run it live. Open the Mirqab invoice match Project. Show the instructions as five parts. Run it. Compare three rows with the answers you checked by hand: BPK-4471, SCC-0718 and FSC-3390.",
-"expect": "The full match table, with the two flags explained in the Note column.",
+"expect": null,
 "silent": null,
 "fallback": "Show the backup table. The expected result is on the staff backup page, Demo 1.5.",
-"more": [
-"Copy the prompt from the prompt sheet, Demo 1.5. The live answer may use other words; point at what the Watch for line asks."
-],
+"more": [],
 "time": "4 min",
 "t": "b4",
 "k": "live",
 "h": "Demo 1.5 live in Claude: From card to five-part instructions",
-"flat": "4 min. · Do: Switch to Claude and run it live. Open the Mirqab invoice match Project. Show the instructions as five parts. Run it. Compare three rows with the answers you checked by hand: BPK-4471, SCC-0718 and FSC-3390. · Expect: The full match table, with the two flags explained in the Note column. · Copy the prompt from the prompt sheet, Demo 1.5. The live answer may use other words; point at what the Watch for line asks. · Fallback: Show the backup table. The expected result is on the staff backup page, Demo 1.5. · Say: “Five parts. The fifth one, when unsure, is the one people forget.”"
+"flat": "4 min. · Do: Switch to Claude and run it live. Open the Mirqab invoice match Project. Show the instructions as five parts. Run it. Compare three rows with the answers you checked by hand: BPK-4471, SCC-0718 and FSC-3390. · Fallback: Show the backup table. The expected result is on the staff backup page, Demo 1.5. · Say: “Let me show you a full run of Dana's agent. Here are the instructions, in five parts. (Run it.) I checked three rows by hand before, so I can compare. BPK-4471: matched. SCC-0718: the amount differs. And FSC-3390 is not in the ledger. Why? (Expected: it is outside the October ledger, a cut-off item.) The agent found it because the rules told it exactly what to compare.”"
 },
 {
-"say": null,
-"do": "Point to the Copilot or ChatGPT cell RSM is most likely to use.",
-"expect": "People see the same five parts in a different box.",
-"silent": "read the ChatGPT cell.",
+"say": "A quick note for your work at RSM. These five parts work in any assistant. In ChatGPT they go into a Project or a custom GPT, in Copilot into an agent, and in Gemini into a Gem. Different box, same five parts.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b4",
 "k": "table",
 "h": "Instructions in other tools.",
-"flat": "Do: Point to the Copilot or ChatGPT cell RSM is most likely to use. · Expect: People see the same five parts in a different box. · If the room is silent: read the ChatGPT cell."
+"flat": "Say: “A quick note for your work at RSM. These five parts work in any assistant. In ChatGPT they go into a Project or a custom GPT, in Copilot into an agent, and in Gemini into a Gem. Different box, same five parts.”"
 },
 {
-"say": "Struggle first. A hint at 15 minutes, then the most common fixes at 30.",
-"do": "Start the timer. Walk the room. Ask each person what they found so far.",
+"say": "Now the big one: you build your own agent. You have 65 minutes. Get your track's file from the lab page, step 7. Create your own Project, paste the five-part template from the prompt sheet, and fill it in from your Agent Card. Before you run it, check three items by hand, so you know the right answer. Then run it and compare. If something is wrong, fix the instructions and run again. Struggle a little first; that is where the learning happens. I give a hint at 15 minutes, and show the most common fixes at 30.",
+"do": "Start the timer. Hint at 15 minutes; common fixes at 30.",
 "expect": "A Project per person whose result is right on the three items checked by hand.",
 "silent": null,
 "fallback": "Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts.",
-"more": [
-"Give the hint at about 21 min.",
-"Fast finishers have an extra task on the slide."
-],
+"more": [],
 "time": "65 min work, then share",
 "t": "b4",
 "k": "task",
 "h": "Your turn 1.6: Build v1 of your agent (65 min, on your own)",
-"flat": "65 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A Project per person whose result is right on the three items checked by hand. · Give the hint at about 21 min. · Fast finishers have an extra task on the slide. · Fallback: Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts. · Say: “Struggle first. A hint at 15 minutes, then the most common fixes at 30.”"
+"flat": "65 min work, then share. · Do: Start the timer. Hint at 15 minutes; common fixes at 30. · Expect: A Project per person whose result is right on the three items checked by hand. · Fallback: Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts. · Say: “Now the big one: you build your own agent. You have 65 minutes. Get your track's file from the lab page, step 7. Create your own Project, paste the five-part template from the prompt sheet, and fill it in from your Agent Card. Before you run it, check three items by hand, so you know the right answer. Then run it and compare. If something is wrong, fix the instructions and run again. Struggle a little first; that is where the learning happens. I give a hint at 15 minutes, and show the most common fixes at 30.”"
 },
 {
-"say": null,
-"do": "Ask: how many files do you drag into a tool each week?",
-"expect": "Many, every week.",
-"silent": "say: tomorrow a schedule cannot drag files.",
+"say": "Meet Noura, a project coordinator. Each week she takes the same files out of the drive and drops them into a chat, one at a time. How many files do you drag into a tool each week? Tomorrow your agent runs at eight in the morning. Nobody will be there to drag the files. So the agent has to read them where they already are.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "14:00-14:55",
 "t": "b5",
 "k": "story",
 "h": "Lesson 5 · Build: Input and Output",
-"flat": "14:00-14:55. · Do: Ask: how many files do you drag into a tool each week? · Expect: Many, every week. · If the room is silent: say: tomorrow a schedule cannot drag files."
+"flat": "14:00-14:55. · Say: “Meet Noura, a project coordinator. Each week she takes the same files out of the drive and drops them into a chat, one at a time. How many files do you drag into a tool each week? Tomorrow your agent runs at eight in the morning. Nobody will be there to drag the files. So the agent has to read them where they already are.”"
 },
 {
-"say": null,
-"do": "Show Google Drive under Customize, then Connectors (connected before Day 1).",
-"expect": "The connector and the sandbox folders.",
-"silent": "ask: which folders should an audit agent never see?",
-"fallback": "If sign-in fails, upload the files and continue.",
+"say": "That is what a connector does. It lets Claude read from an app, like Google Drive. But be careful: it reaches everything the logged-in account is allowed to see. That is why, today, everyone signs in with a CODED training account that only sees the Mirqab practice folders. It is a key to one cabinet, not to the whole archive. At RSM, IT decides which keys are allowed.",
+"do": "Show Google Drive under Customize, then Connectors.",
+"expect": null,
+"silent": null,
+"fallback": null,
 "more": [],
 "time": null,
 "t": "b5",
 "k": "term",
 "h": "A key to one cabinet, not the whole archive.",
-"flat": "Do: Show Google Drive under Customize, then Connectors (connected before Day 1). · Expect: The connector and the sandbox folders. · If the room is silent: ask: which folders should an audit agent never see? · Fallback: If sign-in fails, upload the files and continue."
+"flat": "Do: Show Google Drive under Customize, then Connectors. · Say: “That is what a connector does. It lets Claude read from an app, like Google Drive. But be careful: it reaches everything the logged-in account is allowed to see. That is why, today, everyone signs in with a CODED training account that only sees the Mirqab practice folders. It is a key to one cabinet, not to the whole archive. At RSM, IT decides which keys are allowed.”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "Your agent runs tomorrow at eight. Why won't dragging files in work? (Wait for hands.) Because nobody is there to drag them at eight. The files must be somewhere the agent can reach on its own.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b5",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · Say: “Your agent runs tomorrow at eight. Why won't dragging files in work? (Wait for hands.) Because nobody is there to drag them at eight. The files must be somewhere the agent can reach on its own.”"
 },
 {
-"say": "No more dragging files. The agent reads where the files already are.",
+"say": "Watch. Google Drive is already connected here. In the invoice Project, I ask the agent to process the newest files in the Inbox folder. (Run it.) The same table as before. And look: it lists the files it read, exactly two. It read only what it needed.",
 "do": "Switch to Claude and run it live. Customize, then Connectors: show Google Drive, connected before Day 1 with the trainer's CODED training Google account. In the invoice Project, ask it to process the newest pack in Mirqab sandbox / 01 Invoices / Inbox.",
-"expect": "The same match table, plus the two file names it read from the Inbox.",
+"expect": null,
 "silent": null,
 "fallback": "If the connector is slow, upload the two files and continue. The expected result is on the staff backup page, Demo 1.6.",
-"more": [
-"Copy the prompt from the prompt sheet, Demo 1.6. The live answer may use other words; point at what the Watch for line asks."
-],
+"more": [],
 "time": "4 min",
 "t": "b5",
 "k": "live",
 "h": "Demo 1.6 live in Claude: Read from the folder",
-"flat": "4 min. · Do: Switch to Claude and run it live. Customize, then Connectors: show Google Drive, connected before Day 1 with the trainer's CODED training Google account. In the invoice Project, ask it to process the newest pack in Mirqab sandbox / 01 Invoices / Inbox. · Expect: The same match table, plus the two file names it read from the Inbox. · Copy the prompt from the prompt sheet, Demo 1.6. The live answer may use other words; point at what the Watch for line asks. · Fallback: If the connector is slow, upload the two files and continue. The expected result is on the staff backup page, Demo 1.6. · Say: “No more dragging files. The agent reads where the files already are.”"
+"flat": "4 min. · Do: Switch to Claude and run it live. Customize, then Connectors: show Google Drive, connected before Day 1 with the trainer's CODED training Google account. In the invoice Project, ask it to process the newest pack in Mirqab sandbox / 01 Invoices / Inbox. · Fallback: If the connector is slow, upload the two files and continue. The expected result is on the staff backup page, Demo 1.6. · Say: “Watch. Google Drive is already connected here. In the invoice Project, I ask the agent to process the newest files in the Inbox folder. (Run it.) The same table as before. And look: it lists the files it read, exactly two. It read only what it needed.”"
 },
 {
-"say": "Your Input box now points at a folder.",
-"do": "Start the timer. Walk the room. Ask each person what they found so far.",
+"say": "Your turn. Connect Google Drive with your CODED training account, not your personal one. Then find your track folder in the Mirqab sandbox; your files are in its Inbox. In your Project, copy the folder prompt from the prompt sheet, add your folder name, and run it. Make sure it tells you which files it read. You have 15 minutes.",
+"do": "Start the timer. Walk the room.",
 "expect": "One run that reads from the track folder and lists the files it used.",
 "silent": null,
 "fallback": "If Google sign-in fails, upload the files and continue. The trainer fixes the connector at the break.",
-"more": [
-"Give the hint at about 5 min.",
-"Fast finishers have an extra task on the slide."
-],
+"more": [],
 "time": "15 min work, then share",
 "t": "b5",
 "k": "task",
 "h": "Your turn 1.7: Run from the folder (15 min, on your own)",
-"flat": "15 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: One run that reads from the track folder and lists the files it used. · Give the hint at about 5 min. · Fast finishers have an extra task on the slide. · Fallback: If Google sign-in fails, upload the files and continue. The trainer fixes the connector at the break. · Say: “Your Input box now points at a folder.”"
+"flat": "15 min work, then share. · Do: Start the timer. Walk the room. · Expect: One run that reads from the track folder and lists the files it used. · Fallback: If Google sign-in fails, upload the files and continue. The trainer fixes the connector at the break. · Say: “Your turn. Connect Google Drive with your CODED training account, not your personal one. Then find your track folder in the Mirqab sandbox; your files are in its Inbox. In your Project, copy the folder prompt from the prompt sheet, add your folder name, and run it. Make sure it tells you which files it read. You have 15 minutes.”"
 },
 {
-"say": null,
-"do": "Show two runs of the invoice agent side by side.",
-"expect": "Same columns, same total line.",
-"silent": "ask: what does a reviewer look at first?",
+"say": "Now the output. An artifact is something Claude makes that you can open and download, like a table or a spreadsheet. But a reviewer needs more than a file. They need the same shape every time: the same columns, in the same order, with the same total line. Like the firm's working-paper template, that is what lets you compare this week with last week.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b5",
 "k": "term",
 "h": "Same shape. Every run.",
-"flat": "Do: Show two runs of the invoice agent side by side. · Expect: Same columns, same total line. · If the room is silent: ask: what does a reviewer look at first?"
+"flat": "Say: “Now the output. An artifact is something Claude makes that you can open and download, like a table or a spreadsheet. But a reviewer needs more than a file. They need the same shape every time: the same columns, in the same order, with the same total line. Like the firm's working-paper template, that is what lets you compare this week with last week.”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "Why must a scheduled agent always return the same shape? (Wait for hands.) So that this week's result lines up with last week's. That is how a reviewer spots what changed.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option A.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b5",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · Say: “Why must a scheduled agent always return the same shape? (Wait for hands.) So that this week's result lines up with last week's. That is how a reviewer spots what changed.”"
 },
 {
-"say": "If the shape changes every run, nobody can compare this week with last week.",
+"say": "I add an output rule to the invoice Project: the exact columns, in order, and a total line. Then I run it twice. (Put the two results side by side.) Compare the columns and the total line. The same shape, both times. That is what a reviewer needs.",
 "do": "Switch to Claude and run it live. Add the output rule below to the invoice Project. Run twice. Put the two artifacts side by side.",
-"expect": "Two runs with the same 9 columns, flagged rows first, and the same total line: 5 checked, 3 matched, 2 flagged. If BPK-4471 is marked Not found, accept 5 checked, 2 matched, 3 flagged.",
+"expect": null,
 "silent": null,
 "fallback": "Show the backup total line. The expected result is on the staff backup page, Demo 1.7.",
-"more": [
-"Copy the prompt from the prompt sheet, Demo 1.7. The live answer may use other words; point at what the Watch for line asks."
-],
+"more": [],
 "time": "4 min",
 "t": "b5",
 "k": "live",
 "h": "Demo 1.7 live in Claude: Same shape every run",
-"flat": "4 min. · Do: Switch to Claude and run it live. Add the output rule below to the invoice Project. Run twice. Put the two artifacts side by side. · Expect: Two runs with the same 9 columns, flagged rows first, and the same total line: 5 checked, 3 matched, 2 flagged. If BPK-4471 is marked Not found, accept 5 checked, 2 matched, 3 flagged. · Copy the prompt from the prompt sheet, Demo 1.7. The live answer may use other words; point at what the Watch for line asks. · Fallback: Show the backup total line. The expected result is on the staff backup page, Demo 1.7. · Say: “If the shape changes every run, nobody can compare this week with last week.”"
+"flat": "4 min. · Do: Switch to Claude and run it live. Add the output rule below to the invoice Project. Run twice. Put the two artifacts side by side. · Fallback: Show the backup total line. The expected result is on the staff backup page, Demo 1.7. · Say: “I add an output rule to the invoice Project: the exact columns, in order, and a total line. Then I run it twice. (Put the two results side by side.) Compare the columns and the total line. The same shape, both times. That is what a reviewer needs.”"
 },
 {
-"say": null,
-"do": "Read the Copilot column if RSM uses Microsoft 365.",
-"expect": "People recognize SharePoint and OneDrive.",
-"silent": "read the ChatGPT column.",
+"say": "And in other tools: in Copilot, the input is your work data in SharePoint, OneDrive and Outlook, and the output is a Copilot Page. In ChatGPT, it is apps and canvas. Different buttons, same four boxes.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b5",
 "k": "table",
 "h": "Input and output in other tools.",
-"flat": "Do: Read the Copilot column if RSM uses Microsoft 365. · Expect: People recognize SharePoint and OneDrive. · If the room is silent: read the ChatGPT column."
+"flat": "Say: “And in other tools: in Copilot, the input is your work data in SharePoint, OneDrive and Outlook, and the output is a Copilot Page. In ChatGPT, it is apps and canvas. Different buttons, same four boxes.”"
 },
 {
-"say": "Two runs, one shape.",
-"do": "Start the timer. Walk the room. Ask each person what they found so far.",
+"say": "Now give your agent a fixed shape. Take the output rule from the prompt sheet, write your own columns in the order you want them, and add it to your Project's instructions. Then run it twice, each time in a new chat, and compare. Same columns, same order, same total? If not, fix the rule. You have 20 minutes.",
+"do": "Start the timer. Walk the room.",
 "expect": "Two artifacts with the same columns, order and total line.",
 "silent": null,
 "fallback": "If artifacts do not open, ask for a markdown table and continue.",
-"more": [
-"Give the hint at about 6 min.",
-"Fast finishers have an extra task on the slide."
-],
+"more": [],
 "time": "20 min work, then share",
 "t": "b5",
 "k": "task",
 "h": "Your turn 1.8: Fixed-shape output (20 min, on your own)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: Two artifacts with the same columns, order and total line. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: If artifacts do not open, ask for a markdown table and continue. · Say: “Two runs, one shape.”"
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. · Expect: Two artifacts with the same columns, order and total line. · Fallback: If artifacts do not open, ask for a markdown table and continue. · Say: “Now give your agent a fixed shape. Take the output rule from the prompt sheet, write your own columns in the order you want them, and add it to your Project's instructions. Then run it twice, each time in a new chat, and compare. Same columns, same order, same total? If not, fix the rule. You have 20 minutes.”"
 },
 {
-"say": null,
-"do": "Ask: how does the firm share a method today?",
-"expect": "A manual, a template, a checklist.",
-"silent": "say: the methodology manual.",
+"say": "Welcome back. Dana's agent works, but only in her own Project. Faisal asks two questions: could her colleagues use it too? And could it work tomorrow while Dana is busy? How does the firm share a method today? (Expected: a manual, a template, a checklist.) Right. A method that only one person can run is not really a method yet.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "15:15-16:00",
 "t": "b6",
 "k": "story",
 "h": "Lesson 6 · Build: Package",
-"flat": "15:15-16:00. · Do: Ask: how does the firm share a method today? · Expect: A manual, a template, a checklist. · If the room is silent: say: the methodology manual."
+"flat": "15:15-16:00. · Say: “Welcome back. Dana's agent works, but only in her own Project. Faisal asks two questions: could her colleagues use it too? And could it work tomorrow while Dana is busy? How does the firm share a method today? (Expected: a manual, a template, a checklist.) Right. A method that only one person can run is not really a method yet.”"
 },
 {
-"say": null,
-"do": "Show the Skills page on the presenting laptop.",
-"expect": "People see built-in skills and an empty space for their own.",
-"silent": "ask: who else in your team does your task?",
+"say": "That is what a skill solves. Think of a skill as a stored method: Claude picks it up automatically when your request fits. It works in any chat, not only inside one Project, and it works in scheduled tasks, so tomorrow's agent can use it. And you can share it with your team. A Project is your desk. A skill is the firm's methodology manual: anyone can use it, anywhere.",
+"do": "Show the Skills page under Customize.",
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b6",
 "k": "term",
 "h": "From your desk to the firm's manual.",
-"flat": "Do: Show the Skills page on the presenting laptop. · Expect: People see built-in skills and an empty space for their own. · If the room is silent: ask: who else in your team does your task?"
+"flat": "Do: Show the Skills page under Customize. · Say: “That is what a skill solves. Think of a skill as a stored method: Claude picks it up automatically when your request fits. It works in any chat, not only inside one Project, and it works in scheduled tasks, so tomorrow's agent can use it. And you can share it with your team. A Project is your desk. A skill is the firm's methodology manual: anyone can use it, anywhere.”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "If the method has to work everywhere, including on a schedule, how do you package it? (Wait for hands.) A skill. A Project lives in one place; a skill goes with you.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option B.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b6",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · Say: “If the method has to work everywhere, including on a schedule, how do you package it? (Wait for hands.) A skill. A Project lives in one place; a skill goes with you.”"
 },
 {
-"say": "The Project is my desk. The skill is the firm's manual: it works anywhere, for anyone I share it with.",
+"say": "Let me turn the invoice Project into a skill. (Ask Claude to make the skill, then save it.) Now the real test: a fresh chat, outside the Project. I attach the files and ask in one line. Watch for Claude saying it is using the skill. The same table, the same shape. Package it once, and use it anywhere.",
 "do": "Switch to Claude and run it live. File creation works on this account (the owner turned on code execution for the team). mirqab-invoice-match was built and tested before Day 1; the 16:25 task uses it. Save this live copy as mirqab-invoice-match-live. In the invoice Project, ask Claude to turn the instructions into a skill. Save it. Run it in a fresh chat outside the Project.",
-"expect": "A skill named mirqab-invoice-match-live, saved under Customize, then Skills. In a fresh chat, the same table appears.",
+"expect": null,
 "silent": null,
 "fallback": "If the skill does not save, show the backup table and continue with the Project. The expected result is on the staff backup page, Demo 1.8.",
-"more": [
-"Copy the prompt from the prompt sheet, Demo 1.8. The live answer may use other words; point at what the Watch for line asks."
-],
+"more": [],
 "time": "4 min",
 "t": "b6",
 "k": "live",
 "h": "Demo 1.8 live in Claude: From Project to skill",
-"flat": "4 min. · Do: Switch to Claude and run it live. File creation works on this account (the owner turned on code execution for the team). mirqab-invoice-match was built and tested before Day 1; the 16:25 task uses it. Save this live copy as mirqab-invoice-match-live. In the invoice Project, ask Claude to turn the instructions into a skill. Save it. Run it in a fresh chat outside the Project. · Expect: A skill named mirqab-invoice-match-live, saved under Customize, then Skills. In a fresh chat, the same table appears. · Copy the prompt from the prompt sheet, Demo 1.8. The live answer may use other words; point at what the Watch for line asks. · Fallback: If the skill does not save, show the backup table and continue with the Project. The expected result is on the staff backup page, Demo 1.8. · Say: “The Project is my desk. The skill is the firm's manual: it works anywhere, for anyone I share it with.”"
+"flat": "4 min. · Do: Switch to Claude and run it live. File creation works on this account (the owner turned on code execution for the team). mirqab-invoice-match was built and tested before Day 1; the 16:25 task uses it. Save this live copy as mirqab-invoice-match-live. In the invoice Project, ask Claude to turn the instructions into a skill. Save it. Run it in a fresh chat outside the Project. · Fallback: If the skill does not save, show the backup table and continue with the Project. The expected result is on the staff backup page, Demo 1.8. · Say: “Let me turn the invoice Project into a skill. (Ask Claude to make the skill, then save it.) Now the real test: a fresh chat, outside the Project. I attach the files and ask in one line. Watch for Claude saying it is using the skill. The same table, the same shape. Package it once, and use it anywhere.”"
 },
 {
-"say": null,
-"do": "Ask which of these the room has seen at work.",
-"expect": "Custom GPTs or Copilot agents.",
-"silent": "say: the name changes, the method stays.",
+"say": "In other tools the same idea has other names: a skill or a custom GPT in ChatGPT, an agent in Copilot, a Gem in Gemini. The name changes; the method inside does not.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "b6",
 "k": "table",
 "h": "A packaged method in other tools.",
-"flat": "Do: Ask which of these the room has seen at work. · Expect: Custom GPTs or Copilot agents. · If the room is silent: say: the name changes, the method stays."
+"flat": "Say: “In other tools the same idea has other names: a skill or a custom GPT in ChatGPT, an agent in Copilot, a Gem in Gemini. The name changes; the method inside does not.”"
 },
 {
-"say": null,
-"do": "Read the question. Ask for hands up on each option, then tap the most popular one.",
+"say": "Imagine a friend at another firm who only has ChatGPT. Where would your method go? (Wait for hands.) The first one: a ChatGPT skill or custom GPT, with the same card inside.",
+"do": "Ask for hands up on each option, then tap the most popular one.",
 "expect": "Option A.",
-"silent": "ask one table to choose together, then tap their choice.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": "1 min",
 "t": "b6",
 "k": "check",
 "h": "Quick check",
-"flat": "1 min. · Do: Read the question. Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · If the room is silent: ask one table to choose together, then tap their choice."
+"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · Say: “Imagine a friend at another firm who only has ChatGPT. Where would your method go? (Wait for hands.) The first one: a ChatGPT skill or custom GPT, with the same card inside.”"
 },
 {
-"say": "Your method, packaged. Tomorrow a scheduled task calls it.",
-"do": "Start the timer. Walk the room. Ask each person what they found so far.",
+"say": "Now package your own method. In your Project, use the prompt from the prompt sheet to turn your instructions into a skill, and save it. Check that it appears under Customize, then Skills. Then the real test: a brand-new chat, outside the Project. Attach your file and ask in one line. Claude should use your skill and give you the same shape. You have 20 minutes.",
+"do": "Start the timer. Walk the room.",
 "expect": "A saved skill; a fresh chat that uses it and returns the same shape as the Project; one transfer line on the card.",
 "silent": null,
 "fallback": "If skills are off on an account, continue with the Project. The trainer turns them on at the break.",
-"more": [
-"Give the hint at about 6 min.",
-"Fast finishers have an extra task on the slide."
-],
+"more": [],
 "time": "20 min work, then share",
 "t": "b6",
 "k": "task",
 "h": "Your turn 1.9: Make your skill (20 min, on your own)",
-"flat": "20 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A saved skill; a fresh chat that uses it and returns the same shape as the Project; one transfer line on the card. · Give the hint at about 6 min. · Fast finishers have an extra task on the slide. · Fallback: If skills are off on an account, continue with the Project. The trainer turns them on at the break. · Say: “Your method, packaged. Tomorrow a scheduled task calls it.”"
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. · Expect: A saved skill; a fresh chat that uses it and returns the same shape as the Project; one transfer line on the card. · Fallback: If skills are off on an account, continue with the Project. The trainer turns them on at the break. · Say: “Now package your own method. In your Project, use the prompt from the prompt sheet to turn your instructions into a skill, and save it. Check that it appears under Customize, then Skills. Then the real test: a brand-new chat, outside the Project. Attach your file and ask in one line. Claude should use your skill and give you the same shape. You have 20 minutes.”"
 },
 {
-"say": "A good agent flags what it cannot see. A bad one fills the gap.",
-"do": "Start the timer. Walk the room. Ask each person what they found so far.",
+"say": "The last task of the day, and my favorite. Real files are messy. Get the messy file for your track from the lab page, step 11, and run your skill on it. Each file hides a gap. A good agent flags it; a bad agent guesses. Which one is yours? Then time it: how long by hand, and how long with the agent. Note the two numbers on your lab page. You have 14 minutes.",
+"do": "Start the timer. Walk the room.",
 "expect": "A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Items 8 and 11 stay Outstanding. The client says next week but gives no date: flag it. Add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated.",
 "silent": null,
 "fallback": "If the agent guesses, add the When unsure rule again and rerun.",
-"more": [
-"Give the hint at about 4 min.",
-"Fast finishers have an extra task on the slide."
-],
+"more": [],
 "time": "14 min work, then share",
 "t": "b6",
 "k": "task",
 "h": "Your turn 1.10: The messy sample and the clock (14 min, on your own)",
-"flat": "14 min work, then share. · Do: Start the timer. Walk the room. Ask each person what they found so far. · Expect: A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Items 8 and 11 stay Outstanding. The client says next week but gives no date: flag it. Add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated. · Give the hint at about 4 min. · Fast finishers have an extra task on the slide. · Fallback: If the agent guesses, add the When unsure rule again and rerun. · Say: “A good agent flags what it cannot see. A bad one fills the gap.”"
+"flat": "14 min work, then share. · Do: Start the timer. Walk the room. · Expect: A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Items 8 and 11 stay Outstanding. The client says next week but gives no date: flag it. Add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated. · Fallback: If the agent guesses, add the When unsure rule again and rerun. · Say: “The last task of the day, and my favorite. Real files are messy. Get the messy file for your track from the lab page, step 11, and run your skill on it. Each file hides a gap. A good agent flags it; a bad agent guesses. Which one is yours? Then time it: how long by hand, and how long with the agent. Note the two numbers on your lab page. You have 14 minutes.”"
 },
 {
-"say": "Card, then run. Ninety seconds.",
-"do": "Teams demo at their own tables at the same time. Walk between them.",
-"expect": "Most agents run; some flag the messy sample.",
-"silent": "start the first team yourself.",
-"fallback": "If a live run hangs, show the last good result.",
+"say": "Show time. Four teams, at your own tables. Each person has ninety seconds: first the card, then a live run on one of your files. Your team watches and asks one question. If a run hangs, show your last good result. Go.",
+"do": "Teams show at their own tables at the same time. Walk between them.",
+"expect": null,
+"silent": null,
+"fallback": null,
 "more": [],
 "time": "12 min",
 "t": "b7",
 "k": "timer",
 "h": "Four teams. Ninety seconds each person.",
-"flat": "12 min. · Do: Teams demo at their own tables at the same time. Walk between them. · Expect: Most agents run; some flag the messy sample. · If the room is silent: start the first team yourself. · Fallback: If a live run hangs, show the last good result. · Say: “Card, then run. Ninety seconds.”"
+"flat": "12 min. · Do: Teams show at their own tables at the same time. Walk between them. · Say: “Show time. Four teams, at your own tables. Each person has ninety seconds: first the card, then a live run on one of your files. Your team watches and asks one question. If a run hangs, show your last good result. Go.”"
 },
 {
-"say": "Nobody pressed Send. This is tomorrow.",
+"say": "One last thing before we close. This morning at eight, I set up a scheduled task for Dana's invoice agent, to run at 16:25. Nobody touches it. (Open the Scheduled page, then the Outputs folder.) Watch the Outputs folder. (When the file appears.) Nobody pressed send. The agent ran by itself. That is tomorrow: your team's agent, on a schedule.",
 "do": "Switch to Claude and run it live. Before Day 1: build mirqab-invoice-match on this account and test it in a fresh chat. This task uses it. At 08:00, click Scheduled in the left sidebar, then New task. Name it Mirqab invoice match demo. Paste the prompt below. Frequency: daily at 16:25. Approval mode: the mode that lets the run save and move Drive files without waiting. Before 16:25, check that 01 Invoices / Inbox holds one copy of the October invoices and ledger. Show the Scheduled page, then open Outputs as the file arrives.",
-"expect": "At 16:25, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log.",
+"expect": null,
 "silent": null,
 "fallback": "If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. The expected result is on the staff backup page, Demo 1.9.",
-"more": [
-"Copy the prompt from the prompt sheet, Demo 1.9. The live answer may use other words; point at what the Watch for line asks."
-],
+"more": [],
 "time": "4 min",
 "t": "b7",
 "k": "live",
 "h": "Demo 1.9 live in Claude: The agent that ran itself",
-"flat": "4 min. · Do: Switch to Claude and run it live. Before Day 1: build mirqab-invoice-match on this account and test it in a fresh chat. This task uses it. At 08:00, click Scheduled in the left sidebar, then New task. Name it Mirqab invoice match demo. Paste the prompt below. Frequency: daily at 16:25. Approval mode: the mode that lets the run save and move Drive files without waiting. Before 16:25, check that 01 Invoices / Inbox holds one copy of the October invoices and ledger. Show the Scheduled page, then open Outputs as the file arrives. · Expect: At 16:25, the match file for 15 November appears in 01 Invoices / Outputs with the same table, and a run-log file appears in Log. · Copy the prompt from the prompt sheet, Demo 1.9. The live answer may use other words; point at what the Watch for line asks. · Fallback: If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. The expected result is on the staff backup page, Demo 1.9. · Say: “Nobody pressed Send. This is tomorrow.”"
+"flat": "4 min. · Do: Switch to Claude and run it live. Before Day 1: build mirqab-invoice-match on this account and test it in a fresh chat. This task uses it. At 08:00, click Scheduled in the left sidebar, then New task. Name it Mirqab invoice match demo. Paste the prompt below. Frequency: daily at 16:25. Approval mode: the mode that lets the run save and move Drive files without waiting. Before 16:25, check that 01 Invoices / Inbox holds one copy of the October invoices and ledger. Show the Scheduled page, then open Outputs as the file arrives. · Fallback: If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. The expected result is on the staff backup page, Demo 1.9. · Say: “One last thing before we close. This morning at eight, I set up a scheduled task for Dana's invoice agent, to run at 16:25. Nobody touches it. (Open the Scheduled page, then the Outputs folder.) Watch the Outputs folder. (When the file appears.) Nobody pressed send. The agent ran by itself. That is tomorrow: your team's agent, on a schedule.”"
 },
 {
-"say": null,
-"do": "Read one row across. You used the first four rows today; tomorrow fills the When row. Ask: which tool does RSM use today?",
-"expect": "Copilot or ChatGPT for some; the card still applies.",
-"silent": "read the Package row: skill, custom GPT, agent, Gem.",
+"say": "Here is everything you built today, in one table, with the names in other tools. Read one row across: what Claude calls a Project, ChatGPT calls a Project or a custom GPT, Copilot calls an agent, and Gemini calls a Gem. You used the first four rows today. Tomorrow we fill in the When row. Learn the method once, and it travels to any tool.",
+"do": null,
+"expect": null,
+"silent": null,
 "fallback": null,
-"more": [
-"Feature names change often; the site has the sources and the date checked.",
-"The same map is on the cheat sheet."
-],
+"more": [],
 "time": "2 min",
 "t": "b7",
 "k": "table",
 "h": "Same building blocks, different names.",
-"flat": "2 min. · Do: Read one row across. You used the first four rows today; tomorrow fills the When row. Ask: which tool does RSM use today? · Expect: Copilot or ChatGPT for some; the card still applies. · Feature names change often; the site has the sources and the date checked. · The same map is on the cheat sheet. · If the room is silent: read the Package row: skill, custom GPT, agent, Gem."
+"flat": "2 min. · Say: “Here is everything you built today, in one table, with the names in other tools. Read one row across: what Claude calls a Project, ChatGPT calls a Project or a custom GPT, Copilot calls an agent, and Gemini calls a Gem. You used the first four rows today. Tomorrow we fill in the When row. Learn the method once, and it travels to any tool.”"
 },
 {
-"say": null,
-"do": "Ask two people what they will use first at work.",
+"say": "What a day. Each of you built your own agent. You wrote a card, set up a Project, connected a folder, fixed the output shape, and packaged a skill. You found the two planted problems, and you tested a messy file. And the habit to keep: when something is missing, the agent says so instead of guessing, and a person always reviews. Who will try this first at work, and on what? (Take two answers.)",
+"do": null,
 "expect": null,
-"silent": "say what you will use yourself first.",
+"silent": null,
 "fallback": null,
 "more": [],
 "time": null,
 "t": "close",
 "k": "wrap",
 "h": "Day wrap-up",
-"flat": "Do: Ask two people what they will use first at work. · If the room is silent: say what you will use yourself first."
+"flat": "Say: “What a day. Each of you built your own agent. You wrote a card, set up a Project, connected a folder, fixed the output shape, and packaged a skill. You found the two planted problems, and you tested a messy file. And the habit to keep: when something is missing, the agent says so instead of guessing, and a person always reviews. Who will try this first at work, and on what? (Take two answers.)”"
 },
 {
 "say": "Thank you. See you at 08:30.",

@@ -153,13 +153,13 @@
 "fallback": "Show the backup card.",
 "more": [
 "This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words.",
-"First, two minutes: read the vote from the board's Teams and votes tab and name one agent per team. Each team works on that agent's owner's laptop today."
+"First, two minutes: each team agrees on one agent by a show of hands. Each team works on that agent's owner's laptop today."
 ],
 "time": "3 to 4 min",
 "t": "c1",
 "k": "player",
 "h": "Prompt playback, Demo 2.1: The invoice workflow card",
-"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: Every box filled: a daily morning time, the invoice Inbox folder, the invoice-match skill by name, an Excel file named with the date and time, a run-log file, and Faisal as the reviewer. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · First, two minutes: read the vote from the board's Teams and votes tab and name one agent per team. Each team works on that agent's owner's laptop today. · Fallback: Show the backup card. · Say: “Five boxes. The last one, who reviews, is the one auditors care about most.”"
+"flat": "3 to 4 min. · Do: Press → once per part and ask the room what each part adds. After Send, point to the table first, then the bullets. Read the decision line aloud. · Expect: Every box filled: a daily morning time, the invoice Inbox folder, the invoice-match skill by name, an Excel file named with the date and time, a run-log file, and Faisal as the reviewer. · This is the ideal run. Then run the same prompt live from the prompt sheet; the live answer may use other words. · First, two minutes: each team agrees on one agent by a show of hands. Each team works on that agent's owner's laptop today. · Fallback: Show the backup card. · Say: “Five boxes. The last one, who reviews, is the one auditors care about most.”"
 },
 {
 "say": "Fill all five boxes. A blank box is a risk.",
@@ -661,7 +661,7 @@
 },
 {
 "say": "Team one, the floor is yours.",
-"do": "Restart the timer for each team. Score on the board's Teams and votes tab.",
+"do": "Restart the timer for each team. Each panel member writes down the scores.",
 "expect": "Four live runs, four impact numbers.",
 "silent": "ask the first panel question yourself.",
 "fallback": "If a live run fails, the team shows its latest output file and run log.",
@@ -670,11 +670,11 @@
 "t": "c6",
 "k": "timer",
 "h": "Four teams. Eight minutes each.",
-"flat": "15:15-16:00. · Do: Restart the timer for each team. Score on the board's Teams and votes tab. · Expect: Four live runs, four impact numbers. · If the room is silent: ask the first panel question yourself. · Fallback: If a live run fails, the team shows its latest output file and run log. · Say: “Team one, the floor is yours.”"
+"flat": "15:15-16:00. · Do: Restart the timer for each team. Each panel member writes down the scores. · Expect: Four live runs, four impact numbers. · If the room is silent: ask the first panel question yourself. · Fallback: If a live run fails, the team shows its latest output file and run log. · Say: “Team one, the floor is yours.”"
 },
 {
 "say": null,
-"do": "Fill the workflow names from the board before 15:15.",
+"do": "Say each team's workflow name before 15:15.",
 "expect": "Teams ready at their laptops.",
 "silent": "call Team 1.",
 "fallback": null,
@@ -683,12 +683,12 @@
 "t": "c6",
 "k": "table",
 "h": "Who presents when.",
-"flat": "Do: Fill the workflow names from the board before 15:15. · Expect: Teams ready at their laptops. · If the room is silent: call Team 1."
+"flat": "Do: Say each team's workflow name before 15:15. · Expect: Teams ready at their laptops. · If the room is silent: call Team 1."
 },
 {
 "say": null,
 "do": "Keep this slide up while the panel scores.",
-"expect": "Scores on the board within 8 minutes.",
+"expect": "Scores added up within 8 minutes.",
 "silent": "read each team's strongest point aloud.",
 "fallback": null,
 "more": [],
@@ -696,7 +696,7 @@
 "t": "c6",
 "k": "table",
 "h": "The panel's score sheet.",
-"flat": "Do: Keep this slide up while the panel scores. · Expect: Scores on the board within 8 minutes. · If the room is silent: read each team's strongest point aloud."
+"flat": "Do: Keep this slide up while the panel scores. · Expect: Scores added up within 8 minutes. · If the room is silent: read each team's strongest point aloud."
 },
 {
 "say": "Answer honestly. If you are not sure, pick your best guess. This measures the workshop, not you.",

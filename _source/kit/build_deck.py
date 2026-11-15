@@ -8,6 +8,7 @@ from content_demos import DEMOS
 import data as D
 from data import num
 from deck import _slide, _merge, _t
+import notes_day1
 
 # ------------------------------------------------------------------ kit-only slide helpers (the engine is never edited)
 def askslide(sid, topic, tag, q, ph, take, n=None):
@@ -50,6 +51,8 @@ def relabel(sl, old, new, old_h, new_h):
     return out
 
 EXTRA_CSS = """
+#notes{max-height:46vh;overflow:auto}
+#notes p{font-size:17px;line-height:1.6}
 .lv-slide .cd-wrap{justify-content:center}
 .lv{display:flex;flex-direction:column;gap:clamp(16px,2.4vh,28px);width:100%}
 .lv-top{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
@@ -289,10 +292,10 @@ def day1():
         "Three tags on a task…", "…three Yes means a <b>candidate agent</b>.", "Choose the task before you choose the tool.",
         n=N(do="Give one example of each tag from audit work.", expect="Invoice matching, lead schedules, confirmations.", silent="ask: which of your tasks repeats every week?")))
     s.append(sortslide("b2sort", "b2", "Lesson 2 · agent or not?", "Can an agent <span class=\"hl\">do this task?</span>",
-        [("Match supplier invoices to the purchase ledger every month", "green"), ("Pull the key terms from 40 lease agreements", "green"),
-         ("Flag trial balance lines that moved more than 10% from last year", "green"), ("Draft reminder emails for missing client documents", "amber"),
-         ("Check a new client's KYC file for missing items", "amber"), ("Decide whether a misstatement is material", "red"),
-         ("Agree the audit fee with a new client", "red"), ("Interview the finance manager about controls", "red")],
+        [("Copy figures from 30 PDF reports into one Excel table", "green"), ("Turn meeting notes into a list of actions, owners and dates", "green"),
+         ("Send a weekly list of new files in a shared folder", "green"), ("Draft a reply to an upset client's email", "amber"),
+         ("Write the first draft of a proposal", "amber"), ("Decide which candidate to hire", "red"),
+         ("Negotiate a fee with a client", "red"), ("Approve a payment to a supplier", "red")],
         {"green": "Yes: an agent can do it", "amber": "Partly: AI drafts, you decide", "red": "No: keep it human"},
         n=N(time="4 min", do="Read each card aloud. Ask: can an agent do this? Hands up for yes, partly or no. Then tap the card to show the answer.",
             expect="People argue about the amber cards. Good: AI can draft and check, but a person decides and signs.",
@@ -303,10 +306,8 @@ def day1():
     s.append(check("b2chk2", "b2", "Which of Dana's tasks is <b>not</b> a first agent?",
         [("Matching supplier invoices to the ledger", 0, "Three Yes: a strong candidate."), ("Discussing findings with the client's CFO", 1, "Right. It needs judgment and trust."), ("Chasing missing documents from clients", 0, "Three Yes: a candidate.")]))
     s.append(task("b2task2", "b2", "t13", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    s.append(timer_slide("b2board", "b2", "Board review · 10:18", "What repeats <span class=\"hl\">across departments?</span>",
-        "The shared board on screen: one task from each person, grouped by department.", 2,
-        n=N(do="Read the clusters aloud. Name the tasks that appear in more than one department.", expect="Reconciliations, chasing documents, status reports.",
-            silent="read the Support column first: it shows what the coordinators chase.", more=["Note what the coordinators and Analytics Advisory do: it steers the track choice in Lesson 3.", "Onboarding counts: new-client KYC and acceptance checklists are a Workflow-track candidate for Support and Assurance."])))
+    s.append(askslide("b2board", "b2", "Lesson 2 · what repeats?", "What repeats <span class=\"hl\">across departments?</span>", "Type a person's strongest task, then press Enter",
+        "The tasks that come up most are the best first agents.", n=N(time="2 min", do="Type each answer.")))
     # Lesson 3 · Pick your task, design the agent, then build one together
     s.append(story("b3story", "b3", "Lesson 3 · Pick and design", "Sunday 1 November, 10:30",
         "Faisal: <b>“Every associate follows the same audit program and produces the same working paper. Why does every AI table look different?”</b>",
@@ -436,7 +437,8 @@ def day1():
     s.append(wrap("w1", "close", "One card. One Project. <span class=\"hl\">One skill each.</span>",
         [("You built", "Your own agent", "A card, a Project, a folder, a fixed shape and a skill."), ("You found", "2 planted problems", f"SCC-0718 and the {D.CUTOFF_INV} cut-off, plus your messy file."),
          ("The habit", "Flag, never guess", "Claude does the first pass. You review.")],
-        "Tomorrow: your team's agent runs on a schedule. Vote on the board for the agent to automate by 08:40."))
+        "Tomorrow: your team's agent runs on a schedule. First thing, each team picks the agent to automate."))
+    notes_day1.apply(s)
     return s
 
 # ------------------------------------------------------------------ Day 2 · Turning Agents into Operational Workflows
@@ -469,7 +471,7 @@ def day2():
         n=N(do="Map the invoice agent to the four parts.", expect="Time trigger, the skill, a file in Outputs, Faisal reviews.", silent="map it yourself, slowly.")))
     s.append(check("c1chk4", "c1", "What starts a scheduled workflow?",
         [("The trigger: a time or an event", 1, "Right. Today the trigger is a time."), ("The reviewer", 0, "The reviewer comes after the output."), ("The skill", 0, "The skill is the steps.")]))
-    s.append(player("c1pp", "c1", "d21", n=N(more=["First, two minutes: read the vote from the board's Teams and votes tab and name one agent per team. Each team works on that agent's owner's laptop today."])))
+    s.append(player("c1pp", "c1", "d21", n=N(more=["First, two minutes: each team agrees on one agent by a show of hands. Each team works on that agent's owner's laptop today."])))
     s.append(task("c1task", "c1", "t21", n=N(do="Start the timer. Walk the room. Ask each team what they found so far.")))
     # Lesson 2 · Make it run on its own
     s.append(story("c2story", "c2", "Lesson 2 · Make it run on its own", "Monday 2 November, 09:30",
@@ -559,7 +561,7 @@ def day2():
     s.append(stats("c5stats", "c5", "Lesson 5 · impact", "Minutes saved <span class=\"hl\">every month.</span>",
         [(f"{D.IMPACT_EX['by_hand']} min", "By hand", "One run of the task, done by a person."), (f"{D.IMPACT_EX['agent']} min", "With the agent", "Including the review."),
          (f"{D.IMPACT_MIN} min", "Saved a month", f"({D.IMPACT_EX['by_hand']} − {D.IMPACT_EX['agent']}) × {D.IMPACT_EX['runs']} runs: about 12 hours.")],
-        "(Minutes by hand − minutes with the agent) × runs a month.", src="Example figures. Use your own timings from the board's Clock tab.",
+        "(Minutes by hand − minutes with the agent) × runs a month.", src="Example figures. Use your own timings from step 11 of the Day 1 lab page.",
         n=N(do="Work one team's numbers with the room.", expect="A few hours a month per task.", silent="work the invoice example: (45 − 6) × 22.")))
     s.append(tslide("c5rubric", "c5", "Lesson 5 · the judges' rubric", "Fifty points. <span class=\"hl\">Five criteria.</span>", ["Criterion", "Points", "Full marks"],
         [[c, str(pt), t] for c, pt, t in CD.RUBRIC_FULL],
@@ -589,20 +591,20 @@ def day2():
     # Lesson 6 · Demo Day
     s.append(timer_slide("c6demo", "c6", "Demo Day · 15:15", "Four teams. <span class=\"hl\">Eight minutes each.</span>",
         "Five minutes of demo, three minutes of questions. The panel scores each automation out of 50.", 8,
-        n=N(do="Restart the timer for each team. Score on the board's Teams and votes tab.", expect="Four live runs, four impact numbers.", silent="ask the first panel question yourself.",
+        n=N(do="Restart the timer for each team. Each panel member writes down the scores.", expect="Four live runs, four impact numbers.", silent="ask the first panel question yourself.",
             fallback="If a live run fails, the team shows its latest output file and run log.", say="Team one, the floor is yours.", time="15:15-16:00")))
     s.append(tslide("c6order", "c6", "Demo Day · running order", "Who presents <span class=\"hl\">when.</span>", ["Team", "Time", "Workflow"],
-        [["Team 1", "15:15", "From the board"], ["Team 2", "15:23", "From the board"], ["Team 3", "15:31", "From the board"], ["Team 4", "15:39", "From the board"]],
+        [["Team 1", "15:15", "Its scheduled agent"], ["Team 2", "15:23", "Its scheduled agent"], ["Team 3", "15:31", "Its scheduled agent"], ["Team 4", "15:39", "Its scheduled agent"]],
         "Scoring and panel comments from 15:47.",
-        n=N(do="Fill the workflow names from the board before 15:15.", expect="Teams ready at their laptops.", silent="call Team 1.")))
+        n=N(do="Say each team's workflow name before 15:15.", expect="Teams ready at their laptops.", silent="call Team 1.")))
     s.append(tslide("c6score", "c6", "Demo Day · scoring", "The panel's <span class=\"hl\">score sheet.</span>", ["Criterion", "10", "5", "0"],
         [list(r) for r in CD.RUBRIC_SCORE],
         f"Total out of {sum(pt for _c, pt, _t in CD.RUBRIC_FULL)}. The trainer scores. RSM leadership joins if they attend.", cls="tight",
-        n=N(do="Keep this slide up while the panel scores.", expect="Scores on the board within 8 minutes.", silent="read each team's strongest point aloud.")))
+        n=N(do="Keep this slide up while the panel scores.", expect="Scores added up within 8 minutes.", silent="read each team's strongest point aloud.")))
     # Close
     s.append(mapslide("c7map", "c7", "after"))
     s.append(timer_slide("c7next", "c7", "Next steps · 16:25", "Your next task. <span class=\"hl\">Your tool.</span>",
-        "Post on the board the next task you will automate back at work, and the tool you will use for it.", 5,
+        "Tell your table the next task you will automate back at work, and the tool you will use for it.", 5,
         n=N(do="Read three posts aloud.", expect="Tasks from the inventory; Copilot or Claude as the tool.", silent="post your own first.", say="One task, one card, this week.")))
     s.append(wrap("w2", "close", "Card, schedule, review. <span class=\"hl\">Then show it.</span>",
         [("You built", "A scheduled workflow", "Your team's skill, running on new files, with rules and a run log."), ("You showed", "Four automations", "Each with an impact number."),

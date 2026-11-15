@@ -82,7 +82,7 @@ DAYS = {
                ("16:00-16:10", "Break", ""),
                ("16:10-16:20", "Post-MAP test", "10 minutes. Scan the first QR code"),
                ("16:20-16:25", "Final survey", "Scan the second QR code"),
-               ("16:25-16:30", "Next steps and close", "Post your next task on the board")],
+               ("16:25-16:30", "Next steps and close", "Say your next task and the tool you will use")],
     "outcomes": ["Map a workflow: <b>trigger, steps, output and review</b>.",
                  "Set up a Claude <b>scheduled task</b> that runs your team's skill.",
                  "Handle <b>new files, an empty folder and a failed run</b>, and keep a run log.",
@@ -279,12 +279,11 @@ FACILITATOR = [
     "Sandbox Drive: owned by CODED. Folders 01 Invoices to 05 Status, each with Inbox, Processed, Outputs and Log, plus Team 1 to Team 4 for Day 2 with the same four folders. Day 1 Inboxes: 01 Invoices holds the October invoices and ledger; 02 to 05 hold their track pack only. Batch-2 and messy files stay in Packs (participants download the messy files from the site on Day 1). Keep a copy of the invoice pack, each track pack, the batch-2 files, the messy files and mirqab-locked-test-file.pdf (Task 2.5) in a Packs folder so teams can copy them into their Inbox.",
     "Google sign-in for the Drive connector: one CODED training Google account per participant (or one per team if CODED cannot make 18), each with edit access to the sandbox folders. Send each sign-in privately before Day 1. Never put a sign-in on a slide, the site or the board.",
     "Worked Projects: build one Project per track from mirqab-starter-instructions.docx and test it on the pack. For Task 1.6 hint 3, open it on the presenting laptop, or give the person its five parts from the starter file.",
-    "Shared board: one Google Sheet in the sandbox Drive with the tabs Poll, Task board, Agent Cards, Teams and votes, Clock, Next tasks. Share the link in the room.",
     "Confirm with Moudhi: Waqas has approved the Day 2 change; Demo Day panel and award.",
     "The MAP tests and survey are published only after the site QA passes. The QR codes work after that."])]),
  ("room", "Room and laptops", "pre-flight", [("ol", [
     "Four tables of four or five. Teams sit together from Day 1 lunch.",
-    "Wi-Fi details on the board before 08:15.",
+    "Wi-Fi details on the whiteboard before 08:15.",
     "Day 1, 08:30: every laptop opens claude.ai (signed in) and the workshop site. The pre-MAP QR at 08:35 doubles as the phone check.",
     "Nothing is printed. The lab pages, prompt sheets, cheat sheet and safe-use card are on the site."])]),
  ("n8n", "The n8n demo (Demo 2.4)", "built and tested before Day 2", [("ul", [
@@ -296,10 +295,10 @@ FACILITATOR = [
  ("after", "After Day 2", "the same evening", [("ul", [
     "Pause or delete every scheduled task on the trainer account and the team accounts, so nothing keeps running on CODED accounts.",
     "Empty the Inbox folders in the sandbox Drive, and turn off the n8n demo flow.",
-    "Remove the participants' access to the sandbox Drive and the shared board after the results report."])]),
+    "Remove the participants' access to the sandbox Drive after the results report."])]),
  ("teams", "Forming the four teams", "over Day 1 lunch", [("ul", [
     "Group the approved Agent Cards by similar workflow.", "Put at least one supervisor or the manager in each team.",
-    "Write the teams on the board's Teams and votes tab before 12:30.",
+    "Announce the four teams and their agents before 12:30.",
     "Day 2: each team builds its scheduled task on the account of the person who made the team's skill. Shared skills cannot be edited by the people they are shared with."])]),
  ("failplan", "If something fails", "Plan A, B, C", [("table", [["What fails", "Plan B", "Plan C"],
     ["Claude is slow or busy", "Talk through the prompt player slide.", "Show the backup result."],
@@ -314,12 +313,12 @@ FACILITATOR = [
     ["Source accuracy", "During the questions, the panel picks three figures from the team's output. The team shows each one in its source file. 3 of 3 match: 10; 2 of 3: 5; 1 or none: 0."],
     ["Test evidence", "The team opens its Log folder: three clean runs, the No new files run (Task 2.3) and the failed-run test (Task 2.5)."],
     ["Panel", "The trainer scores. RSM leadership joins if confirmed."],
-    ["Record", "Write each team's scores on the board's Teams and votes tab."]])]),
+    ["Record", "Each panel member writes down each team's scores; add them up after the last demo."]])]),
 ]
 
 # ------------------------------------------------------------------ browser labs: one per day; answers only in the staff lab key
 LABS = {
- 1: {"title": "Build your agent, step by step", "intro": "Work through the steps as the day goes. Your notes and done marks stay in this browser. Paste your card to the shared board when the trainer asks.",
+ 1: {"title": "Build your agent, step by step", "intro": "Work through the steps as the day goes. Your notes and done marks stay in this browser. The files you need are under each step.",
      "steps": [
         {"title": "Your first Claude chat (Task 1.1)", "files": CD.DEMOS["t11"]["files"], "do": ["Open claude.ai. Start a new chat and attach abdali-engagement-letter-2026.docx with the + button.",
           "Ask the three questions from the prompt sheet, one at a time: a summary, every date, and what is missing.", "Check one of Claude's answers against the letter yourself."],
@@ -359,9 +358,9 @@ LABS = {
          "hint": "A good agent flags what it cannot see.", "check": {"kind": "note", "label": "Minutes by hand, minutes with the agent"},
          "answer": [("ul", [f"{v[0]}: {v[2]}" for v in D.MESSY.values()])]},
      ]},
- 2: {"title": "Put your workflow on a schedule", "intro": "Your team works through these steps today. Each person can keep their own notes here; the team's card goes on the shared board.",
+ 2: {"title": "Put your workflow on a schedule", "intro": "Your team works through these steps today. Each person can keep their own notes here; show the team's card to the trainer.",
      "steps": [
-        {"title": "The workflow card (Task 2.1)", "do": ["Fill When, Input, Skill, Output and Who reviews for your team's agent.", "Post it on the shared board."],
+        {"title": "The workflow card (Task 2.1)", "do": ["Fill When, Input, Skill, Output and Who reviews for your team's agent.", "Show it to the trainer."],
          "hint": "Who reviews is one person's name.", "check": {"kind": "note", "label": "Your team's workflow card"},
          "answer": [("p", "A time, one folder, the Day 1 skill, a file name pattern and a run-log file, and a named reviewer.")]},
         {"title": "Create the scheduled task (Task 2.2)", "do": ["Work on the laptop of the person who made your team's skill. Copy your track pack into your team folder's Inbox.", "Click Scheduled in the left sidebar, then New task, then Set up manually. Paste the prompt from the prompt sheet and fill the brackets.", "Approval mode: let the run save and move files without waiting. Daily at 08:00. Save. Run it once on demand."],
@@ -397,7 +396,7 @@ SEGMENTS = {
                                                    ("09:48", 6, "Why the prompt matters, Demo 1.1 live in Claude, the five parts"), ("09:54", 1, "Check"), ("09:55", 3, "Try it: rewrite your request with the five parts"),
                                                    ("09:58", 2, "Repeatable: a prompt is not a process, with a check"), ("10:00", 2, "What an agent is"), ("10:02", 1, "Agent-ready tasks: the four points"),
                                                    ("10:03", 4, "Can an agent do this task? The room sorts eight tasks"), ("10:07", 3, "Demo 1.2 live and a check"),
-                                                   ("10:10", 8, "Task 1.3 · Task inventory"), ("10:18", 2, "Board review")]),
+                                                   ("10:10", 8, "Task 1.3 · Task inventory"), ("10:18", 2, "What repeats across departments: the room's strongest tasks, typed on screen")]),
      ("10:30-11:30", "Lesson 3 · Pick your task and design the agent", [("10:30", 2, "Story"), ("10:32", 2, "Scoring a use case"), ("10:34", 4, "Demo 1.3 live · Dana scores her three candidates"),
                                                    ("10:38", 1, "The four tracks"), ("10:39", 6, "The Agent Card and literal instructions, with checks"), ("10:45", 17, "Task 1.4 · Agent Card v1"),
                                                    ("11:02", 4, "Projects, knowledge versus input, with a check"), ("11:06", 5, "Demo 1.4 live · From card to agent"), ("11:11", 19, "Task 1.5 · Build the invoice agent with me")]),
@@ -481,3 +480,50 @@ SURVEY = {
     "logistics": ("The venue, the daily timing and access to Claude and the sandbox Drive worked well for me.",
                   "كان المكان والتوقيت اليومي وإمكانية الوصول إلى Claude ومجلد Drive التدريبي مناسباً لي."),
 }
+
+# ------------------------------------------------------------------ Day 1 lab steps, written so nobody wonders "where do I find this?" (Aya, 15 Nov)
+_LAB_DO = {
+ "Your first Claude chat (Task 1.1)": ["Download the letter under these steps.", "Go to claude.ai, sign in with the workshop account, and click New chat.",
+     "Click + in the message box and attach the letter.", "Open the prompt sheet (Day 1 page → Prompts), Task 1.1. Copy each question, paste it in Claude and press Enter, one at a time.",
+     "Open the letter yourself and check one of Claude's answers against it."],
+ "Same task, 18 answers (Task 1.2)": ["Download the two files under these steps.", "In Claude, click New chat. Click + and attach both files.",
+     "Write your own request: a table that checks each invoice against the ledger. There is nothing to copy. You have 7 minutes.",
+     "Compare your table with your neighbor's: the columns, the totals and what each of you flagged."],
+ "Your task inventory (Task 1.3)": ["In the box below, list 10 tasks you did last week, one per line.",
+     "Tag each task Yes or No three times: it repeats every week, the rules are clear, a document goes in and a document comes out.",
+     "Preparers: what do you rebuild on every engagement? Reviewers: what do you check every time? Coordinators: what do you chase every week, such as requests or new-client KYC files?",
+     "Pick your top 3: the tasks with three Yes. Be ready to say your strongest one aloud."],
+ "Agent Card v1 (Task 1.4)": ["Score your top 3 tasks from 1 to 5 on four points: how often, minutes each time, clear rules, can run on a schedule. Pick the highest total.",
+     "Choose its track: Extraction, Analysis, Workflow or Reporting.",
+     "Open the prompt sheet (Day 1 page → Prompts), Task 1.4. Copy the Agent Card template and paste it in the box below.",
+     "Fill in Task, Track, Input, Instruction and Output. Leave When empty.", "Raise your hand. The trainer comes to your seat and approves your card."],
+ "Build the invoice agent with the trainer (Task 1.5)": ["Download the three files under these steps.",
+     "In Claude, click Projects in the left sidebar, then + New Project. Name it Mirqab invoice match and create it.",
+     "Click Set project instructions. Paste Project instructions from the prompt sheet, Task 1.5. Save.",
+     "In the Project's knowledge, click + and upload mirqab-invoice-match-template.xlsx.",
+     "Start a chat in the Project. Attach the invoice pack and the ledger. Paste the Run line from the prompt sheet and press Enter."],
+ "Build v1 of your agent (Task 1.6)": ["Download only your track's file under these steps. Extraction: the lease agreements. Analysis: the trial balance. Workflow: the request list and the client emails. Reporting: the engagement status.",
+     "In Claude, click Projects, then + New Project. Name it after your task.",
+     "Click Set project instructions. Paste the Five-part template from the prompt sheet, Task 1.6, and fill it in from your Agent Card. Save.",
+     "Check 3 items by hand first. Extraction: leases 1, 4, 6. Analysis: Trade receivables, Accrued expenses, Bank charges. Workflow: items 5, 7, 8. Reporting: the 3 engagements.",
+     "Start a chat in the Project, attach your file and send the Test run line. Compare the 3 items. If one is wrong, fix the instructions and run again."],
+ "Read from the folder (Task 1.7)": ["In Claude, open Customize, then Connectors. Connect Google Drive with your CODED training Google account, not your own.",
+     "In Google Drive, open Mirqab sandbox, then your track folder: 02 Leases, 03 Trial balance, 04 Requests or 05 Status. Your files are in Inbox.",
+     "In your Project, start a new chat. Paste Run from your folder from the prompt sheet, Task 1.7, with your folder name in the brackets."],
+ "Same shape every run (Task 1.8)": ["Copy the Output rule from the prompt sheet, Task 1.8. Put your columns in the brackets, in order.",
+     "Open your Project's instructions and paste the rule at the end, under Output format. Save.",
+     "Run it twice, each time in a new chat in the Project. Compare the columns, the order and the total line."],
+ "Make your skill (Task 1.9)": ["In a chat in your Project, paste Make the skill from the prompt sheet, Task 1.9, with your skill's name. Save the skill when Claude offers.",
+     "Check that it is saved: Customize, then Skills.",
+     "Click New chat, outside the Project. Attach your track file and paste Test it in a new chat. Check that Claude uses your skill.",
+     "Add one line to your card: where this skill would live in ChatGPT, Copilot or Gemini (the Package row on the cheat sheet)."],
+ "The messy sample and the clock (Task 1.10)": ["Download the messy file for your track under these steps. Workflow track: attach mirqab-pbc-request-list-abdali.xlsx too (step 7).",
+     "Click New chat, attach the messy file, and paste Messy run from the prompt sheet, Task 1.10.",
+     "Check: did the agent flag the gap, or guess? Each file hides a gap (the invoice file has two). No two values in a file conflict.",
+     "Time the task by hand and with the agent. Write both numbers in the box below."],
+}
+for _st in LABS[1]["steps"]:
+    if _st["title"] in _LAB_DO: _st["do"] = _LAB_DO.pop(_st["title"])
+assert not _LAB_DO, f"lab steps not found: {list(_LAB_DO)}"
+for _st in LABS[1]["steps"]:
+    if _st["title"] == "Agent Card v1 (Task 1.4)": _st["check"] = {"kind": "note", "label": "Your Agent Card: paste the template here, then fill it in"}

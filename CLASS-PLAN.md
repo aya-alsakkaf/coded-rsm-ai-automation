@@ -34,8 +34,8 @@ Teaching minutes: 360.
 |---|---|---|---|---|---|
 | 1.1 | First Claude chat | 7 | on your own | abdali-engagement-letter-2026.docx | Three answers from Claude, one of them ticked against the letter. |
 | 1.2 | Same task, 18 answers | 12 | on your own, then in pairs | abdali-supplier-invoices-oct-2026.pdf, abdali-purchase-ledger-oct-2026.xlsx | Your own reconciliation table, compared with a neighbor's. |
-| 1.3 | Your task inventory | 8 | on your own | your own work | 10 tasks tagged, your top 3, and the strongest one on the shared board. |
-| 1.4 | Write your Agent Card v1 | 17 | on your own | your own work | An approved Agent Card v1 on the shared board. |
+| 1.3 | Your task inventory | 8 | on your own | your own work | 10 tasks tagged, your top 3, and your strongest task ready to say aloud. |
+| 1.4 | Write your Agent Card v1 | 17 | on your own | your own work | An Agent Card v1, approved by the trainer at your seat. |
 | 1.5 | Build the invoice agent with me | 19 | on your own, with the trainer | abdali-supplier-invoices-oct-2026.pdf, abdali-purchase-ledger-oct-2026.xlsx, mirqab-invoice-match-template.xlsx | A Project named Mirqab invoice match and a table that flags both problems. |
 | 1.6 | Build v1 of your agent | 65 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | Your own Project, right on the three items you checked by hand. |
 | 1.7 | Run from the folder | 15 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | One run from your track folder, with the list of files read. |
@@ -64,13 +64,13 @@ Teaching minutes: 360.
 | 16:00-16:10 | Break | 10 | Break |
 | 16:10-16:20 | Post-MAP test | 10 | 10 minutes. Scan the first QR code |
 | 16:20-16:25 | Final survey | 5 | Scan the second QR code |
-| 16:25-16:30 | Next steps and close | 5 | Post your next task on the board |
+| 16:25-16:30 | Next steps and close | 5 | Say your next task and the tool you will use |
 
 Teaching minutes: 360.
 
 | Task | Title | Minutes | Who | Files | Deliverable |
 |---|---|---|---|---|---|
-| 2.1 | Your team's workflow card | 20 | in your team | your own work | Your team's workflow card on the shared board. |
+| 2.1 | Your team's workflow card | 20 | in your team | your own work | Your team's workflow card, shown to the trainer. |
 | 2.2 | Schedule your workflow | 30 | in your team | your own work | A scheduled task, run once, with its output checked against Day 1. |
 | 2.3 | Batch 2 and the empty folder | 25 | in your team | abdali-supplier-invoices-nov-wk1.pdf, abdali-purchase-ledger-nov-wk1.xlsx, abdali-lease-agreement-new.pdf, abdali-management-accounts-oct-2026.xlsx, abdali-client-emails-wk47.docx, mirqab-engagement-status-wk47.xlsx | One run on batch 2 and one empty-folder run, each with its own run-log file. |
 | 2.4 | Your department's rules | 30 | in your team | mirqab-review-rules.docx | Two rules and a review step in your skill, tested on the messy sample. |

@@ -2708,6 +2708,8 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 .llm-note b{color:var(--rose-lt)}
 .llm-foot{font-family:var(--mono);font-size:11px;color:var(--w6);margin-top:6px}
 
+#notes{max-height:46vh;overflow:auto}
+#notes p{font-size:17px;line-height:1.6}
 .lv-slide .cd-wrap{justify-content:center}
 .lv{display:flex;flex-direction:column;gap:clamp(16px,2.4vh,28px);width:100%}
 .lv-top{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
@@ -2846,7 +2848,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
     <h2 class="cd-h2">One agent per team. <em>One workflow by 15:15.</em></h2>
     <p class="cd-lede">Everything uses Mirqab &amp; Co., a fictional Kuwaiti audit firm, and its fictional client Abdali Foods. Breaks about every hour, lunch with Dhuhr, and an Asr break.</p>
   </div>
-  <div class="cd-agenda wk-agenda"><div class="cd-up" style="--i:0"><span class="cd-n">08:30</span><b>Lesson 1 · From agent to system<small>Callback quiz · trigger, steps, output, review · Task 2.1</small></b><span class="cd-dur">08:30-09:20</span></div><div class="cd-up" style="--i:1"><span class="cd-n">09:30</span><b>Lesson 2 · Make it run on its own<small>Scheduled tasks · Task 2.2</small></b><span class="cd-dur">09:30-10:20</span></div><div class="cd-up" style="--i:2"><span class="cd-n">10:30</span><b>Lesson 3 · New inputs, outputs and n8n<small>Batch 2 and the empty folder · Task 2.3 · the n8n demo</small></b><span class="cd-dur">10:30-11:30</span></div><div class="cd-up" style="--i:3"><span class="cd-n">12:30</span><b>Lesson 4 · Fit it to your department<small>Rules, the review step, the run log · Task 2.4</small></b><span class="cd-dur">12:30-13:20</span></div><div class="cd-up" style="--i:4"><span class="cd-n">13:30</span><b>Lesson 5 · Test and prepare the demo<small>Impact, the judges&#x27; rubric and the failed-run test · Task 2.5</small></b><span class="cd-dur">13:30-14:55</span></div><div class="cd-up" style="--i:5"><span class="cd-n">15:15</span><b>Lesson 6 · Demo Day<small>Four teams, eight minutes each, scored</small></b><span class="cd-dur">15:15-16:00</span></div><div class="cd-up" style="--i:6"><span class="cd-n">16:10</span><b>Post-MAP test<small>10 minutes. Scan the first QR code</small></b><span class="cd-dur">16:10-16:20</span></div><div class="cd-up" style="--i:7"><span class="cd-n">16:20</span><b>Final survey<small>Scan the second QR code</small></b><span class="cd-dur">16:20-16:25</span></div><div class="cd-up" style="--i:8"><span class="cd-n">16:25</span><b>Next steps and close<small>Post your next task on the board</small></b><span class="cd-dur">16:25-16:30</span></div></div>
+  <div class="cd-agenda wk-agenda"><div class="cd-up" style="--i:0"><span class="cd-n">08:30</span><b>Lesson 1 · From agent to system<small>Callback quiz · trigger, steps, output, review · Task 2.1</small></b><span class="cd-dur">08:30-09:20</span></div><div class="cd-up" style="--i:1"><span class="cd-n">09:30</span><b>Lesson 2 · Make it run on its own<small>Scheduled tasks · Task 2.2</small></b><span class="cd-dur">09:30-10:20</span></div><div class="cd-up" style="--i:2"><span class="cd-n">10:30</span><b>Lesson 3 · New inputs, outputs and n8n<small>Batch 2 and the empty folder · Task 2.3 · the n8n demo</small></b><span class="cd-dur">10:30-11:30</span></div><div class="cd-up" style="--i:3"><span class="cd-n">12:30</span><b>Lesson 4 · Fit it to your department<small>Rules, the review step, the run log · Task 2.4</small></b><span class="cd-dur">12:30-13:20</span></div><div class="cd-up" style="--i:4"><span class="cd-n">13:30</span><b>Lesson 5 · Test and prepare the demo<small>Impact, the judges&#x27; rubric and the failed-run test · Task 2.5</small></b><span class="cd-dur">13:30-14:55</span></div><div class="cd-up" style="--i:5"><span class="cd-n">15:15</span><b>Lesson 6 · Demo Day<small>Four teams, eight minutes each, scored</small></b><span class="cd-dur">15:15-16:00</span></div><div class="cd-up" style="--i:6"><span class="cd-n">16:10</span><b>Post-MAP test<small>10 minutes. Scan the first QR code</small></b><span class="cd-dur">16:10-16:20</span></div><div class="cd-up" style="--i:7"><span class="cd-n">16:20</span><b>Final survey<small>Scan the second QR code</small></b><span class="cd-dur">16:20-16:25</span></div><div class="cd-up" style="--i:8"><span class="cd-n">16:25</span><b>Next steps and close<small>Say your next task and the tool you will use</small></b><span class="cd-dur">16:25-16:30</span></div></div>
  </div>
 </section>
 <section class="cd-slide cd-slide--stage wk-statement" id="c1rule" data-sec="0" data-ch="Yesterday it ran at 16:25. Today it runs every morning." data-screen-label="04 Yesterday it ran at 16:25. Today it runs every morning.">
@@ -2959,7 +2961,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   </div>
   <div class="cd-exercise">
     <div class="cd-exercise-head"><span class="cd-chip">Your time: 20 min</span><span class="wk-timer-pair"><button class="cd-timer" type="button" aria-pressed="false" data-wk-min="20" title="Click to start or pause"><span class="cd-dot"></span><span class="cd-t">20:00</span></button><button class="wk-reset wk-plus" type="button" aria-label="Add one minute">+1 min</button><button class="wk-reset" type="button" aria-label="Reset the timer">Reset</button></span></div>
-    <ol class="cd-steps"><li>Agree on your team&#x27;s agent (the board vote).</li><li>Fill the workflow card on the Day 2 lab page: When, Input, Skill, Output, Who reviews.</li><li>Post it on the shared board.</li></ol>
+    <ol class="cd-steps"><li>Agree on your team&#x27;s agent: one Agent Card from Day 1, by a show of hands.</li><li>Fill the workflow card on the Day 2 lab page: When, Input, Skill, Output, Who reviews.</li><li>Show it to the trainer.</li></ol>
     <div class="wk-chat"><div class="wk-chat-bar"><span class="wk-chat-av"><svg class="cd-ic"><use href="#i-chat"/></svg></span><div><b>The Day 2 lab page</b><small>copy, paste, then check</small></div></div><div class="wk-chat-body"><div class="wk-msg wk-msg--me"><span class="wk-msg-k">Check our card</span><span class="ptxt">Here is our workflow card: [paste it]. Ask us three questions about what could go wrong when it runs without us.</span><button class="wk-copy" type="button">Copy</button></div><div class="wk-msg wk-msg--them"><span class="wk-msg-k">What to look for</span>Who reviews is one person&#x27;s name.</div></div><div class="wk-chat-foot">Task 2.1 is on your prompt sheet. Claude slow or a file not loading? Continue from the backup on the screen.</div></div>
   </div>
  </div>
@@ -3328,7 +3330,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 <div class="cd-head"><div><div class="cd-eyebrow">Lesson 5 · impact</div><h2 class="cd-h2">Minutes saved <em>every month.</em></h2></div></div>
   <div class="cd-cards cd-cols-3 wk-cards"><div class="cd-card cd-up wk-stat" style="--i:0"><b class="wk-stat-n">40 min</b><span class="cd-k">By hand</span><p>One run of the task, done by a person.</p></div><div class="cd-card cd-up wk-stat" style="--i:1"><b class="wk-stat-n">5 min</b><span class="cd-k">With the agent</span><p>Including the review.</p></div><div class="cd-card cd-up wk-stat" style="--i:2"><b class="wk-stat-n">700 min</b><span class="cd-k">Saved a month</span><p>(40 − 5) × 20 runs: about 12 hours.</p></div></div>
   <p class="wk-key">(Minutes by hand − minutes with the agent) × runs a month.</p>
-  <p class="wk-src">Example figures. Use your own timings from the board's Clock tab.</p>
+  <p class="wk-src">Example figures. Use your own timings from step 11 of the Day 1 lab page.</p>
  </div>
 </section>
 <section class="cd-slide cd-slide--stage" id="c5rubric" data-sec="3" data-ch="Fifty points. Five criteria." data-screen-label="42 Fifty points. Five criteria.">
@@ -3431,7 +3433,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 <section class="cd-slide cd-slide--stage" id="c6order" data-sec="3" data-ch="Who presents when." data-screen-label="50 Who presents when.">
  <div class="cd-wrap">
 <div class="cd-head"><div><div class="cd-eyebrow">Demo Day · running order</div><h2 class="cd-h2">Who presents <em>when.</em></h2></div></div>
-  <div class="wk-tw"><table class="wk-table "><thead><tr><th>Team</th><th>Time</th><th>Workflow</th></tr></thead><tbody><tr><td>Team 1</td><td>15:15</td><td>From the board</td></tr><tr><td>Team 2</td><td>15:23</td><td>From the board</td></tr><tr><td>Team 3</td><td>15:31</td><td>From the board</td></tr><tr><td>Team 4</td><td>15:39</td><td>From the board</td></tr></tbody></table></div>
+  <div class="wk-tw"><table class="wk-table "><thead><tr><th>Team</th><th>Time</th><th>Workflow</th></tr></thead><tbody><tr><td>Team 1</td><td>15:15</td><td>Its scheduled agent</td></tr><tr><td>Team 2</td><td>15:23</td><td>Its scheduled agent</td></tr><tr><td>Team 3</td><td>15:31</td><td>Its scheduled agent</td></tr><tr><td>Team 4</td><td>15:39</td><td>Its scheduled agent</td></tr></tbody></table></div>
   <p class="wk-key">Scoring and panel comments from 15:47.</p>
  </div>
 </section>
@@ -3454,7 +3456,7 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
  <div class="cd-wrap">
   <div class="cd-eyebrow">Next steps · 16:25<span class=cd-rule></span></div>
   <h2 class="cd-h1 wk-rule">Your next task. <em>Your tool.</em></h2>
-  <p class="cd-lede wk-lead">Post on the board the next task you will automate back at work, and the tool you will use for it.</p>
+  <p class="cd-lede wk-lead">Tell your table the next task you will automate back at work, and the tool you will use for it.</p>
   <div class="wk-map-timer"><span class="cd-chip">Time</span><span class="wk-timer-pair"><button class="cd-timer" type="button" aria-pressed="false" data-wk-min="5" title="Click to start or pause"><span class="cd-dot"></span><span class="cd-t">5:00</span></button><button class="wk-reset wk-plus" type="button" aria-label="Add one minute">+1 min</button><button class="wk-reset" type="button" aria-label="Reset the timer">Reset</button></span></div>
  </div>
 </section>

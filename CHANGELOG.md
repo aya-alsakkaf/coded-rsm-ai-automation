@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-15 · Day 1: speaker script, clear task steps, no shared board (Aya)
+
+- Day 1 speaker notes are a script: what to say, word for word, with short stage directions in brackets (`_source/kit/notes_day1.py`).
+  Live demos keep their click steps and fallback; tasks keep the answer key; checks keep the answer. The notes panel scrolls and reads at 17px.
+- No shared board (Google Sheet) on either day. Day 1: the poll is a show of hands; Task 1.3's strongest tasks are typed on screen
+  (the board review slide is now a search-bar slide); Agent Cards are approved by the trainer at the seat; Task 1.10 times go in the lab page.
+  Day 2: teams pick their agent by a show of hands; the panel writes scores down; next tasks are said at the table.
+- Every Day 1 task step says where things are: the lab page step, the prompt sheet entry, the Claude button, the Drive folder.
+  The lab page steps match. Task 1.4 has an Agent Card template with a COPY button (prompt sheet, task slide).
+- The Lesson 2 card sort uses everyday tasks from every department, not only audit.
+
 ## 2026-11-15 · Day 1 lab files and the Day 1 page (Aya)
 
 - Lesson 2: a new card sort after "Which tasks suit an agent?" (slide 31): Can an agent do this task? Eight audit tasks, tap to show Yes, Partly or No.

@@ -78,7 +78,7 @@
 "Scan the second QR code",
 "16:25-16:30",
 "Next steps and close",
-"Post your next task on the board"
+"Say your next task and the tool you will use"
 ],
 "chrome": [
 "The shape of Day"
@@ -333,9 +333,9 @@
 "The Day 2 lab page",
 "Who reviews is one person's name.",
 "Write the one-line format of your run log.",
-"Agree on your team's agent (the board vote).",
+"Agree on your team's agent: one Agent Card from Day 1, by a show of hands.",
 "Fill the workflow card on the Day 2 lab page: When, Input, Skill, Output, Who reviews.",
-"Post it on the shared board.",
+"Show it to the trainer.",
 "Check our card",
 "Here is our workflow card: [paste it]. Ask us three questions about what could go wrong when it runs without us.",
 "Claude slow or a file not loading? Continue from the backup on the screen.",
@@ -1229,7 +1229,7 @@
 "Lesson 5 · impact",
 "Minutes saved every month.",
 "(Minutes by hand − minutes with the agent) × runs a month.",
-"Example figures. Use your own timings from the board's Clock tab.",
+"Example figures. Use your own timings from step 11 of the Day 1 lab page.",
 "40 min",
 "By hand",
 "One run of the task, done by a person.",
@@ -1520,16 +1520,16 @@
 "Workflow",
 "Team 1",
 "15:15",
-"From the board",
+"Its scheduled agent",
 "Team 2",
 "15:23",
-"From the board",
+"Its scheduled agent",
 "Team 3",
 "15:31",
-"From the board",
+"Its scheduled agent",
 "Team 4",
 "15:39",
-"From the board"
+"Its scheduled agent"
 ],
 "chrome": []
 },
@@ -1606,7 +1606,7 @@
 "kit": [
 "Next steps · 16:25",
 "Your next task. Your tool.",
-"Post on the board the next task you will automate back at work, and the tool you will use for it."
+"Tell your table the next task you will automate back at work, and the tool you will use for it."
 ],
 "chrome": [
 "+1 min",
