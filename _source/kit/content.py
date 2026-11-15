@@ -676,7 +676,7 @@ _L2["Create the scheduled task (Task 2.2)"].update(do=["Work on the skill owner'
     "In Claude, click Scheduled in the left sidebar, then New task, then Set up manually.",
     f"Paste the Scheduled task prompt from {_S2}, Task 2.2, and fill the brackets from your card (step 6).",
     "Approval mode: let the run save and move files without waiting. Daily at 08:00. Save. Run it once on demand."])
-_L2["Batch 2 (Task 2.3)"].update(files=CD.BATCH2_FILES, do=[f"Check that the empty-folder line is in your task's prompt ({_S2}, Task 2.3).",
+_L2["Batch 2 (Task 2.3)"].update(files=CD.BATCH2_FILES, do=[f"Check that your task's prompt has the empty-folder line from {_S2}, Task 2.3.",
     "Workflow teams: add the request list to the skill and the tracker line to the prompt. Analysis teams: add the monthly line.",
     "In Google Drive, copy your track's batch-2 file from Mirqab sandbox → Packs into your team's Inbox. The files are also under these steps.",
     "In Claude, run the task on demand. Check Outputs and the new run log in Log."])
