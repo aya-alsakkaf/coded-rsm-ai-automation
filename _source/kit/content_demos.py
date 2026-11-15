@@ -684,3 +684,66 @@ DEMOS["t13"]["expected"] = "10 tasks, tagged; a top 3; the strongest task said a
 DEMOS["t13"]["deliverable"] = "10 tasks tagged, your top 3, and your strongest task ready to say aloud."
 DEMOS["t15"]["deliverable"] = "An Agent Card v1, approved by the trainer at your seat."
 DEMOS["t15"]["prompts"] = [p for p in DEMOS["t15"]["prompts"] if not str(p[0]).startswith("Optional")]
+
+# ===================================================================== a second round for each build block: two Projects, two artifacts, two skills (Aya, 15 Nov)
+TRACK_FILES = [F_LEASES, F_TB, F_PBC, F_EMAILS, F_STATUS]
+demo("t16b", day=1, skill="1.6b", sec=DEMOS["t16"]["sec"], title="Project 2: a second agent", tool="Claude Projects", files=TRACK_FILES,
+ kind="task", hands_on=True, minutes=25, solo="on your own",
+ setup=["Pick a second track, not your first one. Download its file from step 8 of the Day 1 lab page.",
+        "In Claude, click Projects, then + New Project. Name it after the track's task, for example Lease key terms.",
+        "Click Set project instructions. Paste the Five-part template (prompt sheet, Task 1.6b) and fill it in for the track's starting example. Save.",
+        "Start a chat in the Project, attach the file and send the Test run line. Check 2 items by hand. Fix the instructions, not the answer."],
+ prompts=[("Five-part template", FIVE_TEMPLATE), ("Test run", "Run on the attached file. Then list every row you are not sure about.")],
+ expected="A second Project on a different track, right on the two items checked by hand.",
+ say="Same five parts, new data. Faster the second time.", point="The method is the same for every task.",
+ backup=[("h", "The starting example for each track"), ("ul", ["Extraction: lease agreements to a key-terms schedule.", "Analysis: the two-year trial balance to the movements over 10% and over KWD 5,000, with a question for the client on each.",
+          "Workflow: the request list and the client emails to a status tracker and follow-up drafts.", "Reporting: the engagement status sheet to one weekly summary for a manager."])],
+ answer=[("h", "Check"), ("ul", ["A second Project, named after its task.", "Five-part instructions written for the new track.", "Two items checked by hand match the agent's result."])],
+ deliverable="A second Project, on a different track and a different file.",
+ fallback="Anyone stuck copies the structure of their first Project and changes only the Role, the Steps and the Output columns.",
+ hint="Copy the structure of your first Project. Change the role, the steps and the columns.",
+ stretch=["Run the same request in a second chat inside the Project. Compare the two results."])
+demo("t18b", day=1, skill="1.8b", sec=DEMOS["t18"]["sec"], title="Artifact 2: a different kind of output", tool="Claude · artifacts", files=TRACK_FILES,
+ kind="task", hands_on=True, minutes=12, solo="on your own",
+ setup=["Open your second Project (Task 1.6b) and start a new chat. Attach that track's file again.",
+        "Copy one prompt from the prompt sheet, Task 1.8b: a chart, or a one-page memo. Send it.",
+        "Open the artifact. Check two numbers or facts in it against the file.",
+        "Ask for one change, such as a new title or one more column, and watch the artifact update."],
+ prompts=[("Artifact 2: a chart", "Make an artifact: a bar chart of [what to show, for example the five largest items] from the attached file. Give it a title, label both axes, and list the numbers under the chart. Use only the file."),
+          ("Artifact 2: a one-page memo", "Make an artifact: a one-page memo to the engagement manager that sums up the attached file in five bullet points, then lists what needs action this week. Use only the file. Write Not found for anything missing.")],
+ expected="One chart or one memo from the second track's file, checked against the file on two points.",
+ say="A table is one kind of output. A chart or a memo is another.", point="Ask for the shape the reader needs.",
+ backup=[("h", "What a good second artifact looks like"), ("ul", ["Chart: a title, labeled axes, and the numbers listed under it.", "Memo: five bullet points, then the actions for this week, with Not found where data is missing."])],
+ answer=[("h", "Check"), ("ul", ["The artifact opens and can be downloaded.", "Two numbers or facts match the file.", "One requested change shows in the same artifact."])],
+ deliverable="A second artifact, of a different kind, from different data.",
+ fallback="If the chart does not draw, ask for the memo instead.",
+ hint="Ask for one change at a time. Claude updates the same artifact.",
+ stretch=["Download the artifact, or ask Claude to save it as a file."])
+demo("t19b", day=1, skill="1.9b", sec=DEMOS["t19"]["sec"], title="Skill 2: package your second agent", tool="Claude · skills", files=TRACK_FILES,
+ kind="task", hands_on=True, minutes=12, solo="on your own",
+ setup=["Open your second Project (Task 1.6b). In a chat, paste Make the skill from the prompt sheet, Task 1.9b, with a new skill name. Save it when Claude offers.",
+        "Open Customize, then Skills. Check that both of your skills are listed.",
+        "Click New chat, outside any Project. Attach the second track's file and ask for its task in one line. Did Claude pick the right skill?",
+        "In another new chat, attach your first track's file. Does Claude pick your first skill this time?"],
+ prompts=[("Make the skill", "Turn the instructions and knowledge of this Project into a skill named [your-second-skill-name]. Keep every rule word for word. Describe when to use it in one line."),
+          ("Test it in a new chat", "[One line that asks for the second task], using the attached file.")],
+ expected="Two saved skills. In a fresh chat, Claude picks the right one for each file.",
+ say="Two skills. Claude picks the one whose description fits.", point="A clear one-line description is how Claude picks the right skill.",
+ backup=[("h", "If Claude picks the wrong skill"), ("ul", ["Open the skill and make its one-line description more specific: name the file type and the task.", "Test again in a new chat."])],
+ answer=[("h", "Check"), ("ul", ["Two skills under Customize, then Skills.", "Each file gets the right skill in a fresh chat."])],
+ deliverable="Two skills saved, each picked for the right file.",
+ fallback="If skills are off on an account, continue with the Project. The trainer turns them on at the break.",
+ hint="Each skill needs a name and one line on when to use it, so Claude can tell them apart.",
+ stretch=["Share one of your skills with a member of your team."])
+# keep each second round next to its first round (the prompt sheet and the lab follow this order)
+def _after(new, base):
+    global DEMOS
+    items = [(k, v) for k, v in DEMOS.items() if k != new]
+    i = [k for k, _v in items].index(base) + 1
+    items.insert(i, (new, DEMOS[new]))
+    DEMOS.clear(); DEMOS.update(items)
+_after("t16b", "t16"); _after("t18b", "t18"); _after("t19b", "t19")
+# the first rounds get shorter so both rounds fit in the same lessons
+DEMOS["t16"]["minutes"] = 40; DEMOS["t16"]["say"] = "Struggle first. A hint at 10 minutes, then the most common fixes at 20."
+DEMOS["t17"]["minutes"] = 12; DEMOS["t18"]["minutes"] = 11; DEMOS["t19"]["minutes"] = 14; DEMOS["t110"]["minutes"] = 8
+DEMOS["t110"]["setup"] = [x.replace("step 11 of the Day 1 lab page", "step 14 of the Day 1 lab page") for x in DEMOS["t110"]["setup"]]

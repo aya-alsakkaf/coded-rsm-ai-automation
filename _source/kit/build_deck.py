@@ -376,6 +376,7 @@ def day1():
         "The five parts work in every assistant. Paste them where the tool keeps its instructions.", cls="tight",
         n=N(do="Point to the Copilot or ChatGPT cell RSM is most likely to use.", expect="People see the same five parts in a different box.", silent="read the ChatGPT cell.")))
     s.append(task("b4task", "b4", "t16", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
+    s.append(task("b4task2", "b4", "t16b", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 5 · Build: Input and Output
     s.append(story("b5story", "b5", "Lesson 5 · Build: Input and Output", "Sunday 1 November, 14:00",
         "Every Sunday, Noura, a project coordinator, downloads the same files from the shared drive and <b>drags them into a chat, one by one.</b>",
@@ -402,6 +403,7 @@ def day1():
         "The boxes stay the same. Only the button names change.", cls="tight",
         n=N(do="Read the Copilot column if RSM uses Microsoft 365.", expect="People recognize SharePoint and OneDrive.", silent="read the ChatGPT column.")))
     s.append(task("b5task2", "b5", "t18", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
+    s.append(task("b5task3", "b5", "t18b", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 6 · Build: Package
     s.append(story("b6story", "b6", "Lesson 6 · Build: Package", "Sunday 1 November, 15:15",
         "Dana's agent works in her Project. Faisal asks: <b>“Can the other two associates use it? And can it run tomorrow without you?”</b>",
@@ -422,6 +424,7 @@ def day1():
         [("In a ChatGPT skill or custom GPT, same card inside", 1, "Right. The name changes; the card stays."), ("Nowhere: only Claude can package a method", 0, "Every assistant has a packaged method."),
          ("In one long chat that she keeps open", 0, "Chats do not travel.")]))
     s.append(task("b6task", "b6", "t19", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
+    s.append(task("b6task1b", "b6", "t19b", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     s.append(task("b6task2", "b6", "t110", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 7 · Show and tell, and the Day 2 hook
     s.append(timer_slide("b7show", "b7", "Show and tell · 16:10", "Four teams. <span class=\"hl\">Ninety seconds each person.</span>",
@@ -561,7 +564,7 @@ def day2():
     s.append(stats("c5stats", "c5", "Lesson 5 · impact", "Minutes saved <span class=\"hl\">every month.</span>",
         [(f"{D.IMPACT_EX['by_hand']} min", "By hand", "One run of the task, done by a person."), (f"{D.IMPACT_EX['agent']} min", "With the agent", "Including the review."),
          (f"{D.IMPACT_MIN} min", "Saved a month", f"({D.IMPACT_EX['by_hand']} − {D.IMPACT_EX['agent']}) × {D.IMPACT_EX['runs']} runs: about 12 hours.")],
-        "(Minutes by hand − minutes with the agent) × runs a month.", src="Example figures. Use your own timings from step 11 of the Day 1 lab page.",
+        "(Minutes by hand − minutes with the agent) × runs a month.", src="Example figures. Use your own timings from step 14 of the Day 1 lab page.",
         n=N(do="Work one team's numbers with the room.", expect="A few hours a month per task.", silent="work the invoice example: (45 − 6) × 22.")))
     s.append(tslide("c5rubric", "c5", "Lesson 5 · the judges' rubric", "Fifty points. <span class=\"hl\">Five criteria.</span>", ["Criterion", "Points", "Full marks"],
         [[c, str(pt), t] for c, pt, t in CD.RUBRIC_FULL],

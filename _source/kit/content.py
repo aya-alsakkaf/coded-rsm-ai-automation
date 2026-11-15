@@ -51,11 +51,11 @@ DAYS = {
                ("10:20-10:30", "Break", ""),
                ("10:30-11:30", "Lesson 3 · Pick your task and design the agent", "Score and pick, the Agent Card, then a Project · Tasks 1.4 and 1.5"),
                ("11:30-12:30", "Lunch and Dhuhr prayer", ""),
-               ("12:30-13:50", "Lesson 4 · Build: Instruction", "The five-part instruction · Task 1.6"),
+               ("12:30-13:50", "Lesson 4 · Build: Instruction", "The five-part instruction · Project 1 and Project 2 · Tasks 1.6 and 1.6b"),
                ("13:50-14:00", "Break", ""),
-               ("14:00-14:55", "Lesson 5 · Build: Input and Output", "Connectors and fixed-shape outputs · Tasks 1.7 and 1.8"),
+               ("14:00-14:55", "Lesson 5 · Build: Input and Output", "Connectors, then two artifacts · Tasks 1.7, 1.8 and 1.8b"),
                ("14:55-15:15", "Asr prayer and break", ""),
-               ("15:15-16:00", "Lesson 6 · Build: Package", "Skills, the messy sample and the clock · Tasks 1.9 and 1.10"),
+               ("15:15-16:00", "Lesson 6 · Build: Package", "Two skills, the messy sample and the clock · Tasks 1.9, 1.9b and 1.10"),
                ("16:00-16:10", "Break", ""),
                ("16:10-16:30", "Lesson 7 · Show and tell, and the Day 2 hook", "Team demos, the agent that ran itself, the transfer map")],
     "outcomes": ["Explain why AI can give a <b>confident figure that is wrong</b>, and tick it against the source.",
@@ -169,7 +169,7 @@ MAP_MIN = 10
 MAP_LEDE = {"before": f"{len(MAP)} questions and {len(OUTCOMES)} confidence ratings, about {MAP_MIN} minutes. The same test at the end of Day 2. Not graded. Phone only: no notes, no search, no AI."}
 
 # ------------------------------------------------------------------ the approved slide plan
-SLIDES = {1: 80, 2: 55}
+SLIDES = {1: 83, 2: 55}
 
 # ------------------------------------------------------------------ MAP tests and the final survey (the three portal drafts of this program, updated in place)
 PORTAL = "https://platform.joincoded.com/sv/"
@@ -401,11 +401,11 @@ SEGMENTS = {
                                                    ("10:38", 1, "The four tracks"), ("10:39", 6, "The Agent Card and literal instructions, with checks"), ("10:45", 17, "Task 1.4 · Agent Card v1"),
                                                    ("11:02", 4, "Projects, knowledge versus input, with a check"), ("11:06", 5, "Demo 1.4 live · From card to agent"), ("11:11", 19, "Task 1.5 · Build the invoice agent with me")]),
      ("12:30-13:50", "Lesson 4 · Build: Instruction", [("12:30", 5, "Late approvals and the story"), ("12:35", 5, "The five-part instruction, an example output, test before you trust, with a check"),
-                                                   ("12:40", 4, "Demo 1.5 live in Claude"), ("12:44", 1, "Transfer: instructions in other tools"), ("12:45", 65, "Task 1.6 · Build v1 (struggle 30, unlock 15, fix 20)")]),
+                                                   ("12:40", 4, "Demo 1.5 live in Claude"), ("12:44", 1, "Transfer: instructions in other tools"), ("12:45", 40, "Task 1.6 · Project 1: build v1 (struggle 20, unlock 10, fix 10)"), ("13:25", 25, "Task 1.6b · Project 2: a second agent on another track")]),
      ("14:00-14:55", "Lesson 5 · Build: Input and Output", [("14:00", 2, "Story: Noura's Sunday"), ("14:02", 3, "Connectors and the sandbox, with a check"), ("14:05", 5, "Demo 1.6 live in Claude"),
-                                                   ("14:10", 15, "Task 1.7 · Run from the folder"), ("14:25", 5, "Artifacts and a fixed shape, with a check"), ("14:30", 5, "Demo 1.7 live in Claude, and the transfer slide (before the task)"),
-                                                   ("14:35", 20, "Task 1.8 · Fixed-shape output")]),
-     ("15:15-16:00", "Lesson 6 · Build: Package", [("15:15", 5, "Skills: story, concept and check"), ("15:20", 4, "Demo 1.8 live in Claude"), ("15:24", 2, "Transfer: packaged methods in other tools, with a check"), ("15:26", 20, "Task 1.9 · Make your skill"), ("15:46", 14, "Task 1.10 · The messy sample and the clock")]),
+                                                   ("14:10", 12, "Task 1.7 · Run from the folder"), ("14:22", 5, "Artifacts and a fixed shape, with a check"), ("14:27", 5, "Demo 1.7 live in Claude, and the transfer slide (before the task)"),
+                                                   ("14:32", 11, "Task 1.8 · Artifact 1: fixed-shape output"), ("14:43", 12, "Task 1.8b · Artifact 2: a chart or a memo")]),
+     ("15:15-16:00", "Lesson 6 · Build: Package", [("15:15", 5, "Skills: story, concept and check"), ("15:20", 4, "Demo 1.8 live in Claude"), ("15:24", 2, "Transfer: packaged methods in other tools, with a check"), ("15:26", 14, "Task 1.9 · Skill 1: make your skill"), ("15:40", 12, "Task 1.9b · Skill 2: package your second agent"), ("15:52", 8, "Task 1.10 · The messy sample and the clock")]),
      ("16:10-16:30", "Lesson 7 · Show and tell, and the Day 2 hook", [("16:10", 12, "Team demos"), ("16:22", 4, "Demo 1.9 live · The agent that ran itself"), ("16:26", 2, "The transfer map: the same card in other tools"),
                                                    ("16:28", 2, "Wrap, the When box and the team vote")])],
  2: [("08:30-09:20", "Lesson 1 · From agent to system", [("08:30", 8, "Callback and three checks"), ("08:38", 2, "Story: who runs it when you are on leave?"), ("08:40", 8, "Trigger, steps, output and review, with a check"),
@@ -527,3 +527,28 @@ for _st in LABS[1]["steps"]:
 assert not _LAB_DO, f"lab steps not found: {list(_LAB_DO)}"
 for _st in LABS[1]["steps"]:
     if _st["title"] == "Agent Card v1 (Task 1.4)": _st["check"] = {"kind": "note", "label": "Your Agent Card: paste the template here, then fill it in"}
+
+# ------------------------------------------------------------------ Day 1 lab: the second round of each build block (Aya, 15 Nov)
+def _lab_after(title, step):
+    i = [x["title"] for x in LABS[1]["steps"]].index(title) + 1
+    LABS[1]["steps"].insert(i, step)
+_lab_after("Build v1 of your agent (Task 1.6)", {"title": "Project 2: a second agent (Task 1.6b)", "files": CD.DEMOS["t16b"]["files"],
+    "do": ["Pick a second track, not your first. Download only its file under these steps.",
+           "Click Projects, then + New Project. Name it after the track's task.",
+           "Click Set project instructions. Paste the Five-part template from the prompt sheet, Task 1.6b, and fill it in for the track's starting example. Save.",
+           "Start a chat in the Project, attach the file and send the Test run line. Check 2 items by hand."],
+    "hint": "Copy the structure of your first Project. Change the role, the steps and the columns.", "check": {"kind": "note", "label": "Your second Project's name and the 2 items you checked"}})
+_lab_after("Same shape every run (Task 1.8)", {"title": "Artifact 2: a chart or a memo (Task 1.8b)",
+    "do": ["Open your second Project and start a new chat. Attach that track's file again (step 8).",
+           "Copy one prompt from the prompt sheet, Task 1.8b: the chart or the one-page memo. Send it.",
+           "Open the artifact. Check two numbers or facts against the file.", "Ask for one change, such as a new title, and watch the artifact update."],
+    "hint": "Ask for one change at a time. Claude updates the same artifact.", "check": {"kind": "note", "label": "Which artifact you made, and the two facts you checked"}})
+_lab_after("Make your skill (Task 1.9)", {"title": "Skill 2: package your second agent (Task 1.9b)",
+    "do": ["In a chat in your second Project, paste Make the skill from the prompt sheet, Task 1.9b, with a new skill name. Save it when Claude offers.",
+           "Open Customize, then Skills. Check that both skills are listed.",
+           "Click New chat, outside any Project. Attach the second track's file and ask for its task in one line. Did Claude pick the right skill?",
+           "In another new chat, attach your first file. Does Claude pick your first skill?"],
+    "hint": "Each skill needs a one-line description, so Claude can tell them apart.", "check": {"kind": "note", "label": "Your two skill names, and whether Claude picked the right one each time"}})
+for _st in LABS[1]["steps"]:
+    if _st["title"] == "The messy sample and the clock (Task 1.10)":
+        _st["do"] = [x.replace("(step 7)", "(step 7)") for x in _st["do"]]

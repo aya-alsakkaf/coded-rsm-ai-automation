@@ -123,13 +123,13 @@
 "Score and pick, the Agent Card, then a Project · Tasks 1.4 and 1.5",
 "12:30-13:50",
 "Lesson 4 · Build: Instruction",
-"The five-part instruction · Task 1.6",
+"The five-part instruction · Project 1 and Project 2 · Tasks 1.6 and 1.6b",
 "14:00-14:55",
 "Lesson 5 · Build: Input and Output",
-"Connectors and fixed-shape outputs · Tasks 1.7 and 1.8",
+"Connectors, then two artifacts · Tasks 1.7, 1.8 and 1.8b",
 "15:15-16:00",
 "Lesson 6 · Build: Package",
-"Skills, the messy sample and the clock · Tasks 1.9 and 1.10",
+"Two skills, the messy sample and the clock · Tasks 1.9, 1.9b and 1.10",
 "16:10-16:30",
 "Lesson 7 · Show and tell, and the Day 2 hook",
 "Team demos, the agent that ran itself, the transfer map"
@@ -1449,6 +1449,62 @@
 },
 {
 "n": 58,
+"id": "b4task2",
+"kind": "task",
+"title": "Your turn 1.6b",
+"topic": "b4",
+"kit": [
+"Task 1.6b",
+"on your own",
+"Claude Projects",
+"Copy the structure of your first Project. Change the role, the steps and the columns.",
+"Run the same request in a second chat inside the Project. Compare the two results.",
+"abdali-lease-agreements.pdf",
+"abdali-trial-balance-fy2024-fy2025.xlsx",
+"mirqab-pbc-request-list-abdali.xlsx",
+"abdali-client-emails-nov-2026.docx",
+"mirqab-engagement-status-wk46.xlsx",
+"Pick a second track, not your first one. Download its file from step 8 of the Day 1 lab page.",
+"In Claude, click Projects, then + New Project. Name it after the track's task, for example Lease key terms.",
+"Click Set project instructions. Paste the Five-part template (prompt sheet, Task 1.6b) and fill it in for the track's starting example. Save.",
+"Start a chat in the Project, attach the file and send the Test run line. Check 2 items by hand. Fix the instructions, not the answer.",
+"Five-part template",
+"Role: You are a [job title] at Mirqab & Co. You [the task in one line]. Steps: 1. [read what] 2. [find or compare what] 3. [decide or flag what]. Rules: Use only the attached files. [Units, decimals, dates.] [What counts as a difference.] Output format: [table columns, in order] [any total line]. When unsure: If a field is missing or unclear, write Not found and flag it. Never guess.",
+"Test run",
+"Run on the attached file. Then list every row you are not sure about.",
+"Claude slow or a file not loading? Continue from the backup on the screen.",
+"Your turn: project 2: a second agent.",
+"Lesson 4 · Build: Instruction"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"Copy",
+"copy, paste, then check",
+"is on your",
+"prompt sheet",
+"If the tool is slow, continue from the backup on the screen.",
+"Where we are",
+"L1",
+"L2",
+"L3",
+"L4",
+"L5",
+"L6",
+"L7"
+]
+},
+{
+"n": 59,
 "id": "b5story",
 "kind": "story",
 "title": "Lesson 5 · Build: Input and Output",
@@ -1467,7 +1523,7 @@
 ]
 },
 {
-"n": 59,
+"n": 60,
 "id": "b5t1",
 "kind": "term",
 "title": "A key to one cabinet, not the whole archive.",
@@ -1486,7 +1542,7 @@
 ]
 },
 {
-"n": 60,
+"n": 61,
 "id": "b5chk1",
 "kind": "check",
 "title": "Quick check",
@@ -1507,7 +1563,7 @@
 ]
 },
 {
-"n": 61,
+"n": 62,
 "id": "b5pp1",
 "kind": "live",
 "title": "Demo 1.6 · live in Claude",
@@ -1532,7 +1588,7 @@
 ]
 },
 {
-"n": 62,
+"n": 63,
 "id": "b5task1",
 "kind": "task",
 "title": "Your turn 1.7",
@@ -1586,7 +1642,7 @@
 ]
 },
 {
-"n": 63,
+"n": 64,
 "id": "b5t2",
 "kind": "term",
 "title": "Same shape. Every run.",
@@ -1605,7 +1661,7 @@
 ]
 },
 {
-"n": 64,
+"n": 65,
 "id": "b5chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1626,7 +1682,7 @@
 ]
 },
 {
-"n": 65,
+"n": 66,
 "id": "b5pp2",
 "kind": "live",
 "title": "Demo 1.7 · live in Claude",
@@ -1652,7 +1708,7 @@
 ]
 },
 {
-"n": 66,
+"n": 67,
 "id": "b5map",
 "kind": "table",
 "title": "Input and output in other tools.",
@@ -1679,7 +1735,7 @@
 "chrome": []
 },
 {
-"n": 67,
+"n": 68,
 "id": "b5task2",
 "kind": "task",
 "title": "Your turn 1.8",
@@ -1735,7 +1791,63 @@
 ]
 },
 {
-"n": 68,
+"n": 69,
+"id": "b5task3",
+"kind": "task",
+"title": "Your turn 1.8b",
+"topic": "b5",
+"kit": [
+"Task 1.8b",
+"on your own",
+"Claude · artifacts",
+"Ask for one change at a time. Claude updates the same artifact.",
+"Download the artifact, or ask Claude to save it as a file.",
+"abdali-lease-agreements.pdf",
+"abdali-trial-balance-fy2024-fy2025.xlsx",
+"mirqab-pbc-request-list-abdali.xlsx",
+"abdali-client-emails-nov-2026.docx",
+"mirqab-engagement-status-wk46.xlsx",
+"Open your second Project (Task 1.6b) and start a new chat. Attach that track's file again.",
+"Copy one prompt from the prompt sheet, Task 1.8b: a chart, or a one-page memo. Send it.",
+"Open the artifact. Check two numbers or facts in it against the file.",
+"Ask for one change, such as a new title or one more column, and watch the artifact update.",
+"Artifact 2: a chart",
+"Make an artifact: a bar chart of [what to show, for example the five largest items] from the attached file. Give it a title, label both axes, and list the numbers under the chart. Use only the file.",
+"Artifact 2: a one-page memo",
+"Make an artifact: a one-page memo to the engagement manager that sums up the attached file in five bullet points, then lists what needs action this week. Use only the file. Write Not found for anything missing.",
+"Claude slow or a file not loading? Continue from the backup on the screen.",
+"Your turn: artifact 2: a different kind of output.",
+"Lesson 5 · Build: Input and Output"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"Copy",
+"copy, paste, then check",
+"is on your",
+"prompt sheet",
+"If the tool is slow, continue from the backup on the screen.",
+"Where we are",
+"L1",
+"L2",
+"L3",
+"L4",
+"L5",
+"L6",
+"L7"
+]
+},
+{
+"n": 70,
 "id": "b6story",
 "kind": "story",
 "title": "Lesson 6 · Build: Package",
@@ -1754,7 +1866,7 @@
 ]
 },
 {
-"n": 69,
+"n": 71,
 "id": "b6t1",
 "kind": "term",
 "title": "From your desk to the firm's manual.",
@@ -1773,7 +1885,7 @@
 ]
 },
 {
-"n": 70,
+"n": 72,
 "id": "b6chk",
 "kind": "check",
 "title": "Quick check",
@@ -1794,7 +1906,7 @@
 ]
 },
 {
-"n": 71,
+"n": 73,
 "id": "b6pp",
 "kind": "live",
 "title": "Demo 1.8 · live in Claude",
@@ -1818,7 +1930,7 @@
 ]
 },
 {
-"n": 72,
+"n": 74,
 "id": "b6map",
 "kind": "table",
 "title": "A packaged method in other tools.",
@@ -1840,7 +1952,7 @@
 "chrome": []
 },
 {
-"n": 73,
+"n": 75,
 "id": "b6chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1861,7 +1973,7 @@
 ]
 },
 {
-"n": 74,
+"n": 76,
 "id": "b6task",
 "kind": "task",
 "title": "Your turn 1.9",
@@ -1918,7 +2030,63 @@
 ]
 },
 {
-"n": 75,
+"n": 77,
+"id": "b6task1b",
+"kind": "task",
+"title": "Your turn 1.9b",
+"topic": "b6",
+"kit": [
+"Task 1.9b",
+"on your own",
+"Claude · skills",
+"Each skill needs a name and one line on when to use it, so Claude can tell them apart.",
+"Share one of your skills with a member of your team.",
+"abdali-lease-agreements.pdf",
+"abdali-trial-balance-fy2024-fy2025.xlsx",
+"mirqab-pbc-request-list-abdali.xlsx",
+"abdali-client-emails-nov-2026.docx",
+"mirqab-engagement-status-wk46.xlsx",
+"Open your second Project (Task 1.6b). In a chat, paste Make the skill from the prompt sheet, Task 1.9b, with a new skill name. Save it when Claude offers.",
+"Open Customize, then Skills. Check that both of your skills are listed.",
+"Click New chat, outside any Project. Attach the second track's file and ask for its task in one line. Did Claude pick the right skill?",
+"In another new chat, attach your first track's file. Does Claude pick your first skill this time?",
+"Make the skill",
+"Turn the instructions and knowledge of this Project into a skill named [your-second-skill-name]. Keep every rule word for word. Describe when to use it in one line.",
+"Test it in a new chat",
+"[One line that asks for the second task], using the attached file.",
+"Claude slow or a file not loading? Continue from the backup on the screen.",
+"Your turn: skill 2: package your second agent.",
+"Lesson 6 · Build: Package"
+],
+"chrome": [
+"Your turn",
+"Finished early?",
+"What to look for",
+"Weak prompt",
+"Your rewrite",
+"points",
+"+1 min",
+"Reset",
+"Your time",
+"min",
+"Time",
+"Copy",
+"copy, paste, then check",
+"is on your",
+"prompt sheet",
+"If the tool is slow, continue from the backup on the screen.",
+"Where we are",
+"L1",
+"L2",
+"L3",
+"L4",
+"L5",
+"L6",
+"L7"
+]
+},
+{
+"n": 78,
 "id": "b6task2",
 "kind": "task",
 "title": "Your turn 1.10",
@@ -1934,7 +2102,7 @@
 "abdali-trial-balance-messy.xlsx",
 "abdali-client-email-messy.docx",
 "mirqab-engagement-status-messy.xlsx",
-"Download the messy file for your track from step 11 of the Day 1 lab page. Workflow track: also attach mirqab-pbc-request-list-abdali.xlsx.",
+"Download the messy file for your track from step 14 of the Day 1 lab page. Workflow track: also attach mirqab-pbc-request-list-abdali.xlsx.",
 "Click New chat. Attach the messy file. Copy Messy run from the prompt sheet, Task 1.10, and send it.",
 "Check: did the agent flag the problem, or guess? Each file hides a gap the agent must flag (the invoice file has two). No file has two values that conflict.",
 "Time the task: minutes by hand, minutes with the agent. Write both numbers in the box in step 11 of the lab page.",
@@ -1972,7 +2140,7 @@
 ]
 },
 {
-"n": 76,
+"n": 79,
 "id": "b7show",
 "kind": "timer",
 "title": "Four teams. Ninety seconds each person.",
@@ -1991,7 +2159,7 @@
 ]
 },
 {
-"n": 77,
+"n": 80,
 "id": "b7demo",
 "kind": "live",
 "title": "Demo 1.9 · live in Claude",
@@ -2014,7 +2182,7 @@
 ]
 },
 {
-"n": 78,
+"n": 81,
 "id": "b7map",
 "kind": "table",
 "title": "Same building blocks, different names.",
@@ -2057,7 +2225,7 @@
 "chrome": []
 },
 {
-"n": 79,
+"n": 82,
 "id": "w1",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -2082,7 +2250,7 @@
 ]
 },
 {
-"n": 80,
+"n": 83,
 "id": "close1",
 "kind": "close",
 "title": "Close",

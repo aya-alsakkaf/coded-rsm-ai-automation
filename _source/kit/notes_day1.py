@@ -174,9 +174,13 @@ SCRIPT = {
  "b4map": (None,
   "A quick note for your work at RSM. These five parts work in any assistant. In ChatGPT they go into a Project or a custom GPT, in Copilot into an agent, and in Gemini into a Gem. Different box, same five parts."),
  "b4task": ("Start the timer. Hint at 15 minutes; common fixes at 30.",
-  "Now the big one: you build your own agent. You have 65 minutes. Get your track's file from the lab page, step 7. Create your own Project, paste the five-part template from the prompt sheet, and fill it in from your Agent Card. "
+  "Now the big one: you build your own agent. You have 40 minutes. Get your track's file from the lab page, step 7. Create your own Project, paste the five-part template from the prompt sheet, and fill it in from your Agent Card. "
   "Before you run it, check three items by hand, so you know the right answer. Then run it and compare. If something is wrong, fix the instructions and run again. "
-  "Struggle a little first; that is where the learning happens. I give a hint at 15 minutes, and show the most common fixes at 30."),
+  "Struggle a little first; that is where the learning happens. I give a hint at 10 minutes, and show the most common fixes at 20. After that, you build a second one."),
+ "b4task2": ("Start the timer. Walk the room.",
+  "Round two. You build a second agent, on a different track and different data. Pick any track you did not use, and get its file from the lab page, step 8. "
+  "Same five parts, new task. Use the track's starting example from this morning's tracks slide. You will see it goes much faster the second time, because the method does not change. "
+  "Check two items by hand, and fix the instructions if one is wrong. You have 25 minutes."),
  "b5story": (None,
   "Meet Noura, a project coordinator. Each week she takes the same files out of the drive and drops them into a chat, one at a time. How many files do you drag into a tool each week? "
   "Tomorrow your agent runs at eight in the morning. Nobody will be there to drag the files. So the agent has to read them where they already are."),
@@ -190,7 +194,7 @@ SCRIPT = {
   "The same table as before. And look: it lists the files it read, exactly two. It read only what it needed."),
  "b5task1": ("Start the timer. Walk the room.",
   "Your turn. Connect Google Drive with your CODED training account, not your personal one. Then find your track folder in the Mirqab sandbox; your files are in its Inbox. "
-  "In your Project, copy the folder prompt from the prompt sheet, add your folder name, and run it. Make sure it tells you which files it read. You have 15 minutes."),
+  "In your Project, copy the folder prompt from the prompt sheet, add your folder name, and run it. Make sure it tells you which files it read. You have 12 minutes."),
  "b5t2": (None,
   "Now the output. An artifact is something Claude makes that you can open and download, like a table or a spreadsheet. But a reviewer needs more than a file. "
   "They need the same shape every time: the same columns, in the same order, with the same total line. Like the firm's working-paper template, that is what lets you compare this week with last week."),
@@ -203,7 +207,10 @@ SCRIPT = {
   "And in other tools: in Copilot, the input is your work data in SharePoint, OneDrive and Outlook, and the output is a Copilot Page. In ChatGPT, it is apps and canvas. Different buttons, same four boxes."),
  "b5task2": ("Start the timer. Walk the room.",
   "Now give your agent a fixed shape. Take the output rule from the prompt sheet, write your own columns in the order you want them, and add it to your Project's instructions. "
-  "Then run it twice, each time in a new chat, and compare. Same columns, same order, same total? If not, fix the rule. You have 20 minutes."),
+  "Then run it twice, each time in a new chat, and compare. Same columns, same order, same total? If not, fix the rule. You have 11 minutes, and then you make a second artifact."),
+ "b5task3": ("Start the timer. Walk the room.",
+  "Now a second artifact, and a different kind. Open your second Project, attach that track's file again, and pick one of the two prompts on the prompt sheet: a chart, or a one-page memo for a manager. "
+  "When it appears, check two numbers or facts against the file. Then request a single edit, say a different heading, and see the artifact change in place. You have 12 minutes."),
  "b6story": (None,
   "Welcome back. Dana's agent works, but only in her own Project. Faisal asks two questions: could her colleagues use it too? And could it work tomorrow while Dana is busy? "
   "How does the firm share a method today? (Expected: a manual, a template, a checklist.) Right. A method that only one person can run is not really a method yet."),
@@ -221,10 +228,13 @@ SCRIPT = {
   "Imagine a friend at another firm who only has ChatGPT. Where would your method go? (Wait for hands.) The first one: a ChatGPT skill or custom GPT, with the same card inside."),
  "b6task": ("Start the timer. Walk the room.",
   "Now package your own method. In your Project, use the prompt from the prompt sheet to turn your instructions into a skill, and save it. Check that it appears under Customize, then Skills. "
-  "Then the real test: a brand-new chat, outside the Project. Attach your file and ask in one line. Claude should use your skill and give you the same shape. You have 20 minutes."),
+  "Then the real test: a brand-new chat, outside the Project. Attach your file and ask in one line. Claude should use your skill and give you the same shape. You have 14 minutes."),
+ "b6task1b": ("Start the timer. Walk the room.",
+  "Now package your second agent as a second skill. Then the interesting part: start a fresh chat with no Project, add the file from your second track, and make a one-line request. Does Claude pick the right skill? "
+  "Then try your first file in another new chat. Claude chooses a skill by its one-line description, so if it picks the wrong one, make that line more specific. You have 12 minutes."),
  "b6task2": ("Start the timer. Walk the room.",
-  "The last task of the day, and my favorite. Real files are messy. Get the messy file for your track from the lab page, step 11, and run your skill on it. "
-  "Each file hides a gap. A good agent flags it; a bad agent guesses. Which one is yours? Then time it: how long by hand, and how long with the agent. Note the two numbers on your lab page. You have 14 minutes."),
+  "The last task of the day, and my favorite. Real files are messy. Get the messy file for your track from the lab page, step 14, and run your skill on it. "
+  "Each file hides a gap. A good agent flags it; a bad agent guesses. Which one is yours? Then time it: how long by hand, and how long with the agent. Note the two numbers on your lab page. You have 8 minutes."),
  "b7show": ("Teams show at their own tables at the same time. Walk between them.",
   "Show time. Four teams, at your own tables. Each person has ninety seconds: first the card, then a live run on one of your files. Your team watches and asks one question. "
   "If a run hangs, show your last good result. Go."),

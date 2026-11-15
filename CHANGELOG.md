@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-15 · Day 1: a second round for each build block (Aya)
+
+- Two Projects, two artifacts, two skills. New tasks, each with a slide, a lab step, prompt-sheet entries and a script:
+  Task 1.6b Project 2 (a second agent on another track, 25 min), Task 1.8b Artifact 2 (a chart or a one-page memo from that data, 12 min),
+  Task 1.9b Skill 2 (package the second agent; check Claude picks the right skill for each file, 12 min).
+- To keep 08:30-16:30: Task 1.6 is 40 min (hint at 10, fixes at 20), Task 1.7 12, Task 1.8 11, Task 1.9 14, Task 1.10 8.
+- Lab steps after Task 1.6 move by one: Task 1.7 is step 9 and the messy file is step 14. Day 1 is 83 slides.
+
 ## 2026-11-15 · Day 1: speaker script, clear task steps, no shared board (Aya)
 
 - Day 1 speaker notes are a script: what to say, word for word, with short stage directions in brackets (`_source/kit/notes_day1.py`).
