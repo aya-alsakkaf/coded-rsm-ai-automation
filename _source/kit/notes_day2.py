@@ -7,7 +7,7 @@ HANDS = "Ask for hands up on each option, then tap the most popular one."
 
 SCRIPT = {
  "cover2": ("Leave this up while people arrive. Press → at 08:30.",
-  "Good morning, and welcome back. Please sit with your team today, and open claude.ai and the workshop site on your laptop. We start in a few minutes."),
+  "Good morning, and welcome back. Please sit with your team today, and open claude.ai and the workshop site on your laptop. Today's prompts are on the Day 2 prompt sheet: open it with the button on the Day 2 page. We start in a few minutes."),
  "outcomes2": (None,
   "Here is today. This morning you finish your own agent: one fixed shape for every run, a second artifact, and two skills. "
   "Then your team turns one agent into a workflow that runs without you, with your department's rules and one named reviewer. At 15:15 you show it to the panel. "

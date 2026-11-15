@@ -16,6 +16,8 @@
 - Day 2 lab: 12 steps (1 to 5 are the moved Day 1 tasks). Task 2.5 and the impact slide take the times from lab step 5 (the old Clock tab is gone).
 - Staff: lesson plan minutes, MAP "where taught" lines, card boxes, cheat sheet, pre-flight times and class plan updated. Day 2 is 71 slides.
   Portal surveys unchanged.
+- Day 2 steps send people to the prompt sheet with the Day 2 page's Open the prompt sheet button: the top-bar Prompts tab on the day and lab pages
+  opens the Day 1 sheet (engine behavior, not changed). The Day 2 cover script says this.
 
 ## 2026-11-15 · Lesson 4 goes straight to building (Aya, 13:00)
 

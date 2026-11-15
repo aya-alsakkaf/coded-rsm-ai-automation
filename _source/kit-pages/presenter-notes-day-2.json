@@ -1,6 +1,6 @@
 [
 {
-"say": "Good morning, and welcome back. Please sit with your team today, and open claude.ai and the workshop site on your laptop. We start in a few minutes.",
+"say": "Good morning, and welcome back. Please sit with your team today, and open claude.ai and the workshop site on your laptop. Today's prompts are on the Day 2 prompt sheet: open it with the button on the Day 2 page. We start in a few minutes.",
 "do": "Leave this up while people arrive. Press → at 08:30.",
 "expect": null,
 "silent": null,
@@ -10,7 +10,7 @@
 "t": "open",
 "k": "cover",
 "h": "Cover: welcome",
-"flat": "08:30 · cover. · Do: Leave this up while people arrive. Press → at 08:30. · Say: “Good morning, and welcome back. Please sit with your team today, and open claude.ai and the workshop site on your laptop. We start in a few minutes.”"
+"flat": "08:30 · cover. · Do: Leave this up while people arrive. Press → at 08:30. · Say: “Good morning, and welcome back. Please sit with your team today, and open claude.ai and the workshop site on your laptop. Today's prompts are on the Day 2 prompt sheet: open it with the button on the Day 2 page. We start in a few minutes.”"
 },
 {
 "say": "Here is today. This morning you finish your own agent: one fixed shape for every run, a second artifact, and two skills. Then your team turns one agent into a workflow that runs without you, with your department's rules and one named reviewer. At 15:15 you show it to the panel. Which of these matters most for your team? (Take two answers.)",

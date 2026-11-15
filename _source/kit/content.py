@@ -646,7 +646,7 @@ _MOVE = ["Same shape every run (Task 1.8)", "Artifact 2: a chart or a memo (Task
 _moved = {s["title"]: s for s in LABS[1]["steps"] if s["title"] in _MOVE}
 LABS[1]["steps"] = [s for s in LABS[1]["steps"] if s["title"] not in _MOVE]
 _TRACK = CD.TRACK_FILES
-_S2 = "the prompt sheet (Day 2 page → Prompts)"
+_S2 = "the prompt sheet (Day 2 page → Open the prompt sheet)"
 _moved["Same shape every run (Task 1.8)"].update(files=_TRACK, do=["Download your track's file under these steps, or use yesterday's copy.",
     f"Copy the Output rule from {_S2}, Task 1.8. Put your columns in the brackets, in order.",
     "In Claude, open your first Project's instructions and paste the rule at the end, under Output format. Save.",

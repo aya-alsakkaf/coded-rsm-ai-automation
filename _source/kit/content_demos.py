@@ -763,10 +763,10 @@ _i = [k for k, _v in _items].index("d21")
 _items[_i:_i] = [(k, DEMOS[k]) for k in _MOVED]
 DEMOS.clear(); DEMOS.update(_items)
 
-# Places, named the same way on Day 2: the Day 2 lab page (workshop site → Day 2 → Open the lab), the prompt sheet (Day 2 page → Prompts),
+# Places, named the same way on Day 2: the Day 2 lab page (workshop site → Day 2 → Open the lab), the prompt sheet (Day 2 page → Open the prompt sheet),
 # Claude (claude.ai), and the sandbox Drive (Mirqab sandbox → Packs, and each team's folder with Inbox, Processed, Outputs and Log).
 LAB2 = "the Day 2 lab page"
-SHEET2 = "the prompt sheet (Day 2 page → Prompts)"
+SHEET2 = "the prompt sheet (Day 2 page → Open the prompt sheet)"
 TEAM = f"{D.SANDBOX} → [your team folder]"
 WORKFLOW_CARD_TEMPLATE = ("When: [a day and a time, for example daily at 08:00]\n"
                           f"Input: [your team folder: {D.SANDBOX} / Team 1 to Team 4 / Inbox]\n"
@@ -776,7 +776,7 @@ WORKFLOW_CARD_TEMPLATE = ("When: [a day and a time, for example daily at 08:00]\
 DEMOS["t21"]["prompts"].insert(0, ("Workflow card template", WORKFLOW_CARD_TEMPLATE))
 _STEPS2 = {
  "t18": ["Get your track's file from step 1 of the Day 2 lab page, or use yesterday's copy.",
-         'Copy the Output rule from the prompt sheet (Day 2 page → Prompts), Task 1.8. Put your columns in the brackets, in order.',
+         'Copy the Output rule from the prompt sheet (Day 2 page → Open the prompt sheet), Task 1.8. Put your columns in the brackets, in order.',
          "Paste the rule at the end of your first Project's instructions, under Output format. Save.",
          'Run it twice, each time in a new chat in the Project. Same columns, order and total line? If not, fix the rule.'],
  "t18b": [f"Open your second Project (Task 1.6b) and start a new chat. Attach that track's file again: it is under step 2 of {LAB2}.",
@@ -802,7 +802,7 @@ _STEPS2 = {
          "Raise your hand. The trainer checks your card at your table."],
  "t22": ["Work on the skill owner's laptop. In Google Drive, copy your track pack from Mirqab sandbox → Packs into your team folder's Inbox.",
          'In Claude, click Scheduled in the left sidebar, then New task, then Set up manually.',
-         'Name it. Paste the Scheduled task prompt from the prompt sheet (Day 2 page → Prompts), Task 2.2. Fill the brackets from your card (lab step 6).',
+         'Name it. Paste the Scheduled task prompt from the prompt sheet (Day 2 page → Open the prompt sheet), Task 2.2. Fill the brackets from your card (lab step 6).',
          'Approval mode: the one that saves and moves files without waiting. Daily at 08:00. Save.',
          'Run it once on demand. Check Outputs and Log, and compare with your Day 1 result.'],
  "t23": ['In Scheduled (left sidebar), open your task. Check its prompt has the empty-folder line (prompt sheet, Task 2.3).',
