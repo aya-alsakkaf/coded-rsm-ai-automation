@@ -36,7 +36,7 @@ BATCH2_FILES = [F_INV2, F_LEDGER2, F_LEASE2, F_MGMT, F_EMAILS2, F_STATUS2]
 
 # prompt sheet sections: sec -> (day, name)
 BLOCK = {1: (1, "Opener"), 2: (1, "Lesson 1 · AI foundations"), 3: (1, "Lesson 2 · Why chat isn't enough"), 4: (1, "Lesson 3 · Pick and design"),
-         5: (1, "Lesson 4 · Build: Instruction"), 6: (1, "Lesson 5 · Build: Input and Output"), 7: (1, "Lesson 6 · Build: Package"), 8: (1, "Lesson 7 · Show and tell"),
+         5: (1, "Lesson 4 · Build your agent"), 6: (1, "Lesson 5 · Build: Input and Output"), 7: (1, "Lesson 6 · Build: Package"), 8: (1, "Lesson 7 · Show and tell"),
          9: (2, "Lesson 1 · From agent to system"), 10: (2, "Lesson 2 · Make it run on its own"), 11: (2, "Lesson 3 · New inputs, outputs and n8n"),
          12: (2, "Lesson 4 · Fit it to your department"), 13: (2, "Lesson 5 · Test and prepare the demo")}
 
@@ -747,3 +747,4 @@ _after("t16b", "t16"); _after("t18b", "t18"); _after("t19b", "t19")
 DEMOS["t16"]["minutes"] = 40; DEMOS["t16"]["say"] = "Struggle first. A hint at 10 minutes, then the most common fixes at 20."
 DEMOS["t17"]["minutes"] = 12; DEMOS["t18"]["minutes"] = 11; DEMOS["t19"]["minutes"] = 14; DEMOS["t110"]["minutes"] = 8
 DEMOS["t110"]["setup"] = [x.replace("step 11 of the Day 1 lab page", "step 14 of the Day 1 lab page") for x in DEMOS["t110"]["setup"]]
+DEMOS["t16"]["minutes"] = 48; DEMOS["t16b"]["minutes"] = 29

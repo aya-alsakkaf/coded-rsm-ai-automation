@@ -51,7 +51,7 @@ DAYS = {
                ("10:20-10:30", "Break", ""),
                ("10:30-11:30", "Lesson 3 · Pick your task and design the agent", "Score and pick, the Agent Card, then a Project · Tasks 1.4 and 1.5"),
                ("11:30-12:30", "Lunch and Dhuhr prayer", ""),
-               ("12:30-13:50", "Lesson 4 · Build: Instruction", "The five-part instruction · Project 1 and Project 2 · Tasks 1.6 and 1.6b"),
+               ("12:30-13:50", "Lesson 4 · Build your agent", "Your own agent, then a second one · Tasks 1.6 and 1.6b"),
                ("13:50-14:00", "Break", ""),
                ("14:00-14:55", "Lesson 5 · Build: Input and Output", "Connectors, then two artifacts · Tasks 1.7, 1.8 and 1.8b"),
                ("14:55-15:15", "Asr prayer and break", ""),
@@ -169,7 +169,7 @@ MAP_MIN = 10
 MAP_LEDE = {"before": f"{len(MAP)} questions and {len(OUTCOMES)} confidence ratings, about {MAP_MIN} minutes. The same test at the end of Day 2. Not graded. Phone only: no notes, no search, no AI."}
 
 # ------------------------------------------------------------------ the approved slide plan
-SLIDES = {1: 83, 2: 55}
+SLIDES = {1: 78, 2: 55}
 
 # ------------------------------------------------------------------ MAP tests and the final survey (the three portal drafts of this program, updated in place)
 PORTAL = "https://platform.joincoded.com/sv/"
@@ -400,8 +400,7 @@ SEGMENTS = {
      ("10:30-11:30", "Lesson 3 · Pick your task and design the agent", [("10:30", 2, "Story"), ("10:32", 2, "Scoring a use case"), ("10:34", 4, "Demo 1.3 live · Dana scores her three candidates"),
                                                    ("10:38", 1, "The four tracks"), ("10:39", 6, "The Agent Card and literal instructions, with checks"), ("10:45", 17, "Task 1.4 · Agent Card v1"),
                                                    ("11:02", 4, "Projects, knowledge versus input, with a check"), ("11:06", 5, "Demo 1.4 live · From card to agent"), ("11:11", 19, "Task 1.5 · Build the invoice agent with me")]),
-     ("12:30-13:50", "Lesson 4 · Build: Instruction", [("12:30", 5, "Late approvals and the story"), ("12:35", 5, "The five-part instruction, an example output, test before you trust, with a check"),
-                                                   ("12:40", 4, "Demo 1.5 live in Claude"), ("12:44", 1, "Transfer: instructions in other tools"), ("12:45", 40, "Task 1.6 · Project 1: build v1 (struggle 20, unlock 10, fix 10)"), ("13:25", 25, "Task 1.6b · Project 2: a second agent on another track")]),
+     ("12:30-13:50", "Lesson 4 · Build your agent", [("12:30", 3, "Test before you trust"), ("12:33", 48, "Task 1.6 · Project 1: build v1 (struggle 20, unlock 10, fix 18)"), ("13:21", 29, "Task 1.6b · Project 2: a second agent on another track")]),
      ("14:00-14:55", "Lesson 5 · Build: Input and Output", [("14:00", 2, "Story: Noura's Sunday"), ("14:02", 3, "Connectors and the sandbox, with a check"), ("14:05", 5, "Demo 1.6 live in Claude"),
                                                    ("14:10", 12, "Task 1.7 · Run from the folder"), ("14:22", 5, "Artifacts and a fixed shape, with a check"), ("14:27", 5, "Demo 1.7 live in Claude, and the transfer slide (before the task)"),
                                                    ("14:32", 11, "Task 1.8 · Artifact 1: fixed-shape output"), ("14:43", 12, "Task 1.8b · Artifact 2: a chart or a memo")]),

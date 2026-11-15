@@ -650,34 +650,8 @@
 "flat": "19 min work, then share. · Do: Start the timer. Build it on your screen, step by step. · Expect: The same table for everyone: BPK-4471, WDS-20931 and SGT-11205 Matched; SCC-0718 Amount differs (36.000); FSC-3390 Not in ledger. · Fallback: Anyone behind copies the instructions from the prompt sheet and runs it with the trainer's next run. · Say: “Now you build the same agent with me, step by step. Get the three files from the lab page, step 5. Together we create the Project, paste the instructions from the prompt sheet, add the template, and run it. Follow my screen. If you fall behind, raise your hand and we help you catch up. When it finishes, look at the Status column: two rows should show a problem.”"
 },
 {
-"say": "Welcome back from lunch. Faisal reviews Dana's first agent. At first glance the table is fine. Then he spots it: an invoice without a PO number, and the agent made one up. What should the agent have written? (Expected: Not found.) Exactly. This lesson is about instructions that stop that from happening.",
-"do": "Approve the last Agent Cards while the room settles.",
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": "12:30-13:50",
-"t": "b4",
-"k": "story",
-"h": "Lesson 4 · Build: Instruction",
-"flat": "12:30-13:50. · Do: Approve the last Agent Cards while the room settles. · Say: “Welcome back from lunch. Faisal reviews Dana's first agent. At first glance the table is fine. Then he spots it: an invoice without a PO number, and the agent made one up. What should the agent have written? (Expected: Not found.) Exactly. This lesson is about instructions that stop that from happening.”"
-},
-{
-"say": "Remember the five parts from this morning? Here they are again, now saved as the agent's instructions. Look at the invoice agent column. Which part would have saved Dana's PO number? (Expected: When unsure.) Yes. It is the part people forget, and the part that stops the agent from guessing.",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": null,
-"t": "b4",
-"k": "table",
-"h": "Five parts. Every instruction.",
-"flat": "Say: “Remember the five parts from this morning? Here they are again, now saved as the agent's instructions. Look at the invoice agent column. Which part would have saved Dana's PO number? (Expected: When unsure.) Yes. It is the part people forget, and the part that stops the agent from guessing.”"
-},
-{
-"say": "Two habits make agents reliable. First, show one example: a single finished output saved in the Project shows Claude the shape better than any long explanation. Second, test before you trust: check three cases where you already know the answer. It is what you do with a new joiner: you give them one model working paper, then check the first three they do. And when something is wrong, change the instructions, not the result.",
-"do": null,
+"say": "Welcome back from lunch. You already know the five parts, so this lesson is for building. First, two habits make agents reliable. First, show one example: a single finished output saved in the Project shows Claude the shape better than any long explanation. Second, test before you trust: check three cases where you already know the answer. It is what you do with a new joiner: you give them one model working paper, then check the first three they do. And when something is wrong, change the instructions, not the result.",
+"do": "Approve any Agent Cards still waiting while the room settles.",
 "expect": null,
 "silent": null,
 "fallback": null,
@@ -686,72 +660,33 @@
 "t": "b4",
 "k": "term",
 "h": "Show one example. Then test three.",
-"flat": "Say: “Two habits make agents reliable. First, show one example: a single finished output saved in the Project shows Claude the shape better than any long explanation. Second, test before you trust: check three cases where you already know the answer. It is what you do with a new joiner: you give them one model working paper, then check the first three they do. And when something is wrong, change the instructions, not the result.”"
+"flat": "Do: Approve any Agent Cards still waiting while the room settles. · Say: “Welcome back from lunch. You already know the five parts, so this lesson is for building. First, two habits make agents reliable. First, show one example: a single finished output saved in the Project shows Claude the shape better than any long explanation. Second, test before you trust: check three cases where you already know the answer. It is what you do with a new joiner: you give them one model working paper, then check the first three they do. And when something is wrong, change the instructions, not the result.”"
 },
 {
-"say": "Your agent invents a PO number when there is none. What do you fix? (Wait for hands.) The When unsure part: tell it to write Not found, and never to guess. Fix the rule once, instead of fixing every answer by hand.",
-"do": "Ask for hands up on each option, then tap the most popular one.",
-"expect": "Option B.",
-"silent": null,
-"fallback": null,
-"more": [],
-"time": "1 min",
-"t": "b4",
-"k": "check",
-"h": "Quick check",
-"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · Say: “Your agent invents a PO number when there is none. What do you fix? (Wait for hands.) The When unsure part: tell it to write Not found, and never to guess. Fix the rule once, instead of fixing every answer by hand.”"
-},
-{
-"say": "Let me show you a full run of Dana's agent. Here are the instructions, in five parts. (Run it.) I checked three rows by hand before, so I can compare. BPK-4471: matched. SCC-0718: the amount differs. And FSC-3390 is not in the ledger. Why? (Expected: it is outside the October ledger, a cut-off item.) The agent found it because the rules told it exactly what to compare.",
-"do": "Switch to Claude and run it live. Open the Mirqab invoice match Project. Show the instructions as five parts. Run it. Compare three rows with the answers you checked by hand: BPK-4471, SCC-0718 and FSC-3390.",
-"expect": null,
-"silent": null,
-"fallback": "Show the backup table. The expected result is on the staff backup page, Demo 1.5.",
-"more": [],
-"time": "4 min",
-"t": "b4",
-"k": "live",
-"h": "Demo 1.5 live in Claude: From card to five-part instructions",
-"flat": "4 min. · Do: Switch to Claude and run it live. Open the Mirqab invoice match Project. Show the instructions as five parts. Run it. Compare three rows with the answers you checked by hand: BPK-4471, SCC-0718 and FSC-3390. · Fallback: Show the backup table. The expected result is on the staff backup page, Demo 1.5. · Say: “Let me show you a full run of Dana's agent. Here are the instructions, in five parts. (Run it.) I checked three rows by hand before, so I can compare. BPK-4471: matched. SCC-0718: the amount differs. And FSC-3390 is not in the ledger. Why? (Expected: it is outside the October ledger, a cut-off item.) The agent found it because the rules told it exactly what to compare.”"
-},
-{
-"say": "A quick note for your work at RSM. These five parts work in any assistant. In ChatGPT they go into a Project or a custom GPT, in Copilot into an agent, and in Gemini into a Gem. Different box, same five parts.",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": null,
-"t": "b4",
-"k": "table",
-"h": "Instructions in other tools.",
-"flat": "Say: “A quick note for your work at RSM. These five parts work in any assistant. In ChatGPT they go into a Project or a custom GPT, in Copilot into an agent, and in Gemini into a Gem. Different box, same five parts.”"
-},
-{
-"say": "Now the big one: you build your own agent. You have 40 minutes. Get your track's file from the lab page, step 7. Create your own Project, paste the five-part template from the prompt sheet, and fill it in from your Agent Card. Before you run it, check three items by hand, so you know the right answer. Then run it and compare. If something is wrong, fix the instructions and run again. Struggle a little first; that is where the learning happens. I give a hint at 10 minutes, and show the most common fixes at 20. After that, you build a second one.",
+"say": "Now the big one: you build your own agent. You have 48 minutes. Get your track's file from the lab page, step 7. Create your own Project, paste the five-part template from the prompt sheet, and fill it in from your Agent Card. Before you run it, check three items by hand, so you know the right answer. Then run it and compare. If something is wrong, fix the instructions and run again. Struggle a little first; that is where the learning happens. I give a hint at 10 minutes, and show the most common fixes at 20. After that, you build a second one.",
 "do": "Start the timer. Hint at 15 minutes; common fixes at 30.",
 "expect": "A Project per person whose result is right on the three items checked by hand.",
 "silent": null,
 "fallback": "Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts.",
 "more": [],
-"time": "40 min work, then share",
+"time": "48 min work, then share",
 "t": "b4",
 "k": "task",
-"h": "Your turn 1.6: Build v1 of your agent (40 min, on your own)",
-"flat": "40 min work, then share. · Do: Start the timer. Hint at 15 minutes; common fixes at 30. · Expect: A Project per person whose result is right on the three items checked by hand. · Fallback: Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts. · Say: “Now the big one: you build your own agent. You have 40 minutes. Get your track's file from the lab page, step 7. Create your own Project, paste the five-part template from the prompt sheet, and fill it in from your Agent Card. Before you run it, check three items by hand, so you know the right answer. Then run it and compare. If something is wrong, fix the instructions and run again. Struggle a little first; that is where the learning happens. I give a hint at 10 minutes, and show the most common fixes at 20. After that, you build a second one.”"
+"h": "Your turn 1.6: Build v1 of your agent (48 min, on your own)",
+"flat": "48 min work, then share. · Do: Start the timer. Hint at 15 minutes; common fixes at 30. · Expect: A Project per person whose result is right on the three items checked by hand. · Fallback: Hint 3: the trainer opens the worked Project for your track on screen, or gives you its five parts. · Say: “Now the big one: you build your own agent. You have 48 minutes. Get your track's file from the lab page, step 7. Create your own Project, paste the five-part template from the prompt sheet, and fill it in from your Agent Card. Before you run it, check three items by hand, so you know the right answer. Then run it and compare. If something is wrong, fix the instructions and run again. Struggle a little first; that is where the learning happens. I give a hint at 10 minutes, and show the most common fixes at 20. After that, you build a second one.”"
 },
 {
-"say": "Round two. You build a second agent, on a different track and different data. Pick any track you did not use, and get its file from the lab page, step 8. Same five parts, new task. Use the track's starting example from this morning's tracks slide. You will see it goes much faster the second time, because the method does not change. Check two items by hand, and fix the instructions if one is wrong. You have 25 minutes.",
+"say": "Round two. You build a second agent, on a different track and different data. Pick any track you did not use, and get its file from the lab page, step 8. Same five parts, new task. Use the track's starting example from this morning's tracks slide. You will see it goes much faster the second time, because the method does not change. Check two items by hand, and fix the instructions if one is wrong. You have 29 minutes.",
 "do": "Start the timer. Walk the room.",
 "expect": "A second Project on a different track, right on the two items checked by hand.",
 "silent": null,
 "fallback": "Anyone stuck copies the structure of their first Project and changes only the Role, the Steps and the Output columns.",
 "more": [],
-"time": "25 min work, then share",
+"time": "29 min work, then share",
 "t": "b4",
 "k": "task",
-"h": "Your turn 1.6b: Project 2: a second agent (25 min, on your own)",
-"flat": "25 min work, then share. · Do: Start the timer. Walk the room. · Expect: A second Project on a different track, right on the two items checked by hand. · Fallback: Anyone stuck copies the structure of their first Project and changes only the Role, the Steps and the Output columns. · Say: “Round two. You build a second agent, on a different track and different data. Pick any track you did not use, and get its file from the lab page, step 8. Same five parts, new task. Use the track's starting example from this morning's tracks slide. You will see it goes much faster the second time, because the method does not change. Check two items by hand, and fix the instructions if one is wrong. You have 25 minutes.”"
+"h": "Your turn 1.6b: Project 2: a second agent (29 min, on your own)",
+"flat": "29 min work, then share. · Do: Start the timer. Walk the room. · Expect: A second Project on a different track, right on the two items checked by hand. · Fallback: Anyone stuck copies the structure of their first Project and changes only the Role, the Steps and the Output columns. · Say: “Round two. You build a second agent, on a different track and different data. Pick any track you did not use, and get its file from the lab page, step 8. Same five parts, new task. Use the track's starting example from this morning's tracks slide. You will see it goes much faster the second time, because the method does not change. Check two items by hand, and fix the instructions if one is wrong. You have 29 minutes.”"
 },
 {
 "say": "Meet Noura, a project coordinator. Each week she takes the same files out of the drive and drops them into a chat, one at a time. How many files do you drag into a tool each week? Tomorrow your agent runs at eight in the morning. Nobody will be there to drag the files. So the agent has to read them where they already are.",

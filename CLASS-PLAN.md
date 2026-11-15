@@ -20,7 +20,7 @@ Generated from `_source/kit/` by `_source/tools/class_plan.py`. Do not edit by h
 | 10:20-10:30 | Break | 10 | Break |
 | 10:30-11:30 | Lesson 3 · Pick your task and design the agent | 60 | Score and pick, the Agent Card, then a Project · Tasks 1.4 and 1.5 |
 | 11:30-12:30 | Lunch and Dhuhr prayer | 60 | Break |
-| 12:30-13:50 | Lesson 4 · Build: Instruction | 80 | The five-part instruction · Project 1 and Project 2 · Tasks 1.6 and 1.6b |
+| 12:30-13:50 | Lesson 4 · Build your agent | 80 | Your own agent, then a second one · Tasks 1.6 and 1.6b |
 | 13:50-14:00 | Break | 10 | Break |
 | 14:00-14:55 | Lesson 5 · Build: Input and Output | 55 | Connectors, then two artifacts · Tasks 1.7, 1.8 and 1.8b |
 | 14:55-15:15 | Asr prayer and break | 20 | Break |
@@ -37,8 +37,8 @@ Teaching minutes: 360.
 | 1.3 | Your task inventory | 8 | on your own | your own work | 10 tasks tagged, your top 3, and your strongest task ready to say aloud. |
 | 1.4 | Write your Agent Card v1 | 17 | on your own | your own work | An Agent Card v1, approved by the trainer at your seat. |
 | 1.5 | Build the invoice agent with me | 19 | on your own, with the trainer | abdali-supplier-invoices-oct-2026.pdf, abdali-purchase-ledger-oct-2026.xlsx, mirqab-invoice-match-template.xlsx | A Project named Mirqab invoice match and a table that flags both problems. |
-| 1.6 | Build v1 of your agent | 40 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | Your own Project, right on the three items you checked by hand. |
-| 1.6b | Project 2: a second agent | 25 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | A second Project, on a different track and a different file. |
+| 1.6 | Build v1 of your agent | 48 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | Your own Project, right on the three items you checked by hand. |
+| 1.6b | Project 2: a second agent | 29 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | A second Project, on a different track and a different file. |
 | 1.7 | Run from the folder | 12 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | One run from your track folder, with the list of files read. |
 | 1.8 | Fixed-shape output | 11 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | One artifact or Excel file, in the same shape on two runs. |
 | 1.8b | Artifact 2: a different kind of output | 12 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | A second artifact, of a different kind, from different data. |

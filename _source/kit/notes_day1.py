@@ -163,8 +163,8 @@ SCRIPT = {
  "b4parts": (None,
   "Remember the five parts from this morning? Here they are again, now saved as the agent's instructions. Look at the invoice agent column. "
   "Which part would have saved Dana's PO number? (Expected: When unsure.) Yes. It is the part people forget, and the part that stops the agent from guessing."),
- "b4t2": (None,
-  "Two habits make agents reliable. First, show one example: a single finished output saved in the Project shows Claude the shape better than any long explanation. "
+ "b4t2": ("Approve any Agent Cards still waiting while the room settles.",
+  "Welcome back from lunch. You already know the five parts, so this lesson is for building. First, two habits make agents reliable. First, show one example: a single finished output saved in the Project shows Claude the shape better than any long explanation. "
   "Second, test before you trust: check three cases where you already know the answer. It is what you do with a new joiner: you give them one model working paper, then check the first three they do. And when something is wrong, change the instructions, not the result."),
  "b4chk": (HANDS,
   "Your agent invents a PO number when there is none. What do you fix? (Wait for hands.) The When unsure part: tell it to write Not found, and never to guess. Fix the rule once, instead of fixing every answer by hand."),
@@ -174,13 +174,13 @@ SCRIPT = {
  "b4map": (None,
   "A quick note for your work at RSM. These five parts work in any assistant. In ChatGPT they go into a Project or a custom GPT, in Copilot into an agent, and in Gemini into a Gem. Different box, same five parts."),
  "b4task": ("Start the timer. Hint at 15 minutes; common fixes at 30.",
-  "Now the big one: you build your own agent. You have 40 minutes. Get your track's file from the lab page, step 7. Create your own Project, paste the five-part template from the prompt sheet, and fill it in from your Agent Card. "
+  "Now the big one: you build your own agent. You have 48 minutes. Get your track's file from the lab page, step 7. Create your own Project, paste the five-part template from the prompt sheet, and fill it in from your Agent Card. "
   "Before you run it, check three items by hand, so you know the right answer. Then run it and compare. If something is wrong, fix the instructions and run again. "
   "Struggle a little first; that is where the learning happens. I give a hint at 10 minutes, and show the most common fixes at 20. After that, you build a second one."),
  "b4task2": ("Start the timer. Walk the room.",
   "Round two. You build a second agent, on a different track and different data. Pick any track you did not use, and get its file from the lab page, step 8. "
   "Same five parts, new task. Use the track's starting example from this morning's tracks slide. You will see it goes much faster the second time, because the method does not change. "
-  "Check two items by hand, and fix the instructions if one is wrong. You have 25 minutes."),
+  "Check two items by hand, and fix the instructions if one is wrong. You have 29 minutes."),
  "b5story": (None,
   "Meet Noura, a project coordinator. Each week she takes the same files out of the drive and drops them into a chat, one at a time. How many files do you drag into a tool each week? "
   "Tomorrow your agent runs at eight in the morning. Nobody will be there to drag the files. So the agent has to read them where they already are."),

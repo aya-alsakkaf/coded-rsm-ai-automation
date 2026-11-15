@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-15 · Lesson 4 goes straight to building (Aya, 13:00)
+
+- Removed the repeated Lesson 4 teaching: the PO story, the five parts table, its check, Demo 1.5 (live) and the instructions transfer slide.
+  Lesson 4 is now: test before you trust, Task 1.6 (48 min), Task 1.6b (29 min). Lesson 4 is called "Build your agent". Day 1 is 78 slides.
+- Demo 1.5 stays on the prompt sheet as a five-part example; it has no slide, so Day 1 demos go 1.4, then 1.6.
+
 ## 2026-11-15 · Day 1: a second round for each build block (Aya)
 
 - Two Projects, two artifacts, two skills. New tasks, each with a slide, a lab step, prompt-sheet entries and a script:

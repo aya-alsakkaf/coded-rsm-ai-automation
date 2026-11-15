@@ -122,8 +122,8 @@
 "Lesson 3 · Pick your task and design the agent",
 "Score and pick, the Agent Card, then a Project · Tasks 1.4 and 1.5",
 "12:30-13:50",
-"Lesson 4 · Build: Instruction",
-"The five-part instruction · Project 1 and Project 2 · Tasks 1.6 and 1.6b",
+"Lesson 4 · Build your agent",
+"Your own agent, then a second one · Tasks 1.6 and 1.6b",
 "14:00-14:55",
 "Lesson 5 · Build: Input and Output",
 "Connectors, then two artifacts · Tasks 1.7, 1.8 and 1.8b",
@@ -1255,56 +1255,6 @@
 },
 {
 "n": 51,
-"id": "b4story",
-"kind": "story",
-"title": "Lesson 4 · Build: Instruction",
-"topic": "b4",
-"kit": [
-"Lesson 4 · Build: Instruction",
-"Sunday 1 November, 12:30",
-"Faisal reviews Dana's first agent. The table looks right, but one supplier had no PO number, and the agent filled in a likely one.",
-"The fifth part is the one people forget.",
-"Write instructions in five parts and test them.",
-"04"
-],
-"chrome": [
-"The starting point",
-"By the end of this block:"
-]
-},
-{
-"n": 52,
-"id": "b4parts",
-"kind": "table",
-"title": "Five parts. Every instruction.",
-"topic": "b4",
-"kit": [
-"Lesson 4 · the five parts",
-"Five parts. Every instruction.",
-"Role · Steps · Rules · Output format · When unsure.",
-"Part",
-"It tells Claude",
-"Invoice agent",
-"Role",
-"Who it is",
-"An audit associate at Mirqab",
-"Steps",
-"What to do, in order",
-"Read, find, compare",
-"Rules",
-"What must always be true",
-"KWD, three decimals, never round",
-"Output format",
-"The exact shape",
-"The template's columns",
-"When unsure",
-"What to do with a gap",
-"Write Not found. Never guess."
-],
-"chrome": []
-},
-{
-"n": 53,
 "id": "b4t2",
 "kind": "term",
 "title": "Show one example. Then test three.",
@@ -1323,76 +1273,7 @@
 ]
 },
 {
-"n": 54,
-"id": "b4chk",
-"kind": "check",
-"title": "Quick check",
-"topic": "b4",
-"kit": [
-"Your agent fills in a likely PO number when the invoice has none. What do you fix?",
-"The answer, by hand, each time",
-"The When unsure part: write Not found, never guess",
-"Nothing: the PO looked right"
-],
-"chrome": [
-"Quick check",
-"A",
-"B",
-"C",
-"Correct",
-"Not quite"
-]
-},
-{
-"n": 55,
-"id": "b4pp",
-"kind": "live",
-"title": "Demo 1.5 · live in Claude",
-"topic": "b4",
-"kit": [
-"Demo 1.5 · Claude Projects",
-"From card to five-part instructions.",
-"Find the row the agent marked Not in ledger. Why?",
-"Role, Steps, Rules, Output format, When unsure. Then test.",
-"Demo 1.5",
-"abdali-supplier-invoices-oct-2026.pdf",
-"abdali-purchase-ledger-oct-2026.xlsx",
-"mirqab-invoice-match-template.xlsx"
-],
-"chrome": [
-"Live in Claude",
-"Watch for",
-"Files",
-"Nothing to attach.",
-"Prompt: the prompt sheet,",
-"Prompt",
-"the prompt sheet"
-]
-},
-{
-"n": 56,
-"id": "b4map",
-"kind": "table",
-"title": "Instructions in other tools.",
-"topic": "b4",
-"kit": [
-"Lesson 4 · transfer",
-"Instructions in other tools.",
-"The five parts work in every assistant. Paste them where the tool keeps its instructions.",
-"Claude",
-"ChatGPT",
-"Microsoft 365 Copilot",
-"Gemini",
-"Instruction",
-"Project",
-"Project or custom GPT",
-"Agent (Agent Builder) or Notebook",
-"Gem"
-],
-"chrome": []
-},
-{
-"n": 57,
+"n": 52,
 "id": "b4task",
 "kind": "task",
 "title": "Your turn 1.6",
@@ -1418,7 +1299,7 @@
 "Run on the attached file. Then list every row you are not sure about.",
 "Claude slow or a file not loading? Continue from the backup on the screen.",
 "Your turn: build v1 of your agent.",
-"Lesson 4 · Build: Instruction"
+"Lesson 4 · Build your agent"
 ],
 "chrome": [
 "Your turn",
@@ -1448,7 +1329,7 @@
 ]
 },
 {
-"n": 58,
+"n": 53,
 "id": "b4task2",
 "kind": "task",
 "title": "Your turn 1.6b",
@@ -1474,7 +1355,7 @@
 "Run on the attached file. Then list every row you are not sure about.",
 "Claude slow or a file not loading? Continue from the backup on the screen.",
 "Your turn: project 2: a second agent.",
-"Lesson 4 · Build: Instruction"
+"Lesson 4 · Build your agent"
 ],
 "chrome": [
 "Your turn",
@@ -1504,7 +1385,7 @@
 ]
 },
 {
-"n": 59,
+"n": 54,
 "id": "b5story",
 "kind": "story",
 "title": "Lesson 5 · Build: Input and Output",
@@ -1523,7 +1404,7 @@
 ]
 },
 {
-"n": 60,
+"n": 55,
 "id": "b5t1",
 "kind": "term",
 "title": "A key to one cabinet, not the whole archive.",
@@ -1542,7 +1423,7 @@
 ]
 },
 {
-"n": 61,
+"n": 56,
 "id": "b5chk1",
 "kind": "check",
 "title": "Quick check",
@@ -1563,7 +1444,7 @@
 ]
 },
 {
-"n": 62,
+"n": 57,
 "id": "b5pp1",
 "kind": "live",
 "title": "Demo 1.6 · live in Claude",
@@ -1588,7 +1469,7 @@
 ]
 },
 {
-"n": 63,
+"n": 58,
 "id": "b5task1",
 "kind": "task",
 "title": "Your turn 1.7",
@@ -1642,7 +1523,7 @@
 ]
 },
 {
-"n": 64,
+"n": 59,
 "id": "b5t2",
 "kind": "term",
 "title": "Same shape. Every run.",
@@ -1661,7 +1542,7 @@
 ]
 },
 {
-"n": 65,
+"n": 60,
 "id": "b5chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1682,7 +1563,7 @@
 ]
 },
 {
-"n": 66,
+"n": 61,
 "id": "b5pp2",
 "kind": "live",
 "title": "Demo 1.7 · live in Claude",
@@ -1708,7 +1589,7 @@
 ]
 },
 {
-"n": 67,
+"n": 62,
 "id": "b5map",
 "kind": "table",
 "title": "Input and output in other tools.",
@@ -1735,7 +1616,7 @@
 "chrome": []
 },
 {
-"n": 68,
+"n": 63,
 "id": "b5task2",
 "kind": "task",
 "title": "Your turn 1.8",
@@ -1791,7 +1672,7 @@
 ]
 },
 {
-"n": 69,
+"n": 64,
 "id": "b5task3",
 "kind": "task",
 "title": "Your turn 1.8b",
@@ -1847,7 +1728,7 @@
 ]
 },
 {
-"n": 70,
+"n": 65,
 "id": "b6story",
 "kind": "story",
 "title": "Lesson 6 · Build: Package",
@@ -1866,7 +1747,7 @@
 ]
 },
 {
-"n": 71,
+"n": 66,
 "id": "b6t1",
 "kind": "term",
 "title": "From your desk to the firm's manual.",
@@ -1885,7 +1766,7 @@
 ]
 },
 {
-"n": 72,
+"n": 67,
 "id": "b6chk",
 "kind": "check",
 "title": "Quick check",
@@ -1906,7 +1787,7 @@
 ]
 },
 {
-"n": 73,
+"n": 68,
 "id": "b6pp",
 "kind": "live",
 "title": "Demo 1.8 · live in Claude",
@@ -1930,7 +1811,7 @@
 ]
 },
 {
-"n": 74,
+"n": 69,
 "id": "b6map",
 "kind": "table",
 "title": "A packaged method in other tools.",
@@ -1952,7 +1833,7 @@
 "chrome": []
 },
 {
-"n": 75,
+"n": 70,
 "id": "b6chk2",
 "kind": "check",
 "title": "Quick check",
@@ -1973,7 +1854,7 @@
 ]
 },
 {
-"n": 76,
+"n": 71,
 "id": "b6task",
 "kind": "task",
 "title": "Your turn 1.9",
@@ -2030,7 +1911,7 @@
 ]
 },
 {
-"n": 77,
+"n": 72,
 "id": "b6task1b",
 "kind": "task",
 "title": "Your turn 1.9b",
@@ -2086,7 +1967,7 @@
 ]
 },
 {
-"n": 78,
+"n": 73,
 "id": "b6task2",
 "kind": "task",
 "title": "Your turn 1.10",
@@ -2140,7 +2021,7 @@
 ]
 },
 {
-"n": 79,
+"n": 74,
 "id": "b7show",
 "kind": "timer",
 "title": "Four teams. Ninety seconds each person.",
@@ -2159,7 +2040,7 @@
 ]
 },
 {
-"n": 80,
+"n": 75,
 "id": "b7demo",
 "kind": "live",
 "title": "Demo 1.9 · live in Claude",
@@ -2182,7 +2063,7 @@
 ]
 },
 {
-"n": 81,
+"n": 76,
 "id": "b7map",
 "kind": "table",
 "title": "Same building blocks, different names.",
@@ -2225,7 +2106,7 @@
 "chrome": []
 },
 {
-"n": 82,
+"n": 77,
 "id": "w1",
 "kind": "wrap",
 "title": "Wrap-up",
@@ -2250,7 +2131,7 @@
 ]
 },
 {
-"n": 83,
+"n": 78,
 "id": "close1",
 "kind": "close",
 "title": "Close",

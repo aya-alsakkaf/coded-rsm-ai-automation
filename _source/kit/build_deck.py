@@ -354,27 +354,11 @@ def day1():
         [("Into the Project knowledge", 0, "Knowledge is for what stays the same."), ("Into each run: attached, or read from the folder", 1, "Right. Input changes every run."), ("Into the Project instructions", 0, "Instructions are the rules, not the documents.")]))
     s.append(livedemo("b3pp", "b3", "d14", time="5 min"))
     s.append(task("b3task", "b3", "t14", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
-    # Lesson 4 · Build: Instruction
-    s.append(story("b4story", "b4", "Lesson 4 · Build: Instruction", "Sunday 1 November, 12:30",
-        "Faisal reviews Dana's first agent. The table looks right, <b>but one supplier had no PO number, and the agent filled in a likely one.</b>",
-        "The fifth part is the one <span class=\"hl\">people forget.</span>", "Write instructions in five parts and test them.",
-        n=N(do="Approve the remaining cards in the first five minutes while the room reads.", expect="All cards approved by 12:35.", silent="ask: what should the agent have written?"), time="12:30-13:50"))
-    s.append(tslide("b4parts", "b4", "Lesson 4 · the five parts", "Five parts. <span class=\"hl\">Every instruction.</span>", ["Part", "It tells Claude", "Invoice agent"],
-        [["<b>Role</b>", "Who it is", "An audit associate at Mirqab"], ["<b>Steps</b>", "What to do, in order", "Read, find, compare"], ["<b>Rules</b>", "What must always be true", "KWD, three decimals, never round"],
-         ["<b>Output format</b>", "The exact shape", "The template's columns"], ["<b>When unsure</b>", "What to do with a gap", "Write Not found. Never guess."]],
-        "Role · Steps · Rules · Output format · When unsure.",
-        n=N(do="Link back to Demo 1.1: the same five parts, now saved as the agent's instructions. Map each part to Dana's card.", expect="When unsure is the part people miss.", silent="ask: which part would have saved Dana's PO?")))
+    # Lesson 4 · Build your agent (the five parts are not taught again: Lessons 2 and 3 already did)
     s.append(term("b4t2", "b4", "Lesson 4 · test", "Show one example. <span class=\"hl\">Then test three.</span>", "Example output and testing",
         "One filled <b>example output</b> in the knowledge teaches the shape faster than a description. Then check <b>three cases where you know the answer</b> before you trust it.",
         "A new joiner learns from one good working paper…", "…and you <b>review their first three</b>.", "Fix the instructions, not the answer.",
         n=N(do="Show the template with its example row.", expect="People see the example row in the knowledge file.", silent="ask: how many tests before you trust a new joiner?")))
-    s.append(check("b4chk", "b4", "Your agent fills in a likely PO number when the invoice has none. <b>What do you fix?</b>",
-        [("The answer, by hand, each time", 0, "Then it happens again next run."), ("The When unsure part: write Not found, never guess", 1, "Right. Fix the instructions."), ("Nothing: the PO looked right", 0, "Looked right is not right.")]))
-    s.append(livedemo("b4pp", "b4", "d16"))
-    s.append(tslide("b4map", "b4", "Lesson 4 · transfer", "Instructions <span class=\"hl\">in other tools.</span>", ["", "Claude", "ChatGPT", "Microsoft 365 Copilot", "Gemini"],
-        [["Instruction"] + C.TRANSFER[0][1:]],
-        "The five parts work in every assistant. Paste them where the tool keeps its instructions.", cls="tight",
-        n=N(do="Point to the Copilot or ChatGPT cell RSM is most likely to use.", expect="People see the same five parts in a different box.", silent="read the ChatGPT cell.")))
     s.append(task("b4task", "b4", "t16", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     s.append(task("b4task2", "b4", "t16b", n=N(do="Start the timer. Walk the room. Ask each person what they found so far.")))
     # Lesson 5 · Build: Input and Output
@@ -616,7 +600,7 @@ def day2():
     return s
 
 TOPICS = {1: {"open": "Opening", "b1": "Lesson 1 · AI foundations", "b2": "Lesson 2 · Why chat isn't enough", "b3": "Lesson 3 · Pick and design",
-              "b4": "Lesson 4 · Build: Instruction", "b5": "Lesson 5 · Build: Input and Output", "b6": "Lesson 6 · Build: Package", "b7": "Lesson 7 · Show and tell", "close": "Close"},
+              "b4": "Lesson 4 · Build your agent", "b5": "Lesson 5 · Build: Input and Output", "b6": "Lesson 6 · Build: Package", "b7": "Lesson 7 · Show and tell", "close": "Close"},
           2: {"open": "Opening", "c1": "Lesson 1 · From agent to system", "c2": "Lesson 2 · Make it run on its own", "c3": "Lesson 3 · New inputs, outputs and n8n",
               "c4": "Lesson 4 · Fit it to your department", "c5": "Lesson 5 · Test and prepare the demo", "c6": "Lesson 6 · Demo Day", "c7": "Post-MAP, survey and next steps", "close": "Close"}}
 DAYFN = {1: day1, 2: day2}
