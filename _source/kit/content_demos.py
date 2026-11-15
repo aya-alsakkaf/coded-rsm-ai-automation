@@ -849,3 +849,273 @@ DEMOS["t23"]["setup"] = ["Open your task under Scheduled. Check it has the empty
                          "Workflow teams: add the request list to the skill, and the tracker line. Analysis teams: the monthly line.",
                          "Copy your batch-2 file from Packs into the Inbox. Run on demand. Check Outputs and Log (lab step 8).",
                          "Empty the Inbox and run again. The run log should say No new files (lab step 9)."]
+
+# ===================================================================== Day 2 rebuild (Aya, 15 Nov night)
+# New order: skills (own task), artifacts (dashboards and decks), scheduled tasks, Claude or n8n or Power Automate (with the n8n demo),
+# then a mini project on a department pack, project demos, Post-MAP, survey and certificates. The old Day 2 demos and tasks
+# (the moved Day 1 output and package tasks, the team workflow card, batch 2, the rules, the failed run and Demo Day) are retired.
+import day2_data as X
+F_PORTFOLIO = X.F_PORTFOLIO
+F_BRIEFS = X.F_BRIEFS
+ALL_FILES = ALL_FILES + [F_PORTFOLIO] + X.PACK_FILES + [F_BRIEFS]
+_OLD2 = [k for k, v in DEMOS.items() if v.get("day") == 2]     # retired at the end of content.py (its Day 1 lab still reads them while it loads)
+def retire_old_day2():
+    for _k in _OLD2: DEMOS.pop(_k, None)
+BLOCK.update({20: (2, "Lesson 1 · Skills"), 21: (2, "Lesson 2 · Artifacts"), 22: (2, "Lesson 3 · Scheduled tasks"),
+              23: (2, "Lesson 4 · Claude, n8n or Power Automate"), 24: (2, "Lesson 5 · Mini project"), 25: (2, "Lesson 6 · Project demos")})
+LAB2 = "the Day 2 lab page"
+SHEET2 = "the prompt sheet (Day 2 page → Open the prompt sheet)"
+_K = X.PORT_KPI
+def _kwd(x): return f"KWD {x:,.3f}"
+
+SKILL_FROM_CARD = ("Help me build a Claude skill for a task I repeat at work. Here is my Agent Card, with no client or firm names: [paste your card]. "
+                   "First ask me up to five questions about the steps, the rules and the output. Then write the skill: a short name in lowercase with hyphens, "
+                   "a one-line description that says exactly when to use it, the steps, the rules, the output format with the columns in order, "
+                   "and what to do when unsure (write Not found, never guess). Then make it a skill file I can save.")
+TEST_FILE = ("Make a fictional test file for this skill: [file type, for example an Excel sheet] with 10 to 15 rows and 2 planted problems the skill should flag. "
+             "Use made-up names and amounts only. Do not tell me where the problems are.")
+DESC_FIX = ("Here is my skill's description: [paste it]. Rewrite it in one or two sentences so Claude uses the skill for [my task] with [file type], "
+            "and not for other requests. Keep it under 200 characters. Then update the skill so I can save it again.")
+DASH_DEMO = ("Role: You are a reporting analyst at Mirqab & Co. Data: the attached engagement portfolio. Build an interactive dashboard artifact for the partners. "
+             "KPI tiles at the top: total fee, billed as % of fee, collected as % of billed, hours used as % of budget, engagements over budget, "
+             "reports overdue (due before 16 November 2026 and not Closed). Charts: fee by service line; budget against actual hours by engagement. "
+             "A table of engagements that are At risk or Delayed. A filter by service line. Rules: use only the file and calculate with code. "
+             "If a value is blank or does not make sense, leave it out of that KPI and list it under Data issues. Never guess. Show the date of the data.")
+DECK_DEMO = ("Turn this dashboard into a 5-slide presentation for Monday's partners' meeting: a title, the KPIs, what is at risk, the data issues, "
+             "and the decisions we need. Use only the dashboard's figures. One idea per slide.")
+DASH_TEMPLATE = ("Role: You are a [job title] at Mirqab & Co. Data: the attached [file]. Build an interactive dashboard artifact for [who reads it]. "
+                 "KPI tiles at the top: [3 to 6 numbers, each with how to calculate it]. Charts: [1 or 2 charts]. A table of [the rows that need action]. "
+                 "A filter by [a column]. Rules: use only the file and calculate with code. If a value is blank or does not make sense, "
+                 "leave it out of that KPI and list it under Data issues. Never guess. Show the date of the data.")
+DASH_CHECK = "List every KPI on the dashboard with the formula you used and the rows you left out. Do not change the dashboard."
+DECK_TEMPLATE = ("Turn this dashboard into a [5]-slide presentation for [audience and meeting]: a title, the key numbers, what needs attention, "
+                 "the data issues, and the decision or next step. Use only the dashboard's figures. One idea per slide.")
+ARTIFACT_IN_SKILL = ("Add this to my skill [skill name]: after the analysis, always build the dashboard in this exact layout: [the tiles, the charts and the table, in order]. "
+                     "Keep every other rule word for word. Then update the skill so I can save it again.")
+PERSONAL_SCHED = (f"Use the [your skill name] skill. Read the files in Google Drive: {D.SANDBOX} / [your Day 1 track folder] / Inbox whose names start with [your initials]. "
+                  "Do not move, rename or delete any file: the folder is shared today. Save the result in [your folder] / Outputs, named "
+                  "[your initials]-[task]-YYYY-MM-DD-HHMM, with the date and time of the run. Save a run log in [your folder] / Log, named "
+                  "runlog-[your initials]-YYYY-MM-DD-HHMM.txt, with one line: date, files read, items flagged, file saved. "
+                  "If there are no files to read, write No new files in the run log and stop.")
+PROJECT_CARD = ("Department: [your department pack, or your own team]\n"
+                "Task: [what the agent does, in one line]\n"
+                "Input: [the file it reads, and where it lives]\n"
+                "Instruction: [the steps and two rules; what to do when unsure]\n"
+                "Output: [the artifact: a dashboard, a report or a deck, and its layout]\n"
+                "When: [the schedule, for example every Sunday at 08:00]\n"
+                "Who reviews: [one person's role or name]\n"
+                "Impact: [minutes by hand] - [minutes with the agent] x [runs a month]")
+BUILD_PLAN = ("Here is my project card: [paste it]. Give me a build plan for Claude in five steps: Project, skill, artifact, scheduled task, test. "
+              "Two lines for each step. Do not build anything yet.")
+CHECK3 = "List three figures from my output and the exact rows they come from in the source file, so I can check them by hand. Do not change anything."
+DEMO_SCRIPT = ("Write a 3-minute demo script for my project: the problem, the card, a live run, the artifact, the impact "
+               "((minutes by hand minus minutes with the agent) times runs a month), and what I would automate next. Use only facts from my files and runs.")
+
+# ------------------------------------------------------------------ Lesson 1 · Skills
+demo("e21", day=2, skill="2.1", sec=20, title="The invoice-match skill, live", tool="Claude · skills", files=[F_INV, F_LEDGER], kind="demo",
+ setup=["[T] Open Customize, then Skills. Open mirqab-invoice-match (built before Day 1). Show its name, its one-line description and its steps.",
+        "[T] Click New chat, outside any Project. Attach the October invoices and ledger. Send the Run line.",
+        "[T] Point at the line where Claude says it is using the skill, then at the table.",
+        "[T] In a new chat, send the email request. No skill loads: the description does not match."],
+ prompts=[("Run line (new chat, no Project)", "Match the attached October invoices to the attached October purchase ledger."),
+          ("A request that should not use the skill", "Draft a short thank-you email to Abdali Foods for sending the October documents.")],
+ expected="Claude says it is using mirqab-invoice-match and returns the Task 1.5 table: BPK-4471, WDS-20931 and SGT-11205 Matched; SCC-0718 Amount differs (36.000); FSC-3390 Not in ledger. The email request runs without the skill.",
+ say="One skill, three places: any chat, any Project, any schedule. The description decides when it loads.",
+ point="The description decides when Claude uses a skill.",
+ backup=[("h", "What the skill holds"), tbl(["Part", "mirqab-invoice-match"], [("Name", "mirqab-invoice-match"), ("Description", "Match supplier invoices to a purchase ledger and flag every difference."),
+         ("Steps and rules", "The five parts of the invoice Project, word for word"), ("Reference file", F_TEMPLATE)]),
+         ("h", "The result in a fresh chat"), tbl(D.TEMPLATE_HEAD, MATCH_FULL)],
+ fallback="If the skill does not load, say Use the mirqab-invoice-match skill in the request. If it still fails, show the backup table.",
+ hint="Find the line where Claude names the skill it is using.")
+
+demo("u21", day=2, skill="2.1", sec=20, title="A skill for your own task", tool="Claude · skills", files=[], kind="task", hands_on=True, minutes=25, solo="on your own",
+ setup=["Open your Agent Card from yesterday: step 4 of the Day 1 lab page. No card? Use your strongest task from Task 1.3.",
+        f"In Claude, click New chat. Copy Turn my task into a skill from {SHEET2}, Task 2.1. Paste your card in the brackets and answer Claude's questions.",
+        "When Claude shows the skill, save it. Check it is listed: Customize, then Skills.",
+        "In the same chat, send Make a test file with the brackets filled. Download the file.",
+        "Click New chat. Attach the test file and ask for your task in one line. Does Claude use your skill and flag both planted problems?"],
+ prompts=[("Turn my task into a skill", SKILL_FROM_CARD), ("Make a test file", TEST_FILE), ("Test it in a new chat", "[One line that asks for your task], using the attached file.")],
+ expected="A saved skill with a short name and a one-line description; a fresh chat that names the skill, returns the fixed shape and flags both planted problems.",
+ say="Your own task this time, not the invoices. Struggle first; a hint at 8 minutes.",
+ point="A skill is your method, written once, used anywhere.",
+ backup=[("h", "A good skill has"), ("ul", ["A short name in lowercase with hyphens, for example lease-key-terms.", "One line on when to use it: the task and the file type.",
+                                            "Steps, rules, the output columns in order, and When unsure.", "No client or firm names, and no real figures."])],
+ answer=[("h", "Approve a skill when"), ("ul", ["The name is short and clear.", "The description names the task and the file type.", "It has steps, at least two rules, the output columns and a When unsure line.",
+                                                 "No client names or real data: it can be shared.", "A fresh chat names the skill and flags both planted problems."])],
+ deliverable="Your own skill, saved and tested in a fresh chat on a fictional test file.",
+ fallback="If saving fails, keep the skill text, run it as Project instructions for now, and the trainer helps at the break. Code execution must be on (Settings, then Capabilities).",
+ hint="If Claude does not use your skill, make its description name the task and the file type.",
+ stretch=["Share the skill with a colleague: Customize, then Skills, the ... menu, then Share."])
+
+demo("u22", day=2, skill="2.2", sec=20, title="Will Claude pick your skill?", tool="Claude · skills", files=[], kind="task", hands_on=True, minutes=8, solo="on your own",
+ setup=["Click New chat. Ask for your task in your own words, with the test file. Did Claude use your skill?",
+        "Click New chat. Ask for the same task in different words. Did it use the skill again?",
+        "Click New chat. Ask for something unrelated, such as an email. The skill should not load.",
+        f"If a test failed, send Sharpen the description from {SHEET2}, Task 2.2, save the skill again and repeat the test."],
+ prompts=[("Sharpen the description", DESC_FIX)],
+ expected="Two requests that load the skill and one that does not. A description that names the task and the file type.",
+ say="Three chats: two that should load your skill, one that should not.",
+ point="A clear description is how Claude picks the right skill.",
+ backup=[("h", "Weak and strong descriptions"), tbl(["Weak", "Strong"], [("Helps with Excel files.", "Match supplier invoices (PDF) to a purchase ledger (Excel) and flag every difference."),
+         ("Audit helper.", "Extract key terms from lease agreements (PDF) into a schedule with dates in YYYY-MM-DD.")])],
+ answer=[("h", "Check"), ("ul", ["Two of two matching requests load the skill.", "The unrelated request does not.", "The description names the task and the file type."])],
+ deliverable="Three test chats and, if needed, a sharper description.",
+ fallback="If the skill never loads, write Use the [name] skill at the start of the request, and fix the description at the break.",
+ hint="Name the task and the file type in the description.",
+ stretch=["Ask a neighbor to request your task in their own words. Does your skill load for them on your laptop?"])
+
+# ------------------------------------------------------------------ Lesson 2 · Artifacts
+demo("e22", day=2, skill="2.2", sec=21, title="A KPI dashboard, then a deck", tool="Claude · artifacts", files=[F_PORTFOLIO], kind="demo",
+ setup=["[T] Click New chat. Attach mirqab-engagement-portfolio-2026.xlsx. Send the Dashboard request.",
+        "[T] Click a service line in the filter. Read two KPI tiles aloud and show where each comes from in the file.",
+        "[T] Open Data issues: two rows. Then send the Deck request in the same chat."],
+ prompts=[("Dashboard request", DASH_DEMO), ("Deck request", DECK_DEMO)],
+ expected=(f"KPI tiles: total fee {_kwd(_K['fee'])}; billed {_K['billed_pct']}% of fee; collected {_K['collected_pct']}% of billed; hours used {_K['hours_used_pct']}% of budget "
+           f"({X.PORTFOLIO[16][0]} left out); {len(_K['over_budget'])} engagements over budget; {len(_K['overdue'])} reports overdue. "
+           f"Data issues: {X.PORTFOLIO[16][0]} (blank hours) and {X.PORTFOLIO[8][0]} (collected more than billed). Then a 5-slide deck with the same figures."),
+ say="One file, one request: a dashboard the partners can click. Then the same figures as slides.",
+ point="Ask for the audience, the KPIs with their formulas, the layout and the rules.",
+ backup=[("h", "The KPI tiles"), tbl(["KPI", "Value"], [("Total fee", _kwd(_K["fee"])), ("Billed (% of fee)", f"{_K['billed_pct']}%"), ("Collected (% of billed)", f"{_K['collected_pct']}%"),
+         ("Hours used (% of budget)", f"{_K['hours_used_pct']}% ({X.PORTFOLIO[16][0]} left out)"), ("Over budget", ", ".join(_K["over_budget"])), ("Reports overdue", ", ".join(_K["overdue"]))]),
+         ("h", "Data issues"), ("ul", X.PORT_ISSUES), ("h", "Fee by service line (KWD)"), tbl(["Service line", "Fee"], [(k, f"{v:,.3f}") for k, v in _K["fee_by_line"].items()])],
+ fallback="If the dashboard does not draw, ask for the KPI table first, then the charts. Show the backup tiles.",
+ hint="Every KPI tile must match the file. The two data issues must be listed, not hidden.")
+
+demo("u23", day=2, skill="2.3", sec=21, title="Your KPI dashboard", tool="Claude · artifacts", files=[], kind="task", hands_on=True, minutes=20, solo="on your own",
+ setup=[f"Pick one department pack in step 3 of {LAB2} and download it. Or use the test file from Task 2.1.",
+        f"Click New chat and attach the file. Copy the Dashboard request from {SHEET2}, Task 2.3. Fill the brackets: who reads it, 3 to 6 KPIs with formulas, the charts, the table.",
+        "Check three KPI tiles by hand in Excel, for example with SUM or COUNTIF. Send Check it to see each formula.",
+        "Ask for one change, such as a new filter or a different chart, and watch the dashboard update."],
+ prompts=[("Dashboard request", DASH_TEMPLATE), ("Check it", DASH_CHECK)],
+ expected="A dashboard with KPI tiles, one or two charts, a table and a filter; three KPIs that match a hand check; both planted problems listed under Data issues.",
+ say="Your audience, your KPIs, your rules. Then check three tiles by hand.",
+ point="A dashboard is only as good as the three numbers you checked.",
+ backup=[("h", "The department packs")] + [("p", f"<b>{p['dept']}</b> · {p['file']} · {p['artifact']}") for p in X.PACKS],
+ answer=[("h", "What each pack should show")] + [x for p in X.PACKS for x in (("p", f"<b>{p['dept']}</b> ({p['file']})"),
+          ("ul", [f"{k}: {v}" for k, v in p["kpis"].items()] + [f"Data issue: {i}" for i in p["issues"]]))],
+ deliverable="A dashboard from one file, three KPIs checked by hand, and both planted problems under Data issues.",
+ fallback="If the dashboard does not draw, ask for the KPI table first, then one chart at a time.",
+ hint="Each pack hides two problems. Look for blanks, duplicates and values that do not add up.",
+ stretch=["Add a second filter and a notes box that says who reviewed the dashboard."])
+
+demo("u24", day=2, skill="2.4", sec=21, title="From dashboard to presentation", tool="Claude · artifacts", files=[], kind="task", hands_on=True, minutes=15, solo="on your own",
+ setup=[f"In the same chat as your dashboard, copy the Deck request from {SHEET2}, Task 2.4. Fill in the audience and the number of slides. Send it.",
+        "Check: every number on the slides is on the dashboard. Nothing new, nothing rounded differently.",
+        "Ask for one change, such as a shorter title or one more slide.",
+        "Put the layout in your skill: send Put it in my skill, then save the skill again. Next month, the same dashboard comes back."],
+ prompts=[("Deck request", DECK_TEMPLATE), ("Put it in my skill", ARTIFACT_IN_SKILL)],
+ expected="A short deck whose figures all match the dashboard, and a skill that now builds the dashboard in a fixed layout.",
+ say="The same figures, a different reader. Then the layout goes into the skill.",
+ point="Write the layout into the skill, and every run returns the same dashboard.",
+ backup=[("h", "A good partner deck"), ("ol", ["Title and the date of the data", "The key numbers", "What needs attention", "Data issues", "The decision or next step"])],
+ answer=[("h", "Check"), ("ul", ["Every figure on the slides is on the dashboard.", "The data issues have their own slide.", "The skill now names the dashboard layout, and it was saved again."])],
+ deliverable="A short deck from your dashboard, and your skill updated with the dashboard layout.",
+ fallback="If the deck does not draw, ask for a one-page memo with the same five parts.",
+ hint="Every number on a slide must be on the dashboard.",
+ stretch=["Ask for a one-page memo for a manager who will not open the deck."])
+
+# ------------------------------------------------------------------ Lesson 3 · Scheduled tasks
+demo("e23", day=2, skill="2.3", sec=22, title="Schedule the invoice skill", tool="Claude · scheduled tasks", files=[], kind="demo",
+ setup=["[T] Before 11:00, check that 01 Invoices / Inbox holds one copy of the October invoices and ledger.",
+        "[T] Click Scheduled in the left sidebar, then New task, then Set up manually. If the form has no time field for Daily, use Create with Claude and say the time.",
+        "[T] Name, prompt, approval mode, frequency daily at 08:00. Save. Run it once on demand.",
+        "[T] Open Outputs and Log in the Drive while it runs."],
+ prompts=[("Scheduled task prompt", INVOICE_SCHED)],
+ expected="The task shows on the Scheduled page, daily at 08:00. The test run saves a match file in Outputs and a run-log file in Log, and moves the two files to Processed.",
+ say="Name, prompt, frequency. The prompt calls the skill from this morning.",
+ point="A scheduled task is a calendar reminder that also does the work.",
+ backup=[("h", "The fields"), tbl(["Field", "Value"], [("Name", "Mirqab invoice match, daily"), ("Prompt", "Calls mirqab-invoice-match; reads Inbox; saves to Outputs; moves to Processed; saves a run-log file in Log"),
+         ("Approval mode", "The mode that lets the run save and move Drive files without waiting"), ("Frequency", "Daily at 08:00 (Kuwait works Sunday to Thursday; Friday and Saturday runs log No new files)")])],
+ fallback="If Cowork is not on, show the backup fields and run the prompt by hand in a chat.",
+ hint="Run it once on demand, then open Outputs and Log.")
+
+demo("u25", day=2, skill="2.5", sec=22, title="Schedule your skill", tool="Claude · scheduled tasks", files=[], kind="task", hands_on=True, minutes=15, solo="on your own",
+ setup=[f"Rename your test file (or pack file) so it starts with your initials. Upload it to {D.SANDBOX} → your Day 1 track folder → Inbox.",
+        "In Claude, click Scheduled in the left sidebar, then New task, then Set up manually.",
+        f"Name it. Paste the Scheduled task prompt from {SHEET2}, Task 2.5, and fill the brackets.",
+        "Approval mode: the one that saves files without waiting. Frequency: weekly, Sunday at 08:00. Save.",
+        "Run it once on demand. Open Outputs and Log: your file and your run log, both with your initials."],
+ prompts=[("Scheduled task prompt", PERSONAL_SCHED)],
+ expected="A weekly task on the Scheduled page; one run on demand that saves an output and a run log with the person's initials; nothing moved or deleted.",
+ say="Your skill, on a schedule. Run it once now, so you trust Sunday's run.",
+ point="If the test run works, the schedule will work.",
+ backup=[("h", "No Drive today?"), ("p", "Schedule a task that needs no files, for example: Every Sunday at 08:00, use my [skill] skill to draft this week's checklist. Run it once on demand.")],
+ answer=[("h", "Check"), ("ul", ["The task is on the Scheduled page, weekly.", "The run on demand saved a file named with the initials and the date and time.", "A run log with one line is in Log.", "No file was moved or deleted."])],
+ deliverable="Your skill on a weekly schedule, run once on demand, with an output and a run log.",
+ fallback="If the form has no time field, use Create with Claude and say the time. If Cowork is off on an account, run the prompt in a chat and schedule it on the trainer's account.",
+ hint="Most failures are a folder name that does not match the Drive exactly.",
+ stretch=["Add one line to the prompt: the first line of the output says how many files were read."])
+
+# ------------------------------------------------------------------ Lesson 4 · Claude, n8n or Power Automate
+demo("e24", day=2, skill="2.4", sec=23, title="Build a workflow in n8n", tool="n8n", files=[], kind="demo",
+ setup=["[T] Play the n8n demo video from the staff backup page, Demo 2.4. Or open the workflow Mirqab · invoice routing in the n8n workspace and click Execute workflow.",
+        "[T] Name each part as it appears: the trigger, the Code step, the If step, the two outputs.",
+        "[T] Open the If step after the run: show the items on the true branch and on the false branch."],
+ prompts=[("The Code step: this week's invoices (JavaScript in n8n)", "return [{json:{invoice:'BPK-4471',supplier:'Bayan Packaging',amount_kwd:2145.750}},{json:{invoice:'WDS-20931',supplier:'Wafra Dairy Supplies',amount_kwd:3860.000}},{json:{invoice:'SCC-0718',supplier:'Shuwaikh Cold Store',amount_kwd:1248.500}},{json:{invoice:'SGT-11205',supplier:'Sulaibiya Grain Traders',amount_kwd:5312.250}},{json:{invoice:'FSC-3390',supplier:'Fintas Spice',amount_kwd:742.125}}];")],
+ expected="The run turns every step green. The trigger starts it, the Code step returns 5 invoices, and the If step sends 3 to Supervisor review (over KWD 2,000: BPK-4471, WDS-20931, SGT-11205) and 2 to Approved (SCC-0718, FSC-3390).",
+ say="Trigger, steps, output. Same words in Claude, n8n and Power Automate.",
+ point="n8n connects systems step by step. Claude reads, judges and writes.",
+ backup=[("h", "The workflow"), tbl(["Step", "n8n node", "What it does"], [("Trigger", "Schedule Trigger", "Starts the workflow every weekday at 08:00, or by hand with Execute workflow"),
+         ("Function", "Code", "Returns this week's invoices as items"), ("Condition", "If", "amount_kwd is larger than 2000"),
+         ("Output, true", "Edit Fields: Supervisor review", "Sets status Supervisor review and the reviewer"), ("Output, false", "Edit Fields: Approved", "Sets status Approved")])],
+ fallback="If n8n is slow or signed out, play the video. If the video does not play, step through the backup table.",
+ hint="What starts this workflow, and where does each invoice end up?")
+
+# ------------------------------------------------------------------ Lesson 5 · Mini project
+demo("u26", day=2, skill="2.6", sec=24, title="Mini project: your department's agent", tool="Claude · everything", files=[], kind="task", hands_on=True, minutes=85, solo="on your own or in pairs",
+ setup=[f"Pick a department pack in step 7 of {LAB2}, or your own task. Fill the Project card from {SHEET2}, Task 2.6, in the box in step 7 (10 min).",
+        "Build: a Project with five-part instructions, then a skill from it (25 min).",
+        "Output: a dashboard or report artifact, with its layout written in the skill (20 min).",
+        "When: a scheduled task, run once on demand, with a run log (15 min).",
+        "Check three figures against the file. Mark the output DRAFT with a Reviewed by line. Write your impact number and a 3-minute demo script (15 min)."],
+ prompts=[("Project card", PROJECT_CARD), ("Build plan", BUILD_PLAN), ("Check three figures", CHECK3), ("Demo script", DEMO_SCRIPT)],
+ expected="Each person or pair has an agent for one department: a Project, a skill, an artifact in a fixed layout, a scheduled task run once, three figures checked, and an impact number.",
+ say="Everything from two days, on one department's work. Struggle first; I come round at 20 minutes.",
+ point="Card, Project, skill, artifact, schedule, review: one agent.",
+ backup=[("h", "The department packs")] + [x for p in X.PACKS for x in (("p", f"<b>{p['dept']}</b> · {p['file']}"), ("ul", [p["problem"], "Agent: " + p["agent"], "Artifact: " + p["artifact"], "When: " + p["schedule"]]))],
+ answer=[("h", "What each pack hides (two problems each)")] + [("ul", [f"{p['dept']}: " + " ".join(p["issues"]) for p in X.PACKS])],
+ deliverable="Your department agent: Project, skill, artifact, a scheduled task run once, three figures checked, and an impact number.",
+ fallback="Behind at 45 minutes? Skip the schedule; show the skill and the artifact, and say when it would run.",
+ hint="Build in order: card, Project, skill, artifact, schedule. Check before you polish.",
+ stretch=["Share your skill with a colleague from the same department and ask them to break it."])
+
+# keep the task slides inside 1440 x 810: the extra prompts go on the prompt sheet only (templates have COPY buttons there)
+DEMOS["u21"]["templates"] = [p for p in DEMOS["u21"]["prompts"] if p[0] == "Test it in a new chat"]
+DEMOS["u21"]["prompts"] = [p for p in DEMOS["u21"]["prompts"] if p[0] != "Test it in a new chat"]
+DEMOS["u26"]["templates"] = [("Build plan", BUILD_PLAN), ("Demo script", DEMO_SCRIPT)]
+DEMOS["u26"]["prompts"] = [p for p in DEMOS["u26"]["prompts"] if p[0] in ("Project card", "Check three figures")]
+
+# shorter task slides (validator: three Day 2 task slides ran into the progress bar)
+SKILL_FROM_CARD = ("Help me build a Claude skill for a task I repeat at work. My Agent Card, with no client or firm names: [paste your card]. "
+                   "Ask me up to five questions first. Then write the skill: a short lowercase name with hyphens, a one-line description of when to use it, "
+                   "the steps, the rules, the output columns in order, and When unsure (write Not found, never guess). Make it a skill file I can save.")
+DEMOS["u21"]["prompts"] = [("Turn my task into a skill", SKILL_FROM_CARD), ("Make a test file", TEST_FILE)]
+DEMOS["u21"]["setup"] = ["Open your Agent Card (Day 1 lab page, step 4), or your strongest task from Task 1.3.",
+                         "New chat: paste Turn my task into a skill (prompt sheet, Task 2.1) with your card. Answer the questions.",
+                         "Save the skill. Check it under Customize, then Skills. Then send Make a test file.",
+                         "New chat: attach the test file and ask for your task in one line. Skill used? Both problems flagged?"]
+DEMOS["u23"]["setup"] = [f"Download one department pack (step 3 of {LAB2}), or use your Task 2.1 test file.",
+                         "New chat: attach it and paste the Dashboard request (prompt sheet, Task 2.3). Fill the brackets.",
+                         "Check three KPI tiles by hand in Excel. Then send Check it.",
+                         "Ask for one change and watch the dashboard update."]
+DEMOS["u26"]["templates"] = [("Project card", PROJECT_CARD), ("Demo script", DEMO_SCRIPT)]
+DEMOS["u26"]["prompts"] = [("Build plan", BUILD_PLAN), ("Check three figures", CHECK3)]
+DEMOS["u26"]["setup"] = [f"Card (10 min): pick a pack (step 7 of {LAB2}) or your own task. Fill the Project card from the prompt sheet.",
+                         "Build (25 min): a Project with five-part instructions, then a skill.",
+                         "Output (20 min): a dashboard or report, its layout written in the skill.",
+                         "When (15 min): a scheduled task, run once on demand, with a run log.",
+                         "Check (15 min): three figures, DRAFT and Reviewed by, impact, demo script."]
+
+# the n8n demo video (recorded in Aya's n8n workspace on 15 Nov night, captioned): a file on the Demo 2.4 slide, the prompt sheet and lab step 6
+F_N8N_VIDEO = "mirqab-n8n-demo-invoice-routing.mp4"
+ALL_FILES = ALL_FILES + [F_N8N_VIDEO]
+DEMOS["e24"]["files"] = [F_N8N_VIDEO]
+DEMOS["e24"]["setup"] = ["[T] Click the video file on the slide (100 seconds, captioned). Or open the workflow Mirqab · invoice routing in your n8n workspace and click Execute.",
+                         "[T] Name each part as it appears: the trigger, the Code step, the If step, the two outputs.",
+                         "[T] Pause on the If step: 3 invoices on the true branch, 2 on the false branch."]
+DEMOS["e24"]["expected"] = ("Every node turns green. The trigger starts it, the Code step returns 5 invoices, and the If step sends 3 to Supervisor review "
+                            "(over KWD 2,000: BPK-4471, WDS-20931, SGT-11205) and 2 to Approved (SCC-0718, FSC-3390).")
+DEMOS["e24"]["fallback"] = "If the video does not play, step through the backup table. If n8n is signed out, the video is enough."
+DEMOS["e24"]["backup"][1] = tbl(["Step", "n8n node", "What it does"], [("Trigger", "Schedule Trigger", "Starts the workflow every day at 08:00, or by hand with Execute workflow"),
+         ("Function", "Code (Get this week's invoices)", "Returns this week's invoices as items"), ("Condition", "If (Over KWD 2,000?)", "amount_kwd is greater than 2000"),
+         ("Output, true", "Edit Fields: Supervisor review", "Sets status Supervisor review and reviewer Faisal"), ("Output, false", "Edit Fields: Approved", "Sets status Approved")])

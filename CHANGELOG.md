@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-11-15 night · Day 2 rebuilt on Aya's new order (skills, artifacts, schedules, automation tools, mini project)
+
+- New Day 2 (53 slides, 08:30 to 15:30): callback (two checks) → Lesson 1 · Skills (four building blocks: prompt, Project instructions,
+  skill, agent; why combine them; how a skill loads; Demo 2.1 the trainer's mirqab-invoice-match skill live; Task 2.1 a skill for your own task,
+  25 min; Task 2.2 will Claude pick it, 8 min; safe sharing) → Lesson 2 · Artifacts (what you can build, by department, five-part request,
+  Demo 2.2 a KPI dashboard then a deck from mirqab-engagement-portfolio-2026.xlsx; Task 2.3 your KPI dashboard, 20 min; layout in the skill;
+  Task 2.4 dashboard to presentation, 15 min; gallery) → Lesson 3 · Scheduled tasks (fresh runs, run log, No new files; Demo 2.3; Task 2.5 schedule
+  your own skill, read-only on the shared track folders, 15 min) → Lesson 4 · Claude, n8n or Power Automate (side by side, what Claude cannot do yet,
+  when to switch, trigger / node / output, Demo 2.4 the n8n workflow as a captioned video or live) → Lesson 5 · Mini project (11 department packs
+  from RSM's service lines; Task 2.6, 85 min, on your own or in pairs) → Lesson 6 · Project demos picked by the trainer (14:40) → Post-MAP 15:00,
+  survey 15:10, certificates 15:15, transfer map and close.
+- Retired from Day 2: Tasks 1.8 to 1.10, Demos 1.7 and 1.8 (moved there on 15 Nov), the team workflow card, batch 2 and the empty folder as a task,
+  department rules, the failed-run test and the scored Demo Day. Their sample files stay published (names never change).
+- New files (14): mirqab-engagement-portfolio-2026.xlsx (Demo 2.2), 11 department packs (audit findings, tax filing calendar, CF deal pipeline,
+  risk register, cyber vulnerability scan, IT helpdesk tickets, ESG energy and emissions, sales transactions, budget against actual, HR people data
+  with IDs only, CX client survey), each with two planted problems, mirqab-mini-project-briefs.docx, and mirqab-n8n-demo-invoice-routing.mp4
+  (100 s, captioned, recorded in Aya's n8n workspace: Schedule Trigger → Code → If over KWD 2,000 → Supervisor review / Approved).
+- Script: `kit/notes_day2.py` rewritten for every new slide. Day 2 lab: 8 steps (flag: the blank-hours engagement in the demo file).
+  Hours now 08:30-15:30. Portal surveys unchanged (the staff descriptions in the portal still name the old times).
+
 ## 2026-11-15 · Artifacts and skills move to Day 2, and the Day 1 changes repeat on Day 2 (Aya, after Day 1)
 
 - Day 1 ended after connectors and show and tell (about 15:40). Removed from Day 1: the output lesson (artifact concept, check, Demo 1.7,

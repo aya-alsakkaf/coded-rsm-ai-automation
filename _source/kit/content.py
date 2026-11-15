@@ -695,3 +695,161 @@ LABS[2]["title"] = "Finish your agent, then put it on a schedule"
 LABS[2]["intro"] = "Steps 1 to 5 are yours: finish your agent. From step 6, your team works together. Your notes and done marks stay in this browser. The files you need are under each step."
 LABS[2]["steps"] = [_moved[t] for t in _MOVE] + LABS[2]["steps"]
 SLIDES = {1: 62, 2: 71}
+
+# ------------------------------------------------------------------ Day 2 rebuild (Aya, 15 Nov night)
+# Skills (own task) → artifacts (dashboards and decks) → scheduled tasks → Claude, n8n or Power Automate (n8n demo) → mini project on a
+# department pack (RSM's service lines) → project demos picked by the trainer → Post-MAP, survey, certificates. Day 2 ends at 15:30.
+import day2_data as X
+HOURS = "08:30-15:30"
+DAYS[2].update({
+    "claim": "Prompt, Project, skill, artifact and schedule: together, they make an agent.",
+    "sub": "Package your own method as a skill, turn one file into a dashboard and a deck, put your skill on a schedule, see where n8n and Power Automate fit, then build an agent for one department.",
+    "brief": "Day 2 starts with skills: your own task, written once and used anywhere. Then artifacts: a KPI dashboard and a presentation from one file. Then a scheduled task runs your skill without you. After lunch you see what Claude cannot do yet and where n8n and Power Automate take over, with a short n8n demo. The afternoon is yours: a mini project that builds an agent for one department, start to finish.",
+    "artifact": "Your own skill, a dashboard and a deck, a scheduled task, and an agent for one department",
+    "tag": "skills, artifacts and schedules",
+    "bullets": ["A skill for your own task, then dashboards and decks", "Scheduled tasks, and when to use n8n or Power Automate", "Your department's agent, start to finish"],
+    "outcomes": ["Explain how a <b>prompt</b>, <b>Project instructions</b>, a <b>skill</b> and an <b>agent</b> differ, and why you combine them.",
+                 "Turn your own task into a <b>skill</b> and check that Claude picks it.",
+                 "Build a <b>KPI dashboard</b> and a <b>presentation</b> from one file, and check the numbers.",
+                 "Run your skill on a <b>schedule</b>, with a run log.",
+                 "Say when a task needs <b>n8n or Power Automate</b>, using <b>trigger, node and output</b>.",
+                 "Build and show an <b>agent for one department</b>."],
+    "blocks": [("08:30-08:40", "Opening and callback", "Yesterday in two questions"),
+               ("08:40-09:35", "Lesson 1 · Skills", "Prompt, Project, skill, agent · Demo 2.1 · Tasks 2.1 and 2.2"),
+               ("09:35-09:45", "Break", ""),
+               ("09:45-10:55", "Lesson 2 · Artifacts", "Dashboards, KPIs and decks · Demo 2.2 · Tasks 2.3 and 2.4"),
+               ("10:55-11:30", "Lesson 3 · Scheduled tasks", "Your skill on a schedule · Demo 2.3 · Task 2.5"),
+               ("11:30-12:30", "Lunch and Dhuhr prayer", ""),
+               ("12:30-12:55", "Lesson 4 · Claude, n8n or Power Automate", "Limits, when to switch, trigger, node and output · Demo 2.4 in n8n"),
+               ("12:55-14:25", "Lesson 5 · Mini project", "Your department's agent · Task 2.6"),
+               ("14:25-14:40", "Asr prayer and break", ""),
+               ("14:40-15:00", "Lesson 6 · Project demos", "Projects picked by the trainer, four minutes each"),
+               ("15:00-15:10", "Post-MAP test", "10 minutes. Scan the first QR code"),
+               ("15:10-15:15", "Final survey", "Scan the second QR code"),
+               ("15:15-15:30", "Certificates and close", "The transfer map, your next task, your certificate")]})
+SEGMENTS[2] = [
+    ("08:30-08:40", "Opening and callback", [("08:30", 3, "Welcome back, outcomes and today's map"), ("08:33", 7, "Callback: yesterday's run and two checks")]),
+    ("08:40-09:35", "Lesson 1 · Skills", [("08:40", 2, "Story: Faisal asks for Dana's method"), ("08:42", 6, "Four building blocks: prompt, Project instructions, skill, agent"),
+                                          ("08:48", 3, "Why we combine them"), ("08:51", 2, "How Claude picks a skill, with a check"), ("08:53", 6, "Demo 2.1 live in Claude"),
+                                          ("08:59", 25, "Task 2.1 · A skill for your own task"), ("09:24", 8, "Task 2.2 · Will Claude pick your skill?"),
+                                          ("09:32", 3, "Safe sharing, with a check")]),
+    ("09:45-10:55", "Lesson 2 · Artifacts", [("09:45", 2, "Story: the Thursday status sheet"), ("09:47", 3, "What an artifact is, and what you can build"), ("09:50", 3, "Artifacts by department"),
+                                             ("09:53", 3, "Ask for an artifact in five parts, with a check"), ("09:56", 7, "Demo 2.2 live: a KPI dashboard, then a deck"),
+                                             ("10:03", 20, "Task 2.3 · Your KPI dashboard"), ("10:23", 2, "Artifacts inside your agent"), ("10:25", 15, "Task 2.4 · From dashboard to presentation"),
+                                             ("10:40", 5, "Gallery: three dashboards on screen"), ("10:45", 10, "Catch-up")]),
+    ("10:55-11:30", "Lesson 3 · Scheduled tasks", [("10:55", 2, "Story: who runs it on Sunday?"), ("10:57", 4, "Scheduled tasks, fresh runs and the run log"), ("11:01", 1, "Quick check"),
+                                                   ("11:02", 5, "Demo 2.3 live in Claude"), ("11:07", 15, "Task 2.5 · Schedule your skill"), ("11:22", 2, "Scheduling in other tools"),
+                                                   ("11:24", 6, "Catch-up before lunch")]),
+    ("12:30-12:55", "Lesson 4 · Claude, n8n or Power Automate", [("12:30", 2, "Story: the email that lands at 14:07"), ("12:32", 4, "Claude, n8n and Power Automate side by side"),
+                                                   ("12:36", 3, "What Claude cannot do today"), ("12:39", 2, "When to switch, with a check"), ("12:41", 3, "Trigger, node and output"),
+                                                   ("12:44", 9, "Demo 2.4 · the n8n workflow (video or live)"), ("12:53", 2, "Use both, with a check")]),
+    ("12:55-14:25", "Lesson 5 · Mini project", [("12:55", 5, "The brief, the departments and the checklist"),
+                                                ("13:00", 85, "Task 2.6 · Your department's agent (card 10, build 25, artifact 20, schedule 15, check and script 15)")]),
+    ("14:40-15:00", "Lesson 6 · Project demos", [("14:40", 20, "Four or five projects, four minutes each, picked by the trainer")]),
+    ("15:00-15:30", "Close", [("15:00", 10, "Post-MAP test"), ("15:10", 5, "Final survey"), ("15:15", 5, "Certificates"), ("15:20", 10, "The transfer map, next steps and close")])]
+FORMS["post"]["when"] = "Day 2 · Mon 16 Nov · 15:00"
+FORMS["survey"]["when"] = "Day 2 · Mon 16 Nov · 15:10"
+
+LABS[2] = {"title": "Skills, artifacts, schedules, then your own agent",
+           "intro": "Work through the steps as the day goes. Your notes and done marks stay in this browser. The files you need are under each step. Every prompt is on the Day 2 prompt sheet.",
+           "steps": [
+    {"title": "A skill for your own task (Task 2.1)",
+     "do": ["Open your Agent Card from yesterday (Day 1 lab page, step 4). No card? Use your strongest task from Task 1.3.",
+            f"In Claude, click New chat. Paste Turn my task into a skill from {CD.SHEET2}, Task 2.1, with your card in the brackets. Answer Claude's questions.",
+            "Save the skill when Claude shows it. Check it is listed: Customize, then Skills.",
+            "In the same chat, send Make a test file. Download it.",
+            "Click New chat, attach the test file, and ask for your task in one line."],
+     "hint": "If Claude does not use your skill, make its description name the task and the file type.",
+     "check": {"kind": "note", "label": "Your skill's name and its one-line description"},
+     "answer": [("p", "A short lowercase name; a description that names the task and the file type; a fresh chat that names the skill and flags both planted problems.")]},
+    {"title": "Will Claude pick your skill? (Task 2.2)",
+     "do": ["New chat: ask for your task in your own words. Did Claude use your skill?", "New chat: the same task in different words.", "New chat: something unrelated, such as an email. The skill should not load.",
+            f"If a test failed, send Sharpen the description from {CD.SHEET2}, Task 2.2. Save the skill again and repeat."],
+     "hint": "Name the task and the file type in the description.", "check": {"kind": "note", "label": "Your three test requests: which ones loaded the skill?"},
+     "answer": [("p", "Two matching requests load the skill; the unrelated one does not.")]},
+    {"title": "Your KPI dashboard (Task 2.3)", "files": [CD.F_PORTFOLIO] + X.PACK_FILES,
+     "do": ["Pick one department pack below and download it, or use your Task 2.1 test file. The first file is the trainer's demo file.",
+            f"In Claude, click New chat and attach the file. Paste the Dashboard request from {CD.SHEET2}, Task 2.3, and fill the brackets.",
+            "Check three KPI tiles by hand in Excel. Then send Check it.", "Ask for one change and watch the dashboard update."],
+     "hint": "Each pack hides two problems: blanks, duplicates, or values that do not add up.",
+     "check": {"kind": "flag", "label": "In the demo file, type the engagement whose actual hours are blank", "answer": X.PORTFOLIO[16][0]},
+     "answer": [("p", f"{X.PORT_ISSUES[0]} {X.PORT_ISSUES[1]} Each department pack's KPIs and problems are in the Day 2 answer key, Task 2.3.")]},
+    {"title": "From dashboard to presentation (Task 2.4)",
+     "do": [f"In the dashboard chat, paste the Deck request from {CD.SHEET2}, Task 2.4. Fill in the audience and the number of slides.",
+            "Check that every number on the slides is on the dashboard.", "Paste Put it in my skill with your skill's name and the dashboard layout. Save the skill again."],
+     "hint": "Every number on a slide must be on the dashboard.", "check": {"kind": "note", "label": "Your deck's audience, and the layout you added to your skill"},
+     "answer": [("p", "Every figure on the slides is on the dashboard; the skill now names the dashboard layout.")]},
+    {"title": "Schedule your skill (Task 2.5)",
+     "do": [f"Rename your test file so it starts with your initials. Upload it to {D.SANDBOX} → your Day 1 track folder → Inbox.",
+            "In Claude, click Scheduled in the left sidebar, then New task, then Set up manually.",
+            f"Paste the Scheduled task prompt from {CD.SHEET2}, Task 2.5. Fill the brackets.",
+            "Approval mode: saves files without waiting. Weekly, Sunday at 08:00. Save. Run it once on demand.", "Open Outputs and Log: your file and your run log."],
+     "hint": "Most failures are a folder name that does not match the Drive exactly.", "check": {"kind": "note", "label": "Task name, frequency, and the line in your run log"},
+     "answer": [("p", "A weekly task; one run on demand; an output and a run log named with the initials; nothing moved or deleted.")]},
+    {"title": "Claude or an automation tool? (Lesson 4)", "files": [CD.F_N8N_VIDEO],
+     "do": ["Think of one task in your department that starts with an event: an email arrives, a form is sent, a file lands.",
+            "Write it below with the tool you would use (Claude, n8n or Power Automate) and one reason.", "Watch the n8n demo: name the trigger, the steps and the outputs."],
+     "hint": "Time trigger and documents to read: Claude. Event trigger, many systems or high volume: n8n or Power Automate.",
+     "check": {"kind": "note", "label": "One event-driven task, the tool, and why"},
+     "answer": [("p", "Good answers name an event trigger (email, form, file) and choose n8n or Power Automate, with Claude as the reading step inside the flow.")]},
+    {"title": "Mini project: your department's agent (Task 2.6)", "files": X.PACK_FILES + [CD.F_BRIEFS],
+     "do": ["Pick a department pack below (the briefs file describes each one), or your own task.",
+            f"Paste the Project card from {CD.SHEET2}, Task 2.6, in the box below and fill it in.",
+            "Build in order: a Project with five-part instructions, a skill, a dashboard or report artifact, a scheduled task run once.",
+            "Check three figures against the file with Check three figures. Mark the output DRAFT, with a Reviewed by line."],
+     "hint": "Build in order: card, Project, skill, artifact, schedule. Check before you polish.",
+     "check": {"kind": "note", "label": "Your Project card: paste the template here, then fill it in"},
+     "answer": [("p", "Each pack hides two problems; the list is in the Day 2 answer key, Task 2.6.")]},
+    {"title": "Your demo (Task 2.6)",
+     "do": ["Work out your impact: (minutes by hand minus minutes with the agent) times runs a month.", f"Paste Demo script from {CD.SHEET2}, Task 2.6. Keep it to three minutes.",
+            "Be ready to show a live run or your artifact if the trainer picks your project."],
+     "hint": "Every number in your demo comes from your files or your runs.", "check": {"kind": "note", "label": "Your impact number and the first line of your demo"},
+     "answer": [("p", "Example: (40 − 5) × 20 = 700 minutes, about 12 hours a month.")]}]}
+
+_WHERE2 = {"Transfer": "Day 2 · Lesson 3 · scheduling in other tools, and the transfer map at the close",
+           "Scheduled tasks": "Day 2 · Lessons 1 and 3 · a skill, a connected folder and a scheduled task",
+           "The empty-folder rule and the run log": "Day 2 · Lesson 3 · each run starts fresh, the run log and No new files",
+           "Review step": "Day 2 · Lesson 5 · DRAFT and Reviewed by in the mini project",
+           "Impact": "Day 2 · Lesson 5 · the impact line on the Project card",
+           "Work scenario: data": "Day 1 · Lesson 1 · the data rule; Day 2 · Lesson 1 · safe sharing of skills; the safe-use card",
+           "Work scenario: rules": "Day 1 · Lesson 4; Day 2 · Lesson 1 · fix the skill, then test again",
+           "Work scenario: review": "Day 2 · Lessons 3 and 5 · a named reviewer; read the run log",
+           "Work scenario: choice": "Day 1 · Lesson 3 · scoring; Day 2 · Lesson 5 · picking a department task"}
+for _q in MAP:
+    if _q["topic"] in _WHERE2: _q["where"] = _WHERE2.pop(_q["topic"])
+assert not _WHERE2, f"MAP topics not found: {list(_WHERE2)}"
+CARD_BOXES[:] = [(a, b, c, (d.replace("Artifacts · Day 2, Lesson 1", "Artifacts · Day 2, Lesson 2").replace("Scheduled tasks · Day 2, Lesson 4", "Scheduled tasks · Day 2, Lesson 3"))) for a, b, c, d in CARD_BOXES]
+CHEAT[0] = (CHEAT[0][0], CHEAT[0][1], CHEAT[0][2], [(a, b, c, d) for a, b, c, d in CARD_BOXES], CHEAT[0][4])
+RUNBOOK_PREFLIGHT[:] = [x for x in RUNBOOK_PREFLIGHT if not x.startswith(("After Day 1:", "Before Day 2: on a test folder", "Day 1 only:"))] + [
+    "Day 2: Demo 2.1 opens mirqab-invoice-match on the trainer account (Customize, then Skills). Demo 2.2 attaches mirqab-engagement-portfolio-2026.xlsx (lab step 3).",
+    "Day 2, before 11:00: copy the October invoices and ledger into 01 Invoices / Inbox for Demo 2.3.",
+    "Day 2, before 12:40: open the n8n video (the file on the Demo 2.4 slide) and the n8n workflow Mirqab · invoice routing. The video has no sound: you talk over it.",
+    "Day 2: participants upload their own files to the shared track folders, named with their initials. Their scheduled tasks read and never move files."]
+for _i, (sid, t, c, blocks) in enumerate(FACILITATOR):
+    if sid == "n8n":
+        FACILITATOR[_i] = ("n8n", "The n8n demo (Demo 2.4)", "recorded before Day 2", [("ul", [
+            "Workflow: Mirqab · invoice routing, in the trainer's n8n workspace. No credentials, no email, no client data.",
+            "Trigger: a Schedule Trigger (every day at 08:00); in the room, click Execute workflow.",
+            "Code step: returns the five October invoices as items (the code is on the Day 2 prompt sheet, Demo 2.4).",
+            "If step: amount_kwd larger than 2000. True: Edit Fields sets Supervisor review and the reviewer. False: Edit Fields sets Approved.",
+            "Expected: 3 invoices to Supervisor review (BPK-4471, WDS-20931, SGT-11205) and 2 to Approved (SCC-0718, FSC-3390).",
+            "The captioned video (mirqab-n8n-demo-invoice-routing.mp4, 100 seconds) is a file on the Demo 2.4 slide, the prompt sheet and lab step 6."])])
+    elif sid == "demoday":
+        FACILITATOR[_i] = ("demoday", "Project demos", "14:40 to 15:00", [("table", [["Item", "Detail"],
+            ["Who", "The trainer picks four or five projects from different departments during Task 2.6."],
+            ["Time", "Four minutes each: problem, card, live run or artifact, impact, next."],
+            ["What to look for", ", ".join(f"{c_} {pt}" for c_, pt, _t in CD.RUBRIC_FULL).capitalize() + f" ({sum(pt for _c, pt, _t in CD.RUBRIC_FULL)} points), as a guide, not a score."],
+            ["If a live run fails", "Show the latest output file and run log."]])])
+    elif sid == "teams":
+        FACILITATOR[_i] = ("teams", "Mini project packs", "Task 2.6", [("ul", [
+            "Eleven department packs from RSM's service lines, one Excel file each, all fictional: " + ", ".join(X.DEPTS) + ".",
+            f"The briefs file ({CD.F_BRIEFS}) gives each pack's problem, an agent idea, an artifact idea and a schedule.",
+            "Each pack hides two problems a good agent flags. The answer key, Task 2.6, lists them.",
+            "Participants work on their own or in pairs. Anyone with a real task of their own may use it, on fictional data."])])
+    elif sid == "after":
+        FACILITATOR[_i] = ("after", "After Day 2", "the same evening", [("ul", [
+            "Pause or delete every scheduled task on the trainer account and the participants' accounts, so nothing keeps running on CODED accounts.",
+            "Empty the Inbox, Outputs and Log folders in the sandbox Drive, and deactivate the n8n demo workflow.",
+            "Remove the participants' access to the sandbox Drive after the results report."])])
+SLIDES = {1: 62, 2: 53}
+CD.retire_old_day2()

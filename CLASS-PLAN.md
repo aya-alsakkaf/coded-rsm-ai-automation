@@ -1,6 +1,6 @@
 # Class plan · AI Innovation and Automation
 
-CODED × RSM Albazie · Sunday 15 and Monday 16 November 2026 · 08:30-16:30 · CODED, Alsharekh classroom (Frontend Campus)
+CODED × RSM Albazie · Sunday 15 and Monday 16 November 2026 · 08:30-15:30 · CODED, Alsharekh classroom (Frontend Campus)
 
 Generated from `_source/kit/` by `_source/tools/class_plan.py`. Do not edit by hand.
 
@@ -40,41 +40,35 @@ Teaching minutes: 320.
 
 ## Day 2 · Monday 16 Nov · Turning Agents into Operational Workflows
 
-**Claim:** An agent that runs on time, with a review step, is a workflow.  
-**Integration:** Your fixed-shape output and your skills, then your team's scheduled workflow, shown at Demo Day with its impact number
+**Claim:** Prompt, Project, skill, artifact and schedule: together, they make an agent.  
+**Integration:** Your own skill, a dashboard and a deck, a scheduled task, and an agent for one department
 
 | Time | Block | Minutes | What happens |
 |---|---|---|---|
-| 08:30-09:20 | Lesson 1 · Build: Output | 50 | Callback · a fixed shape and a second artifact · Tasks 1.8 and 1.8b · skills begin |
-| 09:20-09:30 | Break | 10 | Break |
-| 09:30-10:20 | Lesson 2 · Build: Package | 50 | Two skills, the messy sample and the clock · Tasks 1.9, 1.9b and 1.10 · Lesson 3 starts |
-| 10:20-10:30 | Break | 10 | Break |
-| 10:30-11:30 | Lessons 3 and 4 · The workflow card, then the schedule | 60 | Task 2.1 · scheduled tasks · Task 2.2 |
+| 08:30-08:40 | Opening and callback | 10 | Yesterday in two questions |
+| 08:40-09:35 | Lesson 1 · Skills | 55 | Prompt, Project, skill, agent · Demo 2.1 · Tasks 2.1 and 2.2 |
+| 09:35-09:45 | Break | 10 | Break |
+| 09:45-10:55 | Lesson 2 · Artifacts | 70 | Dashboards, KPIs and decks · Demo 2.2 · Tasks 2.3 and 2.4 |
+| 10:55-11:30 | Lesson 3 · Scheduled tasks | 35 | Your skill on a schedule · Demo 2.3 · Task 2.5 |
 | 11:30-12:30 | Lunch and Dhuhr prayer | 60 | Break |
-| 12:30-13:20 | Lesson 5 · New inputs, outputs and n8n | 50 | Batch 2 and the empty folder · Task 2.3 · the n8n demo · Lesson 6 starts |
-| 13:20-13:30 | Break | 10 | Break |
-| 13:30-14:55 | Lessons 6 and 7 · Your rules, then test and prepare | 85 | Task 2.4 · impact, the judges' rubric and the failed-run test · Task 2.5 |
-| 14:55-15:15 | Asr prayer and break | 20 | Break |
-| 15:15-16:00 | Lesson 8 · Demo Day | 45 | Four teams, eight minutes each, scored |
-| 16:00-16:10 | Break | 10 | Break |
-| 16:10-16:20 | Post-MAP test | 10 | 10 minutes. Scan the first QR code |
-| 16:20-16:25 | Final survey | 5 | Scan the second QR code |
-| 16:25-16:30 | The transfer map and close | 5 | The same card in other tools · your next task and your tool |
+| 12:30-12:55 | Lesson 4 · Claude, n8n or Power Automate | 25 | Limits, when to switch, trigger, node and output · Demo 2.4 in n8n |
+| 12:55-14:25 | Lesson 5 · Mini project | 90 | Your department's agent · Task 2.6 |
+| 14:25-14:40 | Asr prayer and break | 15 | Break |
+| 14:40-15:00 | Lesson 6 · Project demos | 20 | Projects picked by the trainer, four minutes each |
+| 15:00-15:10 | Post-MAP test | 10 | 10 minutes. Scan the first QR code |
+| 15:10-15:15 | Final survey | 5 | Scan the second QR code |
+| 15:15-15:30 | Certificates and close | 15 | The transfer map, your next task, your certificate |
 
-Teaching minutes: 360.
+Teaching minutes: 335.
 
 | Task | Title | Minutes | Who | Files | Deliverable |
 |---|---|---|---|---|---|
-| 1.8 | Fixed-shape output | 12 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | One artifact or Excel file, in the same shape on two runs. |
-| 1.8b | Artifact 2: a different kind of output | 13 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | A second artifact, of a different kind, from different data. |
-| 1.9 | Make your skill | 14 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | Your skill, saved and tested in a fresh chat, and one transfer line in the lab page. |
-| 1.9b | Skill 2: package your second agent | 12 | on your own | abdali-lease-agreements.pdf, abdali-trial-balance-fy2024-fy2025.xlsx, mirqab-pbc-request-list-abdali.xlsx, abdali-client-emails-nov-2026.docx, mirqab-engagement-status-wk46.xlsx | Two skills saved, each picked for the right file. |
-| 1.10 | The messy sample and the clock | 8 | on your own | abdali-invoice-messy.pdf, abdali-lease-messy.pdf, abdali-trial-balance-messy.xlsx, abdali-client-email-messy.docx, mirqab-engagement-status-messy.xlsx | One flagged messy run and two numbers in the lab page: minutes by hand and with the agent. |
-| 2.1 | Your team's workflow card | 12 | in your team | your own work | Your team's workflow card, checked by the trainer at your table. |
-| 2.2 | Schedule your workflow | 25 | in your team | your own work | A scheduled task, run once, with its output checked against Day 1. |
-| 2.3 | Batch 2 and the empty folder | 20 | in your team | abdali-supplier-invoices-nov-wk1.pdf, abdali-purchase-ledger-nov-wk1.xlsx, abdali-lease-agreement-new.pdf, abdali-management-accounts-oct-2026.xlsx, abdali-client-emails-wk47.docx, mirqab-engagement-status-wk47.xlsx | One run on batch 2 and one empty-folder run, each with its own run-log file. |
-| 2.4 | Your department's rules | 28 | in your team | mirqab-review-rules.docx | Two rules and a review step in your skill, tested on the messy sample. |
-| 2.5 | Clean runs, a failed run and the script | 37 | in your team | mirqab-locked-test-file.pdf | A Log folder with three clean runs and the failed-run test, and a 5-minute demo, rehearsed once, with its impact number. |
+| 2.1 | A skill for your own task | 25 | on your own | your own work | Your own skill, saved and tested in a fresh chat on a fictional test file. |
+| 2.2 | Will Claude pick your skill? | 8 | on your own | your own work | Three test chats and, if needed, a sharper description. |
+| 2.3 | Your KPI dashboard | 20 | on your own | your own work | A dashboard from one file, three KPIs checked by hand, and both planted problems under Data issues. |
+| 2.4 | From dashboard to presentation | 15 | on your own | your own work | A short deck from your dashboard, and your skill updated with the dashboard layout. |
+| 2.5 | Schedule your skill | 15 | on your own | your own work | Your skill on a weekly schedule, run once on demand, with an output and a run log. |
+| 2.6 | Mini project: your department's agent | 85 | on your own or in pairs | your own work | Your department agent: Project, skill, artifact, a scheduled task run once, three figures checked, and an impact number. |
 
 ## Scored work
 

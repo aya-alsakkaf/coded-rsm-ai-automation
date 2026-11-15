@@ -207,6 +207,24 @@ p = Pdf(CD.F_LOCKED, encrypt=_lock)
 p.page([("title", "Locked test file"), ("p", "This file is locked on purpose. A scheduled run cannot read it."),
         ("p", "Use it once in Task 2.5: the run log must say Could not read, and nothing may be guessed.")]); p.save()
 
+# ------------------------------------------------------------------ 24 to 36 · Day 2 rebuild (Aya, 15 Nov night): the artifact demo file and the department packs
+import day2_data as X
+xlsx(X.F_PORTFOLIO, [("Portfolio Nov 2026", X.PORT_HEAD, [list(r) for r in X.PORTFOLIO], [13, 28, 18, 10, 10, 14, 14, 13, 14, 16, 11, 12],
+                      "Data as at 16 November 2026. " + X.FICTION)])
+for pk in X.PACKS:
+    xlsx(pk["file"], [(pk["sheet"], pk["head"], [list(r) for r in pk["rows"]], pk["widths"], X.FICTION)])
+blocks = [("p", "Pick one department. Each pack is one Excel file on the Day 2 lab page, step 7. Every row is fictional."),
+          ("p", "Each file hides two problems that a good agent flags, not fixes. Find them before you trust a dashboard."),
+          ("p", "Your agent needs: a Project card, a Project with five-part instructions, a skill, a dashboard or report artifact in a fixed layout, a scheduled task run once on demand, three figures checked by hand, DRAFT with a Reviewed by line, and an impact number.")]
+for pk in X.PACKS:
+    blocks += [("h", pk["dept"]), ("p", "File: " + pk["file"] + " (" + str(len(pk["rows"])) + " rows; columns: " + ", ".join(pk["head"]) + ")"),
+               ("b", "The problem: " + pk["problem"]), ("b", "Agent idea: " + pk["agent"]), ("b", "Artifact idea: " + pk["artifact"]), ("b", "When: " + pk["schedule"])]
+doc(X.F_BRIEFS, "Mini project: department briefs", blocks)
+
+# ------------------------------------------------------------------ 37 · the n8n demo video (recorded, not generated): copied unchanged from kit/media
+import shutil
+shutil.copyfile(os.path.join(os.path.dirname(os.path.abspath(__file__)), "media", CD.F_N8N_VIDEO), os.path.join(OUT, CD.F_N8N_VIDEO))
+
 missing = [f for f in CD.ALL_FILES if not os.path.exists(os.path.join(OUT, f))]
 assert not missing, missing
 print(f"files: {len(CD.ALL_FILES)} written to {OUT}")

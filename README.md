@@ -3,7 +3,7 @@
 Two-day workshop site for RSM Albazie & Co., run by CODED Professionals.
 
 - **Cohort:** RSM-AI-Nov/Nov-26
-- **Dates:** Sunday 15 and Monday 16 November 2026, 08:30 to 16:30
+- **Dates:** Sunday 15 and Monday 16 November 2026, 08:30 to 16:30 (Day 2 ends at 15:30)
 - **Venue:** CODED, Alsharekh classroom (Frontend Campus)
 - **Tools:** Claude (chat, Projects, the Google Drive connector, artifacts, skills, scheduled tasks); n8n as a trainer demo
 - **Story:** Mirqab & Co. (a fictional audit firm) and its fictional client Abdali Foods. Every file is made up.
