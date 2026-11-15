@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-11-15 · Artifacts and skills move to Day 2, and the Day 1 changes repeat on Day 2 (Aya, after Day 1)
+
+- Day 1 ended after connectors and show and tell (about 15:40). Removed from Day 1: the output lesson (artifact concept, check, Demo 1.7,
+  the input and output transfer slide, Tasks 1.8 and 1.8b), all of Lesson 6 (skills: Demo 1.8, Tasks 1.9 and 1.9b) and Task 1.10. Lesson 5 is
+  "Build: Input" (Task 1.7 is 20 minutes, then catch-up); Lesson 7 is now Lesson 6 (show and tell runs the agent, not a skill). The transfer map moves
+  to the Day 2 close. Day 1 outcomes, map, wrap, close and lab (9 steps) updated. Day 1 is 62 slides.
+- Day 2 opens with the callback (two checks; the skill check moved into the skills lesson), then Lesson 1 · Build: Output (a new story slide,
+  Demo 1.7, Tasks 1.8 12 min and 1.8b 13 min) and Lesson 2 · Build: Package (Demo 1.8, Tasks 1.9, 1.9b and 1.10). Their numbers stay. Day 2's own
+  lessons are now 3 to 8. Demo Day stays at 15:15: Task 2.1 12 min, 2.2 25, 2.3 20, 2.4 28, 2.5 37 (one rehearsal); the n8n part 13 min; no buffers.
+- The Day 1 changes, repeated on Day 2: every demo runs live (Demos 2.2, 2.3, 2.5, 2.6 in Claude; Demo 2.1 on the lab page; Demo 2.4 in n8n);
+  a word-for-word speaker script for every slide (`kit/notes_day2.py`); every task and lab step names its place (lab step, prompt sheet entry,
+  Claude button, Drive folder); lab steps list their files; a Workflow card template with a COPY button (Task 2.1); no Your turn section on the
+  Day 2 page; the transfer map at the end. Repeat cut: the six-steps slide no longer builds the schedule live, because Demo 2.2 does.
+- Day 2 lab: 12 steps (1 to 5 are the moved Day 1 tasks). Task 2.5 and the impact slide take the times from lab step 5 (the old Clock tab is gone).
+- Staff: lesson plan minutes, MAP "where taught" lines, card boxes, cheat sheet, pre-flight times and class plan updated. Day 2 is 71 slides.
+  Portal surveys unchanged.
+
 ## 2026-11-15 · Lesson 4 goes straight to building (Aya, 13:00)
 
 - Removed the repeated Lesson 4 teaching: the PO story, the five parts table, its check, Demo 1.5 (live) and the instructions transfer slide.

@@ -85,8 +85,7 @@
 "Write a five-part prompt that gets an exact, checkable answer.",
 "Find the tasks in your work that suit an agent, and write an Agent Card.",
 "Build a Claude Project that gives the same, checkable table every run.",
-"Read from a Drive folder and return a fixed-shape output.",
-"Package your method as a skill you can share."
+"Connect your agent to a Drive folder, so it reads the files where they live."
 ],
 "chrome": [
 "Outcomes for today",
@@ -101,7 +100,7 @@
 "title": "Today's map",
 "topic": "open",
 "kit": [
-"One firm, one client. Seven lessons.",
+"One firm, one client. Six lessons.",
 "Everything uses Mirqab & Co., a fictional Kuwaiti audit firm, and its fictional client Abdali Foods. Breaks about every hour, lunch with Dhuhr, and an Asr break.",
 "08:30-08:35",
 "Welcome to CODED",
@@ -125,14 +124,11 @@
 "Lesson 4 · Build your agent",
 "Your own agent, then a second one · Tasks 1.6 and 1.6b",
 "14:00-14:55",
-"Lesson 5 · Build: Input and Output",
-"Connectors, then two artifacts · Tasks 1.7, 1.8 and 1.8b",
-"15:15-16:00",
-"Lesson 6 · Build: Package",
-"Two skills, the messy sample and the clock · Tasks 1.9, 1.9b and 1.10",
-"16:10-16:30",
-"Lesson 7 · Show and tell, and the Day 2 hook",
-"Team demos, the agent that ran itself, the transfer map"
+"Lesson 5 · Build: Input",
+"Connectors and the sandbox · Task 1.7",
+"15:15-15:40",
+"Lesson 6 · Show and tell, and the Day 2 hook",
+"Team demos and the agent that ran itself"
 ],
 "chrome": [
 "The shape of Day"
@@ -472,8 +468,7 @@
 "L3",
 "L4",
 "L5",
-"L6",
-"L7"
+"L6"
 ]
 },
 {
@@ -537,8 +532,7 @@
 "L3",
 "L4",
 "L5",
-"L6",
-"L7"
+"L6"
 ]
 },
 {
@@ -858,8 +852,7 @@
 "L3",
 "L4",
 "L5",
-"L6",
-"L7"
+"L6"
 ]
 },
 {
@@ -1112,8 +1105,7 @@
 "L3",
 "L4",
 "L5",
-"L6",
-"L7"
+"L6"
 ]
 },
 {
@@ -1249,8 +1241,7 @@
 "L3",
 "L4",
 "L5",
-"L6",
-"L7"
+"L6"
 ]
 },
 {
@@ -1324,8 +1315,7 @@
 "L3",
 "L4",
 "L5",
-"L6",
-"L7"
+"L6"
 ]
 },
 {
@@ -1380,22 +1370,21 @@
 "L3",
 "L4",
 "L5",
-"L6",
-"L7"
+"L6"
 ]
 },
 {
 "n": 54,
 "id": "b5story",
 "kind": "story",
-"title": "Lesson 5 · Build: Input and Output",
+"title": "Lesson 5 · Build: Input",
 "topic": "b5",
 "kit": [
-"Lesson 5 · Build: Input and Output",
+"Lesson 5 · Build: Input",
 "Sunday 1 November, 14:00",
 "Every Sunday, Noura, a project coordinator, downloads the same files from the shared drive and drags them into a chat, one by one.",
 "The files are already somewhere. Let the agent read them there.",
-"Read from a Drive folder and return a fixed-shape output.",
+"Connect your agent to a Drive folder, so it reads the files where they live.",
 "05"
 ],
 "chrome": [
@@ -1493,7 +1482,7 @@
 "Open the Google Drive folder Mirqab sandbox / [your track folder] / Inbox. Run on the files there. List the files you read.",
 "Claude slow or a file not loading? Continue from the backup on the screen.",
 "Your turn: run from the folder.",
-"Lesson 5 · Build: Input and Output"
+"Lesson 5 · Build: Input"
 ],
 "chrome": [
 "Your turn",
@@ -1518,518 +1507,19 @@
 "L3",
 "L4",
 "L5",
-"L6",
-"L7"
+"L6"
 ]
 },
 {
 "n": 59,
-"id": "b5t2",
-"kind": "term",
-"title": "Same shape. Every run.",
-"topic": "b5",
-"kit": [
-"Lesson 5 · output",
-"Same shape. Every run.",
-"Artifact and fixed shape",
-"An artifact is an output you can open, edit and download, such as a table or a file. A fixed shape means the same columns, order and total line on every run.",
-"The firm's working-paper template…",
-"…makes this week comparable with last week.",
-"Name the columns, in order, in the instructions."
-],
-"chrome": [
-"The idea"
-]
-},
-{
-"n": 60,
-"id": "b5chk2",
-"kind": "check",
-"title": "Quick check",
-"topic": "b5",
-"kit": [
-"Why does a scheduled agent need a fixed output shape?",
-"So each run can be compared with the last",
-"So the file is smaller",
-"So Claude runs faster"
-],
-"chrome": [
-"Quick check",
-"A",
-"B",
-"C",
-"Correct",
-"Not quite"
-]
-},
-{
-"n": 61,
-"id": "b5pp2",
-"kind": "live",
-"title": "Demo 1.7 · live in Claude",
-"topic": "b5",
-"kit": [
-"Demo 1.7 · Claude · artifacts",
-"Same shape every run.",
-"Compare the columns and the total line of the two runs.",
-"A fixed shape is what makes a run reviewable.",
-"Demo 1.7",
-"abdali-supplier-invoices-oct-2026.pdf",
-"abdali-purchase-ledger-oct-2026.xlsx",
-"mirqab-invoice-match-template.xlsx"
-],
-"chrome": [
-"Live in Claude",
-"Watch for",
-"Files",
-"Nothing to attach.",
-"Prompt: the prompt sheet,",
-"Prompt",
-"the prompt sheet"
-]
-},
-{
-"n": 62,
-"id": "b5map",
-"kind": "table",
-"title": "Input and output in other tools.",
-"topic": "b5",
-"kit": [
-"Lesson 5 · transfer",
-"Input and output in other tools.",
-"The boxes stay the same. Only the button names change.",
-"Claude",
-"ChatGPT",
-"Microsoft 365 Copilot",
-"Gemini",
-"Input",
-"Connectors",
-"Apps (formerly connectors)",
-"Work data in SharePoint, OneDrive, Outlook",
-"Connected apps (Gmail, Drive, Docs)",
-"Output",
-"Artifact or file",
-"Canvas",
-"Copilot Page",
-"Canvas"
-],
-"chrome": []
-},
-{
-"n": 63,
-"id": "b5task2",
-"kind": "task",
-"title": "Your turn 1.8",
-"topic": "b5",
-"kit": [
-"Task 1.8",
-"on your own",
-"Claude · artifacts",
-"Name the columns in the order you want them. Claude follows the order you write.",
-"Run it on the messy file for your track. Check that the shape still holds.",
-"abdali-lease-agreements.pdf",
-"abdali-trial-balance-fy2024-fy2025.xlsx",
-"mirqab-pbc-request-list-abdali.xlsx",
-"abdali-client-emails-nov-2026.docx",
-"mirqab-engagement-status-wk46.xlsx",
-"Copy the Output rule from the prompt sheet, Task 1.8. Put your columns in the brackets, in the order you want them.",
-"Open your Project, open its instructions, and paste the rule at the end, under Output format. Save.",
-"Start a new chat in the Project and run your agent on your track files. Then start a second new chat and run it again.",
-"Compare the two results: the same columns, the same order, the same total line? If not, fix the rule and run again.",
-"Output rule",
-"Return the result as an artifact with exactly these columns, in this order: [your columns]. End with one total line.",
-"Save it to Drive",
-"Save the result as an Excel file in [your track folder] / Outputs, named [client]-[task]-YYYY-MM-DD-HHMM.xlsx, with the date and time of the run.",
-"Claude slow or a file not loading? Continue from the backup on the screen.",
-"Your turn: fixed-shape output.",
-"Lesson 5 · Build: Input and Output"
-],
-"chrome": [
-"Your turn",
-"Finished early?",
-"What to look for",
-"Weak prompt",
-"Your rewrite",
-"points",
-"+1 min",
-"Reset",
-"Your time",
-"min",
-"Time",
-"Copy",
-"copy, paste, then check",
-"is on your",
-"prompt sheet",
-"If the tool is slow, continue from the backup on the screen.",
-"Where we are",
-"L1",
-"L2",
-"L3",
-"L4",
-"L5",
-"L6",
-"L7"
-]
-},
-{
-"n": 64,
-"id": "b5task3",
-"kind": "task",
-"title": "Your turn 1.8b",
-"topic": "b5",
-"kit": [
-"Task 1.8b",
-"on your own",
-"Claude · artifacts",
-"Ask for one change at a time. Claude updates the same artifact.",
-"Download the artifact, or ask Claude to save it as a file.",
-"abdali-lease-agreements.pdf",
-"abdali-trial-balance-fy2024-fy2025.xlsx",
-"mirqab-pbc-request-list-abdali.xlsx",
-"abdali-client-emails-nov-2026.docx",
-"mirqab-engagement-status-wk46.xlsx",
-"Open your second Project (Task 1.6b) and start a new chat. Attach that track's file again.",
-"Copy one prompt from the prompt sheet, Task 1.8b: a chart, or a one-page memo. Send it.",
-"Open the artifact. Check two numbers or facts in it against the file.",
-"Ask for one change, such as a new title or one more column, and watch the artifact update.",
-"Artifact 2: a chart",
-"Make an artifact: a bar chart of [what to show, for example the five largest items] from the attached file. Give it a title, label both axes, and list the numbers under the chart. Use only the file.",
-"Artifact 2: a one-page memo",
-"Make an artifact: a one-page memo to the engagement manager that sums up the attached file in five bullet points, then lists what needs action this week. Use only the file. Write Not found for anything missing.",
-"Claude slow or a file not loading? Continue from the backup on the screen.",
-"Your turn: artifact 2: a different kind of output.",
-"Lesson 5 · Build: Input and Output"
-],
-"chrome": [
-"Your turn",
-"Finished early?",
-"What to look for",
-"Weak prompt",
-"Your rewrite",
-"points",
-"+1 min",
-"Reset",
-"Your time",
-"min",
-"Time",
-"Copy",
-"copy, paste, then check",
-"is on your",
-"prompt sheet",
-"If the tool is slow, continue from the backup on the screen.",
-"Where we are",
-"L1",
-"L2",
-"L3",
-"L4",
-"L5",
-"L6",
-"L7"
-]
-},
-{
-"n": 65,
-"id": "b6story",
-"kind": "story",
-"title": "Lesson 6 · Build: Package",
-"topic": "b6",
-"kit": [
-"Lesson 6 · Build: Package",
-"Sunday 1 November, 15:15",
-"Dana's agent works in her Project. Faisal asks: “Can the other two associates use it? And can it run tomorrow without you?”",
-"A method only you can run is not a method yet.",
-"Package the method as a skill and test it on a messy sample.",
-"06"
-],
-"chrome": [
-"The starting point",
-"By the end of this block:"
-]
-},
-{
-"n": 66,
-"id": "b6t1",
-"kind": "term",
-"title": "From your desk to the firm's manual.",
-"topic": "b6",
-"kit": [
-"Lesson 6 · the idea",
-"From your desk to the firm's manual.",
-"Skill",
-"A skill is a saved method that Claude loads when a task matches it. It works in any chat, in Cowork and in scheduled tasks, and you can share it.",
-"A Project is one person's desk…",
-"…a skill is the methodology manual, usable anywhere.",
-"Customize, then Skills. Code execution must be on."
-],
-"chrome": [
-"The idea"
-]
-},
-{
-"n": 67,
-"id": "b6chk",
-"kind": "check",
-"title": "Quick check",
-"topic": "b6",
-"kit": [
-"Your method must work in any chat, in Cowork and on a schedule. What do you package it as?",
-"A Project",
-"A skill",
-"A saved chat"
-],
-"chrome": [
-"Quick check",
-"A",
-"B",
-"C",
-"Correct",
-"Not quite"
-]
-},
-{
-"n": 68,
-"id": "b6pp",
-"kind": "live",
-"title": "Demo 1.8 · live in Claude",
-"topic": "b6",
-"kit": [
-"Demo 1.8 · Claude · skills",
-"From Project to skill.",
-"In the fresh chat, look for the line that says Claude is using the skill.",
-"Package the method once. Use it anywhere.",
-"Demo 1.8",
-"mirqab-invoice-match-template.xlsx"
-],
-"chrome": [
-"Live in Claude",
-"Watch for",
-"Files",
-"Nothing to attach.",
-"Prompt: the prompt sheet,",
-"Prompt",
-"the prompt sheet"
-]
-},
-{
-"n": 69,
-"id": "b6map",
-"kind": "table",
-"title": "A packaged method in other tools.",
-"topic": "b6",
-"kit": [
-"Lesson 6 · transfer",
-"A packaged method in other tools.",
-"Elsewhere it is a ChatGPT skill or custom GPT, a Copilot agent or a Gem. The card inside stays the same.",
-"Claude",
-"ChatGPT",
-"Microsoft 365 Copilot",
-"Gemini",
-"Package",
-"Skill",
-"Skill (beta) or custom GPT",
-"Agent",
-"Gem"
-],
-"chrome": []
-},
-{
-"n": 70,
-"id": "b6chk2",
-"kind": "check",
-"title": "Quick check",
-"topic": "b6",
-"kit": [
-"A colleague in another firm uses ChatGPT. Where would your invoice skill live there?",
-"In a ChatGPT skill or custom GPT, same card inside",
-"Nowhere: only Claude can package a method",
-"In one long chat that she keeps open"
-],
-"chrome": [
-"Quick check",
-"A",
-"B",
-"C",
-"Correct",
-"Not quite"
-]
-},
-{
-"n": 71,
-"id": "b6task",
-"kind": "task",
-"title": "Your turn 1.9",
-"topic": "b6",
-"kit": [
-"Task 1.9",
-"on your own",
-"Claude · skills",
-"A skill needs a clear name and one line on when to use it.",
-"Share the skill with a member of your team.",
-"abdali-lease-agreements.pdf",
-"abdali-trial-balance-fy2024-fy2025.xlsx",
-"mirqab-pbc-request-list-abdali.xlsx",
-"abdali-client-emails-nov-2026.docx",
-"mirqab-engagement-status-wk46.xlsx",
-"Code execution is on for the team: the owner turned it on. If your skill does not save, tell the trainer.",
-"In a chat inside your Project, copy Make the skill from the prompt sheet, Task 1.9. Put your skill's name in the brackets and send it. Save the skill when Claude offers.",
-"Check that it is saved: open Customize, then Skills, and find your skill's name.",
-"Click New chat, outside the Project. Attach your track file. Copy Test it in a new chat from the prompt sheet, fill in the brackets, and send it. Claude should use your skill and return the same shape.",
-"Open the cheat sheet (Day 1 page → Cheat sheet), find the Package row. Add one line to your Agent Card: where this skill would live in ChatGPT, Copilot or Gemini.",
-"Make the skill",
-"Turn the instructions and knowledge of this Project into a skill named [your-skill-name]. Keep every rule word for word. Describe when to use it in one line.",
-"Test it in a new chat",
-"[One line that asks for your task], using the attached sample.",
-"Claude slow or a file not loading? Continue from the backup on the screen.",
-"Your turn: make your skill.",
-"Lesson 6 · Build: Package"
-],
-"chrome": [
-"Your turn",
-"Finished early?",
-"What to look for",
-"Weak prompt",
-"Your rewrite",
-"points",
-"+1 min",
-"Reset",
-"Your time",
-"min",
-"Time",
-"Copy",
-"copy, paste, then check",
-"is on your",
-"prompt sheet",
-"If the tool is slow, continue from the backup on the screen.",
-"Where we are",
-"L1",
-"L2",
-"L3",
-"L4",
-"L5",
-"L6",
-"L7"
-]
-},
-{
-"n": 72,
-"id": "b6task1b",
-"kind": "task",
-"title": "Your turn 1.9b",
-"topic": "b6",
-"kit": [
-"Task 1.9b",
-"on your own",
-"Claude · skills",
-"Each skill needs a name and one line on when to use it, so Claude can tell them apart.",
-"Share one of your skills with a member of your team.",
-"abdali-lease-agreements.pdf",
-"abdali-trial-balance-fy2024-fy2025.xlsx",
-"mirqab-pbc-request-list-abdali.xlsx",
-"abdali-client-emails-nov-2026.docx",
-"mirqab-engagement-status-wk46.xlsx",
-"Open your second Project (Task 1.6b). In a chat, paste Make the skill from the prompt sheet, Task 1.9b, with a new skill name. Save it when Claude offers.",
-"Open Customize, then Skills. Check that both of your skills are listed.",
-"Click New chat, outside any Project. Attach the second track's file and ask for its task in one line. Did Claude pick the right skill?",
-"In another new chat, attach your first track's file. Does Claude pick your first skill this time?",
-"Make the skill",
-"Turn the instructions and knowledge of this Project into a skill named [your-second-skill-name]. Keep every rule word for word. Describe when to use it in one line.",
-"Test it in a new chat",
-"[One line that asks for the second task], using the attached file.",
-"Claude slow or a file not loading? Continue from the backup on the screen.",
-"Your turn: skill 2: package your second agent.",
-"Lesson 6 · Build: Package"
-],
-"chrome": [
-"Your turn",
-"Finished early?",
-"What to look for",
-"Weak prompt",
-"Your rewrite",
-"points",
-"+1 min",
-"Reset",
-"Your time",
-"min",
-"Time",
-"Copy",
-"copy, paste, then check",
-"is on your",
-"prompt sheet",
-"If the tool is slow, continue from the backup on the screen.",
-"Where we are",
-"L1",
-"L2",
-"L3",
-"L4",
-"L5",
-"L6",
-"L7"
-]
-},
-{
-"n": 73,
-"id": "b6task2",
-"kind": "task",
-"title": "Your turn 1.10",
-"topic": "b6",
-"kit": [
-"Task 1.10",
-"on your own",
-"Claude · your skill",
-"A missing field or a different unit.",
-"Add the fix as a rule to your skill and rerun.",
-"abdali-invoice-messy.pdf",
-"abdali-lease-messy.pdf",
-"abdali-trial-balance-messy.xlsx",
-"abdali-client-email-messy.docx",
-"mirqab-engagement-status-messy.xlsx",
-"Download the messy file for your track from step 14 of the Day 1 lab page. Workflow track: also attach mirqab-pbc-request-list-abdali.xlsx.",
-"Click New chat. Attach the messy file. Copy Messy run from the prompt sheet, Task 1.10, and send it.",
-"Check: did the agent flag the problem, or guess? Each file hides a gap the agent must flag (the invoice file has two). No file has two values that conflict.",
-"Time the task: minutes by hand, minutes with the agent. Write both numbers in the box in step 11 of the lab page.",
-"Messy run",
-"Run on the attached file. List anything you could not read or are not sure about. Do not guess.",
-"Claude slow or a file not loading? Continue from the backup on the screen.",
-"Your turn: the messy sample and the clock.",
-"Lesson 6 · Build: Package"
-],
-"chrome": [
-"Your turn",
-"Finished early?",
-"What to look for",
-"Weak prompt",
-"Your rewrite",
-"points",
-"+1 min",
-"Reset",
-"Your time",
-"min",
-"Time",
-"Copy",
-"copy, paste, then check",
-"is on your",
-"prompt sheet",
-"If the tool is slow, continue from the backup on the screen.",
-"Where we are",
-"L1",
-"L2",
-"L3",
-"L4",
-"L5",
-"L6",
-"L7"
-]
-},
-{
-"n": 74,
 "id": "b7show",
 "kind": "timer",
 "title": "Four teams. Ninety seconds each person.",
 "topic": "b7",
 "kit": [
-"Show and tell · 16:10",
+"Show and tell · 15:15",
 "Four teams. Ninety seconds each person.",
-"Show your card, then run your skill live on one file from your pack. Your team watches and asks one question."
+"Show your card, then run your agent live on one file from your track folder. Your team watches and asks one question."
 ],
 "chrome": [
 "+1 min",
@@ -2040,7 +1530,7 @@
 ]
 },
 {
-"n": 75,
+"n": 60,
 "id": "b7demo",
 "kind": "live",
 "title": "Demo 1.9 · live in Claude",
@@ -2063,63 +1553,20 @@
 ]
 },
 {
-"n": 76,
-"id": "b7map",
-"kind": "table",
-"title": "Same building blocks, different names.",
-"topic": "b7",
-"kit": [
-"Lesson 7 · the transfer map",
-"Same building blocks, different names.",
-"Learn the method once. The card works in any tool.",
-"Agent Card box",
-"Claude (today)",
-"ChatGPT",
-"Microsoft 365 Copilot",
-"Gemini",
-"Instruction: saved rules and files",
-"Project",
-"Project or custom GPT",
-"Agent (Agent Builder) or Notebook",
-"Gem",
-"Input: reach your files and email",
-"Connectors",
-"Apps (formerly connectors)",
-"Work data in SharePoint, OneDrive, Outlook",
-"Connected apps (Gmail, Drive, Docs)",
-"Output: a file you open and edit",
-"Artifact or file",
-"Canvas",
-"Copilot Page",
-"Canvas",
-"Package: a reusable method",
-"Skill",
-"Skill (beta) or custom GPT",
-"Agent",
-"Gem",
-"When: runs on its own",
-"Scheduled task",
-"Scheduled task",
-"Scheduled prompt",
-"Scheduled action"
-],
-"chrome": []
-},
-{
-"n": 77,
+"n": 61,
 "id": "w1",
 "kind": "wrap",
 "title": "Wrap-up",
 "topic": "close",
 "kit": [
-"One card. One Project. One skill each.",
-"Tomorrow: your team's agent runs on a schedule. First thing, each team picks the agent to automate.",
+"One card. One Project. One folder each.",
+"Tomorrow: first a fixed output and a skill. Then your team's agent runs on a schedule.",
 "You built",
 "Your own agent",
-"A card, a Project, a folder, a fixed shape and a skill.",
+"A card, two Projects and a connected folder.",
 "You found",
 "2 planted problems",
-"SCC-0718 and the FSC-3390 cut-off, plus your messy file.",
+"SCC-0718 and the FSC-3390 cut-off, in the invoice agent.",
 "The habit",
 "Flag, never guess",
 "Claude does the first pass. You review."
@@ -2131,14 +1578,14 @@
 ]
 },
 {
-"n": 78,
+"n": 62,
 "id": "close1",
 "kind": "close",
 "title": "Close",
 "topic": "close",
 "kit": [
-"Card → Project → skill.",
-"Tomorrow: your team's agent runs on a schedule, with a review step, and you show it at Demo Day."
+"Card → Project → folder.",
+"Tomorrow: a fixed output and a skill, then your team's agent runs on a schedule, with a review step, and you show it at Demo Day."
 ],
 "chrome": [
 "Day",

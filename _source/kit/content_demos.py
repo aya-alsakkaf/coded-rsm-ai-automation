@@ -748,3 +748,104 @@ DEMOS["t16"]["minutes"] = 40; DEMOS["t16"]["say"] = "Struggle first. A hint at 1
 DEMOS["t17"]["minutes"] = 12; DEMOS["t18"]["minutes"] = 11; DEMOS["t19"]["minutes"] = 14; DEMOS["t110"]["minutes"] = 8
 DEMOS["t110"]["setup"] = [x.replace("step 11 of the Day 1 lab page", "step 14 of the Day 1 lab page") for x in DEMOS["t110"]["setup"]]
 DEMOS["t16"]["minutes"] = 48; DEMOS["t16b"]["minutes"] = 29
+
+# ===================================================================== Artifacts and skills move to Day 2 (Aya, 15 Nov, after Day 1)
+# Day 1 ended after connectors. Day 2 opens with the output lesson (Demo 1.7, Tasks 1.8 and 1.8b) and the package lesson
+# (Demo 1.8, Tasks 1.9, 1.9b and 1.10), because every Day 2 task uses the team's skill. Numbers stay, so nothing on Day 2 is renumbered.
+BLOCK.update({6: (1, "Lesson 5 · Build: Input"), 7: (2, "Lesson 2 · Build: Package"), 8: (1, "Lesson 6 · Show and tell"),
+              9: (2, "Lesson 3 · From agent to system"), 10: (2, "Lesson 4 · Make it run on its own"), 11: (2, "Lesson 5 · New inputs, outputs and n8n"),
+              12: (2, "Lesson 6 · Fit it to your department"), 13: (2, "Lesson 7 · Test and prepare the demo"), 14: (2, "Lesson 1 · Build: Output")})
+_MOVED = {"d18": 14, "t18": 14, "t18b": 14, "d19": 7, "t19": 7, "t19b": 7, "t110": 7}
+for _k, _s in _MOVED.items():
+    DEMOS[_k]["day"] = 2; DEMOS[_k]["sec"] = _s
+_items = [(k, v) for k, v in DEMOS.items() if k not in _MOVED]
+_i = [k for k, _v in _items].index("d21")
+_items[_i:_i] = [(k, DEMOS[k]) for k in _MOVED]
+DEMOS.clear(); DEMOS.update(_items)
+
+# Places, named the same way on Day 2: the Day 2 lab page (workshop site → Day 2 → Open the lab), the prompt sheet (Day 2 page → Prompts),
+# Claude (claude.ai), and the sandbox Drive (Mirqab sandbox → Packs, and each team's folder with Inbox, Processed, Outputs and Log).
+LAB2 = "the Day 2 lab page"
+SHEET2 = "the prompt sheet (Day 2 page → Prompts)"
+TEAM = f"{D.SANDBOX} → [your team folder]"
+WORKFLOW_CARD_TEMPLATE = ("When: [a day and a time, for example daily at 08:00]\n"
+                          f"Input: [your team folder: {D.SANDBOX} / Team 1 to Team 4 / Inbox]\n"
+                          "Skill: [your skill's name, as it shows under Customize, then Skills]\n"
+                          "Output: [the file name in Outputs, with the date and time, and a run-log file in Log]\n"
+                          "Who reviews: [one person's name]")
+DEMOS["t21"]["prompts"].insert(0, ("Workflow card template", WORKFLOW_CARD_TEMPLATE))
+_STEPS2 = {
+ "t18": ["Get your track's file from step 1 of the Day 2 lab page, or use yesterday's copy.",
+         'Copy the Output rule from the prompt sheet (Day 2 page → Prompts), Task 1.8. Put your columns in the brackets, in order.',
+         "Paste the rule at the end of your first Project's instructions, under Output format. Save.",
+         'Run it twice, each time in a new chat in the Project. Same columns, order and total line? If not, fix the rule.'],
+ "t18b": [f"Open your second Project (Task 1.6b) and start a new chat. Attach that track's file again: it is under step 2 of {LAB2}.",
+          f"Copy one prompt from {SHEET2}, Task 1.8b: a chart, or a one-page memo. Send it.",
+          "Open the artifact. Check two numbers or facts in it against the file.",
+          "Ask for one change, such as a new title or one more column, and watch the artifact update."],
+ "t19": ["Code execution is on for the team: the owner turned it on. If your skill does not save, tell the trainer.",
+         f"In Claude, open your first Project and start a chat. Copy Make the skill from {SHEET2}, Task 1.9. Put your skill's name in the brackets and send it. Save the skill when Claude offers.",
+         "Check that it is saved: open Customize, then Skills, and find your skill's name.",
+         f"Click New chat, outside the Project. Attach your track file (step 3 of {LAB2}). Copy Test it in a new chat, fill in the brackets, and send it. Claude should use your skill and return the same shape.",
+         f"Open the cheat sheet (Day 2 page → Cheat sheet) and find the Package row. In the box in step 3 of {LAB2}, write where this skill would live in ChatGPT, Copilot or Gemini."],
+ "t19b": [f"Open your second Project (Task 1.6b). In a chat, paste Make the skill from {SHEET2}, Task 1.9b, with a new skill name. Save it when Claude offers.",
+          "Open Customize, then Skills. Check that both of your skills are listed.",
+          f"Click New chat, outside any Project. Attach the second track's file (step 4 of {LAB2}) and ask for its task in one line. Did Claude pick the right skill?",
+          "In another new chat, attach your first track's file. Does Claude pick your first skill this time?"],
+ "t110": [f"Download the messy file for your track from step 5 of {LAB2}. Workflow track: also attach mirqab-pbc-request-list-abdali.xlsx (same step).",
+          f"Click New chat. Attach the messy file. Copy Messy run from {SHEET2}, Task 1.10, and send it. Claude should use your skill.",
+          "Check: did the agent flag the problem, or guess? Each file hides a gap the agent must flag (the invoice file has two). No file has two values that conflict.",
+          f"Time the task: minutes by hand, minutes with the agent. Write both numbers in the box in step 5 of {LAB2}. You need them for your impact number this afternoon."],
+ "t21": ["As a team, pick one Day 1 agent by a show of hands. You work on that person's laptop today: they are your skill owner.",
+         f"Copy the Workflow card template from {SHEET2}, Task 2.1. Paste it in the box in step 6 of {LAB2}.",
+         f"Fill in When, Input, Skill, Output and Who reviews. Input is your team folder: {D.SANDBOX} → Team 1 to Team 4 → Inbox.",
+         "Raise your hand. The trainer checks your card at your table."],
+ "t22": ["Work on the skill owner's laptop. In Google Drive, copy your track pack from Mirqab sandbox → Packs into your team folder's Inbox.",
+         'In Claude, click Scheduled in the left sidebar, then New task, then Set up manually.',
+         'Name it. Paste the Scheduled task prompt from the prompt sheet (Day 2 page → Prompts), Task 2.2. Fill the brackets from your card (lab step 6).',
+         'Approval mode: the one that saves and moves files without waiting. Daily at 08:00. Save.',
+         'Run it once on demand. Check Outputs and Log, and compare with your Day 1 result.'],
+ "t23": ['In Scheduled (left sidebar), open your task. Check its prompt has the empty-folder line (prompt sheet, Task 2.3).',
+         'Workflow teams: add the request list to the skill as a reference file, and the tracker line. Analysis teams: add the monthly line.',
+         "Copy your batch-2 file from Packs into your team's Inbox. Run on demand. Check Outputs and Log (lab step 8).",
+         'Empty the Inbox and run again. The new run log should say No new files (lab step 9).'],
+ "t25": [f"Download mirqab-review-rules.docx from step 10 of {LAB2}. Pick two rules for your department.",
+         f"The skill owner copies Add the rules from {SHEET2}, Task 2.4, puts the two rules in the brackets word for word, and sends it in a new chat. Save the skill when Claude offers.",
+         f"In Google Drive, copy your track's messy file from {D.SANDBOX} → Packs into {TEAM} → Inbox. In Claude, run the task on demand.",
+         "Open Outputs and Log. Check: DRAFT in the title, a Reviewed by line, and the messy item flagged, not guessed."],
+ "t26": ["Clean runs (10 min): copy your pack from Packs into your team's Inbox and run on demand, three times. Workflow teams: move the Outputs trackers to Processed first.",
+         "Failed run (7 min): add the Fallback line (prompt sheet, Task 2.5) to the task's prompt. Copy mirqab-locked-test-file.pdf into the Inbox, run, read the log, delete it.",
+         'Impact (4 min): your two times from lab step 5, and the formula on the impact slide.',
+         'Demo plan (6 min): the Demo 2.6 prompt from the prompt sheet. Say who acts when a run fails.',
+         'Rehearse once with a timer (10 min). Then copy a pack into the Inbox for the live run.'],
+}
+for _k, _v in _STEPS2.items():
+    DEMOS[_k]["setup"] = [x for x in DEMOS[_k]["setup"] if x.startswith("[T]")] + _v
+
+# Day 2 minutes: the moved lessons take 78 minutes, so Day 2's own tasks get shorter. Demo Day stays at 15:15.
+DEMOS["t18"]["minutes"] = 12; DEMOS["t18b"]["minutes"] = 13
+DEMOS["t21"]["minutes"] = 12; DEMOS["t22"]["minutes"] = 25; DEMOS["t23"]["minutes"] = 20; DEMOS["t25"]["minutes"] = 28; DEMOS["t26"]["minutes"] = 37
+DEMOS["t21"]["deliverable"] = "Your team's workflow card, checked by the trainer at your table."
+DEMOS["t22"]["say"] = "Struggle first. A hint at 8 minutes, then the three most common fixes at 15."
+DEMOS["t19"]["say"] = "Your method, packaged. This afternoon a scheduled task calls it."
+DEMOS["t19"]["answer"] = [("h", "Check"), ("ul", ["The skill name is short and clear.", "The rules are the same as in the Project.", "A fresh chat uses the skill and returns the fixed shape.",
+                                                   "The transfer line names the skill's home in another tool: a skill or custom GPT (ChatGPT), an agent (Copilot) or a Gem (Gemini)."])]
+DEMOS["t19"]["deliverable"] = "Your skill, saved and tested in a fresh chat, and one transfer line in the lab page."
+DEMOS["t110"]["deliverable"] = "One flagged messy run and two numbers in the lab page: minutes by hand and with the agent."
+DEMOS["t26"]["prompts"] = [p if p[0] != "Impact" else ("Impact", "From our run log, count the runs and the items flagged. Then calculate: ([minutes by hand] minus [minutes with the agent]) times [runs a month]. Our two times come from Task 1.10.")
+                           for p in DEMOS["t26"]["prompts"]]
+DEMOS["t26"]["hint"] = "Every number on your demo comes from your run log or your Task 1.10 times."
+DEMOS["t26"]["expected"] = (f"Three clean runs and one failed-run test in the run log (Could not read: {F_LOCKED}, nothing guessed, the file left in the Inbox), "
+                            "one impact number and a 5-minute plan per team, rehearsed once.")
+DEMOS["t26"]["deliverable"] = "A Log folder with three clean runs and the failed-run test, and a 5-minute demo, rehearsed once, with its impact number."
+# Day 2 demos run live: the trainer's steps say where things are
+DEMOS["d21"]["setup"] = [f"[T] Open step 6 of {LAB2} on the presenting laptop. Paste the Workflow card template and fill it in box by box for the invoice workflow.",
+                         "[T] Copy the finished card. In Claude, start a new chat and send Check our card with the card pasted in."]
+DEMOS["d21"]["hint"] = "Who reviews is a name, not a team."
+DEMOS["d111"]["fallback"] = "If the day ends before 16:25, run the task on demand from the Scheduled page, or show the backup run-log file."
+DEMOS["t23"]["stretch"] = ["Make the first line of the output a count of files read. Rerun and check it against the run log."]
+DEMOS["t23"]["setup"] = [x.replace("Copy your batch-2 file from Packs into your team's Inbox. Run on demand.", "Copy your batch-2 file from Packs into the Inbox. Run on demand.") for x in DEMOS["t23"]["setup"]]
+DEMOS["t23"]["setup"] = ["Open your task under Scheduled. Check it has the empty-folder line (prompt sheet, Task 2.3).",
+                         "Workflow teams: add the request list to the skill, and the tracker line. Analysis teams: the monthly line.",
+                         "Copy your batch-2 file from Packs into the Inbox. Run on demand. Check Outputs and Log (lab step 8).",
+                         "Empty the Inbox and run again. The run log should say No new files (lab step 9)."]

@@ -551,3 +551,147 @@ _lab_after("Make your skill (Task 1.9)", {"title": "Skill 2: package your second
 for _st in LABS[1]["steps"]:
     if _st["title"] == "The messy sample and the clock (Task 1.10)":
         _st["do"] = [x.replace("(step 7)", "(step 7)") for x in _st["do"]]
+
+# ------------------------------------------------------------------ Artifacts and skills move to Day 2 (Aya, 15 Nov, after Day 1)
+# Day 1 ended after connectors and show and tell (about 15:40). Day 2 opens by finishing the build: output (Lesson 1), then package (Lesson 2).
+# Day 2's own lessons are now 3 to 8. Demo Day stays at 15:15: Tasks 2.1 to 2.5 are shorter and the n8n part is 13 minutes.
+DAYS[1].update({
+    "brief": "Day 1 starts with what AI is and where it fails, with two real cases. Then 18 people do the same task and get 18 different tables. You learn to write a good prompt and what an agent is, find the tasks worth an agent, write an Agent Card, and build your own agent in Claude: a Project and a connected Drive folder. The output and the skill come on Day 2 morning.",
+    "artifact": "Your own agent: an Agent Card, a Project and a connected folder",
+    "bullets": ["What AI is, where it fails, and two real cases", "Write a good prompt; find the work worth an agent", "Build it in Claude: a Project and a Drive folder"],
+    "outcomes": DAYS[1]["outcomes"][:4] + ["Connect your agent to a <b>Drive folder</b>, so it reads the files where they live."]})
+DAYS[1]["blocks"] = DAYS[1]["blocks"][:10] + [
+    ("14:00-14:55", "Lesson 5 · Build: Input", "Connectors and the sandbox · Task 1.7"),
+    ("14:55-15:15", "Asr prayer and break", ""),
+    ("15:15-15:40", "Lesson 6 · Show and tell, and the Day 2 hook", "Team demos and the agent that ran itself")]
+DAYS[2].update({
+    "sub": "Finish your agent with a fixed output and a skill. Then give your team's agent a When: a schedule, new inputs, department rules, a run log and a named reviewer. Show it at Demo Day.",
+    "brief": "Day 2 starts by finishing yesterday's build: a fixed-shape output, a second kind of artifact, and two skills. Then one question: who runs the agent when you are on leave? Your team turns one agent into a scheduled workflow that reads new files, follows your department's rules, writes a run log and waits for a person's review. Each team shows its workflow at Demo Day.",
+    "artifact": "Your fixed-shape output and your skills, then your team's scheduled workflow, shown at Demo Day with its impact number",
+    "bullets": ["Finish the build: a fixed output and a skill", "A scheduled task that runs your skill on new files", "Department rules, a run log and Demo Day"],
+    "outcomes": ["Return a <b>fixed-shape output</b> and a second kind of <b>artifact</b>.",
+                 "Package your method as a <b>skill</b>, and check that Claude picks the right one.",
+                 "Map a workflow: <b>trigger, steps, output and review</b>.",
+                 "Set up a Claude <b>scheduled task</b> that runs your team's skill.",
+                 "Handle <b>new files, an empty folder and a failed run</b>, and keep a run log.",
+                 "Add <b>department rules</b> and a review step, and show it at <b>Demo Day</b>."],
+    "blocks": [("08:30-09:20", "Lesson 1 · Build: Output", "Callback · a fixed shape and a second artifact · Tasks 1.8 and 1.8b · skills begin"),
+               ("09:20-09:30", "Break", ""),
+               ("09:30-10:20", "Lesson 2 · Build: Package", "Two skills, the messy sample and the clock · Tasks 1.9, 1.9b and 1.10 · Lesson 3 starts"),
+               ("10:20-10:30", "Break", ""),
+               ("10:30-11:30", "Lessons 3 and 4 · The workflow card, then the schedule", "Task 2.1 · scheduled tasks · Task 2.2"),
+               ("11:30-12:30", "Lunch and Dhuhr prayer", ""),
+               ("12:30-13:20", "Lesson 5 · New inputs, outputs and n8n", "Batch 2 and the empty folder · Task 2.3 · the n8n demo · Lesson 6 starts"),
+               ("13:20-13:30", "Break", ""),
+               ("13:30-14:55", "Lessons 6 and 7 · Your rules, then test and prepare", "Task 2.4 · impact, the judges' rubric and the failed-run test · Task 2.5"),
+               ("14:55-15:15", "Asr prayer and break", ""),
+               ("15:15-16:00", "Lesson 8 · Demo Day", "Four teams, eight minutes each, scored"),
+               ("16:00-16:10", "Break", ""),
+               ("16:10-16:20", "Post-MAP test", "10 minutes. Scan the first QR code"),
+               ("16:20-16:25", "Final survey", "Scan the second QR code"),
+               ("16:25-16:30", "The transfer map and close", "The same card in other tools · your next task and your tool")]})
+SEGMENTS[1] = SEGMENTS[1][:5] + [
+    ("14:00-14:55", "Lesson 5 · Build: Input", [("14:00", 2, "Story: Noura's Sunday"), ("14:02", 3, "Connectors and the sandbox, with a check"), ("14:05", 5, "Demo 1.6 live in Claude"),
+                                                ("14:10", 20, "Task 1.7 · Run from the folder"), ("14:30", 25, "Catch-up: finish Tasks 1.6b and 1.7")]),
+    ("15:15-15:40", "Lesson 6 · Show and tell, and the Day 2 hook", [("15:15", 15, "Team demos: the card, then a live run"),
+                                                ("15:30", 5, "Demo 1.9 · The agent that ran itself (on demand if it is before 16:25)"), ("15:35", 5, "Wrap and the team vote")])]
+SEGMENTS[2] = [
+    ("08:30-09:20", "Lesson 1 · Build: Output", [("08:30", 4, "Callback: yesterday's 16:25 run and two checks"), ("08:34", 5, "Story, artifacts and a fixed shape, with a check"),
+                                                 ("08:39", 5, "Demo 1.7 live in Claude, and the transfer slide"), ("08:44", 12, "Task 1.8 · Artifact 1: fixed-shape output"),
+                                                 ("08:56", 13, "Task 1.8b · Artifact 2: a chart or a memo"), ("09:09", 5, "Lesson 2 · Skills: story, concept and check"),
+                                                 ("09:14", 4, "Demo 1.8 live in Claude"), ("09:18", 2, "Transfer: packaged methods in other tools, with a check")]),
+    ("09:30-10:20", "Lesson 2 · Build: Package", [("09:30", 14, "Task 1.9 · Skill 1: make your skill"), ("09:44", 12, "Task 1.9b · Skill 2: package your second agent"),
+                                                  ("09:56", 8, "Task 1.10 · The messy sample and the clock"), ("10:04", 2, "Lesson 3 · Story: who runs it when you are on leave?"),
+                                                  ("10:06", 6, "Trigger, steps, output and review, with a check"), ("10:12", 8, "Demo 2.1 live on the lab page; each team picks its agent")]),
+    ("10:30-11:30", "Lessons 3 and 4 · The workflow card, then the schedule", [("10:30", 12, "Task 2.1 · Workflow card"), ("10:42", 2, "Share-back"), ("10:44", 2, "Lesson 4 · Story"),
+                                                  ("10:46", 5, "Scheduled tasks: what they are and the steps"), ("10:51", 1, "Quick check"), ("10:52", 5, "Demo 2.2 live in Claude"),
+                                                  ("10:57", 25, "Task 2.2 · Schedule your workflow"), ("11:22", 2, "The transfer slide"), ("11:24", 2, "Lesson 5 · Story"),
+                                                  ("11:26", 4, "Inbox, Processed and Outputs, with a check")]),
+    ("12:30-13:20", "Lesson 5 · New inputs, outputs and n8n", [("12:30", 4, "The empty-folder rule, with a check"), ("12:34", 5, "Demo 2.3 live in Claude"),
+                                                  ("12:39", 20, "Task 2.3 · Batch 2 and the empty folder"), ("12:59", 3, "When n8n"), ("13:02", 8, "Demo 2.4 · The n8n flow, live"),
+                                                  ("13:10", 2, "Which tool: the comparison and a check"), ("13:12", 2, "Lesson 6 · Story"),
+                                                  ("13:14", 6, "Department rules, the review step and the run log, two checks")]),
+    ("13:30-14:55", "Lessons 6 and 7 · Your rules, then test and prepare", [("13:30", 5, "Demo 2.5 live in Claude"), ("13:35", 28, "Task 2.4 · Your department's rules"),
+                                                  ("14:03", 2, "Lesson 7 · Story"), ("14:05", 3, "Impact"), ("14:08", 3, "The judges' rubric"), ("14:11", 2, "The demo script"),
+                                                  ("14:13", 3, "Demo 2.6 live and a check"), ("14:16", 2, "When a step fails: the fallback and a check"),
+                                                  ("14:18", 37, "Task 2.5 · Clean runs, a failed run and the script")]),
+    ("15:15-16:00", "Lesson 8 · Demo Day", [("15:15", 32, "Four teams, 8 minutes each"), ("15:47", 8, "Changeovers and scoring"), ("15:55", 5, "Panel comments")]),
+    ("16:10-16:30", "Close", [("16:10", 10, "Post-MAP test"), ("16:20", 5, "Final survey"), ("16:25", 5, "The transfer map, next steps and close")])]
+CD.DEMOS["t17"]["minutes"] = 20
+CARD_BOXES[:] = [("Input", "What the agent works on, and where it comes from", "The month's invoices (PDF) and the purchase ledger (Excel)", "Connectors · Day 1, Lesson 5"),
+                 ("Instruction", "The rules it follows, in five parts", "Match by number, compare date and amount, flag every difference, never guess", "Project · Day 1, Lessons 3 and 4"),
+                 ("Output", "What it hands back, in a fixed shape", "One table in the Mirqab template, with a status for each invoice", "Artifacts · Day 2, Lesson 1"),
+                 ("When", "When it runs without you", "Empty until Day 2", "Scheduled tasks · Day 2, Lesson 4")]
+CHEAT[0] = (CHEAT[0][0], CHEAT[0][1], "Input and Instruction on Day 1. Output and When on Day 2.", [(a, b, c, d) for a, b, c, d in CARD_BOXES], CHEAT[0][4])
+_WHERE = {"Transfer": "Day 2 · the transfer slides in Lessons 1, 2 and 4, and the transfer map at the close",
+          "Scheduled tasks": "Day 2 · Lessons 2 to 4 · a skill, the input folder and a scheduled task",
+          "The empty-folder rule and the run log": "Day 2 · Lesson 5 · the empty-folder rule; Lesson 6 · the run log",
+          "Review step": "Day 2 · Lessons 3 and 6", "Impact": "Day 2 · Lesson 7 · the impact formula",
+          "Work scenario: data": "Day 1 · Lesson 1 · the data rule; Day 2 · Lesson 2 · skills; the safe-use card",
+          "Work scenario: rules": "Day 1 · Lesson 4; Day 2 · Lessons 2 and 6",
+          "Work scenario: review": "Day 2 · Lessons 3 and 6 · a named reviewer; read the run log every morning",
+          "Work scenario: choice": "Day 1 · Lesson 3 · scoring; Day 2 · Lesson 3"}
+for _q in MAP:
+    if _q["topic"] in _WHERE: _q["where"] = _WHERE.pop(_q["topic"])
+assert not _WHERE, f"MAP topics not found: {list(_WHERE)}"
+HUB["program_lead"] = HUB["program_lead"].replace("Shared work goes on the workshop board your trainer links in the room.", "Nothing is printed: each day's lab page and prompt sheet hold every task.")
+HUB["day_your_turn_off"] = [1, 2]    # Aya, 15 Nov: like Day 1, the Day 2 page leaves out Your turn; the lab and the prompt sheet carry the tasks
+RUNBOOK_PREFLIGHT[:] = [x if not x.startswith("After Day 1:") else
+    ("After Day 1: pause or delete the 16:25 demo task. Day 2, before 08:39: open the invoice Project for Demo 1.7 (it attaches the October invoices, ledger and template). "
+     "Before 10:52: copy the October invoices and ledger back into 01 Invoices / Inbox for Demo 2.2. Before 13:30: copy batch 2 and abdali-invoice-messy.pdf from Packs into the same Inbox for Demo 2.5 "
+     "(Demo 2.3 at 12:34 moves the first batch-2 copy to Processed).") for x in RUNBOOK_PREFLIGHT]
+
+# Day 2 lab: the five Day 1 steps move to the top (steps 1 to 5); Day 2's steps are now 6 to 12. Every step names its place.
+_MOVE = ["Same shape every run (Task 1.8)", "Artifact 2: a chart or a memo (Task 1.8b)", "Make your skill (Task 1.9)", "Skill 2: package your second agent (Task 1.9b)", "The messy sample and the clock (Task 1.10)"]
+_moved = {s["title"]: s for s in LABS[1]["steps"] if s["title"] in _MOVE}
+LABS[1]["steps"] = [s for s in LABS[1]["steps"] if s["title"] not in _MOVE]
+_TRACK = CD.TRACK_FILES
+_S2 = "the prompt sheet (Day 2 page → Prompts)"
+_moved["Same shape every run (Task 1.8)"].update(files=_TRACK, do=["Download your track's file under these steps, or use yesterday's copy.",
+    f"Copy the Output rule from {_S2}, Task 1.8. Put your columns in the brackets, in order.",
+    "In Claude, open your first Project's instructions and paste the rule at the end, under Output format. Save.",
+    "Run it twice, each time in a new chat in the Project. Compare the columns, the order and the total line."])
+_moved["Artifact 2: a chart or a memo (Task 1.8b)"].update(files=_TRACK, do=["Open your second Project and start a new chat. Attach that track's file (under these steps).",
+    f"Copy one prompt from {_S2}, Task 1.8b: the chart or the one-page memo. Send it.",
+    "Open the artifact. Check two numbers or facts against the file.", "Ask for one change, such as a new title, and watch the artifact update."])
+_moved["Make your skill (Task 1.9)"].update(files=_TRACK, do=[f"In a chat in your first Project, paste Make the skill from {_S2}, Task 1.9, with your skill's name. Save the skill when Claude offers.",
+    "Check that it is saved: Customize, then Skills.",
+    "Click New chat, outside the Project. Attach your track file and paste Test it in a new chat. Check that Claude uses your skill.",
+    "In the box below, write where this skill would live in ChatGPT, Copilot or Gemini (the Package row on the cheat sheet)."],
+    check={"kind": "note", "label": "Your skill's name, and where it would live in another tool"})
+_moved["Skill 2: package your second agent (Task 1.9b)"].update(files=_TRACK, do=[f"In a chat in your second Project, paste Make the skill from {_S2}, Task 1.9b, with a new skill name. Save it when Claude offers.",
+    "Open Customize, then Skills. Check that both skills are listed.",
+    "Click New chat, outside any Project. Attach the second track's file (under these steps) and ask for its task in one line. Did Claude pick the right skill?",
+    "In another new chat, attach your first file. Does Claude pick your first skill?"])
+_moved["The messy sample and the clock (Task 1.10)"].update(files=CD.MESSY_FILES + [CD.F_PBC], do=["Download the messy file for your track under these steps. Workflow track: download and attach mirqab-pbc-request-list-abdali.xlsx too.",
+    f"Click New chat, attach the messy file, and paste Messy run from {_S2}, Task 1.10.",
+    "Check: did the agent flag the gap, or guess? Each file hides a gap (the invoice file has two). No two values in a file conflict.",
+    "Time the task by hand and with the agent. Write both numbers in the box below. Task 2.5 uses them for your impact number."])
+_L2 = {s["title"]: s for s in LABS[2]["steps"]}
+_L2["The workflow card (Task 2.1)"].update(do=["Agree on your team's agent by a show of hands. Work on that person's laptop today.",
+    f"Open {_S2}, Task 2.1. Copy the Workflow card template and paste it in the box below.",
+    "Fill in When, Input, Skill, Output and Who reviews.", "Raise your hand. The trainer checks your card at your table."],
+    check={"kind": "note", "label": "Your team's workflow card: paste the template here, then fill it in"})
+_L2["Create the scheduled task (Task 2.2)"].update(do=["Work on the skill owner's laptop. In Google Drive, copy your track pack from Mirqab sandbox → Packs into your team folder's Inbox.",
+    "In Claude, click Scheduled in the left sidebar, then New task, then Set up manually.",
+    f"Paste the Scheduled task prompt from {_S2}, Task 2.2, and fill the brackets from your card (step 6).",
+    "Approval mode: let the run save and move files without waiting. Daily at 08:00. Save. Run it once on demand."])
+_L2["Batch 2 (Task 2.3)"].update(files=CD.BATCH2_FILES, do=[f"Check that the empty-folder line is in your task's prompt ({_S2}, Task 2.3).",
+    "Workflow teams: add the request list to the skill and the tracker line to the prompt. Analysis teams: add the monthly line.",
+    "In Google Drive, copy your track's batch-2 file from Mirqab sandbox → Packs into your team's Inbox. The files are also under these steps.",
+    "In Claude, run the task on demand. Check Outputs and the new run log in Log."])
+_L2["The empty folder"].update(title="The empty folder (Task 2.3)", do=["Check that your team's Inbox is empty.", "In Claude, run the task on demand (Scheduled in the left sidebar).", "Open Log and read the newest run log."])
+_L2["Department rules (Task 2.4)"].update(files=[CD.F_RULES], do=["Download mirqab-review-rules.docx under these steps. Pick two rules for your department.",
+    f"The skill owner pastes Add the rules from {_S2}, Task 2.4, with the two rules word for word, in a new chat. Save the skill when Claude offers.",
+    "In Google Drive, copy your track's messy file from Mirqab sandbox → Packs into your team's Inbox. In Claude, run the task on demand.",
+    "Check Outputs: DRAFT in the title, a Reviewed by line, and the messy item flagged."])
+_L2["Clean runs and the failed-run test (Task 2.5)"].update(files=[CD.F_LOCKED], do=["Copy your pack from Mirqab sandbox → Packs into your team's Inbox and run on demand. Do it three times. Workflow teams: move the trackers in Outputs to Processed before each run.",
+    f"The skill owner adds the Fallback line from {_S2}, Task 2.5, to the scheduled task's prompt.",
+    "Copy mirqab-locked-test-file.pdf from Packs into the Inbox (it is also under these steps). Run on demand. Read the run log.", "Delete the locked file from the Inbox."])
+_L2["Impact and the demo (Task 2.5)"].update(hint="Every number on your demo comes from your run log or your Task 1.10 times (step 5).",
+    do=["Impact: take your two times from step 5. (Minutes by hand minus minutes with the agent) times runs a month.",
+        f"Draft your 5-minute plan: paste the Demo 2.6 prompt from {_S2} into a chat. Problem, card, live run, impact, next.", "Rehearse once with a timer."])
+LABS[2]["title"] = "Finish your agent, then put it on a schedule"
+LABS[2]["intro"] = "Steps 1 to 5 are yours: finish your agent. From step 6, your team works together. Your notes and done marks stay in this browser. The files you need are under each step."
+LABS[2]["steps"] = [_moved[t] for t in _MOVE] + LABS[2]["steps"]
+SLIDES = {1: 62, 2: 71}

@@ -16,11 +16,11 @@ SCRIPT = {
   "Use only your phone: nothing else open, no searching, no AI tools. It is not graded. If you are not sure, choose your best guess. "
   "You take the same test at the end of tomorrow, so we can see how far you came."),
  "outcomes1": (None,
-  "Here is what you will be able to do by 16:30. Notice the verbs: explain, write, find, build, read, package. You will do every one of these yourself, on your own laptop. "
+  "Here is what you will be able to do by the end of today. Notice the verbs: explain, write, find, build, connect. You will do every one of these yourself, on your own laptop. "
   "Which one matters most for your team? (Take two answers.)"),
  "road1": (None,
   "This is our day. Everything today uses one fictional audit firm, Mirqab and Co., and its fictional client, Abdali Foods. Every file is made up, so you can make mistakes safely, and no real client data goes anywhere. "
-  "We work in seven short lessons, with a break about every hour."),
+  "We work in six short lessons, with a break about every hour."),
  "b1story": ("Ask for a show of hands.",
   "Let us start with a show of hands. Who used an AI tool at work this month? Keep your hand up if it was ChatGPT. Copilot? Claude? What did you use it for? (Take three answers.) "
   "So most of us already use AI. Before we build anything, I want us to agree on one thing: what is really happening when it gives you an answer?"),
@@ -194,61 +194,18 @@ SCRIPT = {
   "The same table as before. And look: it lists the files it read, exactly two. It read only what it needed."),
  "b5task1": ("Start the timer. Walk the room.",
   "Your turn. Connect Google Drive with your CODED training account, not your personal one. Then find your track folder in the Mirqab sandbox; your files are in its Inbox. "
-  "In your Project, copy the folder prompt from the prompt sheet, add your folder name, and run it. Make sure it tells you which files it read. You have 12 minutes."),
- "b5t2": (None,
-  "Now the output. An artifact is something Claude makes that you can open and download, like a table or a spreadsheet. But a reviewer needs more than a file. "
-  "They need the same shape every time: the same columns, in the same order, with the same total line. Like the firm's working-paper template, that is what lets you compare this week with last week."),
- "b5chk2": (HANDS,
-  "Why must a scheduled agent always return the same shape? (Wait for hands.) So that this week's result lines up with last week's. That is how a reviewer spots what changed."),
- "b5pp2": (None,
-  "I add an output rule to the invoice Project: the exact columns, in order, and a total line. Then I run it twice. (Put the two results side by side.) "
-  "Compare the columns and the total line. The same shape, both times. That is what a reviewer needs."),
- "b5map": (None,
-  "And in other tools: in Copilot, the input is your work data in SharePoint, OneDrive and Outlook, and the output is a Copilot Page. In ChatGPT, it is apps and canvas. Different buttons, same four boxes."),
- "b5task2": ("Start the timer. Walk the room.",
-  "Now give your agent a fixed shape. Take the output rule from the prompt sheet, write your own columns in the order you want them, and add it to your Project's instructions. "
-  "Then run it twice, each time in a new chat, and compare. Same columns, same order, same total? If not, fix the rule. You have 11 minutes, and then you make a second artifact."),
- "b5task3": ("Start the timer. Walk the room.",
-  "Now a second artifact, and a different kind. Open your second Project, attach that track's file again, and pick one of the two prompts on the prompt sheet: a chart, or a one-page memo for a manager. "
-  "When it appears, check two numbers or facts against the file. Then request a single edit, say a different heading, and see the artifact change in place. You have 12 minutes."),
- "b6story": (None,
-  "Welcome back. Dana's agent works, but only in her own Project. Faisal asks two questions: could her colleagues use it too? And could it work tomorrow while Dana is busy? "
-  "How does the firm share a method today? (Expected: a manual, a template, a checklist.) Right. A method that only one person can run is not really a method yet."),
- "b6t1": ("Show the Skills page under Customize.",
-  "That is what a skill solves. Think of a skill as a stored method: Claude picks it up automatically when your request fits. It works in any chat, not only inside one Project, and it works in scheduled tasks, so tomorrow's agent can use it. "
-  "And you can share it with your team. A Project is your desk. A skill is the firm's methodology manual: anyone can use it, anywhere."),
- "b6chk": (HANDS,
-  "If the method has to work everywhere, including on a schedule, how do you package it? (Wait for hands.) A skill. A Project lives in one place; a skill goes with you."),
- "b6pp": (None,
-  "Let me turn the invoice Project into a skill. (Ask Claude to make the skill, then save it.) Now the real test: a fresh chat, outside the Project. I attach the files and ask in one line. "
-  "Watch for Claude saying it is using the skill. The same table, the same shape. Package it once, and use it anywhere."),
- "b6map": (None,
-  "In other tools the same idea has other names: a skill or a custom GPT in ChatGPT, an agent in Copilot, a Gem in Gemini. The name changes; the method inside does not."),
- "b6chk2": (HANDS,
-  "Imagine a friend at another firm who only has ChatGPT. Where would your method go? (Wait for hands.) The first one: a ChatGPT skill or custom GPT, with the same card inside."),
- "b6task": ("Start the timer. Walk the room.",
-  "Now package your own method. In your Project, use the prompt from the prompt sheet to turn your instructions into a skill, and save it. Check that it appears under Customize, then Skills. "
-  "Then the real test: a brand-new chat, outside the Project. Attach your file and ask in one line. Claude should use your skill and give you the same shape. You have 14 minutes."),
- "b6task1b": ("Start the timer. Walk the room.",
-  "Now package your second agent as a second skill. Then the interesting part: start a fresh chat with no Project, add the file from your second track, and make a one-line request. Does Claude pick the right skill? "
-  "Then try your first file in another new chat. Claude chooses a skill by its one-line description, so if it picks the wrong one, make that line more specific. You have 12 minutes."),
- "b6task2": ("Start the timer. Walk the room.",
-  "The last task of the day, and my favorite. Real files are messy. Get the messy file for your track from the lab page, step 14, and run your skill on it. "
-  "Each file hides a gap. A good agent flags it; a bad agent guesses. Which one is yours? Then time it: how long by hand, and how long with the agent. Note the two numbers on your lab page. You have 8 minutes."),
+  "In your Project, copy the folder prompt from the prompt sheet, add your folder name, and run it. Make sure it tells you which files it read. You have 20 minutes."),
  "b7show": ("Teams show at their own tables at the same time. Walk between them.",
   "Show time. Four teams, at your own tables. Each person has ninety seconds: first the card, then a live run on one of your files. Your team watches and asks one question. "
   "If a run hangs, show your last good result. Go."),
  "b7demo": (None,
   "One last thing before we close. This morning at eight, I set up a scheduled task for Dana's invoice agent, to run at 16:25. Nobody touches it. (Open the Scheduled page, then the Outputs folder.) "
-  "Watch the Outputs folder. (When the file appears.) Nobody pressed send. The agent ran by itself. That is tomorrow: your team's agent, on a schedule."),
- "b7map": (None,
-  "Here is everything you built today, in one table, with the names in other tools. Read one row across: what Claude calls a Project, ChatGPT calls a Project or a custom GPT, Copilot calls an agent, and Gemini calls a Gem. "
-  "You used the first four rows today. Tomorrow we fill in the When row. Learn the method once, and it travels to any tool."),
+  "Watch the Outputs folder. (If it is before 16:25, run it on demand from the Scheduled page.) (When the file appears.) Nobody pressed send. The agent ran by itself. That is tomorrow: your team's agent, on a schedule."),
  "w1": (None,
-  "What a day. Each of you built your own agent. You wrote a card, set up a Project, connected a folder, fixed the output shape, and packaged a skill. You found the two planted problems, and you tested a messy file. "
+  "What a day. Each of you built your own agent. You wrote a card, set up two Projects, and connected a folder. You found the two planted problems. Tomorrow morning we fix the output shape and package it as a skill. "
   "And the habit to keep: when something is missing, the agent says so instead of guessing, and a person always reviews. Who will try this first at work, and on what? (Take two answers.)"),
  "close1": (None,
-  "Thank you all. Tomorrow we put your agents on a schedule, add a human review step, and present them at Demo Day. First thing tomorrow, each team chooses which agent to automate. See you at 08:30."),
+  "Thank you all. Tomorrow morning you give your agent a fixed output and package it as a skill. Then each team chooses one agent, puts it on a schedule with a review step, and presents it at Demo Day. See you at 08:30."),
 }
 
 

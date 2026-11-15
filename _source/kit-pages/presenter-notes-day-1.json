@@ -39,7 +39,7 @@
 "flat": "10 min. · Do: Check the response count in the portal before you move on. · Fallback: read out the short link (/pre) if a phone cannot scan. · Say: “Before we teach anything, we want to see where you are today. Scan the QR code with your phone. It takes about ten minutes. Use only your phone: nothing else open, no searching, no AI tools. It is not graded. If you are not sure, choose your best guess. You take the same test at the end of tomorrow, so we can see how far you came.”"
 },
 {
-"say": "Here is what you will be able to do by 16:30. Notice the verbs: explain, write, find, build, read, package. You will do every one of these yourself, on your own laptop. Which one matters most for your team? (Take two answers.)",
+"say": "Here is what you will be able to do by the end of today. Notice the verbs: explain, write, find, build, connect. You will do every one of these yourself, on your own laptop. Which one matters most for your team? (Take two answers.)",
 "do": null,
 "expect": null,
 "silent": null,
@@ -49,10 +49,10 @@
 "t": "open",
 "k": "outcomes",
 "h": "Outcomes",
-"flat": "Say: “Here is what you will be able to do by 16:30. Notice the verbs: explain, write, find, build, read, package. You will do every one of these yourself, on your own laptop. Which one matters most for your team? (Take two answers.)”"
+"flat": "Say: “Here is what you will be able to do by the end of today. Notice the verbs: explain, write, find, build, connect. You will do every one of these yourself, on your own laptop. Which one matters most for your team? (Take two answers.)”"
 },
 {
-"say": "This is our day. Everything today uses one fictional audit firm, Mirqab and Co., and its fictional client, Abdali Foods. Every file is made up, so you can make mistakes safely, and no real client data goes anywhere. We work in seven short lessons, with a break about every hour.",
+"say": "This is our day. Everything today uses one fictional audit firm, Mirqab and Co., and its fictional client, Abdali Foods. Every file is made up, so you can make mistakes safely, and no real client data goes anywhere. We work in six short lessons, with a break about every hour.",
 "do": null,
 "expect": null,
 "silent": null,
@@ -62,7 +62,7 @@
 "t": "open",
 "k": "road",
 "h": "Road: the shape of Day 1",
-"flat": "Say: “This is our day. Everything today uses one fictional audit firm, Mirqab and Co., and its fictional client, Abdali Foods. Every file is made up, so you can make mistakes safely, and no real client data goes anywhere. We work in seven short lessons, with a break about every hour.”"
+"flat": "Say: “This is our day. Everything today uses one fictional audit firm, Mirqab and Co., and its fictional client, Abdali Foods. Every file is made up, so you can make mistakes safely, and no real client data goes anywhere. We work in six short lessons, with a break about every hour.”"
 },
 {
 "say": "Let us start with a show of hands. Who used an AI tool at work this month? Keep your hand up if it was ChatGPT. Copilot? Claude? What did you use it for? (Take three answers.) So most of us already use AI. Before we build anything, I want us to agree on one thing: what is really happening when it gives you an answer?",
@@ -698,7 +698,7 @@
 "time": "14:00-14:55",
 "t": "b5",
 "k": "story",
-"h": "Lesson 5 · Build: Input and Output",
+"h": "Lesson 5 · Build: Input",
 "flat": "14:00-14:55. · Say: “Meet Noura, a project coordinator. Each week she takes the same files out of the drive and drops them into a chat, one at a time. How many files do you drag into a tool each week? Tomorrow your agent runs at eight in the morning. Nobody will be there to drag the files. So the agent has to read them where they already are.”"
 },
 {
@@ -741,212 +741,17 @@
 "flat": "4 min. · Do: Switch to Claude and run it live. Customize, then Connectors: show Google Drive, connected before Day 1 with the trainer's CODED training Google account. In the invoice Project, ask it to process the newest pack in Mirqab sandbox / 01 Invoices / Inbox. · Fallback: If the connector is slow, upload the two files and continue. The expected result is on the staff backup page, Demo 1.6. · Say: “Watch. Google Drive is already connected here. In the invoice Project, I ask the agent to process the newest files in the Inbox folder. (Run it.) The same table as before. And look: it lists the files it read, exactly two. It read only what it needed.”"
 },
 {
-"say": "Your turn. Connect Google Drive with your CODED training account, not your personal one. Then find your track folder in the Mirqab sandbox; your files are in its Inbox. In your Project, copy the folder prompt from the prompt sheet, add your folder name, and run it. Make sure it tells you which files it read. You have 12 minutes.",
+"say": "Your turn. Connect Google Drive with your CODED training account, not your personal one. Then find your track folder in the Mirqab sandbox; your files are in its Inbox. In your Project, copy the folder prompt from the prompt sheet, add your folder name, and run it. Make sure it tells you which files it read. You have 20 minutes.",
 "do": "Start the timer. Walk the room.",
 "expect": "One run that reads from the track folder and lists the files it used.",
 "silent": null,
 "fallback": "If Google sign-in fails, upload the files and continue. The trainer fixes the connector at the break.",
 "more": [],
-"time": "12 min work, then share",
+"time": "20 min work, then share",
 "t": "b5",
 "k": "task",
-"h": "Your turn 1.7: Run from the folder (12 min, on your own)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. · Expect: One run that reads from the track folder and lists the files it used. · Fallback: If Google sign-in fails, upload the files and continue. The trainer fixes the connector at the break. · Say: “Your turn. Connect Google Drive with your CODED training account, not your personal one. Then find your track folder in the Mirqab sandbox; your files are in its Inbox. In your Project, copy the folder prompt from the prompt sheet, add your folder name, and run it. Make sure it tells you which files it read. You have 12 minutes.”"
-},
-{
-"say": "Now the output. An artifact is something Claude makes that you can open and download, like a table or a spreadsheet. But a reviewer needs more than a file. They need the same shape every time: the same columns, in the same order, with the same total line. Like the firm's working-paper template, that is what lets you compare this week with last week.",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": null,
-"t": "b5",
-"k": "term",
-"h": "Same shape. Every run.",
-"flat": "Say: “Now the output. An artifact is something Claude makes that you can open and download, like a table or a spreadsheet. But a reviewer needs more than a file. They need the same shape every time: the same columns, in the same order, with the same total line. Like the firm's working-paper template, that is what lets you compare this week with last week.”"
-},
-{
-"say": "Why must a scheduled agent always return the same shape? (Wait for hands.) So that this week's result lines up with last week's. That is how a reviewer spots what changed.",
-"do": "Ask for hands up on each option, then tap the most popular one.",
-"expect": "Option A.",
-"silent": null,
-"fallback": null,
-"more": [],
-"time": "1 min",
-"t": "b5",
-"k": "check",
-"h": "Quick check",
-"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · Say: “Why must a scheduled agent always return the same shape? (Wait for hands.) So that this week's result lines up with last week's. That is how a reviewer spots what changed.”"
-},
-{
-"say": "I add an output rule to the invoice Project: the exact columns, in order, and a total line. Then I run it twice. (Put the two results side by side.) Compare the columns and the total line. The same shape, both times. That is what a reviewer needs.",
-"do": "Switch to Claude and run it live. Add the output rule below to the invoice Project. Run twice. Put the two artifacts side by side.",
-"expect": null,
-"silent": null,
-"fallback": "Show the backup total line. The expected result is on the staff backup page, Demo 1.7.",
-"more": [],
-"time": "4 min",
-"t": "b5",
-"k": "live",
-"h": "Demo 1.7 live in Claude: Same shape every run",
-"flat": "4 min. · Do: Switch to Claude and run it live. Add the output rule below to the invoice Project. Run twice. Put the two artifacts side by side. · Fallback: Show the backup total line. The expected result is on the staff backup page, Demo 1.7. · Say: “I add an output rule to the invoice Project: the exact columns, in order, and a total line. Then I run it twice. (Put the two results side by side.) Compare the columns and the total line. The same shape, both times. That is what a reviewer needs.”"
-},
-{
-"say": "And in other tools: in Copilot, the input is your work data in SharePoint, OneDrive and Outlook, and the output is a Copilot Page. In ChatGPT, it is apps and canvas. Different buttons, same four boxes.",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": null,
-"t": "b5",
-"k": "table",
-"h": "Input and output in other tools.",
-"flat": "Say: “And in other tools: in Copilot, the input is your work data in SharePoint, OneDrive and Outlook, and the output is a Copilot Page. In ChatGPT, it is apps and canvas. Different buttons, same four boxes.”"
-},
-{
-"say": "Now give your agent a fixed shape. Take the output rule from the prompt sheet, write your own columns in the order you want them, and add it to your Project's instructions. Then run it twice, each time in a new chat, and compare. Same columns, same order, same total? If not, fix the rule. You have 11 minutes, and then you make a second artifact.",
-"do": "Start the timer. Walk the room.",
-"expect": "Two artifacts with the same columns, order and total line.",
-"silent": null,
-"fallback": "If artifacts do not open, ask for a markdown table and continue.",
-"more": [],
-"time": "11 min work, then share",
-"t": "b5",
-"k": "task",
-"h": "Your turn 1.8: Fixed-shape output (11 min, on your own)",
-"flat": "11 min work, then share. · Do: Start the timer. Walk the room. · Expect: Two artifacts with the same columns, order and total line. · Fallback: If artifacts do not open, ask for a markdown table and continue. · Say: “Now give your agent a fixed shape. Take the output rule from the prompt sheet, write your own columns in the order you want them, and add it to your Project's instructions. Then run it twice, each time in a new chat, and compare. Same columns, same order, same total? If not, fix the rule. You have 11 minutes, and then you make a second artifact.”"
-},
-{
-"say": "Now a second artifact, and a different kind. Open your second Project, attach that track's file again, and pick one of the two prompts on the prompt sheet: a chart, or a one-page memo for a manager. When it appears, check two numbers or facts against the file. Then request a single edit, say a different heading, and see the artifact change in place. You have 12 minutes.",
-"do": "Start the timer. Walk the room.",
-"expect": "One chart or one memo from the second track's file, checked against the file on two points.",
-"silent": null,
-"fallback": "If the chart does not draw, ask for the memo instead.",
-"more": [],
-"time": "12 min work, then share",
-"t": "b5",
-"k": "task",
-"h": "Your turn 1.8b: Artifact 2: a different kind of output (12 min, on your own)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. · Expect: One chart or one memo from the second track's file, checked against the file on two points. · Fallback: If the chart does not draw, ask for the memo instead. · Say: “Now a second artifact, and a different kind. Open your second Project, attach that track's file again, and pick one of the two prompts on the prompt sheet: a chart, or a one-page memo for a manager. When it appears, check two numbers or facts against the file. Then request a single edit, say a different heading, and see the artifact change in place. You have 12 minutes.”"
-},
-{
-"say": "Welcome back. Dana's agent works, but only in her own Project. Faisal asks two questions: could her colleagues use it too? And could it work tomorrow while Dana is busy? How does the firm share a method today? (Expected: a manual, a template, a checklist.) Right. A method that only one person can run is not really a method yet.",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": "15:15-16:00",
-"t": "b6",
-"k": "story",
-"h": "Lesson 6 · Build: Package",
-"flat": "15:15-16:00. · Say: “Welcome back. Dana's agent works, but only in her own Project. Faisal asks two questions: could her colleagues use it too? And could it work tomorrow while Dana is busy? How does the firm share a method today? (Expected: a manual, a template, a checklist.) Right. A method that only one person can run is not really a method yet.”"
-},
-{
-"say": "That is what a skill solves. Think of a skill as a stored method: Claude picks it up automatically when your request fits. It works in any chat, not only inside one Project, and it works in scheduled tasks, so tomorrow's agent can use it. And you can share it with your team. A Project is your desk. A skill is the firm's methodology manual: anyone can use it, anywhere.",
-"do": "Show the Skills page under Customize.",
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": null,
-"t": "b6",
-"k": "term",
-"h": "From your desk to the firm's manual.",
-"flat": "Do: Show the Skills page under Customize. · Say: “That is what a skill solves. Think of a skill as a stored method: Claude picks it up automatically when your request fits. It works in any chat, not only inside one Project, and it works in scheduled tasks, so tomorrow's agent can use it. And you can share it with your team. A Project is your desk. A skill is the firm's methodology manual: anyone can use it, anywhere.”"
-},
-{
-"say": "If the method has to work everywhere, including on a schedule, how do you package it? (Wait for hands.) A skill. A Project lives in one place; a skill goes with you.",
-"do": "Ask for hands up on each option, then tap the most popular one.",
-"expect": "Option B.",
-"silent": null,
-"fallback": null,
-"more": [],
-"time": "1 min",
-"t": "b6",
-"k": "check",
-"h": "Quick check",
-"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option B. · Say: “If the method has to work everywhere, including on a schedule, how do you package it? (Wait for hands.) A skill. A Project lives in one place; a skill goes with you.”"
-},
-{
-"say": "Let me turn the invoice Project into a skill. (Ask Claude to make the skill, then save it.) Now the real test: a fresh chat, outside the Project. I attach the files and ask in one line. Watch for Claude saying it is using the skill. The same table, the same shape. Package it once, and use it anywhere.",
-"do": "Switch to Claude and run it live. File creation works on this account (the owner turned on code execution for the team). mirqab-invoice-match was built and tested before Day 1; the 16:25 task uses it. Save this live copy as mirqab-invoice-match-live. In the invoice Project, ask Claude to turn the instructions into a skill. Save it. Run it in a fresh chat outside the Project.",
-"expect": null,
-"silent": null,
-"fallback": "If the skill does not save, show the backup table and continue with the Project. The expected result is on the staff backup page, Demo 1.8.",
-"more": [],
-"time": "4 min",
-"t": "b6",
-"k": "live",
-"h": "Demo 1.8 live in Claude: From Project to skill",
-"flat": "4 min. · Do: Switch to Claude and run it live. File creation works on this account (the owner turned on code execution for the team). mirqab-invoice-match was built and tested before Day 1; the 16:25 task uses it. Save this live copy as mirqab-invoice-match-live. In the invoice Project, ask Claude to turn the instructions into a skill. Save it. Run it in a fresh chat outside the Project. · Fallback: If the skill does not save, show the backup table and continue with the Project. The expected result is on the staff backup page, Demo 1.8. · Say: “Let me turn the invoice Project into a skill. (Ask Claude to make the skill, then save it.) Now the real test: a fresh chat, outside the Project. I attach the files and ask in one line. Watch for Claude saying it is using the skill. The same table, the same shape. Package it once, and use it anywhere.”"
-},
-{
-"say": "In other tools the same idea has other names: a skill or a custom GPT in ChatGPT, an agent in Copilot, a Gem in Gemini. The name changes; the method inside does not.",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": null,
-"t": "b6",
-"k": "table",
-"h": "A packaged method in other tools.",
-"flat": "Say: “In other tools the same idea has other names: a skill or a custom GPT in ChatGPT, an agent in Copilot, a Gem in Gemini. The name changes; the method inside does not.”"
-},
-{
-"say": "Imagine a friend at another firm who only has ChatGPT. Where would your method go? (Wait for hands.) The first one: a ChatGPT skill or custom GPT, with the same card inside.",
-"do": "Ask for hands up on each option, then tap the most popular one.",
-"expect": "Option A.",
-"silent": null,
-"fallback": null,
-"more": [],
-"time": "1 min",
-"t": "b6",
-"k": "check",
-"h": "Quick check",
-"flat": "1 min. · Do: Ask for hands up on each option, then tap the most popular one. · Expect: Option A. · Say: “Imagine a friend at another firm who only has ChatGPT. Where would your method go? (Wait for hands.) The first one: a ChatGPT skill or custom GPT, with the same card inside.”"
-},
-{
-"say": "Now package your own method. In your Project, use the prompt from the prompt sheet to turn your instructions into a skill, and save it. Check that it appears under Customize, then Skills. Then the real test: a brand-new chat, outside the Project. Attach your file and ask in one line. Claude should use your skill and give you the same shape. You have 14 minutes.",
-"do": "Start the timer. Walk the room.",
-"expect": "A saved skill; a fresh chat that uses it and returns the same shape as the Project; one transfer line on the card.",
-"silent": null,
-"fallback": "If skills are off on an account, continue with the Project. The trainer turns them on at the break.",
-"more": [],
-"time": "14 min work, then share",
-"t": "b6",
-"k": "task",
-"h": "Your turn 1.9: Make your skill (14 min, on your own)",
-"flat": "14 min work, then share. · Do: Start the timer. Walk the room. · Expect: A saved skill; a fresh chat that uses it and returns the same shape as the Project; one transfer line on the card. · Fallback: If skills are off on an account, continue with the Project. The trainer turns them on at the break. · Say: “Now package your own method. In your Project, use the prompt from the prompt sheet to turn your instructions into a skill, and save it. Check that it appears under Customize, then Skills. Then the real test: a brand-new chat, outside the Project. Attach your file and ask in one line. Claude should use your skill and give you the same shape. You have 14 minutes.”"
-},
-{
-"say": "Now package your second agent as a second skill. Then the interesting part: start a fresh chat with no Project, add the file from your second track, and make a one-line request. Does Claude pick the right skill? Then try your first file in another new chat. Claude chooses a skill by its one-line description, so if it picks the wrong one, make that line more specific. You have 12 minutes.",
-"do": "Start the timer. Walk the room.",
-"expect": "Two saved skills. In a fresh chat, Claude picks the right one for each file.",
-"silent": null,
-"fallback": "If skills are off on an account, continue with the Project. The trainer turns them on at the break.",
-"more": [],
-"time": "12 min work, then share",
-"t": "b6",
-"k": "task",
-"h": "Your turn 1.9b: Skill 2: package your second agent (12 min, on your own)",
-"flat": "12 min work, then share. · Do: Start the timer. Walk the room. · Expect: Two saved skills. In a fresh chat, Claude picks the right one for each file. · Fallback: If skills are off on an account, continue with the Project. The trainer turns them on at the break. · Say: “Now package your second agent as a second skill. Then the interesting part: start a fresh chat with no Project, add the file from your second track, and make a one-line request. Does Claude pick the right skill? Then try your first file in another new chat. Claude chooses a skill by its one-line description, so if it picks the wrong one, make that line more specific. You have 12 minutes.”"
-},
-{
-"say": "The last task of the day, and my favorite. Real files are messy. Get the messy file for your track from the lab page, step 14, and run your skill on it. Each file hides a gap. A good agent flags it; a bad agent guesses. Which one is yours? Then time it: how long by hand, and how long with the agent. Note the two numbers on your lab page. You have 8 minutes.",
-"do": "Start the timer. Walk the room.",
-"expect": "A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Items 8 and 11 stay Outstanding. The client says next week but gives no date: flag it. Add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated.",
-"silent": null,
-"fallback": "If the agent guesses, add the When unsure rule again and rerun.",
-"more": [],
-"time": "8 min work, then share",
-"t": "b6",
-"k": "task",
-"h": "Your turn 1.10: The messy sample and the clock (8 min, on your own)",
-"flat": "8 min work, then share. · Do: Start the timer. Walk the room. · Expect: A flagged result for each track: invoice: Flag: no invoice number, and the amount is in USD. Do not convert it.; lease: Flag: no end date. Ask for the term before you schedule it.; tb: Flag: the movement cannot be calculated. Do not treat the blank as zero.; email: Items 8 and 11 stay Outstanding. The client says next week but gives no date: flag it. Add one follow-up for each.; status: Flag: the budget is blank, so over or under budget cannot be calculated. · Fallback: If the agent guesses, add the When unsure rule again and rerun. · Say: “The last task of the day, and my favorite. Real files are messy. Get the messy file for your track from the lab page, step 14, and run your skill on it. Each file hides a gap. A good agent flags it; a bad agent guesses. Which one is yours? Then time it: how long by hand, and how long with the agent. Note the two numbers on your lab page. You have 8 minutes.”"
+"h": "Your turn 1.7: Run from the folder (20 min, on your own)",
+"flat": "20 min work, then share. · Do: Start the timer. Walk the room. · Expect: One run that reads from the track folder and lists the files it used. · Fallback: If Google sign-in fails, upload the files and continue. The trainer fixes the connector at the break. · Say: “Your turn. Connect Google Drive with your CODED training account, not your personal one. Then find your track folder in the Mirqab sandbox; your files are in its Inbox. In your Project, copy the folder prompt from the prompt sheet, add your folder name, and run it. Make sure it tells you which files it read. You have 20 minutes.”"
 },
 {
 "say": "Show time. Four teams, at your own tables. Each person has ninety seconds: first the card, then a live run on one of your files. Your team watches and asks one question. If a run hangs, show your last good result. Go.",
@@ -955,40 +760,27 @@
 "silent": null,
 "fallback": null,
 "more": [],
-"time": "12 min",
+"time": "15 min",
 "t": "b7",
 "k": "timer",
 "h": "Four teams. Ninety seconds each person.",
-"flat": "12 min. · Do: Teams show at their own tables at the same time. Walk between them. · Say: “Show time. Four teams, at your own tables. Each person has ninety seconds: first the card, then a live run on one of your files. Your team watches and asks one question. If a run hangs, show your last good result. Go.”"
+"flat": "15 min. · Do: Teams show at their own tables at the same time. Walk between them. · Say: “Show time. Four teams, at your own tables. Each person has ninety seconds: first the card, then a live run on one of your files. Your team watches and asks one question. If a run hangs, show your last good result. Go.”"
 },
 {
-"say": "One last thing before we close. This morning at eight, I set up a scheduled task for Dana's invoice agent, to run at 16:25. Nobody touches it. (Open the Scheduled page, then the Outputs folder.) Watch the Outputs folder. (When the file appears.) Nobody pressed send. The agent ran by itself. That is tomorrow: your team's agent, on a schedule.",
+"say": "One last thing before we close. This morning at eight, I set up a scheduled task for Dana's invoice agent, to run at 16:25. Nobody touches it. (Open the Scheduled page, then the Outputs folder.) Watch the Outputs folder. (If it is before 16:25, run it on demand from the Scheduled page.) (When the file appears.) Nobody pressed send. The agent ran by itself. That is tomorrow: your team's agent, on a schedule.",
 "do": "Switch to Claude and run it live. Before Day 1: build mirqab-invoice-match on this account and test it in a fresh chat. This task uses it. At 08:00, click Scheduled in the left sidebar, then New task. Name it Mirqab invoice match demo. Paste the prompt below. Frequency: daily at 16:25. Approval mode: the mode that lets the run save and move Drive files without waiting. Before 16:25, check that 01 Invoices / Inbox holds one copy of the October invoices and ledger. Show the Scheduled page, then open Outputs as the file arrives.",
 "expect": null,
 "silent": null,
-"fallback": "If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. The expected result is on the staff backup page, Demo 1.9.",
+"fallback": "If the day ends before 16:25, run the task on demand from the Scheduled page, or show the backup run-log file. The expected result is on the staff backup page, Demo 1.9.",
 "more": [],
 "time": "4 min",
 "t": "b7",
 "k": "live",
 "h": "Demo 1.9 live in Claude: The agent that ran itself",
-"flat": "4 min. · Do: Switch to Claude and run it live. Before Day 1: build mirqab-invoice-match on this account and test it in a fresh chat. This task uses it. At 08:00, click Scheduled in the left sidebar, then New task. Name it Mirqab invoice match demo. Paste the prompt below. Frequency: daily at 16:25. Approval mode: the mode that lets the run save and move Drive files without waiting. Before 16:25, check that 01 Invoices / Inbox holds one copy of the October invoices and ledger. Show the Scheduled page, then open Outputs as the file arrives. · Fallback: If the run has not arrived, run the task on demand from the Scheduled page, or show the backup run-log file. The expected result is on the staff backup page, Demo 1.9. · Say: “One last thing before we close. This morning at eight, I set up a scheduled task for Dana's invoice agent, to run at 16:25. Nobody touches it. (Open the Scheduled page, then the Outputs folder.) Watch the Outputs folder. (When the file appears.) Nobody pressed send. The agent ran by itself. That is tomorrow: your team's agent, on a schedule.”"
+"flat": "4 min. · Do: Switch to Claude and run it live. Before Day 1: build mirqab-invoice-match on this account and test it in a fresh chat. This task uses it. At 08:00, click Scheduled in the left sidebar, then New task. Name it Mirqab invoice match demo. Paste the prompt below. Frequency: daily at 16:25. Approval mode: the mode that lets the run save and move Drive files without waiting. Before 16:25, check that 01 Invoices / Inbox holds one copy of the October invoices and ledger. Show the Scheduled page, then open Outputs as the file arrives. · Fallback: If the day ends before 16:25, run the task on demand from the Scheduled page, or show the backup run-log file. The expected result is on the staff backup page, Demo 1.9. · Say: “One last thing before we close. This morning at eight, I set up a scheduled task for Dana's invoice agent, to run at 16:25. Nobody touches it. (Open the Scheduled page, then the Outputs folder.) Watch the Outputs folder. (If it is before 16:25, run it on demand from the Scheduled page.) (When the file appears.) Nobody pressed send. The agent ran by itself. That is tomorrow: your team's agent, on a schedule.”"
 },
 {
-"say": "Here is everything you built today, in one table, with the names in other tools. Read one row across: what Claude calls a Project, ChatGPT calls a Project or a custom GPT, Copilot calls an agent, and Gemini calls a Gem. You used the first four rows today. Tomorrow we fill in the When row. Learn the method once, and it travels to any tool.",
-"do": null,
-"expect": null,
-"silent": null,
-"fallback": null,
-"more": [],
-"time": "2 min",
-"t": "b7",
-"k": "table",
-"h": "Same building blocks, different names.",
-"flat": "2 min. · Say: “Here is everything you built today, in one table, with the names in other tools. Read one row across: what Claude calls a Project, ChatGPT calls a Project or a custom GPT, Copilot calls an agent, and Gemini calls a Gem. You used the first four rows today. Tomorrow we fill in the When row. Learn the method once, and it travels to any tool.”"
-},
-{
-"say": "What a day. Each of you built your own agent. You wrote a card, set up a Project, connected a folder, fixed the output shape, and packaged a skill. You found the two planted problems, and you tested a messy file. And the habit to keep: when something is missing, the agent says so instead of guessing, and a person always reviews. Who will try this first at work, and on what? (Take two answers.)",
+"say": "What a day. Each of you built your own agent. You wrote a card, set up two Projects, and connected a folder. You found the two planted problems. Tomorrow morning we fix the output shape and package it as a skill. And the habit to keep: when something is missing, the agent says so instead of guessing, and a person always reviews. Who will try this first at work, and on what? (Take two answers.)",
 "do": null,
 "expect": null,
 "silent": null,
@@ -998,7 +790,7 @@
 "t": "close",
 "k": "wrap",
 "h": "Day wrap-up",
-"flat": "Say: “What a day. Each of you built your own agent. You wrote a card, set up a Project, connected a folder, fixed the output shape, and packaged a skill. You found the two planted problems, and you tested a messy file. And the habit to keep: when something is missing, the agent says so instead of guessing, and a person always reviews. Who will try this first at work, and on what? (Take two answers.)”"
+"flat": "Say: “What a day. Each of you built your own agent. You wrote a card, set up two Projects, and connected a folder. You found the two planted problems. Tomorrow morning we fix the output shape and package it as a skill. And the habit to keep: when something is missing, the agent says so instead of guessing, and a person always reviews. Who will try this first at work, and on what? (Take two answers.)”"
 },
 {
 "say": "Thank you. See you at 08:30.",
@@ -1007,12 +799,12 @@
 "silent": null,
 "fallback": null,
 "more": [
-"Remind teams that the vote closes at 08:40 tomorrow."
+"Remind teams that they pick their agent at about 10:15 tomorrow, after the skills."
 ],
 "time": "last 5 min",
 "t": "close",
 "k": "close",
 "h": "Close",
-"flat": "last 5 min. · Do: Recap the day in one line. · Remind teams that the vote closes at 08:40 tomorrow. · Say: “Thank you. See you at 08:30.”"
+"flat": "last 5 min. · Do: Recap the day in one line. · Remind teams that they pick their agent at about 10:15 tomorrow, after the skills. · Say: “Thank you. See you at 08:30.”"
 }
 ]
