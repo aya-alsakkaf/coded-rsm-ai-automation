@@ -67,7 +67,7 @@
 "Your skill on a schedule · Demo 2.3 · Task 2.5",
 "12:30-12:55",
 "Lesson 4 · Claude, n8n or Power Automate",
-"Limits, when to switch, trigger, node and output · Demo 2.4 in n8n",
+"Limits, when to switch, trigger, node and output · Demo 2.4, the n8n video",
 "12:55-14:25",
 "Lesson 5 · Mini project",
 "Your department's agent · Task 2.6",
@@ -1024,7 +1024,7 @@
 "n": 40,
 "id": "n4demo",
 "kind": "live",
-"title": "Demo 2.4 · n8n · video or live",
+"title": "Demo 2.4 · n8n · video",
 "topic": "n4",
 "kit": [
 "Demo 2.4 · n8n",
@@ -1035,7 +1035,7 @@
 "mirqab-n8n-demo-invoice-routing.mp4"
 ],
 "chrome": [
-"n8n · video or live",
+"n8n · video",
 "Watch for",
 "Files",
 "Nothing to attach.",

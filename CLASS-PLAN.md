@@ -51,7 +51,7 @@ Teaching minutes: 320.
 | 09:45-10:55 | Lesson 2 · Artifacts | 70 | Dashboards, KPIs and decks · Demo 2.2 · Tasks 2.3 and 2.4 |
 | 10:55-11:30 | Lesson 3 · Scheduled tasks | 35 | Your skill on a schedule · Demo 2.3 · Task 2.5 |
 | 11:30-12:30 | Lunch and Dhuhr prayer | 60 | Break |
-| 12:30-12:55 | Lesson 4 · Claude, n8n or Power Automate | 25 | Limits, when to switch, trigger, node and output · Demo 2.4 in n8n |
+| 12:30-12:55 | Lesson 4 · Claude, n8n or Power Automate | 25 | Limits, when to switch, trigger, node and output · Demo 2.4, the n8n video |
 | 12:55-14:25 | Lesson 5 · Mini project | 90 | Your department's agent · Task 2.6 |
 | 14:25-14:40 | Asr prayer and break | 15 | Break |
 | 14:40-15:00 | Lesson 6 · Project demos | 20 | Projects picked by the trainer, four minutes each |

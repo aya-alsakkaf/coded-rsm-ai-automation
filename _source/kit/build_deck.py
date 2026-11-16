@@ -519,7 +519,9 @@ def day2():
          ["Node or action", "One step: read, calculate, decide, call AI", "Code, If, Edit Fields, HTTP Request, AI Agent", "Condition, Compose, Excel, AI Builder"],
          ["Output", "Where the result lands", "A sheet row, an email draft, a file", "A SharePoint item, an Outlook draft, a Teams post"]],
         "Data moves from node to node as items. Each run is an execution you can open.", cls="tight"))
-    s.append(livedemo("n4demo", "n4", "e24", badge="n8n · video or live", app="n8n", time="9 min"))
+    s.append(livedemo("n4demo", "n4", "e24", badge="n8n · video", app="n8n", time="9 min"))
+    s[-1].rec["note"]["do"] = ("Play the video: click the video file on the slide (100 seconds, captioned, no sound). Talk over it. "
+                               "Pause on the If step (3 invoices true, 2 false) and on the final run. Do not build a flow live.")
     s.append(check("n4chk2", "n4", "In the n8n demo, <b>which step decided where each invoice went?</b>",
         [("The trigger", 0, "The trigger only starts the run."), ("The If node", 1, "Right. It sends each item down the true or the false branch."), ("The Code node", 0, "It only listed the invoices.")]))
     # Lesson 5 · Mini project

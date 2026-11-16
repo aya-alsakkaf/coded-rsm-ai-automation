@@ -1159,3 +1159,15 @@ DEMOS["u25"].update(
 DEMOS["u26"]["setup"] = [x.replace("When (15 min): a scheduled task, run once on demand, with a run log.", "When (15 min): the file inside your skill, then a scheduled task run once on demand.") for x in DEMOS["u26"]["setup"]]
 PROJECT_CARD = PROJECT_CARD.replace("Input: [the file it reads, and where it lives]", "Input: [the file it reads; today it lives inside the skill]")
 DEMOS["u26"]["templates"] = [("Project card", PROJECT_CARD) if l == "Project card" else (l, t) for l, t in DEMOS["u26"]["templates"]]
+
+# n8n is a video only (Aya, 16 Nov 06:09: no flow built from scratch in class). The sheet keeps one prompt: plan your own workflow, build nothing.
+PLAN_FLOW = ("Here is a task from my department that starts with an event: [the task]. Describe it as an automation for n8n or Power Automate: "
+             "the trigger, each step in order, and the output. Mark the one step where Claude would read or write. Do not build anything.")
+DEMOS["e24"].update(
+ setup=["[T] Click the video file on the slide: 100 seconds, captioned, no sound. Talk over it.",
+        "[T] Name each part as it appears: the trigger, the Code step, the If step, the two outputs.",
+        "[T] Pause on the If step: 3 invoices on the true branch, 2 on the false branch."],
+ prompts=[("Plan my workflow (after the video, no build)", PLAN_FLOW)],
+ expected=("In the video every node turns green. The trigger starts it, the Code step returns 5 invoices, and the If step sends 3 to Supervisor review "
+           "(over KWD 2,000: BPK-4471, WDS-20931, SGT-11205) and 2 to Approved (SCC-0718, FSC-3390)."),
+ fallback="If the video does not play from the slide, download it from step 6 of the Day 2 lab page, or step through the backup table.")

@@ -507,17 +507,17 @@
 "flat": "Say: “Before the demo, three words you will hear in every automation tool. The trigger is what starts it. Each node, or action, does one small job: read, calculate, decide, call AI. And the output is where the result lands. Between the nodes, the data travels as items. Every run is saved, so you can open it and see what happened.”"
 },
 {
-"say": "Here is a small workflow in n8n, built from the same October invoices. (Play the video, or click Execute workflow.) First the trigger: every weekday at 08:00. Then a Code node: the function that returns this week's invoices. Then an If node: is the amount over two thousand dinars? Then the two outputs: supervisor review, or approved. (Open the If node.) Three invoices went to review, two were approved. Trigger, nodes, output.",
-"do": "Switch to n8n and run it live. Click the video file on the slide (100 seconds, captioned). Or open the workflow Mirqab · invoice routing in your n8n workspace and click Execute. Name each part as it appears: the trigger, the Code step, the If step, the two outputs. Pause on the If step: 3 invoices on the true branch, 2 on the false branch.",
+"say": "Here is a small workflow in n8n, built from the same October invoices. (Play the video.) First the trigger: every weekday at 08:00. Then a Code node: the function that returns this week's invoices. Then an If node: is the amount over two thousand dinars? Then the two outputs: supervisor review, or approved. (Open the If node.) Three invoices went to review, two were approved. Trigger, nodes, output.",
+"do": "Play the video: click the video file on the slide (100 seconds, captioned, no sound). Talk over it. Pause on the If step (3 invoices true, 2 false) and on the final run. Do not build a flow live.",
 "expect": null,
 "silent": null,
-"fallback": "If the video does not play, step through the backup table. If n8n is signed out, the video is enough. The expected result is on the staff backup page, Demo 2.4.",
+"fallback": "If the video does not play from the slide, download it from step 6 of the Day 2 lab page, or step through the backup table. The expected result is on the staff backup page, Demo 2.4.",
 "more": [],
 "time": "9 min",
 "t": "n4",
 "k": "live",
-"h": "Demo 2.4 n8n · video or live: Build a workflow in n8n",
-"flat": "9 min. · Do: Switch to n8n and run it live. Click the video file on the slide (100 seconds, captioned). Or open the workflow Mirqab · invoice routing in your n8n workspace and click Execute. Name each part as it appears: the trigger, the Code step, the If step, the two outputs. Pause on the If step: 3 invoices on the true branch, 2 on the false branch. · Fallback: If the video does not play, step through the backup table. If n8n is signed out, the video is enough. The expected result is on the staff backup page, Demo 2.4. · Say: “Here is a small workflow in n8n, built from the same October invoices. (Play the video, or click Execute workflow.) First the trigger: every weekday at 08:00. Then a Code node: the function that returns this week's invoices. Then an If node: is the amount over two thousand dinars? Then the two outputs: supervisor review, or approved. (Open the If node.) Three invoices went to review, two were approved. Trigger, nodes, output.”"
+"h": "Demo 2.4 n8n · video: Build a workflow in n8n",
+"flat": "9 min. · Do: Play the video: click the video file on the slide (100 seconds, captioned, no sound). Talk over it. Pause on the If step (3 invoices true, 2 false) and on the final run. Do not build a flow live. · Fallback: If the video does not play from the slide, download it from step 6 of the Day 2 lab page, or step through the backup table. The expected result is on the staff backup page, Demo 2.4. · Say: “Here is a small workflow in n8n, built from the same October invoices. (Play the video.) First the trigger: every weekday at 08:00. Then a Code node: the function that returns this week's invoices. Then an If node: is the amount over two thousand dinars? Then the two outputs: supervisor review, or approved. (Open the If node.) Three invoices went to review, two were approved. Trigger, nodes, output.”"
 },
 {
 "say": "Which node sent each invoice down its own path? (Wait for hands.) The If node. The trigger only starts it, and the Code node only lists the invoices.",

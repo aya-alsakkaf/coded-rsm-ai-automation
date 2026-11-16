@@ -720,7 +720,7 @@ DAYS[2].update({
                ("09:45-10:55", "Lesson 2 · Artifacts", "Dashboards, KPIs and decks · Demo 2.2 · Tasks 2.3 and 2.4"),
                ("10:55-11:30", "Lesson 3 · Scheduled tasks", "Your skill on a schedule · Demo 2.3 · Task 2.5"),
                ("11:30-12:30", "Lunch and Dhuhr prayer", ""),
-               ("12:30-12:55", "Lesson 4 · Claude, n8n or Power Automate", "Limits, when to switch, trigger, node and output · Demo 2.4 in n8n"),
+               ("12:30-12:55", "Lesson 4 · Claude, n8n or Power Automate", "Limits, when to switch, trigger, node and output · Demo 2.4, the n8n video"),
                ("12:55-14:25", "Lesson 5 · Mini project", "Your department's agent · Task 2.6"),
                ("14:25-14:40", "Asr prayer and break", ""),
                ("14:40-15:00", "Lesson 6 · Project demos", "Projects picked by the trainer, four minutes each"),
@@ -742,7 +742,7 @@ SEGMENTS[2] = [
                                                    ("11:24", 6, "Catch-up before lunch")]),
     ("12:30-12:55", "Lesson 4 · Claude, n8n or Power Automate", [("12:30", 2, "Story: the email that lands at 14:07"), ("12:32", 4, "Claude, n8n and Power Automate side by side"),
                                                    ("12:36", 3, "What Claude cannot do today"), ("12:39", 2, "When to switch, with a check"), ("12:41", 3, "Trigger, node and output"),
-                                                   ("12:44", 9, "Demo 2.4 · the n8n workflow (video or live)"), ("12:53", 2, "Use both, with a check")]),
+                                                   ("12:44", 9, "Demo 2.4 · the n8n demo video"), ("12:53", 2, "Use both, with a check")]),
     ("12:55-14:25", "Lesson 5 · Mini project", [("12:55", 5, "The brief, the departments and the checklist"),
                                                 ("13:00", 85, "Task 2.6 · Your department's agent (card 10, build 25, artifact 20, schedule 15, check and script 15)")]),
     ("14:40-15:00", "Lesson 6 · Project demos", [("14:40", 20, "Four or five projects, four minutes each, picked by the trainer")]),
@@ -788,7 +788,8 @@ LABS[2] = {"title": "Skills, artifacts, schedules, then your own agent",
      "answer": [("p", "A weekly task; one run on demand that starts with a run-log line and returns the fixed output, marked DRAFT; no connector used.")]},
     {"title": "Claude or an automation tool? (Lesson 4)", "files": [CD.F_N8N_VIDEO],
      "do": ["Think of one task in your department that starts with an event: an email arrives, a form is sent, a file lands.",
-            "Write it below with the tool you would use (Claude, n8n or Power Automate) and one reason.", "Watch the n8n demo: name the trigger, the steps and the outputs."],
+            "Write it below with the tool you would use (Claude, n8n or Power Automate) and one reason.", "Watch the n8n demo video: name the trigger, the steps and the outputs.",
+            f"Finished early? Paste Plan my workflow from {CD.SHEET2}, Demo 2.4, with your task. Claude describes it; nobody builds it today."],
      "hint": "Time trigger and documents to read: Claude. Event trigger, many systems or high volume: n8n or Power Automate.",
      "check": {"kind": "note", "label": "One event-driven task, the tool, and why"},
      "answer": [("p", "Good answers name an event trigger (email, form, file) and choose n8n or Power Automate, with Claude as the reading step inside the flow.")]},
@@ -823,13 +824,13 @@ CHEAT[0] = (CHEAT[0][0], CHEAT[0][1], CHEAT[0][2], [(a, b, c, d) for a, b, c, d 
 RUNBOOK_PREFLIGHT[:] = [x for x in RUNBOOK_PREFLIGHT if not x.startswith(("After Day 1:", "Before Day 2: on a test folder", "Day 1 only:"))] + [
     "Day 2: Demo 2.1 opens mirqab-invoice-match on the trainer account (Customize, then Skills). Demo 2.2 attaches mirqab-engagement-portfolio-2026.xlsx (lab step 3).",
     "Day 2, before 11:00: copy the October invoices and ledger into 01 Invoices / Inbox for Demo 2.3.",
-    "Day 2, before 12:40: open the n8n video (the file on the Demo 2.4 slide) and the n8n workflow Mirqab · invoice routing. The video has no sound: you talk over it.",
+    "Day 2, before 12:40: test the n8n video (the file on the Demo 2.4 slide) on the projector. It has no sound: you talk over it. No live n8n build in class.",
     "Day 2: participants upload their own files to the shared track folders, named with their initials. Their scheduled tasks read and never move files."]
 for _i, (sid, t, c, blocks) in enumerate(FACILITATOR):
     if sid == "n8n":
         FACILITATOR[_i] = ("n8n", "The n8n demo (Demo 2.4)", "recorded before Day 2", [("ul", [
             "Workflow: Mirqab · invoice routing, in the trainer's n8n workspace. No credentials, no email, no client data.",
-            "Trigger: a Schedule Trigger (every day at 08:00); in the room, click Execute workflow.",
+            "Trigger: a Schedule Trigger (every day at 08:00). In class, play the video only: no live build.",
             "Code step: returns the five October invoices as items (the code is on the Day 2 prompt sheet, Demo 2.4).",
             "If step: amount_kwd larger than 2000. True: Edit Fields sets Supervisor review and the reviewer. False: Edit Fields sets Approved.",
             "Expected: 3 invoices to Supervisor review (BPK-4471, WDS-20931, SGT-11205) and 2 to Approved (SCC-0718, FSC-3390).",

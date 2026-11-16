@@ -113,7 +113,7 @@ SCRIPT = {
   "Before the demo, three words you will hear in every automation tool. The trigger is what starts it. Each node, or action, does one small job: read, calculate, decide, call AI. "
   "And the output is where the result lands. Between the nodes, the data travels as items. Every run is saved, so you can open it and see what happened."),
  "n4demo": (None,
-  "Here is a small workflow in n8n, built from the same October invoices. (Play the video, or click Execute workflow.) First the trigger: every weekday at 08:00. Then a Code node: the function that returns this week's invoices. "
+  "Here is a small workflow in n8n, built from the same October invoices. (Play the video.) First the trigger: every weekday at 08:00. Then a Code node: the function that returns this week's invoices. "
   "Then an If node: is the amount over two thousand dinars? Then the two outputs: supervisor review, or approved. (Open the If node.) Three invoices went to review, two were approved. Trigger, nodes, output."),
  "n4chk2": (HANDS,
   "Which node sent each invoice down its own path? (Wait for hands.) The If node. The trigger only starts it, and the Code node only lists the invoices."),

@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-16 06:10 · The n8n demo is the video only (Aya)
+
+- Demo 2.4: no live n8n build. The slide badge reads "n8n · video"; the notes say play the video and talk over it. The prompt sheet's
+  n8n Code step is replaced by "Plan my workflow" (Claude describes the trainee's own event-driven task as trigger, steps and output; nothing is built).
+  Lab step 6, the lesson plan, the runbook and the facilitator kit say video only.
+
 ## 2026-11-15 22:45 · No connectors on Day 2 (Aya: the trainees cannot use MCP on their work accounts)
 
 - Task 2.5 and Demo 2.3: the schedule runs the skill on a reference file stored inside the skill (new prompts: Add my file to the skill,
