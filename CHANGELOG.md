@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-11-16 12:40 · Project page: everything on one page (Aya)
+
+- Each department's section is now a five-step workbook with every template filled in for that department: the Project card (one bracket
+  left: minutes to review the draft), a skill name, the Project instructions, the Run it line, Check the dashboard, a second output (slides or
+  a one-page note), Put the layout in my skill (no bracket: same layout as the dashboard in the chat), Add my file to the skill, the scheduled
+  task fields (name, prompt, frequency) and prompt, Mark it DRAFT, the impact line with a worked example, and a 4-minute demo outline.
+- Each step names the clicks (Projects, + New Project, Set project instructions, project knowledge, Customize then Skills, Scheduled, New task,
+  Set up manually) and its fallback. The write-it-yourself requests (build plan, skill, dashboard, three figures, demo script) keep the
+  hint, hint, prompt layers inside the step where they are used.
+- Your own task: a blank card with a guide for every bracket, Project instructions with brackets, and the Make a test file prompt. No
+  reference to Task 2.1, the lab or the prompt sheet is left on the page.
+- New section: What the trainer looks for (the five demo criteria). The Done-when list no longer mentions five-part instructions.
+
 ## 2026-11-16 11:15 · Submission tidy (Aya)
 
 - Project page: the five-part instructions are out of the submission document (8 items; the build prompt renumbered); the Open the

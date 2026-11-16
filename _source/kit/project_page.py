@@ -60,76 +60,200 @@ SCEN = {
    "An NPS dashboard, then a 5-slide client-feedback deck.", "Every Sunday at 08:00", "The client service partner", 40),
 }
 OWN = ("Your own team",
-   "Bring a task you repeat at work. Use fictional data only: no client names, no real figures. If you have no file, use the test file you made in Task 2.1, or ask Claude for one with the Make a test file prompt.",
+   "Bring a task you repeat at work. Use fictional data only: no client names, no real figures. No file? Use the test file you made this morning, or make one with the Make a test file prompt in step 1.",
    ["Read the input file.", "Do the steps of your task, with your rules.", "Flag anything missing or strange. Never guess.", "Return the output in a fixed layout."],
    "A dashboard, a report or a short deck: you choose.", "[when it should run]", "[one person's role]", 30)
 
-def card(key):
+# per department: the skill name, runs a month (for the impact line), and whether the second output is slides or a one-page note
+SKILL = {"audit": "audit-findings-followup", "tax": "tax-filing-deadlines", "cf": "cf-pipeline-review", "risk": "risk-register-review",
+         "cyber": "vuln-scan-triage", "it": "it-service-report", "esg": "esg-emissions-check", "data": "sales-data-check",
+         "finance": "budget-variance-review", "hr": "hr-monthly-numbers", "cx": "client-nps-review"}
+RUNS = {"audit": 4, "tax": 22, "cf": 4, "risk": 1, "cyber": 4, "it": 1, "esg": 1, "data": 4, "finance": 1, "hr": 1, "cx": 4}
+
+def info(key):
+    """Everything one panel needs, for a department pack or the trainee's own task."""
     if key == "own":
         role, scen, must, art, when, rev, mins = OWN
-        return CD.PROJECT_CARD
+        return dict(key=key, dept="Your own task", role=role, scen=scen, must=must, art=art, when="[when it should run, for example every Sunday at 08:00]",
+                    rev="[one person's role]", mins="[minutes by hand]", runs="[runs a month]", skill="[your skill name]", file="[your file name]",
+                    agent="[what the agent does, in one line]", project="[your task] agent", second="a 5-slide presentation or a one-page note")
     p = {q["key"]: q for q in X.PACKS}[key]; role, scen, must, art, when, rev, mins = SCEN[key]
-    return (f"Department: {p['dept']}\n"
-            f"Task: {p['agent']}\n"
-            f"Input: {p['file']} (today it lives inside the skill)\n"
-            f"Instruction: [your steps and two rules; what to do when unsure]\n"
-            f"Output: {art}\n"
-            f"When: {when}\n"
-            f"Who reviews: {rev} [name]\n"
-            f"Impact: [{mins} minutes by hand] - [minutes with the agent] x [runs a month]")
+    return dict(key=key, dept=p["dept"], role=role, scen=scen, must=must, art=art, when=when, rev=rev, mins=mins, runs=RUNS[key],
+                skill=SKILL[key], file=p["file"], agent=p["agent"], project=f"{p['dept']} agent", p=p,
+                second="a 5-slide presentation" if "slide" in art else "a one-page note")
+
+def card(d):
+    if d["key"] == "own":
+        return ("Department: [your team]\n"
+                "Task: [what the agent does, in one line]\n"
+                "Skill name: [short, lowercase, with hyphens, for example lease-key-terms]\n"
+                "Input: [the file it reads; today it lives inside the skill]\n"
+                "Instruction: [the steps in order, two rules, and what to do when unsure]\n"
+                "Output: [a dashboard, a report or a deck, and what is on it]\n"
+                "When: [for example every Sunday at 08:00]\n"
+                "Who reviews: [one person's role]\n"
+                "Impact: ([minutes by hand] - [minutes to review the draft]) x [runs a month]")
+    return (f"Department: {d['dept']}\n"
+            f"Task: {d['agent']}\n"
+            f"Skill name: {d['skill']}\n"
+            f"Input: {d['file']} (today it lives inside the skill)\n"
+            f"Instruction: the steps in What the agent must do. Rules: use only the file; flag every problem, never fix it. When unsure: write Not found, never guess.\n"
+            f"Output: {d['art']}\n"
+            f"When: {d['when']}\n"
+            f"Who reviews: {d['rev']}\n"
+            f"Impact: ({d['mins']} minutes by hand - [minutes to review the draft]) x {d['runs']} runs a month")
+
+def instructions(d):
+    if d["key"] == "own":
+        return ("Role: You are a [job title] at Mirqab & Co. You [the task in one line].\n"
+                "Steps:\n1. Read the attached file.\n2. [find, compare or calculate what]\n3. [decide or flag what]\n"
+                "Rules:\n- Use only the file in this Project. Calculate with code.\n- [your rule, for example dates as YYYY-MM-DD]\n- [your rule, for example what counts as a difference]\n"
+                "Output format: [table columns, in order]. Put a short Data issues list first.\n"
+                "When unsure: If a value is blank or unclear, write Not found and flag it. Never guess. Never change a value in the file.")
+    steps = "\n".join(f"{i}. {m}" for i, m in enumerate(d["must"], 2))
+    job, team = d["role"].split(", ", 1); job = job.lower(); art_ = "an" if job[0] in "aeiou" else "a"
+    return (f"Role: You are {art_} {job} in {team} at Mirqab & Co.\nYour task: {d['agent']}\n"
+            f"Steps:\n1. Read {d['file']} in this Project.\n{steps}\n"
+            "Rules:\n- Use only the file in this Project. Calculate with code.\n- Show the row ID from the file for every item you list.\n"
+            "Output format: First a short Data issues list. Then one table for each step, in the order above.\n"
+            "When unsure: If a value is blank or unclear, write Not found and flag it. Never guess. Never change a value in the file.")
 
 def promptbox(pid, label, text):
     return (f'<div class="sh-plab">{e(label)}</div><div class="sh-promptwrap"><pre id="{pid}">{e(text)}</pre>'
             f'<button class="sh-copy" type="button" data-copy="{pid}">COPY</button></div>')
 
+LABELS = ["Stuck? Show a hint", "Still stuck? Show another hint", "Still stuck? Show the prompt"]
+def layered(pid, label, h1, h2, text):
+    return (f'<div class="pj-layer" id="ly-{pid}" data-level="0"><div class="sh-plab">Write it yourself: {e(label)}</div>'
+            f'<div class="pj-h" data-l="1" hidden><b>Hint 1.</b> {e(h1)}</div>'
+            f'<div class="pj-h" data-l="2" hidden><b>Hint 2.</b> {e(h2)}</div>'
+            f'<div class="pj-h" data-l="3" hidden>{promptbox(f"lp-{pid}", "The prompt", text)}</div>'
+            f'<button class="pj-more" type="button">{e(LABELS[0])}</button></div>')
+
+def step(n, name, mins, todo, body):
+    return (f'<section class="sh-card pj-step"><div class="sh-top"><span class="sh-blk">Step {n}</span><span class="sh-time">{mins} min</span></div>'
+            f'<h3>{e(name)}</h3><ol class="pj-todo">{"".join(f"<li>{x}</li>" for x in todo)}</ol>{body}</section>')
+
 def panel(key):
-    if key == "own":
-        role, scen, must, art, when, rev, mins = OWN; dept = "Your own task"; files = ""
+    d = info(key); k = key; own = key == "own"; sk = d["skill"]; fl = d["file"]
+    if own:
+        files = ""
+        hidden = ""
     else:
-        p = {q["key"]: q for q in X.PACKS}[key]; role, scen, must, art, when, rev, mins = SCEN[key]; dept = p["dept"]
-        files = (f'<div><b class="sh-lab">Your file</b><div class="sh-files"><a href="{e(p["file"])}" download>{e(p["file"])}</a></div>'
+        p = d["p"]
+        files = (f'<div><b class="sh-lab">Your file</b><div class="sh-files"><a href="{e(fl)}" download>{e(fl)}</a></div>'
                  f'<p class="pj-small">{len(p["rows"])} rows · {e(", ".join(p["head"]))}</p></div>')
-    hidden = ('<p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>' if key != "own" else "")
-    return f'''<section class="sh-card pj-panel" id="pj-{key}" data-dept="{key}" hidden>
-  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">{e(role)}</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
-  <h3>{e(dept)}</h3>
-  <p class="pj-scen">{e(scen)}</p>
-  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+        hidden = '<p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>'
+    head = f"""<section class="sh-card">
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">{e(d['role'])}</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>{e(d['dept'])}</h3>
+  <p class="pj-scen">{e(d['scen'])}</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run. Everything you need is on this page, in five steps.</p>
   {hidden}
   <div class="sh-meta sh-meta--3">
     {files}
-    <div><b class="sh-lab">The artifact</b>{e(art)}</div>
-    <div><b class="sh-lab">When and who</b>{e(when)}. Reviewed by {e(rev[0].lower() + rev[1:])}.</div>
+    <div><b class="sh-lab">The artifact</b>{e(d['art'])}</div>
+    <div><b class="sh-lab">When and who</b>{e(d['when'])}. Reviewed by {e(d['rev'][0].lower() + d['rev'][1:]) if not own else e(d['rev'])}.</div>
   </div>
   <div class="sh-plab">What the agent must do</div>
-  <ul class="pj-must">{"".join(f"<li>{e(m)}</li>" for m in must)}</ul>
-  {promptbox(f"card-{key}", "Your Project card (copy it, then fill the brackets)", card(key))}
-</section>'''
+  <ul class="pj-must">{"".join(f"<li>{e(m)}</li>" for m in d['must'])}</ul>
+</section>"""
+    # step 1 · card
+    if own:
+        guide = ('<div class="pj-fill"><b>Fill every bracket.</b> Use fictional data only: no client names, no real figures.'
+                 '<ul><li><b>Task:</b> one line, for example Reads the lease agreements and lists the key terms.</li>'
+                 '<li><b>Skill name:</b> two to four words, lowercase, with hyphens.</li>'
+                 '<li><b>Instruction:</b> the steps in order, two rules (for example dates as YYYY-MM-DD), and what to do when unsure.</li>'
+                 '<li><b>Output:</b> what the reader sees, for example tiles for the totals and a table of the items to check.</li>'
+                 '<li><b>When:</b> a day and a time. <b>Who reviews:</b> a role, for example the engagement manager.</li>'
+                 '<li><b>Impact:</b> minutes by hand today, minutes to review the agent\'s draft (write 10 until you know), and how many times a month it runs.</li></ul></div>')
+        s1todo = ["Copy the Project card below into a Word document or a note. Fill every bracket, using the guide under the card.",
+                  "No file for your task? In Claude, click New chat and send Make a test file. Download the file it makes."]
+        s1extra = promptbox(f"{k}-test", "Make a test file", "Make a fictional test file for this task: [your task, in one line]. Make it [file type, for example an Excel sheet] with 10 to 15 rows and 2 planted problems an agent should flag. Use made-up names and amounts only. Do not tell me where the problems are.")
+    else:
+        guide = ('<div class="pj-fill"><b>Only one bracket to fill:</b> [minutes to review the draft]: how long you need to check the agent\'s work. '
+                 'Write 10 for now. After your run in step 4, change it to your real time. Everything else is filled in for you.</div>')
+        s1todo = ["Read your scenario and What the agent must do above.",
+                  "Copy your Project card below into a Word document or a note. You will paste it into Claude in step 2 and into your submission."]
+        s1extra = ""
+    s1 = step(1, "Your Project card", 10, s1todo, promptbox(f"{k}-card", "Your Project card", card(d)) + guide + s1extra)
+    # step 2 · build
+    plan = layered(f"{k}-0", "a build plan (optional)",
+                   "Look at your Project card. Each line is one part of the build: Input is the file, Instruction is the Project, Output is the artifact, When is the schedule.",
+                   "Give Claude your card and ask for a plan, not the build: five short steps in order (Project, skill, artifact, schedule, test).", CD.BUILD_PLAN)
+    skillp = ("Turn this Project into a Claude skill. Here is my Project card: [paste your card]. Use the skill name on the card. "
+              "Ask me up to three questions first. Then write the skill: the name, a one-line description that names the task and the file type, "
+              "the steps, the rules, the output columns in order, and When unsure (write Not found, never guess). Make it a skill file I can save.")
+    sk_layer = layered(f"{k}-1", "turn the Project into a skill",
+                       "A skill needs six parts: a short name, one line on when to use it, the steps, the rules, the output columns, and what to do when unsure.",
+                       "In the Project chat, paste your Project card. Ask Claude to ask you questions first, then to write the skill with those six parts as a file you can save.", skillp)
+    s2todo = ["In Claude, click Projects in the left sidebar, then + New Project. Name it " + (f"<b>{e(d['project'])}</b>" if not own else "after your task, for example Lease terms agent") + " and create it.",
+              "Click Set project instructions. Paste Project instructions below" + (". Fill the brackets." if own else ".") + " Save.",
+              f"Click + in the project knowledge and add {'<b>' + e(fl) + '</b>' if not own else 'your file'}.",
+              "Start a chat in the Project. Send Run it, below. Check the result against What the agent must do. Not right? Fix the instructions, not the result.",
+              "Turn the Project into a skill: write the request yourself in the same chat (hints below). When Claude shows the skill, save it. Check it is listed: Customize, then Skills."]
+    s2 = step(2, "Build: a Project, then a skill", 25, s2todo,
+              plan + promptbox(f"{k}-instr", "Project instructions", instructions(d)) +
+              promptbox(f"{k}-run", "Run it (in the Project chat)", "Run the task on the file in this Project. Follow the instructions exactly.") + sk_layer +
+              '<p class="pj-small">The skill will not save? Check that code execution is on: Settings, then Capabilities. Then try again.</p>')
+    # step 3 · output
+    dash = layered(f"{k}-2", "the dashboard request",
+                   "Your request needs five things: who reads it, which data, the KPIs with their formulas, the layout, and the rules.",
+                   "Your KPIs are in What the agent must do: turn each line into a tile (a count or a total). Add the rule: list blanks under Data issues and never guess.", CD.DASH_TEMPLATE)
+    second = (f"Turn this dashboard into {d['second']} for {d['rev'][0].lower() + d['rev'][1:] if not own else '[who reads it]'}: a title and the date of the data, the key numbers, "
+              "what needs attention, the data issues, and the next step. Use only the dashboard's figures. Nothing new, nothing rounded differently.")
+    layout = (f"Add this to my {sk} skill: after the analysis, always build the dashboard in the same layout as the dashboard in this chat: "
+              "the same KPI tiles, charts, table and filter, in the same order. Write that layout into the skill as a list. "
+              "Keep every other rule word for word. Then update the skill so I can save it again.")
+    s3todo = ["In the Project chat, write your dashboard request (hints below). Your KPIs come from What the agent must do.",
+              "Check three KPI tiles by hand in Excel, with a filter, SUM or COUNTIF. Then send Check the dashboard.",
+              f"Your artifact also has {'slides' if d['second'].startswith('a 5') else 'a one-page note'}? Send Second output.",
+              "Send Put the layout in my skill. Save the skill again when Claude shows it."]
+    s3 = step(3, "Output: the artifact", 20, s3todo,
+              dash + promptbox(f"{k}-chk", "Check the dashboard", CD.DASH_CHECK) + promptbox(f"{k}-2nd", "Second output", second) +
+              promptbox(f"{k}-lay", "Put the layout in my skill", layout))
+    # step 4 · when
+    addf = f"Add the attached file to my {sk} skill as a reference file. Keep every rule word for word. Then update the skill so I can save it again."
+    sched = (f"Use the {sk} skill on its reference file {fl}. Build the output in its fixed layout. Start with one line: "
+             "date and time of this run, file read, items flagged. Mark it DRAFT and end with Reviewed by: ____. "
+             "If the reference file is missing or cannot be read, say so in that first line and stop. Never guess.")
+    fields = (f'<div class="sh-plab">Scheduled task fields</div><table class="pj-tbl"><tr><th>Name</th><td>{e(d["project"])}</td></tr>'
+              f'<tr><th>Prompt</th><td>Scheduled task prompt, below</td></tr><tr><th>Frequency</th><td>{e(d["when"])}</td></tr></table>')
+    s4todo = [f"In Claude, click New chat (outside the Project). Attach {'<b>' + e(fl) + '</b>' if not own else 'your file'}. Send Add my file to the skill. Save the skill again.",
+              "Click Scheduled in the left sidebar, then New task, then Set up manually.",
+              "Fill the form with the fields below. Paste the Scheduled task prompt" + (". Fill the brackets." if own else ".") + " Save.",
+              "Run it once on demand. Open the run on the Scheduled page: read the first line, then the output."]
+    s4 = step(4, "When: a scheduled task", 15, s4todo,
+              promptbox(f"{k}-add", "Add my file to the skill", addf) + fields + promptbox(f"{k}-sch", "Scheduled task prompt", sched) +
+              '<p class="pj-small">No option for your day or time? Use Create with Claude and say the schedule. The skill will not save with the file? Run the prompt in a chat with the file attached, and say when it would run.</p>')
+    # step 5 · check and demo
+    chk = layered(f"{k}-3", "check three figures",
+                  "You need three numbers from the output, and where each one comes from in the file.",
+                  "Ask Claude to show the exact rows behind each number and to change nothing. Then check them yourself in Excel with a filter or SUM.", CD.CHECK3)
+    draft = f"Add one line at the top of the dashboard: DRAFT · Reviewed by: ____ ({d['rev'][0].lower() + d['rev'][1:] if not own else '[role]'}). Change nothing else."
+    if own:
+        impact = "Impact: ([minutes by hand] - [minutes to review the draft]) x [runs a month] = [minutes saved a month]"
+        example = "Example: (40 - 10) x 4 = 120 minutes a month."
+    else:
+        impact = f"Impact: ({d['mins']} - [minutes to review the draft]) x {d['runs']} = [minutes saved a month]"
+        example = f"Example: if the review takes 10 minutes, ({d['mins']} - 10) x {d['runs']} = {(d['mins'] - 10) * d['runs']:,} minutes a month."
+    outline = ("1. The problem (30 seconds): who does this work today, and how long it takes.\n"
+               "2. My card (30 seconds): the task, the file, the schedule, the reviewer.\n"
+               "3. A run or my artifact (90 seconds): the first line of the run, the dashboard, one problem the agent flagged.\n"
+               "4. My impact (30 seconds): (minutes by hand - minutes to review) x runs a month.\n"
+               "5. Next (30 seconds): the next task I would automate.")
+    demo = layered(f"{k}-4", "a full demo script (optional)",
+                   "Four minutes: the problem, your card, a run or your artifact, your impact number, and what you would automate next.",
+                   "Use only numbers from your files and your runs. Ask Claude to keep each part to two or three sentences.", CD.DEMO_SCRIPT)
+    s5todo = ["Ask Claude where three figures come from (write it yourself, hints below). Check each one in the file.",
+              "Send Mark it DRAFT, so a person signs off every run.",
+              "Work out your impact with the line below. Put the number in your Project card.",
+              "Plan your 4-minute demo with the demo outline."]
+    s5 = step(5, "Check and demo", 15, s5todo,
+              chk + promptbox(f"{k}-draft", "Mark it DRAFT", draft) + promptbox(f"{k}-imp", "Your impact line", impact) +
+              f'<p class="pj-small">{e(example)}</p>' + promptbox(f"{k}-out", "Demo outline (4 minutes)", outline) + demo)
+    return f'<div class="pj-panel" id="pj-{k}" data-dept="{k}" hidden>\n{head}\n{s1}\n{s2}\n{s3}\n{s4}\n{s5}\n</div>'
 
-STEPS = [("Card", 10, "Pick your department above and copy your Project card into Claude or a document. Fill the brackets."),
-         ("Build", 25, "In Claude, create a Project named after your department. Ask Claude for a build plan from your card. Write the five-part instructions in the Project. Then turn the Project into a skill, and save it."),
-         ("Output", 20, "Attach your file in the Project. Write your own dashboard request with your department's KPIs. Check three tiles by hand. Then send Put the layout in my skill and save the skill again."),
-         ("When", 15, "Send Add my file to the skill, and save the skill again. Click Scheduled in the left sidebar, New task, Set up manually. Paste the Scheduled task prompt. Run it once on demand."),
-         ("Check and demo", 15, "Ask Claude where three figures come from, and check them in the file. Mark the output DRAFT with a Reviewed by line. Work out your impact. Plan a 3-minute demo in your own words.")]
-# write these yourself first: hint, another hint, then the prompt (Aya, 16 Nov 10:02)
-LAYERED = [
- ("Build plan", "Step 2: before you build anything.",
-  "Look at your Project card. Each line is one part of the build: Input is the file, Instruction is the Project, Output is the artifact, When is the schedule.",
-  "Give Claude your card and ask for a plan, not the build: five short steps in order (Project, skill, artifact, schedule, test).", CD.BUILD_PLAN),
- ("Turn the Project into a skill", "Step 2: after the Project gives a good result.",
-  "Think back to Task 2.1. A skill needs a short name, one line on when to use it, the steps, the rules, the output columns, and what to do when unsure.",
-  "Paste your Project card and ask Claude to ask you questions first. Then ask it to write the skill with those six parts as a file you can save.", CD.SKILL_FROM_CARD),
- ("Dashboard request", "Step 3: with your file attached.",
-  "Use the five parts from Lesson 2: who reads it, which data, the KPIs with their formulas, the layout, and the rules.",
-  "Your KPIs are in What the agent must do: turn each line into a tile (a count or a total). Add the rule: list blanks under Data issues and never guess.", CD.DASH_TEMPLATE),
- ("Check three figures", "Step 5: before you trust the output.",
-  "You need three numbers from the output, and where each one comes from in the file.",
-  "Ask Claude to show the exact rows behind each number and to change nothing. Then check them yourself in Excel with a filter or SUM.", CD.CHECK3),
- ("Demo script", "Step 5: for the demos at 14:40.",
-  "Four minutes: the problem, your card, a run or your artifact, your impact number, and what you would automate next.",
-  "Impact is (minutes by hand minus minutes with the agent) times runs a month. Use only numbers from your files and your runs.", CD.DEMO_SCRIPT)]
-# copy these: they are steps to follow, not thinking
-PROMPTS = [("Put the layout in my skill", CD.ARTIFACT_IN_SKILL), ("Add my file to the skill", CD.ADD_TO_SKILL), ("Scheduled task prompt", CD.SKILL_SCHED)]
 FORM = "https://docs.google.com/forms/d/e/1FAIpQLScjFXZ-xs_VUAvfXrdxP5ccN6zkgv_gMx3UIlcIyh633pVbMQ/viewform"
 SUBMIT_ITEMS = ["Your name and your department.", "Your Project card, filled in.",
                 "Your skill: its name and its one-line description.",
@@ -141,19 +265,13 @@ SUBMIT_PROMPT = ("Put together my mini project submission as a Word document I c
                  "Sections in this order: 1. My name and department: [name, department]. 2. My Project card. "
                  "3. My skill: name and one-line description. 4. The artifact link: [paste the link, or write Screenshot attached]. "
                  "5. My scheduled task: name, frequency, and the first line of its run. 6. Three figures I checked, with their rows in the file. "
-                 "7. The problems the agent flagged. 8. My impact: (minutes by hand minus minutes with the agent) times runs a month, and my next task to automate. "
+                 "7. The problems the agent flagged. 8. My impact: (minutes by hand minus minutes to review the draft) times runs a month, and my next task to automate. "
                  "Where you do not have something, write [missing] so I can fill it. Do not invent anything.")
-LABELS = ["Stuck? Show a hint", "Still stuck? Show another hint", "Still stuck? Show the prompt"]
-
-def layered(i, label, when, h1, h2, text):
-    return (f'<div class="pj-layer" id="ly-{i}" data-level="0"><div class="sh-plab">{e(label)}</div><p class="pj-small">{e(when)}</p>'
-            f'<div class="pj-h" data-l="1" hidden><b>Hint 1.</b> {e(h1)}</div>'
-            f'<div class="pj-h" data-l="2" hidden><b>Hint 2.</b> {e(h2)}</div>'
-            f'<div class="pj-h" data-l="3" hidden>{promptbox(f"lp-{i}", "The prompt", text)}</div>'
-            f'<button class="pj-more" type="button">{e(LABELS[0])}</button></div>')
-DONE = ["My Project card is filled in.", "My Project has five-part instructions.", "My skill is saved and tested in a new chat.",
+LOOK_FOR = [("Task relevance", "A real department task, with an impact number"), ("It works", "Project, skill and artifact; the task runs on demand"),
+            ("Source accuracy", "Three figures match the file"), ("Human controls", "DRAFT, your rules, a named reviewer"), ("Test evidence", "A run log, and both hidden problems flagged")]
+DONE = ["My Project card is filled in.", "My Project has its instructions and my file.", "My skill is saved and listed under Customize, then Skills.",
         "My dashboard or report has a fixed layout, written in the skill.", "My scheduled task ran once on demand, with a run-log line.",
-        "I checked three figures against the file.", "My output says DRAFT and Reviewed by.", "I know my impact number and my 3-minute demo.",
+        "I checked three figures against the file.", "My output says DRAFT and Reviewed by.", "I know my impact number and my 4-minute demo.",
         "I submitted my document in the submission form."]
 
 CSS = """
@@ -175,7 +293,11 @@ CSS = """
 .pj-more:hover{background:#007DB4;border-color:#007DB4;color:#fff}
 .pj-submit a.pj-go{display:inline-flex;align-items:center;gap:8px;margin:16px 0 4px;padding:12px 22px;border-radius:999px;background:#007DB4;color:#fff;font-weight:700;text-decoration:none}
 .pj-submit a.pj-go:hover{filter:brightness(1.1)}.pj-submit ol{margin:6px 0 14px 20px;line-height:1.6}
-.pj-note textarea{width:100%;min-height:150px;margin-top:8px;font:inherit;padding:12px;border-radius:12px}
+.pj-todo{margin:8px 0 6px 20px;line-height:1.6}.pj-todo li{margin:4px 0}
+.pj-fill{margin:10px 0 0;padding:12px 14px;border-radius:12px;background:rgba(76,181,226,.08);line-height:1.55}.pj-fill ul{margin:6px 0 0 18px}
+.pj-tbl{border-collapse:collapse;margin:6px 0 4px;width:100%}.pj-tbl th,.pj-tbl td{border:1px solid rgba(127,140,160,.3);padding:8px 12px;text-align:left;vertical-align:top}.pj-tbl th{width:130px;opacity:.85}
+.pj-panel{display:flex;flex-direction:column;gap:10px}.pj-panel[hidden]{display:none}
+.pj-look td,.pj-look th{border:1px solid rgba(127,140,160,.3);padding:8px 12px;text-align:left}.pj-look{border-collapse:collapse;width:100%;margin-top:8px}
 """
 
 JS = """<script>(function(){
@@ -195,7 +317,6 @@ function lay(box,n){box.setAttribute('data-level',n);[].slice.call(box.querySele
   var b=box.querySelector('.pj-more');if(n>=3){b.hidden=true;}else{b.hidden=false;b.textContent=LB[n];}}
 [].slice.call(document.querySelectorAll('.pj-layer')).forEach(function(box){lay(box,+(st.ly[box.id]||0));
   box.querySelector('.pj-more').addEventListener('click',function(){var n=Math.min(3,+box.getAttribute('data-level')+1);st.ly[box.id]=n;save();lay(box,n);});});
-var ta=document.querySelector('.pj-note textarea');if(ta){ta.value=st.note;ta.addEventListener('input',function(){st.note=ta.value;save();});}
 document.addEventListener('click',function(ev){var b=ev.target.closest('[data-copy]');if(!b)return;var t=document.getElementById(b.getAttribute('data-copy'));if(!t)return;var txt=t.innerText;
   function done(){b.textContent='COPIED';setTimeout(function(){b.textContent='COPY';},1500);}
   if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fb();});}else fb();
@@ -206,10 +327,8 @@ def build(out_dir):
     picks = "".join(f'<button type="button" data-dept="{p["key"]}" aria-pressed="false"><b>{e(p["dept"])}</b><span>{e(SCEN[p["key"]][0].split(", ")[0])} · {e(p["sheet"])}</span></button>' for p in X.PACKS)
     picks += '<button type="button" data-dept="own" aria-pressed="false"><b>Your own task</b><span>Fictional data only</span></button>'
     panels = "\n".join(panel(p["key"]) for p in X.PACKS) + "\n" + panel("own")
-    steps = "".join(f"<li><b>{i}. {e(t)} · {m} min</b>{e(x)}</li>" for i, (t, m, x) in enumerate(STEPS, 1))
-    layers = "".join(layered(i, *x) for i, x in enumerate(LAYERED))
-    prompts = "".join(promptbox(f"pp-{i}", l, t) for i, (l, t) in enumerate(PROMPTS))
     done = "".join(f'<label><input type="checkbox"> <span>{e(x)}</span></label>' for x in DONE)
+    look = "".join(f"<tr><th>{e(a)}</th><td>{e(b)}</td></tr>" for a, b in LOOK_FOR)
     logos = (f'<span class="lk"><img class="coded-logo" src="{PFX}-coded-logo.png" alt="CODED" width="320" height="120"><span class="x">×</span>'
              f'<img class="partner-logo" src="{PFX}-client-logo.png" alt="RSM Albazie &amp; Co." width="192" height="192"></span>')
     title = "Mini project · Day 2 · AI Innovation and Automation · CODED × RSM"
@@ -227,16 +346,16 @@ def build(out_dir):
 </head><body>
 <main><div class="wrap"><div class="topbar"><a class="back" href="{PFX}.html"><span class="ar">←</span> AI Innovation and Automation · both days</a><nav class="daynav" aria-label="Pages"><a href="{PFX}-day-1.html">Day 1</a><a href="{PFX}-day-2.html">Day 2</a><a href="{PFX}-lab-day-2.html">Day 2 lab</a><a href="{PFX}-prompt-sheet-day-2.html">Prompts</a></nav></div></div>
 <div class="wrap hero-wrap"><div class="d-hero h-d2"><div class="d-hero-top"><span class="cat-pill"><span class="dot"></span> Day 2 · mini project</span><div class="d-logos">{logos}</div></div>
-<h1>Your department's agent</h1><p class="lede">Pick a department. You get a work scenario, the file, what the agent must do and a Project card filled in for you. Then build it in 85 minutes, on your own or in pairs.</p></div></div>
+<h1>Your department's agent</h1><p class="lede">Pick a department. You get a work scenario, the file, what the agent must do, and five steps with every template filled in for you. Build it in 85 minutes, on your own or in pairs.</p></div></div>
 <div class="wrap"><div class="sheet">
+<section class="sh-card"><div class="sh-top"><span class="sh-blk">The plan</span><span class="sh-time">85 minutes</span></div><h3>Five steps, in this order</h3>
+<p>1. Your Project card · 10 min &nbsp; 2. Build: a Project, then a skill · 25 min &nbsp; 3. Output: the artifact · 20 min &nbsp; 4. When: a scheduled task · 15 min &nbsp; 5. Check and demo · 15 min</p>
+<p class="pj-small">Every template is in your department's steps, filled in for you. The requests you wrote this morning have hints: try first, then open one hint at a time. Behind at 45 minutes? Skip step 4. Show the skill and the artifact, and say when it would run.</p></section>
 <section class="sh-card"><div class="sh-top"><span class="sh-blk">Step 0</span><span class="sh-time">1 minute</span></div><h3>Pick your department</h3>
-<div class="pj-pick">{picks}</div><p class="pj-empty">Pick a department to see your scenario and your file.</p></section>
+<div class="pj-pick">{picks}</div><p class="pj-empty">Pick a department to see your scenario, your file and your five steps.</p></section>
 {panels}
-<section class="sh-card"><div class="sh-top"><span class="sh-blk">The plan</span><span class="sh-time">85 minutes</span></div><h3>Build in this order</h3><ol class="pj-steps">{steps}</ol>
-<p class="pj-small">Behind at 45 minutes? Skip the schedule. Show the skill and the artifact, and say when it would run.</p></section>
-<section class="sh-card"><div class="sh-top"><span class="sh-blk">Write it yourself</span><span class="sh-time">hints if you are stuck</span></div><h3>Write these requests yourself first</h3>
-<p class="pj-small">You wrote each of these once today. Try on your own for a few minutes. Stuck? Open one hint at a time. The full prompt is the last step.</p>{layers}</section>
-<section class="sh-card"><div class="sh-top"><span class="sh-blk">Copy these</span><span class="sh-time">COPY, then fill the brackets</span></div><h3>Steps to follow</h3>{prompts}</section>
+<section class="sh-card"><div class="sh-top"><span class="sh-blk">The demos</span><span class="sh-time">14:40</span></div><h3>What the trainer looks for</h3>
+<table class="pj-look">{look}</table><p class="pj-small">The trainer picks four or five projects to show: four minutes each.</p></section>
 <section class="sh-card pj-submit"><div class="sh-top"><span class="sh-blk">Submit</span><span class="sh-time">before 14:40</span></div><h3>Submit your project</h3>
 <p>Send one Word document through the submission form. Read what goes in it first, build it with the prompt, then open the form.</p>
 <div class="sh-plab">Your document has</div><ol>{"".join(f"<li>{e(x)}</li>" for x in SUBMIT_ITEMS)}</ol>
@@ -245,7 +364,7 @@ def build(out_dir):
 <a class="pj-go" href="{FORM}" target="_blank" rel="noopener">Open the submission form <span class="ar">→</span></a>
 <p class="pj-small">Short link: coded-rsm.vercel.app/submit</p></section>
 <section class="sh-card pj-done"><div class="sh-top"><span class="sh-blk">Before the demos</span><span class="sh-time">14:40</span></div><h3>Done when</h3>{done}
-<p class="pj-small">The trainer picks four or five projects to show: four minutes each. Your ticks stay in this browser.</p></section>
+<p class="pj-small">Your ticks stay in this browser.</p></section>
 <p class="smallnote sheet-foot">{e(X.FICTION)} <a href="{PFX}-day-2.html">Back to Day 2</a></p>
 </div></div></main>
 <footer class="foot-mini"><div class="wrap"><div class="foot-row"><a class="f-lockup" href="{PFX}.html" aria-label="AI Innovation and Automation home">{logos}</a><span class="copy">© 2026 CODED × RSM · {e(X.FICTION)}</span></div></div></footer>
