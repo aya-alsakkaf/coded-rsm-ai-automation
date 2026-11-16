@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-16 11:15 · Submission tidy (Aya)
+
+- Project page: the five-part instructions are out of the submission document (8 items; the build prompt renumbered); the Open the
+  submission form button sits after the list and the prompt; the Your notes box is gone (plan step 1 no longer points to it).
+
 ## 2026-11-16 11:10 · Project submission (Aya)
 
 - Project page: a Submit section before the Done-when list: Aya's Google Form (short link /submit), the nine things the Word document holds
