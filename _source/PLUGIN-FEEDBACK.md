@@ -19,3 +19,5 @@
 ## 2026-11-15 · Day page: no way to hide the Your turn section
 
 A trainer wanted the Day 1 page without the Your turn task list (the lab and the prompt sheet already carry the tasks). There was no kit option, so `pages.py` got an opt-in `HUB["day_your_turn_off"]` list of days (default: every day keeps the section). Suggest adding this option to the engine.
+
+A trainer wanted the Day 2 page to open a page that is not a deck, sheet or lab (the mini project page, a site file). There was no kit option for an extra page on a Day page, so `pages.py` got an opt-in `HUB["day_extra_cta"] = {day: [(icon, title, text, href, button)]}`: a card at the top of the side column and a line in Resources (default: none). Suggest adding this option, and a hook for extra pages, to the engine.

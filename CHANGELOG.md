@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-16 12:50 · Day 2 page opens the mini project (Aya)
+
+- Day 2 page: a Mini project · Task 2.6 card at the top of the side column (Open the mini project) and a line in Resources and files.
+  New opt-in engine switch `HUB["day_extra_cta"]` in `pages.py`; logged in PLUGIN-FEEDBACK.md.
+
 ## 2026-11-16 12:40 · Project page: everything on one page (Aya)
 
 - Each department's section is now a five-step workbook with every template filled in for that department: the Project card (one bracket

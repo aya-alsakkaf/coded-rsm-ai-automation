@@ -270,7 +270,10 @@ def daypage(d):
     side_map = (f'<section class="panel"><h3>{"Before you start" if "pre" in keys else "Before you leave"}</h3><p class="muted">Scan the QR code on the screen, or open the link on your phone.</p>'
                 f'<div class="map-list">{"".join(map_slot(k) for k in keys)}</div></section>') if keys else ""
     lab = cta("flask", f"Day {d} lab", e(wk.LABS[d]["intro"]), f"{labp(d)}.html", "Open the lab", True) if d in wk.LABS else ""
-    ress = (res(f"{deckp(d)}.html", f"Day {d} slide deck", "Slides", "slides") + res(f"{sheetp(d)}.html", f"Day {d} {wk.SHEET['name'].lower()}", "Copy", "copy")
+    # optional: HUB["day_extra_cta"] = {day: [(icon, title, text, href, button)]} adds pages to a Day page: a card at the top of the side column and a Resources line
+    xtra = HB.get("day_extra_cta", {}).get(d, [])
+    extra = "".join(cta(i, e(h), e(t), href, e(b)) for i, h, t, href, b in xtra)
+    ress = ("".join(res(href, h, "Page", i) for i, h, t, href, b in xtra) + res(f"{deckp(d)}.html", f"Day {d} slide deck", "Slides", "slides") + res(f"{sheetp(d)}.html", f"Day {d} {wk.SHEET['name'].lower()}", "Copy", "copy")
             + (res(f"{labp(d)}.html", f"Day {d} lab", "Lab", "flask") if d in wk.LABS else "")
             + (res(f"{wk.practp()}.html", "Practice questions", "Practice", "check") if wk.PRACTICE else "")
             + res(f'{P("cheat-sheet")}.html', "Cheat sheet", "Reference") + res(f'{cardp()}.html', wk.CARD["name"], "Reference", "shield")
@@ -292,6 +295,7 @@ def daypage(d):
   {your_turn}
 </div>
 <aside class="d-side">
+  {extra}
   <section class="panel"><h3>What you will be able to do</h3><ul class="leave">{"".join(f"<li>{ico('check', 15, 2.5)}<span>{x}</span></li>" for x in Dd["outcomes"])}</ul></section>
   <section class="panel"><h3>What we will cover</h3><div class="chips">{chips}</div></section>
   {cta("slides", f"Day {d} slides", "The deck as run in the room, with every demo. Arrows to move, F for full screen.", f"{deckp(d)}.html", "Open the slides")}
