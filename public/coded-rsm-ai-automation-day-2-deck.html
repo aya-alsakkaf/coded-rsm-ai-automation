@@ -2726,6 +2726,11 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
 .lv-card .wk-files{display:flex;flex-wrap:wrap;gap:8px}
 .lv-card p.lv-none,.lv-card p.lv-src{font-size:16px;color:var(--cd-text-quiet,#B4C0D3)}
 @media (prefers-reduced-motion: reduce){.lv-badge i{animation:none}}
+.lv-vrow{grid-template-columns:2.1fr 1fr;align-items:start}
+.lv-vid{display:flex;flex-direction:column;gap:10px}
+.lv-vid video{width:100%;max-height:50vh;border-radius:14px;background:#000;border:1px solid rgba(255,255,255,.18)}
+.lv-vid .wk-files{display:flex;flex-wrap:wrap;gap:8px}
+.lv-vslide .lv-h{font-size:clamp(34px,3.4vw,54px)}
 .wai-slide .cd-wrap{justify-content:center}
 .wai{display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(14px,2.2vh,24px);width:100%;max-width:1080px;margin:0 auto}
 .wai .cd-eyebrow{justify-content:center}
@@ -3190,12 +3195,12 @@ html[data-client] .cd-mcq[data-revealed] button:not([data-correct])[aria-pressed
   <p class="wk-key">Data moves from node to node as items. Each run is an execution you can open.</p>
  </div>
 </section>
-<section class="cd-slide cd-slide--stage lv-slide" id="n4demo" data-sec="2" data-ch="Demo 2.4 · n8n · video" data-screen-label="40 Demo 2.4 · n8n · video">
+<section class="cd-slide cd-slide--stage lv-slide lv-vslide" id="n4demo" data-sec="2" data-ch="Demo 2.4 · n8n · video" data-screen-label="40 Demo 2.4 · n8n · video">
  <div class="cd-wrap">
   <div class="lv">
    <div class="lv-top"><div class="cd-eyebrow">Demo 2.4 · n8n<span class=cd-rule></span></div><span class="lv-badge"><i></i>n8n · video</span></div>
    <h2 class="cd-h1 lv-h">Build a workflow <em>in n8n.</em></h2>
-   <div class="lv-row"><div class="lv-card"><span class="lv-k">Watch for</span><p>What starts this workflow, and where does each invoice end up?</p></div><div class="lv-card"><span class="lv-k">Files</span><div class="wk-files"><span class="cd-chip wk-file"><svg class="cd-ic"><use href="#i-folder"/></svg>mirqab-n8n-demo-invoice-routing.mp4</span></div><p class="lv-src">Prompt: the prompt sheet, Demo 2.4</p></div></div>
+   <div class="lv-row lv-vrow"><div class="lv-vid"><video controls preload="metadata" playsinline src="/mirqab-n8n-demo-invoice-routing.mp4"></video><div class="wk-files"><span class="cd-chip wk-file"><svg class="cd-ic"><use href="#i-folder"/></svg>mirqab-n8n-demo-invoice-routing.mp4</span></div></div><div class="lv-card"><span class="lv-k">Watch for</span><p>What starts this workflow, and where does each invoice end up?</p><p class="lv-src">Prompt: the prompt sheet, Demo 2.4</p></div></div>
   </div>
   <p class="wk-key">n8n connects systems step by step. Claude reads, judges and writes.</p>
  </div>

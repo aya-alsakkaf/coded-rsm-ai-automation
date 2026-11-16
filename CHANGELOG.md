@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-16 08:35 · The n8n video plays on the Demo 2.4 slide (Aya)
+
+- New kit helper `videodemo` in build_deck.py: the Demo 2.4 live-demo slide shows the video player in place of the Files card
+  (root-absolute src, so the public and /staff decks both load it); the file chip stays under the player as a download.
+
 ## 2026-11-16 06:10 · The n8n demo is the video only (Aya)
 
 - Demo 2.4: no live n8n build. The slide badge reads "n8n · video"; the notes say play the video and talk over it. The prompt sheet's

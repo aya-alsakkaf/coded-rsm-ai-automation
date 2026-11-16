@@ -52,6 +52,20 @@ def relabel(sl, old, new, old_h, new_h):
     out.rec["note"] = dict(sl.rec["note"], h=sl.rec["note"]["h"].replace(old_h, new_h))
     return out
 
+def videodemo(sl, did, video):
+    """A live-demo slide whose Files card becomes the video itself, playing on the slide (Aya, 16 Nov: attach the video in the slides).
+    The src is root-absolute so the public deck and the /staff deck both load the same file; the file chip stays under it as a download."""
+    d = CD.DEMOS[did]
+    h = str(sl)
+    a = h.index('<div class="lv-row">'); b = h.index('</div></div>\n  </div>', a) + len('</div></div>')
+    row = (f'<div class="lv-row lv-vrow"><div class="lv-vid"><video controls preload="metadata" playsinline src="/{video}"></video>'
+           f'{files_html([video])}</div>'
+           f'<div class="lv-card"><span class="lv-k">Watch for</span><p>{e(d["hint"])}</p><p class="lv-src">Prompt: the prompt sheet, Demo {d["skill"]}</p></div></div>')
+    out = Slide(h[:a] + row + h[b:].replace('lv-slide"', 'lv-slide lv-vslide"', 1) if 'lv-slide"' in h[b:] else h[:a] + row + h[b:])
+    out = Slide(str(out).replace('class="cd-slide cd-slide--stage lv-slide', 'class="cd-slide cd-slide--stage lv-slide lv-vslide', 1))
+    out.rec = sl.rec
+    return out
+
 EXTRA_CSS = """
 #notes{max-height:46vh;overflow:auto}
 #notes p{font-size:17px;line-height:1.6}
@@ -71,6 +85,11 @@ EXTRA_CSS = """
 .lv-card .wk-files{display:flex;flex-wrap:wrap;gap:8px}
 .lv-card p.lv-none,.lv-card p.lv-src{font-size:16px;color:var(--cd-text-quiet,#B4C0D3)}
 @media (prefers-reduced-motion: reduce){.lv-badge i{animation:none}}
+.lv-vrow{grid-template-columns:2.1fr 1fr;align-items:start}
+.lv-vid{display:flex;flex-direction:column;gap:10px}
+.lv-vid video{width:100%;max-height:50vh;border-radius:14px;background:#000;border:1px solid rgba(255,255,255,.18)}
+.lv-vid .wk-files{display:flex;flex-wrap:wrap;gap:8px}
+.lv-vslide .lv-h{font-size:clamp(34px,3.4vw,54px)}
 .wai-slide .cd-wrap{justify-content:center}
 .wai{display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(14px,2.2vh,24px);width:100%;max-width:1080px;margin:0 auto}
 .wai .cd-eyebrow{justify-content:center}
@@ -519,7 +538,7 @@ def day2():
          ["Node or action", "One step: read, calculate, decide, call AI", "Code, If, Edit Fields, HTTP Request, AI Agent", "Condition, Compose, Excel, AI Builder"],
          ["Output", "Where the result lands", "A sheet row, an email draft, a file", "A SharePoint item, an Outlook draft, a Teams post"]],
         "Data moves from node to node as items. Each run is an execution you can open.", cls="tight"))
-    s.append(livedemo("n4demo", "n4", "e24", badge="n8n · video", app="n8n", time="9 min"))
+    s.append(videodemo(livedemo("n4demo", "n4", "e24", badge="n8n · video", app="n8n", time="9 min"), "e24", CD.F_N8N_VIDEO))
     s[-1].rec["note"]["do"] = ("Play the video: click the video file on the slide (100 seconds, captioned, no sound). Talk over it. "
                                "Pause on the If step (3 invoices true, 2 false) and on the final run. Do not build a flow live.")
     s.append(check("n4chk2", "n4", "In the n8n demo, <b>which step decided where each invoice went?</b>",
