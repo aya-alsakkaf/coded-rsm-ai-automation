@@ -228,6 +228,11 @@
    "source": "/coded-rsm-ai-automation-lab-key-day-2",
    "destination": "/staff/coded-rsm-ai-automation-lab-key-day-2",
    "permanent": false
+  },
+  {
+   "source": "/project",
+   "destination": "/coded-rsm-ai-automation-mini-project",
+   "permanent": false
   }
  ],
  "headers": [

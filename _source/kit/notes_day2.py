@@ -123,12 +123,12 @@ SCRIPT = {
  "m5dept1": ("Read the department names. Ask who will take which.",
   "Here are the first six packs, from RSM's own service lines: audit, tax, corporate finance, risk, cyber and IT. Each one is a single fictional Excel file, and each hides two problems your agent should catch."),
  "m5dept2": (None,
-  "And five more: sustainability, data analytics, finance, HR and customer experience. The briefs file on the lab page explains each one: the problem, an idea for the agent, the artifact and the schedule."),
+  "And five more: sustainability, data analytics, finance, HR and customer experience. Everything for the project is on its own page now: coded-rsm dot vercel dot app slash project. Pick your department there and you get a work scenario, the file, a Project card already filled in, and every prompt."),
  "m5look": (None,
   "When I walk around, this is what I look for. Is it real work, and do you know the time it saves? Does it run: the Project, the skill, the artifact and the schedule? Three numbers you checked against the file. A review step with a named person. "
   "And a run log, with both hidden problems flagged. At 14:40 I will pick four or five of you to show."),
  "m5task": ("Start the timer. At 20 minutes, check everyone has a Project. At 45, check for a skill.",
-  "Here is the plan for 85 minutes. Ten minutes for the card. Twenty-five for the Project and the skill. Twenty for the artifact. Fifteen for the schedule. And fifteen to check three figures, mark it DRAFT, and write your demo. "
+  "Open the project page and pick your department. Here is the plan for 85 minutes. Ten minutes for the card. Twenty-five for the Project and the skill. Twenty for the artifact. Fifteen for the schedule. And fifteen to check three figures, mark it DRAFT, and write your demo. "
   "Build in that order. If you fall behind, skip the schedule and say when it would run. Go."),
  "d6demo": ("Call each project. Restart the timer each time.",
   "Welcome back. Time for the projects. Four minutes each: the problem, your card, a run or your artifact, the time it saves, and your next automation. (Call the first person.)"),

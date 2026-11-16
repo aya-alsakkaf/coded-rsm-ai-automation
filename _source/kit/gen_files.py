@@ -225,6 +225,10 @@ doc(X.F_BRIEFS, "Mini project: department briefs", blocks)
 import shutil
 shutil.copyfile(os.path.join(os.path.dirname(os.path.abspath(__file__)), "media", CD.F_N8N_VIDEO), os.path.join(OUT, CD.F_N8N_VIDEO))
 
+# ------------------------------------------------------------------ 38 · the mini project page (a site file, built from the kit)
+import project_page
+project_page.build(OUT)
+
 missing = [f for f in CD.ALL_FILES if not os.path.exists(os.path.join(OUT, f))]
 assert not missing, missing
 print(f"files: {len(CD.ALL_FILES)} written to {OUT}")

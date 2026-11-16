@@ -793,19 +793,11 @@ LABS[2] = {"title": "Skills, artifacts, schedules, then your own agent",
      "hint": "Time trigger and documents to read: Claude. Event trigger, many systems or high volume: n8n or Power Automate.",
      "check": {"kind": "note", "label": "One event-driven task, the tool, and why"},
      "answer": [("p", "Good answers name an event trigger (email, form, file) and choose n8n or Power Automate, with Claude as the reading step inside the flow.")]},
-    {"title": "Mini project: your department's agent (Task 2.6)", "files": X.PACK_FILES + [CD.F_BRIEFS],
-     "do": ["Pick a department pack below (the briefs file describes each one), or your own task.",
-            f"Paste the Project card from {CD.SHEET2}, Task 2.6, in the box below and fill it in.",
-            "Build in order: a Project with five-part instructions, a skill (with your file inside it), a dashboard or report artifact, a scheduled task run once.",
-            "Check three figures against the file with Check three figures. Mark the output DRAFT, with a Reviewed by line."],
-     "hint": "Build in order: card, Project, skill, artifact, schedule. Check before you polish.",
-     "check": {"kind": "note", "label": "Your Project card: paste the template here, then fill it in"},
-     "answer": [("p", "Each pack hides two problems; the list is in the Day 2 answer key, Task 2.6.")]},
-    {"title": "Your demo (Task 2.6)",
-     "do": ["Work out your impact: (minutes by hand minus minutes with the agent) times runs a month.", f"Paste Demo script from {CD.SHEET2}, Task 2.6. Keep it to three minutes.",
-            "Be ready to show a live run or your artifact if the trainer picks your project."],
-     "hint": "Every number in your demo comes from your files or your runs.", "check": {"kind": "note", "label": "Your impact number and the first line of your demo"},
-     "answer": [("p", "Example: (40 − 5) × 20 = 700 minutes, about 12 hours a month.")]}]}
+    {"title": "Mini project: on its own page (Task 2.6)",
+     "do": ["Open coded-rsm.vercel.app/project on your laptop.", "Pick your department: you get a work scenario, the file, your Project card and every prompt.",
+            "Build in order: card, Project, skill, artifact, schedule, check. Your ticks and notes stay on that page."],
+     "hint": "Pick the department closest to your own work, or Your own task.", "check": {"kind": "note", "label": "Your department, and the one-line task your agent does"},
+     "answer": [("p", "Each pack hides two problems; the list is in the Day 2 answer key, Task 2.6.")]}]}
 
 _WHERE2 = {"Transfer": "Day 2 · Lesson 3 · scheduling in other tools, and the transfer map at the close",
            "Scheduled tasks": "Day 2 · Lessons 1 and 3 · a skill, a connected folder and a scheduled task",
@@ -859,3 +851,6 @@ CD.retire_old_day2()
 RUNBOOK_PREFLIGHT[:] = [x for x in RUNBOOK_PREFLIGHT if not x.startswith(("Day 2, before 11:00:", "Day 2: participants upload"))] + [
     "Day 2: no connectors on the trainees' accounts. Demo 2.3 attaches the October invoices and ledger (Day 1 lab, step 2) and adds them to mirqab-invoice-match as reference files before scheduling it."]
 SHEET["howto"] = [x.replace("<b>Download the file</b> on the card, or open it from your track folder in the sandbox Drive.", "<b>Download the file</b> on the card.") for x in SHEET["howto"]]
+
+# the mini project page's short link (Aya, 16 Nov)
+REDIRECTS += [("/project", "/coded-rsm-ai-automation-mini-project")]

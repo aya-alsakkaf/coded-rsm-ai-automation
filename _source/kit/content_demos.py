@@ -1171,3 +1171,9 @@ DEMOS["e24"].update(
  expected=("In the video every node turns green. The trigger starts it, the Code step returns 5 invoices, and the If step sends 3 to Supervisor review "
            "(over KWD 2,000: BPK-4471, WDS-20931, SGT-11205) and 2 to Approved (SCC-0718, FSC-3390)."),
  fallback="If the video does not play from the slide, download it from step 6 of the Day 2 lab page, or step through the backup table.")
+
+# the mini project gets its own page (Aya, 16 Nov 09:32): pick a department, get the scenario, the file, a Project card and every prompt.
+# Built by kit/project_page.py from gen_files.py; short link /project.
+F_PROJECT_PAGE = "coded-rsm-ai-automation-mini-project.html"
+ALL_FILES = ALL_FILES + [F_PROJECT_PAGE]
+DEMOS["u26"]["setup"] = ["Card (10 min): open coded-rsm.vercel.app/project, pick your department and copy its Project card."] + DEMOS["u26"]["setup"][1:]

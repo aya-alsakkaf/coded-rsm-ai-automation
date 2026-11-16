@@ -554,7 +554,7 @@ def day2():
     s.append(tslide("m5dept1", "m5", "Lesson 5 · the packs, 1 of 2", "Pick a department. <span class=\"hl\">Packs 1 to 6.</span>", ["Department", "The file", "What to build"],
         [[_p[k]["dept"], PACK_SHORT[k][0], PACK_SHORT[k][1]] for k in _order[:6]], "Every file is fictional. Each one hides two problems.", cls="tight"))
     s.append(tslide("m5dept2", "m5", "Lesson 5 · the packs, 2 of 2", "Pick a department. <span class=\"hl\">Packs 7 to 11.</span>", ["Department", "The file", "What to build"],
-        [[_p[k]["dept"], PACK_SHORT[k][0], PACK_SHORT[k][1]] for k in _order[6:]], "Or bring your own task, on fictional data.", cls="tight"))
+        [[_p[k]["dept"], PACK_SHORT[k][0], PACK_SHORT[k][1]] for k in _order[6:]], "Pick yours at coded-rsm.vercel.app/project, or bring your own task.", cls="tight"))
     s.append(tslide("m5look", "m5", "Lesson 5 · what I look for", "What a strong project <span class=\"hl\">shows.</span>", ["What I look for", "Strong"],
         [list(r) for r in LOOK_FOR], "I pick four or five projects to show at 14:40.", cls="tight"))
     s.append(task("m5task", "m5", "u26", n=N(do="Start the timer. Walk the room. At 20 minutes, check that everyone has a Project.")))

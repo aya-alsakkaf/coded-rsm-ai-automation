@@ -559,7 +559,7 @@
 "flat": "Do: Read the department names. Ask who will take which. · Say: “Here are the first six packs, from RSM's own service lines: audit, tax, corporate finance, risk, cyber and IT. Each one is a single fictional Excel file, and each hides two problems your agent should catch.”"
 },
 {
-"say": "And five more: sustainability, data analytics, finance, HR and customer experience. The briefs file on the lab page explains each one: the problem, an idea for the agent, the artifact and the schedule.",
+"say": "And five more: sustainability, data analytics, finance, HR and customer experience. Everything for the project is on its own page now: coded-rsm dot vercel dot app slash project. Pick your department there and you get a work scenario, the file, a Project card already filled in, and every prompt.",
 "do": null,
 "expect": null,
 "silent": null,
@@ -569,7 +569,7 @@
 "t": "m5",
 "k": "table",
 "h": "Pick a department. Packs 7 to 11.",
-"flat": "Say: “And five more: sustainability, data analytics, finance, HR and customer experience. The briefs file on the lab page explains each one: the problem, an idea for the agent, the artifact and the schedule.”"
+"flat": "Say: “And five more: sustainability, data analytics, finance, HR and customer experience. Everything for the project is on its own page now: coded-rsm dot vercel dot app slash project. Pick your department there and you get a work scenario, the file, a Project card already filled in, and every prompt.”"
 },
 {
 "say": "When I walk around, this is what I look for. Is it real work, and do you know the time it saves? Does it run: the Project, the skill, the artifact and the schedule? Three numbers you checked against the file. A review step with a named person. And a run log, with both hidden problems flagged. At 14:40 I will pick four or five of you to show.",
@@ -585,7 +585,7 @@
 "flat": "Say: “When I walk around, this is what I look for. Is it real work, and do you know the time it saves? Does it run: the Project, the skill, the artifact and the schedule? Three numbers you checked against the file. A review step with a named person. And a run log, with both hidden problems flagged. At 14:40 I will pick four or five of you to show.”"
 },
 {
-"say": "Here is the plan for 85 minutes. Ten minutes for the card. Twenty-five for the Project and the skill. Twenty for the artifact. Fifteen for the schedule. And fifteen to check three figures, mark it DRAFT, and write your demo. Build in that order. If you fall behind, skip the schedule and say when it would run. Go.",
+"say": "Open the project page and pick your department. Here is the plan for 85 minutes. Ten minutes for the card. Twenty-five for the Project and the skill. Twenty for the artifact. Fifteen for the schedule. And fifteen to check three figures, mark it DRAFT, and write your demo. Build in that order. If you fall behind, skip the schedule and say when it would run. Go.",
 "do": "Start the timer. At 20 minutes, check everyone has a Project. At 45, check for a skill.",
 "expect": "Each person or pair has an agent for one department: a Project, a skill, an artifact in a fixed layout, a scheduled task run once, three figures checked, and an impact number.",
 "silent": null,
@@ -595,7 +595,7 @@
 "t": "m5",
 "k": "task",
 "h": "Your turn 2.6: Mini project: your department's agent (85 min, on your own or in pairs)",
-"flat": "85 min work, then share. · Do: Start the timer. At 20 minutes, check everyone has a Project. At 45, check for a skill. · Expect: Each person or pair has an agent for one department: a Project, a skill, an artifact in a fixed layout, a scheduled task run once, three figures checked, and an impact number. · Fallback: Behind at 45 minutes? Skip the schedule; show the skill and the artifact, and say when it would run. · Say: “Here is the plan for 85 minutes. Ten minutes for the card. Twenty-five for the Project and the skill. Twenty for the artifact. Fifteen for the schedule. And fifteen to check three figures, mark it DRAFT, and write your demo. Build in that order. If you fall behind, skip the schedule and say when it would run. Go.”"
+"flat": "85 min work, then share. · Do: Start the timer. At 20 minutes, check everyone has a Project. At 45, check for a skill. · Expect: Each person or pair has an agent for one department: a Project, a skill, an artifact in a fixed layout, a scheduled task run once, three figures checked, and an impact number. · Fallback: Behind at 45 minutes? Skip the schedule; show the skill and the artifact, and say when it would run. · Say: “Open the project page and pick your department. Here is the plan for 85 minutes. Ten minutes for the card. Twenty-five for the Project and the skill. Twenty for the artifact. Fifteen for the schedule. And fifteen to check three figures, mark it DRAFT, and write your demo. Build in that order. If you fall behind, skip the schedule and say when it would run. Go.”"
 },
 {
 "say": "Welcome back. Time for the projects. Four minutes each: the problem, your card, a run or your artifact, the time it saves, and your next automation. (Call the first person.)",

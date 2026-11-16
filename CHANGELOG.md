@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-16 09:45 · The mini project has its own page (Aya)
+
+- New page coded-rsm-ai-automation-mini-project.html (short link /project), built by `kit/project_page.py` from gen_files.py as a site file:
+  pick one of 11 departments or Your own task; each shows a work scenario, the file, what the agent must do, the artifact, when and who
+  reviews, and a Project card filled in for that department (COPY). Below: the 85-minute plan, every project prompt with COPY,
+  a Done-when checklist and a notes box (saved in the browser). No answers on the page.
+- Lab Day 2: steps 7 and 8 replaced by one pointer step to the page (7 steps). Task 2.6 step 1 and the packs slide name coded-rsm.vercel.app/project.
+
 ## 2026-11-16 08:35 · The n8n video plays on the Demo 2.4 slide (Aya)
 
 - New kit helper `videodemo` in build_deck.py: the Demo 2.4 live-demo slide shows the video player in place of the Files card

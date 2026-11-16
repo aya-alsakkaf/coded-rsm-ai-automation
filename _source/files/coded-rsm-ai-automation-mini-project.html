@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mini project · Day 2 · AI Innovation and Automation · CODED × RSM</title>
+<meta name="description" content="Day 2 mini project: pick a department, get the scenario and the file, and build its agent.">
+<meta name="theme-color" content="#00112F">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="icon" href="coded-rsm-ai-automation-favicon.png" type="image/png">
+<link rel="stylesheet" href="coded-rsm-ai-automation-site.css">
+<style>
+.pj-pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:14px}
+.pj-pick button{font:inherit;text-align:left;padding:14px 16px;border-radius:14px;cursor:pointer;color:inherit;background:rgba(255,255,255,.04);border:1px solid rgba(127,140,160,.35);line-height:1.3}
+.pj-pick button b{display:block;font-size:16px}.pj-pick button span{display:block;font-size:13px;opacity:.75;margin-top:4px}
+.pj-pick button:hover{border-color:#4CB5E2}.pj-pick button[aria-pressed=true]{background:#007DB4;border-color:#007DB4;color:#fff}
+.pj-empty{margin:18px 0 0;opacity:.8}
+.pj-scen{font-size:18px;line-height:1.6;margin:6px 0 10px}.pj-goal{margin:0 0 10px}
+.pj-hidden{padding:10px 14px;border-radius:12px;border:1px dashed #4CB5E2;margin:0 0 12px}
+.pj-must{margin:6px 0 14px 20px;line-height:1.6}.pj-small{font-size:13px;opacity:.75;margin:6px 0 0}
+.pj-steps{counter-reset:s;list-style:none;margin:10px 0 0;padding:0;display:grid;gap:10px}
+.pj-steps li{padding:14px 16px;border-radius:14px;border:1px solid rgba(127,140,160,.3);line-height:1.55}
+.pj-steps li b{color:#4CB5E2;margin-right:6px}
+.pj-done label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;line-height:1.45}
+.pj-note textarea{width:100%;min-height:150px;margin-top:8px;font:inherit;padding:12px;border-radius:12px}
+</style>
+</head><body>
+<main><div class="wrap"><div class="topbar"><a class="back" href="coded-rsm-ai-automation.html"><span class="ar">←</span> AI Innovation and Automation · both days</a><nav class="daynav" aria-label="Pages"><a href="coded-rsm-ai-automation-day-1.html">Day 1</a><a href="coded-rsm-ai-automation-day-2.html">Day 2</a><a href="coded-rsm-ai-automation-lab-day-2.html">Day 2 lab</a><a href="coded-rsm-ai-automation-prompt-sheet-day-2.html">Prompts</a></nav></div></div>
+<div class="wrap hero-wrap"><div class="d-hero h-d2"><div class="d-hero-top"><span class="cat-pill"><span class="dot"></span> Day 2 · mini project</span><div class="d-logos"><span class="lk"><img class="coded-logo" src="coded-rsm-ai-automation-coded-logo.png" alt="CODED" width="320" height="120"><span class="x">×</span><img class="partner-logo" src="coded-rsm-ai-automation-client-logo.png" alt="RSM Albazie &amp; Co." width="192" height="192"></span></div></div>
+<h1>Your department's agent</h1><p class="lede">Pick a department. You get a work scenario, the file, what the agent must do and a Project card filled in for you. Then build it in 85 minutes, on your own or in pairs.</p></div></div>
+<div class="wrap"><div class="sheet">
+<section class="sh-card"><div class="sh-top"><span class="sh-blk">Step 0</span><span class="sh-time">1 minute</span></div><h3>Pick your department</h3>
+<div class="pj-pick"><button type="button" data-dept="audit" aria-pressed="false"><b>Audit and Assurance</b><span>Senior associate · Findings log</span></button><button type="button" data-dept="tax" aria-pressed="false"><b>Tax</b><span>Associate · Filing calendar</span></button><button type="button" data-dept="cf" aria-pressed="false"><b>Corporate Finance</b><span>Analyst · Deal pipeline</span></button><button type="button" data-dept="risk" aria-pressed="false"><b>Risk Consulting</b><span>Consultant · Risk register</span></button><button type="button" data-dept="cyber" aria-pressed="false"><b>Cybersecurity</b><span>Analyst · Scan results</span></button><button type="button" data-dept="it" aria-pressed="false"><b>IT and the Technology Hub</b><span>Coordinator · Tickets October</span></button><button type="button" data-dept="esg" aria-pressed="false"><b>ESG and Sustainability</b><span>Consultant · Energy 2025</span></button><button type="button" data-dept="data" aria-pressed="false"><b>AI and Data Analytics</b><span>Analyst · Sales October</span></button><button type="button" data-dept="finance" aria-pressed="false"><b>Finance</b><span>Accountant · Jan to Oct 2026</span></button><button type="button" data-dept="hr" aria-pressed="false"><b>Human Resources</b><span>Officer · People Nov 2026</span></button><button type="button" data-dept="cx" aria-pressed="false"><b>Customer Experience</b><span>Coordinator · Responses</span></button><button type="button" data-dept="own" aria-pressed="false"><b>Your own task</b><span>Fictional data only</span></button></div><p class="pj-empty">Pick a department to see your scenario and your file.</p></section>
+<section class="sh-card pj-panel" id="pj-audit" data-dept="audit" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Senior associate, Audit and Assurance</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>Audit and Assurance</h3>
+  <p class="pj-scen">Mirqab&#x27;s audit team keeps one findings log for 12 clients: 30 findings so far. Every Sunday the partner asks three questions: what is still open, what is overdue, and which high-risk findings need her. Today a supervisor spends about 40 minutes filtering the sheet and writing the email.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  <p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>
+  <div class="sh-meta sh-meta--3">
+    <div><b class="sh-lab">Your file</b><div class="sh-files"><a href="mirqab-audit-findings-log-2026.xlsx" download>mirqab-audit-findings-log-2026.xlsx</a></div><p class="pj-small">30 rows · Finding, Client, Area, Risk, Owner, Raised, Due, Status</p></div>
+    <div><b class="sh-lab">The artifact</b>A findings dashboard: tiles for open, overdue and high-risk open; a chart by area; a table by owner; a filter by client.</div>
+    <div><b class="sh-lab">When and who</b>Every Sunday at 08:00. Reviewed by the engagement supervisor.</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>List every finding that is not Closed, grouped by client.</li><li>List the overdue ones: due before today and not Closed.</li><li>List the high-risk findings that are not Closed, first.</li><li>Write one follow-up line for each owner.</li><li>Flag any data problem. Never fix it.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-audit">Department: Audit and Assurance
+Task: Reads the findings log and lists open, overdue and high-risk findings, with a follow-up line for each owner.
+Input: mirqab-audit-findings-log-2026.xlsx (today it lives inside the skill)
+Instruction: [your steps and two rules; what to do when unsure]
+Output: A findings dashboard: tiles for open, overdue and high-risk open; a chart by area; a table by owner; a filter by client.
+When: Every Sunday at 08:00
+Who reviews: The engagement supervisor [name]
+Impact: [40 minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-audit">COPY</button></div>
+</section>
+<section class="sh-card pj-panel" id="pj-tax" data-dept="tax" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Associate, Tax</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>Tax</h3>
+  <p class="pj-scen">The tax team keeps one filing calendar: 28 filings for Zakat, NLST, corporate income tax and retention releases. A missed date means a penalty for the client. Every morning someone reads the whole sheet by eye.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  <p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>
+  <div class="sh-meta sh-meta--3">
+    <div><b class="sh-lab">Your file</b><div class="sh-files"><a href="mirqab-tax-filing-calendar-2026.xlsx" download>mirqab-tax-filing-calendar-2026.xlsx</a></div><p class="pj-small">28 rows · Filing, Client, Type, Period, Due date, Status, Preparer, Reviewer</p></div>
+    <div><b class="sh-lab">The artifact</b>A deadline dashboard: due this week, due in 30 days, past due, and status by filing type.</div>
+    <div><b class="sh-lab">When and who</b>Every weekday at 08:00. Reviewed by the tax manager.</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>List filings due in the next 14 days that are not Filed, by date.</li><li>List filings past their due date that are not Filed, first.</li><li>List filings with no reviewer.</li><li>Write one reminder line for each preparer.</li><li>Flag any data problem. Never fix it.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-tax">Department: Tax
+Task: Reads the calendar and lists filings due in the next 14 days, filings past due, and filings with no reviewer.
+Input: mirqab-tax-filing-calendar-2026.xlsx (today it lives inside the skill)
+Instruction: [your steps and two rules; what to do when unsure]
+Output: A deadline dashboard: due this week, due in 30 days, past due, and status by filing type.
+When: Every weekday at 08:00
+Who reviews: The tax manager [name]
+Impact: [20 minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-tax">COPY</button></div>
+</section>
+<section class="sh-card pj-panel" id="pj-cf" data-dept="cf" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Analyst, Corporate Finance</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>Corporate Finance</h3>
+  <p class="pj-scen">The Corporate Finance partners review the deal pipeline every Monday: 22 deals, from leads to final reports. The sheet has no totals, no weighted value and no view by stage, so an analyst builds it again every week.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  <p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>
+  <div class="sh-meta sh-meta--3">
+    <div><b class="sh-lab">Your file</b><div class="sh-files"><a href="mirqab-cf-deal-pipeline-2026.xlsx" download>mirqab-cf-deal-pipeline-2026.xlsx</a></div><p class="pj-small">22 rows · Deal, Client, Service, Sector, Stage, Fee estimate (KWD), Probability (%), Expected close, Lead partner</p></div>
+    <div><b class="sh-lab">The artifact</b>A pipeline dashboard, then a 5-slide update for the partners&#x27; meeting.</div>
+    <div><b class="sh-lab">When and who</b>Every Monday at 07:30. Reviewed by the lead partner.</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>Total the fee estimates, and the weighted value (fee × probability) by stage.</li><li>List the deals expected to close in the next 30 days.</li><li>List stale deals: the close date has passed and the stage is still Proposal.</li><li>Leave a deal with a blank probability out of the weighted value, and flag it.</li><li>Never guess a probability.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-cf">Department: Corporate Finance
+Task: Reads the pipeline and returns the weighted value by stage, deals closing this month, and stale deals.
+Input: mirqab-cf-deal-pipeline-2026.xlsx (today it lives inside the skill)
+Instruction: [your steps and two rules; what to do when unsure]
+Output: A pipeline dashboard, then a 5-slide update for the partners&#x27; meeting.
+When: Every Monday at 07:30
+Who reviews: The lead partner [name]
+Impact: [45 minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-cf">COPY</button></div>
+</section>
+<section class="sh-card pj-panel" id="pj-risk" data-dept="risk" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Consultant, Risk Consulting</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>Risk Consulting</h3>
+  <p class="pj-scen">A client&#x27;s board asked Mirqab&#x27;s risk team for its top risks on one page. The register has 18 risks, but the scores were typed by hand, and some risks have not been reviewed for over a year.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  <p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>
+  <div class="sh-meta sh-meta--3">
+    <div><b class="sh-lab">Your file</b><div class="sh-files"><a href="mirqab-risk-register-2026.xlsx" download>mirqab-risk-register-2026.xlsx</a></div><p class="pj-small">18 rows · Risk, Description, Category, Likelihood (1-5), Impact (1-5), Score, Owner, Key control, Last reviewed</p></div>
+    <div><b class="sh-lab">The artifact</b>A heat map (likelihood by impact), then a one-page summary for the board.</div>
+    <div><b class="sh-lab">When and who</b>On the first Sunday of each month. Reviewed by the risk consulting manager.</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>Recalculate every score: likelihood × impact. Show both numbers where they differ.</li><li>List the top risks (recalculated score 15 or more).</li><li>List risks not reviewed in the last 12 months.</li><li>List risks with no owner.</li><li>Flag problems. Never change the register.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-risk">Department: Risk Consulting
+Task: Reads the register, recalculates every score, and lists the top risks and the risks not reviewed in 12 months.
+Input: mirqab-risk-register-2026.xlsx (today it lives inside the skill)
+Instruction: [your steps and two rules; what to do when unsure]
+Output: A heat map (likelihood by impact), then a one-page summary for the board.
+When: On the first Sunday of each month
+Who reviews: The risk consulting manager [name]
+Impact: [60 minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-risk">COPY</button></div>
+</section>
+<section class="sh-card pj-panel" id="pj-cyber" data-dept="cyber" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Analyst, Cybersecurity</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>Cybersecurity</h3>
+  <p class="pj-scen">Every Thursday a vulnerability scan of a client&#x27;s network lists 26 findings. Management wants three answers: what is critical, what is old, and who owns it. Today an analyst sorts the export by hand.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  <p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>
+  <div class="sh-meta sh-meta--3">
+    <div><b class="sh-lab">Your file</b><div class="sh-files"><a href="mirqab-cyber-vulnerability-scan-nov.xlsx" download>mirqab-cyber-vulnerability-scan-nov.xlsx</a></div><p class="pj-small">26 rows · Finding, Asset, IP address, Vulnerability, Severity, CVSS, First seen, Days open, Status, Owner</p></div>
+    <div><b class="sh-lab">The artifact</b>A severity dashboard, and the top 5 findings to fix this week.</div>
+    <div><b class="sh-lab">When and who</b>Every Thursday at 07:00. Reviewed by the IT security lead.</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>List open Critical and High findings, Critical first.</li><li>List findings open for more than 30 days.</li><li>Count the open findings by owner.</li><li>Flag any finding whose severity does not match its CVSS score. Do not change either value.</li><li>Use only the scan file.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-cyber">Department: Cybersecurity
+Task: Reads the scan and lists open Critical and High findings, findings open over 30 days, and the count by owner.
+Input: mirqab-cyber-vulnerability-scan-nov.xlsx (today it lives inside the skill)
+Instruction: [your steps and two rules; what to do when unsure]
+Output: A severity dashboard, and the top 5 findings to fix this week.
+When: Every Thursday at 07:00
+Who reviews: The IT security lead [name]
+Impact: [45 minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-cyber">COPY</button></div>
+</section>
+<section class="sh-card pj-panel" id="pj-it" data-dept="it" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Coordinator, IT and the Technology Hub</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>IT and the Technology Hub</h3>
+  <p class="pj-scen">Mirqab&#x27;s IT manager writes a monthly service report from the helpdesk export: 40 tickets in October. She counts the SLA breaches by hand and copies the numbers into a document.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  <p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>
+  <div class="sh-meta sh-meta--3">
+    <div><b class="sh-lab">Your file</b><div class="sh-files"><a href="mirqab-it-helpdesk-tickets-oct.xlsx" download>mirqab-it-helpdesk-tickets-oct.xlsx</a></div><p class="pj-small">40 rows · Ticket, Opened, Closed, Category, Priority, SLA (hours), Resolution (hours), Assigned to, Status</p></div>
+    <div><b class="sh-lab">The artifact</b>A service dashboard, then a one-page monthly report.</div>
+    <div><b class="sh-lab">When and who</b>On the 1st of each month at 08:00. Reviewed by the IT manager.</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>Calculate the share of tickets that met the SLA, by priority.</li><li>Count tickets by category.</li><li>List every breach with its hours against the SLA.</li><li>Flag data errors, such as a ticket closed before it was opened.</li><li>Never round or guess hours.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-it">Department: IT and the Technology Hub
+Task: Reads the ticket export and returns SLA met by priority, tickets by category, and every breach with its hours.
+Input: mirqab-it-helpdesk-tickets-oct.xlsx (today it lives inside the skill)
+Instruction: [your steps and two rules; what to do when unsure]
+Output: A service dashboard, then a one-page monthly report.
+When: On the 1st of each month at 08:00
+Who reviews: The IT manager [name]
+Impact: [60 minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-it">COPY</button></div>
+</section>
+<section class="sh-card pj-panel" id="pj-esg" data-dept="esg" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Consultant, ESG and Sustainability</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>ESG and Sustainability</h3>
+  <p class="pj-scen">A client needs its first sustainability report. Three sites sent 12 months of electricity, diesel, water and waste data. Nobody has checked it yet.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  <p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>
+  <div class="sh-meta sh-meta--3">
+    <div><b class="sh-lab">Your file</b><div class="sh-files"><a href="mirqab-esg-energy-emissions-2025.xlsx" download>mirqab-esg-energy-emissions-2025.xlsx</a></div><p class="pj-small">36 rows · Site, Month, Electricity (kWh), Diesel (litres), Water (m3), Waste (kg)</p></div>
+    <div><b class="sh-lab">The artifact</b>An emissions dashboard by site and month, then a 5-slide summary for the client&#x27;s board.</div>
+    <div><b class="sh-lab">When and who</b>On the 5th of each month. Reviewed by the ESG manager.</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>Calculate emissions by site and month with the training factors: electricity 0.6 kg CO2e per kWh, diesel 2.68 kg CO2e per litre.</li><li>Total water and waste by site.</li><li>Flag gaps: never fill a blank with an average.</li><li>Flag outliers, such as a value about 1,000 times lower than the other months. Never convert it.</li><li>Say which months are complete.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-esg">Department: ESG and Sustainability
+Task: Reads the monthly data, calculates emissions with the factors in the file (electricity 0.6 kg CO2e per kWh, diesel 2.68 kg CO2e per litre), and flags gaps and outliers.
+Input: mirqab-esg-energy-emissions-2025.xlsx (today it lives inside the skill)
+Instruction: [your steps and two rules; what to do when unsure]
+Output: An emissions dashboard by site and month, then a 5-slide summary for the client&#x27;s board.
+When: On the 5th of each month
+Who reviews: The ESG manager [name]
+Impact: [90 minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-esg">COPY</button></div>
+</section>
+<section class="sh-card pj-panel" id="pj-data" data-dept="data" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Analyst, AI and Data Analytics</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>AI and Data Analytics</h3>
+  <p class="pj-scen">A retail client sent one month of sales: 60 transactions from 4 branches. Before any analysis, the client wants to know if the data can be trusted.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  <p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>
+  <div class="sh-meta sh-meta--3">
+    <div><b class="sh-lab">Your file</b><div class="sh-files"><a href="mirqab-data-sales-transactions-oct.xlsx" download>mirqab-data-sales-transactions-oct.xlsx</a></div><p class="pj-small">60 rows · Transaction, Date, Branch, Category, Quantity, Unit price (KWD), Amount (KWD), Channel</p></div>
+    <div><b class="sh-lab">The artifact</b>A sales dashboard with filters, with the data-quality note on top.</div>
+    <div><b class="sh-lab">When and who</b>Every Sunday at 09:00. Reviewed by the analytics manager.</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>Check the data first: duplicate transactions, and Amount equal to Quantity × Unit price.</li><li>Write a short data-quality note on top.</li><li>Then report sales by branch, by category and by week, with duplicates counted once.</li><li>Flag every problem. Never correct a value.</li><li>Use only the file.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-data">Department: AI and Data Analytics
+Task: Checks the data first (duplicates, amount equals quantity times price), then reports sales by branch, category and week.
+Input: mirqab-data-sales-transactions-oct.xlsx (today it lives inside the skill)
+Instruction: [your steps and two rules; what to do when unsure]
+Output: A sales dashboard with filters, with the data-quality note on top.
+When: Every Sunday at 09:00
+Who reviews: The analytics manager [name]
+Impact: [60 minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-data">COPY</button></div>
+</section>
+<section class="sh-card pj-panel" id="pj-finance" data-dept="finance" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Accountant, Finance</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>Finance</h3>
+  <p class="pj-scen">Every month Mirqab&#x27;s finance team explains the budget variances to the managing partner, line by line, in a long email: 40 lines across 4 cost centers.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  <p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>
+  <div class="sh-meta sh-meta--3">
+    <div><b class="sh-lab">Your file</b><div class="sh-files"><a href="mirqab-finance-budget-vs-actual-2026.xlsx" download>mirqab-finance-budget-vs-actual-2026.xlsx</a></div><p class="pj-small">40 rows · Cost center, Account, Budget Jan-Oct (KWD), Actual Jan-Oct (KWD)</p></div>
+    <div><b class="sh-lab">The artifact</b>A variance dashboard by cost center, then a one-page memo to the managing partner.</div>
+    <div><b class="sh-lab">When and who</b>On the 3rd working day of each month. Reviewed by the finance manager.</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>Calculate the variance for every line, in KWD and in percent.</li><li>Flag lines more than 10% and more than KWD 1,000 over budget.</li><li>Draft one question for each flagged line.</li><li>Flag a blank actual. Never treat it as zero.</li><li>Use only the file.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-finance">Department: Finance
+Task: Calculates the variance in KWD and percent for every line, flags lines over 10% and over KWD 1,000, and drafts one question per flag.
+Input: mirqab-finance-budget-vs-actual-2026.xlsx (today it lives inside the skill)
+Instruction: [your steps and two rules; what to do when unsure]
+Output: A variance dashboard by cost center, then a one-page memo to the managing partner.
+When: On the 3rd working day of each month
+Who reviews: The finance manager [name]
+Impact: [50 minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-finance">COPY</button></div>
+</section>
+<section class="sh-card pj-panel" id="pj-hr" data-dept="hr" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Officer, Human Resources</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>Human Resources</h3>
+  <p class="pj-scen">HR answers the same questions every month: headcount, training hours, leave balances and who is on notice. The people file has 36 employees, with IDs only.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  <p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>
+  <div class="sh-meta sh-meta--3">
+    <div><b class="sh-lab">Your file</b><div class="sh-files"><a href="mirqab-hr-people-data-2026.xlsx" download>mirqab-hr-people-data-2026.xlsx</a></div><p class="pj-small">36 rows · Employee, Department, Grade, Join date, Leave balance (days), Training hours 2026, Status</p></div>
+    <div><b class="sh-lab">The artifact</b>An HR dashboard, then a one-page monthly note for the partners.</div>
+    <div><b class="sh-lab">When and who</b>On the last working day of each month. Reviewed by the HR manager.</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>Count headcount by department and by grade.</li><li>List employees under the 20-hour training target.</li><li>List leave balances to check, such as a negative balance.</li><li>Flag data errors, such as a join date in the future.</li><li>Use employee IDs only. Never add names.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-hr">Department: Human Resources
+Task: Reads the people file and returns headcount by department and grade, training hours under the 20-hour target, and leave balances to check.
+Input: mirqab-hr-people-data-2026.xlsx (today it lives inside the skill)
+Instruction: [your steps and two rules; what to do when unsure]
+Output: An HR dashboard, then a one-page monthly note for the partners.
+When: On the last working day of each month
+Who reviews: The HR manager [name]
+Impact: [45 minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-hr">COPY</button></div>
+</section>
+<section class="sh-card pj-panel" id="pj-cx" data-dept="cx" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Coordinator, Customer Experience</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>Customer Experience</h3>
+  <p class="pj-scen">Client feedback arrives every week: 40 responses with a score from 0 to 10 and a comment. Nobody turns it into a score or a list of what to fix.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  <p class="pj-hidden"><b>Heads up:</b> this file hides two problems. A good agent finds and flags them. It never fixes them.</p>
+  <div class="sh-meta sh-meta--3">
+    <div><b class="sh-lab">Your file</b><div class="sh-files"><a href="mirqab-cx-client-survey-2026.xlsx" download>mirqab-cx-client-survey-2026.xlsx</a></div><p class="pj-small">40 rows · Response, Service line, Date, Score (0-10), Comment</p></div>
+    <div><b class="sh-lab">The artifact</b>An NPS dashboard, then a 5-slide client-feedback deck.</div>
+    <div><b class="sh-lab">When and who</b>Every Sunday at 08:00. Reviewed by the client service partner.</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>Calculate the NPS by service line: promoters (9 and 10) minus detractors (0 to 6).</li><li>Leave out scores outside 0 to 10, and flag them.</li><li>Count a duplicate response once, and flag it.</li><li>Group the comments into themes.</li><li>List the three things to fix first.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-cx">Department: Customer Experience
+Task: Calculates the NPS by service line, groups the comments into themes, and lists the three things to fix first.
+Input: mirqab-cx-client-survey-2026.xlsx (today it lives inside the skill)
+Instruction: [your steps and two rules; what to do when unsure]
+Output: An NPS dashboard, then a 5-slide client-feedback deck.
+When: Every Sunday at 08:00
+Who reviews: The client service partner [name]
+Impact: [40 minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-cx">COPY</button></div>
+</section>
+<section class="sh-card pj-panel" id="pj-own" data-dept="own" hidden>
+  <div class="sh-top"><span class="sh-blk">Your scenario</span><span class="sh-time">Your own team</span><span class="sh-tag sh-team">Task 2.6 · 85 min</span></div>
+  <h3>Your own task</h3>
+  <p class="pj-scen">Bring a task you repeat at work. Use fictional data only: no client names, no real figures. If you have no file, use the test file you made in Task 2.1, or ask Claude for one with the Make a test file prompt.</p>
+  <p class="pj-goal"><b>Your job today:</b> build an agent that does this work for the team, shows the result as an artifact, and runs on a schedule. A person still reviews every run.</p>
+  
+  <div class="sh-meta sh-meta--3">
+    
+    <div><b class="sh-lab">The artifact</b>A dashboard, a report or a short deck: you choose.</div>
+    <div><b class="sh-lab">When and who</b>[when it should run]. Reviewed by [one person&#x27;s role].</div>
+  </div>
+  <div class="sh-plab">What the agent must do</div>
+  <ul class="pj-must"><li>Read the input file.</li><li>Do the steps of your task, with your rules.</li><li>Flag anything missing or strange. Never guess.</li><li>Return the output in a fixed layout.</li></ul>
+  <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-own">Department: [your department pack, or your own team]
+Task: [what the agent does, in one line]
+Input: [the file it reads; today it lives inside the skill]
+Instruction: [the steps and two rules; what to do when unsure]
+Output: [the artifact: a dashboard, a report or a deck, and its layout]
+When: [the schedule, for example every Sunday at 08:00]
+Who reviews: [one person&#x27;s role or name]
+Impact: [minutes by hand] - [minutes with the agent] x [runs a month]</pre><button class="sh-copy" type="button" data-copy="card-own">COPY</button></div>
+</section>
+<section class="sh-card"><div class="sh-top"><span class="sh-blk">The plan</span><span class="sh-time">85 minutes</span></div><h3>Build in this order</h3><ol class="pj-steps"><li><b>1. Card · 10 min</b>Pick your department above and copy your Project card. Fill the brackets, then paste the card in the box at the bottom of this page.</li><li><b>2. Build · 25 min</b>In Claude, create a Project named after your department. Send Build plan with your card. Write the five-part instructions in the Project. Then turn the Project into a skill with Turn my task into a skill, and save it.</li><li><b>3. Output · 20 min</b>Attach your file in the Project. Send the Dashboard request with your department&#x27;s KPIs. Check three tiles by hand. Then send Put the layout in my skill and save the skill again.</li><li><b>4. When · 15 min</b>Send Add my file to the skill, and save the skill again. Click Scheduled in the left sidebar, New task, Set up manually. Paste the Scheduled task prompt. Run it once on demand.</li><li><b>5. Check and demo · 15 min</b>Send Check three figures and check them in the file. Mark the output DRAFT with a Reviewed by line. Work out your impact. Send Demo script and keep it to three minutes.</li></ol>
+<p class="pj-small">Behind at 45 minutes? Skip the schedule. Show the skill and the artifact, and say when it would run.</p></section>
+<section class="sh-card"><div class="sh-top"><span class="sh-blk">Prompts</span><span class="sh-time">COPY, then fill the brackets</span></div><h3>Every prompt for the project</h3><div class="sh-plab">Build plan</div><div class="sh-promptwrap"><pre id="pp-0">Here is my project card: [paste it]. Give me a build plan for Claude in five steps: Project, skill, artifact, scheduled task, test. Two lines for each step. Do not build anything yet.</pre><button class="sh-copy" type="button" data-copy="pp-0">COPY</button></div><div class="sh-plab">Turn my task into a skill</div><div class="sh-promptwrap"><pre id="pp-1">Help me build a Claude skill for a task I repeat at work. My Agent Card, with no client or firm names: [paste your card]. Ask me up to five questions first. Then write the skill: a short lowercase name with hyphens, a one-line description of when to use it, the steps, the rules, the output columns in order, and When unsure (write Not found, never guess). Make it a skill file I can save.</pre><button class="sh-copy" type="button" data-copy="pp-1">COPY</button></div><div class="sh-plab">Dashboard request</div><div class="sh-promptwrap"><pre id="pp-2">Role: You are a [job title] at Mirqab &amp; Co. Data: the attached [file]. Build an interactive dashboard artifact for [who reads it]. KPI tiles at the top: [3 to 6 numbers, each with how to calculate it]. Charts: [1 or 2 charts]. A table of [the rows that need action]. A filter by [a column]. Rules: use only the file and calculate with code. If a value is blank or does not make sense, leave it out of that KPI and list it under Data issues. Never guess. Show the date of the data.</pre><button class="sh-copy" type="button" data-copy="pp-2">COPY</button></div><div class="sh-plab">Put the layout in my skill</div><div class="sh-promptwrap"><pre id="pp-3">Add this to my skill [skill name]: after the analysis, always build the dashboard in this exact layout: [the tiles, the charts and the table, in order]. Keep every other rule word for word. Then update the skill so I can save it again.</pre><button class="sh-copy" type="button" data-copy="pp-3">COPY</button></div><div class="sh-plab">Add my file to the skill</div><div class="sh-promptwrap"><pre id="pp-4">Add the attached file to my [skill name] skill as a reference file. Keep every rule word for word. Then update the skill so I can save it again.</pre><button class="sh-copy" type="button" data-copy="pp-4">COPY</button></div><div class="sh-plab">Scheduled task prompt</div><div class="sh-promptwrap"><pre id="pp-5">Use the [skill name] skill on its reference file [file name]. Build the output in its fixed layout. Start with one line: date and time of this run, file read, items flagged. Mark it DRAFT and end with Reviewed by: ____. If the reference file is missing or cannot be read, say so in that first line and stop. Never guess.</pre><button class="sh-copy" type="button" data-copy="pp-5">COPY</button></div><div class="sh-plab">Check three figures</div><div class="sh-promptwrap"><pre id="pp-6">List three figures from my output and the exact rows they come from in the source file, so I can check them by hand. Do not change anything.</pre><button class="sh-copy" type="button" data-copy="pp-6">COPY</button></div><div class="sh-plab">Demo script</div><div class="sh-promptwrap"><pre id="pp-7">Write a 3-minute demo script for my project: the problem, the card, a live run, the artifact, the impact ((minutes by hand minus minutes with the agent) times runs a month), and what I would automate next. Use only facts from my files and runs.</pre><button class="sh-copy" type="button" data-copy="pp-7">COPY</button></div></section>
+<section class="sh-card pj-done"><div class="sh-top"><span class="sh-blk">Before the demos</span><span class="sh-time">14:40</span></div><h3>Done when</h3><label><input type="checkbox"> <span>My Project card is filled in.</span></label><label><input type="checkbox"> <span>My Project has five-part instructions.</span></label><label><input type="checkbox"> <span>My skill is saved and tested in a new chat.</span></label><label><input type="checkbox"> <span>My dashboard or report has a fixed layout, written in the skill.</span></label><label><input type="checkbox"> <span>My scheduled task ran once on demand, with a run-log line.</span></label><label><input type="checkbox"> <span>I checked three figures against the file.</span></label><label><input type="checkbox"> <span>My output says DRAFT and Reviewed by.</span></label><label><input type="checkbox"> <span>I know my impact number and my 3-minute demo.</span></label>
+<p class="pj-small">The trainer picks four or five projects to show: four minutes each. Your ticks stay in this browser.</p></section>
+<section class="sh-card pj-note"><div class="sh-top"><span class="sh-blk">Your notes</span><span class="sh-time">saved in this browser</span></div><h3>Your Project card and impact number</h3><textarea aria-label="Your Project card and impact number"></textarea></section>
+<p class="smallnote sheet-foot">Fictional training file. Mirqab &amp; Co., its clients and every name, amount and date here are made up for CODED training. <a href="coded-rsm-ai-automation-day-2.html">Back to Day 2</a></p>
+</div></div></main>
+<footer class="foot-mini"><div class="wrap"><div class="foot-row"><a class="f-lockup" href="coded-rsm-ai-automation.html" aria-label="AI Innovation and Automation home"><span class="lk"><img class="coded-logo" src="coded-rsm-ai-automation-coded-logo.png" alt="CODED" width="320" height="120"><span class="x">×</span><img class="partner-logo" src="coded-rsm-ai-automation-client-logo.png" alt="RSM Albazie &amp; Co." width="192" height="192"></span></a><span class="copy">© 2026 CODED × RSM · Fictional training file. Mirqab &amp; Co., its clients and every name, amount and date here are made up for CODED training.</span></div></div></footer>
+<script>(function(){
+var KEY='coded-rsm-ai-automation-mini-project';var st={dept:'',done:{},note:''};
+try{var v=localStorage.getItem(KEY);if(v){var p=JSON.parse(v);st.dept=p.dept||'';st.done=p.done||{};st.note=p.note||'';}}catch(x){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(x){}}
+var btns=[].slice.call(document.querySelectorAll('.pj-pick button')),panels=[].slice.call(document.querySelectorAll('.pj-panel')),empty=document.querySelector('.pj-empty');
+function show(k,scroll){var hit=false;panels.forEach(function(p){var on=p.getAttribute('data-dept')===k;p.hidden=!on;if(on)hit=true;});
+  btns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-dept')===k?'true':'false');});
+  if(empty)empty.hidden=hit;if(hit){st.dept=k;save();if(history.replaceState)history.replaceState(null,'','#'+k);
+  if(scroll){var el=document.getElementById('pj-'+k);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}}}
+btns.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('data-dept'),true);});});
+var h=(location.hash||'').replace('#','');show(h||st.dept,false);
+[].slice.call(document.querySelectorAll('.pj-done input')).forEach(function(c,i){c.checked=!!st.done[i];c.addEventListener('change',function(){st.done[i]=c.checked;save();});});
+var ta=document.querySelector('.pj-note textarea');if(ta){ta.value=st.note;ta.addEventListener('input',function(){st.note=ta.value;save();});}
+document.addEventListener('click',function(ev){var b=ev.target.closest('[data-copy]');if(!b)return;var t=document.getElementById(b.getAttribute('data-copy'));if(!t)return;var txt=t.innerText;
+  function done(){b.textContent='COPIED';setTimeout(function(){b.textContent='COPY';},1500);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fb();});}else fb();
+  function fb(){var a=document.createElement('textarea');a.value=txt;document.body.appendChild(a);a.select();try{document.execCommand('copy');done();}catch(x){}document.body.removeChild(a);}});
+})();</script>
+</body></html>
