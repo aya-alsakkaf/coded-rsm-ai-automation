@@ -1183,3 +1183,4 @@ DEMOS["u26"]["setup"] = ["Card (10 min): open coded-rsm.vercel.app/project, pick
 DEMOS["u26"]["prompts"] = [("Add my file to the skill", ADD_TO_SKILL), ("Scheduled task prompt", SKILL_SCHED)]
 DEMOS["u26"]["templates"] = [("Project card", PROJECT_CARD)]
 DEMOS["u26"]["hint"] = "Write your own requests first. Stuck? The project page has a hint, another hint, then the prompt."
+DEMOS["u26"]["deliverable"] = "Your department agent, and one Word document sent through the submission form (coded-rsm.vercel.app/submit): card, instructions, skill, artifact link, schedule, checks, impact."

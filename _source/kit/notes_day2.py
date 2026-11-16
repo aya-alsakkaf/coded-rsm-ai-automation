@@ -129,7 +129,7 @@ SCRIPT = {
   "And a run log, with both hidden problems flagged. At 14:40 I will pick four or five of you to show."),
  "m5task": ("Start the timer. At 20 minutes, check everyone has a Project. At 45, check for a skill.",
   "Open the project page and pick your department. Here is the plan for 85 minutes. Ten minutes for the card. Twenty-five for the Project and the skill. Twenty for the artifact. Fifteen for the schedule. And fifteen to check three figures, mark it DRAFT, and write your demo. "
-  "Build in that order. If you fall behind, skip the schedule and say when it would run. Go."),
+  "Build in that order. If you fall behind, skip the schedule and say when it would run. Before 14:40, send one Word document through the form at coded-rsm dot vercel dot app slash submit; the project page lists what goes in it, and one prompt builds it for you. Go."),
  "d6demo": ("Call each project. Restart the timer each time.",
   "Welcome back. Time for the projects. Four minutes each: the problem, your card, a run or your artifact, the time it saves, and your next automation. (Call the first person.)"),
  "c7map": ("Check the response count in the portal before you move on.",

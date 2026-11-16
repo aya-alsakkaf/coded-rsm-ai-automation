@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-16 11:10 · Project submission (Aya)
+
+- Project page: a Submit section before the Done-when list: Aya's Google Form (short link /submit), the nine things the Word document holds
+  (name and department, Project card, five-part instructions, skill name and description, artifact link or screenshot, scheduled task and the
+  first line of its run, three figures checked, the problems flagged, impact and next task), and a COPY prompt that builds the document in the
+  Project chat with [missing] for gaps. New Done-when tick. Lab step 7, Task 2.6's deliverable and the Task 2.6 script name the form.
+
 ## 2026-11-16 10:05 · Project prompts behind three steps of help (Aya)
 
 - Project page: Build plan, Turn the Project into a skill, Dashboard request, Check three figures and Demo script are "write it yourself"

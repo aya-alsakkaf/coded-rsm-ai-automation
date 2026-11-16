@@ -130,6 +130,19 @@ LAYERED = [
   "Impact is (minutes by hand minus minutes with the agent) times runs a month. Use only numbers from your files and your runs.", CD.DEMO_SCRIPT)]
 # copy these: they are steps to follow, not thinking
 PROMPTS = [("Put the layout in my skill", CD.ARTIFACT_IN_SKILL), ("Add my file to the skill", CD.ADD_TO_SKILL), ("Scheduled task prompt", CD.SKILL_SCHED)]
+FORM = "https://docs.google.com/forms/d/e/1FAIpQLScjFXZ-xs_VUAvfXrdxP5ccN6zkgv_gMx3UIlcIyh633pVbMQ/viewform"
+SUBMIT_ITEMS = ["Your name and your department.", "Your Project card, filled in.", "Your Project's five-part instructions.",
+                "Your skill: its name and its one-line description.",
+                "A link to your artifact. In Claude, share or publish the artifact and copy its link. No link option on your account? Add a screenshot instead.",
+                "Your scheduled task: its name, how often it runs, and the first line of its run.",
+                "Three figures you checked, and the rows they come from in the file.", "The two hidden problems your agent flagged.",
+                "Your impact number, and the next task you would automate."]
+SUBMIT_PROMPT = ("Put together my mini project submission as a Word document I can download. Use only what is in this chat and this Project. "
+                 "Sections in this order: 1. My name and department: [name, department]. 2. My Project card. 3. The Project's five-part instructions. "
+                 "4. My skill: name and one-line description. 5. The artifact link: [paste the link, or write Screenshot attached]. "
+                 "6. My scheduled task: name, frequency, and the first line of its run. 7. Three figures I checked, with their rows in the file. "
+                 "8. The problems the agent flagged. 9. My impact: (minutes by hand minus minutes with the agent) times runs a month, and my next task to automate. "
+                 "Where you do not have something, write [missing] so I can fill it. Do not invent anything.")
 LABELS = ["Stuck? Show a hint", "Still stuck? Show another hint", "Still stuck? Show the prompt"]
 
 def layered(i, label, when, h1, h2, text):
@@ -140,7 +153,8 @@ def layered(i, label, when, h1, h2, text):
             f'<button class="pj-more" type="button">{e(LABELS[0])}</button></div>')
 DONE = ["My Project card is filled in.", "My Project has five-part instructions.", "My skill is saved and tested in a new chat.",
         "My dashboard or report has a fixed layout, written in the skill.", "My scheduled task ran once on demand, with a run-log line.",
-        "I checked three figures against the file.", "My output says DRAFT and Reviewed by.", "I know my impact number and my 3-minute demo."]
+        "I checked three figures against the file.", "My output says DRAFT and Reviewed by.", "I know my impact number and my 3-minute demo.",
+        "I submitted my document in the submission form."]
 
 CSS = """
 .pj-pick{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:14px}
@@ -159,6 +173,8 @@ CSS = """
 .pj-layer .sh-plab{margin-top:0}.pj-h{margin:10px 0 0;padding:10px 14px;border-radius:12px;background:rgba(76,181,226,.08);line-height:1.55}
 .pj-more{font:inherit;font-size:14px;margin-top:12px;padding:8px 16px;border-radius:999px;cursor:pointer;color:inherit;background:transparent;border:1px solid #4CB5E2}
 .pj-more:hover{background:#007DB4;border-color:#007DB4;color:#fff}
+.pj-submit a.pj-go{display:inline-flex;align-items:center;gap:8px;margin:6px 0 14px;padding:12px 22px;border-radius:999px;background:#007DB4;color:#fff;font-weight:700;text-decoration:none}
+.pj-submit a.pj-go:hover{filter:brightness(1.1)}.pj-submit ol{margin:6px 0 14px 20px;line-height:1.6}
 .pj-note textarea{width:100%;min-height:150px;margin-top:8px;font:inherit;padding:12px;border-radius:12px}
 """
 
@@ -221,6 +237,12 @@ def build(out_dir):
 <section class="sh-card"><div class="sh-top"><span class="sh-blk">Write it yourself</span><span class="sh-time">hints if you are stuck</span></div><h3>Write these requests yourself first</h3>
 <p class="pj-small">You wrote each of these once today. Try on your own for a few minutes. Stuck? Open one hint at a time. The full prompt is the last step.</p>{layers}</section>
 <section class="sh-card"><div class="sh-top"><span class="sh-blk">Copy these</span><span class="sh-time">COPY, then fill the brackets</span></div><h3>Steps to follow</h3>{prompts}</section>
+<section class="sh-card pj-submit"><div class="sh-top"><span class="sh-blk">Submit</span><span class="sh-time">before 14:40</span></div><h3>Submit your project</h3>
+<p>Send one Word document through the submission form. Short link: coded-rsm.vercel.app/submit</p>
+<a class="pj-go" href="{FORM}" target="_blank" rel="noopener">Open the submission form <span class="ar">→</span></a>
+<div class="sh-plab">Your document has</div><ol>{"".join(f"<li>{e(x)}</li>" for x in SUBMIT_ITEMS)}</ol>
+{promptbox("pp-submit", "Make my submission document (in your Project chat)", SUBMIT_PROMPT)}
+<p class="pj-small">Check the document before you send it: every number must match your files, and no real client names.</p></section>
 <section class="sh-card pj-done"><div class="sh-top"><span class="sh-blk">Before the demos</span><span class="sh-time">14:40</span></div><h3>Done when</h3>{done}
 <p class="pj-small">The trainer picks four or five projects to show: four minutes each. Your ticks stay in this browser.</p></section>
 <section class="sh-card pj-note"><div class="sh-top"><span class="sh-blk">Your notes</span><span class="sh-time">saved in this browser</span></div><h3>Your Project card and impact number</h3><textarea aria-label="Your Project card and impact number"></textarea></section>

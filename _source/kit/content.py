@@ -795,7 +795,8 @@ LABS[2] = {"title": "Skills, artifacts, schedules, then your own agent",
      "answer": [("p", "Good answers name an event trigger (email, form, file) and choose n8n or Power Automate, with Claude as the reading step inside the flow.")]},
     {"title": "Mini project: on its own page (Task 2.6)",
      "do": ["Open coded-rsm.vercel.app/project on your laptop.", "Pick your department: you get a work scenario, the file, your Project card and every prompt.",
-            "Build in order: card, Project, skill, artifact, schedule, check. Your ticks and notes stay on that page."],
+            "Build in order: card, Project, skill, artifact, schedule, check. Your ticks and notes stay on that page.",
+            "Before 14:40, submit one Word document in the submission form: coded-rsm.vercel.app/submit. The project page lists what goes in it."],
      "hint": "Pick the department closest to your own work, or Your own task.", "check": {"kind": "note", "label": "Your department, and the one-line task your agent does"},
      "answer": [("p", "Each pack hides two problems; the list is in the Day 2 answer key, Task 2.6.")]}]}
 
@@ -854,3 +855,4 @@ SHEET["howto"] = [x.replace("<b>Download the file</b> on the card, or open it fr
 
 # the mini project page's short link (Aya, 16 Nov)
 REDIRECTS += [("/project", "/coded-rsm-ai-automation-mini-project")]
+REDIRECTS += [("/submit", "https://docs.google.com/forms/d/e/1FAIpQLScjFXZ-xs_VUAvfXrdxP5ccN6zkgv_gMx3UIlcIyh633pVbMQ/viewform")]
