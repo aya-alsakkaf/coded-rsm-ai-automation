@@ -199,7 +199,7 @@ EF = {"electricity": 0.6, "diesel": 2.68}
 pack("esg", "ESG and Sustainability", "mirqab-esg-energy-emissions-2025.xlsx", "Energy 2025",
      ["Site", "Month", "Electricity (kWh)", "Diesel (litres)", "Water (m3)", "Waste (kg)"], rows, [22, 10, 17, 15, 12, 12],
      "A client needs its first sustainability report. The data comes from three sites, by month, and nobody has checked it.",
-     f"Reads the monthly data, calculates emissions with the factors in the file (electricity {EF['electricity']} kg CO2e per kWh, diesel {EF['diesel']} kg CO2e per litre), and flags gaps and outliers.",
+     f"Reads the monthly data, calculates emissions with the training factors (electricity {EF['electricity']} kg CO2e per kWh, diesel {EF['diesel']} kg CO2e per litre), and flags gaps and outliers.",
      "An emissions dashboard by site and month, and a 5-slide summary for the client's board.", "On the 5th of each month, when the site data arrives.",
      [f"{rows[_mi][0]}, {rows[_mi][1]}: electricity is blank. Flag it; do not fill it with an average.",
       f"{rows[_mu][0]}, {rows[_mu][1]}: electricity is {rows[_mu][2]}, about 1,000 times lower than other months. It looks like MWh, not kWh. Flag it; do not convert it."],

@@ -176,7 +176,7 @@ Impact: [60 minutes by hand] - [minutes with the agent] x [runs a month]</pre><b
   <div class="sh-plab">What the agent must do</div>
   <ul class="pj-must"><li>Calculate emissions by site and month with the training factors: electricity 0.6 kg CO2e per kWh, diesel 2.68 kg CO2e per litre.</li><li>Total water and waste by site.</li><li>Flag gaps: never fill a blank with an average.</li><li>Flag outliers, such as a value about 1,000 times lower than the other months. Never convert it.</li><li>Say which months are complete.</li></ul>
   <div class="sh-plab">Your Project card (copy it, then fill the brackets)</div><div class="sh-promptwrap"><pre id="card-esg">Department: ESG and Sustainability
-Task: Reads the monthly data, calculates emissions with the factors in the file (electricity 0.6 kg CO2e per kWh, diesel 2.68 kg CO2e per litre), and flags gaps and outliers.
+Task: Reads the monthly data, calculates emissions with the training factors (electricity 0.6 kg CO2e per kWh, diesel 2.68 kg CO2e per litre), and flags gaps and outliers.
 Input: mirqab-esg-energy-emissions-2025.xlsx (today it lives inside the skill)
 Instruction: [your steps and two rules; what to do when unsure]
 Output: An emissions dashboard by site and month, then a 5-slide summary for the client&#x27;s board.
