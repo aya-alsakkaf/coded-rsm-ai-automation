@@ -254,7 +254,7 @@ def panel(key):
               f'<p class="pj-small">{e(example)}</p>' + promptbox(f"{k}-out", "Demo outline (4 minutes)", outline) + demo)
     return f'<div class="pj-panel" id="pj-{k}" data-dept="{k}" hidden>\n{head}\n{s1}\n{s2}\n{s3}\n{s4}\n{s5}\n</div>'
 
-FORM = "https://docs.google.com/forms/d/e/1FAIpQLScjFXZ-xs_VUAvfXrdxP5ccN6zkgv_gMx3UIlcIyh633pVbMQ/viewform"
+FORM = "https://platform.joincoded.com/sv/rsm-albazie-ai-innovation-and-automation-project-submission"
 SUBMIT_ITEMS = ["Your name and your department.", "Your Project card, filled in.",
                 "Your skill: its name and its one-line description.",
                 "A link to your artifact. In Claude, share or publish the artifact and copy its link. No link option on your account? Add a screenshot instead.",

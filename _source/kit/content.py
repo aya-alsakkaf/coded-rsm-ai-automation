@@ -855,7 +855,7 @@ SHEET["howto"] = [x.replace("<b>Download the file</b> on the card, or open it fr
 
 # the mini project page's short link (Aya, 16 Nov)
 REDIRECTS += [("/project", "/coded-rsm-ai-automation-mini-project")]
-REDIRECTS += [("/submit", "https://docs.google.com/forms/d/e/1FAIpQLScjFXZ-xs_VUAvfXrdxP5ccN6zkgv_gMx3UIlcIyh633pVbMQ/viewform")]
+REDIRECTS += [("/submit", "https://platform.joincoded.com/sv/rsm-albazie-ai-innovation-and-automation-project-submission")]
 
 # the mini project page on the Day 2 page (Aya, 16 Nov 12:43): a card at the top of the side column and a Resources line.
 # Engine opt-in HUB["day_extra_cta"] (pages.py), added on Aya's request because no kit option existed; logged in PLUGIN-FEEDBACK.md.
