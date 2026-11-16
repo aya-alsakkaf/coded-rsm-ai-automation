@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-16 10:05 · Project prompts behind three steps of help (Aya)
+
+- Project page: Build plan, Turn the Project into a skill, Dashboard request, Check three figures and Demo script are "write it yourself"
+  cards: Stuck? Show a hint → Still stuck? Show another hint → Still stuck? Show the prompt (state kept in the browser).
+  Put the layout in my skill, Add my file to the skill and the scheduled task prompt stay as COPY. The 85-minute plan says "write your own".
+- Task 2.6 slide and prompt sheet: only the two schedule prompts and the blank Project card; the thinking prompts are only behind the hints.
+
 ## 2026-11-16 09:45 · The mini project has its own page (Aya)
 
 - New page coded-rsm-ai-automation-mini-project.html (short link /project), built by `kit/project_page.py` from gen_files.py as a site file:

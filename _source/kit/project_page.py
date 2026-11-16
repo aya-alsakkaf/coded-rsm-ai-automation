@@ -107,13 +107,37 @@ def panel(key):
 </section>'''
 
 STEPS = [("Card", 10, "Pick your department above and copy your Project card. Fill the brackets, then paste the card in the box at the bottom of this page."),
-         ("Build", 25, "In Claude, create a Project named after your department. Send Build plan with your card. Write the five-part instructions in the Project. Then turn the Project into a skill with Turn my task into a skill, and save it."),
-         ("Output", 20, "Attach your file in the Project. Send the Dashboard request with your department's KPIs. Check three tiles by hand. Then send Put the layout in my skill and save the skill again."),
+         ("Build", 25, "In Claude, create a Project named after your department. Ask Claude for a build plan from your card. Write the five-part instructions in the Project. Then turn the Project into a skill, and save it."),
+         ("Output", 20, "Attach your file in the Project. Write your own dashboard request with your department's KPIs. Check three tiles by hand. Then send Put the layout in my skill and save the skill again."),
          ("When", 15, "Send Add my file to the skill, and save the skill again. Click Scheduled in the left sidebar, New task, Set up manually. Paste the Scheduled task prompt. Run it once on demand."),
-         ("Check and demo", 15, "Send Check three figures and check them in the file. Mark the output DRAFT with a Reviewed by line. Work out your impact. Send Demo script and keep it to three minutes.")]
-PROMPTS = [("Build plan", CD.BUILD_PLAN), ("Turn my task into a skill", CD.SKILL_FROM_CARD), ("Dashboard request", CD.DASH_TEMPLATE),
-           ("Put the layout in my skill", CD.ARTIFACT_IN_SKILL), ("Add my file to the skill", CD.ADD_TO_SKILL), ("Scheduled task prompt", CD.SKILL_SCHED),
-           ("Check three figures", CD.CHECK3), ("Demo script", CD.DEMO_SCRIPT)]
+         ("Check and demo", 15, "Ask Claude where three figures come from, and check them in the file. Mark the output DRAFT with a Reviewed by line. Work out your impact. Plan a 3-minute demo in your own words.")]
+# write these yourself first: hint, another hint, then the prompt (Aya, 16 Nov 10:02)
+LAYERED = [
+ ("Build plan", "Step 2: before you build anything.",
+  "Look at your Project card. Each line is one part of the build: Input is the file, Instruction is the Project, Output is the artifact, When is the schedule.",
+  "Give Claude your card and ask for a plan, not the build: five short steps in order (Project, skill, artifact, schedule, test).", CD.BUILD_PLAN),
+ ("Turn the Project into a skill", "Step 2: after the Project gives a good result.",
+  "Think back to Task 2.1. A skill needs a short name, one line on when to use it, the steps, the rules, the output columns, and what to do when unsure.",
+  "Paste your Project card and ask Claude to ask you questions first. Then ask it to write the skill with those six parts as a file you can save.", CD.SKILL_FROM_CARD),
+ ("Dashboard request", "Step 3: with your file attached.",
+  "Use the five parts from Lesson 2: who reads it, which data, the KPIs with their formulas, the layout, and the rules.",
+  "Your KPIs are in What the agent must do: turn each line into a tile (a count or a total). Add the rule: list blanks under Data issues and never guess.", CD.DASH_TEMPLATE),
+ ("Check three figures", "Step 5: before you trust the output.",
+  "You need three numbers from the output, and where each one comes from in the file.",
+  "Ask Claude to show the exact rows behind each number and to change nothing. Then check them yourself in Excel with a filter or SUM.", CD.CHECK3),
+ ("Demo script", "Step 5: for the demos at 14:40.",
+  "Four minutes: the problem, your card, a run or your artifact, your impact number, and what you would automate next.",
+  "Impact is (minutes by hand minus minutes with the agent) times runs a month. Use only numbers from your files and your runs.", CD.DEMO_SCRIPT)]
+# copy these: they are steps to follow, not thinking
+PROMPTS = [("Put the layout in my skill", CD.ARTIFACT_IN_SKILL), ("Add my file to the skill", CD.ADD_TO_SKILL), ("Scheduled task prompt", CD.SKILL_SCHED)]
+LABELS = ["Stuck? Show a hint", "Still stuck? Show another hint", "Still stuck? Show the prompt"]
+
+def layered(i, label, when, h1, h2, text):
+    return (f'<div class="pj-layer" id="ly-{i}" data-level="0"><div class="sh-plab">{e(label)}</div><p class="pj-small">{e(when)}</p>'
+            f'<div class="pj-h" data-l="1" hidden><b>Hint 1.</b> {e(h1)}</div>'
+            f'<div class="pj-h" data-l="2" hidden><b>Hint 2.</b> {e(h2)}</div>'
+            f'<div class="pj-h" data-l="3" hidden>{promptbox(f"lp-{i}", "The prompt", text)}</div>'
+            f'<button class="pj-more" type="button">{e(LABELS[0])}</button></div>')
 DONE = ["My Project card is filled in.", "My Project has five-part instructions.", "My skill is saved and tested in a new chat.",
         "My dashboard or report has a fixed layout, written in the skill.", "My scheduled task ran once on demand, with a run-log line.",
         "I checked three figures against the file.", "My output says DRAFT and Reviewed by.", "I know my impact number and my 3-minute demo."]
@@ -131,12 +155,17 @@ CSS = """
 .pj-steps li{padding:14px 16px;border-radius:14px;border:1px solid rgba(127,140,160,.3);line-height:1.55}
 .pj-steps li b{color:#4CB5E2;margin-right:6px}
 .pj-done label{display:flex;gap:10px;align-items:flex-start;padding:6px 0;line-height:1.45}
+.pj-layer{padding:16px 18px;border-radius:14px;border:1px solid rgba(127,140,160,.3);margin:12px 0}
+.pj-layer .sh-plab{margin-top:0}.pj-h{margin:10px 0 0;padding:10px 14px;border-radius:12px;background:rgba(76,181,226,.08);line-height:1.55}
+.pj-more{font:inherit;font-size:14px;margin-top:12px;padding:8px 16px;border-radius:999px;cursor:pointer;color:inherit;background:transparent;border:1px solid #4CB5E2}
+.pj-more:hover{background:#007DB4;border-color:#007DB4;color:#fff}
 .pj-note textarea{width:100%;min-height:150px;margin-top:8px;font:inherit;padding:12px;border-radius:12px}
 """
 
 JS = """<script>(function(){
-var KEY='coded-rsm-ai-automation-mini-project';var st={dept:'',done:{},note:''};
-try{var v=localStorage.getItem(KEY);if(v){var p=JSON.parse(v);st.dept=p.dept||'';st.done=p.done||{};st.note=p.note||'';}}catch(x){}
+var KEY='coded-rsm-ai-automation-mini-project';var st={dept:'',done:{},note:'',ly:{}};
+try{var v=localStorage.getItem(KEY);if(v){var p=JSON.parse(v);st.dept=p.dept||'';st.done=p.done||{};st.note=p.note||'';st.ly=p.ly||{};}}catch(x){}
+var LB=["Stuck? Show a hint","Still stuck? Show another hint","Still stuck? Show the prompt"];
 function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(x){}}
 var btns=[].slice.call(document.querySelectorAll('.pj-pick button')),panels=[].slice.call(document.querySelectorAll('.pj-panel')),empty=document.querySelector('.pj-empty');
 function show(k,scroll){var hit=false;panels.forEach(function(p){var on=p.getAttribute('data-dept')===k;p.hidden=!on;if(on)hit=true;});
@@ -146,6 +175,10 @@ function show(k,scroll){var hit=false;panels.forEach(function(p){var on=p.getAtt
 btns.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('data-dept'),true);});});
 var h=(location.hash||'').replace('#','');show(h||st.dept,false);
 [].slice.call(document.querySelectorAll('.pj-done input')).forEach(function(c,i){c.checked=!!st.done[i];c.addEventListener('change',function(){st.done[i]=c.checked;save();});});
+function lay(box,n){box.setAttribute('data-level',n);[].slice.call(box.querySelectorAll('.pj-h')).forEach(function(h){h.hidden=+h.getAttribute('data-l')>n;});
+  var b=box.querySelector('.pj-more');if(n>=3){b.hidden=true;}else{b.hidden=false;b.textContent=LB[n];}}
+[].slice.call(document.querySelectorAll('.pj-layer')).forEach(function(box){lay(box,+(st.ly[box.id]||0));
+  box.querySelector('.pj-more').addEventListener('click',function(){var n=Math.min(3,+box.getAttribute('data-level')+1);st.ly[box.id]=n;save();lay(box,n);});});
 var ta=document.querySelector('.pj-note textarea');if(ta){ta.value=st.note;ta.addEventListener('input',function(){st.note=ta.value;save();});}
 document.addEventListener('click',function(ev){var b=ev.target.closest('[data-copy]');if(!b)return;var t=document.getElementById(b.getAttribute('data-copy'));if(!t)return;var txt=t.innerText;
   function done(){b.textContent='COPIED';setTimeout(function(){b.textContent='COPY';},1500);}
@@ -158,6 +191,7 @@ def build(out_dir):
     picks += '<button type="button" data-dept="own" aria-pressed="false"><b>Your own task</b><span>Fictional data only</span></button>'
     panels = "\n".join(panel(p["key"]) for p in X.PACKS) + "\n" + panel("own")
     steps = "".join(f"<li><b>{i}. {e(t)} · {m} min</b>{e(x)}</li>" for i, (t, m, x) in enumerate(STEPS, 1))
+    layers = "".join(layered(i, *x) for i, x in enumerate(LAYERED))
     prompts = "".join(promptbox(f"pp-{i}", l, t) for i, (l, t) in enumerate(PROMPTS))
     done = "".join(f'<label><input type="checkbox"> <span>{e(x)}</span></label>' for x in DONE)
     logos = (f'<span class="lk"><img class="coded-logo" src="{PFX}-coded-logo.png" alt="CODED" width="320" height="120"><span class="x">×</span>'
@@ -184,7 +218,9 @@ def build(out_dir):
 {panels}
 <section class="sh-card"><div class="sh-top"><span class="sh-blk">The plan</span><span class="sh-time">85 minutes</span></div><h3>Build in this order</h3><ol class="pj-steps">{steps}</ol>
 <p class="pj-small">Behind at 45 minutes? Skip the schedule. Show the skill and the artifact, and say when it would run.</p></section>
-<section class="sh-card"><div class="sh-top"><span class="sh-blk">Prompts</span><span class="sh-time">COPY, then fill the brackets</span></div><h3>Every prompt for the project</h3>{prompts}</section>
+<section class="sh-card"><div class="sh-top"><span class="sh-blk">Write it yourself</span><span class="sh-time">hints if you are stuck</span></div><h3>Write these requests yourself first</h3>
+<p class="pj-small">You wrote each of these once today. Try on your own for a few minutes. Stuck? Open one hint at a time. The full prompt is the last step.</p>{layers}</section>
+<section class="sh-card"><div class="sh-top"><span class="sh-blk">Copy these</span><span class="sh-time">COPY, then fill the brackets</span></div><h3>Steps to follow</h3>{prompts}</section>
 <section class="sh-card pj-done"><div class="sh-top"><span class="sh-blk">Before the demos</span><span class="sh-time">14:40</span></div><h3>Done when</h3>{done}
 <p class="pj-small">The trainer picks four or five projects to show: four minutes each. Your ticks stay in this browser.</p></section>
 <section class="sh-card pj-note"><div class="sh-top"><span class="sh-blk">Your notes</span><span class="sh-time">saved in this browser</span></div><h3>Your Project card and impact number</h3><textarea aria-label="Your Project card and impact number"></textarea></section>

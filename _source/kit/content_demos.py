@@ -1177,3 +1177,9 @@ DEMOS["e24"].update(
 F_PROJECT_PAGE = "coded-rsm-ai-automation-mini-project.html"
 ALL_FILES = ALL_FILES + [F_PROJECT_PAGE]
 DEMOS["u26"]["setup"] = ["Card (10 min): open coded-rsm.vercel.app/project, pick your department and copy its Project card."] + DEMOS["u26"]["setup"][1:]
+
+# the project's thinking prompts sit behind hints on the project page (Aya, 16 Nov 10:02), so the Task 2.6 slide and the prompt sheet
+# carry only the steps to follow and the blank Project card
+DEMOS["u26"]["prompts"] = [("Add my file to the skill", ADD_TO_SKILL), ("Scheduled task prompt", SKILL_SCHED)]
+DEMOS["u26"]["templates"] = [("Project card", PROJECT_CARD)]
+DEMOS["u26"]["hint"] = "Write your own requests first. Stuck? The project page has a hint, another hint, then the prompt."
